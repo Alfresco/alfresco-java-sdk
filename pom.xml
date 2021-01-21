@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.4.2</version>
+    <relativePath/>
+  </parent>
+  <groupId>org.alfresco</groupId>
+  <artifactId>alfresco-java-sdk</artifactId>
+  <version>5.0.0-SNAPSHOT</version>
+  <name>Alfresco Java SDK</name>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>alfresco-java-rest-api</module>
+    <module>alfresco-java-rest-api/alfresco-java-rest-api-lib</module>
+    <!--    TODO: TBA:-->
+    <!--    <module>alfresco-java-rest-api/alfresco-java-rest-api-starter</module>-->
+
+    <!--    <module>alfresco-java-event-api</module>-->
+    <!--    <module>alfresco-java-event-api/alfresco-java-event-api</module> -->
+    <!--    <module>alfresco-java-event-api/alfresco-java-event-api-starter</module>-->
+
+    <module>docs</module>
+
+    <module>samples</module>
+  </modules>
+
+  <properties>
+    <java.release>11</java.release>
+    <maven.compiler.source>${java.release}</maven.compiler.source>
+    <maven.compiler.target>${java.release}</maven.compiler.target>
+  </properties>
+
+
+</project>
