@@ -32,6 +32,7 @@ hs_err_pid*
 .sts4-cache
 
 ### IntelliJ IDEA ###
+target/
 .idea
 *.iws
 *.iml
@@ -49,3 +50,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### mac OS ###
+.DS_Store
