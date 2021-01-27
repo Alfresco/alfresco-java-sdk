@@ -20,4 +20,5 @@ package org.alfresco.event.sdk.handling.handler;
  * {@link EventHandler} interface that groups all the event handlers related to node events.
  */
 public interface NodeEventHandler extends EventHandler {
+
 }

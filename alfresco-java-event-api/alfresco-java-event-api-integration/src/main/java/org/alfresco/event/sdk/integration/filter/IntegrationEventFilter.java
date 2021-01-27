@@ -16,16 +16,15 @@
 
 package org.alfresco.event.sdk.integration.filter;
 
+import java.util.Objects;
 import org.alfresco.event.sdk.handling.filter.EventFilter;
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.integration.core.GenericSelector;
 import org.springframework.messaging.Message;
-
-import java.util.Objects;
 
 /**
  * {@link GenericSelector} implementation that is simply a wrapper of a {@link EventFilter}. This way any {@link EventFilter} can be used in a Spring
@@ -54,6 +53,6 @@ public class IntegrationEventFilter implements GenericSelector<Message> {
     @Override
     public boolean accept(final Message source) {
         LOGGER.debug("Checking event filter {} for message {}", eventFilter, source);
-        return eventFilter.test((RepoEvent<DataAttributes<Resource>>)source.getPayload());
+        return eventFilter.test((RepoEvent<DataAttributes<Resource>>) source.getPayload());
     }
 }

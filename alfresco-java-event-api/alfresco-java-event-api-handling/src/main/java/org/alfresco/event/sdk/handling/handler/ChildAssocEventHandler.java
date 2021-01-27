@@ -20,4 +20,5 @@ package org.alfresco.event.sdk.handling.handler;
  * {@link EventHandler} interface that groups all the event handlers related to parent-child association events.
  */
 public interface ChildAssocEventHandler extends EventHandler {
+
 }

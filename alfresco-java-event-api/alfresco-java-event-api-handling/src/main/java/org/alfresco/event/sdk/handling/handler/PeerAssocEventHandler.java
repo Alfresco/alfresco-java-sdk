@@ -20,4 +20,5 @@ package org.alfresco.event.sdk.handling.handler;
  * {@link EventHandler} interface that groups all the event handlers related to peer to peer association events.
  */
 public interface PeerAssocEventHandler extends EventHandler {
+
 }

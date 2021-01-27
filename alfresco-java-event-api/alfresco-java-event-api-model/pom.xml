@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>alfresco-java-event-api-model</artifactId>
-  <name>Alfresco Java Event API :: ACS Event Model</name>
+  <name>Alfresco Java Event API :: Event Model</name>
 
   <properties>
     <jsonschema-generator.version>4.12.2</jsonschema-generator.version>

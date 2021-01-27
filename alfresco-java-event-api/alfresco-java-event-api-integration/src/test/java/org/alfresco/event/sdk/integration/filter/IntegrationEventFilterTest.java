@@ -16,14 +16,17 @@
 
 package org.alfresco.event.sdk.integration.filter;
 
-import org.alfresco.event.sdk.handling.filter.NodeAspectFilter;
-import org.alfresco.repo.event.v1.model.*;
-import org.junit.Test;
-import org.springframework.messaging.support.GenericMessage;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Set;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.alfresco.event.sdk.handling.filter.NodeAspectFilter;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.EventData;
+import org.alfresco.event.sdk.model.v1.model.NodeResource;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.junit.Test;
+import org.springframework.messaging.support.GenericMessage;
 
 /**
  * Unit tests for {@link IntegrationEventFilter}.

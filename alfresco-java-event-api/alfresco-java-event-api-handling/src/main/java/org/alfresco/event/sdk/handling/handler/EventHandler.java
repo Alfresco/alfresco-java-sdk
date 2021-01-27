@@ -17,10 +17,10 @@
 package org.alfresco.event.sdk.handling.handler;
 
 import org.alfresco.event.sdk.handling.filter.EventFilter;
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.EventType;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.EventType;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 
 /**
  * Interface that declares the operations of a repo event handler.

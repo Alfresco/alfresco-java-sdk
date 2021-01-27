@@ -17,6 +17,8 @@
 package org.alfresco.event.sdk.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
+import javax.jms.Topic;
 import org.alfresco.enterprise.repo.event.databind.EnterpriseObjectMapperFactory;
 import org.alfresco.event.sdk.handling.EventHandlingExecutor;
 import org.alfresco.event.sdk.handling.EventHandlingRegistry;
@@ -24,10 +26,10 @@ import org.alfresco.event.sdk.handling.SimpleEventHandlingExecutor;
 import org.alfresco.event.sdk.handling.handler.EventHandler;
 import org.alfresco.event.sdk.integration.EventChannels;
 import org.alfresco.event.sdk.integration.transformer.EventGenericTransformer;
-import org.alfresco.repo.event.databind.ObjectMapperFactory;
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import org.alfresco.event.sdk.model.databind.ObjectMapperFactory;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,14 +50,11 @@ import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.integration.jms.dsl.Jms;
 import org.springframework.integration.transformer.GenericTransformer;
 
-import javax.jms.Topic;
-import java.util.List;
-
 /**
  * {@link org.springframework.boot.autoconfigure.EnableAutoConfiguration Auto-configuration} for Alfresco Event Java API.
  * <p>
- * This auto-configuration defines the beans required to read the Alfresco JSON events from an ActiveMQ topic, transform that event from JSON to
- * {@link RepoEvent} making use of the {@link EventGenericTransformer} and do up to two things:
+ * This auto-configuration defines the beans required to read the Alfresco JSON events from an ActiveMQ topic, transform that event from JSON to {@link
+ * RepoEvent} making use of the {@link EventGenericTransformer} and do up to two things:
  * <ul>
  *     <li>Forward a Spring Integration {@link org.springframework.messaging.Message} to a publish-subscribe channel</li>
  *     <li>Invoke the list of {@link EventHandler} registered to handle the specific event type consumed from the topic</li>
@@ -64,7 +63,7 @@ import java.util.List;
  * This way the integrator can configure the Alfresco Java Event API to consume the events using Spring Integration or plain Java event handlers.
  */
 @Configuration
-@AutoConfigureAfter({ IntegrationAutoConfiguration.class, ActiveMQAutoConfiguration.class, JmsAutoConfiguration.class })
+@AutoConfigureAfter({IntegrationAutoConfiguration.class, ActiveMQAutoConfiguration.class, JmsAutoConfiguration.class})
 @ConditionalOnClass(RepoEvent.class)
 @EnableConfigurationProperties(AlfrescoEventsProperties.class)
 public class AlfrescoEventsAutoConfiguration {

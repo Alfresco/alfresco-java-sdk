@@ -19,14 +19,13 @@ package org.alfresco.event.sdk.integration.transformer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import java.util.Objects;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.integration.transformer.GenericTransformer;
-
-import java.util.Objects;
 
 /**
  * {@link GenericTransformer} implementation that transforms a repository event in JSON format (following the Repo Event JSON schema) into a {@link RepoEvent}

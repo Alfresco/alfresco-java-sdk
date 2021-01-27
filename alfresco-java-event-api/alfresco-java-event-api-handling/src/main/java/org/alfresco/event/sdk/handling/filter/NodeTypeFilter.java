@@ -16,14 +16,13 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.NodeResource;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import java.util.Objects;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.NodeResource;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Objects;
 
 /**
  * {@link EventFilter} that checks if an event is related to a node with an specific type.
@@ -51,6 +50,6 @@ public class NodeTypeFilter extends AbstractEventFilter {
     @Override
     public boolean test(final RepoEvent<DataAttributes<Resource>> event) {
         LOGGER.debug("Checking filter for node type {} and event {}", acceptedNodeType, event);
-        return isNodeEvent(event) && acceptedNodeType.equals(((NodeResource)event.getData().getResource()).getNodeType());
+        return isNodeEvent(event) && acceptedNodeType.equals(((NodeResource) event.getData().getResource()).getNodeType());
     }
 }

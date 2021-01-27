@@ -16,16 +16,15 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.NodeResource;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Objects;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.NodeResource;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * {@link EventFilter} that checks if an event corresponds to the modification of a specific property of a node in the repository.
@@ -57,8 +56,8 @@ public class PropertyChangedFilter extends AbstractEventFilter {
     }
 
     private boolean checkPropertyAdded(final RepoEvent<DataAttributes<Resource>> event) {
-        final Map<String, Serializable> propertiesBefore = ((NodeResource)event.getData().getResourceBefore()).getProperties();
-        final Map<String, Serializable> propertiesAfter = ((NodeResource)event.getData().getResource()).getProperties();
+        final Map<String, Serializable> propertiesBefore = ((NodeResource) event.getData().getResourceBefore()).getProperties();
+        final Map<String, Serializable> propertiesAfter = ((NodeResource) event.getData().getResource()).getProperties();
         return propertiesBefore != null && propertiesAfter != null && checkProperty(propertiesBefore, propertiesAfter);
     }
 

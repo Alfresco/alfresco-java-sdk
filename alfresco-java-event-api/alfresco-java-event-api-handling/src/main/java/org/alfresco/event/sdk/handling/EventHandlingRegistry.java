@@ -16,17 +16,20 @@
 
 package org.alfresco.event.sdk.handling;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.alfresco.event.sdk.handling.handler.EventHandler;
-import org.alfresco.repo.event.v1.model.EventType;
-import org.alfresco.repo.event.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.EventType;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
-
 /**
- * Register for {@link EventHandler} instances. The event handlers are internally stored in a {@link Map} which key is an event type and its value a list
- * of the event handlers registered for that type.
+ * Register for {@link EventHandler} instances. The event handlers are internally stored in a {@link Map} which key is an event type and its value a list of the
+ * event handlers registered for that type.
  */
 public class EventHandlingRegistry {
 

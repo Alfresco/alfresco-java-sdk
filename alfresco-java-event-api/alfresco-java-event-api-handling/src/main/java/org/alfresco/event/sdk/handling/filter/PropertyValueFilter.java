@@ -16,16 +16,15 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.NodeResource;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Objects;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.NodeResource;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * {@link EventFilter} that checks if an event represents a node with a specific property with a specific value.
@@ -60,7 +59,7 @@ public class PropertyValueFilter extends AbstractEventFilter {
     }
 
     private boolean checkPropertyValue(final RepoEvent<DataAttributes<Resource>> event) {
-        final Map<String, Serializable> properties = ((NodeResource)event.getData().getResource()).getProperties();
+        final Map<String, Serializable> properties = ((NodeResource) event.getData().getResource()).getProperties();
         return properties != null && properties.containsKey(propertyName) && propertyValue.equals(properties.get(propertyName));
     }
 }

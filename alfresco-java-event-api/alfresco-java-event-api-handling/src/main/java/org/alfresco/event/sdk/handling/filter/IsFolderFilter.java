@@ -16,10 +16,10 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.NodeResource;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.NodeResource;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +45,6 @@ public class IsFolderFilter extends AbstractEventFilter {
     @Override
     public boolean test(final RepoEvent<DataAttributes<Resource>> event) {
         LOGGER.debug("Checking if event {} is a folder event", event);
-        return isNodeEvent(event) && ((NodeResource)event.getData().getResource()).isFolder();
+        return isNodeEvent(event) && ((NodeResource) event.getData().getResource()).isFolder();
     }
 }

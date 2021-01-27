@@ -16,19 +16,18 @@
 
 package org.alfresco.event.sdk.handling;
 
+import java.util.Objects;
 import org.alfresco.event.sdk.handling.handler.EventHandler;
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Objects;
-
 /**
- * Simple implementation of {@link EventHandlingExecutor} that uses {@link EventHandlingRegistry} to get the {@link java.util.List} of {@link EventHandler}s
- * to execute based on the event type and after that executes the handling method for each of them whenever the {@link org.alfresco.event.sdk.handling.filter.EventFilter}
- * condition is fulfilled by the event.
+ * Simple implementation of {@link EventHandlingExecutor} that uses {@link EventHandlingRegistry} to get the {@link java.util.List} of {@link EventHandler}s to
+ * execute based on the event type and after that executes the handling method for each of them whenever the {@link
+ * org.alfresco.event.sdk.handling.filter.EventFilter} condition is fulfilled by the event.
  */
 public class SimpleEventHandlingExecutor implements EventHandlingExecutor {
 

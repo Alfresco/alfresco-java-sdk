@@ -16,10 +16,15 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.repo.event.v1.model.*;
-import org.junit.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.EventData;
+import org.alfresco.event.sdk.model.v1.model.EventType;
+import org.alfresco.event.sdk.model.v1.model.NodeResource;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.junit.Test;
 
 /**
  * Unit tests for {@link EventTypeFilter}.
@@ -47,13 +52,14 @@ public class EventTypeFilterTest {
                 .setType(EventType.PERMISSION_UPDATED.getType())
                 .build();
 
-        final boolean nodeCreatedRepoEventResult = EventTypeFilter.NODE.test((RepoEvent<DataAttributes<Resource>>)nodeCreatedRepoEvent);
-        final boolean nodeUpdatedRepoEventResult = EventTypeFilter.NODE_UPDATED.test((RepoEvent<DataAttributes<Resource>>)nodeUpdatedRepoEvent);
-        final boolean nodeDeletedRepoEventResult = EventTypeFilter.NODE_DELETED.test((RepoEvent<DataAttributes<Resource>>)nodeDeletedRepoEvent);
-        final boolean childAssocCreatedRepoEventResult = EventTypeFilter.CHILD_ASSOC.test((RepoEvent<DataAttributes<Resource>>)childAssocCreatedRepoEvent);
-        final boolean peerAssocDeletedRepoEventResult = EventTypeFilter.PEER_ASSOC_DELETED.test((RepoEvent<DataAttributes<Resource>>)peerAssocDeletedRepoEvent);
+        final boolean nodeCreatedRepoEventResult = EventTypeFilter.NODE.test((RepoEvent<DataAttributes<Resource>>) nodeCreatedRepoEvent);
+        final boolean nodeUpdatedRepoEventResult = EventTypeFilter.NODE_UPDATED.test((RepoEvent<DataAttributes<Resource>>) nodeUpdatedRepoEvent);
+        final boolean nodeDeletedRepoEventResult = EventTypeFilter.NODE_DELETED.test((RepoEvent<DataAttributes<Resource>>) nodeDeletedRepoEvent);
+        final boolean childAssocCreatedRepoEventResult = EventTypeFilter.CHILD_ASSOC.test((RepoEvent<DataAttributes<Resource>>) childAssocCreatedRepoEvent);
+        final boolean peerAssocDeletedRepoEventResult = EventTypeFilter.PEER_ASSOC_DELETED
+                .test((RepoEvent<DataAttributes<Resource>>) peerAssocDeletedRepoEvent);
         final boolean permissionUpdatedRepoEventResult = EventTypeFilter.PERMISSION_UPDATED
-                .test((RepoEvent<DataAttributes<Resource>>)permissionUpdatedRepoEvent);
+                .test((RepoEvent<DataAttributes<Resource>>) permissionUpdatedRepoEvent);
 
         assertThat(nodeCreatedRepoEventResult).isTrue();
         assertThat(nodeUpdatedRepoEventResult).isTrue();
@@ -69,7 +75,7 @@ public class EventTypeFilterTest {
                 .setType(EventType.NODE_CREATED.getType())
                 .build();
 
-        final boolean result = EventTypeFilter.PERMISSION_UPDATED.test((RepoEvent<DataAttributes<Resource>>)repoEvent);
+        final boolean result = EventTypeFilter.PERMISSION_UPDATED.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
 
         assertThat(result).isFalse();
     }
@@ -79,7 +85,7 @@ public class EventTypeFilterTest {
         final RepoEvent<? extends DataAttributes<? extends Resource>> repoEvent = RepoEvent.<EventData<NodeResource>>builder()
                 .build();
 
-        final boolean result = EventTypeFilter.NODE.test((RepoEvent<DataAttributes<Resource>>)repoEvent);
+        final boolean result = EventTypeFilter.NODE.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
 
         assertThat(result).isFalse();
     }

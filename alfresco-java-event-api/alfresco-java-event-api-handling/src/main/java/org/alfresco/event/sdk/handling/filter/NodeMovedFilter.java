@@ -16,14 +16,13 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.NodeResource;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import java.util.List;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.NodeResource;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 /**
  * {@link EventFilter} that checks if an event represents the movement of a node in the hierarchy in the repository.
@@ -55,7 +54,7 @@ public class NodeMovedFilter extends AbstractEventFilter {
     }
 
     private boolean checkPrimaryHierarchy(final RepoEvent<DataAttributes<Resource>> event) {
-        final NodeResource nodeResourceBefore = (NodeResource)event.getData().getResourceBefore();
+        final NodeResource nodeResourceBefore = (NodeResource) event.getData().getResourceBefore();
         final List<String> primaryHierarchy = nodeResourceBefore.getPrimaryHierarchy();
         return primaryHierarchy != null && !primaryHierarchy.isEmpty();
     }

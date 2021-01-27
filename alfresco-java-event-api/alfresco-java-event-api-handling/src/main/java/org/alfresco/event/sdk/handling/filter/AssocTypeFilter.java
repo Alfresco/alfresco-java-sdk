@@ -16,14 +16,13 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.repo.event.v1.model.AbstractAssociationResource;
-import org.alfresco.repo.event.v1.model.DataAttributes;
-import org.alfresco.repo.event.v1.model.RepoEvent;
-import org.alfresco.repo.event.v1.model.Resource;
+import java.util.Objects;
+import org.alfresco.event.sdk.model.v1.model.AbstractAssociationResource;
+import org.alfresco.event.sdk.model.v1.model.DataAttributes;
+import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Objects;
 
 /**
  * {@link EventFilter} that checks if an event corresponds to a specific association type. This doesn't distinguish if the event is representing peer or child
@@ -52,6 +51,6 @@ public class AssocTypeFilter extends AbstractEventFilter {
     @Override
     public boolean test(final RepoEvent<DataAttributes<Resource>> event) {
         LOGGER.debug("Checking filter for assoc type {} and event {}", acceptedAssocType, event);
-        return isAssocEvent(event) && acceptedAssocType.equals(((AbstractAssociationResource)event.getData().getResource()).getAssocType());
+        return isAssocEvent(event) && acceptedAssocType.equals(((AbstractAssociationResource) event.getData().getResource()).getAssocType());
     }
 }
