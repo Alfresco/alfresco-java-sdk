@@ -10,7 +10,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>alfresco-java-event-api-acs-event-model</artifactId>
+  <artifactId>alfresco-java-event-api-model</artifactId>
   <name>Alfresco Java Event API :: ACS Event Model</name>
 
   <properties>

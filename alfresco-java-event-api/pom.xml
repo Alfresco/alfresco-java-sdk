@@ -32,7 +32,7 @@
       </dependency>
       <dependency>
         <groupId>org.alfresco</groupId>
-        <artifactId>alfresco-java-event-api-acs-event-model</artifactId>
+        <artifactId>alfresco-java-event-api-model</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -67,9 +67,9 @@
   </build>
 
   <modules>
-    <module>alfresco-java-event-api-acs-event-model</module>
     <module>alfresco-java-event-api-handling</module>
     <module>alfresco-java-event-api-integration</module>
+    <module>alfresco-java-event-api-model</module>
     <module>alfresco-java-event-api-spring-boot-autoconfigure</module>
     <module>alfresco-java-event-api-spring-boot-starter</module>
   </modules>

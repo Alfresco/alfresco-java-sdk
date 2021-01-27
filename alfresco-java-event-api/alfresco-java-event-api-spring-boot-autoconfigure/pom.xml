@@ -61,7 +61,7 @@
 
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-java-event-api-acs-event-model</artifactId>
+      <artifactId>alfresco-java-event-api-model</artifactId>
     </dependency>
 
     <dependency>
