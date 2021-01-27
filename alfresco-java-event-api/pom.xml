@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.alfresco</groupId>
+  <artifactId>alfresco-java-event-api</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Alfresco Java Event API :: Parent</name>
+
+  <properties>
+    <org.alfresco.acs-enterprise-event-model.version>0.0.1
+    </org.alfresco.acs-enterprise-event-model.version>
+    <org.alfresco.acs-event-model.version>0.0.11</org.alfresco.acs-event-model.version>
+    <org.springframework.boot.version>2.4.2</org.springframework.boot.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${org.springframework.boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.alfresco</groupId>
+        <artifactId>acs-event-model</artifactId>
+        <version>${org.alfresco.acs-event-model.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.alfresco</groupId>
+        <artifactId>acs-enterprise-event-model</artifactId>
+        <version>${org.alfresco.acs-enterprise-event-model.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <modules>
+    <module>alfresco-java-event-api-spring-boot-autoconfigure</module>
+    <module>alfresco-java-event-api-spring-boot-starter</module>
+    <module>alfresco-java-event-api-handling</module>
+    <module>alfresco-java-event-api-integration</module>
+  </modules>
+
+  <repositories>
+    <repository>
+      <id>alfresco-maven-repo</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+</project>
