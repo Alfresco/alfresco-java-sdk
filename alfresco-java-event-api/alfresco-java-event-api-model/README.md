@@ -1,7 +1,6 @@
-## Alfresco Content Services Event Model
-[![Build Status](https://travis-ci.com/Alfresco/acs-event-model.svg?branch=master)](https://travis-ci.com/Alfresco/acs-event-model)
+## Alfresco Java Event API Model
 
-Alfresco Content Services Event Model is a library packaged as a jar file which is part of [Alfresco Content Services Repository](https://community.alfresco.com/docs/DOC-6385-project-overview-repository).
+Alfresco Java Event API Model is a library packaged as a jar file which is part of Alfresco Content Services Repository.
 The library contains the events models and databind helpers to help the clients to marshall and unmarshall the events.
 
 ### Event Object
@@ -674,34 +673,6 @@ For a detailed view of the event content refer to [Repo Event JSON schema](src/m
 }
 ```
 
-## Building and testing
-
-The project can be built and tested by running the following Maven command:
-~~~
-mvn clean install
-~~~
-
-### Artifacts
-The artifact can be obtained by:
-* downloading from [Alfresco repository](https://artifacts.alfresco.com/nexus/content/groups/public)
-* getting as Maven dependency by adding the dependency to your pom file:
-~~~
-<dependency>
-  <groupId>org.alfresco</groupId>
-  <artifactId>acs-event-model</artifactId>
-  <version>version</version>
-</dependency>
-~~~
-and Alfresco repository:
-~~~
-<repository>
-  <id>alfresco-maven-repo</id>
-  <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
-</repository>
-~~~
-**Note:**
-The SNAPSHOT version of the artifact is **never** published.
-
 ## Clients
 
 For unmarshalling the JSON result to RepoEvent object, Java clients can you use the following factory to get the ObjectMapper configured with the RepoEvent format:
@@ -713,7 +684,4 @@ RepoEvent<EventData<NodeResource>> result = mapper.readValue(jsonString, new Typ
 {
 });
 ```
-
-### Contributing guide
-Please use [this guide](CONTRIBUTING.md) to make a contribution to the project.
 
