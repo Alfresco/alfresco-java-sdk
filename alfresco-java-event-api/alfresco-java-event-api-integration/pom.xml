@@ -25,19 +25,18 @@
     </dependency>
 
     <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>acs-event-model</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
     </dependency>
 
     <dependency>
       <groupId>org.alfresco</groupId>
+      <artifactId>alfresco-java-event-api-acs-event-model</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-handling</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
     <dependency>

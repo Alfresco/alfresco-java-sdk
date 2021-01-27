@@ -52,18 +52,16 @@
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-integration</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-handling</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>acs-event-model</artifactId>
+      <artifactId>alfresco-java-event-api-acs-event-model</artifactId>
     </dependency>
 
     <dependency>

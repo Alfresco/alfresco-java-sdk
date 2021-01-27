@@ -1,0 +1,62 @@
+{
+  "$schema" : "https://json-schema.org/draft/2019-09/schema",
+  "$defs" : {
+    "PeerAssocInfo" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "specversion" : {
+      "type" : "string"
+    },
+    "type" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "string"
+    },
+    "source" : {
+      "type" : "string"
+    },
+    "time" : {
+      "type" : "string"
+    },
+    "dataschema" : {
+      "type" : "string"
+    },
+    "datacontenttype" : {
+      "type" : "string"
+    },
+    "data" : {
+      "type" : "object",
+      "properties" : {
+        "eventGroupId" : {
+          "type" : "string"
+        },
+        "resource" : {
+          "type" : "object",
+          "properties" : {
+            "assocType" : {
+              "type" : "string"
+            },
+            "source" : {
+              "$ref" : "#/$defs/PeerAssocInfo"
+            },
+            "target" : {
+              "$ref" : "#/$defs/PeerAssocInfo"
+            }
+          },
+          "required" : [ "assocType", "source", "target" ]
+        }
+      },
+      "required" : [ "eventGroupId", "resource" ]
+    }
+  },
+  "required" : [ "specversion", "type", "id", "source", "time", "dataschema", "datacontenttype", "data" ]
+}

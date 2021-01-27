@@ -1,0 +1,46 @@
+{
+  "specversion": "1.0",
+  "type": "org.alfresco.event.node.Created",
+  "id": "97c1b36c-c569-4c66-8a31-7a8d0b6b804a",
+  "source": "/f6d21231-618e-4f12-a920-e498660c5b9d",
+  "time": "2020-04-27T12:37:03.560134+01:00",
+  "dataschema": "https://api.alfresco.com/schema/event/repo/v1/nodeCreated",
+  "datacontenttype": "application/json",
+  "data": {
+    "eventGroupId": "cb645043-e7d2-4e51-b61d-e6d01582cbab",
+    "resource": {
+      "@type": "NodeResource",
+      "id": "7491120a-e2cb-478f-8599-ebf057cc0c7c",
+      "name": "testFile.txt",
+      "nodeType": "cm:content",
+      "isFolder": false,
+      "isFile": true,
+      "createdByUser": {
+        "id": "john.doe",
+        "displayName": "John Doe"
+      },
+      "createdAt": "2020-04-27T12:37:03.555624+01:00",
+      "modifiedByUser": {
+        "id": "jane.doe",
+        "displayName": "Jane Doe"
+      },
+      "modifiedAt": "2020-04-27T12:37:03.557956+01:00",
+      "content": {
+        "mimeType": "text/plain",
+        "sizeInBytes": 16,
+        "encoding": "UTF-8"
+      },
+      "primaryHierarchy": [
+        "521aac1c-20eb-444b-a137-2da3d35ee1a8",
+        "2641bbe1-39ff-44dc-b47f-736552ad46cc"
+      ],
+      "properties": {
+        "cm:title": "test title"
+      },
+      "aspectNames": [
+        "cm:titled",
+        "cm:auditable"
+      ]
+    }
+  }
+}
