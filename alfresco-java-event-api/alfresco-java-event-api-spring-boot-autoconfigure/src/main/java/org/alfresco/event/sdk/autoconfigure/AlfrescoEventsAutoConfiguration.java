@@ -17,6 +17,7 @@
 package org.alfresco.event.sdk.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.ArrayList;
 import java.util.List;
 import javax.jms.Topic;
 import org.alfresco.enterprise.repo.event.databind.EnterpriseObjectMapperFactory;
@@ -71,8 +72,8 @@ public class AlfrescoEventsAutoConfiguration {
     @Autowired
     private AlfrescoEventsProperties alfrescoEventsProperties;
 
-    @Autowired
-    private List<EventHandler> eventHandlers;
+    @Autowired(required = false)
+    private final List<EventHandler> eventHandlers = new ArrayList<>();
 
     // CORE INTEGRATION WITH BROKER CONFIGURATION
     @Bean
