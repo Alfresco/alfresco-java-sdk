@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ -z "${M2_HOME}" ]; then
+  export MVN_EXEC="mvn"
+else
+  export MVN_EXEC="${M2_HOME}/bin/mvn"
+fi
+
 start() {
     docker-compose up --build -d
 }
@@ -10,7 +16,7 @@ down() {
 
 build() {
     docker rmi event-api-si-sample:development
-    mvn clean package
+    $MVN_EXEC clean package
 }
 
 tail() {
