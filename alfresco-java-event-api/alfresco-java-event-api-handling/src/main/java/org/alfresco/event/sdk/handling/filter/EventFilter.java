@@ -16,11 +16,11 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import java.util.Objects;
-import java.util.function.Predicate;
 import org.alfresco.event.sdk.model.v1.model.DataAttributes;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.Resource;
+
+import java.util.Objects;
 
 /**
  * Predicate definition for the class {@link RepoEvent} to be able to define event filters that check different conditions in the corresponding events (i.e. the
@@ -30,7 +30,7 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
  * to execute the custom behaviour the integrator is aiming when implementing an event handler.
  */
 @FunctionalInterface
-public interface EventFilter extends Predicate<RepoEvent<DataAttributes<Resource>>> {
+public interface EventFilter {
 
     /**
      * Evaluates this predicate on the given argument.
