@@ -21,7 +21,7 @@ The event handling library is a core component of the Java Event API that offers
 properly work with them. The idea of this library is to ease the implementation of behaviours that must be triggered as a response to an event.
 
 This component is defined in the module [alfresco-java-event-api-handling](./alfresco-java-event-api-handling). The classes and interfaces of this library 
-where desgined to be as Java technology agnostic as possible. They offer the plain event handling functionality doing no assumptions about the technology used
+where designed to be as Java technology agnostic as possible. They offer the plain event handling functionality doing no assumptions about the technology used
 to make them work together. They're mostly plain Java classes, so the integrator can use them in a Spring project, a Dagger project or any other technology.
 
 The main four items in this library are explained in the next sections.
@@ -89,7 +89,7 @@ It makes use of the event handling library and the event model to offer integrat
 of a Spring Integration project. 
 
 The way the events are consumed from the ActiveMQ topic where the Events API is currently publishing them is not specified at this level of integration, and it 
-is intentionally left open to the integrator choice. For a more opinionated integration level please take a look to the 
+is intentionally left open to the integrator's choice. For a more opinionated integration level please take a look to the 
 [Spring Boot custom starter section](#spring-boot-custom-starter).
 
 Once the JSON events are ingested in a Spring Integration channel, this library offers a transformer to translate from the JSON schema defined by the Event Model
