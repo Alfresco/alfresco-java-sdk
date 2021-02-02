@@ -55,7 +55,7 @@ public class PeerAssocInfo {
 
     @Override
     public String toString() {
-        final String sb = "PeerAssocInfo [id=" + id + ']';
+        return "PeerAssocInfo [id=" + id + ']';
         return sb;
     }
 }
