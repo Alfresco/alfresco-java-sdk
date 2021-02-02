@@ -16,23 +16,20 @@
 
 package org.alfresco.event.sdk.integration.transformer;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.BDDMockito.given;
-
 import com.fasterxml.jackson.core.io.JsonEOFException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.alfresco.event.sdk.model.v1.model.DataAttributes;
-import org.alfresco.event.sdk.model.v1.model.EventData;
-import org.alfresco.event.sdk.model.v1.model.NodeResource;
-import org.alfresco.event.sdk.model.v1.model.RepoEvent;
-import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.alfresco.event.sdk.handling.EventHandlingException;
+import org.alfresco.event.sdk.model.v1.model.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.BDDMockito.given;
 
 /**
  * Unit tests for {@link EventGenericTransformer}.
@@ -64,8 +61,8 @@ public class EventGenericTransformerTest {
         assertThat(result).isEqualTo(repoEvent);
     }
 
-    @Test(expected = RuntimeException.class)
-    public void should_throwRuntimeException_when_incorrectJSONEventIsReceived() throws Exception {
+    @Test(expected = EventHandlingException.class)
+    public void should_throwEventHandlingException_when_incorrectJSONEventIsReceived() throws Exception {
         given(mockObjectMapper.readValue(eq(MOCK_INCORRECT_JSON), any(TypeReference.class))).willThrow(new JsonEOFException(null, null, ""));
 
         eventGenericTransformer.transform(MOCK_INCORRECT_JSON);
