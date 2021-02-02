@@ -40,16 +40,7 @@ public interface SecurityControlSettingsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SecurityControlSettingEntry
-> getSecurityControlSetting(
-
-
-@ApiParam(value = "The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file ",required=true) @PathVariable("securityControlSettingKey") String
- securityControlSettingKey
-
-
-
-);
+    ResponseEntity<SecurityControlSettingEntry> getSecurityControlSetting(@ApiParam(value = "The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file ",required=true) @PathVariable("securityControlSettingKey") String securityControlSettingKey);
 
 
     @ApiOperation(value = "Update security control setting value", nickname = "updateSecurityControlSetting", notes = "Updates the value of a selected **securityControlSettingKey**.", response = SecurityControlSettingEntry.class, authorizations = {
@@ -67,20 +58,6 @@ public interface SecurityControlSettingsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<SecurityControlSettingEntry
-> updateSecurityControlSetting(
-
-
-@ApiParam(value = "The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file ",required=true) @PathVariable("securityControlSettingKey") String
- securityControlSettingKey
-
-
-
-,
-
-
-@ApiParam(value = "The new value for the security control setting. This can be a string or number, depending on the setting key." ,required=true )  @Valid @RequestBody SecurityControlSettingBody securityControlSettingValue
-
-);
+    ResponseEntity<SecurityControlSettingEntry> updateSecurityControlSetting(@ApiParam(value = "The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file ",required=true) @PathVariable("securityControlSettingKey") String securityControlSettingKey,@ApiParam(value = "The new value for the security control setting. This can be a string or number, depending on the setting key." ,required=true )  @Valid @RequestBody SecurityControlSettingBody securityControlSettingValue);
 
 }

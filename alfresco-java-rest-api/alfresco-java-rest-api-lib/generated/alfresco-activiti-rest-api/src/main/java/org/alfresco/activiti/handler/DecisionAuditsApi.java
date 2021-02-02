@@ -35,16 +35,7 @@ public interface DecisionAuditsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DecisionAuditRepresentation
-> getAuditTrailUsingGET(
-
-
-@ApiParam(value = "auditTrailId",required=true) @PathVariable("auditTrailId") Long
- auditTrailId
-
-
-
-);
+    ResponseEntity<DecisionAuditRepresentation> getAuditTrailUsingGET(@ApiParam(value = "auditTrailId",required=true) @PathVariable("auditTrailId") Long auditTrailId);
 
 
     @ApiOperation(value = "Query decision table audit trails", nickname = "getAuditTrailsUsingGET", notes = "", response = ResultListDataRepresentationDecisionAuditRepresentation.class, authorizations = {
@@ -56,23 +47,6 @@ public interface DecisionAuditsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationDecisionAuditRepresentation
-> getAuditTrailsUsingGET(@NotNull 
-
-@ApiParam(value = "decisionKey", required = true) @Valid @RequestParam(value = "decisionKey", required = true) String
- decisionKey
-
-
-
-
-,@NotNull 
-
-@ApiParam(value = "dmnDeploymentId", required = true) @Valid @RequestParam(value = "dmnDeploymentId", required = true) Long
- dmnDeploymentId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationDecisionAuditRepresentation> getAuditTrailsUsingGET(@NotNull @ApiParam(value = "decisionKey", required = true) @Valid @RequestParam(value = "decisionKey", required = true) String decisionKey,@NotNull @ApiParam(value = "dmnDeploymentId", required = true) @Valid @RequestParam(value = "dmnDeploymentId", required = true) Long dmnDeploymentId);
 
 }

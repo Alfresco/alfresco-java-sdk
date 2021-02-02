@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ChildAssociationBody   {
   @JsonProperty("childId")
   private String childId = null;
@@ -33,7 +32,6 @@ public class ChildAssociationBody   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getChildId() {
@@ -55,7 +53,6 @@ public class ChildAssociationBody   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getAssocType() {

@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Topic   {
   @JsonProperty("id")
   private String id = null;
@@ -60,7 +59,6 @@ public class Topic   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -82,7 +80,6 @@ public class Topic   {
   @NotNull
 
 
-
   public String getName() {
     return name;
   }
@@ -101,7 +98,6 @@ public class Topic   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -125,7 +121,6 @@ public class Topic   {
   @NotNull
 
 
-
   public Boolean isHasInstruction() {
     return hasInstruction;
   }
@@ -146,7 +141,6 @@ public class Topic   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Instruction getInstruction() {
     return instruction;
@@ -170,7 +164,6 @@ public class Topic   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -189,7 +182,6 @@ public class Topic   {
    * @return hasSubtopics
   **/
   @ApiModelProperty(value = "Flag indicating whether the topic has subtopics. This field is only included when requested.")
-
 
 
   public Boolean isHasSubtopics() {
@@ -213,7 +205,6 @@ public class Topic   {
 
   @Valid
 
-
   public Path getPath() {
     return path;
   }
@@ -234,7 +225,6 @@ public class Topic   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ClassificationGuideInTopic getClassificationGuide() {
     return classificationGuide;

@@ -38,13 +38,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ModelRepresentation
-> createModelUsingPOST(
-
-
-@ApiParam(value = "modelRepresentation" ,required=true )  @Valid @RequestBody ModelRepresentation modelRepresentation
-
-);
+    ResponseEntity<ModelRepresentation> createModelUsingPOST(@ApiParam(value = "modelRepresentation" ,required=true )  @Valid @RequestBody ModelRepresentation modelRepresentation);
 
 
     @ApiOperation(value = "Delete a model", nickname = "deleteModelUsingDELETE", notes = "", authorizations = {
@@ -56,32 +50,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteModelUsingDELETE(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-@ApiParam(value = "cascade") @Valid @RequestParam(value = "cascade", required = false) Boolean
- cascade
-
-
-
-
-,
-
-@ApiParam(value = "deleteRuntimeApp") @Valid @RequestParam(value = "deleteRuntimeApp", required = false) Boolean
- deleteRuntimeApp
-
-
-
-
-);
+    ResponseEntity<Void> deleteModelUsingDELETE(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "cascade") @Valid @RequestParam(value = "cascade", required = false) Boolean cascade,@ApiParam(value = "deleteRuntimeApp") @Valid @RequestParam(value = "deleteRuntimeApp", required = false) Boolean deleteRuntimeApp);
 
 
     @ApiOperation(value = "Duplicate an existing model", nickname = "duplicateModelUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
@@ -93,21 +62,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ModelRepresentation
-> duplicateModelUsingPOST(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-@ApiParam(value = "modelRepresentation" ,required=true )  @Valid @RequestBody ModelRepresentation modelRepresentation
-
-);
+    ResponseEntity<ModelRepresentation> duplicateModelUsingPOST(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "modelRepresentation" ,required=true )  @Valid @RequestBody ModelRepresentation modelRepresentation);
 
 
     @ApiOperation(value = "Get model content", nickname = "getModelJSONUsingGET", notes = "", response = ObjectNode.class, authorizations = {
@@ -119,16 +74,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ObjectNode
-> getModelJSONUsingGET(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-);
+    ResponseEntity<ObjectNode> getModelJSONUsingGET(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId);
 
 
     @ApiOperation(value = "Get a model's thumbnail image", nickname = "getModelThumbnailUsingGET", notes = "", response = byte[].class, responseContainer = "List", authorizations = {
@@ -140,16 +86,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<byte[]>
-> getModelThumbnailUsingGET(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-);
+    ResponseEntity<List<byte[]>> getModelThumbnailUsingGET(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId);
 
 
     @ApiOperation(value = "Get a model", nickname = "getModelUsingGET", notes = "Models act as containers for process, form, decision table and app definitions", response = ModelRepresentation.class, authorizations = {
@@ -161,24 +98,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ModelRepresentation
-> getModelUsingGET(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-@ApiParam(value = "includePermissions") @Valid @RequestParam(value = "includePermissions", required = false) Boolean
- includePermissions
-
-
-
-
-);
+    ResponseEntity<ModelRepresentation> getModelUsingGET(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "includePermissions") @Valid @RequestParam(value = "includePermissions", required = false) Boolean includePermissions);
 
 
     @ApiOperation(value = "List process definition models shared with the current user", nickname = "getModelsToIncludeInAppDefinitionUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, authorizations = {
@@ -190,8 +110,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationModelRepresentation
-> getModelsToIncludeInAppDefinitionUsingGET();
+    ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelsToIncludeInAppDefinitionUsingGET();
 
 
     @ApiOperation(value = "List models (process, form, decision rule or app)", nickname = "getModelsUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, authorizations = {
@@ -203,40 +122,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationModelRepresentation
-> getModelsUsingGET(
-
-@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-,
-
-@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String
- sort
-
-
-
-
-,
-
-@ApiParam(value = "modelType") @Valid @RequestParam(value = "modelType", required = false) Integer
- modelType
-
-
-
-
-,
-
-@ApiParam(value = "referenceId") @Valid @RequestParam(value = "referenceId", required = false) Long
- referenceId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelsUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter,@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort,@ApiParam(value = "modelType") @Valid @RequestParam(value = "modelType", required = false) Integer modelType,@ApiParam(value = "referenceId") @Valid @RequestParam(value = "referenceId", required = false) Long referenceId);
 
 
     @ApiOperation(value = "Create a new version of a model", nickname = "importNewVersionUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
@@ -248,21 +134,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<ModelRepresentation
-> importNewVersionUsingPOST(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-
-@ApiParam(value = "file detail") @PathVariable("file") MultipartFile file
-);
+    ResponseEntity<ModelRepresentation> importNewVersionUsingPOST(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "file detail") @PathVariable("file") MultipartFile file);
 
 
     @ApiOperation(value = "Import a BPMN 2.0 XML file", nickname = "importProcessModelUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
@@ -274,13 +146,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<ModelRepresentation
-> importProcessModelUsingPOST(
-
-
-
-@ApiParam(value = "file detail") @PathVariable("file") MultipartFile file
-);
+    ResponseEntity<ModelRepresentation> importProcessModelUsingPOST(@ApiParam(value = "file detail") @PathVariable("file") MultipartFile file);
 
 
     @ApiOperation(value = "Update model content", nickname = "saveModelUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
@@ -292,21 +158,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ModelRepresentation
-> saveModelUsingPOST(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-@ApiParam(value = "values" ,required=true )  @Valid @RequestBody Object values
-
-);
+    ResponseEntity<ModelRepresentation> saveModelUsingPOST(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "values" ,required=true )  @Valid @RequestBody Object values);
 
 
     @ApiOperation(value = "Update a model", nickname = "updateModelUsingPUT", notes = "This method allows you to update the metadata of a model. In order to update the content of the model you will need to call the specific endpoint for that model type.", response = ModelRepresentation.class, authorizations = {
@@ -318,21 +170,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<ModelRepresentation
-> updateModelUsingPUT(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-@ApiParam(value = "updatedModel" ,required=true )  @Valid @RequestBody ModelRepresentation updatedModel
-
-);
+    ResponseEntity<ModelRepresentation> updateModelUsingPUT(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "updatedModel" ,required=true )  @Valid @RequestBody ModelRepresentation updatedModel);
 
 
     @ApiOperation(value = "Validate model content", nickname = "validateModelUsingPOST", notes = "", response = ValidationErrorRepresentation.class, responseContainer = "List", authorizations = {
@@ -344,20 +182,6 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/x-www-form-urlencoded",
         method = RequestMethod.POST)
-    ResponseEntity<List<ValidationErrorRepresentation>
-> validateModelUsingPOST(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-@ApiParam(value = "values"  )  @Valid @RequestBody Object values
-
-);
+    ResponseEntity<List<ValidationErrorRepresentation>> validateModelUsingPOST(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "values"  )  @Valid @RequestBody Object values);
 
 }

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TenantRepresentation   {
   @JsonProperty("active")
   private Boolean active = null;
@@ -53,7 +52,6 @@ public class TenantRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isActive() {
     return active;
   }
@@ -75,7 +73,6 @@ public class TenantRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -96,7 +93,6 @@ public class TenantRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDomain() {
     return domain;
   }
@@ -115,7 +111,6 @@ public class TenantRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -139,7 +134,6 @@ public class TenantRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdate() {
     return lastUpdate;
   }
@@ -158,7 +152,6 @@ public class TenantRepresentation   {
    * @return logoId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getLogoId() {
@@ -181,7 +174,6 @@ public class TenantRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getMaxUsers() {
     return maxUsers;
   }
@@ -200,7 +192,6 @@ public class TenantRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {

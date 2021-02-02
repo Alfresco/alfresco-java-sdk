@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ResultListDataRepresentationAppDeploymentRepresentation   {
   @JsonProperty("data")
   @Valid
@@ -53,7 +52,6 @@ public class ResultListDataRepresentationAppDeploymentRepresentation   {
 
   @Valid
 
-
   public List<AppDeploymentRepresentation> getData() {
     return data;
   }
@@ -72,7 +70,6 @@ public class ResultListDataRepresentationAppDeploymentRepresentation   {
    * @return size
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getSize() {
@@ -95,7 +92,6 @@ public class ResultListDataRepresentationAppDeploymentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getStart() {
     return start;
   }
@@ -114,7 +110,6 @@ public class ResultListDataRepresentationAppDeploymentRepresentation   {
    * @return total
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getTotal() {

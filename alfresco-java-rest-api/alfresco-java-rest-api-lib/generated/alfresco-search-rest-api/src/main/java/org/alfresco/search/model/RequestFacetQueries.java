@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Facet queries to include")
 @Validated
 
-
 public class RequestFacetQueries extends ArrayList<RequestFacetQueriesInner>  {
 
   @Override

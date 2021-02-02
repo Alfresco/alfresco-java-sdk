@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AccountRepresentation   {
   @JsonProperty("authorizationUrl")
   private String authorizationUrl = null;
@@ -43,7 +42,6 @@ public class AccountRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAuthorizationUrl() {
     return authorizationUrl;
   }
@@ -62,7 +60,6 @@ public class AccountRepresentation   {
    * @return authorized
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isAuthorized() {
@@ -85,7 +82,6 @@ public class AccountRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isMetaDataAllowed() {
     return metaDataAllowed;
   }
@@ -106,7 +102,6 @@ public class AccountRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -125,7 +120,6 @@ public class AccountRepresentation   {
    * @return serviceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getServiceId() {

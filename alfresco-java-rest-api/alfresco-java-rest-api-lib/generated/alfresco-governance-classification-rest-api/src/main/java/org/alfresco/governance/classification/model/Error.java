@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Error   {
   @JsonProperty("error")
   private ErrorError error = null;
@@ -33,7 +32,6 @@ public class Error   {
   @NotNull
 
   @Valid
-
 
   public ErrorError getError() {
     return error;

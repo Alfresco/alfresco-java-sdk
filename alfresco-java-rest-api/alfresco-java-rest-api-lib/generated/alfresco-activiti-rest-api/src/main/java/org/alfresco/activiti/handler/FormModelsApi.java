@@ -40,16 +40,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<FormDefinitionRepresentation
-> getFormEditorJsonUsingGET(
-
-
-@ApiParam(value = "formId",required=true) @PathVariable("formId") Long
- formId
-
-
-
-);
+    ResponseEntity<FormDefinitionRepresentation> getFormEditorJsonUsingGET(@ApiParam(value = "formId",required=true) @PathVariable("formId") Long formId);
 
 
     @ApiOperation(value = "Get form history", nickname = "getFormHistoryUsingGET", notes = "", response = FormRepresentation.class, authorizations = {
@@ -61,24 +52,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<FormRepresentation
-> getFormHistoryUsingGET(
-
-
-@ApiParam(value = "formId",required=true) @PathVariable("formId") Long
- formId
-
-
-
-,
-
-
-@ApiParam(value = "formHistoryId",required=true) @PathVariable("formHistoryId") Long
- formHistoryId
-
-
-
-);
+    ResponseEntity<FormRepresentation> getFormHistoryUsingGET(@ApiParam(value = "formId",required=true) @PathVariable("formId") Long formId,@ApiParam(value = "formHistoryId",required=true) @PathVariable("formHistoryId") Long formHistoryId);
 
 
     @ApiOperation(value = "Get a form model", nickname = "getFormUsingGET", notes = "", response = FormRepresentation.class, authorizations = {
@@ -90,16 +64,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<FormRepresentation
-> getFormUsingGET(
-
-
-@ApiParam(value = "formId",required=true) @PathVariable("formId") Long
- formId
-
-
-
-);
+    ResponseEntity<FormRepresentation> getFormUsingGET(@ApiParam(value = "formId",required=true) @PathVariable("formId") Long formId);
 
 
     @ApiOperation(value = "Get a form", nickname = "getFormUsingGET1", notes = "", response = RuntimeFormRepresentation.class, authorizations = {
@@ -111,16 +76,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<RuntimeFormRepresentation
-> getFormUsingGET1(
-
-
-@ApiParam(value = "formId",required=true) @PathVariable("formId") Long
- formId
-
-
-
-);
+    ResponseEntity<RuntimeFormRepresentation> getFormUsingGET1(@ApiParam(value = "formId",required=true) @PathVariable("formId") Long formId);
 
 
     @ApiOperation(value = "Get forms", nickname = "getFormsUsingGET", notes = "", response = FormRepresentation.class, responseContainer = "List", authorizations = {
@@ -132,16 +88,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<FormRepresentation>
-> getFormsUsingGET(@NotNull 
-
-@ApiParam(value = "formId", required = true) @Valid @RequestParam(value = "formId", required = true) List<String>
- formId
-
-
-
-
-);
+    ResponseEntity<List<FormRepresentation>> getFormsUsingGET(@NotNull @ApiParam(value = "formId", required = true) @Valid @RequestParam(value = "formId", required = true) List<String> formId);
 
 
     @ApiOperation(value = "List form models", nickname = "getFormsUsingGET1", notes = "", response = ResultListDataRepresentationFormRepresentation.class, authorizations = {
@@ -153,8 +100,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationFormRepresentation
-> getFormsUsingGET1();
+    ResponseEntity<ResultListDataRepresentationFormRepresentation> getFormsUsingGET1();
 
 
     @ApiOperation(value = "Query forms", nickname = "getFormsUsingGET2", notes = "", response = ResultListDataRepresentationRuntimeFormRepresentation.class, authorizations = {
@@ -166,64 +112,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationRuntimeFormRepresentation
-> getFormsUsingGET2(
-
-@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String
- nameLike
-
-
-
-
-,
-
-@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long
- appId
-
-
-
-
-,
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-,
-
-@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer
- start
-
-
-
-
-,
-
-@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String
- sort
-
-
-
-
-,
-
-@ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String
- order
-
-
-
-
-,
-
-@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer
- size
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationRuntimeFormRepresentation> getFormsUsingGET2(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike,@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId,@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId,@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start,@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort,@ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order,@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
     @ApiOperation(value = "Update form model content", nickname = "saveFormUsingPUT", notes = "", response = FormRepresentation.class, authorizations = {
@@ -235,21 +124,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<FormRepresentation
-> saveFormUsingPUT(
-
-
-@ApiParam(value = "ID of the form to update",required=true) @PathVariable("formId") Long
- formId
-
-
-
-,
-
-
-@ApiParam(value = "saveRepresentation" ,required=true )  @Valid @RequestBody FormSaveRepresentation saveRepresentation
-
-);
+    ResponseEntity<FormRepresentation> saveFormUsingPUT(@ApiParam(value = "ID of the form to update",required=true) @PathVariable("formId") Long formId,@ApiParam(value = "saveRepresentation" ,required=true )  @Valid @RequestBody FormSaveRepresentation saveRepresentation);
 
 
     @ApiOperation(value = "Validate form model content", nickname = "validateModelUsingPUT1", notes = "The model content to be validated must be specified in the POST body", response = ValidationErrorRepresentation.class, responseContainer = "List", authorizations = {
@@ -261,20 +136,6 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<List<ValidationErrorRepresentation>
-> validateModelUsingPUT1(
-
-
-@ApiParam(value = "formId",required=true) @PathVariable("formId") Long
- formId
-
-
-
-,
-
-
-@ApiParam(value = "saveRepresentation" ,required=true )  @Valid @RequestBody FormSaveRepresentation saveRepresentation
-
-);
+    ResponseEntity<List<ValidationErrorRepresentation>> validateModelUsingPUT1(@ApiParam(value = "formId",required=true) @PathVariable("formId") Long formId,@ApiParam(value = "saveRepresentation" ,required=true )  @Valid @RequestBody FormSaveRepresentation saveRepresentation);
 
 }

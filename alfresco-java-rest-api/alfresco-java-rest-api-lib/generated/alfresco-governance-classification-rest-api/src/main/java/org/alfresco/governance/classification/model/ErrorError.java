@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ErrorError   {
   @JsonProperty("errorKey")
   private String errorKey = null;
@@ -43,7 +42,6 @@ public class ErrorError   {
   @ApiModelProperty(value = "")
 
 
-
   public String getErrorKey() {
     return errorKey;
   }
@@ -63,7 +61,6 @@ public class ErrorError   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Integer getStatusCode() {
@@ -87,7 +84,6 @@ public class ErrorError   {
   @NotNull
 
 
-
   public String getBriefSummary() {
     return briefSummary;
   }
@@ -109,7 +105,6 @@ public class ErrorError   {
   @NotNull
 
 
-
   public String getStackTrace() {
     return stackTrace;
   }
@@ -129,7 +124,6 @@ public class ErrorError   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getDescriptionURL() {

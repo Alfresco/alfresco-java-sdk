@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ResultBuckets   {
   @JsonProperty("label")
   private String label = null;
@@ -36,7 +35,6 @@ public class ResultBuckets   {
    * @return label
   **/
   @ApiModelProperty(value = "The field name or its explicit label, if provided on the request")
-
 
 
   public String getLabel() {
@@ -67,7 +65,6 @@ public class ResultBuckets   {
   @ApiModelProperty(value = "An array of buckets and values")
 
   @Valid
-
 
   public List<ResultBucketsBuckets> getBuckets() {
     return buckets;

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CommentAuditInfo   {
   @JsonProperty("author")
   private String author = null;
@@ -32,7 +31,6 @@ public class CommentAuditInfo   {
    * @return author
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAuthor() {
@@ -53,7 +51,6 @@ public class CommentAuditInfo   {
    * @return message
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMessage() {

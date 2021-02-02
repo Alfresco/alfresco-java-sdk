@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RMSiteBodyCreate   {
   @JsonProperty("title")
   private String title = null;
@@ -70,7 +69,6 @@ public class RMSiteBodyCreate   {
   @NotNull
 
 
-
   public String getTitle() {
     return title;
   }
@@ -91,7 +89,6 @@ public class RMSiteBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -110,7 +107,6 @@ public class RMSiteBodyCreate   {
    * @return compliance
   **/
   @ApiModelProperty(value = "")
-
 
 
   public ComplianceEnum getCompliance() {

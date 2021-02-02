@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RMSiteEntry   {
   @JsonProperty("entry")
   private RMSite entry = null;
@@ -33,7 +32,6 @@ public class RMSiteEntry   {
   @NotNull
 
   @Valid
-
 
   public RMSite getEntry() {
     return entry;

@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TaskQueryRepresentation   {
   @JsonProperty("appDefinitionId")
   private Long appDefinitionId = null;
@@ -146,7 +145,6 @@ public class TaskQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getAppDefinitionId() {
     return appDefinitionId;
   }
@@ -165,7 +163,6 @@ public class TaskQueryRepresentation   {
    * @return assignment
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAssignment() {
@@ -189,7 +186,6 @@ public class TaskQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueAfter() {
     return dueAfter;
   }
@@ -211,7 +207,6 @@ public class TaskQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueBefore() {
     return dueBefore;
   }
@@ -230,7 +225,6 @@ public class TaskQueryRepresentation   {
    * @return includeProcessInstance
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIncludeProcessInstance() {
@@ -253,7 +247,6 @@ public class TaskQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIncludeProcessVariables() {
     return includeProcessVariables;
   }
@@ -272,7 +265,6 @@ public class TaskQueryRepresentation   {
    * @return includeTaskLocalVariables
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIncludeTaskLocalVariables() {
@@ -295,7 +287,6 @@ public class TaskQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getPage() {
     return page;
   }
@@ -314,7 +305,6 @@ public class TaskQueryRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -337,7 +327,6 @@ public class TaskQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessInstanceId() {
     return processInstanceId;
   }
@@ -356,7 +345,6 @@ public class TaskQueryRepresentation   {
    * @return size
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getSize() {
@@ -379,7 +367,6 @@ public class TaskQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public SortEnum getSort() {
     return sort;
   }
@@ -398,7 +385,6 @@ public class TaskQueryRepresentation   {
    * @return start
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getStart() {
@@ -421,7 +407,6 @@ public class TaskQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public StateEnum getState() {
     return state;
   }
@@ -442,7 +427,6 @@ public class TaskQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskId() {
     return taskId;
   }
@@ -461,7 +445,6 @@ public class TaskQueryRepresentation   {
    * @return text
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getText() {

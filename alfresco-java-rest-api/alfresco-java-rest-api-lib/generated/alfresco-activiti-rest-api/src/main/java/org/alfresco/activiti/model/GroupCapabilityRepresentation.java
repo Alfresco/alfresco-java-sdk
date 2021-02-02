@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupCapabilityRepresentation   {
   @JsonProperty("id")
   private Long id = null;
@@ -32,7 +31,6 @@ public class GroupCapabilityRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -53,7 +51,6 @@ public class GroupCapabilityRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {

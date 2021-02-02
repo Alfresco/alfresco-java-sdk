@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuthConfigurationRepresentation   {
   @JsonProperty("authUrl")
   private String authUrl = null;
@@ -40,7 +39,6 @@ public class AuthConfigurationRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAuthUrl() {
     return authUrl;
   }
@@ -59,7 +57,6 @@ public class AuthConfigurationRepresentation   {
    * @return clientId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getClientId() {
@@ -82,7 +79,6 @@ public class AuthConfigurationRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getRealm() {
     return realm;
   }
@@ -101,7 +97,6 @@ public class AuthConfigurationRepresentation   {
    * @return useBrowserLogout
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isUseBrowserLogout() {

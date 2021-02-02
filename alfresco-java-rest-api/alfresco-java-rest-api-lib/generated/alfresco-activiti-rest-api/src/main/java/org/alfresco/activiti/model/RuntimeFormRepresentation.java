@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RuntimeFormRepresentation   {
   @JsonProperty("appDefinitionId")
   private Long appDefinitionId = null;
@@ -49,7 +48,6 @@ public class RuntimeFormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getAppDefinitionId() {
     return appDefinitionId;
   }
@@ -68,7 +66,6 @@ public class RuntimeFormRepresentation   {
    * @return appDeploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getAppDeploymentId() {
@@ -91,7 +88,6 @@ public class RuntimeFormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -110,7 +106,6 @@ public class RuntimeFormRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -133,7 +128,6 @@ public class RuntimeFormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getModelId() {
     return modelId;
   }
@@ -154,7 +148,6 @@ public class RuntimeFormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -173,7 +166,6 @@ public class RuntimeFormRepresentation   {
    * @return tenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getTenantId() {

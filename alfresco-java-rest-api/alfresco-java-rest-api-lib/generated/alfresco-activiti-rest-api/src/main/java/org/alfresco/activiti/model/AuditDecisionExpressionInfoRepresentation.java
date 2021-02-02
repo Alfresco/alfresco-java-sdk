@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditDecisionExpressionInfoRepresentation   {
   @JsonProperty("type")
   private String type = null;
@@ -37,7 +36,6 @@ public class AuditDecisionExpressionInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getType() {
     return type;
   }
@@ -58,7 +56,6 @@ public class AuditDecisionExpressionInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Object getValue() {
     return value;
   }
@@ -77,7 +74,6 @@ public class AuditDecisionExpressionInfoRepresentation   {
    * @return variable
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getVariable() {

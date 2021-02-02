@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormScopeRepresentation   {
   @JsonProperty("description")
   private String description = null;
@@ -53,7 +52,6 @@ public class FormScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -82,7 +80,6 @@ public class FormScopeRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<FormFieldRepresentation> getFieldVariables() {
     return fieldVariables;
@@ -113,7 +110,6 @@ public class FormScopeRepresentation   {
 
   @Valid
 
-
   public List<FormFieldRepresentation> getFields() {
     return fields;
   }
@@ -134,7 +130,6 @@ public class FormScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -153,7 +148,6 @@ public class FormScopeRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -184,7 +178,6 @@ public class FormScopeRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<FormOutcomeRepresentation> getOutcomes() {
     return outcomes;

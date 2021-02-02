@@ -21,7 +21,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TransferChildAssociation   {
   @JsonProperty("id")
   private String id = null;
@@ -86,7 +85,6 @@ public class TransferChildAssociation   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -106,7 +104,6 @@ public class TransferChildAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -130,7 +127,6 @@ public class TransferChildAssociation   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -150,7 +146,6 @@ public class TransferChildAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -173,7 +168,6 @@ public class TransferChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsRecordFolder() {
     return isRecordFolder;
   }
@@ -194,7 +188,6 @@ public class TransferChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsRecord() {
     return isRecord;
   }
@@ -213,7 +206,6 @@ public class TransferChildAssociation   {
    * @return isClosed
   **/
   @ApiModelProperty(value = "Indicates if the record folder is closed")
-
 
 
   public Boolean isIsClosed() {
@@ -238,7 +230,6 @@ public class TransferChildAssociation   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -260,7 +251,6 @@ public class TransferChildAssociation   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -284,7 +274,6 @@ public class TransferChildAssociation   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -306,7 +295,6 @@ public class TransferChildAssociation   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getCreatedByUser() {
     return createdByUser;
@@ -336,7 +324,6 @@ public class TransferChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -355,7 +342,6 @@ public class TransferChildAssociation   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -386,7 +372,6 @@ public class TransferChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -408,7 +393,6 @@ public class TransferChildAssociation   {
 
   @Valid
 
-
   public PathInfo getPath() {
     return path;
   }
@@ -429,7 +413,6 @@ public class TransferChildAssociation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ChildAssociationInfo getAssociation() {
     return association;

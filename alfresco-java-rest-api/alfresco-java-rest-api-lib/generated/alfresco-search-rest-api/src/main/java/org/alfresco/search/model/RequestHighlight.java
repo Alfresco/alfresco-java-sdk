@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Request that highlight fragments to be added to result set rows The properties reflect SOLR highlighting parameters. ")
 @Validated
 
-
 public class RequestHighlight   {
   @JsonProperty("prefix")
   private String prefix = null;
@@ -57,7 +56,6 @@ public class RequestHighlight   {
   @ApiModelProperty(value = "The string used to mark the start of a highlight in a fragment.")
 
 
-
   public String getPrefix() {
     return prefix;
   }
@@ -76,7 +74,6 @@ public class RequestHighlight   {
    * @return postfix
   **/
   @ApiModelProperty(value = "The string used to mark the end of a highlight in a fragment.")
-
 
 
   public String getPostfix() {
@@ -99,7 +96,6 @@ public class RequestHighlight   {
   @ApiModelProperty(value = "The maximum number of distinct highlight snippets to return for each highlight field.")
 
 
-
   public Integer getSnippetCount() {
     return snippetCount;
   }
@@ -118,7 +114,6 @@ public class RequestHighlight   {
    * @return fragmentSize
   **/
   @ApiModelProperty(value = "The character length of each snippet.")
-
 
 
   public Integer getFragmentSize() {
@@ -141,7 +136,6 @@ public class RequestHighlight   {
   @ApiModelProperty(value = "The number of characters to be considered for highlighting. Matches after this count will not be shown.")
 
 
-
   public Integer getMaxAnalyzedChars() {
     return maxAnalyzedChars;
   }
@@ -162,7 +156,6 @@ public class RequestHighlight   {
   @ApiModelProperty(value = "If fragments over lap they can be  merged into one larger fragment")
 
 
-
   public Boolean isMergeContiguous() {
     return mergeContiguous;
   }
@@ -181,7 +174,6 @@ public class RequestHighlight   {
    * @return usePhraseHighlighter
   **/
   @ApiModelProperty(value = "Should phrases be identified.")
-
 
 
   public Boolean isUsePhraseHighlighter() {
@@ -212,7 +204,6 @@ public class RequestHighlight   {
   @ApiModelProperty(value = "The fields to highlight and field specific configuration properties for each field")
 
   @Valid
-
 
   public List<RequestHighlightFields> getFields() {
     return fields;

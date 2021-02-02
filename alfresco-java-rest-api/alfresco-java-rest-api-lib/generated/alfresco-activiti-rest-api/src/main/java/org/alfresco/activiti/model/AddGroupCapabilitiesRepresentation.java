@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AddGroupCapabilitiesRepresentation   {
   @JsonProperty("capabilities")
   @Valid
@@ -40,7 +39,6 @@ public class AddGroupCapabilitiesRepresentation   {
    * @return capabilities
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getCapabilities() {

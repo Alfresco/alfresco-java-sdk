@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FilePlanEntry   {
   @JsonProperty("entry")
   private FilePlan entry = null;
@@ -33,7 +32,6 @@ public class FilePlanEntry   {
   @NotNull
 
   @Valid
-
 
   public FilePlan getEntry() {
     return entry;

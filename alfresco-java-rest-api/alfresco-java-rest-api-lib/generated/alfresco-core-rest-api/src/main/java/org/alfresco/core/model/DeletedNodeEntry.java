@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeletedNodeEntry   {
   @JsonProperty("entry")
   private DeletedNode entry = null;
@@ -32,7 +31,6 @@ public class DeletedNodeEntry   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public DeletedNode getEntry() {
     return entry;

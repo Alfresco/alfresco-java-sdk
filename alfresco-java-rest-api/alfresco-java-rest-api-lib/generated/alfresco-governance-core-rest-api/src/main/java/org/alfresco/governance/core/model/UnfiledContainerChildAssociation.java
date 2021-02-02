@@ -21,7 +21,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UnfiledContainerChildAssociation   {
   @JsonProperty("id")
   private String id = null;
@@ -83,7 +82,6 @@ public class UnfiledContainerChildAssociation   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -103,7 +101,6 @@ public class UnfiledContainerChildAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -127,7 +124,6 @@ public class UnfiledContainerChildAssociation   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -147,7 +143,6 @@ public class UnfiledContainerChildAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -171,7 +166,6 @@ public class UnfiledContainerChildAssociation   {
   @NotNull
 
 
-
   public Boolean isIsUnfiledRecordFolder() {
     return isUnfiledRecordFolder;
   }
@@ -191,7 +185,6 @@ public class UnfiledContainerChildAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isIsRecord() {
@@ -216,7 +209,6 @@ public class UnfiledContainerChildAssociation   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -238,7 +230,6 @@ public class UnfiledContainerChildAssociation   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -262,7 +253,6 @@ public class UnfiledContainerChildAssociation   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -284,7 +274,6 @@ public class UnfiledContainerChildAssociation   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getCreatedByUser() {
     return createdByUser;
@@ -314,7 +303,6 @@ public class UnfiledContainerChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -333,7 +321,6 @@ public class UnfiledContainerChildAssociation   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -364,7 +351,6 @@ public class UnfiledContainerChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -386,7 +372,6 @@ public class UnfiledContainerChildAssociation   {
 
   @Valid
 
-
   public PathInfo getPath() {
     return path;
   }
@@ -407,7 +392,6 @@ public class UnfiledContainerChildAssociation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ChildAssociationInfo getAssociation() {
     return association;

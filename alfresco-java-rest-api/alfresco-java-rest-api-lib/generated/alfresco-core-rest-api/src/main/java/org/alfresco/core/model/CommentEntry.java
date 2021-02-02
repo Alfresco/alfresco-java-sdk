@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CommentEntry   {
   @JsonProperty("entry")
   private Comment entry = null;
@@ -33,7 +32,6 @@ public class CommentEntry   {
   @NotNull
 
   @Valid
-
 
   public Comment getEntry() {
     return entry;

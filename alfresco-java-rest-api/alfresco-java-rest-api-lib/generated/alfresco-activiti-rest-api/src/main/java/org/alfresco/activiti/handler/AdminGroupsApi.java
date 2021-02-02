@@ -39,16 +39,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> activateUsingPOST(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-);
+    ResponseEntity<Void> activateUsingPOST(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId);
 
 
     @ApiOperation(value = "Add users to a group", nickname = "addAllUsersToGroupUsingPOST", notes = "", authorizations = {
@@ -60,16 +51,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> addAllUsersToGroupUsingPOST(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-);
+    ResponseEntity<Void> addAllUsersToGroupUsingPOST(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId);
 
 
     @ApiOperation(value = "Add capabilities to a group", nickname = "addGroupCapabilitiesUsingPOST", notes = "", authorizations = {
@@ -81,21 +63,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> addGroupCapabilitiesUsingPOST(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-
-@ApiParam(value = "addGroupCapabilitiesRepresentation" ,required=true )  @Valid @RequestBody AddGroupCapabilitiesRepresentation addGroupCapabilitiesRepresentation
-
-);
+    ResponseEntity<Void> addGroupCapabilitiesUsingPOST(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "addGroupCapabilitiesRepresentation" ,required=true )  @Valid @RequestBody AddGroupCapabilitiesRepresentation addGroupCapabilitiesRepresentation);
 
 
     @ApiOperation(value = "Add a user to a group", nickname = "addGroupMemberUsingPOST", notes = "", authorizations = {
@@ -107,24 +75,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> addGroupMemberUsingPOST(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-);
+    ResponseEntity<Void> addGroupMemberUsingPOST(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId);
 
 
     @ApiOperation(value = "Get a related group", nickname = "addRelatedGroupUsingPOST", notes = "", authorizations = {
@@ -136,32 +87,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> addRelatedGroupUsingPOST(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-
-@ApiParam(value = "relatedGroupId",required=true) @PathVariable("relatedGroupId") Long
- relatedGroupId
-
-
-
-,@NotNull 
-
-@ApiParam(value = "type", required = true) @Valid @RequestParam(value = "type", required = true) String
- type
-
-
-
-
-);
+    ResponseEntity<Void> addRelatedGroupUsingPOST(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "relatedGroupId",required=true) @PathVariable("relatedGroupId") Long relatedGroupId,@NotNull @ApiParam(value = "type", required = true) @Valid @RequestParam(value = "type", required = true) String type);
 
 
     @ApiOperation(value = "Create a group", nickname = "createNewGroupUsingPOST", notes = "", response = LightGroupRepresentation.class, authorizations = {
@@ -173,13 +99,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<LightGroupRepresentation
-> createNewGroupUsingPOST(
-
-
-@ApiParam(value = "groupRepresentation" ,required=true )  @Valid @RequestBody GroupRepresentation groupRepresentation
-
-);
+    ResponseEntity<LightGroupRepresentation> createNewGroupUsingPOST(@ApiParam(value = "groupRepresentation" ,required=true )  @Valid @RequestBody GroupRepresentation groupRepresentation);
 
 
     @ApiOperation(value = "Remove a capability from a group", nickname = "deleteGroupCapabilityUsingDELETE", notes = "", authorizations = {
@@ -191,24 +111,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteGroupCapabilityUsingDELETE(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-
-@ApiParam(value = "groupCapabilityId",required=true) @PathVariable("groupCapabilityId") Long
- groupCapabilityId
-
-
-
-);
+    ResponseEntity<Void> deleteGroupCapabilityUsingDELETE(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "groupCapabilityId",required=true) @PathVariable("groupCapabilityId") Long groupCapabilityId);
 
 
     @ApiOperation(value = "Delete a member from a group", nickname = "deleteGroupMemberUsingDELETE", notes = "", authorizations = {
@@ -220,24 +123,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteGroupMemberUsingDELETE(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-);
+    ResponseEntity<Void> deleteGroupMemberUsingDELETE(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId);
 
 
     @ApiOperation(value = "Delete a group", nickname = "deleteGroupUsingDELETE", notes = "", authorizations = {
@@ -249,16 +135,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteGroupUsingDELETE(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-);
+    ResponseEntity<Void> deleteGroupUsingDELETE(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId);
 
 
     @ApiOperation(value = "Delete a related group", nickname = "deleteRelatedGroupUsingDELETE", notes = "", authorizations = {
@@ -270,24 +147,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteRelatedGroupUsingDELETE(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-
-@ApiParam(value = "relatedGroupId",required=true) @PathVariable("relatedGroupId") Long
- relatedGroupId
-
-
-
-);
+    ResponseEntity<Void> deleteRelatedGroupUsingDELETE(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "relatedGroupId",required=true) @PathVariable("relatedGroupId") Long relatedGroupId);
 
 
     @ApiOperation(value = "List group capabilities", nickname = "getCapabilitiesUsingGET", notes = "", response = String.class, responseContainer = "List", authorizations = {
@@ -299,16 +159,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<String>
-> getCapabilitiesUsingGET(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-);
+    ResponseEntity<List<String>> getCapabilitiesUsingGET(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId);
 
 
     @ApiOperation(value = "Get group members", nickname = "getGroupUsersUsingGET", notes = "", response = ResultListDataRepresentationLightUserRepresentation.class, authorizations = {
@@ -320,40 +171,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationLightUserRepresentation
-> getGroupUsersUsingGET(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-,
-
-@ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer
- page
-
-
-
-
-,
-
-@ApiParam(value = "pageSize") @Valid @RequestParam(value = "pageSize", required = false) Integer
- pageSize
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getGroupUsersUsingGET(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter,@ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page,@ApiParam(value = "pageSize") @Valid @RequestParam(value = "pageSize", required = false) Integer pageSize);
 
 
     @ApiOperation(value = "Get a group", nickname = "getGroupUsingGET", notes = "", response = AbstractGroupRepresentation.class, authorizations = {
@@ -365,32 +183,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<AbstractGroupRepresentation
-> getGroupUsingGET(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-@ApiParam(value = "includeAllUsers") @Valid @RequestParam(value = "includeAllUsers", required = false) Boolean
- includeAllUsers
-
-
-
-
-,
-
-@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean
- summary
-
-
-
-
-);
+    ResponseEntity<AbstractGroupRepresentation> getGroupUsingGET(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "includeAllUsers") @Valid @RequestParam(value = "includeAllUsers", required = false) Boolean includeAllUsers,@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
     @ApiOperation(value = "Query groups", nickname = "getGroupsUsingGET1", notes = "", response = LightGroupRepresentation.class, responseContainer = "List", authorizations = {
@@ -402,32 +195,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<LightGroupRepresentation>
-> getGroupsUsingGET1(
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-,
-
-@ApiParam(value = "functional") @Valid @RequestParam(value = "functional", required = false) Boolean
- functional
-
-
-
-
-,
-
-@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean
- summary
-
-
-
-
-);
+    ResponseEntity<List<LightGroupRepresentation>> getGroupsUsingGET1(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId,@ApiParam(value = "functional") @Valid @RequestParam(value = "functional", required = false) Boolean functional,@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
     @ApiOperation(value = "Get related groups", nickname = "getRelatedGroupsUsingGET", notes = "", response = LightGroupRepresentation.class, responseContainer = "List", authorizations = {
@@ -439,16 +207,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<LightGroupRepresentation>
-> getRelatedGroupsUsingGET(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-);
+    ResponseEntity<List<LightGroupRepresentation>> getRelatedGroupsUsingGET(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId);
 
 
     @ApiOperation(value = "Update a group", nickname = "updateGroupUsingPUT", notes = "", response = LightGroupRepresentation.class, authorizations = {
@@ -460,20 +219,6 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<LightGroupRepresentation
-> updateGroupUsingPUT(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-,
-
-
-@ApiParam(value = "updateGroupRepresentation" ,required=true )  @Valid @RequestBody UpdateGroupRepresentation updateGroupRepresentation
-
-);
+    ResponseEntity<LightGroupRepresentation> updateGroupUsingPUT(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId,@ApiParam(value = "updateGroupRepresentation" ,required=true )  @Valid @RequestBody UpdateGroupRepresentation updateGroupRepresentation);
 
 }

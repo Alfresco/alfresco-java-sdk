@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CommentRepresentation   {
   @JsonProperty("created")
   private OffsetDateTime created = null;
@@ -43,7 +42,6 @@ public class CommentRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -65,7 +63,6 @@ public class CommentRepresentation   {
 
   @Valid
 
-
   public LightUserRepresentation getCreatedBy() {
     return createdBy;
   }
@@ -86,7 +83,6 @@ public class CommentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -105,7 +101,6 @@ public class CommentRepresentation   {
    * @return message
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMessage() {

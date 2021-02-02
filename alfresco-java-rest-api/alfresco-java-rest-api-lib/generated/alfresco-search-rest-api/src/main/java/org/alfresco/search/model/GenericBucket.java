@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A bucket of facet results")
 @Validated
 
-
 public class GenericBucket   {
   @JsonProperty("label")
   private String label = null;
@@ -53,7 +52,6 @@ public class GenericBucket   {
   @ApiModelProperty(value = "The bucket label")
 
 
-
   public String getLabel() {
     return label;
   }
@@ -74,7 +72,6 @@ public class GenericBucket   {
   @ApiModelProperty(value = "The filter query you can use to apply this facet")
 
 
-
   public String getFilterQuery() {
     return filterQuery;
   }
@@ -93,7 +90,6 @@ public class GenericBucket   {
    * @return display
   **/
   @ApiModelProperty(value = "An optional field for additional display information")
-
 
 
   public Object getDisplay() {
@@ -125,7 +121,6 @@ public class GenericBucket   {
 
   @Valid
 
-
   public List<GenericMetric> getMetrics() {
     return metrics;
   }
@@ -154,7 +149,6 @@ public class GenericBucket   {
   @ApiModelProperty(value = "Additional list of nested facets")
 
 
-
   public List<Object> getFacets() {
     return facets;
   }
@@ -175,7 +169,6 @@ public class GenericBucket   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public GenericBucketBucketInfo getBucketInfo() {
     return bucketInfo;

@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RecordCategory   {
   @JsonProperty("id")
   private String id = null;
@@ -75,7 +74,6 @@ public class RecordCategory   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -95,7 +93,6 @@ public class RecordCategory   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -119,7 +116,6 @@ public class RecordCategory   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -141,7 +137,6 @@ public class RecordCategory   {
   @NotNull
 
 
-
   public String getNodeType() {
     return nodeType;
   }
@@ -160,7 +155,6 @@ public class RecordCategory   {
    * @return hasRetentionSchedule
   **/
   @ApiModelProperty(value = "Indicates if the record category has a retention schedule defined")
-
 
 
   public Boolean isHasRetentionSchedule() {
@@ -185,7 +179,6 @@ public class RecordCategory   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -207,7 +200,6 @@ public class RecordCategory   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -231,7 +223,6 @@ public class RecordCategory   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -253,7 +244,6 @@ public class RecordCategory   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getCreatedByUser() {
     return createdByUser;
@@ -283,7 +273,6 @@ public class RecordCategory   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -302,7 +291,6 @@ public class RecordCategory   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -333,7 +321,6 @@ public class RecordCategory   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -354,7 +341,6 @@ public class RecordCategory   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PathInfo getPath() {
     return path;

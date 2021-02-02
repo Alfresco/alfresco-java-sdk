@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SharedLink   {
   @JsonProperty("id")
   private String id = null;
@@ -81,7 +80,6 @@ public class SharedLink   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -103,7 +101,6 @@ public class SharedLink   {
 
   @Valid
 
-
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
@@ -122,7 +119,6 @@ public class SharedLink   {
    * @return nodeId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getNodeId() {
@@ -145,7 +141,6 @@ public class SharedLink   {
   @ApiModelProperty(value = "The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |.  The character . must not be used at the end of the name. ")
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -166,7 +161,6 @@ public class SharedLink   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTitle() {
     return title;
   }
@@ -185,7 +179,6 @@ public class SharedLink   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -209,7 +202,6 @@ public class SharedLink   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -230,7 +222,6 @@ public class SharedLink   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -253,7 +244,6 @@ public class SharedLink   {
 
   @Valid
 
-
   public UserInfo getSharedByUser() {
     return sharedByUser;
   }
@@ -274,7 +264,6 @@ public class SharedLink   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ContentInfo getContent() {
     return content;
@@ -302,7 +291,6 @@ public class SharedLink   {
    * @return allowableOperations
   **/
   @ApiModelProperty(value = "The allowable operations for the Quickshare link itself. See allowableOperationsOnTarget for the allowable operations pertaining to the linked content node. ")
-
 
 
   public List<String> getAllowableOperations() {
@@ -333,7 +321,6 @@ public class SharedLink   {
   @ApiModelProperty(value = "The allowable operations for the content node being shared. ")
 
 
-
   public List<String> getAllowableOperationsOnTarget() {
     return allowableOperationsOnTarget;
   }
@@ -354,7 +341,6 @@ public class SharedLink   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsFavorite() {
     return isFavorite;
   }
@@ -373,7 +359,6 @@ public class SharedLink   {
    * @return properties
   **/
   @ApiModelProperty(value = "A subset of the target node's properties, system properties and properties already available in the SharedLink are excluded. ")
-
 
 
   public Object getProperties() {
@@ -402,7 +387,6 @@ public class SharedLink   {
    * @return aspectNames
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getAspectNames() {

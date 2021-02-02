@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditEntry   {
   @JsonProperty("id")
   private String id = null;
@@ -46,7 +45,6 @@ public class AuditEntry   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -66,7 +64,6 @@ public class AuditEntry   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getAuditApplicationId() {
@@ -91,7 +88,6 @@ public class AuditEntry   {
 
   @Valid
 
-
   public UserInfo getCreatedByUser() {
     return createdByUser;
   }
@@ -114,7 +110,6 @@ public class AuditEntry   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -133,7 +128,6 @@ public class AuditEntry   {
    * @return values
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getValues() {

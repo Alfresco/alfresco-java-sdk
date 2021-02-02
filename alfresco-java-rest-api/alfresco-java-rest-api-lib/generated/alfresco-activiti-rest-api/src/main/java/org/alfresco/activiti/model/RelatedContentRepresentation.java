@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RelatedContentRepresentation   {
   @JsonProperty("contentAvailable")
   private Boolean contentAvailable = null;
@@ -72,7 +71,6 @@ public class RelatedContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isContentAvailable() {
     return contentAvailable;
   }
@@ -93,7 +91,6 @@ public class RelatedContentRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getCreated() {
     return created;
@@ -116,7 +113,6 @@ public class RelatedContentRepresentation   {
 
   @Valid
 
-
   public LightUserRepresentation getCreatedBy() {
     return createdBy;
   }
@@ -135,7 +131,6 @@ public class RelatedContentRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -158,7 +153,6 @@ public class RelatedContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isLink() {
     return link;
   }
@@ -177,7 +171,6 @@ public class RelatedContentRepresentation   {
    * @return linkUrl
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLinkUrl() {
@@ -200,7 +193,6 @@ public class RelatedContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMimeType() {
     return mimeType;
   }
@@ -219,7 +211,6 @@ public class RelatedContentRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -242,7 +233,6 @@ public class RelatedContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPreviewStatus() {
     return previewStatus;
   }
@@ -261,7 +251,6 @@ public class RelatedContentRepresentation   {
    * @return relatedContent
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isRelatedContent() {
@@ -284,7 +273,6 @@ public class RelatedContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSimpleType() {
     return simpleType;
   }
@@ -303,7 +291,6 @@ public class RelatedContentRepresentation   {
    * @return source
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getSource() {
@@ -326,7 +313,6 @@ public class RelatedContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSourceId() {
     return sourceId;
   }
@@ -345,7 +331,6 @@ public class RelatedContentRepresentation   {
    * @return thumbnailStatus
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getThumbnailStatus() {

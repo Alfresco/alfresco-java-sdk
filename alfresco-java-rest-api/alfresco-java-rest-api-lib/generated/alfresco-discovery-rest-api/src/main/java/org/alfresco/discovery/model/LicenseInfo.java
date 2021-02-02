@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class LicenseInfo   {
   @JsonProperty("issuedAt")
   private OffsetDateTime issuedAt = null;
@@ -50,7 +49,6 @@ public class LicenseInfo   {
 
   @Valid
 
-
   public OffsetDateTime getIssuedAt() {
     return issuedAt;
   }
@@ -73,7 +71,6 @@ public class LicenseInfo   {
 
   @Valid
 
-
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
@@ -93,7 +90,6 @@ public class LicenseInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Integer getRemainingDays() {
@@ -117,7 +113,6 @@ public class LicenseInfo   {
   @NotNull
 
 
-
   public String getHolder() {
     return holder;
   }
@@ -137,7 +132,6 @@ public class LicenseInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getMode() {
@@ -160,7 +154,6 @@ public class LicenseInfo   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public EntitlementsInfo getEntitlements() {
     return entitlements;

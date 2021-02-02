@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class VersionEntry   {
   @JsonProperty("entry")
   private Version entry = null;
@@ -32,7 +31,6 @@ public class VersionEntry   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Version getEntry() {
     return entry;

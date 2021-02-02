@@ -41,32 +41,7 @@ public interface TransfersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<TransferEntry
-> getTransfer(
-
-
-@ApiParam(value = "The identifier of a transfer.",required=true) @PathVariable("transferId") String
- transferId
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the transfer folder. Any optional field from the response model can be requested. For example: * allowableOperations * transferPDFIndicator * transferLocation * transferAccessionIndicator ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<TransferEntry> getTransfer(@ApiParam(value = "The identifier of a transfer.",required=true) @PathVariable("transferId") String transferId,@ApiParam(value = "Returns additional information about the transfer folder. Any optional field from the response model can be requested. For example: * allowableOperations * transferPDFIndicator * transferLocation * transferAccessionIndicator ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List transfer's children", nickname = "listTransfersChildren", notes = "Gets a list of transfer's children.  Minimal information for each child is returned by default.  You can use the **include** parameter (include=allowableOperations) to return additional information. ", response = TransferAssociationPaging.class, authorizations = {
@@ -82,55 +57,6 @@ public interface TransfersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<TransferAssociationPaging
-> listTransfersChildren(
-
-
-@ApiParam(value = "The identifier of a transfer.",required=true) @PathVariable("transferId") String
- transferId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the transfer's child. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * isClosed * isRecord * isRecordFolder * path * properties ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the specified parent **transferId**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean
- includeSource
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<TransferAssociationPaging> listTransfersChildren(@ApiParam(value = "The identifier of a transfer.",required=true) @PathVariable("transferId") String transferId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "Returns additional information about the transfer's child. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * isClosed * isRecord * isRecordFolder * path * properties ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the specified parent **transferId**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AbstractUserRepresentation   {
   @JsonProperty("company")
   private String company = null;
@@ -49,7 +48,6 @@ public class AbstractUserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getCompany() {
     return company;
   }
@@ -68,7 +66,6 @@ public class AbstractUserRepresentation   {
    * @return email
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEmail() {
@@ -91,7 +88,6 @@ public class AbstractUserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getExternalId() {
     return externalId;
   }
@@ -110,7 +106,6 @@ public class AbstractUserRepresentation   {
    * @return firstName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getFirstName() {
@@ -133,7 +128,6 @@ public class AbstractUserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -154,7 +148,6 @@ public class AbstractUserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLastName() {
     return lastName;
   }
@@ -173,7 +166,6 @@ public class AbstractUserRepresentation   {
    * @return pictureId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getPictureId() {

@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CreateProcessInstanceRepresentation   {
   @JsonProperty("businessKey")
   private String businessKey = null;
@@ -53,7 +52,6 @@ public class CreateProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getBusinessKey() {
     return businessKey;
   }
@@ -72,7 +70,6 @@ public class CreateProcessInstanceRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -95,7 +92,6 @@ public class CreateProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getOutcome() {
     return outcome;
   }
@@ -114,7 +110,6 @@ public class CreateProcessInstanceRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -137,7 +132,6 @@ public class CreateProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
@@ -156,7 +150,6 @@ public class CreateProcessInstanceRepresentation   {
    * @return values
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getValues() {
@@ -187,7 +180,6 @@ public class CreateProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<RestVariable> getVariables() {
     return variables;

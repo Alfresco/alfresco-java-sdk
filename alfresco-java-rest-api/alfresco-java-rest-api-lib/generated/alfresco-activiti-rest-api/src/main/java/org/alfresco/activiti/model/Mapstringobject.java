@@ -12,7 +12,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Mapstringobject extends HashMap<String, Object>  {
 
   @Override

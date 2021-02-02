@@ -47,16 +47,7 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteDeletedNode(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-);
+    ResponseEntity<Void> deleteDeletedNode(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId);
 
 
     @ApiOperation(value = "Get rendition information for a deleted node", nickname = "getArchivedNodeRendition", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets the rendition information for **renditionId** of file **nodeId**. ", response = RenditionEntry.class, authorizations = {
@@ -73,24 +64,7 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<RenditionEntry
-> getArchivedNodeRendition(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-
-@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String
- renditionId
-
-
-
-);
+    ResponseEntity<RenditionEntry> getArchivedNodeRendition(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String renditionId);
 
 
     @ApiOperation(value = "Get rendition content of a deleted node", nickname = "getArchivedNodeRenditionContent", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets the rendition content for **renditionId** of file **nodeId**. ", response = Resource.class, authorizations = {
@@ -110,52 +84,7 @@ public interface TrashcanApi {
         produces = "application/octet-stream", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Resource
-> getArchivedNodeRenditionContent(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-
-@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String
- renditionId
-
-
-
-,
-
-@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean
- attachment
-
-
-
-
-,
-
-@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime
- ifModifiedSince
-
-
-,
-
-@ApiParam(value = "The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. " ) @RequestHeader(value="Range", required=false) String
- range
-
-
-,
-
-@ApiParam(value = "If **true** and there is no rendition for this **nodeId** and **renditionId**, then the placeholder image for the mime type of this rendition is returned, rather than a 404 response. ", defaultValue = "false") @Valid @RequestParam(value = "placeholder", required = false, defaultValue="false") Boolean
- placeholder
-
-
-
-
-);
+    ResponseEntity<Resource> getArchivedNodeRenditionContent(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String renditionId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince,@ApiParam(value = "The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. " ) @RequestHeader(value="Range", required=false) String range,@ApiParam(value = "If **true** and there is no rendition for this **nodeId** and **renditionId**, then the placeholder image for the mime type of this rendition is returned, rather than a 404 response. ", defaultValue = "false") @Valid @RequestParam(value = "placeholder", required = false, defaultValue="false") Boolean placeholder);
 
 
     @ApiOperation(value = "Get a deleted node", nickname = "getDeletedNode", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets the specific deleted node **nodeId**. ", response = DeletedNodeEntry.class, authorizations = {
@@ -172,24 +101,7 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeletedNodeEntry
-> getDeletedNode(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-);
+    ResponseEntity<DeletedNodeEntry> getDeletedNode(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
     @ApiOperation(value = "Get deleted node content", nickname = "getDeletedNodeContent", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets the content of the deleted node with identifier **nodeId**. ", response = Resource.class, authorizations = {
@@ -209,36 +121,7 @@ public interface TrashcanApi {
         produces = "application/octet-stream", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Resource
-> getDeletedNodeContent(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean
- attachment
-
-
-
-
-,
-
-@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime
- ifModifiedSince
-
-
-,
-
-@ApiParam(value = "The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. " ) @RequestHeader(value="Range", required=false) String
- range
-
-
-);
+    ResponseEntity<Resource> getDeletedNodeContent(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince,@ApiParam(value = "The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. " ) @RequestHeader(value="Range", required=false) String range);
 
 
     @ApiOperation(value = "List renditions for a deleted node", nickname = "listDeletedNodeRenditions", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets a list of the rendition information for each rendition of the file **nodeId**, including the rendition id.  Each rendition returned has a **status**: CREATED means it is available to view or download, NOT_CREATED means the rendition can be requested.  You can use the **where** parameter to filter the returned renditions by **status**. For example, the following **where** clause will return just the CREATED renditions:  ``` (status='CREATED') ``` ", response = RenditionPaging.class, authorizations = {
@@ -255,24 +138,7 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<RenditionPaging
-> listDeletedNodeRenditions(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String
- where
-
-
-
-
-);
+    ResponseEntity<RenditionPaging> listDeletedNodeRenditions(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String where);
 
 
     @ApiOperation(value = "List deleted nodes", nickname = "listDeletedNodes", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets a list of deleted nodes for the current user.  If the current user is an administrator deleted nodes for all users will be returned.  The list of deleted nodes will be ordered with the most recently deleted node at the top of the list. ", response = DeletedNodesPaging.class, authorizations = {
@@ -287,32 +153,7 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeletedNodesPaging
-> listDeletedNodes(@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isLocked * path * properties * permissions ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-);
+    ResponseEntity<DeletedNodesPaging> listDeletedNodes(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isLocked * path * properties * permissions ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
     @ApiOperation(value = "Restore a deleted node", nickname = "restoreDeletedNode", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Attempts to restore the deleted node **nodeId** to its original location or to a new location.  If the node is successfully restored to its former primary parent, then only the  primary child association will be restored, including recursively for any primary  children. It should be noted that no other secondary child associations or peer  associations will be restored, for any of the nodes within the primary parent-child  hierarchy of restored nodes, irrespective of whether these associations were to  nodes within or outside of the restored hierarchy.   Also, any previously shared link will not be restored since it is deleted at the time  of delete of each node. ", response = NodeEntry.class, authorizations = {
@@ -331,28 +172,6 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<NodeEntry
-> restoreDeletedNode(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-,
-
-
-@ApiParam(value = "The targetParentId if the node is restored to a new location."  )  @Valid @RequestBody DeletedNodeBodyRestore deletedNodeBodyRestore
-
-);
+    ResponseEntity<NodeEntry> restoreDeletedNode(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields,@ApiParam(value = "The targetParentId if the node is restored to a new location."  )  @Valid @RequestBody DeletedNodeBodyRestore deletedNodeBodyRestore);
 
 }

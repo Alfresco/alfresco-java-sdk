@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SubmittedFormRepresentation   {
   @JsonProperty("form")
   private FormDefinitionRepresentation form = null;
@@ -56,7 +55,6 @@ public class SubmittedFormRepresentation   {
 
   @Valid
 
-
   public FormDefinitionRepresentation getForm() {
     return form;
   }
@@ -75,7 +73,6 @@ public class SubmittedFormRepresentation   {
    * @return formId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getFormId() {
@@ -98,7 +95,6 @@ public class SubmittedFormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -119,7 +115,6 @@ public class SubmittedFormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -138,7 +133,6 @@ public class SubmittedFormRepresentation   {
    * @return processId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessId() {
@@ -162,7 +156,6 @@ public class SubmittedFormRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getSubmitted() {
     return submitted;
   }
@@ -184,7 +177,6 @@ public class SubmittedFormRepresentation   {
 
   @Valid
 
-
   public LightUserRepresentation getSubmittedBy() {
     return submittedBy;
   }
@@ -203,7 +195,6 @@ public class SubmittedFormRepresentation   {
    * @return taskId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskId() {

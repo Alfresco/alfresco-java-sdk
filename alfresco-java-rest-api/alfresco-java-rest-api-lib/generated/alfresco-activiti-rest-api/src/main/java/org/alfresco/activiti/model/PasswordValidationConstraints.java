@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PasswordValidationConstraints   {
   @JsonProperty("minLength")
   private Integer minLength = null;
@@ -37,7 +36,6 @@ public class PasswordValidationConstraints   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getMinLength() {
     return minLength;
   }
@@ -58,7 +56,6 @@ public class PasswordValidationConstraints   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPasswordCriteriaMessage() {
     return passwordCriteriaMessage;
   }
@@ -77,7 +74,6 @@ public class PasswordValidationConstraints   {
    * @return regularExpression
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRegularExpression() {

@@ -35,21 +35,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<List<RestVariable>
-> createOrUpdateProcessInstanceVariablesUsingPUT(
-
-
-@ApiParam(value = "Process instance ID",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "restVariables" ,required=true )  @Valid @RequestBody List<RestVariable> restVariables
-
-);
+    ResponseEntity<List<RestVariable>> createOrUpdateProcessInstanceVariablesUsingPUT(@ApiParam(value = "Process instance ID",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "restVariables" ,required=true )  @Valid @RequestBody List<RestVariable> restVariables);
 
 
     @ApiOperation(value = "Create variables", nickname = "createProcessInstanceVariablesUsingPOST", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
@@ -61,21 +47,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<List<RestVariable>
-> createProcessInstanceVariablesUsingPOST(
-
-
-@ApiParam(value = "Process instance ID",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "restVariables" ,required=true )  @Valid @RequestBody List<RestVariable> restVariables
-
-);
+    ResponseEntity<List<RestVariable>> createProcessInstanceVariablesUsingPOST(@ApiParam(value = "Process instance ID",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "restVariables" ,required=true )  @Valid @RequestBody List<RestVariable> restVariables);
 
 
     @ApiOperation(value = "Delete a variable", nickname = "deleteProcessInstanceVariableUsingDELETE", notes = "", authorizations = {
@@ -87,24 +59,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteProcessInstanceVariableUsingDELETE(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String
- variableName
-
-
-
-);
+    ResponseEntity<Void> deleteProcessInstanceVariableUsingDELETE(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String variableName);
 
 
     @ApiOperation(value = "Get a variable", nickname = "getProcessInstanceVariableUsingGET", notes = "", response = RestVariable.class, authorizations = {
@@ -116,24 +71,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<RestVariable
-> getProcessInstanceVariableUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String
- variableName
-
-
-
-);
+    ResponseEntity<RestVariable> getProcessInstanceVariableUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String variableName);
 
 
     @ApiOperation(value = "List variables", nickname = "getProcessInstanceVariablesUsingGET", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
@@ -145,16 +83,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<RestVariable>
-> getProcessInstanceVariablesUsingGET(
-
-
-@ApiParam(value = "Process instance ID",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<List<RestVariable>> getProcessInstanceVariablesUsingGET(@ApiParam(value = "Process instance ID",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Update a variable", nickname = "updateProcessInstanceVariableUsingPUT", notes = "", response = RestVariable.class, authorizations = {
@@ -166,28 +95,6 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<RestVariable
-> updateProcessInstanceVariableUsingPUT(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String
- variableName
-
-
-
-,
-
-
-@ApiParam(value = "restVariable" ,required=true )  @Valid @RequestBody RestVariable restVariable
-
-);
+    ResponseEntity<RestVariable> updateProcessInstanceVariableUsingPUT(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String variableName,@ApiParam(value = "restVariable" ,required=true )  @Valid @RequestBody RestVariable restVariable);
 
 }

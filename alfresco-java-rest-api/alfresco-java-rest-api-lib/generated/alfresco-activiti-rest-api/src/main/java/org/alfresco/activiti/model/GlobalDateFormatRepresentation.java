@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GlobalDateFormatRepresentation   {
   @JsonProperty("globalDateFormat")
   private String globalDateFormat = null;
@@ -29,7 +28,6 @@ public class GlobalDateFormatRepresentation   {
    * @return globalDateFormat
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getGlobalDateFormat() {

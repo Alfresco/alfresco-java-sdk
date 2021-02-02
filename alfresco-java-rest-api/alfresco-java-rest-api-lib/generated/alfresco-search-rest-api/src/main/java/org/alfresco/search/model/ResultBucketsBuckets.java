@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ResultBucketsBuckets   {
   @JsonProperty("label")
   private String label = null;
@@ -40,7 +39,6 @@ public class ResultBucketsBuckets   {
   @ApiModelProperty(value = "The bucket label")
 
 
-
   public String getLabel() {
     return label;
   }
@@ -59,7 +57,6 @@ public class ResultBucketsBuckets   {
    * @return filterQuery
   **/
   @ApiModelProperty(value = "The filter query you can use to apply this facet")
-
 
 
   public String getFilterQuery() {
@@ -82,7 +79,6 @@ public class ResultBucketsBuckets   {
   @ApiModelProperty(value = "The count for the bucket")
 
 
-
   public Integer getCount() {
     return count;
   }
@@ -101,7 +97,6 @@ public class ResultBucketsBuckets   {
    * @return display
   **/
   @ApiModelProperty(value = "An optional field for additional display information")
-
 
 
   public Object getDisplay() {

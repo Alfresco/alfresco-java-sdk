@@ -36,29 +36,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<RelatedContentRepresentation
-> createRelatedContentOnProcessInstanceUsingPOST(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "relatedContent" ,required=true )  @Valid @RequestBody RelatedContentRepresentation relatedContent
-
-,
-
-@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean
- isRelatedContent
-
-
-
-
-);
+    ResponseEntity<RelatedContentRepresentation> createRelatedContentOnProcessInstanceUsingPOST(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "relatedContent" ,required=true )  @Valid @RequestBody RelatedContentRepresentation relatedContent,@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 
     @ApiOperation(value = "Upload content and attach to a process instance", nickname = "createRelatedContentOnProcessInstanceUsingPOST1", notes = "", response = RelatedContentRepresentation.class, authorizations = {
@@ -70,29 +48,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<RelatedContentRepresentation
-> createRelatedContentOnProcessInstanceUsingPOST1(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-,
-
-@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean
- isRelatedContent
-
-
-
-
-);
+    ResponseEntity<RelatedContentRepresentation> createRelatedContentOnProcessInstanceUsingPOST1(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file,@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 
     @ApiOperation(value = "Attach existing content to a task", nickname = "createRelatedContentOnTaskUsingPOST", notes = "", response = RelatedContentRepresentation.class, authorizations = {
@@ -104,29 +60,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<RelatedContentRepresentation
-> createRelatedContentOnTaskUsingPOST(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "relatedContent" ,required=true )  @Valid @RequestBody RelatedContentRepresentation relatedContent
-
-,
-
-@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean
- isRelatedContent
-
-
-
-
-);
+    ResponseEntity<RelatedContentRepresentation> createRelatedContentOnTaskUsingPOST(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "relatedContent" ,required=true )  @Valid @RequestBody RelatedContentRepresentation relatedContent,@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 
     @ApiOperation(value = "Upload content and attach to a task", nickname = "createRelatedContentOnTaskUsingPOST1", notes = "", response = RelatedContentRepresentation.class, authorizations = {
@@ -138,29 +72,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<RelatedContentRepresentation
-> createRelatedContentOnTaskUsingPOST1(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-,
-
-@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean
- isRelatedContent
-
-
-
-
-);
+    ResponseEntity<RelatedContentRepresentation> createRelatedContentOnTaskUsingPOST1(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file,@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 
     @ApiOperation(value = "Upload content and create a local representation", nickname = "createTemporaryRawRelatedContentUsingPOST", notes = "", response = RelatedContentRepresentation.class, authorizations = {
@@ -172,13 +84,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<RelatedContentRepresentation
-> createTemporaryRawRelatedContentUsingPOST(
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<RelatedContentRepresentation> createTemporaryRawRelatedContentUsingPOST(@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 
     @ApiOperation(value = "Create a local representation of content from a remote repository", nickname = "createTemporaryRelatedContentUsingPOST", notes = "", response = RelatedContentRepresentation.class, authorizations = {
@@ -190,13 +96,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<RelatedContentRepresentation
-> createTemporaryRelatedContentUsingPOST(
-
-
-@ApiParam(value = "relatedContent" ,required=true )  @Valid @RequestBody RelatedContentRepresentation relatedContent
-
-);
+    ResponseEntity<RelatedContentRepresentation> createTemporaryRelatedContentUsingPOST(@ApiParam(value = "relatedContent" ,required=true )  @Valid @RequestBody RelatedContentRepresentation relatedContent);
 
 
     @ApiOperation(value = "Remove a local content representation", nickname = "deleteContentUsingDELETE", notes = "", authorizations = {
@@ -208,16 +108,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteContentUsingDELETE(
-
-
-@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long
- contentId
-
-
-
-);
+    ResponseEntity<Void> deleteContentUsingDELETE(@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long contentId);
 
 
     @ApiOperation(value = "Get a local content representation", nickname = "getContentUsingGET", notes = "", response = RelatedContentRepresentation.class, authorizations = {
@@ -229,16 +120,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<RelatedContentRepresentation
-> getContentUsingGET(
-
-
-@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long
- contentId
-
-
-
-);
+    ResponseEntity<RelatedContentRepresentation> getContentUsingGET(@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long contentId);
 
 
     @ApiOperation(value = "Stream content rendition", nickname = "getRawContentUsingGET", notes = "", authorizations = {
@@ -250,24 +132,7 @@ public interface ContentApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getRawContentUsingGET(
-
-
-@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long
- contentId
-
-
-
-,
-
-
-@ApiParam(value = "renditionType",required=true) @PathVariable("renditionType") String
- renditionType
-
-
-
-);
+    ResponseEntity<Void> getRawContentUsingGET(@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long contentId,@ApiParam(value = "renditionType",required=true) @PathVariable("renditionType") String renditionType);
 
 
     @ApiOperation(value = "Stream content from a local content representation", nickname = "getRawContentUsingGET1", notes = "", authorizations = {
@@ -279,16 +144,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getRawContentUsingGET1(
-
-
-@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long
- contentId
-
-
-
-);
+    ResponseEntity<Void> getRawContentUsingGET1(@ApiParam(value = "contentId",required=true) @PathVariable("contentId") Long contentId);
 
 
     @ApiOperation(value = "List content attached to a process instance", nickname = "getRelatedContentForProcessInstanceUsingGET", notes = "", response = ResultListDataRepresentationRelatedContentRepresentation.class, authorizations = {
@@ -300,24 +156,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationRelatedContentRepresentation
-> getRelatedContentForProcessInstanceUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean
- isRelatedContent
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationRelatedContentRepresentation> getRelatedContentForProcessInstanceUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 
     @ApiOperation(value = "List content attached to a task", nickname = "getRelatedContentForTaskUsingGET", notes = "", response = ResultListDataRepresentationRelatedContentRepresentation.class, authorizations = {
@@ -329,23 +168,6 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationRelatedContentRepresentation
-> getRelatedContentForTaskUsingGET(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean
- isRelatedContent
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationRelatedContentRepresentation> getRelatedContentForTaskUsingGET(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 }

@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FilePlanComponentBodyUpdate   {
   @JsonProperty("name")
   private String name = null;
@@ -43,7 +42,6 @@ public class FilePlanComponentBodyUpdate   {
   @ApiModelProperty(value = "The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |. The character . must not be used at the end of the name. ")
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -72,7 +70,6 @@ public class FilePlanComponentBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -99,7 +96,6 @@ public class FilePlanComponentBodyUpdate   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Map<String, String> getProperties() {

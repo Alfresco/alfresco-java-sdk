@@ -39,8 +39,7 @@ public interface IntegrationBoxApi {
         produces = "text/html", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> confirmAuthorisationUsingGET();
+    ResponseEntity<Void> confirmAuthorisationUsingGET();
 
 
     @ApiOperation(value = "Add Box account", nickname = "createRepositoryAccountUsingPOST", notes = "", authorizations = {
@@ -53,21 +52,7 @@ public interface IntegrationBoxApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> createRepositoryAccountUsingPOST(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-,
-
-
-@ApiParam(value = "credentials" ,required=true )  @Valid @RequestBody UserAccountCredentialsRepresentation credentials
-
-);
+    ResponseEntity<Void> createRepositoryAccountUsingPOST(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId,@ApiParam(value = "credentials" ,required=true )  @Valid @RequestBody UserAccountCredentialsRepresentation credentials);
 
 
     @ApiOperation(value = "Delete account information", nickname = "deleteRepositoryAccountUsingDELETE", notes = "", authorizations = {
@@ -81,16 +66,7 @@ public interface IntegrationBoxApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteRepositoryAccountUsingDELETE(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-);
+    ResponseEntity<Void> deleteRepositoryAccountUsingDELETE(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId);
 
 
     @ApiOperation(value = "Get status information", nickname = "getBoxPluginStatusUsingGET", notes = "", response = Boolean.class, authorizations = {
@@ -102,8 +78,7 @@ public interface IntegrationBoxApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Boolean
-> getBoxPluginStatusUsingGET();
+    ResponseEntity<Boolean> getBoxPluginStatusUsingGET();
 
 
     @ApiOperation(value = "List file and folders", nickname = "getFilesUsingGET", notes = "", response = ResultListDataRepresentationBoxContent.class, authorizations = {
@@ -118,24 +93,7 @@ public interface IntegrationBoxApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationBoxContent
-> getFilesUsingGET(
-
-@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-,
-
-@ApiParam(value = "parent") @Valid @RequestParam(value = "parent", required = false) String
- parent
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationBoxContent> getFilesUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter,@ApiParam(value = "parent") @Valid @RequestParam(value = "parent", required = false) String parent);
 
 
     @ApiOperation(value = "Get account information", nickname = "getRepositoryAccountUsingGET", notes = "", authorizations = {
@@ -148,16 +106,7 @@ public interface IntegrationBoxApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getRepositoryAccountUsingGET(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-);
+    ResponseEntity<Void> getRepositoryAccountUsingGET(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId);
 
 
     @ApiOperation(value = "Update account information", nickname = "updateRepositoryAccountUsingPUT", notes = "", authorizations = {
@@ -171,20 +120,6 @@ public interface IntegrationBoxApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> updateRepositoryAccountUsingPUT(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-,
-
-
-@ApiParam(value = "credentials" ,required=true )  @Valid @RequestBody UserAccountCredentialsRepresentation credentials
-
-);
+    ResponseEntity<Void> updateRepositoryAccountUsingPUT(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId,@ApiParam(value = "credentials" ,required=true )  @Valid @RequestBody UserAccountCredentialsRepresentation credentials);
 
 }

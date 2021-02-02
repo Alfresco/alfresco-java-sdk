@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Simple facet fields to include The Properties reflect the global properties related to field facts in SOLR. They are descripbed in detail by the SOLR documentation ")
 @Validated
 
-
 public class RequestFacetFields   {
   @JsonProperty("facets")
   @Valid
@@ -44,7 +43,6 @@ public class RequestFacetFields   {
   @ApiModelProperty(value = "Define specifc fields on which to facet (adds SOLR facet.field and f.<field>.facet.* options) ")
 
   @Valid
-
 
   public List<RequestFacetField> getFacets() {
     return facets;

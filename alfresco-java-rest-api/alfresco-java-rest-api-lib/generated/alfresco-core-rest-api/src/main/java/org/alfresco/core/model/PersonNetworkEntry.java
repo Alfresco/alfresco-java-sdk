@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PersonNetworkEntry   {
   @JsonProperty("entry")
   private PersonNetwork entry = null;
@@ -33,7 +32,6 @@ public class PersonNetworkEntry   {
   @NotNull
 
   @Valid
-
 
   public PersonNetwork getEntry() {
     return entry;

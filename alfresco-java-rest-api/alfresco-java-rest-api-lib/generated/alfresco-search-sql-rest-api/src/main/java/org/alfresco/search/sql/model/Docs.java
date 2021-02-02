@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Array of documents returned by the query, note that this is a Solr convention.")
 @Validated
 
-
 public class Docs extends ArrayList<DocsInner>  {
 
   @Override

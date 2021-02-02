@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ObjectNode   {
   @JsonProperty("array")
   private Boolean array = null;
@@ -140,7 +139,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isArray() {
     return array;
   }
@@ -159,7 +157,6 @@ public class ObjectNode   {
    * @return bigDecimal
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isBigDecimal() {
@@ -182,7 +179,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isBigInteger() {
     return bigInteger;
   }
@@ -201,7 +197,6 @@ public class ObjectNode   {
    * @return binary
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isBinary() {
@@ -224,7 +219,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isBoolean() {
     return _boolean;
   }
@@ -243,7 +237,6 @@ public class ObjectNode   {
    * @return containerNode
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isContainerNode() {
@@ -266,7 +259,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isDouble() {
     return _double;
   }
@@ -285,7 +277,6 @@ public class ObjectNode   {
    * @return empty
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isEmpty() {
@@ -308,7 +299,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isFloat() {
     return _float;
   }
@@ -327,7 +317,6 @@ public class ObjectNode   {
    * @return floatingPointNumber
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isFloatingPointNumber() {
@@ -350,7 +339,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isInt() {
     return _int;
   }
@@ -369,7 +357,6 @@ public class ObjectNode   {
    * @return integralNumber
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIntegralNumber() {
@@ -392,7 +379,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isLong() {
     return _long;
   }
@@ -411,7 +397,6 @@ public class ObjectNode   {
    * @return missingNode
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isMissingNode() {
@@ -434,7 +419,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public NodeTypeEnum getNodeType() {
     return nodeType;
   }
@@ -453,7 +437,6 @@ public class ObjectNode   {
    * @return _null
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isNull() {
@@ -476,7 +459,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isNumber() {
     return number;
   }
@@ -495,7 +477,6 @@ public class ObjectNode   {
    * @return object
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isObject() {
@@ -518,7 +499,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isPojo() {
     return pojo;
   }
@@ -537,7 +517,6 @@ public class ObjectNode   {
    * @return _short
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isShort() {
@@ -560,7 +539,6 @@ public class ObjectNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isTextual() {
     return textual;
   }
@@ -579,7 +557,6 @@ public class ObjectNode   {
    * @return valueNode
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isValueNode() {

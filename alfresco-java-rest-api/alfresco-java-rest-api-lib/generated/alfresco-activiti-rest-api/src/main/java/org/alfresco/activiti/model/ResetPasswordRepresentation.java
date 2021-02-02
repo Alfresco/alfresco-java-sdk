@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ResetPasswordRepresentation   {
   @JsonProperty("email")
   private String email = null;
@@ -29,7 +28,6 @@ public class ResetPasswordRepresentation   {
    * @return email
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEmail() {

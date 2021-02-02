@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeclassificationDateRecalculationProcessBody   {
   @JsonProperty("id")
   private String id = null;
@@ -30,7 +29,6 @@ public class DeclassificationDateRecalculationProcessBody   {
   **/
   @ApiModelProperty(required = true, value = "The id of the process. The only supported process id is \"-declassificationDateRecalculationProcess-\".")
   @NotNull
-
 
 
   public String getId() {

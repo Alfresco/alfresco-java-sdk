@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteMembershipRejectionBody   {
   @JsonProperty("comment")
   private String comment = null;
@@ -29,7 +28,6 @@ public class SiteMembershipRejectionBody   {
    * @return comment
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getComment() {

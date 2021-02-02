@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormTabRepresentation   {
   @JsonProperty("id")
   private String id = null;
@@ -38,7 +37,6 @@ public class FormTabRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -57,7 +55,6 @@ public class FormTabRepresentation   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {
@@ -80,7 +77,6 @@ public class FormTabRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ConditionRepresentation getVisibilityCondition() {
     return visibilityCondition;

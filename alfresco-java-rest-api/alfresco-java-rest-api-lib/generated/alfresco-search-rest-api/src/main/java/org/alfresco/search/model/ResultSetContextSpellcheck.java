@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ResultSetContextSpellcheck   {
   /**
    * Gets or Sets type
@@ -69,7 +68,6 @@ public class ResultSetContextSpellcheck   {
   @ApiModelProperty(value = "")
 
 
-
   public TypeEnum getType() {
     return type;
   }
@@ -96,7 +94,6 @@ public class ResultSetContextSpellcheck   {
    * @return suggestion
   **/
   @ApiModelProperty(value = "A suggested alternative query")
-
 
 
   public List<String> getSuggestion() {

@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Facet Intervals")
 @Validated
 
-
 public class RequestFacetIntervals   {
   @JsonProperty("sets")
   @Valid
@@ -50,7 +49,6 @@ public class RequestFacetIntervals   {
 
   @Valid
 
-
   public List<RequestFacetSet> getSets() {
     return sets;
   }
@@ -79,7 +77,6 @@ public class RequestFacetIntervals   {
   @ApiModelProperty(value = "Specifies the fields to facet by interval.")
 
   @Valid
-
 
   public List<RequestFacetIntervalsIntervals> getIntervals() {
     return intervals;

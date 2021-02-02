@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditDecisionRuleInfoRepresentation   {
   @JsonProperty("expressions")
   @Valid
@@ -47,7 +46,6 @@ public class AuditDecisionRuleInfoRepresentation   {
 
   @Valid
 
-
   public List<AuditDecisionExpressionInfoRepresentation> getExpressions() {
     return expressions;
   }
@@ -66,7 +64,6 @@ public class AuditDecisionRuleInfoRepresentation   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {

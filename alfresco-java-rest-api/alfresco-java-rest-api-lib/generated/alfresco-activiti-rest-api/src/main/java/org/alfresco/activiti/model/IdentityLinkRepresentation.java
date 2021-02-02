@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class IdentityLinkRepresentation   {
   @JsonProperty("group")
   private String group = null;
@@ -37,7 +36,6 @@ public class IdentityLinkRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getGroup() {
     return group;
   }
@@ -58,7 +56,6 @@ public class IdentityLinkRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getType() {
     return type;
   }
@@ -77,7 +74,6 @@ public class IdentityLinkRepresentation   {
    * @return user
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getUser() {

@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Version   {
   @JsonProperty("id")
   private String id = null;
@@ -68,7 +67,6 @@ public class Version   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -87,7 +85,6 @@ public class Version   {
    * @return versionComment
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getVersionComment() {
@@ -111,7 +108,6 @@ public class Version   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -131,7 +127,6 @@ public class Version   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -155,7 +150,6 @@ public class Version   {
   @NotNull
 
 
-
   public Boolean isIsFolder() {
     return isFolder;
   }
@@ -175,7 +169,6 @@ public class Version   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isIsFile() {
@@ -200,7 +193,6 @@ public class Version   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -223,7 +215,6 @@ public class Version   {
 
   @Valid
 
-
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
   }
@@ -244,7 +235,6 @@ public class Version   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ContentInfo getContent() {
     return content;
@@ -274,7 +264,6 @@ public class Version   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -293,7 +282,6 @@ public class Version   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {

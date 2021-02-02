@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class EntityVariableScopeRepresentation   {
   @JsonProperty("attributes")
   @Valid
@@ -53,7 +52,6 @@ public class EntityVariableScopeRepresentation   {
 
   @Valid
 
-
   public List<EntityAttributeScopeRepresentation> getAttributes() {
     return attributes;
   }
@@ -72,7 +70,6 @@ public class EntityVariableScopeRepresentation   {
    * @return entityName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEntityName() {
@@ -95,7 +92,6 @@ public class EntityVariableScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getMappedDataModel() {
     return mappedDataModel;
   }
@@ -114,7 +110,6 @@ public class EntityVariableScopeRepresentation   {
    * @return mappedVariableName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMappedVariableName() {

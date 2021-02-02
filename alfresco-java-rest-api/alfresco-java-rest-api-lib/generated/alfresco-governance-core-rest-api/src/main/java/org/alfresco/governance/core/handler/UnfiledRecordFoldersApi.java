@@ -44,45 +44,7 @@ public interface UnfiledRecordFoldersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<UnfiledRecordFolderAssociationPaging
-> createUnfiledRecordFolderChildren(
-
-
-@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String
- unfiledRecordFolderId
-
-
-
-,
-
-
-@ApiParam(value = "The node information to create." ,required=true )  @Valid @RequestBody RMNodeBodyCreateWithRelativePath nodeBodyCreate
-
-,
-
-@ApiParam(value = "If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. ") @Valid @RequestParam(value = "autoRename", required = false) Boolean
- autoRename
-
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<UnfiledRecordFolderAssociationPaging> createUnfiledRecordFolderChildren(@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String unfiledRecordFolderId,@ApiParam(value = "The node information to create." ,required=true )  @Valid @RequestBody RMNodeBodyCreateWithRelativePath nodeBodyCreate,@ApiParam(value = "If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. ") @Valid @RequestParam(value = "autoRename", required = false) Boolean autoRename,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Delete an unfiled record folder. Deleted file plan components cannot be recovered, they are deleted permanently.", nickname = "deleteUnfiledRecordFolder", notes = "Deletes the unfiled record folder **unfiledRecordFolderId**. ", authorizations = {
@@ -100,16 +62,7 @@ public interface UnfiledRecordFoldersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteUnfiledRecordFolder(
-
-
-@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String
- unfiledRecordFolderId
-
-
-
-);
+    ResponseEntity<Void> deleteUnfiledRecordFolder(@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String unfiledRecordFolderId);
 
 
     @ApiOperation(value = "Get the unfiled record folder", nickname = "getUnfiledRecordFolder", notes = "Gets information for unfiled record folder id **unfiledRecordFolderId**  Mandatory fields and the unfiled record folder's aspects and properties are returned by default.  You can use the **include** parameter (include=allowableOperations) to return additional information. ", response = UnfiledRecordFolderEntry.class, authorizations = {
@@ -126,40 +79,7 @@ public interface UnfiledRecordFoldersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<UnfiledRecordFolderEntry
-> getUnfiledRecordFolder(
-
-
-@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String
- unfiledRecordFolderId
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "Return information on children in the unfiled records container resolved by this path. The path is relative to **unfiledRecordFolderId**. ") @Valid @RequestParam(value = "relativePath", required = false) String
- relativePath
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<UnfiledRecordFolderEntry> getUnfiledRecordFolder(@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String unfiledRecordFolderId,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Return information on children in the unfiled records container resolved by this path. The path is relative to **unfiledRecordFolderId**. ") @Valid @RequestParam(value = "relativePath", required = false) String relativePath,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List unfiled record folder's children", nickname = "listUnfiledRecordFolderChildren", notes = "Returns a list of records or unfiled record folders.  Minimal information for each child is returned by default.  You can use the **include** parameter (include=allowableOperations) to return additional information. ", response = UnfiledRecordFolderAssociationPaging.class, authorizations = {
@@ -175,72 +95,7 @@ public interface UnfiledRecordFoldersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<UnfiledRecordFolderAssociationPaging
-> listUnfiledRecordFolderChildren(
-
-
-@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String
- unfiledRecordFolderId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "Optionally filter the list. Here are some examples:  *   ```where=(isRecord=true)```  *   ```where=(isUnfiledRecordFolder=false)```  *   ```where=(nodeType='cm:content INCLUDESUBTYPES')``` ") @Valid @RequestParam(value = "where", required = false) String
- where
-
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * association * path * properties ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "Return information on children in the unfiled records container resolved by this path. The path is relative to **unfiledRecordFolderId**. ") @Valid @RequestParam(value = "relativePath", required = false) String
- relativePath
-
-
-
-
-,
-
-@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the parent node – either the specified parent **unfiledRecordFolderId**, or as resolved by **relativePath**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean
- includeSource
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<UnfiledRecordFolderAssociationPaging> listUnfiledRecordFolderChildren(@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String unfiledRecordFolderId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "Optionally filter the list. Here are some examples:  *   ```where=(isRecord=true)```  *   ```where=(isUnfiledRecordFolder=false)```  *   ```where=(nodeType='cm:content INCLUDESUBTYPES')``` ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * association * path * properties ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Return information on children in the unfiled records container resolved by this path. The path is relative to **unfiledRecordFolderId**. ") @Valid @RequestParam(value = "relativePath", required = false) String relativePath,@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the parent node – either the specified parent **unfiledRecordFolderId**, or as resolved by **relativePath**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Update an unfiled record folder", nickname = "updateUnfiledRecordFolder", notes = "Updates unfiled record folder **unfiledRecordFolderId**. For example, you can rename a record folder: ```JSON {   \"name\":\"My new name\" } ``` You can also set or update one or more properties: ```JSON {   \"properties\":     {        \"cm:title\":\"New title\",        \"cm:description\":\"New description\"     } } ``` **Note:** if you want to add or remove aspects, then you must use **GET /unfiled-record-folders/{unfiledRecordFolderId}** first to get the complete set of *aspectNames*.  **Note:** Currently there is no optimistic locking for updates, so they are applied in \"last one wins\" order. ", response = UnfiledRecordFolderEntry.class, authorizations = {
@@ -259,44 +114,6 @@ public interface UnfiledRecordFoldersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<UnfiledRecordFolderEntry
-> updateUnfiledRecordFolder(
-
-
-@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String
- unfiledRecordFolderId
-
-
-
-,
-
-
-@ApiParam(value = "The record folder information to update." ,required=true )  @Valid @RequestBody UnfiledRecordFolderBodyUpdate unfiledRecordFolderBodyUpdate
-
-,
-
-@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the parent node – either the specified parent **unfiledRecordFolderId**, or as resolved by **relativePath**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean
- includeSource
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<UnfiledRecordFolderEntry> updateUnfiledRecordFolder(@ApiParam(value = "The identifier of an unfiled record folder.",required=true) @PathVariable("unfiledRecordFolderId") String unfiledRecordFolderId,@ApiParam(value = "The record folder information to update." ,required=true )  @Valid @RequestBody UnfiledRecordFolderBodyUpdate unfiledRecordFolderBodyUpdate,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the parent node – either the specified parent **unfiledRecordFolderId**, or as resolved by **relativePath**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

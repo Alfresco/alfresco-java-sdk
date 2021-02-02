@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ActionExecResult   {
   @JsonProperty("id")
   private String id = null;
@@ -30,7 +29,6 @@ public class ActionExecResult   {
   **/
   @ApiModelProperty(required = true, value = "The unique identifier of the action pending execution")
   @NotNull
-
 
 
   public String getId() {

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SecurityControlSetting   {
   @JsonProperty("key")
   private String key = null;
@@ -33,7 +32,6 @@ public class SecurityControlSetting   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getKey() {
@@ -55,7 +53,6 @@ public class SecurityControlSetting   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Object getValue() {

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ResultSetContextFacetQueries   {
   @JsonProperty("label")
   private String label = null;
@@ -37,7 +36,6 @@ public class ResultSetContextFacetQueries   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLabel() {
     return label;
   }
@@ -58,7 +56,6 @@ public class ResultSetContextFacetQueries   {
   @ApiModelProperty(value = "The filter query you can use to apply this facet")
 
 
-
   public String getFilterQuery() {
     return filterQuery;
   }
@@ -77,7 +74,6 @@ public class ResultSetContextFacetQueries   {
    * @return count
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getCount() {

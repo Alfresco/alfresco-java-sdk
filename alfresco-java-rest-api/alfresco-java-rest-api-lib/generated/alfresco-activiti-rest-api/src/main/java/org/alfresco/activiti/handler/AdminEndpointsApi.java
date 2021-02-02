@@ -36,13 +36,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EndpointBasicAuthRepresentation
-> createBasicAuthConfigurationUsingPOST(
-
-
-@ApiParam(value = "createRepresentation" ,required=true )  @Valid @RequestBody CreateEndpointBasicAuthRepresentation createRepresentation
-
-);
+    ResponseEntity<EndpointBasicAuthRepresentation> createBasicAuthConfigurationUsingPOST(@ApiParam(value = "createRepresentation" ,required=true )  @Valid @RequestBody CreateEndpointBasicAuthRepresentation createRepresentation);
 
 
     @ApiOperation(value = "Create an endpoint", nickname = "createEndpointConfigurationUsingPOST", notes = "", response = EndpointConfigurationRepresentation.class, authorizations = {
@@ -54,13 +48,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EndpointConfigurationRepresentation
-> createEndpointConfigurationUsingPOST(
-
-
-@ApiParam(value = "representation" ,required=true )  @Valid @RequestBody EndpointConfigurationRepresentation representation
-
-);
+    ResponseEntity<EndpointConfigurationRepresentation> createEndpointConfigurationUsingPOST(@ApiParam(value = "representation" ,required=true )  @Valid @RequestBody EndpointConfigurationRepresentation representation);
 
 
     @ApiOperation(value = "Get an endpoint authorization", nickname = "getBasicAuthConfigurationUsingGET", notes = "", response = EndpointBasicAuthRepresentation.class, authorizations = {
@@ -72,24 +60,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<EndpointBasicAuthRepresentation
-> getBasicAuthConfigurationUsingGET(
-
-
-@ApiParam(value = "basicAuthId",required=true) @PathVariable("basicAuthId") Long
- basicAuthId
-
-
-
-,@NotNull 
-
-@ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<EndpointBasicAuthRepresentation> getBasicAuthConfigurationUsingGET(@ApiParam(value = "basicAuthId",required=true) @PathVariable("basicAuthId") Long basicAuthId,@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
     @ApiOperation(value = "List endpoint authorizations", nickname = "getBasicAuthConfigurationsUsingGET", notes = "", response = EndpointBasicAuthRepresentation.class, responseContainer = "List", authorizations = {
@@ -101,16 +72,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<EndpointBasicAuthRepresentation>
-> getBasicAuthConfigurationsUsingGET(@NotNull 
-
-@ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<List<EndpointBasicAuthRepresentation>> getBasicAuthConfigurationsUsingGET(@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
     @ApiOperation(value = "Get an endpoint", nickname = "getEndpointConfigurationUsingGET1", notes = "", response = EndpointConfigurationRepresentation.class, authorizations = {
@@ -122,24 +84,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<EndpointConfigurationRepresentation
-> getEndpointConfigurationUsingGET1(
-
-
-@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long
- endpointConfigurationId
-
-
-
-,@NotNull 
-
-@ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<EndpointConfigurationRepresentation> getEndpointConfigurationUsingGET1(@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId,@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
     @ApiOperation(value = "List endpoints", nickname = "getEndpointConfigurationsUsingGET1", notes = "", response = EndpointConfigurationRepresentation.class, responseContainer = "List", authorizations = {
@@ -151,16 +96,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<EndpointConfigurationRepresentation>
-> getEndpointConfigurationsUsingGET1(@NotNull 
-
-@ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<List<EndpointConfigurationRepresentation>> getEndpointConfigurationsUsingGET1(@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
     @ApiOperation(value = "Delete an endpoint authorization", nickname = "removeBasicAuthonfigurationUsingDELETE", notes = "", authorizations = {
@@ -172,24 +108,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> removeBasicAuthonfigurationUsingDELETE(
-
-
-@ApiParam(value = "basicAuthId",required=true) @PathVariable("basicAuthId") Long
- basicAuthId
-
-
-
-,@NotNull 
-
-@ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<Void> removeBasicAuthonfigurationUsingDELETE(@ApiParam(value = "basicAuthId",required=true) @PathVariable("basicAuthId") Long basicAuthId,@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
     @ApiOperation(value = "Delete an endpoint", nickname = "removeEndpointConfigurationUsingDELETE", notes = "", authorizations = {
@@ -201,24 +120,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> removeEndpointConfigurationUsingDELETE(
-
-
-@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long
- endpointConfigurationId
-
-
-
-,@NotNull 
-
-@ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<Void> removeEndpointConfigurationUsingDELETE(@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId,@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
     @ApiOperation(value = "Update an endpoint authorization", nickname = "updateBasicAuthConfigurationUsingPUT", notes = "", response = EndpointBasicAuthRepresentation.class, authorizations = {
@@ -230,21 +132,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EndpointBasicAuthRepresentation
-> updateBasicAuthConfigurationUsingPUT(
-
-
-@ApiParam(value = "basicAuthId",required=true) @PathVariable("basicAuthId") Long
- basicAuthId
-
-
-
-,
-
-
-@ApiParam(value = "createRepresentation" ,required=true )  @Valid @RequestBody CreateEndpointBasicAuthRepresentation createRepresentation
-
-);
+    ResponseEntity<EndpointBasicAuthRepresentation> updateBasicAuthConfigurationUsingPUT(@ApiParam(value = "basicAuthId",required=true) @PathVariable("basicAuthId") Long basicAuthId,@ApiParam(value = "createRepresentation" ,required=true )  @Valid @RequestBody CreateEndpointBasicAuthRepresentation createRepresentation);
 
 
     @ApiOperation(value = "Update an endpoint", nickname = "updateEndpointConfigurationUsingPUT", notes = "", response = EndpointConfigurationRepresentation.class, authorizations = {
@@ -256,20 +144,6 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EndpointConfigurationRepresentation
-> updateEndpointConfigurationUsingPUT(
-
-
-@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long
- endpointConfigurationId
-
-
-
-,
-
-
-@ApiParam(value = "representation" ,required=true )  @Valid @RequestBody EndpointConfigurationRepresentation representation
-
-);
+    ResponseEntity<EndpointConfigurationRepresentation> updateEndpointConfigurationUsingPUT(@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId,@ApiParam(value = "representation" ,required=true )  @Valid @RequestBody EndpointConfigurationRepresentation representation);
 
 }

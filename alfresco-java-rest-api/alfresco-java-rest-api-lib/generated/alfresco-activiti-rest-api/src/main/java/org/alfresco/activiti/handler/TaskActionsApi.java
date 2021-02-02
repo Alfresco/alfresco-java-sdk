@@ -37,21 +37,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<TaskRepresentation
-> assignTaskUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody AssigneeIdentifierRepresentation userIdentifier
-
-);
+    ResponseEntity<TaskRepresentation> assignTaskUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody AssigneeIdentifierRepresentation userIdentifier);
 
 
     @ApiOperation(value = "Attach a form to a task", nickname = "attachFormUsingPUT", notes = "", authorizations = {
@@ -63,21 +49,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> attachFormUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "formIdentifier" ,required=true )  @Valid @RequestBody FormIdentifierRepresentation formIdentifier
-
-);
+    ResponseEntity<Void> attachFormUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "formIdentifier" ,required=true )  @Valid @RequestBody FormIdentifierRepresentation formIdentifier);
 
 
     @ApiOperation(value = "Claim a task", nickname = "claimTaskUsingPUT", notes = "To claim a task (in case the task is assigned to a group)", authorizations = {
@@ -89,16 +61,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> claimTaskUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<Void> claimTaskUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Complete a task", nickname = "completeTaskUsingPUT", notes = "Use this endpoint to complete a standalone task or task without a form", authorizations = {
@@ -110,16 +73,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> completeTaskUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<Void> completeTaskUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Delegate a task", nickname = "delegateTaskUsingPUT", notes = "", authorizations = {
@@ -131,21 +85,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> delegateTaskUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody UserIdentifierRepresentation userIdentifier
-
-);
+    ResponseEntity<Void> delegateTaskUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody UserIdentifierRepresentation userIdentifier);
 
 
     @ApiOperation(value = "Involve a group with a task", nickname = "involveGroupUsingPOST", notes = "", authorizations = {
@@ -157,24 +97,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> involveGroupUsingPOST(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") String
- groupId
-
-
-
-);
+    ResponseEntity<Void> involveGroupUsingPOST(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "groupId",required=true) @PathVariable("groupId") String groupId);
 
 
     @ApiOperation(value = "Involve a user with a task", nickname = "involveUserUsingPUT", notes = "", authorizations = {
@@ -186,21 +109,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> involveUserUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody UserIdentifierRepresentation userIdentifier
-
-);
+    ResponseEntity<Void> involveUserUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody UserIdentifierRepresentation userIdentifier);
 
 
     @ApiOperation(value = "Remove a form from a task", nickname = "removeFormUsingDELETE", notes = "", authorizations = {
@@ -212,16 +121,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> removeFormUsingDELETE(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<Void> removeFormUsingDELETE(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Remove an involved group from a task", nickname = "removeInvolvedUserUsingDELETE", notes = "", authorizations = {
@@ -233,24 +133,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> removeInvolvedUserUsingDELETE(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") String
- groupId
-
-
-
-);
+    ResponseEntity<Void> removeInvolvedUserUsingDELETE(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "groupId",required=true) @PathVariable("groupId") String groupId);
 
 
     @ApiOperation(value = "Remove an involved user from a task", nickname = "removeInvolvedUserUsingPUT", notes = "", authorizations = {
@@ -262,21 +145,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> removeInvolvedUserUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody UserIdentifierRepresentation userIdentifier
-
-);
+    ResponseEntity<Void> removeInvolvedUserUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "userIdentifier" ,required=true )  @Valid @RequestBody UserIdentifierRepresentation userIdentifier);
 
 
     @ApiOperation(value = "Resolve a task", nickname = "resolveTaskUsingPUT", notes = "", authorizations = {
@@ -288,16 +157,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> resolveTaskUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<Void> resolveTaskUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Unclaim a task", nickname = "unclaimTaskUsingPUT", notes = "To unclaim a task (in case the task was assigned to a group)", authorizations = {
@@ -309,15 +169,6 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> unclaimTaskUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<Void> unclaimTaskUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 }

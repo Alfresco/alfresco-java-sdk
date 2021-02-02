@@ -23,7 +23,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class NodeAssociation   {
   @JsonProperty("id")
   private String id = null;
@@ -100,7 +99,6 @@ public class NodeAssociation   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -122,7 +120,6 @@ public class NodeAssociation   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -142,7 +139,6 @@ public class NodeAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -166,7 +162,6 @@ public class NodeAssociation   {
   @NotNull
 
 
-
   public Boolean isIsFolder() {
     return isFolder;
   }
@@ -188,7 +183,6 @@ public class NodeAssociation   {
   @NotNull
 
 
-
   public Boolean isIsFile() {
     return isFile;
   }
@@ -207,7 +201,6 @@ public class NodeAssociation   {
    * @return isLocked
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsLocked() {
@@ -232,7 +225,6 @@ public class NodeAssociation   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -254,7 +246,6 @@ public class NodeAssociation   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -278,7 +269,6 @@ public class NodeAssociation   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -301,7 +291,6 @@ public class NodeAssociation   {
 
   @Valid
 
-
   public UserInfo getCreatedByUser() {
     return createdByUser;
   }
@@ -320,7 +309,6 @@ public class NodeAssociation   {
    * @return parentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getParentId() {
@@ -343,7 +331,6 @@ public class NodeAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsLink() {
     return isLink;
   }
@@ -362,7 +349,6 @@ public class NodeAssociation   {
    * @return isFavorite
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsFavorite() {
@@ -385,7 +371,6 @@ public class NodeAssociation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ContentInfo getContent() {
     return content;
@@ -415,7 +400,6 @@ public class NodeAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -434,7 +418,6 @@ public class NodeAssociation   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -465,7 +448,6 @@ public class NodeAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -486,7 +468,6 @@ public class NodeAssociation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PathInfo getPath() {
     return path;
@@ -509,7 +490,6 @@ public class NodeAssociation   {
 
   @Valid
 
-
   public PermissionsInfo getPermissions() {
     return permissions;
   }
@@ -530,7 +510,6 @@ public class NodeAssociation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public AssociationInfo getAssociation() {
     return association;

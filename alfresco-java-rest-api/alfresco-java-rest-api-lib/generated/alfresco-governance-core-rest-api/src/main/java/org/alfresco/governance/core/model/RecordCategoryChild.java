@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RecordCategoryChild   {
   @JsonProperty("id")
   private String id = null;
@@ -84,7 +83,6 @@ public class RecordCategoryChild   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -104,7 +102,6 @@ public class RecordCategoryChild   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -128,7 +125,6 @@ public class RecordCategoryChild   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -148,7 +144,6 @@ public class RecordCategoryChild   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -171,7 +166,6 @@ public class RecordCategoryChild   {
   @ApiModelProperty(value = "Indicates if the record category has a retention schedule defined")
 
 
-
   public Boolean isHasRetentionSchedule() {
     return hasRetentionSchedule;
   }
@@ -190,7 +184,6 @@ public class RecordCategoryChild   {
    * @return isClosed
   **/
   @ApiModelProperty(value = "Indicates if the record folder is closed")
-
 
 
   public Boolean isIsClosed() {
@@ -213,7 +206,6 @@ public class RecordCategoryChild   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsRecordCategory() {
     return isRecordCategory;
   }
@@ -232,7 +224,6 @@ public class RecordCategoryChild   {
    * @return isRecordFolder
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsRecordFolder() {
@@ -257,7 +248,6 @@ public class RecordCategoryChild   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -279,7 +269,6 @@ public class RecordCategoryChild   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -303,7 +292,6 @@ public class RecordCategoryChild   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -325,7 +313,6 @@ public class RecordCategoryChild   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getCreatedByUser() {
     return createdByUser;
@@ -355,7 +342,6 @@ public class RecordCategoryChild   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -374,7 +360,6 @@ public class RecordCategoryChild   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -405,7 +390,6 @@ public class RecordCategoryChild   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -426,7 +410,6 @@ public class RecordCategoryChild   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PathInfo getPath() {
     return path;

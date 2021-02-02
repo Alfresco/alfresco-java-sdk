@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A classification guide.")
 @Validated
 
-
 public class ClassificationGuide   {
   @JsonProperty("id")
   private String id = null;
@@ -50,7 +49,6 @@ public class ClassificationGuide   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -71,7 +69,6 @@ public class ClassificationGuide   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -94,7 +91,6 @@ public class ClassificationGuide   {
   @NotNull
 
 
-
   public String getName() {
     return name;
   }
@@ -114,7 +110,6 @@ public class ClassificationGuide   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getOriginatingOrganization() {
@@ -139,7 +134,6 @@ public class ClassificationGuide   {
 
   @Valid
 
-
   public LocalDate getPublishedOn() {
     return publishedOn;
   }
@@ -158,7 +152,6 @@ public class ClassificationGuide   {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isEnabled() {

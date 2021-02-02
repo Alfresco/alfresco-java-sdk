@@ -35,21 +35,7 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<CommentRepresentation
-> addProcessInstanceCommentUsingPOST(
-
-
-@ApiParam(value = "commentRequest" ,required=true )  @Valid @RequestBody CommentRepresentation commentRequest
-
-,
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<CommentRepresentation> addProcessInstanceCommentUsingPOST(@ApiParam(value = "commentRequest" ,required=true )  @Valid @RequestBody CommentRepresentation commentRequest,@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Add a comment to a task", nickname = "addTaskCommentUsingPOST", notes = "", response = CommentRepresentation.class, authorizations = {
@@ -61,21 +47,7 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<CommentRepresentation
-> addTaskCommentUsingPOST(
-
-
-@ApiParam(value = "commentRequest" ,required=true )  @Valid @RequestBody CommentRepresentation commentRequest
-
-,
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<CommentRepresentation> addTaskCommentUsingPOST(@ApiParam(value = "commentRequest" ,required=true )  @Valid @RequestBody CommentRepresentation commentRequest,@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Get comments for a process", nickname = "getProcessInstanceCommentsUsingGET", notes = "", response = ResultListDataRepresentationCommentRepresentation.class, authorizations = {
@@ -87,24 +59,7 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationCommentRepresentation
-> getProcessInstanceCommentsUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-@ApiParam(value = "latestFirst") @Valid @RequestParam(value = "latestFirst", required = false) Boolean
- latestFirst
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationCommentRepresentation> getProcessInstanceCommentsUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "latestFirst") @Valid @RequestParam(value = "latestFirst", required = false) Boolean latestFirst);
 
 
     @ApiOperation(value = "Get comments for a task", nickname = "getTaskCommentsUsingGET", notes = "", response = ResultListDataRepresentationCommentRepresentation.class, authorizations = {
@@ -116,23 +71,6 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationCommentRepresentation
-> getTaskCommentsUsingGET(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-@ApiParam(value = "latestFirst") @Valid @RequestParam(value = "latestFirst", required = false) Boolean
- latestFirst
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationCommentRepresentation> getTaskCommentsUsingGET(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "latestFirst") @Valid @RequestParam(value = "latestFirst", required = false) Boolean latestFirst);
 
 }

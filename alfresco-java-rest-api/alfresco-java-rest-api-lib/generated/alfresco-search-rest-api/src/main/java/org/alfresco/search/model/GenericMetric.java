@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A metric used in faceting")
 @Validated
 
-
 public class GenericMetric   {
   @JsonProperty("type")
   private String type = null;
@@ -33,7 +32,6 @@ public class GenericMetric   {
    * @return type
   **/
   @ApiModelProperty(value = "The type of metric, e.g. count")
-
 
 
   public String getType() {
@@ -54,7 +52,6 @@ public class GenericMetric   {
    * @return value
   **/
   @ApiModelProperty(value = "The metric value, e.g. {\"count\": 34} ")
-
 
 
   public Object getValue() {

@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A person can rate an item of content by liking it. They can also remove their like of an item of content. API methods exist to get a list of ratings and to add a new rating. ")
 @Validated
 
-
 public class Rating   {
   @JsonProperty("id")
   private String id = null;
@@ -44,7 +43,6 @@ public class Rating   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -67,7 +65,6 @@ public class Rating   {
 
   @Valid
 
-
   public RatingAggregate getAggregate() {
     return aggregate;
   }
@@ -89,7 +86,6 @@ public class Rating   {
 
   @Valid
 
-
   public OffsetDateTime getRatedAt() {
     return ratedAt;
   }
@@ -108,7 +104,6 @@ public class Rating   {
    * @return myRating
   **/
   @ApiModelProperty(value = "The rating. The type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar.")
-
 
 
   public String getMyRating() {

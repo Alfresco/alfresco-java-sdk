@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeclassificationDateRecalculationProcessEntry   {
   @JsonProperty("id")
   private String id = null;
@@ -41,7 +40,6 @@ public class DeclassificationDateRecalculationProcessEntry   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -62,7 +60,6 @@ public class DeclassificationDateRecalculationProcessEntry   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getStartedAt() {
     return startedAt;
@@ -85,7 +82,6 @@ public class DeclassificationDateRecalculationProcessEntry   {
 
   @Valid
 
-
   public OffsetDateTime getEndedAt() {
     return endedAt;
   }
@@ -104,7 +100,6 @@ public class DeclassificationDateRecalculationProcessEntry   {
    * @return lastDeclassificationTimeFrame
   **/
   @ApiModelProperty(value = "The declassification time frame when the process last ran (in years).")
-
 
 
   public Integer getLastDeclassificationTimeFrame() {

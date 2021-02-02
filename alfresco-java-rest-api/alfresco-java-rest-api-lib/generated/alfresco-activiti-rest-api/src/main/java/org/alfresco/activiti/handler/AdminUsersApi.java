@@ -37,13 +37,7 @@ public interface AdminUsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> bulkUpdateUsersUsingPUT(
-
-
-@ApiParam(value = "update" ,required=true )  @Valid @RequestBody BulkUserUpdateRepresentation update
-
-);
+    ResponseEntity<Void> bulkUpdateUsersUsingPUT(@ApiParam(value = "update" ,required=true )  @Valid @RequestBody BulkUserUpdateRepresentation update);
 
 
     @ApiOperation(value = "Create a user", nickname = "createNewUserUsingPOST", notes = "", response = UserRepresentation.class, authorizations = {
@@ -55,13 +49,7 @@ public interface AdminUsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<UserRepresentation
-> createNewUserUsingPOST(
-
-
-@ApiParam(value = "userRepresentation" ,required=true )  @Valid @RequestBody UserRepresentation userRepresentation
-
-);
+    ResponseEntity<UserRepresentation> createNewUserUsingPOST(@ApiParam(value = "userRepresentation" ,required=true )  @Valid @RequestBody UserRepresentation userRepresentation);
 
 
     @ApiOperation(value = "Get a user", nickname = "getUserUsingGET", notes = "", response = AbstractUserRepresentation.class, authorizations = {
@@ -73,24 +61,7 @@ public interface AdminUsersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<AbstractUserRepresentation
-> getUserUsingGET(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-,
-
-@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean
- summary
-
-
-
-
-);
+    ResponseEntity<AbstractUserRepresentation> getUserUsingGET(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId,@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
     @ApiOperation(value = "Query users", nickname = "getUsersUsingGET", notes = "", response = ResultListDataRepresentationAbstractUserRepresentation.class, authorizations = {
@@ -102,96 +73,7 @@ public interface AdminUsersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAbstractUserRepresentation
-> getUsersUsingGET(
-
-@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-,
-
-@ApiParam(value = "status") @Valid @RequestParam(value = "status", required = false) String
- status
-
-
-
-
-,
-
-@ApiParam(value = "accountType") @Valid @RequestParam(value = "accountType", required = false) String
- accountType
-
-
-
-
-,
-
-@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String
- sort
-
-
-
-
-,
-
-@ApiParam(value = "company") @Valid @RequestParam(value = "company", required = false) String
- company
-
-
-
-
-,
-
-@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer
- start
-
-
-
-
-,
-
-@ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer
- page
-
-
-
-
-,
-
-@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer
- size
-
-
-
-
-,
-
-@ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long
- groupId
-
-
-
-
-,
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-,
-
-@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean
- summary
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationAbstractUserRepresentation> getUsersUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter,@ApiParam(value = "status") @Valid @RequestParam(value = "status", required = false) String status,@ApiParam(value = "accountType") @Valid @RequestParam(value = "accountType", required = false) String accountType,@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort,@ApiParam(value = "company") @Valid @RequestParam(value = "company", required = false) String company,@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start,@ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page,@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size,@ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId,@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId,@ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
     @ApiOperation(value = "Update a user", nickname = "updateUserDetailsUsingPUT", notes = "", authorizations = {
@@ -203,20 +85,6 @@ public interface AdminUsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> updateUserDetailsUsingPUT(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-,
-
-
-@ApiParam(value = "userRepresentation" ,required=true )  @Valid @RequestBody UserRepresentation userRepresentation
-
-);
+    ResponseEntity<Void> updateUserDetailsUsingPUT(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId,@ApiParam(value = "userRepresentation" ,required=true )  @Valid @RequestBody UserRepresentation userRepresentation);
 
 }

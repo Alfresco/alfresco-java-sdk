@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditCalculatedValueRepresentation   {
   @JsonProperty("name")
   private String name = null;
@@ -32,7 +31,6 @@ public class AuditCalculatedValueRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -53,7 +51,6 @@ public class AuditCalculatedValueRepresentation   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getValue() {

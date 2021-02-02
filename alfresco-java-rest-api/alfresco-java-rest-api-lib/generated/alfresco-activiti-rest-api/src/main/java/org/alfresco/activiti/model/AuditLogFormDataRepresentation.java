@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditLogFormDataRepresentation   {
   @JsonProperty("fieldId")
   private String fieldId = null;
@@ -37,7 +36,6 @@ public class AuditLogFormDataRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getFieldId() {
     return fieldId;
   }
@@ -58,7 +56,6 @@ public class AuditLogFormDataRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getFieldName() {
     return fieldName;
   }
@@ -77,7 +74,6 @@ public class AuditLogFormDataRepresentation   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getValue() {

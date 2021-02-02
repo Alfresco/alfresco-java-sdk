@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RequestFacetQueriesInner   {
   @JsonProperty("query")
   private String query = null;
@@ -32,7 +31,6 @@ public class RequestFacetQueriesInner   {
    * @return query
   **/
   @ApiModelProperty(value = "A facet query")
-
 
 
   public String getQuery() {
@@ -53,7 +51,6 @@ public class RequestFacetQueriesInner   {
    * @return label
   **/
   @ApiModelProperty(value = "A label to include in place of the facet query")
-
 
 
   public String getLabel() {

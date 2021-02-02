@@ -22,7 +22,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ResultNode   {
   @JsonProperty("id")
   private String id = null;
@@ -105,7 +104,6 @@ public class ResultNode   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -127,7 +125,6 @@ public class ResultNode   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -147,7 +144,6 @@ public class ResultNode   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -171,7 +167,6 @@ public class ResultNode   {
   @NotNull
 
 
-
   public Boolean isIsFolder() {
     return isFolder;
   }
@@ -193,7 +188,6 @@ public class ResultNode   {
   @NotNull
 
 
-
   public Boolean isIsFile() {
     return isFile;
   }
@@ -212,7 +206,6 @@ public class ResultNode   {
    * @return isLocked
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsLocked() {
@@ -237,7 +230,6 @@ public class ResultNode   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -259,7 +251,6 @@ public class ResultNode   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -283,7 +274,6 @@ public class ResultNode   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -306,7 +296,6 @@ public class ResultNode   {
 
   @Valid
 
-
   public UserInfo getCreatedByUser() {
     return createdByUser;
   }
@@ -325,7 +314,6 @@ public class ResultNode   {
    * @return parentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getParentId() {
@@ -348,7 +336,6 @@ public class ResultNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsLink() {
     return isLink;
   }
@@ -369,7 +356,6 @@ public class ResultNode   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ContentInfo getContent() {
     return content;
@@ -399,7 +385,6 @@ public class ResultNode   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -418,7 +403,6 @@ public class ResultNode   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -449,7 +433,6 @@ public class ResultNode   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -470,7 +453,6 @@ public class ResultNode   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PathInfo getPath() {
     return path;
@@ -493,7 +475,6 @@ public class ResultNode   {
 
   @Valid
 
-
   public SearchEntry getSearch() {
     return search;
   }
@@ -514,7 +495,6 @@ public class ResultNode   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public UserInfo getArchivedByUser() {
     return archivedByUser;
@@ -537,7 +517,6 @@ public class ResultNode   {
 
   @Valid
 
-
   public OffsetDateTime getArchivedAt() {
     return archivedAt;
   }
@@ -558,7 +537,6 @@ public class ResultNode   {
   @ApiModelProperty(value = "")
 
 
-
   public String getVersionLabel() {
     return versionLabel;
   }
@@ -577,7 +555,6 @@ public class ResultNode   {
    * @return versionComment
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getVersionComment() {

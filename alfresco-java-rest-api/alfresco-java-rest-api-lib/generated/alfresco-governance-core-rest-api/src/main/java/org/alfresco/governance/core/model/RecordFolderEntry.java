@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RecordFolderEntry   {
   @JsonProperty("entry")
   private RecordFolder entry = null;
@@ -33,7 +32,6 @@ public class RecordFolderEntry   {
   @NotNull
 
   @Valid
-
 
   public RecordFolder getEntry() {
     return entry;

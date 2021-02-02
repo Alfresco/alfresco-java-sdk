@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TenantEvent   {
   @JsonProperty("eventTime")
   private OffsetDateTime eventTime = null;
@@ -51,7 +50,6 @@ public class TenantEvent   {
 
   @Valid
 
-
   public OffsetDateTime getEventTime() {
     return eventTime;
   }
@@ -70,7 +68,6 @@ public class TenantEvent   {
    * @return eventType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEventType() {
@@ -93,7 +90,6 @@ public class TenantEvent   {
   @ApiModelProperty(value = "")
 
 
-
   public String getExtraInfo() {
     return extraInfo;
   }
@@ -112,7 +108,6 @@ public class TenantEvent   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -135,7 +130,6 @@ public class TenantEvent   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -156,7 +150,6 @@ public class TenantEvent   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getUserId() {
     return userId;
   }
@@ -175,7 +168,6 @@ public class TenantEvent   {
    * @return userName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getUserName() {

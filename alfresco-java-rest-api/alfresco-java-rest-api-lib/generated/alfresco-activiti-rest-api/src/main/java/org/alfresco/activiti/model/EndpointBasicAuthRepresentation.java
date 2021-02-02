@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class EndpointBasicAuthRepresentation   {
   @JsonProperty("created")
   private OffsetDateTime created = null;
@@ -48,7 +47,6 @@ public class EndpointBasicAuthRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -67,7 +65,6 @@ public class EndpointBasicAuthRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -91,7 +88,6 @@ public class EndpointBasicAuthRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
@@ -110,7 +106,6 @@ public class EndpointBasicAuthRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -133,7 +128,6 @@ public class EndpointBasicAuthRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -152,7 +146,6 @@ public class EndpointBasicAuthRepresentation   {
    * @return username
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getUsername() {

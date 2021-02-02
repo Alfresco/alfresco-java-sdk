@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class BoxUserAccountCredentialsRepresentation   {
   @JsonProperty("authenticationURL")
   private String authenticationURL = null;
@@ -36,7 +35,6 @@ public class BoxUserAccountCredentialsRepresentation   {
    * @return authenticationURL
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAuthenticationURL() {
@@ -60,7 +58,6 @@ public class BoxUserAccountCredentialsRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getExpireDate() {
     return expireDate;
   }
@@ -79,7 +76,6 @@ public class BoxUserAccountCredentialsRepresentation   {
    * @return ownerEmail
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOwnerEmail() {

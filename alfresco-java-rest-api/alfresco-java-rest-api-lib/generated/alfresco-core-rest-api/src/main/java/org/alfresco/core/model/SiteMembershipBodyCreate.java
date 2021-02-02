@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteMembershipBodyCreate   {
   /**
    * Gets or Sets role
@@ -71,7 +70,6 @@ public class SiteMembershipBodyCreate   {
   @NotNull
 
 
-
   public RoleEnum getRole() {
     return role;
   }
@@ -91,7 +89,6 @@ public class SiteMembershipBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getId() {

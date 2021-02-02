@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RootCategoryBodyCreate   {
   @JsonProperty("name")
   private String name = null;
@@ -47,7 +46,6 @@ public class RootCategoryBodyCreate   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -67,7 +65,6 @@ public class RootCategoryBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -98,7 +95,6 @@ public class RootCategoryBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -125,7 +121,6 @@ public class RootCategoryBodyCreate   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Map<String, String> getProperties() {

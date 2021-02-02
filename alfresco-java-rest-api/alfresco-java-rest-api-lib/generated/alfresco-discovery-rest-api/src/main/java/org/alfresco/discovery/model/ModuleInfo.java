@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ModuleInfo   {
   @JsonProperty("id")
   private String id = null;
@@ -53,7 +52,6 @@ public class ModuleInfo   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -72,7 +70,6 @@ public class ModuleInfo   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {
@@ -95,7 +92,6 @@ public class ModuleInfo   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -114,7 +110,6 @@ public class ModuleInfo   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getVersion() {
@@ -138,7 +133,6 @@ public class ModuleInfo   {
 
   @Valid
 
-
   public OffsetDateTime getInstallDate() {
     return installDate;
   }
@@ -157,7 +151,6 @@ public class ModuleInfo   {
    * @return installState
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getInstallState() {
@@ -180,7 +173,6 @@ public class ModuleInfo   {
   @ApiModelProperty(value = "")
 
 
-
   public String getVersionMin() {
     return versionMin;
   }
@@ -199,7 +191,6 @@ public class ModuleInfo   {
    * @return versionMax
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getVersionMax() {

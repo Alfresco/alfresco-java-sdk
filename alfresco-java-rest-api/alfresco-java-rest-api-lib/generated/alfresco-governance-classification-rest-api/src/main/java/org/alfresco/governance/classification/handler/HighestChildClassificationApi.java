@@ -40,15 +40,6 @@ public interface HighestChildClassificationApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ClassificationLevelEntry
-> showHighestChildClassification(
-
-
-@ApiParam(value = "The identifier of a container. You can use the following aliases: **-filePlan-**, **-unfiled-** ",required=true) @PathVariable("containerNodeId") String
- containerNodeId
-
-
-
-);
+    ResponseEntity<ClassificationLevelEntry> showHighestChildClassification(@ApiParam(value = "The identifier of a container. You can use the following aliases: **-filePlan-**, **-unfiled-** ",required=true) @PathVariable("containerNodeId") String containerNodeId);
 
 }

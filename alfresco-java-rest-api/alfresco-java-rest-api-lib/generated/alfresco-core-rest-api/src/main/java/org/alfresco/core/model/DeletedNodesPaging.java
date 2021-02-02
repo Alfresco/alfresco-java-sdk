@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeletedNodesPaging   {
   @JsonProperty("list")
   private DeletedNodesPagingList list = null;
@@ -32,7 +31,6 @@ public class DeletedNodesPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public DeletedNodesPagingList getList() {
     return list;

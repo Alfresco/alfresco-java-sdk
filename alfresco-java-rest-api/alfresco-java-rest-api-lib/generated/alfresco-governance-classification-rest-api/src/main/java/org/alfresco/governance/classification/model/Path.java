@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "An ordered list of ancestors starting with the classification guide and ending with the parent of this topic. This field is only returned when requested. ")
 @Validated
 
-
 public class Path extends ArrayList<PathElement>  {
 
   @Override

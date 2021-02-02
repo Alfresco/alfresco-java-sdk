@@ -37,13 +37,7 @@ public interface UserProfileApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> changePasswordUsingPOST(
-
-
-@ApiParam(value = "changePasswordRepresentation" ,required=true )  @Valid @RequestBody ChangePasswordRepresentation changePasswordRepresentation
-
-);
+    ResponseEntity<Void> changePasswordUsingPOST(@ApiParam(value = "changePasswordRepresentation" ,required=true )  @Valid @RequestBody ChangePasswordRepresentation changePasswordRepresentation);
 
 
     @ApiOperation(value = "Retrieve user profile picture", nickname = "getProfilePictureUsingGET", notes = "Generally returns an image file", response = Resource.class, authorizations = {
@@ -55,8 +49,7 @@ public interface UserProfileApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Resource
-> getProfilePictureUsingGET();
+    ResponseEntity<Resource> getProfilePictureUsingGET();
 
 
     @ApiOperation(value = "Get user profile", nickname = "getProfileUsingGET", notes = "This operation returns account information for the current user. This is useful to get the name, email, the groups that the user is part of, the user picture, etc.", response = UserRepresentation.class, authorizations = {
@@ -68,8 +61,7 @@ public interface UserProfileApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<UserRepresentation
-> getProfileUsingGET();
+    ResponseEntity<UserRepresentation> getProfileUsingGET();
 
 
     @ApiOperation(value = "Update user profile", nickname = "updateProfile", notes = "Only a first name, last name, email and company can be updated", response = UserRepresentation.class, authorizations = {
@@ -81,13 +73,7 @@ public interface UserProfileApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<UserRepresentation
-> updateProfile(
-
-
-@ApiParam(value = "userRepresentation" ,required=true )  @Valid @RequestBody UserRepresentation userRepresentation
-
-);
+    ResponseEntity<UserRepresentation> updateProfile(@ApiParam(value = "userRepresentation" ,required=true )  @Valid @RequestBody UserRepresentation userRepresentation);
 
 
     @ApiOperation(value = "Change user profile picture", nickname = "uploadProfilePictureUsingPOST", notes = "", response = ImageUploadRepresentation.class, authorizations = {
@@ -99,12 +85,6 @@ public interface UserProfileApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<ImageUploadRepresentation
-> uploadProfilePictureUsingPOST(
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<ImageUploadRepresentation> uploadProfilePictureUsingPOST(@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 }

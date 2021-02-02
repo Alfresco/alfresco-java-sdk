@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormSaveRepresentation   {
   @JsonProperty("comment")
   private String comment = null;
@@ -51,7 +50,6 @@ public class FormSaveRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getComment() {
     return comment;
   }
@@ -70,7 +68,6 @@ public class FormSaveRepresentation   {
    * @return formImageBase64
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getFormImageBase64() {
@@ -94,7 +91,6 @@ public class FormSaveRepresentation   {
 
   @Valid
 
-
   public FormRepresentation getFormRepresentation() {
     return formRepresentation;
   }
@@ -113,7 +109,6 @@ public class FormSaveRepresentation   {
    * @return newVersion
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isNewVersion() {
@@ -145,7 +140,6 @@ public class FormSaveRepresentation   {
 
   @Valid
 
-
   public List<ProcessScopeIdentifierRepresentation> getProcessScopeIdentifiers() {
     return processScopeIdentifiers;
   }
@@ -164,7 +158,6 @@ public class FormSaveRepresentation   {
    * @return reusable
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isReusable() {

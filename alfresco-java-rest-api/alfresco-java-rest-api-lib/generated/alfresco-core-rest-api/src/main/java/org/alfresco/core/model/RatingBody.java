@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RatingBody   {
   /**
    * The rating scheme type. Possible values are likes and fiveStar.
@@ -67,7 +66,6 @@ public class RatingBody   {
   @NotNull
 
 
-
   public IdEnum getId() {
     return id;
   }
@@ -87,7 +85,6 @@ public class RatingBody   {
   **/
   @ApiModelProperty(required = true, value = "The rating. The type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar")
   @NotNull
-
 
 
   public String getMyRating() {

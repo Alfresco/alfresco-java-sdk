@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Common query defaults")
 @Validated
 
-
 public class RequestDefaults   {
   @JsonProperty("textAttributes")
   @Valid
@@ -118,7 +117,6 @@ public class RequestDefaults   {
   @ApiModelProperty(value = "A list of query fields/properties used to expand TEXT: queries. The default is cm:content. You could include all content properties using d:content or list all individual content properties or types. As more terms are included the query size, complexity, memory impact and query time will increase. ")
 
 
-
   public List<String> getTextAttributes() {
     return textAttributes;
   }
@@ -137,7 +135,6 @@ public class RequestDefaults   {
    * @return defaultFTSOperator
   **/
   @ApiModelProperty(value = "The default way to combine query parts when AND or OR is not explicitly stated - includes ! - + one two three (one two three) ")
-
 
 
   public DefaultFTSOperatorEnum getDefaultFTSOperator() {
@@ -160,7 +157,6 @@ public class RequestDefaults   {
   @ApiModelProperty(value = "The default way to combine query parts in field query groups when AND or OR is not explicitly stated - includes ! - + FIELD:(one two three) ")
 
 
-
   public DefaultFTSFieldOperatorEnum getDefaultFTSFieldOperator() {
     return defaultFTSFieldOperator;
   }
@@ -181,7 +177,6 @@ public class RequestDefaults   {
   @ApiModelProperty(value = "The default name space to use if one is not provided")
 
 
-
   public String getNamespace() {
     return namespace;
   }
@@ -200,7 +195,6 @@ public class RequestDefaults   {
    * @return defaultFieldName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDefaultFieldName() {

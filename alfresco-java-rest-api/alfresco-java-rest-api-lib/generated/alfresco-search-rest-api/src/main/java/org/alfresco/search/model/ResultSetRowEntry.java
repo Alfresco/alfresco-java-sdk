@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A row in the result set")
 @Validated
 
-
 public class ResultSetRowEntry   {
   @JsonProperty("entry")
   private ResultNode entry = null;
@@ -34,7 +33,6 @@ public class ResultSetRowEntry   {
   @NotNull
 
   @Valid
-
 
   public ResultNode getEntry() {
     return entry;

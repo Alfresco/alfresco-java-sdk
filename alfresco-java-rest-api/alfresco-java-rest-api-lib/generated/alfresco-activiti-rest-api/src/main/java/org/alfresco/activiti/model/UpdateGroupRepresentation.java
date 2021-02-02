@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UpdateGroupRepresentation   {
   @JsonProperty("name")
   private String name = null;
@@ -32,7 +31,6 @@ public class UpdateGroupRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -53,7 +51,6 @@ public class UpdateGroupRepresentation   {
    * @return parentGroupId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getParentGroupId() {

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Request that spellcheck fragments to be added to result set rows The properties reflect SOLR spellcheck parameters. ")
 @Validated
 
-
 public class RequestSpellcheck   {
   @JsonProperty("query")
   private String query = null;
@@ -30,7 +29,6 @@ public class RequestSpellcheck   {
    * @return query
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getQuery() {

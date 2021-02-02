@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RequestHighlightFields   {
   @JsonProperty("field")
   private String field = null;
@@ -46,7 +45,6 @@ public class RequestHighlightFields   {
   @ApiModelProperty(value = "The name of the field to highlight.")
 
 
-
   public String getField() {
     return field;
   }
@@ -65,7 +63,6 @@ public class RequestHighlightFields   {
    * @return snippetCount
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getSnippetCount() {
@@ -88,7 +85,6 @@ public class RequestHighlightFields   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getFragmentSize() {
     return fragmentSize;
   }
@@ -107,7 +103,6 @@ public class RequestHighlightFields   {
    * @return mergeContiguous
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isMergeContiguous() {
@@ -130,7 +125,6 @@ public class RequestHighlightFields   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPrefix() {
     return prefix;
   }
@@ -149,7 +143,6 @@ public class RequestHighlightFields   {
    * @return postfix
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getPostfix() {

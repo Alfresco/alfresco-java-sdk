@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RequestPagination   {
   @JsonProperty("maxItems")
   private Integer maxItems = null;
@@ -35,7 +34,6 @@ public class RequestPagination   {
   @ApiModelProperty(value = "The maximum number of items to return in the query results")
 
 @Min(1)
-
   public Integer getMaxItems() {
     return maxItems;
   }
@@ -57,7 +55,6 @@ public class RequestPagination   {
   @ApiModelProperty(value = "The number of items to skip from the start of the query set")
 
 @Min(0)
-
   public Integer getSkipCount() {
     return skipCount;
   }

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DecisionAuditRepresentation   {
   @JsonProperty("activityId")
   private String activityId = null;
@@ -71,7 +70,6 @@ public class DecisionAuditRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getActivityId() {
     return activityId;
   }
@@ -92,7 +90,6 @@ public class DecisionAuditRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getActivityName() {
     return activityName;
   }
@@ -111,7 +108,6 @@ public class DecisionAuditRepresentation   {
    * @return auditTrailJson
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAuditTrailJson() {
@@ -135,7 +131,6 @@ public class DecisionAuditRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -154,7 +149,6 @@ public class DecisionAuditRepresentation   {
    * @return decisionExecutionFailed
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isDecisionExecutionFailed() {
@@ -177,7 +171,6 @@ public class DecisionAuditRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDecisionKey() {
     return decisionKey;
   }
@@ -196,7 +189,6 @@ public class DecisionAuditRepresentation   {
    * @return decisionModelJson
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDecisionModelJson() {
@@ -219,7 +211,6 @@ public class DecisionAuditRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDecisionName() {
     return decisionName;
   }
@@ -238,7 +229,6 @@ public class DecisionAuditRepresentation   {
    * @return dmnDeploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getDmnDeploymentId() {
@@ -261,7 +251,6 @@ public class DecisionAuditRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getExecutionId() {
     return executionId;
   }
@@ -280,7 +269,6 @@ public class DecisionAuditRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -303,7 +291,6 @@ public class DecisionAuditRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionId() {
     return processDefinitionId;
   }
@@ -324,7 +311,6 @@ public class DecisionAuditRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessInstanceId() {
     return processInstanceId;
   }
@@ -343,7 +329,6 @@ public class DecisionAuditRepresentation   {
    * @return renderedVariables
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getRenderedVariables() {

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UnfiledContainerChildAssociationEntry   {
   @JsonProperty("entry")
   private UnfiledContainerChildAssociation entry = null;
@@ -33,7 +32,6 @@ public class UnfiledContainerChildAssociationEntry   {
   @NotNull
 
   @Valid
-
 
   public UnfiledContainerChildAssociation getEntry() {
     return entry;

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SharedLinkEntry   {
   @JsonProperty("entry")
   private SharedLink entry = null;
@@ -33,7 +32,6 @@ public class SharedLinkEntry   {
   @NotNull
 
   @Valid
-
 
   public SharedLink getEntry() {
     return entry;

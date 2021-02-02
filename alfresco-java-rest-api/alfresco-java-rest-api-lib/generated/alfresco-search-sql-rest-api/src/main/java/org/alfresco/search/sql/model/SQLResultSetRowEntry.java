@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SQLResultSetRowEntry   {
   @JsonProperty("label")
   private String label = null;
@@ -32,7 +31,6 @@ public class SQLResultSetRowEntry   {
    * @return label
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLabel() {
@@ -53,7 +51,6 @@ public class SQLResultSetRowEntry   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getValue() {

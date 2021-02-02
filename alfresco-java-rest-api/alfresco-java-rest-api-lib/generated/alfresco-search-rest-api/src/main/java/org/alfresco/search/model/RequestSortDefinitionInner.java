@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RequestSortDefinitionInner   {
   /**
    * How to order - using a field, when position of the document in the index, score/relevence.
@@ -71,7 +70,6 @@ public class RequestSortDefinitionInner   {
   @ApiModelProperty(value = "How to order - using a field, when position of the document in the index, score/relevence.")
 
 
-
   public TypeEnum getType() {
     return type;
   }
@@ -92,7 +90,6 @@ public class RequestSortDefinitionInner   {
   @ApiModelProperty(value = "The name of the field")
 
 
-
   public String getField() {
     return field;
   }
@@ -111,7 +108,6 @@ public class RequestSortDefinitionInner   {
    * @return ascending
   **/
   @ApiModelProperty(value = "The sort order. (The ordering of nulls is determined by the SOLR configuration)")
-
 
 
   public Boolean isAscending() {

@@ -35,40 +35,7 @@ public interface SubmittedFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation
-> getFormSubmittedFromsUsingGET(
-
-
-@ApiParam(value = "formId",required=true) @PathVariable("formId") Long
- formId
-
-
-
-,
-
-@ApiParam(value = "submittedBy") @Valid @RequestParam(value = "submittedBy", required = false) Long
- submittedBy
-
-
-
-
-,
-
-@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer
- start
-
-
-
-
-,
-
-@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer
- size
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation> getFormSubmittedFromsUsingGET(@ApiParam(value = "formId",required=true) @PathVariable("formId") Long formId,@ApiParam(value = "submittedBy") @Valid @RequestParam(value = "submittedBy", required = false) Long submittedBy,@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start,@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
     @ApiOperation(value = "List submissions for a process instance", nickname = "getProcessSubmittedFromsUsingGET", notes = "", response = ResultListDataRepresentationSubmittedFormRepresentation.class, authorizations = {
@@ -80,16 +47,7 @@ public interface SubmittedFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation
-> getProcessSubmittedFromsUsingGET(
-
-
-@ApiParam(value = "processId",required=true) @PathVariable("processId") String
- processId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation> getProcessSubmittedFromsUsingGET(@ApiParam(value = "processId",required=true) @PathVariable("processId") String processId);
 
 
     @ApiOperation(value = "Get a form submission", nickname = "getSubmittedFromUsingGET", notes = "", response = SubmittedFormRepresentation.class, authorizations = {
@@ -101,16 +59,7 @@ public interface SubmittedFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SubmittedFormRepresentation
-> getSubmittedFromUsingGET(
-
-
-@ApiParam(value = "submittedFormId",required=true) @PathVariable("submittedFormId") Long
- submittedFormId
-
-
-
-);
+    ResponseEntity<SubmittedFormRepresentation> getSubmittedFromUsingGET(@ApiParam(value = "submittedFormId",required=true) @PathVariable("submittedFormId") Long submittedFormId);
 
 
     @ApiOperation(value = "Get the submitted form for a task", nickname = "getTaskSubmittedFromsUsingGET", notes = "", response = SubmittedFormRepresentation.class, authorizations = {
@@ -122,15 +71,6 @@ public interface SubmittedFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SubmittedFormRepresentation
-> getTaskSubmittedFromsUsingGET(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<SubmittedFormRepresentation> getTaskSubmittedFromsUsingGET(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 }

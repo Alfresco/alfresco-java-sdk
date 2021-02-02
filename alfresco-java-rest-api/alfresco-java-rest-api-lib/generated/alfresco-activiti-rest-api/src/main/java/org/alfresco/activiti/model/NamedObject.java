@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class NamedObject   {
   @JsonProperty("id")
   private String id = null;
@@ -32,7 +31,6 @@ public class NamedObject   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -53,7 +51,6 @@ public class NamedObject   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {

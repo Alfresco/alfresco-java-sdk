@@ -20,7 +20,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TransferContainerChildAssociation   {
   @JsonProperty("id")
   private String id = null;
@@ -76,7 +75,6 @@ public class TransferContainerChildAssociation   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -96,7 +94,6 @@ public class TransferContainerChildAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -120,7 +117,6 @@ public class TransferContainerChildAssociation   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -140,7 +136,6 @@ public class TransferContainerChildAssociation   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -165,7 +160,6 @@ public class TransferContainerChildAssociation   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -188,7 +182,6 @@ public class TransferContainerChildAssociation   {
 
   @Valid
 
-
   public UserInfo getCreatedByUser() {
     return createdByUser;
   }
@@ -207,7 +200,6 @@ public class TransferContainerChildAssociation   {
    * @return transferPDFIndicator
   **/
   @ApiModelProperty(value = "Present only for transfer nodes.")
-
 
 
   public Boolean isTransferPDFIndicator() {
@@ -230,7 +222,6 @@ public class TransferContainerChildAssociation   {
   @ApiModelProperty(value = "Present only for transfer nodes.")
 
 
-
   public String getTransferLocation() {
     return transferLocation;
   }
@@ -249,7 +240,6 @@ public class TransferContainerChildAssociation   {
    * @return transferAccessionIndicator
   **/
   @ApiModelProperty(value = "Present only for transfer nodes.")
-
 
 
   public Boolean isTransferAccessionIndicator() {
@@ -280,7 +270,6 @@ public class TransferContainerChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -299,7 +288,6 @@ public class TransferContainerChildAssociation   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -330,7 +318,6 @@ public class TransferContainerChildAssociation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -351,7 +338,6 @@ public class TransferContainerChildAssociation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ChildAssociationInfo getAssociation() {
     return association;

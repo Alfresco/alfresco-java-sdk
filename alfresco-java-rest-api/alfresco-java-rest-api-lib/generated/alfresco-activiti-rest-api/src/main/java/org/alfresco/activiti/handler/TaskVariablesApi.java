@@ -35,21 +35,7 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<List<RestVariable>
-> createTaskVariableUsingPOST(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "restVariables" ,required=true )  @Valid @RequestBody List<RestVariable> restVariables
-
-);
+    ResponseEntity<List<RestVariable>> createTaskVariableUsingPOST(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "restVariables" ,required=true )  @Valid @RequestBody List<RestVariable> restVariables);
 
 
     @ApiOperation(value = "Create or update variables", nickname = "deleteAllLocalTaskVariablesUsingDELETE", notes = "", authorizations = {
@@ -61,16 +47,7 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteAllLocalTaskVariablesUsingDELETE(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<Void> deleteAllLocalTaskVariablesUsingDELETE(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Delete a variable", nickname = "deleteVariableUsingDELETE", notes = "", authorizations = {
@@ -82,32 +59,7 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteVariableUsingDELETE(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String
- variableName
-
-
-
-,
-
-@ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String
- scope
-
-
-
-
-);
+    ResponseEntity<Void> deleteVariableUsingDELETE(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String variableName,@ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
     @ApiOperation(value = "Get a variable", nickname = "getVariableUsingGET", notes = "", response = RestVariable.class, authorizations = {
@@ -119,32 +71,7 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<RestVariable
-> getVariableUsingGET(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String
- variableName
-
-
-
-,
-
-@ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String
- scope
-
-
-
-
-);
+    ResponseEntity<RestVariable> getVariableUsingGET(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String variableName,@ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
     @ApiOperation(value = "List variables", nickname = "getVariablesUsingGET", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
@@ -156,24 +83,7 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<RestVariable>
-> getVariablesUsingGET(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-@ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String
- scope
-
-
-
-
-);
+    ResponseEntity<List<RestVariable>> getVariablesUsingGET(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
     @ApiOperation(value = "Update a variable", nickname = "updateVariableUsingPUT", notes = "", response = RestVariable.class, authorizations = {
@@ -185,28 +95,6 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<RestVariable
-> updateVariableUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String
- variableName
-
-
-
-,
-
-
-@ApiParam(value = "restVariable" ,required=true )  @Valid @RequestBody RestVariable restVariable
-
-);
+    ResponseEntity<RestVariable> updateVariableUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "variableName",required=true) @PathVariable("variableName") String variableName,@ApiParam(value = "restVariable" ,required=true )  @Valid @RequestBody RestVariable restVariable);
 
 }

@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DecisionTableSaveRepresentation   {
   @JsonProperty("comment")
   private String comment = null;
@@ -51,7 +50,6 @@ public class DecisionTableSaveRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getComment() {
     return comment;
   }
@@ -70,7 +68,6 @@ public class DecisionTableSaveRepresentation   {
    * @return decisionTableImageBase64
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDecisionTableImageBase64() {
@@ -94,7 +91,6 @@ public class DecisionTableSaveRepresentation   {
 
   @Valid
 
-
   public DecisionTableRepresentation getDecisionTableRepresentation() {
     return decisionTableRepresentation;
   }
@@ -113,7 +109,6 @@ public class DecisionTableSaveRepresentation   {
    * @return newVersion
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isNewVersion() {
@@ -145,7 +140,6 @@ public class DecisionTableSaveRepresentation   {
 
   @Valid
 
-
   public List<ProcessScopeIdentifierRepresentation> getProcessScopeIdentifiers() {
     return processScopeIdentifiers;
   }
@@ -164,7 +158,6 @@ public class DecisionTableSaveRepresentation   {
    * @return reusable
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isReusable() {

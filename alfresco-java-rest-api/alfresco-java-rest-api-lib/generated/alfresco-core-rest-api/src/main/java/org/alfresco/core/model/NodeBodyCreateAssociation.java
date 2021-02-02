@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class NodeBodyCreateAssociation   {
   @JsonProperty("assocType")
   private String assocType = null;
@@ -29,7 +28,6 @@ public class NodeBodyCreateAssociation   {
    * @return assocType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAssocType() {

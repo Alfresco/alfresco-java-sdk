@@ -20,7 +20,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupRepresentation   {
   @JsonProperty("capabilities")
   @Valid
@@ -85,7 +84,6 @@ public class GroupRepresentation   {
 
   @Valid
 
-
   public List<GroupCapabilityRepresentation> getCapabilities() {
     return capabilities;
   }
@@ -104,7 +102,6 @@ public class GroupRepresentation   {
    * @return externalId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getExternalId() {
@@ -136,7 +133,6 @@ public class GroupRepresentation   {
 
   @Valid
 
-
   public List<GroupRepresentation> getGroups() {
     return groups;
   }
@@ -155,7 +151,6 @@ public class GroupRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -179,7 +174,6 @@ public class GroupRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastSyncTimeStamp() {
     return lastSyncTimeStamp;
   }
@@ -201,7 +195,6 @@ public class GroupRepresentation   {
 
   @Valid
 
-
   public UserRepresentation getManager() {
     return manager;
   }
@@ -220,7 +213,6 @@ public class GroupRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -243,7 +235,6 @@ public class GroupRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getParentGroupId() {
     return parentGroupId;
   }
@@ -262,7 +253,6 @@ public class GroupRepresentation   {
    * @return status
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getStatus() {
@@ -285,7 +275,6 @@ public class GroupRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -306,7 +295,6 @@ public class GroupRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getType() {
     return type;
   }
@@ -325,7 +313,6 @@ public class GroupRepresentation   {
    * @return userCount
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getUserCount() {
@@ -356,7 +343,6 @@ public class GroupRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<UserRepresentation> getUsers() {
     return users;

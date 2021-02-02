@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ContentInfo   {
   @JsonProperty("mimeType")
   private String mimeType = null;
@@ -44,7 +43,6 @@ public class ContentInfo   {
   @NotNull
 
 
-
   public String getMimeType() {
     return mimeType;
   }
@@ -64,7 +62,6 @@ public class ContentInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getMimeTypeName() {
@@ -88,7 +85,6 @@ public class ContentInfo   {
   @NotNull
 
 
-
   public Integer getSizeInBytes() {
     return sizeInBytes;
   }
@@ -109,7 +105,6 @@ public class ContentInfo   {
   @ApiModelProperty(value = "")
 
 
-
   public String getEncoding() {
     return encoding;
   }
@@ -128,7 +123,6 @@ public class ContentInfo   {
    * @return mimeTypeGroup
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMimeTypeGroup() {

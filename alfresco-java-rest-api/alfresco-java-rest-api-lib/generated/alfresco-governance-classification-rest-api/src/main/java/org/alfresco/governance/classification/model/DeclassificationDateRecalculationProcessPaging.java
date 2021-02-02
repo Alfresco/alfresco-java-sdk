@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeclassificationDateRecalculationProcessPaging   {
   @JsonProperty("list")
   private DeclassificationDateRecalculationProcessPagingList list = null;
@@ -32,7 +31,6 @@ public class DeclassificationDateRecalculationProcessPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public DeclassificationDateRecalculationProcessPagingList getList() {
     return list;

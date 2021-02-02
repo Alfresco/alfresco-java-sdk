@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RequestTemplatesInner   {
   @JsonProperty("name")
   private String name = null;
@@ -32,7 +31,6 @@ public class RequestTemplatesInner   {
    * @return name
   **/
   @ApiModelProperty(value = "The template name")
-
 
 
   public String getName() {
@@ -53,7 +51,6 @@ public class RequestTemplatesInner   {
    * @return template
   **/
   @ApiModelProperty(value = "The template")
-
 
 
   public String getTemplate() {

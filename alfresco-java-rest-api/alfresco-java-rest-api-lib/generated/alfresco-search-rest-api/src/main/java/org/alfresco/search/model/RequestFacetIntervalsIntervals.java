@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RequestFacetIntervalsIntervals   {
   @JsonProperty("field")
   private String field = null;
@@ -41,7 +40,6 @@ public class RequestFacetIntervalsIntervals   {
   @ApiModelProperty(value = "The field to facet on")
 
 
-
   public String getField() {
     return field;
   }
@@ -60,7 +58,6 @@ public class RequestFacetIntervalsIntervals   {
    * @return label
   **/
   @ApiModelProperty(value = "A label to use to identify the field facet")
-
 
 
   public String getLabel() {
@@ -91,7 +88,6 @@ public class RequestFacetIntervalsIntervals   {
   @ApiModelProperty(value = "Sets the intervals for all fields.")
 
   @Valid
-
 
   public List<RequestFacetSet> getSets() {
     return sets;

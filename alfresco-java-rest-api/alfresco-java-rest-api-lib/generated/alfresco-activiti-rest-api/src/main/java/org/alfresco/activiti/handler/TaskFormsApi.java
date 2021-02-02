@@ -38,21 +38,7 @@ public interface TaskFormsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> completeTaskFormUsingPOST(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "completeTaskFormRepresentation" ,required=true )  @Valid @RequestBody CompleteFormRepresentation completeTaskFormRepresentation
-
-);
+    ResponseEntity<Void> completeTaskFormUsingPOST(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "completeTaskFormRepresentation" ,required=true )  @Valid @RequestBody CompleteFormRepresentation completeTaskFormRepresentation);
 
 
     @ApiOperation(value = "Get task variables", nickname = "getProcessInstanceVariablesUsingGET1", notes = "", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List", authorizations = {
@@ -64,16 +50,7 @@ public interface TaskFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<ProcessInstanceVariableRepresentation>
-> getProcessInstanceVariablesUsingGET1(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<List<ProcessInstanceVariableRepresentation>> getProcessInstanceVariablesUsingGET1(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Retrieve column field values", nickname = "getRestFieldValuesUsingGET1", notes = "Specific case to retrieve information on a specific column", response = FormValueRepresentation.class, responseContainer = "List", authorizations = {
@@ -85,32 +62,7 @@ public interface TaskFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<FormValueRepresentation>
-> getRestFieldValuesUsingGET1(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "field",required=true) @PathVariable("field") String
- field
-
-
-
-,
-
-
-@ApiParam(value = "column",required=true) @PathVariable("column") String
- column
-
-
-
-);
+    ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET1(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "field",required=true) @PathVariable("field") String field,@ApiParam(value = "column",required=true) @PathVariable("column") String column);
 
 
     @ApiOperation(value = "Retrieve populated field values", nickname = "getRestFieldValuesUsingGET2", notes = "Form field values that are populated through a REST backend, can be retrieved via this service", response = FormValueRepresentation.class, responseContainer = "List", authorizations = {
@@ -122,24 +74,7 @@ public interface TaskFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<FormValueRepresentation>
-> getRestFieldValuesUsingGET2(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "field",required=true) @PathVariable("field") String
- field
-
-
-
-);
+    ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET2(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "field",required=true) @PathVariable("field") String field);
 
 
     @ApiOperation(value = "Get a task form", nickname = "getTaskFormUsingGET", notes = "", response = FormDefinitionRepresentation.class, authorizations = {
@@ -151,16 +86,7 @@ public interface TaskFormsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<FormDefinitionRepresentation
-> getTaskFormUsingGET(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<FormDefinitionRepresentation> getTaskFormUsingGET(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Save a task form", nickname = "saveTaskFormUsingPOST", notes = "", authorizations = {
@@ -172,20 +98,6 @@ public interface TaskFormsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> saveTaskFormUsingPOST(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "saveTaskFormRepresentation" ,required=true )  @Valid @RequestBody SaveFormRepresentation saveTaskFormRepresentation
-
-);
+    ResponseEntity<Void> saveTaskFormUsingPOST(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "saveTaskFormRepresentation" ,required=true )  @Valid @RequestBody SaveFormRepresentation saveTaskFormRepresentation);
 
 }

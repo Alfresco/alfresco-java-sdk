@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditLogEntryRepresentation   {
   @JsonProperty("activityId")
   private String activityId = null;
@@ -68,7 +67,6 @@ public class AuditLogEntryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getActivityId() {
     return activityId;
   }
@@ -87,7 +85,6 @@ public class AuditLogEntryRepresentation   {
    * @return activityName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getActivityName() {
@@ -110,7 +107,6 @@ public class AuditLogEntryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getActivityType() {
     return activityType;
   }
@@ -131,7 +127,6 @@ public class AuditLogEntryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getDurationInMillis() {
     return durationInMillis;
   }
@@ -150,7 +145,6 @@ public class AuditLogEntryRepresentation   {
    * @return endTime
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEndTime() {
@@ -182,7 +176,6 @@ public class AuditLogEntryRepresentation   {
 
   @Valid
 
-
   public List<AuditLogFormDataRepresentation> getFormData() {
     return formData;
   }
@@ -201,7 +194,6 @@ public class AuditLogEntryRepresentation   {
    * @return index
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getIndex() {
@@ -224,7 +216,6 @@ public class AuditLogEntryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSelectedOutcome() {
     return selectedOutcome;
   }
@@ -243,7 +234,6 @@ public class AuditLogEntryRepresentation   {
    * @return startTime
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getStartTime() {
@@ -266,7 +256,6 @@ public class AuditLogEntryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskAssignee() {
     return taskAssignee;
   }
@@ -287,7 +276,6 @@ public class AuditLogEntryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskName() {
     return taskName;
   }
@@ -306,7 +294,6 @@ public class AuditLogEntryRepresentation   {
    * @return type
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getType() {

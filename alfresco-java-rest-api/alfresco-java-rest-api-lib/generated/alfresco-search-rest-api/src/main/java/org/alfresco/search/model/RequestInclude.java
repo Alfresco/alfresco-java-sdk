@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Returns additional information about the node. The following optional fields can be requested:  * properties  * aspectNames  * path  * isLink  * allowableOperations  * association ")
 @Validated
 
-
 public class RequestInclude extends ArrayList<String>  {
 
   @Override

@@ -20,7 +20,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TaskRepresentation   {
   @JsonProperty("adhocTaskCanBeReassigned")
   private Boolean adhocTaskCanBeReassigned = null;
@@ -136,7 +135,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isAdhocTaskCanBeReassigned() {
     return adhocTaskCanBeReassigned;
   }
@@ -158,7 +156,6 @@ public class TaskRepresentation   {
 
   @Valid
 
-
   public LightUserRepresentation getAssignee() {
     return assignee;
   }
@@ -177,7 +174,6 @@ public class TaskRepresentation   {
    * @return category
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getCategory() {
@@ -201,7 +197,6 @@ public class TaskRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -220,7 +215,6 @@ public class TaskRepresentation   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -244,7 +238,6 @@ public class TaskRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueDate() {
     return dueDate;
   }
@@ -263,7 +256,6 @@ public class TaskRepresentation   {
    * @return duration
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getDuration() {
@@ -287,7 +279,6 @@ public class TaskRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getEndDate() {
     return endDate;
   }
@@ -306,7 +297,6 @@ public class TaskRepresentation   {
    * @return executionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getExecutionId() {
@@ -329,7 +319,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getFormKey() {
     return formKey;
   }
@@ -350,7 +339,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -369,7 +357,6 @@ public class TaskRepresentation   {
    * @return initiatorCanCompleteTask
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isInitiatorCanCompleteTask() {
@@ -401,7 +388,6 @@ public class TaskRepresentation   {
 
   @Valid
 
-
   public List<LightGroupRepresentation> getInvolvedGroups() {
     return involvedGroups;
   }
@@ -431,7 +417,6 @@ public class TaskRepresentation   {
 
   @Valid
 
-
   public List<LightUserRepresentation> getInvolvedPeople() {
     return involvedPeople;
   }
@@ -450,7 +435,6 @@ public class TaskRepresentation   {
    * @return managerOfCandidateGroup
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isManagerOfCandidateGroup() {
@@ -473,7 +457,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isMemberOfCandidateGroup() {
     return memberOfCandidateGroup;
   }
@@ -492,7 +475,6 @@ public class TaskRepresentation   {
    * @return memberOfCandidateUsers
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isMemberOfCandidateUsers() {
@@ -515,7 +497,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -534,7 +515,6 @@ public class TaskRepresentation   {
    * @return parentTaskId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getParentTaskId() {
@@ -557,7 +537,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getParentTaskName() {
     return parentTaskName;
   }
@@ -576,7 +555,6 @@ public class TaskRepresentation   {
    * @return priority
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getPriority() {
@@ -599,7 +577,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionCategory() {
     return processDefinitionCategory;
   }
@@ -618,7 +595,6 @@ public class TaskRepresentation   {
    * @return processDefinitionDeploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionDeploymentId() {
@@ -641,7 +617,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionDescription() {
     return processDefinitionDescription;
   }
@@ -660,7 +635,6 @@ public class TaskRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -683,7 +657,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
@@ -702,7 +675,6 @@ public class TaskRepresentation   {
    * @return processDefinitionName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionName() {
@@ -725,7 +697,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
@@ -744,7 +715,6 @@ public class TaskRepresentation   {
    * @return processInstanceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceId() {
@@ -767,7 +737,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessInstanceName() {
     return processInstanceName;
   }
@@ -788,7 +757,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessInstanceStartUserId() {
     return processInstanceStartUserId;
   }
@@ -807,7 +775,6 @@ public class TaskRepresentation   {
    * @return taskDefinitionKey
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskDefinitionKey() {
@@ -838,7 +805,6 @@ public class TaskRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<RestVariable> getVariables() {
     return variables;

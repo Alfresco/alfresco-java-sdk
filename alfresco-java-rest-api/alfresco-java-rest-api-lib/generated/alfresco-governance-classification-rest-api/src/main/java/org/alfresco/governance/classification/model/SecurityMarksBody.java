@@ -13,7 +13,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SecurityMarksBody extends ArrayList<SecurityMarkBody>  {
 
   @Override

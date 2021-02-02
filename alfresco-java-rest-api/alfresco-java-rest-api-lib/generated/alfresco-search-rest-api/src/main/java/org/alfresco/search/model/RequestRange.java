@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Facet range")
 @Validated
 
-
 public class RequestRange   {
   @JsonProperty("field")
   private String field = null;
@@ -61,7 +60,6 @@ public class RequestRange   {
   @ApiModelProperty(value = "The name of the field to perform range")
 
 
-
   public String getField() {
     return field;
   }
@@ -80,7 +78,6 @@ public class RequestRange   {
    * @return start
   **/
   @ApiModelProperty(value = "The start of the range")
-
 
 
   public String getStart() {
@@ -103,7 +100,6 @@ public class RequestRange   {
   @ApiModelProperty(value = "The end of the range")
 
 
-
   public String getEnd() {
     return end;
   }
@@ -124,7 +120,6 @@ public class RequestRange   {
   @ApiModelProperty(value = "Bucket size")
 
 
-
   public String getGap() {
     return gap;
   }
@@ -143,7 +138,6 @@ public class RequestRange   {
    * @return hardend
   **/
   @ApiModelProperty(value = "If true means that the last bucket will end at “end” even if it is less than “gap” wide.")
-
 
 
   public Boolean isHardend() {
@@ -174,7 +168,6 @@ public class RequestRange   {
   @ApiModelProperty(value = "before, after, between, non, all")
 
 
-
   public List<String> getOther() {
     return other;
   }
@@ -203,7 +196,6 @@ public class RequestRange   {
   @ApiModelProperty(value = "lower, upper, edge, outer, all")
 
 
-
   public List<String> getInclude() {
     return include;
   }
@@ -222,7 +214,6 @@ public class RequestRange   {
    * @return label
   **/
   @ApiModelProperty(value = "A label to include as a pivot reference")
-
 
 
   public String getLabel() {
@@ -251,7 +242,6 @@ public class RequestRange   {
    * @return excludeFilters
   **/
   @ApiModelProperty(value = "Filter queries to exclude when calculating statistics")
-
 
 
   public List<String> getExcludeFilters() {

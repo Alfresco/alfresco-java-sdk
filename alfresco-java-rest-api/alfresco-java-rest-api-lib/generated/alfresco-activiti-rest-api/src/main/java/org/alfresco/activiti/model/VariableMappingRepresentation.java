@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class VariableMappingRepresentation   {
   @JsonProperty("inProcessVariable")
   private String inProcessVariable = null;
@@ -46,7 +45,6 @@ public class VariableMappingRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getInProcessVariable() {
     return inProcessVariable;
   }
@@ -65,7 +63,6 @@ public class VariableMappingRepresentation   {
    * @return inVariableType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getInVariableType() {
@@ -88,7 +85,6 @@ public class VariableMappingRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMappedVariable() {
     return mappedVariable;
   }
@@ -107,7 +103,6 @@ public class VariableMappingRepresentation   {
    * @return outProcessVariable
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOutProcessVariable() {
@@ -130,7 +125,6 @@ public class VariableMappingRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getOutVariableType() {
     return outVariableType;
   }
@@ -149,7 +143,6 @@ public class VariableMappingRepresentation   {
    * @return typeOfMapping
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTypeOfMapping() {

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AppDefinitionSaveRepresentation   {
   @JsonProperty("appDefinition")
   private AppDefinitionRepresentation appDefinition = null;
@@ -39,7 +38,6 @@ public class AppDefinitionSaveRepresentation   {
 
   @Valid
 
-
   public AppDefinitionRepresentation getAppDefinition() {
     return appDefinition;
   }
@@ -60,7 +58,6 @@ public class AppDefinitionSaveRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isForce() {
     return force;
   }
@@ -79,7 +76,6 @@ public class AppDefinitionSaveRepresentation   {
    * @return publish
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isPublish() {

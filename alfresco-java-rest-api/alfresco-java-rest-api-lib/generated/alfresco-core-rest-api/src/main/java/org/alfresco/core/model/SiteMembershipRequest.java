@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteMembershipRequest   {
   @JsonProperty("id")
   private String id = null;
@@ -43,7 +42,6 @@ public class SiteMembershipRequest   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -65,7 +63,6 @@ public class SiteMembershipRequest   {
   @NotNull
 
   @Valid
-
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -89,7 +86,6 @@ public class SiteMembershipRequest   {
 
   @Valid
 
-
   public Site getSite() {
     return site;
   }
@@ -108,7 +104,6 @@ public class SiteMembershipRequest   {
    * @return message
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMessage() {

@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Activities describe any past activity in a site, for example creating an item of content, commenting on a node, liking an item of content. ")
 @Validated
 
-
 public class Activity   {
   @JsonProperty("postPersonId")
   private String postPersonId = null;
@@ -52,7 +51,6 @@ public class Activity   {
   @NotNull
 
 
-
   public String getPostPersonId() {
     return postPersonId;
   }
@@ -74,7 +72,6 @@ public class Activity   {
   @NotNull
 
 
-
   public Long getId() {
     return id;
   }
@@ -93,7 +90,6 @@ public class Activity   {
    * @return siteId
   **/
   @ApiModelProperty(value = "The unique id of the site on which the activity was performed")
-
 
 
   public String getSiteId() {
@@ -117,7 +113,6 @@ public class Activity   {
 
   @Valid
 
-
   public OffsetDateTime getPostedAt() {
     return postedAt;
   }
@@ -137,7 +132,6 @@ public class Activity   {
   **/
   @ApiModelProperty(required = true, value = "The feed on which this activity was posted")
   @NotNull
-
 
 
   public String getFeedPersonId() {
@@ -160,7 +154,6 @@ public class Activity   {
   @ApiModelProperty(value = "An object summarizing the activity")
 
 
-
   public Object getActivitySummary() {
     return activitySummary;
   }
@@ -180,7 +173,6 @@ public class Activity   {
   **/
   @ApiModelProperty(required = true, value = "The type of the activity posted")
   @NotNull
-
 
 
   public String getActivityType() {

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ClassificationLevel   {
   @JsonProperty("id")
   private String id = null;
@@ -38,7 +37,6 @@ public class ClassificationLevel   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -60,7 +58,6 @@ public class ClassificationLevel   {
   @NotNull
 
 
-
   public String getDisplayLabel() {
     return displayLabel;
   }
@@ -80,7 +77,6 @@ public class ClassificationLevel   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isIsUnmarkedMark() {

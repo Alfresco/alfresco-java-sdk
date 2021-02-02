@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ImageUploadRepresentation   {
   @JsonProperty("created")
   private OffsetDateTime created = null;
@@ -42,7 +41,6 @@ public class ImageUploadRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -61,7 +59,6 @@ public class ImageUploadRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -84,7 +81,6 @@ public class ImageUploadRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -103,7 +99,6 @@ public class ImageUploadRepresentation   {
    * @return userId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getUserId() {

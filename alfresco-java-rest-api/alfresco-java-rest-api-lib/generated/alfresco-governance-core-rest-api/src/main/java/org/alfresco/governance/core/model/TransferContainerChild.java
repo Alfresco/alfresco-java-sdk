@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TransferContainerChild   {
   @JsonProperty("id")
   private String id = null;
@@ -71,7 +70,6 @@ public class TransferContainerChild   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -91,7 +89,6 @@ public class TransferContainerChild   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -115,7 +112,6 @@ public class TransferContainerChild   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -135,7 +131,6 @@ public class TransferContainerChild   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -160,7 +155,6 @@ public class TransferContainerChild   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -183,7 +177,6 @@ public class TransferContainerChild   {
 
   @Valid
 
-
   public UserInfo getCreatedByUser() {
     return createdByUser;
   }
@@ -202,7 +195,6 @@ public class TransferContainerChild   {
    * @return transferPDFIndicator
   **/
   @ApiModelProperty(value = "Present only for transfer nodes.")
-
 
 
   public Boolean isTransferPDFIndicator() {
@@ -225,7 +217,6 @@ public class TransferContainerChild   {
   @ApiModelProperty(value = "Present only for transfer nodes.")
 
 
-
   public String getTransferLocation() {
     return transferLocation;
   }
@@ -244,7 +235,6 @@ public class TransferContainerChild   {
    * @return transferAccessionIndicator
   **/
   @ApiModelProperty(value = "Present only for transfer nodes.")
-
 
 
   public Boolean isTransferAccessionIndicator() {
@@ -275,7 +265,6 @@ public class TransferContainerChild   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -294,7 +283,6 @@ public class TransferContainerChild   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -323,7 +311,6 @@ public class TransferContainerChild   {
    * @return allowableOperations
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getAllowableOperations() {

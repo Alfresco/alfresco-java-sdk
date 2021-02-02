@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UnfiledRecordFolderAssociationPaging   {
   @JsonProperty("list")
   private UnfiledRecordFolderAssociationPagingList list = null;
@@ -32,7 +31,6 @@ public class UnfiledRecordFolderAssociationPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public UnfiledRecordFolderAssociationPagingList getList() {
     return list;

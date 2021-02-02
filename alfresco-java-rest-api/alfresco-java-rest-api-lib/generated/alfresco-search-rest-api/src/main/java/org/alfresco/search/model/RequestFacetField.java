@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A simple facet field")
 @Validated
 
-
 public class RequestFacetField   {
   @JsonProperty("field")
   private String field = null;
@@ -128,7 +127,6 @@ public class RequestFacetField   {
   @ApiModelProperty(value = "The facet field")
 
 
-
   public String getField() {
     return field;
   }
@@ -147,7 +145,6 @@ public class RequestFacetField   {
    * @return label
   **/
   @ApiModelProperty(value = "A label to include in place of the facet field")
-
 
 
   public String getLabel() {
@@ -170,7 +167,6 @@ public class RequestFacetField   {
   @ApiModelProperty(value = "Restricts the possible constraints to only indexed values with a specified prefix.")
 
 
-
   public String getPrefix() {
     return prefix;
   }
@@ -189,7 +185,6 @@ public class RequestFacetField   {
    * @return sort
   **/
   @ApiModelProperty(value = "")
-
 
 
   public SortEnum getSort() {
@@ -212,7 +207,6 @@ public class RequestFacetField   {
   @ApiModelProperty(value = "")
 
 
-
   public MethodEnum getMethod() {
     return method;
   }
@@ -231,7 +225,6 @@ public class RequestFacetField   {
    * @return missing
   **/
   @ApiModelProperty(value = "When true, count results that match the query but which have no facet value for the field (in addition to the Term-based constraints).")
-
 
 
   public Boolean isMissing() {
@@ -254,7 +247,6 @@ public class RequestFacetField   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getLimit() {
     return limit;
   }
@@ -273,7 +265,6 @@ public class RequestFacetField   {
    * @return offset
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getOffset() {
@@ -296,7 +287,6 @@ public class RequestFacetField   {
   @ApiModelProperty(value = "The minimum count required for a facet field to be included in the response.")
 
 
-
   public Integer getMincount() {
     return mincount;
   }
@@ -315,7 +305,6 @@ public class RequestFacetField   {
    * @return facetEnumCacheMinDf
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getFacetEnumCacheMinDf() {
@@ -344,7 +333,6 @@ public class RequestFacetField   {
    * @return excludeFilters
   **/
   @ApiModelProperty(value = "Filter Queries with tags listed here will not be included in facet counts. This is used for multi-select facetting. ")
-
 
 
   public List<String> getExcludeFilters() {

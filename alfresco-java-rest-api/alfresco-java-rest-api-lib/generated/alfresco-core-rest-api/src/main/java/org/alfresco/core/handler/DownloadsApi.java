@@ -40,16 +40,7 @@ public interface DownloadsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> cancelDownload(
-
-
-@ApiParam(value = "The identifier of a download node.",required=true) @PathVariable("downloadId") String
- downloadId
-
-
-
-);
+    ResponseEntity<Void> cancelDownload(@ApiParam(value = "The identifier of a download node.",required=true) @PathVariable("downloadId") String downloadId);
 
 
     @ApiOperation(value = "Create a new download", nickname = "createDownload", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Creates a new download node asynchronously, the content of which will be the zipped content of the **nodeIds** specified in the JSON body like this:  ```JSON {     \"nodeIds\":      [        \"c8bb482a-ff3c-4704-a3a3-de1c83ccd84c\",        \"cffa62db-aa01-493d-9594-058bc058eeb1\"      ] } ```  **Note:** The content of the download node can be obtained using the **GET /nodes/{downloadId}/content** endpoint         ", response = DownloadEntry.class, authorizations = {
@@ -65,21 +56,7 @@ public interface DownloadsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<DownloadEntry
-> createDownload(
-
-
-@ApiParam(value = "The nodeIds the content of which will be zipped, which zip will be set as the content of our download node." ,required=true )  @Valid @RequestBody DownloadBodyCreate downloadBodyCreate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<DownloadEntry> createDownload(@ApiParam(value = "The nodeIds the content of which will be zipped, which zip will be set as the content of our download node." ,required=true )  @Valid @RequestBody DownloadBodyCreate downloadBodyCreate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Get a download", nickname = "getDownload", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Retrieve status information for download node **downloadId** ", response = DownloadEntry.class, authorizations = {
@@ -95,23 +72,6 @@ public interface DownloadsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DownloadEntry
-> getDownload(
-
-
-@ApiParam(value = "The identifier of a download node.",required=true) @PathVariable("downloadId") String
- downloadId
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<DownloadEntry> getDownload(@ApiParam(value = "The identifier of a download node.",required=true) @PathVariable("downloadId") String downloadId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

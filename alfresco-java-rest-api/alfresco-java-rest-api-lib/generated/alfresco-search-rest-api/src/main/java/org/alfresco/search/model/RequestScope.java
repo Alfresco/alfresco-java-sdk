@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Scope")
 @Validated
 
-
 public class RequestScope   {
   /**
    * The locations to include in the query 
@@ -64,7 +63,6 @@ public class RequestScope   {
    * @return locations
   **/
   @ApiModelProperty(value = "The locations to include in the query ")
-
 
 
   public LocationsEnum getLocations() {

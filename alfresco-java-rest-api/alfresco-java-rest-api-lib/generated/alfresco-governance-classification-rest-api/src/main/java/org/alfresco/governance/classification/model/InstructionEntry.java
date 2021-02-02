@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class InstructionEntry   {
   @JsonProperty("entry")
   private Instruction entry = null;
@@ -33,7 +32,6 @@ public class InstructionEntry   {
   @NotNull
 
   @Valid
-
 
   public Instruction getEntry() {
     return entry;

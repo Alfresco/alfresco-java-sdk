@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TaskFilterRepresentation   {
   @JsonProperty("asc")
   private Boolean asc = null;
@@ -90,7 +89,6 @@ public class TaskFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isAsc() {
     return asc;
   }
@@ -109,7 +107,6 @@ public class TaskFilterRepresentation   {
    * @return assignment
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAssignment() {
@@ -133,7 +130,6 @@ public class TaskFilterRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueAfter() {
     return dueAfter;
   }
@@ -155,7 +151,6 @@ public class TaskFilterRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueBefore() {
     return dueBefore;
   }
@@ -174,7 +169,6 @@ public class TaskFilterRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -197,7 +191,6 @@ public class TaskFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionId() {
     return processDefinitionId;
   }
@@ -216,7 +209,6 @@ public class TaskFilterRepresentation   {
    * @return processDefinitionKey
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionKey() {
@@ -239,7 +231,6 @@ public class TaskFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSort() {
     return sort;
   }
@@ -258,7 +249,6 @@ public class TaskFilterRepresentation   {
    * @return state
   **/
   @ApiModelProperty(value = "")
-
 
 
   public StateEnum getState() {

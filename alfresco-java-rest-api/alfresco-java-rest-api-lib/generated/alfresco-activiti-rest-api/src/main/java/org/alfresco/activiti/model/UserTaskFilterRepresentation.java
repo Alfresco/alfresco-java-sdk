@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UserTaskFilterRepresentation   {
   @JsonProperty("appId")
   private Long appId = null;
@@ -50,7 +49,6 @@ public class UserTaskFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getAppId() {
     return appId;
   }
@@ -72,7 +70,6 @@ public class UserTaskFilterRepresentation   {
 
   @Valid
 
-
   public TaskFilterRepresentation getFilter() {
     return filter;
   }
@@ -91,7 +88,6 @@ public class UserTaskFilterRepresentation   {
    * @return icon
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getIcon() {
@@ -114,7 +110,6 @@ public class UserTaskFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -133,7 +128,6 @@ public class UserTaskFilterRepresentation   {
    * @return index
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getIndex() {
@@ -156,7 +150,6 @@ public class UserTaskFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -175,7 +168,6 @@ public class UserTaskFilterRepresentation   {
    * @return recent
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isRecent() {

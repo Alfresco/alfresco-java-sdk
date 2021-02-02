@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class HistoricTaskInstanceQueryRepresentation   {
   @JsonProperty("dueDate")
   private OffsetDateTime dueDate = null;
@@ -188,7 +187,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueDate() {
     return dueDate;
   }
@@ -209,7 +207,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getDueDateAfter() {
     return dueDateAfter;
@@ -232,7 +229,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueDateBefore() {
     return dueDateBefore;
   }
@@ -251,7 +247,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return executionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getExecutionId() {
@@ -274,7 +269,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isFinished() {
     return finished;
   }
@@ -293,7 +287,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return includeProcessVariables
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIncludeProcessVariables() {
@@ -316,7 +309,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIncludeTaskLocalVariables() {
     return includeTaskLocalVariables;
   }
@@ -335,7 +327,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return order
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOrder() {
@@ -358,7 +349,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getParentTaskId() {
     return parentTaskId;
   }
@@ -377,7 +367,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return processBusinessKey
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessBusinessKey() {
@@ -400,7 +389,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessBusinessKeyLike() {
     return processBusinessKeyLike;
   }
@@ -419,7 +407,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -442,7 +429,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
@@ -461,7 +447,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return processDefinitionKeyLike
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionKeyLike() {
@@ -484,7 +469,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionName() {
     return processDefinitionName;
   }
@@ -503,7 +487,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return processDefinitionNameLike
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionNameLike() {
@@ -526,7 +509,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isProcessFinished() {
     return processFinished;
   }
@@ -545,7 +527,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return processInstanceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceId() {
@@ -577,7 +558,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public List<QueryVariable> getProcessVariables() {
     return processVariables;
   }
@@ -596,7 +576,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return size
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getSize() {
@@ -619,7 +598,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSort() {
     return sort;
   }
@@ -638,7 +616,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return start
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getStart() {
@@ -661,7 +638,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskAssignee() {
     return taskAssignee;
   }
@@ -682,7 +658,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskAssigneeLike() {
     return taskAssigneeLike;
   }
@@ -701,7 +676,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskCandidateGroup
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskCandidateGroup() {
@@ -725,7 +699,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getTaskCompletedAfter() {
     return taskCompletedAfter;
   }
@@ -746,7 +719,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getTaskCompletedBefore() {
     return taskCompletedBefore;
@@ -769,7 +741,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getTaskCompletedOn() {
     return taskCompletedOn;
   }
@@ -790,7 +761,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getTaskCreatedAfter() {
     return taskCreatedAfter;
@@ -813,7 +783,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getTaskCreatedBefore() {
     return taskCreatedBefore;
   }
@@ -835,7 +804,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getTaskCreatedOn() {
     return taskCreatedOn;
   }
@@ -854,7 +822,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskDefinitionKey
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskDefinitionKey() {
@@ -877,7 +844,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskDefinitionKeyLike() {
     return taskDefinitionKeyLike;
   }
@@ -896,7 +862,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskDeleteReason
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskDeleteReason() {
@@ -919,7 +884,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskDeleteReasonLike() {
     return taskDeleteReasonLike;
   }
@@ -938,7 +902,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskDescription
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskDescription() {
@@ -961,7 +924,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskDescriptionLike() {
     return taskDescriptionLike;
   }
@@ -980,7 +942,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskId() {
@@ -1003,7 +964,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskInvolvedUser() {
     return taskInvolvedUser;
   }
@@ -1022,7 +982,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskMaxPriority
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getTaskMaxPriority() {
@@ -1045,7 +1004,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getTaskMinPriority() {
     return taskMinPriority;
   }
@@ -1064,7 +1022,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskName() {
@@ -1087,7 +1044,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskNameLike() {
     return taskNameLike;
   }
@@ -1106,7 +1062,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskOwner
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskOwner() {
@@ -1129,7 +1084,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskOwnerLike() {
     return taskOwnerLike;
   }
@@ -1148,7 +1102,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return taskPriority
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getTaskPriority() {
@@ -1180,7 +1133,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
 
   @Valid
 
-
   public List<QueryVariable> getTaskVariables() {
     return taskVariables;
   }
@@ -1199,7 +1151,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return tenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTenantId() {
@@ -1222,7 +1173,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTenantIdLike() {
     return tenantIdLike;
   }
@@ -1243,7 +1193,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isWithoutDueDate() {
     return withoutDueDate;
   }
@@ -1262,7 +1211,6 @@ public class HistoricTaskInstanceQueryRepresentation   {
    * @return withoutTenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isWithoutTenantId() {

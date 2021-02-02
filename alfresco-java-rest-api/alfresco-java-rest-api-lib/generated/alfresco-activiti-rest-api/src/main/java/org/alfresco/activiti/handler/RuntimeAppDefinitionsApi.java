@@ -36,13 +36,7 @@ public interface RuntimeAppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> deployAppDefinitionsUsingPOST(
-
-
-@ApiParam(value = "saveObject" ,required=true )  @Valid @RequestBody RuntimeAppDefinitionSaveRepresentation saveObject
-
-);
+    ResponseEntity<Void> deployAppDefinitionsUsingPOST(@ApiParam(value = "saveObject" ,required=true )  @Valid @RequestBody RuntimeAppDefinitionSaveRepresentation saveObject);
 
 
     @ApiOperation(value = "Get a runtime app", nickname = "getAppDefinitionUsingGET1", notes = "", response = AppDefinitionRepresentation.class, authorizations = {
@@ -54,16 +48,7 @@ public interface RuntimeAppDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<AppDefinitionRepresentation
-> getAppDefinitionUsingGET1(
-
-
-@ApiParam(value = "appDefinitionId",required=true) @PathVariable("appDefinitionId") Long
- appDefinitionId
-
-
-
-);
+    ResponseEntity<AppDefinitionRepresentation> getAppDefinitionUsingGET1(@ApiParam(value = "appDefinitionId",required=true) @PathVariable("appDefinitionId") Long appDefinitionId);
 
 
     @ApiOperation(value = "List runtime apps", nickname = "getAppDefinitionsUsingGET", notes = "When a user logs in into Alfresco Process Services Suite, a landing page is displayed containing all the apps that the user is allowed to see and use. These are referred to as runtime apps.", response = ResultListDataRepresentationAppDefinitionRepresentation.class, authorizations = {
@@ -75,7 +60,6 @@ public interface RuntimeAppDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAppDefinitionRepresentation
-> getAppDefinitionsUsingGET();
+    ResponseEntity<ResultListDataRepresentationAppDefinitionRepresentation> getAppDefinitionsUsingGET();
 
 }

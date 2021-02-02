@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TransferAssociationPaging   {
   @JsonProperty("list")
   private TransferAssociationPagingList list = null;
@@ -32,7 +31,6 @@ public class TransferAssociationPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public TransferAssociationPagingList getList() {
     return list;

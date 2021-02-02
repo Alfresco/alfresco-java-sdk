@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "The interval to Set")
 @Validated
 
-
 public class RequestFacetSet   {
   @JsonProperty("label")
   private String label = null;
@@ -44,7 +43,6 @@ public class RequestFacetSet   {
   @ApiModelProperty(value = "A label to use to identify the set")
 
 
-
   public String getLabel() {
     return label;
   }
@@ -63,7 +61,6 @@ public class RequestFacetSet   {
    * @return start
   **/
   @ApiModelProperty(value = "The start of the range")
-
 
 
   public String getStart() {
@@ -86,7 +83,6 @@ public class RequestFacetSet   {
   @ApiModelProperty(value = "The end of the range")
 
 
-
   public String getEnd() {
     return end;
   }
@@ -107,7 +103,6 @@ public class RequestFacetSet   {
   @ApiModelProperty(value = "When true, the set will include values greater or equal to \"start\"")
 
 
-
   public Boolean isStartInclusive() {
     return startInclusive;
   }
@@ -126,7 +121,6 @@ public class RequestFacetSet   {
    * @return endInclusive
   **/
   @ApiModelProperty(value = "When true, the set will include values less than or equal to \"end\"")
-
 
 
   public Boolean isEndInclusive() {

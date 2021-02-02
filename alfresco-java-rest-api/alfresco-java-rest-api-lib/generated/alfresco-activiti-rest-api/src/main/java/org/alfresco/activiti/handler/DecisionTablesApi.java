@@ -36,16 +36,7 @@ public interface DecisionTablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<JsonNode
-> getDecisionTableEditorJsonUsingGET(
-
-
-@ApiParam(value = "decisionTableId",required=true) @PathVariable("decisionTableId") Long
- decisionTableId
-
-
-
-);
+    ResponseEntity<JsonNode> getDecisionTableEditorJsonUsingGET(@ApiParam(value = "decisionTableId",required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
     @ApiOperation(value = "Get a decision table", nickname = "getDecisionTableUsingGET", notes = "", response = RuntimeDecisionTableRepresentation.class, authorizations = {
@@ -57,16 +48,7 @@ public interface DecisionTablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<RuntimeDecisionTableRepresentation
-> getDecisionTableUsingGET(
-
-
-@ApiParam(value = "decisionTableId",required=true) @PathVariable("decisionTableId") Long
- decisionTableId
-
-
-
-);
+    ResponseEntity<RuntimeDecisionTableRepresentation> getDecisionTableUsingGET(@ApiParam(value = "decisionTableId",required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
     @ApiOperation(value = "Query decision tables", nickname = "getDecisionTablesUsingGET", notes = "", response = ResultListDataRepresentationRuntimeDecisionTableRepresentation.class, authorizations = {
@@ -78,71 +60,6 @@ public interface DecisionTablesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationRuntimeDecisionTableRepresentation
-> getDecisionTablesUsingGET(
-
-@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String
- nameLike
-
-
-
-
-,
-
-@ApiParam(value = "keyLike") @Valid @RequestParam(value = "keyLike", required = false) String
- keyLike
-
-
-
-
-,
-
-@ApiParam(value = "tenantIdLike") @Valid @RequestParam(value = "tenantIdLike", required = false) String
- tenantIdLike
-
-
-
-
-,
-
-@ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) Long
- deploymentId
-
-
-
-
-,
-
-@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String
- sort
-
-
-
-
-,
-
-@ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String
- order
-
-
-
-
-,
-
-@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer
- start
-
-
-
-
-,
-
-@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer
- size
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationRuntimeDecisionTableRepresentation> getDecisionTablesUsingGET(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike,@ApiParam(value = "keyLike") @Valid @RequestParam(value = "keyLike", required = false) String keyLike,@ApiParam(value = "tenantIdLike") @Valid @RequestParam(value = "tenantIdLike", required = false) String tenantIdLike,@ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) Long deploymentId,@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort,@ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order,@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start,@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 }

@@ -39,21 +39,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<IdentityLinkRepresentation
-> createIdentityLinkUsingPOST(
-
-
-@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String
- processDefinitionId
-
-
-
-,
-
-
-@ApiParam(value = "identityLinkRepresentation" ,required=true )  @Valid @RequestBody IdentityLinkRepresentation identityLinkRepresentation
-
-);
+    ResponseEntity<IdentityLinkRepresentation> createIdentityLinkUsingPOST(@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String processDefinitionId,@ApiParam(value = "identityLinkRepresentation" ,required=true )  @Valid @RequestBody IdentityLinkRepresentation identityLinkRepresentation);
 
 
     @ApiOperation(value = "Remove a user or group involvement from a process definition", nickname = "deleteIdentityLinkUsingDELETE", notes = "", authorizations = {
@@ -65,32 +51,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteIdentityLinkUsingDELETE(
-
-
-@ApiParam(value = "Process definition ID",required=true) @PathVariable("processDefinitionId") String
- processDefinitionId
-
-
-
-,
-
-
-@ApiParam(value = "Identity type",required=true, allowableValues = "\"users\", \"groups\"") @PathVariable("family") String
- family
-
-
-
-,
-
-
-@ApiParam(value = "User or group ID",required=true) @PathVariable("identityId") String
- identityId
-
-
-
-);
+    ResponseEntity<Void> deleteIdentityLinkUsingDELETE(@ApiParam(value = "Process definition ID",required=true) @PathVariable("processDefinitionId") String processDefinitionId,@ApiParam(value = "Identity type",required=true, allowableValues = "\"users\", \"groups\"") @PathVariable("family") String family,@ApiParam(value = "User or group ID",required=true) @PathVariable("identityId") String identityId);
 
 
     @ApiOperation(value = "Get a user or group involvement with a process definition", nickname = "getIdentityLinkTypeUsingGET", notes = "", response = IdentityLinkRepresentation.class, authorizations = {
@@ -102,32 +63,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<IdentityLinkRepresentation
-> getIdentityLinkTypeUsingGET(
-
-
-@ApiParam(value = "Process definition ID",required=true) @PathVariable("processDefinitionId") String
- processDefinitionId
-
-
-
-,
-
-
-@ApiParam(value = "Identity type",required=true, allowableValues = "\"users\", \"groups\"") @PathVariable("family") String
- family
-
-
-
-,
-
-
-@ApiParam(value = "User or group ID",required=true) @PathVariable("identityId") String
- identityId
-
-
-
-);
+    ResponseEntity<IdentityLinkRepresentation> getIdentityLinkTypeUsingGET(@ApiParam(value = "Process definition ID",required=true) @PathVariable("processDefinitionId") String processDefinitionId,@ApiParam(value = "Identity type",required=true, allowableValues = "\"users\", \"groups\"") @PathVariable("family") String family,@ApiParam(value = "User or group ID",required=true) @PathVariable("identityId") String identityId);
 
 
     @ApiOperation(value = "List either the users or groups involved with a process definition", nickname = "getIdentityLinksForFamilyUsingGET", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
@@ -139,24 +75,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<IdentityLinkRepresentation>
-> getIdentityLinksForFamilyUsingGET(
-
-
-@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String
- processDefinitionId
-
-
-
-,
-
-
-@ApiParam(value = "Identity type",required=true, allowableValues = "\"users\", \"groups\"") @PathVariable("family") String
- family
-
-
-
-);
+    ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksForFamilyUsingGET(@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String processDefinitionId,@ApiParam(value = "Identity type",required=true, allowableValues = "\"users\", \"groups\"") @PathVariable("family") String family);
 
 
     @ApiOperation(value = "List the users and groups involved with a process definition", nickname = "getIdentityLinksUsingGET", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
@@ -168,16 +87,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<IdentityLinkRepresentation>
-> getIdentityLinksUsingGET(
-
-
-@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String
- processDefinitionId
-
-
-
-);
+    ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksUsingGET(@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String processDefinitionId);
 
 
     @ApiOperation(value = "List the decision tables associated with a process definition", nickname = "getProcessDefinitionDecisionTablesUsingGET", notes = "", response = ResultListDataRepresentationRuntimeDecisionTableRepresentation.class, authorizations = {
@@ -189,16 +99,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationRuntimeDecisionTableRepresentation
-> getProcessDefinitionDecisionTablesUsingGET(
-
-
-@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String
- processDefinitionId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationRuntimeDecisionTableRepresentation> getProcessDefinitionDecisionTablesUsingGET(@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String processDefinitionId);
 
 
     @ApiOperation(value = "List the forms associated with a process definition", nickname = "getProcessDefinitionFormsUsingGET", notes = "", response = ResultListDataRepresentationRuntimeFormRepresentation.class, authorizations = {
@@ -210,16 +111,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationRuntimeFormRepresentation
-> getProcessDefinitionFormsUsingGET(
-
-
-@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String
- processDefinitionId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationRuntimeFormRepresentation> getProcessDefinitionFormsUsingGET(@ApiParam(value = "processDefinitionId",required=true) @PathVariable("processDefinitionId") String processDefinitionId);
 
 
     @ApiOperation(value = "Retrieve the start form for a process definition", nickname = "getProcessDefinitionStartFormUsingGET", notes = "", response = FormDefinitionRepresentation.class, authorizations = {
@@ -231,8 +123,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<FormDefinitionRepresentation
-> getProcessDefinitionStartFormUsingGET();
+    ResponseEntity<FormDefinitionRepresentation> getProcessDefinitionStartFormUsingGET();
 
 
     @ApiOperation(value = "Retrieve a list of process definitions", nickname = "getProcessDefinitionsUsingGET", notes = "Get a list of process definitions (visible within the tenant of the user)", response = ResultListDataRepresentationProcessDefinitionRepresentation.class, authorizations = {
@@ -244,32 +135,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationProcessDefinitionRepresentation
-> getProcessDefinitionsUsingGET(
-
-@ApiParam(value = "latest") @Valid @RequestParam(value = "latest", required = false) Boolean
- latest
-
-
-
-
-,
-
-@ApiParam(value = "appDefinitionId") @Valid @RequestParam(value = "appDefinitionId", required = false) Long
- appDefinitionId
-
-
-
-
-,
-
-@ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) String
- deploymentId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationProcessDefinitionRepresentation> getProcessDefinitionsUsingGET(@ApiParam(value = "latest") @Valid @RequestParam(value = "latest", required = false) Boolean latest,@ApiParam(value = "appDefinitionId") @Valid @RequestParam(value = "appDefinitionId", required = false) Long appDefinitionId,@ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) String deploymentId);
 
 
     @ApiOperation(value = "Retrieve field values (eg. the typeahead field)", nickname = "getRestFieldValuesUsingGET", notes = "", response = FormValueRepresentation.class, responseContainer = "List", authorizations = {
@@ -281,8 +147,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<FormValueRepresentation>
-> getRestFieldValuesUsingGET();
+    ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET();
 
 
     @ApiOperation(value = "Retrieve field values (eg. the table field)", nickname = "getRestTableFieldValuesUsingGET", notes = "", response = FormValueRepresentation.class, responseContainer = "List", authorizations = {
@@ -294,7 +159,6 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<FormValueRepresentation>
-> getRestTableFieldValuesUsingGET();
+    ResponseEntity<List<FormValueRepresentation>> getRestTableFieldValuesUsingGET();
 
 }

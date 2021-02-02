@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class EndpointRequestHeaderRepresentation   {
   @JsonProperty("name")
   private String name = null;
@@ -32,7 +31,6 @@ public class EndpointRequestHeaderRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -53,7 +51,6 @@ public class EndpointRequestHeaderRepresentation   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getValue() {

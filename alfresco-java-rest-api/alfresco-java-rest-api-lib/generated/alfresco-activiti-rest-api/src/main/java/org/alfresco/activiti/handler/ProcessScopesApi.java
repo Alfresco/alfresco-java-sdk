@@ -35,12 +35,6 @@ public interface ProcessScopesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<List<ProcessScopeRepresentation>
-> getRuntimeProcessScopesUsingPOST(
-
-
-@ApiParam(value = "processScopesRequest" ,required=true )  @Valid @RequestBody ProcessScopesRequestRepresentation processScopesRequest
-
-);
+    ResponseEntity<List<ProcessScopeRepresentation>> getRuntimeProcessScopesUsingPOST(@ApiParam(value = "processScopesRequest" ,required=true )  @Valid @RequestBody ProcessScopesRequestRepresentation processScopesRequest);
 
 }

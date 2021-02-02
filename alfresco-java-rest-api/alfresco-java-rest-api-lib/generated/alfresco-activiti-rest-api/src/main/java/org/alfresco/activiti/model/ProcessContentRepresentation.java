@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessContentRepresentation   {
   @JsonProperty("content")
   @Valid
@@ -48,7 +47,6 @@ public class ProcessContentRepresentation   {
 
   @Valid
 
-
   public List<RelatedContentRepresentation> getContent() {
     return content;
   }
@@ -69,7 +67,6 @@ public class ProcessContentRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public NamedObject getField() {
     return field;

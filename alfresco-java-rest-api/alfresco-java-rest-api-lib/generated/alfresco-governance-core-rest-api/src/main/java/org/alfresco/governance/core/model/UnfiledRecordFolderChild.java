@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UnfiledRecordFolderChild   {
   @JsonProperty("id")
   private String id = null;
@@ -78,7 +77,6 @@ public class UnfiledRecordFolderChild   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -98,7 +96,6 @@ public class UnfiledRecordFolderChild   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -122,7 +119,6 @@ public class UnfiledRecordFolderChild   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -142,7 +138,6 @@ public class UnfiledRecordFolderChild   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -166,7 +161,6 @@ public class UnfiledRecordFolderChild   {
   @NotNull
 
 
-
   public Boolean isIsUnfiledRecordFolder() {
     return isUnfiledRecordFolder;
   }
@@ -186,7 +180,6 @@ public class UnfiledRecordFolderChild   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isIsRecord() {
@@ -211,7 +204,6 @@ public class UnfiledRecordFolderChild   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -233,7 +225,6 @@ public class UnfiledRecordFolderChild   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -257,7 +248,6 @@ public class UnfiledRecordFolderChild   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -279,7 +269,6 @@ public class UnfiledRecordFolderChild   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getCreatedByUser() {
     return createdByUser;
@@ -309,7 +298,6 @@ public class UnfiledRecordFolderChild   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -328,7 +316,6 @@ public class UnfiledRecordFolderChild   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -359,7 +346,6 @@ public class UnfiledRecordFolderChild   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -380,7 +366,6 @@ public class UnfiledRecordFolderChild   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PathInfo getPath() {
     return path;

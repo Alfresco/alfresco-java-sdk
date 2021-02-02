@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FilePlanBodyUpdate   {
   @JsonProperty("properties")
   @Valid
@@ -41,7 +40,6 @@ public class FilePlanBodyUpdate   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Map<String, String> getProperties() {

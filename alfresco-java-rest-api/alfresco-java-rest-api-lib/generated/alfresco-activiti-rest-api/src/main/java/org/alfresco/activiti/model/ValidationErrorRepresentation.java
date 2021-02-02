@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ValidationErrorRepresentation   {
   @JsonProperty("defaultDescription")
   private String defaultDescription = null;
@@ -49,7 +48,6 @@ public class ValidationErrorRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDefaultDescription() {
     return defaultDescription;
   }
@@ -68,7 +66,6 @@ public class ValidationErrorRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -91,7 +88,6 @@ public class ValidationErrorRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -110,7 +106,6 @@ public class ValidationErrorRepresentation   {
    * @return problem
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProblem() {
@@ -133,7 +128,6 @@ public class ValidationErrorRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProblemReference() {
     return problemReference;
   }
@@ -154,7 +148,6 @@ public class ValidationErrorRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getValidatorSetName() {
     return validatorSetName;
   }
@@ -173,7 +166,6 @@ public class ValidationErrorRepresentation   {
    * @return warning
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isWarning() {

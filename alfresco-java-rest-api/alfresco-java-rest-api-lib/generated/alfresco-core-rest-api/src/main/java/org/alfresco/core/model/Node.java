@@ -21,7 +21,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Node   {
   @JsonProperty("id")
   private String id = null;
@@ -95,7 +94,6 @@ public class Node   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -117,7 +115,6 @@ public class Node   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -137,7 +134,6 @@ public class Node   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -161,7 +157,6 @@ public class Node   {
   @NotNull
 
 
-
   public Boolean isIsFolder() {
     return isFolder;
   }
@@ -183,7 +178,6 @@ public class Node   {
   @NotNull
 
 
-
   public Boolean isIsFile() {
     return isFile;
   }
@@ -202,7 +196,6 @@ public class Node   {
    * @return isLocked
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsLocked() {
@@ -227,7 +220,6 @@ public class Node   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -249,7 +241,6 @@ public class Node   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -273,7 +264,6 @@ public class Node   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -296,7 +286,6 @@ public class Node   {
 
   @Valid
 
-
   public UserInfo getCreatedByUser() {
     return createdByUser;
   }
@@ -315,7 +304,6 @@ public class Node   {
    * @return parentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getParentId() {
@@ -338,7 +326,6 @@ public class Node   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsLink() {
     return isLink;
   }
@@ -357,7 +344,6 @@ public class Node   {
    * @return isFavorite
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsFavorite() {
@@ -380,7 +366,6 @@ public class Node   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ContentInfo getContent() {
     return content;
@@ -410,7 +395,6 @@ public class Node   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -429,7 +413,6 @@ public class Node   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -460,7 +443,6 @@ public class Node   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -482,7 +464,6 @@ public class Node   {
 
   @Valid
 
-
   public PathInfo getPath() {
     return path;
   }
@@ -503,7 +484,6 @@ public class Node   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PermissionsInfo getPermissions() {
     return permissions;

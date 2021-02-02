@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DecisionTableExpressionRepresentation   {
   @JsonProperty("entries")
   @Valid
@@ -62,7 +61,6 @@ public class DecisionTableExpressionRepresentation   {
 
   @Valid
 
-
   public List<Mapstringstring> getEntries() {
     return entries;
   }
@@ -81,7 +79,6 @@ public class DecisionTableExpressionRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -104,7 +101,6 @@ public class DecisionTableExpressionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLabel() {
     return label;
   }
@@ -123,7 +119,6 @@ public class DecisionTableExpressionRepresentation   {
    * @return newVariable
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isNewVariable() {
@@ -146,7 +141,6 @@ public class DecisionTableExpressionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getType() {
     return type;
   }
@@ -167,7 +161,6 @@ public class DecisionTableExpressionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getVariableId() {
     return variableId;
   }
@@ -186,7 +179,6 @@ public class DecisionTableExpressionRepresentation   {
    * @return variableType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getVariableType() {

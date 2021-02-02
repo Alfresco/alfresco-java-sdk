@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SyncLogEntryRepresentation   {
   @JsonProperty("id")
   private Long id = null;
@@ -36,7 +35,6 @@ public class SyncLogEntryRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -60,7 +58,6 @@ public class SyncLogEntryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getTimeStamp() {
     return timeStamp;
   }
@@ -79,7 +76,6 @@ public class SyncLogEntryRepresentation   {
    * @return type
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getType() {

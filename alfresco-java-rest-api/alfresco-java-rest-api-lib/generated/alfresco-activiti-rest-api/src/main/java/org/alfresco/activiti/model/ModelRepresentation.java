@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ModelRepresentation   {
   @JsonProperty("comment")
   private String comment = null;
@@ -80,7 +79,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getComment() {
     return comment;
   }
@@ -99,7 +97,6 @@ public class ModelRepresentation   {
    * @return createdBy
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getCreatedBy() {
@@ -122,7 +119,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getCreatedByFullName() {
     return createdByFullName;
   }
@@ -141,7 +137,6 @@ public class ModelRepresentation   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -164,7 +159,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isFavorite() {
     return favorite;
   }
@@ -183,7 +177,6 @@ public class ModelRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -207,7 +200,6 @@ public class ModelRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
@@ -226,7 +218,6 @@ public class ModelRepresentation   {
    * @return lastUpdatedBy
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getLastUpdatedBy() {
@@ -249,7 +240,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLastUpdatedByFullName() {
     return lastUpdatedByFullName;
   }
@@ -268,7 +258,6 @@ public class ModelRepresentation   {
    * @return latestVersion
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isLatestVersion() {
@@ -291,7 +280,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getModelType() {
     return modelType;
   }
@@ -310,7 +298,6 @@ public class ModelRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -333,7 +320,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPermission() {
     return permission;
   }
@@ -352,7 +338,6 @@ public class ModelRepresentation   {
    * @return referenceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getReferenceId() {
@@ -375,7 +360,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getStencilSet() {
     return stencilSet;
   }
@@ -396,7 +380,6 @@ public class ModelRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -415,7 +398,6 @@ public class ModelRepresentation   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getVersion() {

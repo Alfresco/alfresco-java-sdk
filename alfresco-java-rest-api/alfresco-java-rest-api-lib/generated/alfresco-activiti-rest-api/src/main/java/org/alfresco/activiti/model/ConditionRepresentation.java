@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ConditionRepresentation   {
   @JsonProperty("leftFormFieldId")
   private String leftFormFieldId = null;
@@ -56,7 +55,6 @@ public class ConditionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLeftFormFieldId() {
     return leftFormFieldId;
   }
@@ -75,7 +73,6 @@ public class ConditionRepresentation   {
    * @return leftRestResponseId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLeftRestResponseId() {
@@ -99,7 +96,6 @@ public class ConditionRepresentation   {
 
   @Valid
 
-
   public ConditionRepresentation getNextCondition() {
     return nextCondition;
   }
@@ -118,7 +114,6 @@ public class ConditionRepresentation   {
    * @return nextConditionOperator
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getNextConditionOperator() {
@@ -141,7 +136,6 @@ public class ConditionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getOperator() {
     return operator;
   }
@@ -160,7 +154,6 @@ public class ConditionRepresentation   {
    * @return rightFormFieldId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRightFormFieldId() {
@@ -183,7 +176,6 @@ public class ConditionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getRightRestResponseId() {
     return rightRestResponseId;
   }
@@ -204,7 +196,6 @@ public class ConditionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getRightType() {
     return rightType;
   }
@@ -223,7 +214,6 @@ public class ConditionRepresentation   {
    * @return rightValue
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getRightValue() {

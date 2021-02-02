@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessInstanceVariableRepresentation   {
   @JsonProperty("id")
   private String id = null;
@@ -37,7 +36,6 @@ public class ProcessInstanceVariableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -58,7 +56,6 @@ public class ProcessInstanceVariableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getType() {
     return type;
   }
@@ -77,7 +74,6 @@ public class ProcessInstanceVariableRepresentation   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getValue() {

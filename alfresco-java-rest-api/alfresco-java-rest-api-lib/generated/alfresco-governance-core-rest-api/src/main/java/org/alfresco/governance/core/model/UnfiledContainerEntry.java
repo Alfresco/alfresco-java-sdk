@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UnfiledContainerEntry   {
   @JsonProperty("entry")
   private UnfiledContainer entry = null;
@@ -33,7 +32,6 @@ public class UnfiledContainerEntry   {
   @NotNull
 
   @Valid
-
 
   public UnfiledContainer getEntry() {
     return entry;

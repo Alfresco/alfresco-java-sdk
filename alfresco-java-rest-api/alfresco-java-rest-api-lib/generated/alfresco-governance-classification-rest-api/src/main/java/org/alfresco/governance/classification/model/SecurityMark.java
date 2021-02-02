@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SecurityMark   {
   @JsonProperty("id")
   private String id = null;
@@ -44,7 +43,6 @@ public class SecurityMark   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -64,7 +62,6 @@ public class SecurityMark   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getName() {
@@ -88,7 +85,6 @@ public class SecurityMark   {
   @NotNull
 
 
-
   public String getGroupId() {
     return groupId;
   }
@@ -110,7 +106,6 @@ public class SecurityMark   {
   @NotNull
 
 
-
   public String getGroupName() {
     return groupName;
   }
@@ -130,7 +125,6 @@ public class SecurityMark   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getGroupType() {

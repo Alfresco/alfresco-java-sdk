@@ -33,24 +33,7 @@ public interface ModelsBpmnApi {
         produces = "application/xml", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getHistoricProcessModelBpmn20XmlUsingGET(
-
-
-@ApiParam(value = "processModelId",required=true) @PathVariable("processModelId") Long
- processModelId
-
-
-
-,
-
-
-@ApiParam(value = "processModelHistoryId",required=true) @PathVariable("processModelHistoryId") Long
- processModelHistoryId
-
-
-
-);
+    ResponseEntity<Void> getHistoricProcessModelBpmn20XmlUsingGET(@ApiParam(value = "processModelId",required=true) @PathVariable("processModelId") Long processModelId,@ApiParam(value = "processModelHistoryId",required=true) @PathVariable("processModelHistoryId") Long processModelHistoryId);
 
 
     @ApiOperation(value = "Export a process definition as BPMN 2.0 XML", nickname = "getProcessModelBpmn20XmlUsingGET", notes = "", authorizations = {
@@ -62,15 +45,6 @@ public interface ModelsBpmnApi {
         produces = "application/xml", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getProcessModelBpmn20XmlUsingGET(
-
-
-@ApiParam(value = "processModelId",required=true) @PathVariable("processModelId") Long
- processModelId
-
-
-
-);
+    ResponseEntity<Void> getProcessModelBpmn20XmlUsingGET(@ApiParam(value = "processModelId",required=true) @PathVariable("processModelId") Long processModelId);
 
 }

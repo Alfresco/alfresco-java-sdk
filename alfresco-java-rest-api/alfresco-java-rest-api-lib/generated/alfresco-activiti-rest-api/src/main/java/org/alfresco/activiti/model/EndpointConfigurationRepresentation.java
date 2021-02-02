@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class EndpointConfigurationRepresentation   {
   @JsonProperty("basicAuthId")
   private Long basicAuthId = null;
@@ -62,7 +61,6 @@ public class EndpointConfigurationRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getBasicAuthId() {
     return basicAuthId;
   }
@@ -81,7 +79,6 @@ public class EndpointConfigurationRepresentation   {
    * @return basicAuthName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getBasicAuthName() {
@@ -104,7 +101,6 @@ public class EndpointConfigurationRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getHost() {
     return host;
   }
@@ -123,7 +119,6 @@ public class EndpointConfigurationRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -146,7 +141,6 @@ public class EndpointConfigurationRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -165,7 +159,6 @@ public class EndpointConfigurationRepresentation   {
    * @return path
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getPath() {
@@ -188,7 +181,6 @@ public class EndpointConfigurationRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPort() {
     return port;
   }
@@ -207,7 +199,6 @@ public class EndpointConfigurationRepresentation   {
    * @return protocol
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProtocol() {
@@ -239,7 +230,6 @@ public class EndpointConfigurationRepresentation   {
 
   @Valid
 
-
   public List<EndpointRequestHeaderRepresentation> getRequestHeaders() {
     return requestHeaders;
   }
@@ -258,7 +248,6 @@ public class EndpointConfigurationRepresentation   {
    * @return tenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getTenantId() {

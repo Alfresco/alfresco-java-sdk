@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RecordCategoryChildPaging   {
   @JsonProperty("list")
   private RecordCategoryChildPagingList list = null;
@@ -32,7 +31,6 @@ public class RecordCategoryChildPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RecordCategoryChildPagingList getList() {
     return list;

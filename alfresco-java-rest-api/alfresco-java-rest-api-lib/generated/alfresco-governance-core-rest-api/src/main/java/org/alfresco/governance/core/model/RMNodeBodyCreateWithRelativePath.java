@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RMNodeBodyCreateWithRelativePath   {
   @JsonProperty("name")
   private String name = null;
@@ -50,7 +49,6 @@ public class RMNodeBodyCreateWithRelativePath   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -70,7 +68,6 @@ public class RMNodeBodyCreateWithRelativePath   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -101,7 +98,6 @@ public class RMNodeBodyCreateWithRelativePath   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -130,7 +126,6 @@ public class RMNodeBodyCreateWithRelativePath   {
   @ApiModelProperty(value = "")
 
 
-
   public Map<String, String> getProperties() {
     return properties;
   }
@@ -149,7 +144,6 @@ public class RMNodeBodyCreateWithRelativePath   {
    * @return relativePath
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRelativePath() {

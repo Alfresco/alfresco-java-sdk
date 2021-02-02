@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Query results")
 @Validated
 
-
 public class ResultSetPaging   {
   @JsonProperty("list")
   private ResultSetPagingList list = null;
@@ -33,7 +32,6 @@ public class ResultSetPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ResultSetPagingList getList() {
     return list;

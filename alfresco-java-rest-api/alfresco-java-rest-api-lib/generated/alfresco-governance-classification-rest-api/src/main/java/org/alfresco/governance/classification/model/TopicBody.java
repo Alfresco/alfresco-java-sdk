@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TopicBody   {
   @JsonProperty("name")
   private String name = null;
@@ -39,7 +38,6 @@ public class TopicBody   {
   @NotNull
 
 
-
   public String getName() {
     return name;
   }
@@ -58,7 +56,6 @@ public class TopicBody   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -81,7 +78,6 @@ public class TopicBody   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public InstructionBody getInstruction() {
     return instruction;

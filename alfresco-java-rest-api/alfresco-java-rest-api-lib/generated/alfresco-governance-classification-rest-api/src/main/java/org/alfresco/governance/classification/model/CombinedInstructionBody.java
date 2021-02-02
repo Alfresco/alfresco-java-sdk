@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CombinedInstructionBody   {
   @JsonProperty("classificationInformation")
   private ClassificationInformation classificationInformation = null;
@@ -44,7 +43,6 @@ public class CombinedInstructionBody   {
 
   @Valid
 
-
   public ClassificationInformation getClassificationInformation() {
     return classificationInformation;
   }
@@ -65,7 +63,6 @@ public class CombinedInstructionBody   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public SecurityMarkInformationBody getSecurityMarkInformation() {
     return securityMarkInformation;
@@ -93,7 +90,6 @@ public class CombinedInstructionBody   {
    * @return topicIds
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getTopicIds() {

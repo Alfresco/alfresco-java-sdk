@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeclassificationExemptionEntry   {
   @JsonProperty("entry")
   private DeclassificationExemption entry = null;
@@ -33,7 +32,6 @@ public class DeclassificationExemptionEntry   {
   @NotNull
 
   @Valid
-
 
   public DeclassificationExemption getEntry() {
     return entry;

@@ -33,8 +33,7 @@ public interface ScriptFilesApi {
         produces = "text/html", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<String
-> getControllersUsingGET();
+    ResponseEntity<String> getControllersUsingGET();
 
 
     @ApiOperation(value = "getLibraries", nickname = "getLibrariesUsingGET", notes = "", response = String.class, authorizations = {
@@ -46,7 +45,6 @@ public interface ScriptFilesApi {
         produces = "text/html", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<String
-> getLibrariesUsingGET();
+    ResponseEntity<String> getLibrariesUsingGET();
 
 }

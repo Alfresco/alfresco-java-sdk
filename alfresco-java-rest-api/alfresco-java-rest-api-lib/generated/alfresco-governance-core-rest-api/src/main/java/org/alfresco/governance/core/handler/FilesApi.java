@@ -41,47 +41,6 @@ public interface FilesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
-    ResponseEntity<RecordEntry
-> declareRecord(
-
-
-@ApiParam(value = "The identifier of a non-record file.",required=true) @PathVariable("fileId") String
- fileId
-
-
-
-,
-
-@ApiParam(value = "Flag to indicate whether the record should be hidden from the current parent folder.", defaultValue = "false") @Valid @RequestParam(value = "hideRecord", required = false, defaultValue="false") Boolean
- hideRecord
-
-
-
-
-,
-
-@ApiParam(value = "The identifier of the destination record folder.") @Valid @RequestParam(value = "parentId", required = false) String
- parentId
-
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the record. Any optional field from the response model can be requested. For example: * allowableOperations * content * isCompleted * path ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<RecordEntry> declareRecord(@ApiParam(value = "The identifier of a non-record file.",required=true) @PathVariable("fileId") String fileId,@ApiParam(value = "Flag to indicate whether the record should be hidden from the current parent folder.", defaultValue = "false") @Valid @RequestParam(value = "hideRecord", required = false, defaultValue="false") Boolean hideRecord,@ApiParam(value = "The identifier of the destination record folder.") @Valid @RequestParam(value = "parentId", required = false) String parentId,@ApiParam(value = "Returns additional information about the record. Any optional field from the response model can be requested. For example: * allowableOperations * content * isCompleted * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

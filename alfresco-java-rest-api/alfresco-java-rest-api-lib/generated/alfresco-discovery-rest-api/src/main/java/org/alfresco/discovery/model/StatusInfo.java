@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class StatusInfo   {
   @JsonProperty("isReadOnly")
   private Boolean isReadOnly = false;
@@ -41,7 +40,6 @@ public class StatusInfo   {
   @NotNull
 
 
-
   public Boolean isIsReadOnly() {
     return isReadOnly;
   }
@@ -61,7 +59,6 @@ public class StatusInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isIsAuditEnabled() {
@@ -85,7 +82,6 @@ public class StatusInfo   {
   @NotNull
 
 
-
   public Boolean isIsQuickShareEnabled() {
     return isQuickShareEnabled;
   }
@@ -105,7 +101,6 @@ public class StatusInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isIsThumbnailGenerationEnabled() {

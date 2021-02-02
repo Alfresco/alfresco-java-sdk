@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GenericFacetResponse   {
   @JsonProperty("type")
   private String type = null;
@@ -41,7 +40,6 @@ public class GenericFacetResponse   {
   @ApiModelProperty(value = "The facet type, eg. interval, range, pivot, stats")
 
 
-
   public String getType() {
     return type;
   }
@@ -60,7 +58,6 @@ public class GenericFacetResponse   {
    * @return label
   **/
   @ApiModelProperty(value = "The field name or its explicit label, if provided on the request")
-
 
 
   public String getLabel() {
@@ -91,7 +88,6 @@ public class GenericFacetResponse   {
   @ApiModelProperty(value = "An array of buckets and values")
 
   @Valid
-
 
   public List<GenericBucket> getBuckets() {
     return buckets;

@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ClassificationInformation   {
   @JsonProperty("level")
   private String level = null;
@@ -61,7 +60,6 @@ public class ClassificationInformation   {
   @NotNull
 
 
-
   public String getLevel() {
     return level;
   }
@@ -80,7 +78,6 @@ public class ClassificationInformation   {
    * @return classificationAgency
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getClassificationAgency() {
@@ -109,7 +106,6 @@ public class ClassificationInformation   {
   @NotNull
 
 @Size(min=1) 
-
   public List<String> getReasonIds() {
     return reasonIds;
   }
@@ -131,7 +127,6 @@ public class ClassificationInformation   {
 
   @Valid
 
-
   public LocalDate getDowngradeOn() {
     return downgradeOn;
   }
@@ -152,7 +147,6 @@ public class ClassificationInformation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDowngradeEvent() {
     return downgradeEvent;
   }
@@ -171,7 +165,6 @@ public class ClassificationInformation   {
    * @return downgradeInstructions
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDowngradeInstructions() {
@@ -195,7 +188,6 @@ public class ClassificationInformation   {
 
   @Valid
 
-
   public LocalDate getDeclassifyOn() {
     return declassifyOn;
   }
@@ -214,7 +206,6 @@ public class ClassificationInformation   {
    * @return declassificationEvent
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDeclassificationEvent() {
@@ -243,7 +234,6 @@ public class ClassificationInformation   {
    * @return exemptionIds
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getExemptionIds() {

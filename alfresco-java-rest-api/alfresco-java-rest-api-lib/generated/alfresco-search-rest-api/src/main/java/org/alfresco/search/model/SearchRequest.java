@@ -35,7 +35,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SearchRequest   {
   @JsonProperty("query")
   private RequestQuery query = null;
@@ -114,7 +113,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestQuery getQuery() {
     return query;
   }
@@ -135,7 +133,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RequestPagination getPaging() {
     return paging;
@@ -158,7 +155,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestInclude getInclude() {
     return include;
   }
@@ -177,7 +173,6 @@ public class SearchRequest   {
    * @return includeRequest
   **/
   @ApiModelProperty(value = "When true, include the original request in the response")
-
 
 
   public Boolean isIncludeRequest() {
@@ -201,7 +196,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestFields getFields() {
     return fields;
   }
@@ -222,7 +216,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RequestSortDefinition getSort() {
     return sort;
@@ -245,7 +238,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestTemplates getTemplates() {
     return templates;
   }
@@ -266,7 +258,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RequestDefaults getDefaults() {
     return defaults;
@@ -289,7 +280,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestLocalization getLocalization() {
     return localization;
   }
@@ -310,7 +300,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RequestFilterQueries getFilterQueries() {
     return filterQueries;
@@ -333,7 +322,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestFacetQueries getFacetQueries() {
     return facetQueries;
   }
@@ -355,7 +343,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestFacetFields getFacetFields() {
     return facetFields;
   }
@@ -376,7 +363,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RequestFacetIntervals getFacetIntervals() {
     return facetIntervals;
@@ -407,7 +393,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public List<RequestPivot> getPivots() {
     return pivots;
   }
@@ -437,7 +422,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public List<RequestStats> getStats() {
     return stats;
   }
@@ -458,7 +442,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RequestSpellcheck getSpellcheck() {
     return spellcheck;
@@ -481,7 +464,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestScope getScope() {
     return scope;
   }
@@ -503,7 +485,6 @@ public class SearchRequest   {
 
   @Valid
 
-
   public RequestLimits getLimits() {
     return limits;
   }
@@ -524,7 +505,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RequestHighlight getHighlight() {
     return highlight;
@@ -554,7 +534,6 @@ public class SearchRequest   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<RequestRange> getRanges() {
     return ranges;

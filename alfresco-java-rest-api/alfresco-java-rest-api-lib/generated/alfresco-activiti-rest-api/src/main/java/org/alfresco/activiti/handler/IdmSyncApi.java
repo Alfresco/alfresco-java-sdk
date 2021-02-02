@@ -34,16 +34,7 @@ public interface IdmSyncApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getLogFileUsingGET(
-
-
-@ApiParam(value = "syncLogEntryId",required=true) @PathVariable("syncLogEntryId") Long
- syncLogEntryId
-
-
-
-);
+    ResponseEntity<Void> getLogFileUsingGET(@ApiParam(value = "syncLogEntryId",required=true) @PathVariable("syncLogEntryId") Long syncLogEntryId);
 
 
     @ApiOperation(value = "List sync log entries", nickname = "getSyncLogEntriesUsingGET", notes = "", response = SyncLogEntryRepresentation.class, responseContainer = "List", authorizations = {
@@ -55,39 +46,6 @@ public interface IdmSyncApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<SyncLogEntryRepresentation>
-> getSyncLogEntriesUsingGET(
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-,
-
-@ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer
- page
-
-
-
-
-,
-
-@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer
- start
-
-
-
-
-,
-
-@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer
- size
-
-
-
-
-);
+    ResponseEntity<List<SyncLogEntryRepresentation>> getSyncLogEntriesUsingGET(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId,@ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page,@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start,@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 }

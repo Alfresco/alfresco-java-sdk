@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UserRepresentation   {
   @JsonProperty("apps")
   @Valid
@@ -108,7 +107,6 @@ public class UserRepresentation   {
 
   @Valid
 
-
   public List<LightAppRepresentation> getApps() {
     return apps;
   }
@@ -137,7 +135,6 @@ public class UserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getCapabilities() {
     return capabilities;
   }
@@ -156,7 +153,6 @@ public class UserRepresentation   {
    * @return company
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getCompany() {
@@ -180,7 +176,6 @@ public class UserRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -199,7 +194,6 @@ public class UserRepresentation   {
    * @return email
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEmail() {
@@ -222,7 +216,6 @@ public class UserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getExternalId() {
     return externalId;
   }
@@ -243,7 +236,6 @@ public class UserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getFirstName() {
     return firstName;
   }
@@ -262,7 +254,6 @@ public class UserRepresentation   {
    * @return fullname
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getFullname() {
@@ -294,7 +285,6 @@ public class UserRepresentation   {
 
   @Valid
 
-
   public List<GroupRepresentation> getGroups() {
     return groups;
   }
@@ -315,7 +305,6 @@ public class UserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -334,7 +323,6 @@ public class UserRepresentation   {
    * @return lastName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLastName() {
@@ -358,7 +346,6 @@ public class UserRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdate() {
     return lastUpdate;
   }
@@ -380,7 +367,6 @@ public class UserRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLatestSyncTimeStamp() {
     return latestSyncTimeStamp;
   }
@@ -401,7 +387,6 @@ public class UserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPassword() {
     return password;
   }
@@ -420,7 +405,6 @@ public class UserRepresentation   {
    * @return pictureId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getPictureId() {
@@ -444,7 +428,6 @@ public class UserRepresentation   {
 
   @Valid
 
-
   public GroupRepresentation getPrimaryGroup() {
     return primaryGroup;
   }
@@ -463,7 +446,6 @@ public class UserRepresentation   {
    * @return status
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getStatus() {
@@ -486,7 +468,6 @@ public class UserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -505,7 +486,6 @@ public class UserRepresentation   {
    * @return tenantName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTenantName() {
@@ -528,7 +508,6 @@ public class UserRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantPictureId() {
     return tenantPictureId;
   }
@@ -547,7 +526,6 @@ public class UserRepresentation   {
    * @return type
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getType() {

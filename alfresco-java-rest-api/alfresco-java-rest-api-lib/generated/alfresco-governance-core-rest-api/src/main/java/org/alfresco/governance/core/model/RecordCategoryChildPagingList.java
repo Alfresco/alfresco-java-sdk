@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RecordCategoryChildPagingList   {
   @JsonProperty("pagination")
   private Pagination pagination = null;
@@ -43,7 +42,6 @@ public class RecordCategoryChildPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Pagination getPagination() {
     return pagination;
@@ -74,7 +72,6 @@ public class RecordCategoryChildPagingList   {
 
   @Valid
 
-
   public List<RecordCategoryChildEntry> getEntries() {
     return entries;
   }
@@ -95,7 +92,6 @@ public class RecordCategoryChildPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public RecordCategory getSource() {
     return source;

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Templates usewd for query expansion. A template called \"WOOF\" defined as \"%(cm:name cm:title)\" allows WOOF:example to generate cm:name:example cm:name:example ")
 @Validated
 
-
 public class RequestTemplates extends ArrayList<RequestTemplatesInner>  {
 
   @Override

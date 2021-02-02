@@ -37,32 +37,7 @@ public interface IntegrationSsoApi {
         produces = "text/html", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> confirmAuthorisationUsingGET2(@NotNull 
-
-@ApiParam(value = "serviceId", required = true) @Valid @RequestParam(value = "serviceId", required = true) String
- serviceId
-
-
-
-
-,@NotNull 
-
-@ApiParam(value = "session_state", required = true) @Valid @RequestParam(value = "session_state", required = true) String
- sessionState
-
-
-
-
-,@NotNull 
-
-@ApiParam(value = "code", required = true) @Valid @RequestParam(value = "code", required = true) String
- code
-
-
-
-
-);
+    ResponseEntity<Void> confirmAuthorisationUsingGET2(@NotNull @ApiParam(value = "serviceId", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@NotNull @ApiParam(value = "session_state", required = true) @Valid @RequestParam(value = "session_state", required = true) String sessionState,@NotNull @ApiParam(value = "code", required = true) @Valid @RequestParam(value = "code", required = true) String code);
 
 
     @ApiOperation(value = "Delete account information", nickname = "deleteRepositoryAccountUsingDELETE1", notes = "", authorizations = {
@@ -76,16 +51,7 @@ public interface IntegrationSsoApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteRepositoryAccountUsingDELETE1(
-
-
-@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") Long
- repositoryId
-
-
-
-);
+    ResponseEntity<Void> deleteRepositoryAccountUsingDELETE1(@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") Long repositoryId);
 
 
     @ApiOperation(value = "Get account information", nickname = "getRepositoryAccountUsingGET1", notes = "", authorizations = {
@@ -98,15 +64,6 @@ public interface IntegrationSsoApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getRepositoryAccountUsingGET1(
-
-
-@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") Long
- repositoryId
-
-
-
-);
+    ResponseEntity<Void> getRepositoryAccountUsingGET1(@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") Long repositoryId);
 
 }

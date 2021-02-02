@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteMember   {
   @JsonProperty("id")
   private String id = null;
@@ -75,7 +74,6 @@ public class SiteMember   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -98,7 +96,6 @@ public class SiteMember   {
 
   @Valid
 
-
   public Person getPerson() {
     return person;
   }
@@ -118,7 +115,6 @@ public class SiteMember   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public RoleEnum getRole() {

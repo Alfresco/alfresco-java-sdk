@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SecurityMarkInformationBody   {
   @JsonProperty("add")
   private SecurityMarksBody add = null;
@@ -33,7 +32,6 @@ public class SecurityMarkInformationBody   {
   @NotNull
 
   @Valid
-
 
   public SecurityMarksBody getAdd() {
     return add;

@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AppDefinition   {
   @JsonProperty("icon")
   private String icon = null;
@@ -44,7 +43,6 @@ public class AppDefinition   {
    * @return icon
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getIcon() {
@@ -76,7 +74,6 @@ public class AppDefinition   {
 
   @Valid
 
-
   public List<AppModelDefinition> getModels() {
     return models;
   }
@@ -106,7 +103,6 @@ public class AppDefinition   {
 
   @Valid
 
-
   public List<PublishIdentityInfoRepresentation> getPublishIdentityInfo() {
     return publishIdentityInfo;
   }
@@ -125,7 +121,6 @@ public class AppDefinition   {
    * @return theme
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTheme() {

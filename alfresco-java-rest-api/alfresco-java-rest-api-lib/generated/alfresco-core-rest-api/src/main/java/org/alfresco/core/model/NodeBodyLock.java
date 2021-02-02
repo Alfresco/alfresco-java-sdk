@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class NodeBodyLock   {
   @JsonProperty("timeToExpire")
   private Integer timeToExpire = null;
@@ -101,7 +100,6 @@ public class NodeBodyLock   {
   @ApiModelProperty(value = "")
 
 @Min(0)
-
   public Integer getTimeToExpire() {
     return timeToExpire;
   }
@@ -122,7 +120,6 @@ public class NodeBodyLock   {
   @ApiModelProperty(value = "")
 
 
-
   public TypeEnum getType() {
     return type;
   }
@@ -141,7 +138,6 @@ public class NodeBodyLock   {
    * @return lifetime
   **/
   @ApiModelProperty(value = "")
-
 
 
   public LifetimeEnum getLifetime() {

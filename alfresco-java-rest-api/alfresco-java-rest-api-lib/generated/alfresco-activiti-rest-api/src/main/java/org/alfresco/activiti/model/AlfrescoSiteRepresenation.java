@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AlfrescoSiteRepresenation   {
   @JsonProperty("id")
   private String id = null;
@@ -32,7 +31,6 @@ public class AlfrescoSiteRepresenation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -53,7 +51,6 @@ public class AlfrescoSiteRepresenation   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FavoriteSiteEntry   {
   @JsonProperty("entry")
   private FavoriteSite entry = null;
@@ -33,7 +32,6 @@ public class FavoriteSiteEntry   {
   @NotNull
 
   @Valid
-
 
   public FavoriteSite getEntry() {
     return entry;

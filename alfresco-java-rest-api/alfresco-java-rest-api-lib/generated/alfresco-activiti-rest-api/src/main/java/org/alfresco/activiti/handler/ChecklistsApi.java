@@ -36,21 +36,7 @@ public interface ChecklistsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<TaskRepresentation
-> addSubtaskUsingPOST(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "taskRepresentation" ,required=true )  @Valid @RequestBody TaskRepresentation taskRepresentation
-
-);
+    ResponseEntity<TaskRepresentation> addSubtaskUsingPOST(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "taskRepresentation" ,required=true )  @Valid @RequestBody TaskRepresentation taskRepresentation);
 
 
     @ApiOperation(value = "Get checklist for a task", nickname = "getChecklistUsingGET", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, authorizations = {
@@ -62,16 +48,7 @@ public interface ChecklistsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationTaskRepresentation
-> getChecklistUsingGET(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationTaskRepresentation> getChecklistUsingGET(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "Change the order of items on a checklist", nickname = "orderChecklistUsingPUT", notes = "", authorizations = {
@@ -83,20 +60,6 @@ public interface ChecklistsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> orderChecklistUsingPUT(
-
-
-@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String
- taskId
-
-
-
-,
-
-
-@ApiParam(value = "orderRepresentation" ,required=true )  @Valid @RequestBody ChecklistOrderRepresentation orderRepresentation
-
-);
+    ResponseEntity<Void> orderChecklistUsingPUT(@ApiParam(value = "taskId",required=true) @PathVariable("taskId") String taskId,@ApiParam(value = "orderRepresentation" ,required=true )  @Valid @RequestBody ChecklistOrderRepresentation orderRepresentation);
 
 }

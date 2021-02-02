@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RepositoryEntry   {
   @JsonProperty("repository")
   private RepositoryInfo repository = null;
@@ -33,7 +32,6 @@ public class RepositoryEntry   {
   @NotNull
 
   @Valid
-
 
   public RepositoryInfo getRepository() {
     return repository;

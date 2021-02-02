@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CreateEndpointBasicAuthRepresentation   {
   @JsonProperty("name")
   private String name = null;
@@ -40,7 +39,6 @@ public class CreateEndpointBasicAuthRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -59,7 +57,6 @@ public class CreateEndpointBasicAuthRepresentation   {
    * @return password
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getPassword() {
@@ -82,7 +79,6 @@ public class CreateEndpointBasicAuthRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -101,7 +97,6 @@ public class CreateEndpointBasicAuthRepresentation   {
    * @return username
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getUsername() {

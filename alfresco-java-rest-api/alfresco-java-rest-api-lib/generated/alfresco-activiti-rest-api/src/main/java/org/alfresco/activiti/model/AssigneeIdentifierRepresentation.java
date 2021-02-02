@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AssigneeIdentifierRepresentation   {
   @JsonProperty("assignee")
   private String assignee = null;
@@ -32,7 +31,6 @@ public class AssigneeIdentifierRepresentation   {
    * @return assignee
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAssignee() {
@@ -53,7 +51,6 @@ public class AssigneeIdentifierRepresentation   {
    * @return email
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEmail() {

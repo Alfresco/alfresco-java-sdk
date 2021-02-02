@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ClassificationReasonEntry   {
   @JsonProperty("entry")
   private ClassificationReason entry = null;
@@ -33,7 +32,6 @@ public class ClassificationReasonEntry   {
   @NotNull
 
   @Valid
-
 
   public ClassificationReason getEntry() {
     return entry;

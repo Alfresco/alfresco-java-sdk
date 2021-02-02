@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class LayoutRepresentation   {
   @JsonProperty("colspan")
   private Integer colspan = null;
@@ -37,7 +36,6 @@ public class LayoutRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getColspan() {
     return colspan;
   }
@@ -58,7 +56,6 @@ public class LayoutRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getColumn() {
     return column;
   }
@@ -77,7 +74,6 @@ public class LayoutRepresentation   {
    * @return row
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getRow() {

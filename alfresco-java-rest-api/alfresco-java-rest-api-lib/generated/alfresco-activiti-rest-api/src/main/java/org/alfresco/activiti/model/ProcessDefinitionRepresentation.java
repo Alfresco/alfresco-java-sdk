@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessDefinitionRepresentation   {
   @JsonProperty("category")
   private String category = null;
@@ -62,7 +61,6 @@ public class ProcessDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getCategory() {
     return category;
   }
@@ -81,7 +79,6 @@ public class ProcessDefinitionRepresentation   {
    * @return deploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDeploymentId() {
@@ -104,7 +101,6 @@ public class ProcessDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -123,7 +119,6 @@ public class ProcessDefinitionRepresentation   {
    * @return hasStartForm
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isHasStartForm() {
@@ -146,7 +141,6 @@ public class ProcessDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -165,7 +159,6 @@ public class ProcessDefinitionRepresentation   {
    * @return key
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getKey() {
@@ -197,7 +190,6 @@ public class ProcessDefinitionRepresentation   {
 
   @Valid
 
-
   public List<ProcessDefinitionMetaDataRepresentation> getMetaDataValues() {
     return metaDataValues;
   }
@@ -216,7 +208,6 @@ public class ProcessDefinitionRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -239,7 +230,6 @@ public class ProcessDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTenantId() {
     return tenantId;
   }
@@ -258,7 +248,6 @@ public class ProcessDefinitionRepresentation   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getVersion() {

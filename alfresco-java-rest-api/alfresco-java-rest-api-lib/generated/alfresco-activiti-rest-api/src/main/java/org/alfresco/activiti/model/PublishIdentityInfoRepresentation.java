@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PublishIdentityInfoRepresentation   {
   @JsonProperty("group")
   private LightGroupRepresentation group = null;
@@ -40,7 +39,6 @@ public class PublishIdentityInfoRepresentation   {
 
   @Valid
 
-
   public LightGroupRepresentation getGroup() {
     return group;
   }
@@ -62,7 +60,6 @@ public class PublishIdentityInfoRepresentation   {
 
   @Valid
 
-
   public LightUserRepresentation getPerson() {
     return person;
   }
@@ -81,7 +78,6 @@ public class PublishIdentityInfoRepresentation   {
    * @return type
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getType() {

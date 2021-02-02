@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RMSiteBodyUpdate   {
   @JsonProperty("title")
   private String title = null;
@@ -32,7 +31,6 @@ public class RMSiteBodyUpdate   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {
@@ -53,7 +51,6 @@ public class RMSiteBodyUpdate   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {

@@ -20,7 +20,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RepositoryInfo   {
   @JsonProperty("id")
   private String id = null;
@@ -54,7 +53,6 @@ public class RepositoryInfo   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -74,7 +72,6 @@ public class RepositoryInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getEdition() {
@@ -99,7 +96,6 @@ public class RepositoryInfo   {
 
   @Valid
 
-
   public VersionInfo getVersion() {
     return version;
   }
@@ -122,7 +118,6 @@ public class RepositoryInfo   {
 
   @Valid
 
-
   public StatusInfo getStatus() {
     return status;
   }
@@ -143,7 +138,6 @@ public class RepositoryInfo   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public LicenseInfo getLicense() {
     return license;
@@ -173,7 +167,6 @@ public class RepositoryInfo   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<ModuleInfo> getModules() {
     return modules;

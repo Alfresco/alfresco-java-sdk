@@ -44,29 +44,7 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<CommentEntry
-> createComment(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-
-@ApiParam(value = "The comment text. Note that you can also provide a list of comments." ,required=true )  @Valid @RequestBody CommentBody commentBodyCreate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<CommentEntry> createComment(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The comment text. Note that you can also provide a list of comments." ,required=true )  @Valid @RequestBody CommentBody commentBodyCreate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Delete a comment", nickname = "deleteComment", notes = "Deletes the comment **commentId** from node **nodeId**.", authorizations = {
@@ -83,24 +61,7 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteComment(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a comment.",required=true) @PathVariable("commentId") String
- commentId
-
-
-
-);
+    ResponseEntity<Void> deleteComment(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The identifier of a comment.",required=true) @PathVariable("commentId") String commentId);
 
 
     @ApiOperation(value = "List comments", nickname = "listComments", notes = "Gets a list of comments for the node **nodeId**, sorted chronologically with the newest comment first.", response = CommentPaging.class, authorizations = {
@@ -117,40 +78,7 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<CommentPaging
-> listComments(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<CommentPaging> listComments(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Update a comment", nickname = "updateComment", notes = "Updates an existing comment **commentId** on node **nodeId**.", response = CommentEntry.class, authorizations = {
@@ -168,36 +96,6 @@ public interface CommentsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<CommentEntry
-> updateComment(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a comment.",required=true) @PathVariable("commentId") String
- commentId
-
-
-
-,
-
-
-@ApiParam(value = "The JSON representing the comment to be updated." ,required=true )  @Valid @RequestBody CommentBody commentBodyUpdate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<CommentEntry> updateComment(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The identifier of a comment.",required=true) @PathVariable("commentId") String commentId,@ApiParam(value = "The JSON representing the comment to be updated." ,required=true )  @Valid @RequestBody CommentBody commentBodyUpdate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SearchEntryHighlight   {
   @JsonProperty("field")
   private String field = null;
@@ -35,7 +34,6 @@ public class SearchEntryHighlight   {
    * @return field
   **/
   @ApiModelProperty(value = "The field where a match occured (one of the fields defined on the request)")
-
 
 
   public String getField() {
@@ -64,7 +62,6 @@ public class SearchEntryHighlight   {
    * @return snippets
   **/
   @ApiModelProperty(value = "Any number of snippets for the specified field highlighting the matching text")
-
 
 
   public List<String> getSnippets() {

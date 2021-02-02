@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormRepresentation   {
   @JsonProperty("description")
   private String description = null;
@@ -60,7 +59,6 @@ public class FormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -82,7 +80,6 @@ public class FormRepresentation   {
 
   @Valid
 
-
   public FormDefinitionRepresentation getFormDefinition() {
     return formDefinition;
   }
@@ -101,7 +98,6 @@ public class FormRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -125,7 +121,6 @@ public class FormRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
@@ -144,7 +139,6 @@ public class FormRepresentation   {
    * @return lastUpdatedBy
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getLastUpdatedBy() {
@@ -167,7 +161,6 @@ public class FormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLastUpdatedByFullName() {
     return lastUpdatedByFullName;
   }
@@ -186,7 +179,6 @@ public class FormRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -209,7 +201,6 @@ public class FormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getReferenceId() {
     return referenceId;
   }
@@ -230,7 +221,6 @@ public class FormRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getStencilSetId() {
     return stencilSetId;
   }
@@ -249,7 +239,6 @@ public class FormRepresentation   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getVersion() {

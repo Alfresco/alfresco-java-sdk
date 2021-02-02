@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A list of stats request.")
 @Validated
 
-
 public class RequestStats   {
   @JsonProperty("field")
   private String field = null;
@@ -81,7 +80,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "The stats field")
 
 
-
   public String getField() {
     return field;
   }
@@ -100,7 +98,6 @@ public class RequestStats   {
    * @return label
   **/
   @ApiModelProperty(value = "A label to include for reference the stats field")
-
 
 
   public String getLabel() {
@@ -123,7 +120,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "The minimum value of the field")
 
 
-
   public Boolean isMin() {
     return min;
   }
@@ -142,7 +138,6 @@ public class RequestStats   {
    * @return max
   **/
   @ApiModelProperty(value = "The maximum value of the field")
-
 
 
   public Boolean isMax() {
@@ -165,7 +160,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "The sum of all values of the field")
 
 
-
   public Boolean isSum() {
     return sum;
   }
@@ -184,7 +178,6 @@ public class RequestStats   {
    * @return countValues
   **/
   @ApiModelProperty(value = "The number which have a value for this field")
-
 
 
   public Boolean isCountValues() {
@@ -207,7 +200,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "The number which do not have a value for this field")
 
 
-
   public Boolean isMissing() {
     return missing;
   }
@@ -226,7 +218,6 @@ public class RequestStats   {
    * @return mean
   **/
   @ApiModelProperty(value = "The average")
-
 
 
   public Boolean isMean() {
@@ -249,7 +240,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "Standard deviation")
 
 
-
   public Boolean isStddev() {
     return stddev;
   }
@@ -268,7 +258,6 @@ public class RequestStats   {
    * @return sumOfSquares
   **/
   @ApiModelProperty(value = "Sum of all values squared")
-
 
 
   public Boolean isSumOfSquares() {
@@ -291,7 +280,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "The set of all distinct values for the field (This can be very expensive to calculate)")
 
 
-
   public Boolean isDistinctValues() {
     return distinctValues;
   }
@@ -310,7 +298,6 @@ public class RequestStats   {
    * @return countDistinct
   **/
   @ApiModelProperty(value = "The number of distinct values  (This can be very expensive to calculate)")
-
 
 
   public Boolean isCountDistinct() {
@@ -333,7 +320,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "A statistical approximation of the number of distinct values")
 
 
-
   public Boolean isCardinality() {
     return cardinality;
   }
@@ -352,7 +338,6 @@ public class RequestStats   {
    * @return cardinalityAccuracy
   **/
   @ApiModelProperty(value = "Number between 0.0 and 1.0 indicating how aggressively the algorithm should try to be accurate. Used with boolean cardinality flag.")
-
 
 
   public Float getCardinalityAccuracy() {
@@ -383,7 +368,6 @@ public class RequestStats   {
   @ApiModelProperty(value = "A list of filters to exclude")
 
 
-
   public List<String> getExcludeFilters() {
     return excludeFilters;
   }
@@ -410,7 +394,6 @@ public class RequestStats   {
    * @return percentiles
   **/
   @ApiModelProperty(value = "A list of percentile values, e.g. \"1,99,99.9\"")
-
 
 
   public List<Float> getPercentiles() {

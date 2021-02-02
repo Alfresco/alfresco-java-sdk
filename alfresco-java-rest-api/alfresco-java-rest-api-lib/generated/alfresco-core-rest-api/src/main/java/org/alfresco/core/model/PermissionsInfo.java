@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PermissionsInfo   {
   @JsonProperty("isInheritanceEnabled")
   private Boolean isInheritanceEnabled = null;
@@ -44,7 +43,6 @@ public class PermissionsInfo   {
    * @return isInheritanceEnabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsInheritanceEnabled() {
@@ -76,7 +74,6 @@ public class PermissionsInfo   {
 
   @Valid
 
-
   public List<PermissionElement> getInherited() {
     return inherited;
   }
@@ -106,7 +103,6 @@ public class PermissionsInfo   {
 
   @Valid
 
-
   public List<PermissionElement> getLocallySet() {
     return locallySet;
   }
@@ -133,7 +129,6 @@ public class PermissionsInfo   {
    * @return settable
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getSettable() {

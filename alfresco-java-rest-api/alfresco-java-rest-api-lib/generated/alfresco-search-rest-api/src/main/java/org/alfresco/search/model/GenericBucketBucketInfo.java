@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Additional information of nested facet")
 @Validated
 
-
 public class GenericBucketBucketInfo   {
   @JsonProperty("start")
   private String start = null;
@@ -41,7 +40,6 @@ public class GenericBucketBucketInfo   {
   @ApiModelProperty(value = "The start of range")
 
 
-
   public String getStart() {
     return start;
   }
@@ -60,7 +58,6 @@ public class GenericBucketBucketInfo   {
    * @return startInclusive
   **/
   @ApiModelProperty(value = "Includes values greater or equal to \"start\"")
-
 
 
   public Boolean isStartInclusive() {
@@ -83,7 +80,6 @@ public class GenericBucketBucketInfo   {
   @ApiModelProperty(value = "The end of range")
 
 
-
   public String getEnd() {
     return end;
   }
@@ -102,7 +98,6 @@ public class GenericBucketBucketInfo   {
    * @return endInclusive
   **/
   @ApiModelProperty(value = "Includes values less than or equal to \"end\"")
-
 
 
   public Boolean isEndInclusive() {

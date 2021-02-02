@@ -35,24 +35,7 @@ public interface ModelsHistoryApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationModelRepresentation
-> getModelHistoryCollectionUsingGET(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-@ApiParam(value = "includeLatestVersion") @Valid @RequestParam(value = "includeLatestVersion", required = false) Boolean
- includeLatestVersion
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelHistoryCollectionUsingGET(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "includeLatestVersion") @Valid @RequestParam(value = "includeLatestVersion", required = false) Boolean includeLatestVersion);
 
 
     @ApiOperation(value = "Get a historic version of a model", nickname = "getProcessModelHistoryUsingGET", notes = "", response = ModelRepresentation.class, authorizations = {
@@ -64,23 +47,6 @@ public interface ModelsHistoryApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ModelRepresentation
-> getProcessModelHistoryUsingGET(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-@ApiParam(value = "modelHistoryId",required=true) @PathVariable("modelHistoryId") Long
- modelHistoryId
-
-
-
-);
+    ResponseEntity<ModelRepresentation> getProcessModelHistoryUsingGET(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "modelHistoryId",required=true) @PathVariable("modelHistoryId") Long modelHistoryId);
 
 }

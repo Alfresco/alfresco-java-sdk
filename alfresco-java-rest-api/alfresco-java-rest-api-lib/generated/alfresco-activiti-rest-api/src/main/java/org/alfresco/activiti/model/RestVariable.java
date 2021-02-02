@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RestVariable   {
   @JsonProperty("name")
   private String name = null;
@@ -40,7 +39,6 @@ public class RestVariable   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -59,7 +57,6 @@ public class RestVariable   {
    * @return scope
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getScope() {
@@ -82,7 +79,6 @@ public class RestVariable   {
   @ApiModelProperty(value = "")
 
 
-
   public String getType() {
     return type;
   }
@@ -101,7 +97,6 @@ public class RestVariable   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getValue() {

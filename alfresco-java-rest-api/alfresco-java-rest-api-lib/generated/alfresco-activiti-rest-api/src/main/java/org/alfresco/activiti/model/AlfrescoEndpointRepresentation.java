@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AlfrescoEndpointRepresentation   {
   @JsonProperty("accountUsername")
   private String accountUsername = null;
@@ -65,7 +64,6 @@ public class AlfrescoEndpointRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAccountUsername() {
     return accountUsername;
   }
@@ -86,7 +84,6 @@ public class AlfrescoEndpointRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAlfrescoTenantId() {
     return alfrescoTenantId;
   }
@@ -105,7 +102,6 @@ public class AlfrescoEndpointRepresentation   {
    * @return authenticationType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAuthenticationType() {
@@ -129,7 +125,6 @@ public class AlfrescoEndpointRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getCreated() {
     return created;
   }
@@ -148,7 +143,6 @@ public class AlfrescoEndpointRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -172,7 +166,6 @@ public class AlfrescoEndpointRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
@@ -191,7 +184,6 @@ public class AlfrescoEndpointRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -214,7 +206,6 @@ public class AlfrescoEndpointRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getRepositoryUrl() {
     return repositoryUrl;
   }
@@ -233,7 +224,6 @@ public class AlfrescoEndpointRepresentation   {
    * @return secret
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getSecret() {
@@ -256,7 +246,6 @@ public class AlfrescoEndpointRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getShareUrl() {
     return shareUrl;
   }
@@ -277,7 +266,6 @@ public class AlfrescoEndpointRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -296,7 +284,6 @@ public class AlfrescoEndpointRepresentation   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getVersion() {

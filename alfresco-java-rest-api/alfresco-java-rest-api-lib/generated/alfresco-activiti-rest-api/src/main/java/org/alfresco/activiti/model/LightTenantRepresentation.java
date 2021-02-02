@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class LightTenantRepresentation   {
   @JsonProperty("id")
   private Long id = null;
@@ -32,7 +31,6 @@ public class LightTenantRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -53,7 +51,6 @@ public class LightTenantRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {

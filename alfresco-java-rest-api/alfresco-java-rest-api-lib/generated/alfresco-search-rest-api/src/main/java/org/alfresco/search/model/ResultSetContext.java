@@ -23,7 +23,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Context that applies to the whole result set")
 @Validated
 
-
 public class ResultSetContext   {
   @JsonProperty("consistency")
   private ResponseConsistency consistency = null;
@@ -60,7 +59,6 @@ public class ResultSetContext   {
 
   @Valid
 
-
   public ResponseConsistency getConsistency() {
     return consistency;
   }
@@ -81,7 +79,6 @@ public class ResultSetContext   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public SearchRequest getRequest() {
     return request;
@@ -112,7 +109,6 @@ public class ResultSetContext   {
 
   @Valid
 
-
   public List<ResultSetContextFacetQueries> getFacetQueries() {
     return facetQueries;
   }
@@ -141,7 +137,6 @@ public class ResultSetContext   {
   @ApiModelProperty(value = "The counts from field facets")
 
   @Valid
-
 
   public List<ResultBuckets> getFacetsFields() {
     return facetsFields;
@@ -172,7 +167,6 @@ public class ResultSetContext   {
 
   @Valid
 
-
   public List<GenericFacetResponse> getFacets() {
     return facets;
   }
@@ -201,7 +195,6 @@ public class ResultSetContext   {
   @ApiModelProperty(value = "Suggested corrections  If zero results were found for the original query then a single entry of type \"searchInsteadFor\" will be returned. If alternatives were found that return more results than the original query they are returned as \"didYouMean\" options. The highest quality suggestion is first. ")
 
   @Valid
-
 
   public List<ResultSetContextSpellcheck> getSpellcheck() {
     return spellcheck;

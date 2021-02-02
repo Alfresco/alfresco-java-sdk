@@ -20,7 +20,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Record   {
   @JsonProperty("id")
   private String id = null;
@@ -79,7 +78,6 @@ public class Record   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -99,7 +97,6 @@ public class Record   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -123,7 +120,6 @@ public class Record   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -145,7 +141,6 @@ public class Record   {
   @NotNull
 
 
-
   public String getNodeType() {
     return nodeType;
   }
@@ -164,7 +159,6 @@ public class Record   {
    * @return isCompleted
   **/
   @ApiModelProperty(value = "Present only for record nodes. Indicates if the record is completed")
-
 
 
   public Boolean isIsCompleted() {
@@ -189,7 +183,6 @@ public class Record   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -211,7 +204,6 @@ public class Record   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -235,7 +227,6 @@ public class Record   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -257,7 +248,6 @@ public class Record   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getCreatedByUser() {
     return createdByUser;
@@ -287,7 +277,6 @@ public class Record   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -306,7 +295,6 @@ public class Record   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -337,7 +325,6 @@ public class Record   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -359,7 +346,6 @@ public class Record   {
 
   @Valid
 
-
   public ContentInfo getContent() {
     return content;
   }
@@ -380,7 +366,6 @@ public class Record   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PathInfo getPath() {
     return path;

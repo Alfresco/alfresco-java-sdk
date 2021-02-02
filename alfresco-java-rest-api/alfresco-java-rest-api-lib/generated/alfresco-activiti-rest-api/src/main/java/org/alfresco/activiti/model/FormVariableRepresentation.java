@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormVariableRepresentation   {
   @JsonProperty("name")
   private String name = null;
@@ -37,7 +36,6 @@ public class FormVariableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -58,7 +56,6 @@ public class FormVariableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getType() {
     return type;
   }
@@ -77,7 +74,6 @@ public class FormVariableRepresentation   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getValue() {

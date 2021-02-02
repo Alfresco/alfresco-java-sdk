@@ -22,7 +22,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessScopeRepresentation   {
   @JsonProperty("activityIds")
   @Valid
@@ -106,7 +105,6 @@ public class ProcessScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getActivityIds() {
     return activityIds;
   }
@@ -135,7 +133,6 @@ public class ProcessScopeRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Map<String, List<String>> getActivityIdsByCollapsedSubProcessIdMap() {
     return activityIdsByCollapsedSubProcessIdMap;
@@ -166,7 +163,6 @@ public class ProcessScopeRepresentation   {
 
   @Valid
 
-
   public Map<String, List<String>> getActivityIdsByDecisionTableIdMap() {
     return activityIdsByDecisionTableIdMap;
   }
@@ -196,7 +192,6 @@ public class ProcessScopeRepresentation   {
 
   @Valid
 
-
   public Map<String, List<String>> getActivityIdsByFormIdMap() {
     return activityIdsByFormIdMap;
   }
@@ -225,7 +220,6 @@ public class ProcessScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getActivityIdsWithExcludedSubProcess() {
     return activityIdsWithExcludedSubProcess;
   }
@@ -252,7 +246,6 @@ public class ProcessScopeRepresentation   {
    * @return activitySidsByActivityIdMap
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Map<String, String> getActivitySidsByActivityIdMap() {
@@ -284,7 +277,6 @@ public class ProcessScopeRepresentation   {
 
   @Valid
 
-
   public Map<String, List<VariableScopeRepresentation>> getCustomStencilVariables() {
     return customStencilVariables;
   }
@@ -313,7 +305,6 @@ public class ProcessScopeRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Map<String, List<EntityVariableScopeRepresentation>> getEntityVariables() {
     return entityVariables;
@@ -344,7 +335,6 @@ public class ProcessScopeRepresentation   {
 
   @Valid
 
-
   public Map<String, List<VariableScopeRepresentation>> getExecutionVariables() {
     return executionVariables;
   }
@@ -373,7 +363,6 @@ public class ProcessScopeRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Map<String, List<VariableScopeRepresentation>> getFieldToVariableMappings() {
     return fieldToVariableMappings;
@@ -404,7 +393,6 @@ public class ProcessScopeRepresentation   {
 
   @Valid
 
-
   public Map<String, List<FormScopeRepresentation>> getForms() {
     return forms;
   }
@@ -434,7 +422,6 @@ public class ProcessScopeRepresentation   {
 
   @Valid
 
-
   public Map<String, List<VariableScopeRepresentation>> getMetadataVariables() {
     return metadataVariables;
   }
@@ -455,7 +442,6 @@ public class ProcessScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getModelId() {
     return modelId;
   }
@@ -474,7 +460,6 @@ public class ProcessScopeRepresentation   {
    * @return processModelType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getProcessModelType() {
@@ -506,7 +491,6 @@ public class ProcessScopeRepresentation   {
 
   @Valid
 
-
   public Map<String, List<VariableScopeRepresentation>> getResponseVariables() {
     return responseVariables;
   }
@@ -535,7 +519,6 @@ public class ProcessScopeRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Map<String, List<VariableMappingRepresentation>> getReusableFieldMapping() {
     return reusableFieldMapping;

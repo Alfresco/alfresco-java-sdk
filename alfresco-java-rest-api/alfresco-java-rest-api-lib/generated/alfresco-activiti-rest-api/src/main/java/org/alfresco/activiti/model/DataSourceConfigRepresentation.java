@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DataSourceConfigRepresentation   {
   @JsonProperty("driverClass")
   private String driverClass = null;
@@ -40,7 +39,6 @@ public class DataSourceConfigRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDriverClass() {
     return driverClass;
   }
@@ -59,7 +57,6 @@ public class DataSourceConfigRepresentation   {
    * @return jdbcUrl
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getJdbcUrl() {
@@ -82,7 +79,6 @@ public class DataSourceConfigRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPassword() {
     return password;
   }
@@ -101,7 +97,6 @@ public class DataSourceConfigRepresentation   {
    * @return username
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getUsername() {

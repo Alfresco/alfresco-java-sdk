@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AssociationInfo   {
   @JsonProperty("assocType")
   private String assocType = null;
@@ -30,7 +29,6 @@ public class AssociationInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getAssocType() {

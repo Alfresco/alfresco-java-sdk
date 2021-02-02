@@ -41,16 +41,7 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
-    ResponseEntity<String
-> calculateDefaultDeclassificationDate(
-
-
-@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String
- nodeId
-
-
-
-);
+    ResponseEntity<String> calculateDefaultDeclassificationDate(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId);
 
 
     @ApiOperation(value = "Get declassification date recalculation information", nickname = "declassificationDateRecalculationProcessesGet", notes = "Find the status of the declassification date recalculation process(es).", response = DeclassificationDateRecalculationProcessPaging.class, authorizations = {
@@ -65,8 +56,7 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeclassificationDateRecalculationProcessPaging
-> declassificationDateRecalculationProcessesGet();
+    ResponseEntity<DeclassificationDateRecalculationProcessPaging> declassificationDateRecalculationProcessesGet();
 
 
     @ApiOperation(value = "Start the declassification date recalculation process", nickname = "declassificationDateRecalculationProcessesPost", notes = "Start the declassification date recalculation process with id **processId** if it is not already running.  The only supported id is \"-declassificationDateRecalculationProcess-\". ", response = DeclassificationDateRecalculationProcessEntry.class, authorizations = {
@@ -83,13 +73,7 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<DeclassificationDateRecalculationProcessEntry
-> declassificationDateRecalculationProcessesPost(
-
-
-@ApiParam(value = "The entity containing the identifier for the declassification date recalculation process. The id should be set to \"-declassificationDateRecalculationProcess-\"." ,required=true )  @Valid @RequestBody DeclassificationDateRecalculationProcessBody declassificationDateRecalculationProcess
-
-);
+    ResponseEntity<DeclassificationDateRecalculationProcessEntry> declassificationDateRecalculationProcessesPost(@ApiParam(value = "The entity containing the identifier for the declassification date recalculation process. The id should be set to \"-declassificationDateRecalculationProcess-\"." ,required=true )  @Valid @RequestBody DeclassificationDateRecalculationProcessBody declassificationDateRecalculationProcess);
 
 
     @ApiOperation(value = "Get declassification date recalculation process information", nickname = "declassificationDateRecalculationProcessesProcessIdGet", notes = "Gets the declassification date recalculation process with id **processId**.  The only supported id is \"-declassificationDateRecalculationProcess-\".", response = DeclassificationDateRecalculationProcessEntry.class, authorizations = {
@@ -105,15 +89,6 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeclassificationDateRecalculationProcessEntry
-> declassificationDateRecalculationProcessesProcessIdGet(
-
-
-@ApiParam(value = "The identifier for the declassification date recalculation process. This should be set to \"-declassificationDateRecalculationProcess-\".",required=true) @PathVariable("processId") String
- processId
-
-
-
-);
+    ResponseEntity<DeclassificationDateRecalculationProcessEntry> declassificationDateRecalculationProcessesProcessIdGet(@ApiParam(value = "The identifier for the declassification date recalculation process. This should be set to \"-declassificationDateRecalculationProcess-\".",required=true) @PathVariable("processId") String processId);
 
 }

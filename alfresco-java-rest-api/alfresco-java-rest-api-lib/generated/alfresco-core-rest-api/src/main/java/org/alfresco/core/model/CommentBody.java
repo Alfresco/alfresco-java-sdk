@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CommentBody   {
   @JsonProperty("content")
   private String content = null;
@@ -30,7 +29,6 @@ public class CommentBody   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getContent() {

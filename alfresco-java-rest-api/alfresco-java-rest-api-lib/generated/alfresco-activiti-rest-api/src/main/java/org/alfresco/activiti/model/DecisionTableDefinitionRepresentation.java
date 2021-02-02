@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DecisionTableDefinitionRepresentation   {
   @JsonProperty("completenessIndicator")
   private String completenessIndicator = null;
@@ -67,7 +66,6 @@ public class DecisionTableDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getCompletenessIndicator() {
     return completenessIndicator;
   }
@@ -86,7 +84,6 @@ public class DecisionTableDefinitionRepresentation   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -118,7 +115,6 @@ public class DecisionTableDefinitionRepresentation   {
 
   @Valid
 
-
   public List<VariableScopeRepresentation> getExecutionVariables() {
     return executionVariables;
   }
@@ -139,7 +135,6 @@ public class DecisionTableDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getHitIndicator() {
     return hitIndicator;
   }
@@ -158,7 +153,6 @@ public class DecisionTableDefinitionRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -190,7 +184,6 @@ public class DecisionTableDefinitionRepresentation   {
 
   @Valid
 
-
   public List<DecisionTableExpressionRepresentation> getInputExpressions() {
     return inputExpressions;
   }
@@ -211,7 +204,6 @@ public class DecisionTableDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getKey() {
     return key;
   }
@@ -230,7 +222,6 @@ public class DecisionTableDefinitionRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -262,7 +253,6 @@ public class DecisionTableDefinitionRepresentation   {
 
   @Valid
 
-
   public List<DecisionTableExpressionRepresentation> getOutputExpressions() {
     return outputExpressions;
   }
@@ -291,7 +281,6 @@ public class DecisionTableDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<Mapstringobject> getRules() {
     return rules;

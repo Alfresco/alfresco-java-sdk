@@ -36,16 +36,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAlfrescoSiteRepresenation
-> getAllSitesUsingGET(
-
-
-@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String
- repositoryId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationAlfrescoSiteRepresenation> getAllSitesUsingGET(@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String repositoryId);
 
 
     @ApiOperation(value = "List files and folders inside a specific folder identified by folder path", nickname = "getContentInFolderPathUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, authorizations = {
@@ -57,32 +48,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation
-> getContentInFolderPathUsingGET(
-
-
-@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String
- repositoryId
-
-
-
-,
-
-
-@ApiParam(value = "siteId",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "folderPath",required=true) @PathVariable("folderPath") String
- folderPath
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInFolderPathUsingGET(@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String repositoryId,@ApiParam(value = "siteId",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "folderPath",required=true) @PathVariable("folderPath") String folderPath);
 
 
     @ApiOperation(value = "List files and folders inside a specific folder", nickname = "getContentInFolderUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, authorizations = {
@@ -94,24 +60,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation
-> getContentInFolderUsingGET(
-
-
-@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String
- repositoryId
-
-
-
-,
-
-
-@ApiParam(value = "folderId",required=true) @PathVariable("folderId") String
- folderId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInFolderUsingGET(@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String repositoryId,@ApiParam(value = "folderId",required=true) @PathVariable("folderId") String folderId);
 
 
     @ApiOperation(value = "List files and folders inside a specific site", nickname = "getContentInSiteUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, authorizations = {
@@ -123,24 +72,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation
-> getContentInSiteUsingGET(
-
-
-@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String
- repositoryId
-
-
-
-,
-
-
-@ApiParam(value = "siteId",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInSiteUsingGET(@ApiParam(value = "repositoryId",required=true) @PathVariable("repositoryId") String repositoryId,@ApiParam(value = "siteId",required=true) @PathVariable("siteId") String siteId);
 
 
     @ApiOperation(value = "List Alfresco repositories", nickname = "getRepositoriesUsingGET", notes = "A tenant administrator can configure one or more Alfresco repositories to use when working with content.", response = ResultListDataRepresentationAlfrescoEndpointRepresentation.class, authorizations = {
@@ -152,23 +84,6 @@ public interface IntegrationAlfrescoOnpremiseApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAlfrescoEndpointRepresentation
-> getRepositoriesUsingGET(
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-,
-
-@ApiParam(value = "includeAccounts", defaultValue = "true") @Valid @RequestParam(value = "includeAccounts", required = false, defaultValue="true") Boolean
- includeAccounts
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationAlfrescoEndpointRepresentation> getRepositoriesUsingGET(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId,@ApiParam(value = "includeAccounts", defaultValue = "true") @Valid @RequestParam(value = "includeAccounts", required = false, defaultValue="true") Boolean includeAccounts);
 
 }

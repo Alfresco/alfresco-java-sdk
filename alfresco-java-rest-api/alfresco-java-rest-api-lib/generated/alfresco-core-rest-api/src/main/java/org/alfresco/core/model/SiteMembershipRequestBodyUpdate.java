@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteMembershipRequestBodyUpdate   {
   @JsonProperty("message")
   private String message = null;
@@ -29,7 +28,6 @@ public class SiteMembershipRequestBodyUpdate   {
    * @return message
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMessage() {

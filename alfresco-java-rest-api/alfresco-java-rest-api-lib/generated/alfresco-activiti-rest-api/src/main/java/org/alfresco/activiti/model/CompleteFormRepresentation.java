@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CompleteFormRepresentation   {
   @JsonProperty("outcome")
   private String outcome = null;
@@ -32,7 +31,6 @@ public class CompleteFormRepresentation   {
    * @return outcome
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOutcome() {
@@ -53,7 +51,6 @@ public class CompleteFormRepresentation   {
    * @return values
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getValues() {

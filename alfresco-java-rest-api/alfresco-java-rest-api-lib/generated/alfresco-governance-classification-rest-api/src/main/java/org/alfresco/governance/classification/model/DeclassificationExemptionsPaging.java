@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeclassificationExemptionsPaging   {
   @JsonProperty("list")
   private DeclassificationExemptionsPagingList list = null;
@@ -32,7 +31,6 @@ public class DeclassificationExemptionsPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public DeclassificationExemptionsPagingList getList() {
     return list;

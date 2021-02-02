@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessInstanceQueryRepresentation   {
   @JsonProperty("appDefinitionId")
   private Long appDefinitionId = null;
@@ -121,7 +120,6 @@ public class ProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getAppDefinitionId() {
     return appDefinitionId;
   }
@@ -140,7 +138,6 @@ public class ProcessInstanceQueryRepresentation   {
    * @return page
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getPage() {
@@ -163,7 +160,6 @@ public class ProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionId() {
     return processDefinitionId;
   }
@@ -182,7 +178,6 @@ public class ProcessInstanceQueryRepresentation   {
    * @return processInstanceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceId() {
@@ -205,7 +200,6 @@ public class ProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getSize() {
     return size;
   }
@@ -224,7 +218,6 @@ public class ProcessInstanceQueryRepresentation   {
    * @return sort
   **/
   @ApiModelProperty(value = "")
-
 
 
   public SortEnum getSort() {
@@ -247,7 +240,6 @@ public class ProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getStart() {
     return start;
   }
@@ -266,7 +258,6 @@ public class ProcessInstanceQueryRepresentation   {
    * @return state
   **/
   @ApiModelProperty(value = "")
-
 
 
   public StateEnum getState() {

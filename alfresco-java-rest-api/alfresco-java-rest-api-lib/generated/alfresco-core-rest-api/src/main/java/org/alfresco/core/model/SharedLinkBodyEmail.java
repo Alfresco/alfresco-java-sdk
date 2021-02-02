@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SharedLinkBodyEmail   {
   @JsonProperty("client")
   private String client = null;
@@ -43,7 +42,6 @@ public class SharedLinkBodyEmail   {
   @ApiModelProperty(value = "")
 
 
-
   public String getClient() {
     return client;
   }
@@ -64,7 +62,6 @@ public class SharedLinkBodyEmail   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMessage() {
     return message;
   }
@@ -83,7 +80,6 @@ public class SharedLinkBodyEmail   {
    * @return locale
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLocale() {
@@ -112,7 +108,6 @@ public class SharedLinkBodyEmail   {
    * @return recipientEmails
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getRecipientEmails() {

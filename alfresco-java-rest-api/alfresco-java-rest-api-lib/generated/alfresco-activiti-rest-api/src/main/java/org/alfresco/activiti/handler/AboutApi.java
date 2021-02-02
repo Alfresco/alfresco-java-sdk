@@ -34,7 +34,6 @@ public interface AboutApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Map<String, String>
-> getAppVersionUsingGET();
+    ResponseEntity<Map<String, String>> getAppVersionUsingGET();
 
 }

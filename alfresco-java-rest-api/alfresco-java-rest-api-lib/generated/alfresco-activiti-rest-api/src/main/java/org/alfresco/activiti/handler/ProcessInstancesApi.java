@@ -45,16 +45,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.PUT)
-    ResponseEntity<ProcessInstanceRepresentation
-> activateProcessInstanceUsingPUT(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<ProcessInstanceRepresentation> activateProcessInstanceUsingPUT(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Add a user or group involvement to a process instance", nickname = "createIdentityLinkUsingPOST1", notes = "", response = IdentityLinkRepresentation.class, authorizations = {
@@ -66,21 +57,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<IdentityLinkRepresentation
-> createIdentityLinkUsingPOST1(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "identityLinkRepresentation" ,required=true )  @Valid @RequestBody IdentityLinkRepresentation identityLinkRepresentation
-
-);
+    ResponseEntity<IdentityLinkRepresentation> createIdentityLinkUsingPOST1(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "identityLinkRepresentation" ,required=true )  @Valid @RequestBody IdentityLinkRepresentation identityLinkRepresentation);
 
 
     @ApiOperation(value = "Remove a user or group involvement from a process instance", nickname = "deleteIdentityLinkUsingDELETE1", notes = "", authorizations = {
@@ -92,40 +69,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteIdentityLinkUsingDELETE1(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "family",required=true) @PathVariable("family") String
- family
-
-
-
-,
-
-
-@ApiParam(value = "identityId",required=true) @PathVariable("identityId") String
- identityId
-
-
-
-,
-
-
-@ApiParam(value = "type",required=true) @PathVariable("type") String
- type
-
-
-
-);
+    ResponseEntity<Void> deleteIdentityLinkUsingDELETE1(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "family",required=true) @PathVariable("family") String family,@ApiParam(value = "identityId",required=true) @PathVariable("identityId") String identityId,@ApiParam(value = "type",required=true) @PathVariable("type") String type);
 
 
     @ApiOperation(value = "Cancel or remove a process instance", nickname = "deleteProcessInstanceUsingDELETE", notes = "If the process instance has not yet been completed, it will be cancelled. If it has already finished or been cancelled then the process instance will be removed and will no longer appear in queries.", authorizations = {
@@ -139,16 +83,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteProcessInstanceUsingDELETE(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<Void> deleteProcessInstanceUsingDELETE(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "List process instances using a filter", nickname = "filterProcessInstancesUsingPOST", notes = "The request body provided must define either a valid filterId value or filter object", response = ResultListDataRepresentationProcessInstanceRepresentation.class, authorizations = {
@@ -160,13 +95,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation
-> filterProcessInstancesUsingPOST(
-
-
-@ApiParam(value = "filterRequest" ,required=true )  @Valid @RequestBody ProcessInstanceFilterRequestRepresentation filterRequest
-
-);
+    ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> filterProcessInstancesUsingPOST(@ApiParam(value = "filterRequest" ,required=true )  @Valid @RequestBody ProcessInstanceFilterRequestRepresentation filterRequest);
 
 
     @ApiOperation(value = "Get decision tasks in a process instance", nickname = "getHistoricProcessInstanceDecisionTasksUsingGET", notes = "", response = ResultListDataRepresentationDecisionTaskRepresentation.class, authorizations = {
@@ -178,16 +107,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationDecisionTaskRepresentation
-> getHistoricProcessInstanceDecisionTasksUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationDecisionTaskRepresentation> getHistoricProcessInstanceDecisionTasksUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Get historic variables for a process instance", nickname = "getHistoricProcessInstanceVariablesUsingGET", notes = "", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List", authorizations = {
@@ -199,16 +119,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<ProcessInstanceVariableRepresentation>
-> getHistoricProcessInstanceVariablesUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<List<ProcessInstanceVariableRepresentation>> getHistoricProcessInstanceVariablesUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Query historic process instances", nickname = "getHistoricProcessInstancesUsingPOST", notes = "", response = ResultListDataRepresentationProcessInstanceRepresentation.class, authorizations = {
@@ -220,13 +131,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation
-> getHistoricProcessInstancesUsingPOST(
-
-
-@ApiParam(value = "queryRequest" ,required=true )  @Valid @RequestBody HistoricProcessInstanceQueryRepresentation queryRequest
-
-);
+    ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> getHistoricProcessInstancesUsingPOST(@ApiParam(value = "queryRequest" ,required=true )  @Valid @RequestBody HistoricProcessInstanceQueryRepresentation queryRequest);
 
 
     @ApiOperation(value = "Get a user or group involvement with a process instance", nickname = "getIdentityLinkTypeUsingGET1", notes = "", response = IdentityLinkRepresentation.class, authorizations = {
@@ -238,40 +143,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<IdentityLinkRepresentation
-> getIdentityLinkTypeUsingGET1(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "family",required=true) @PathVariable("family") String
- family
-
-
-
-,
-
-
-@ApiParam(value = "identityId",required=true) @PathVariable("identityId") String
- identityId
-
-
-
-,
-
-
-@ApiParam(value = "type",required=true) @PathVariable("type") String
- type
-
-
-
-);
+    ResponseEntity<IdentityLinkRepresentation> getIdentityLinkTypeUsingGET1(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "family",required=true) @PathVariable("family") String family,@ApiParam(value = "identityId",required=true) @PathVariable("identityId") String identityId,@ApiParam(value = "type",required=true) @PathVariable("type") String type);
 
 
     @ApiOperation(value = "List either the users or groups involved with a process instance", nickname = "getIdentityLinksForFamilyUsingGET1", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
@@ -283,24 +155,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<IdentityLinkRepresentation>
-> getIdentityLinksForFamilyUsingGET1(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-,
-
-
-@ApiParam(value = "family",required=true) @PathVariable("family") String
- family
-
-
-
-);
+    ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksForFamilyUsingGET1(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId,@ApiParam(value = "family",required=true) @PathVariable("family") String family);
 
 
     @ApiOperation(value = "List the users and groups involved with a process instance", nickname = "getIdentityLinksUsingGET1", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
@@ -312,16 +167,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<IdentityLinkRepresentation>
-> getIdentityLinksUsingGET1(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksUsingGET1(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "List content attached to process instance fields", nickname = "getProcessInstanceContentUsingGET", notes = "", response = ResultListDataRepresentationProcessContentRepresentation.class, authorizations = {
@@ -333,16 +179,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationProcessContentRepresentation
-> getProcessInstanceContentUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationProcessContentRepresentation> getProcessInstanceContentUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Get the process diagram for the process instance", nickname = "getProcessInstanceDiagramUsingGET", notes = "", response = byte[].class, responseContainer = "List", authorizations = {
@@ -354,16 +191,7 @@ public interface ProcessInstancesApi {
         produces = "image/png", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<byte[]>
-> getProcessInstanceDiagramUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<List<byte[]>> getProcessInstanceDiagramUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Get a process instance start form", nickname = "getProcessInstanceStartFormUsingGET", notes = "The start form for a process instance can be retrieved when the process definition has a start form defined (hasStartForm = true on the process instance)", response = FormDefinitionRepresentation.class, authorizations = {
@@ -375,16 +203,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<FormDefinitionRepresentation
-> getProcessInstanceStartFormUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<FormDefinitionRepresentation> getProcessInstanceStartFormUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Get a process instance", nickname = "getProcessInstanceUsingGET", notes = "", response = ProcessInstanceRepresentation.class, authorizations = {
@@ -396,16 +215,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ProcessInstanceRepresentation
-> getProcessInstanceUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<ProcessInstanceRepresentation> getProcessInstanceUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Query process instances", nickname = "getProcessInstancesUsingPOST", notes = "", response = ResultListDataRepresentationProcessInstanceRepresentation.class, authorizations = {
@@ -417,13 +227,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation
-> getProcessInstancesUsingPOST(
-
-
-@ApiParam(value = "processInstancesQuery" ,required=true )  @Valid @RequestBody ProcessInstanceQueryRepresentation processInstancesQuery
-
-);
+    ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> getProcessInstancesUsingPOST(@ApiParam(value = "processInstancesQuery" ,required=true )  @Valid @RequestBody ProcessInstanceQueryRepresentation processInstancesQuery);
 
 
     @ApiOperation(value = "Get the audit log for a process instance", nickname = "getTaskAuditLogUsingGET", notes = "", response = ProcessInstanceAuditInfoRepresentation.class, authorizations = {
@@ -435,16 +239,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ProcessInstanceAuditInfoRepresentation
-> getTaskAuditLogUsingGET(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<ProcessInstanceAuditInfoRepresentation> getTaskAuditLogUsingGET(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "Start a process instance", nickname = "startNewProcessInstanceUsingPOST", notes = "", response = ProcessInstanceRepresentation.class, authorizations = {
@@ -456,13 +251,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ProcessInstanceRepresentation
-> startNewProcessInstanceUsingPOST(
-
-
-@ApiParam(value = "startRequest" ,required=true )  @Valid @RequestBody CreateProcessInstanceRepresentation startRequest
-
-);
+    ResponseEntity<ProcessInstanceRepresentation> startNewProcessInstanceUsingPOST(@ApiParam(value = "startRequest" ,required=true )  @Valid @RequestBody CreateProcessInstanceRepresentation startRequest);
 
 
     @ApiOperation(value = "Suspend a process instance", nickname = "suspendProcessInstanceUsingPUT", notes = "", response = ProcessInstanceRepresentation.class, authorizations = {
@@ -474,15 +263,6 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.PUT)
-    ResponseEntity<ProcessInstanceRepresentation
-> suspendProcessInstanceUsingPUT(
-
-
-@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String
- processInstanceId
-
-
-
-);
+    ResponseEntity<ProcessInstanceRepresentation> suspendProcessInstanceUsingPUT(@ApiParam(value = "processInstanceId",required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 }

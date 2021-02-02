@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AlfrescoContentRepresentation   {
   @JsonProperty("folder")
   private Boolean folder = null;
@@ -40,7 +39,6 @@ public class AlfrescoContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isFolder() {
     return folder;
   }
@@ -59,7 +57,6 @@ public class AlfrescoContentRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -82,7 +79,6 @@ public class AlfrescoContentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSimpleType() {
     return simpleType;
   }
@@ -101,7 +97,6 @@ public class AlfrescoContentRepresentation   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {

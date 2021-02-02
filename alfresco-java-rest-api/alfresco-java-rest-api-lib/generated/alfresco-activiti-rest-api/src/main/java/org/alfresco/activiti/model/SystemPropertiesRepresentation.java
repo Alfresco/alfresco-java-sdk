@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SystemPropertiesRepresentation   {
   @JsonProperty("alfrescoContentSsoEnabled")
   private Boolean alfrescoContentSsoEnabled = null;
@@ -44,7 +43,6 @@ public class SystemPropertiesRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isAlfrescoContentSsoEnabled() {
     return alfrescoContentSsoEnabled;
   }
@@ -63,7 +61,6 @@ public class SystemPropertiesRepresentation   {
    * @return allowInvolveByEmail
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isAllowInvolveByEmail() {
@@ -87,7 +84,6 @@ public class SystemPropertiesRepresentation   {
 
   @Valid
 
-
   public AuthConfigurationRepresentation getAuthConfiguration() {
     return authConfiguration;
   }
@@ -108,7 +104,6 @@ public class SystemPropertiesRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isDisableJavaScriptEventsInFormEditor() {
     return disableJavaScriptEventsInFormEditor;
   }
@@ -127,7 +122,6 @@ public class SystemPropertiesRepresentation   {
    * @return logoutDisabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isLogoutDisabled() {

@@ -59,29 +59,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> approveSiteMembershipRequest(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The invitee user name.",required=true) @PathVariable("inviteeId") String
- inviteeId
-
-
-
-,
-
-
-@ApiParam(value = "Accepting a request to join, optionally, allows assignment of a role to the user. "  )  @Valid @RequestBody SiteMembershipApprovalBody siteMembershipApprovalBody
-
-);
+    ResponseEntity<Void> approveSiteMembershipRequest(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The invitee user name.",required=true) @PathVariable("inviteeId") String inviteeId,@ApiParam(value = "Accepting a request to join, optionally, allows assignment of a role to the user. "  )  @Valid @RequestBody SiteMembershipApprovalBody siteMembershipApprovalBody);
 
 
     @ApiOperation(value = "Create a site", nickname = "createSite", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Creates a default site with the given details.  Unless explicitly specified, the site id will be generated from the site title. The site id must be unique and only contain alphanumeric and/or dash characters.  Note: the id of a site cannot be updated once the site has been created.  For example, to create a public site called \"Marketing\" the following body could be used: ```JSON {   \"title\": \"Marketing\",   \"visibility\": \"PUBLIC\" } ```  The creation of the (surf) configuration files required by Share can be skipped via the **skipConfiguration** query parameter.  **Note:** if skipped then such a site will **not** work within Share.  The addition of the site to the user's site favorites can be skipped via the **skipAddToFavorites** query parameter.  The creator will be added as a member with Site Manager role.  When you create a site, a container called **documentLibrary** is created for you in the new site.  This container is the root folder for content stored in the site. ", response = SiteEntry.class, authorizations = {
@@ -97,37 +75,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<SiteEntry
-> createSite(
-
-
-@ApiParam(value = "The site details" ,required=true )  @Valid @RequestBody SiteBodyCreate siteBodyCreate
-
-,
-
-@ApiParam(value = "Flag to indicate whether the Share-specific (surf) configuration files for the site should not be created.", defaultValue = "false") @Valid @RequestParam(value = "skipConfiguration", required = false, defaultValue="false") Boolean
- skipConfiguration
-
-
-
-
-,
-
-@ApiParam(value = "Flag to indicate whether the site should not be added to the user's site favorites.", defaultValue = "false") @Valid @RequestParam(value = "skipAddToFavorites", required = false, defaultValue="false") Boolean
- skipAddToFavorites
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteEntry> createSite(@ApiParam(value = "The site details" ,required=true )  @Valid @RequestBody SiteBodyCreate siteBodyCreate,@ApiParam(value = "Flag to indicate whether the Share-specific (surf) configuration files for the site should not be created.", defaultValue = "false") @Valid @RequestParam(value = "skipConfiguration", required = false, defaultValue="false") Boolean skipConfiguration,@ApiParam(value = "Flag to indicate whether the site should not be added to the user's site favorites.", defaultValue = "false") @Valid @RequestParam(value = "skipAddToFavorites", required = false, defaultValue="false") Boolean skipAddToFavorites,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Create a site membership", nickname = "createSiteMembership", notes = "Creates a site membership for person **personId** on site **siteId**.  You can set the **role** to one of four types:  * SiteConsumer * SiteCollaborator * SiteContributor * SiteManager  **Note:** You can create more than one site membership by  specifying a list of people in the JSON body like this:  ```JSON [   {     \"role\": \"SiteConsumer\",     \"id\": \"joe\"   },   {     \"role\": \"SiteConsumer\",     \"id\": \"fred\"   } ] ``` If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  ```JSON {   \"list\": {     \"pagination\": {       \"count\": 2,       \"hasMoreItems\": false,       \"totalItems\": 2,       \"skipCount\": 0,       \"maxItems\": 100     },     \"entries\": [       {         \"entry\": {           ...         }       },       {         \"entry\": {           ...         }       }     ]   } } ``` ", response = SiteMemberEntry.class, authorizations = {
@@ -145,29 +93,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<SiteMemberEntry
-> createSiteMembership(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The person to add and their role" ,required=true )  @Valid @RequestBody SiteMembershipBodyCreate siteMembershipBodyCreate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMemberEntry> createSiteMembership(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The person to add and their role" ,required=true )  @Valid @RequestBody SiteMembershipBodyCreate siteMembershipBodyCreate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Create a site membership request", nickname = "createSiteMembershipRequestForPerson", notes = "Create a site membership request for yourself on the site with the identifier of **id**, specified in the JSON body.  The result of the request differs depending on the type of site.  * For a **public** site, you join the site immediately as a SiteConsumer. * For a **moderated** site, your request is added to the site membership request list. The request waits for approval from the Site Manager. * You cannot request membership of a **private** site. Members are invited by the site administrator.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user.   **Note:** You can create site membership requests for more than one site by  specifying a list of sites in the JSON body like this:  ```JSON [   {     \"message\": \"Please can you add me\",     \"id\": \"test-site-1\",     \"title\": \"Request for test site 1\",   },   {     \"message\": \"Please can you add me\",     \"id\": \"test-site-2\",     \"title\": \"Request for test site 2\",   } ] ``` If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  ```JSON {   \"list\": {     \"pagination\": {       \"count\": 2,       \"hasMoreItems\": false,       \"totalItems\": 2,       \"skipCount\": 0,       \"maxItems\": 100     },     \"entries\": [       {         \"entry\": {           ...         }       },       {         \"entry\": {           ...         }       }     ]   } } ``` ", response = SiteMembershipRequestEntry.class, authorizations = {
@@ -183,29 +109,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<SiteMembershipRequestEntry
-> createSiteMembershipRequestForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "Site membership request details" ,required=true )  @Valid @RequestBody SiteMembershipRequestBodyCreate siteMembershipRequestBodyCreate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMembershipRequestEntry> createSiteMembershipRequestForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "Site membership request details" ,required=true )  @Valid @RequestBody SiteMembershipRequestBodyCreate siteMembershipRequestBodyCreate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Delete a site", nickname = "deleteSite", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Deletes the site with **siteId**. ", authorizations = {
@@ -221,24 +125,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteSite(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-@ApiParam(value = "Flag to indicate whether the site should be permanently deleted i.e. bypass the trashcan.", defaultValue = "false") @Valid @RequestParam(value = "permanent", required = false, defaultValue="false") Boolean
- permanent
-
-
-
-
-);
+    ResponseEntity<Void> deleteSite(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "Flag to indicate whether the site should be permanently deleted i.e. bypass the trashcan.", defaultValue = "false") @Valid @RequestParam(value = "permanent", required = false, defaultValue="false") Boolean permanent);
 
 
     @ApiOperation(value = "Delete a site membership", nickname = "deleteSiteMembership", notes = "Deletes person **personId** as a member of site **siteId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", authorizations = {
@@ -254,24 +141,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteSiteMembership(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-);
+    ResponseEntity<Void> deleteSiteMembership(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId);
 
 
     @ApiOperation(value = "Delete a site membership", nickname = "deleteSiteMembershipForPerson", notes = "Deletes person **personId** as a member of site **siteId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", authorizations = {
@@ -286,24 +156,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteSiteMembershipForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-);
+    ResponseEntity<Void> deleteSiteMembershipForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId);
 
 
     @ApiOperation(value = "Delete a site membership request", nickname = "deleteSiteMembershipRequestForPerson", notes = "Deletes the site membership request to site **siteId** for person **personId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", authorizations = {
@@ -318,24 +171,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteSiteMembershipRequestForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-);
+    ResponseEntity<Void> deleteSiteMembershipRequestForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId);
 
 
     @ApiOperation(value = "Get a site", nickname = "getSite", notes = "Gets information for site **siteId**.  You can use the **relations** parameter to include one or more related entities in a single response and so reduce network traffic.  The entity types in Alfresco are organized in a tree structure. The **sites** entity has two children, **containers** and **members**. The following relations parameter returns all the container and member objects related to the site **siteId**:  ``` containers,members ``` ", response = SiteEntry.class, authorizations = {
@@ -350,32 +186,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteEntry
-> getSite(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-@ApiParam(value = "Use the relations parameter to include one or more related entities in a single response.") @Valid @RequestParam(value = "relations", required = false) List<String>
- relations
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteEntry> getSite(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "Use the relations parameter to include one or more related entities in a single response.") @Valid @RequestParam(value = "relations", required = false) List<String> relations,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Get a site container", nickname = "getSiteContainer", notes = "Gets information on the container **containerId** in site **siteId**.", response = SiteContainerEntry.class, authorizations = {
@@ -390,32 +201,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteContainerEntry
-> getSiteContainer(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The unique identifier of a site container.",required=true) @PathVariable("containerId") String
- containerId
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteContainerEntry> getSiteContainer(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The unique identifier of a site container.",required=true) @PathVariable("containerId") String containerId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Get a site membership", nickname = "getSiteMembership", notes = "Gets site membership information for person **personId** on site **siteId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", response = SiteMemberEntry.class, authorizations = {
@@ -430,32 +216,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteMemberEntry
-> getSiteMembership(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMemberEntry> getSiteMembership(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Get a site membership", nickname = "getSiteMembershipForPerson", notes = "Gets site membership information for person **personId** on site **siteId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", response = SiteRoleEntry.class, authorizations = {
@@ -470,24 +231,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteRoleEntry
-> getSiteMembershipForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-);
+    ResponseEntity<SiteRoleEntry> getSiteMembershipForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId);
 
 
     @ApiOperation(value = "Get a site membership request", nickname = "getSiteMembershipRequestForPerson", notes = "Gets the site membership request for site **siteId** for person **personId**, if one exists.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", response = SiteMembershipRequestEntry.class, authorizations = {
@@ -502,32 +246,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteMembershipRequestEntry
-> getSiteMembershipRequestForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMembershipRequestEntry> getSiteMembershipRequestForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Get site membership requests", nickname = "getSiteMembershipRequests", notes = "Get the list of site membership requests the user can action.  You can use the **where** parameter to filter the returned site membership requests by **siteId**. For example:  ``` (siteId=mySite) ```  The **where** parameter can also be used to filter by ***personId***. For example:  ``` where=(personId=person) ```  This may be combined with the siteId filter, as shown below:  ``` where=(siteId=mySite AND personId=person)) ``` ", response = SiteMembershipRequestWithPersonPaging.class, authorizations = {
@@ -542,40 +261,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteMembershipRequestWithPersonPaging
-> getSiteMembershipRequests(@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String
- where
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMembershipRequestWithPersonPaging> getSiteMembershipRequests(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List site containers", nickname = "listSiteContainers", notes = "Gets a list of containers for the site **siteId**.", response = SiteContainerPaging.class, authorizations = {
@@ -591,40 +277,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteContainerPaging
-> listSiteContainers(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteContainerPaging> listSiteContainers(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List site membership requests", nickname = "listSiteMembershipRequestsForPerson", notes = "Gets a list of the current site membership requests for person **personId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", response = SiteMembershipRequestPaging.class, authorizations = {
@@ -640,40 +293,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteMembershipRequestPaging
-> listSiteMembershipRequestsForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMembershipRequestPaging> listSiteMembershipRequestsForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List site memberships", nickname = "listSiteMemberships", notes = "Gets a list of site memberships for site **siteId**.", response = SiteMemberPaging.class, authorizations = {
@@ -689,40 +309,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteMemberPaging
-> listSiteMemberships(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMemberPaging> listSiteMemberships(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List site memberships", nickname = "listSiteMembershipsForPerson", notes = "Gets a list of site membership information for person **personId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user.  You can use the **where** parameter to filter the returned sites by **visibility** or site **preset**.  Example to filter by **visibility**, use any one of:  ``` (visibility='PRIVATE') (visibility='PUBLIC') (visibility='MODERATED') ```  Example to filter by site **preset**:  ``` (preset='site-dashboard') ```  The default sort order for the returned list is for sites to be sorted by ascending title. You can override the default by using the **orderBy** parameter. You can specify one or more of the following fields in the **orderBy** parameter: * id * title * role ", response = SiteRolePaging.class, authorizations = {
@@ -738,64 +325,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SiteRolePaging
-> listSiteMembershipsForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String>
- orderBy
-
-
-
-
-,
-
-@ApiParam(value = "Use the relations parameter to include one or more related entities in a single response.") @Valid @RequestParam(value = "relations", required = false) List<String>
- relations
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-,
-
-@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String
- where
-
-
-
-
-);
+    ResponseEntity<SiteRolePaging> listSiteMembershipsForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@ApiParam(value = "Use the relations parameter to include one or more related entities in a single response.") @Valid @RequestParam(value = "relations", required = false) List<String> relations,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields,@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String where);
 
 
     @ApiOperation(value = "List sites", nickname = "listSites", notes = "Gets a list of sites in this repository.  You can use the **where** parameter to filter the returned sites by **visibility** or site **preset**.  Example to filter by **visibility**, use any one of:  ``` (visibility='PRIVATE') (visibility='PUBLIC') (visibility='MODERATED') ```  Example to filter by site **preset**:  ``` (preset='site-dashboard') ```  The default sort order for the returned list is for sites to be sorted by ascending title. You can override the default by using the **orderBy** parameter. You can specify one or more of the following fields in the **orderBy** parameter: * id * title * description  You can use the **relations** parameter to include one or more related entities in a single response and so reduce network traffic.  The entity types in Alfresco are organized in a tree structure. The **sites** entity has two children, **containers** and **members**. The following relations parameter returns all the container and member objects related to each site:  ``` containers,members ``` ", response = SitePaging.class, authorizations = {
@@ -810,56 +340,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SitePaging
-> listSites(@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String>
- orderBy
-
-
-
-
-,
-
-@ApiParam(value = "Use the relations parameter to include one or more related entities in a single response.") @Valid @RequestParam(value = "relations", required = false) List<String>
- relations
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-,
-
-@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String
- where
-
-
-
-
-);
+    ResponseEntity<SitePaging> listSites(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@ApiParam(value = "Use the relations parameter to include one or more related entities in a single response.") @Valid @RequestParam(value = "relations", required = false) List<String> relations,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields,@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String where);
 
 
     @ApiOperation(value = "Reject a site membership request", nickname = "rejectSiteMembershipRequest", notes = "Reject a site membership request. ", authorizations = {
@@ -877,29 +358,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> rejectSiteMembershipRequest(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The invitee user name.",required=true) @PathVariable("inviteeId") String
- inviteeId
-
-
-
-,
-
-
-@ApiParam(value = "Rejecting a request to join, optionally, allows the inclusion of comment. "  )  @Valid @RequestBody SiteMembershipRejectionBody siteMembershipRejectionBody
-
-);
+    ResponseEntity<Void> rejectSiteMembershipRequest(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The invitee user name.",required=true) @PathVariable("inviteeId") String inviteeId,@ApiParam(value = "Rejecting a request to join, optionally, allows the inclusion of comment. "  )  @Valid @RequestBody SiteMembershipRejectionBody siteMembershipRejectionBody);
 
 
     @ApiOperation(value = "Update a site", nickname = "updateSite", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Update the details for the given site **siteId**. Site Manager or otherwise a  (site) admin can update title, description or visibility.  Note: the id of a site cannot be updated once the site has been created. ", response = SiteEntry.class, authorizations = {
@@ -916,29 +375,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<SiteEntry
-> updateSite(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The site information to update." ,required=true )  @Valid @RequestBody SiteBodyUpdate siteBodyUpdate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteEntry> updateSite(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The site information to update." ,required=true )  @Valid @RequestBody SiteBodyUpdate siteBodyUpdate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Update a site membership", nickname = "updateSiteMembership", notes = "Update the membership of person **personId** in site **siteId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user.  You can set the **role** to one of four types:  * SiteConsumer * SiteCollaborator * SiteContributor * SiteManager ", response = SiteMemberEntry.class, authorizations = {
@@ -955,37 +392,7 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<SiteMemberEntry
-> updateSiteMembership(
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The persons new role" ,required=true )  @Valid @RequestBody SiteMembershipBodyUpdate siteMembershipBodyUpdate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMemberEntry> updateSiteMembership(@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The persons new role" ,required=true )  @Valid @RequestBody SiteMembershipBodyUpdate siteMembershipBodyUpdate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Update a site membership request", nickname = "updateSiteMembershipRequestForPerson", notes = "Updates the message for the site membership request to site **siteId** for person **personId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", response = SiteMembershipRequestEntry.class, authorizations = {
@@ -1001,36 +408,6 @@ public interface SitesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<SiteMembershipRequestEntry
-> updateSiteMembershipRequestForPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String
- siteId
-
-
-
-,
-
-
-@ApiParam(value = "The new message to display" ,required=true )  @Valid @RequestBody SiteMembershipRequestBodyUpdate siteMembershipRequestBodyUpdate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<SiteMembershipRequestEntry> updateSiteMembershipRequestForPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The identifier of a site.",required=true) @PathVariable("siteId") String siteId,@ApiParam(value = "The new message to display" ,required=true )  @Valid @RequestBody SiteMembershipRequestBodyUpdate siteMembershipRequestBodyUpdate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

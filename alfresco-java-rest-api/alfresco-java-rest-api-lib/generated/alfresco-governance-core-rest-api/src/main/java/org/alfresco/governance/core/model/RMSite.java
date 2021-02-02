@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RMSite   {
   @JsonProperty("id")
   private String id = null;
@@ -150,7 +149,6 @@ public class RMSite   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -170,7 +168,6 @@ public class RMSite   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getGuid() {
@@ -194,7 +191,6 @@ public class RMSite   {
   @NotNull
 
 
-
   public String getTitle() {
     return title;
   }
@@ -213,7 +209,6 @@ public class RMSite   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -237,7 +232,6 @@ public class RMSite   {
   @NotNull
 
 
-
   public VisibilityEnum getVisibility() {
     return visibility;
   }
@@ -259,7 +253,6 @@ public class RMSite   {
   @NotNull
 
 
-
   public ComplianceEnum getCompliance() {
     return compliance;
   }
@@ -278,7 +271,6 @@ public class RMSite   {
    * @return role
   **/
   @ApiModelProperty(value = "")
-
 
 
   public RoleEnum getRole() {

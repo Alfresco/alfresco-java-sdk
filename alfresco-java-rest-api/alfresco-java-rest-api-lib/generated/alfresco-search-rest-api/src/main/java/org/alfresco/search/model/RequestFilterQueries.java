@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Filter Queries. Constraints that apply to the results set but do not affect the score of each entry.")
 @Validated
 
-
 public class RequestFilterQueries extends ArrayList<RequestFilterQueriesInner>  {
 
   @Override

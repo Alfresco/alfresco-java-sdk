@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SecurityControlSettingBody   {
   @JsonProperty("value")
   private Object value = null;
@@ -30,7 +29,6 @@ public class SecurityControlSettingBody   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Object getValue() {

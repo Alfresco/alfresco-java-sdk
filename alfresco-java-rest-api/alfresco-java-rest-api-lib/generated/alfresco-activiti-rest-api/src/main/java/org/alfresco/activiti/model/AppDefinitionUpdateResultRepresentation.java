@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AppDefinitionUpdateResultRepresentation   {
   @JsonProperty("appDefinition")
   private AppDefinitionRepresentation appDefinition = null;
@@ -51,7 +50,6 @@ public class AppDefinitionUpdateResultRepresentation   {
 
   @Valid
 
-
   public AppDefinitionRepresentation getAppDefinition() {
     return appDefinition;
   }
@@ -70,7 +68,6 @@ public class AppDefinitionUpdateResultRepresentation   {
    * @return customData
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getCustomData() {
@@ -93,7 +90,6 @@ public class AppDefinitionUpdateResultRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isError() {
     return error;
   }
@@ -112,7 +108,6 @@ public class AppDefinitionUpdateResultRepresentation   {
    * @return errorDescription
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getErrorDescription() {
@@ -135,7 +130,6 @@ public class AppDefinitionUpdateResultRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getErrorType() {
     return errorType;
   }
@@ -156,7 +150,6 @@ public class AppDefinitionUpdateResultRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMessage() {
     return message;
   }
@@ -175,7 +168,6 @@ public class AppDefinitionUpdateResultRepresentation   {
    * @return messageKey
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMessageKey() {

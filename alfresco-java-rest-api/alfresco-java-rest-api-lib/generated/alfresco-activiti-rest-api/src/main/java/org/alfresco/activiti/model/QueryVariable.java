@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class QueryVariable   {
   @JsonProperty("name")
   private String name = null;
@@ -91,7 +90,6 @@ public class QueryVariable   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -110,7 +108,6 @@ public class QueryVariable   {
    * @return operation
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOperation() {
@@ -133,7 +130,6 @@ public class QueryVariable   {
   @ApiModelProperty(value = "")
 
 
-
   public String getType() {
     return type;
   }
@@ -154,7 +150,6 @@ public class QueryVariable   {
   @ApiModelProperty(value = "")
 
 
-
   public Object getValue() {
     return value;
   }
@@ -173,7 +168,6 @@ public class QueryVariable   {
    * @return variableOperation
   **/
   @ApiModelProperty(value = "")
-
 
 
   public VariableOperationEnum getVariableOperation() {

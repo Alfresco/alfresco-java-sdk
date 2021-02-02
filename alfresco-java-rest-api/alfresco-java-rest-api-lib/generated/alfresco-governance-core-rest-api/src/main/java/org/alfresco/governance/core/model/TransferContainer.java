@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TransferContainer   {
   @JsonProperty("id")
   private String id = null;
@@ -68,7 +67,6 @@ public class TransferContainer   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -88,7 +86,6 @@ public class TransferContainer   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getParentId() {
@@ -112,7 +109,6 @@ public class TransferContainer   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -132,7 +128,6 @@ public class TransferContainer   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -157,7 +152,6 @@ public class TransferContainer   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -179,7 +173,6 @@ public class TransferContainer   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -203,7 +196,6 @@ public class TransferContainer   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -225,7 +217,6 @@ public class TransferContainer   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getCreatedByUser() {
     return createdByUser;
@@ -255,7 +246,6 @@ public class TransferContainer   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -274,7 +264,6 @@ public class TransferContainer   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -303,7 +292,6 @@ public class TransferContainer   {
    * @return allowableOperations
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getAllowableOperations() {

@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessScopesRequestRepresentation   {
   @JsonProperty("identifiers")
   @Valid
@@ -47,7 +46,6 @@ public class ProcessScopesRequestRepresentation   {
 
   @Valid
 
-
   public List<ProcessScopeIdentifierRepresentation> getIdentifiers() {
     return identifiers;
   }
@@ -66,7 +64,6 @@ public class ProcessScopesRequestRepresentation   {
    * @return overriddenModel
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOverriddenModel() {

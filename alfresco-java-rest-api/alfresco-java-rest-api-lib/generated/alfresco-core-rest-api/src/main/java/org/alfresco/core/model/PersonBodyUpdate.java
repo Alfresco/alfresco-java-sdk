@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PersonBodyUpdate   {
   @JsonProperty("firstName")
   private String firstName = null;
@@ -89,7 +88,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getFirstName() {
     return firstName;
   }
@@ -108,7 +106,6 @@ public class PersonBodyUpdate   {
    * @return lastName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLastName() {
@@ -131,7 +128,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -150,7 +146,6 @@ public class PersonBodyUpdate   {
    * @return email
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEmail() {
@@ -173,7 +168,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSkypeId() {
     return skypeId;
   }
@@ -192,7 +186,6 @@ public class PersonBodyUpdate   {
    * @return googleId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getGoogleId() {
@@ -215,7 +208,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getInstantMessageId() {
     return instantMessageId;
   }
@@ -236,7 +228,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getJobTitle() {
     return jobTitle;
   }
@@ -255,7 +246,6 @@ public class PersonBodyUpdate   {
    * @return location
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLocation() {
@@ -279,7 +269,6 @@ public class PersonBodyUpdate   {
 
   @Valid
 
-
   public Company getCompany() {
     return company;
   }
@@ -298,7 +287,6 @@ public class PersonBodyUpdate   {
    * @return mobile
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMobile() {
@@ -321,7 +309,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTelephone() {
     return telephone;
   }
@@ -340,7 +327,6 @@ public class PersonBodyUpdate   {
    * @return userStatus
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getUserStatus() {
@@ -363,7 +349,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isEnabled() {
     return enabled;
   }
@@ -382,7 +367,6 @@ public class PersonBodyUpdate   {
    * @return emailNotificationsEnabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isEmailNotificationsEnabled() {
@@ -405,7 +389,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPassword() {
     return password;
   }
@@ -424,7 +407,6 @@ public class PersonBodyUpdate   {
    * @return oldPassword
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOldPassword() {
@@ -455,7 +437,6 @@ public class PersonBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -474,7 +455,6 @@ public class PersonBodyUpdate   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {

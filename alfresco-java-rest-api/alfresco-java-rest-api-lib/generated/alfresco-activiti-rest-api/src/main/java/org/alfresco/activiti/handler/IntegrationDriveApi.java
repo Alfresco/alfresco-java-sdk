@@ -34,8 +34,7 @@ public interface IntegrationDriveApi {
         produces = "text/html", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> confirmAuthorisationUsingGET1();
+    ResponseEntity<Void> confirmAuthorisationUsingGET1();
 
 
     @ApiOperation(value = "List files and folders", nickname = "getFilesUsingGET1", notes = "", response = ResultListDataRepresentationGoogleDriveContent.class, authorizations = {
@@ -47,31 +46,6 @@ public interface IntegrationDriveApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationGoogleDriveContent
-> getFilesUsingGET1(
-
-@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-,
-
-@ApiParam(value = "parent") @Valid @RequestParam(value = "parent", required = false) String
- parent
-
-
-
-
-,
-
-@ApiParam(value = "currentFolderOnly") @Valid @RequestParam(value = "currentFolderOnly", required = false) Boolean
- currentFolderOnly
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationGoogleDriveContent> getFilesUsingGET1(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter,@ApiParam(value = "parent") @Valid @RequestParam(value = "parent", required = false) String parent,@ApiParam(value = "currentFolderOnly") @Valid @RequestParam(value = "currentFolderOnly", required = false) Boolean currentFolderOnly);
 
 }

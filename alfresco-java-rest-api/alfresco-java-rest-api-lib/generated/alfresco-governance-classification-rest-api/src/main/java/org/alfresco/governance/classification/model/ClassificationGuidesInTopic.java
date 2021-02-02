@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "The classification guide which the topic is contained in. This field is only returned when requested.")
 @Validated
 
-
 public class ClassificationGuidesInTopic   {
   @JsonProperty("name")
   private String name = null;
@@ -54,7 +53,6 @@ public class ClassificationGuidesInTopic   {
   @NotNull
 
 
-
   public String getName() {
     return name;
   }
@@ -74,7 +72,6 @@ public class ClassificationGuidesInTopic   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getOriginatingOrganization() {
@@ -99,7 +96,6 @@ public class ClassificationGuidesInTopic   {
 
   @Valid
 
-
   public LocalDate getPublishedOn() {
     return publishedOn;
   }
@@ -118,7 +114,6 @@ public class ClassificationGuidesInTopic   {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isEnabled() {
@@ -141,7 +136,6 @@ public class ClassificationGuidesInTopic   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isHasTopics() {
     return hasTopics;
   }
@@ -160,7 +154,6 @@ public class ClassificationGuidesInTopic   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -183,7 +176,6 @@ public class ClassificationGuidesInTopic   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;

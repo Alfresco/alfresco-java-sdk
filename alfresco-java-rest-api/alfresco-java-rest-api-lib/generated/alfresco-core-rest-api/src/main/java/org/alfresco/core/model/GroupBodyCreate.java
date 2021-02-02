@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupBodyCreate   {
   @JsonProperty("id")
   private String id = null;
@@ -41,7 +40,6 @@ public class GroupBodyCreate   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -61,7 +59,6 @@ public class GroupBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getDisplayName() {
@@ -90,7 +87,6 @@ public class GroupBodyCreate   {
    * @return parentIds
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getParentIds() {

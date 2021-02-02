@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SecurityControlSettingEntry   {
   @JsonProperty("entry")
   private SecurityControlSetting entry = null;
@@ -33,7 +32,6 @@ public class SecurityControlSettingEntry   {
   @NotNull
 
   @Valid
-
 
   public SecurityControlSetting getEntry() {
     return entry;

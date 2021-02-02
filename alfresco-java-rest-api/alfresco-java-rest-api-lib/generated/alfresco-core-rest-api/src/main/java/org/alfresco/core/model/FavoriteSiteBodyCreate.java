@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FavoriteSiteBodyCreate   {
   @JsonProperty("id")
   private String id = null;
@@ -30,7 +29,6 @@ public class FavoriteSiteBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getId() {

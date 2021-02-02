@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UserFilterOrderRepresentation   {
   @JsonProperty("appId")
   private Long appId = null;
@@ -35,7 +34,6 @@ public class UserFilterOrderRepresentation   {
    * @return appId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getAppId() {
@@ -64,7 +62,6 @@ public class UserFilterOrderRepresentation   {
    * @return order
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<Long> getOrder() {

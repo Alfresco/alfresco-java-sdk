@@ -11,7 +11,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;"${alfrescoContentServicesREST_.name:alfrescoContentServicesREST_}", url = "${alfrescoContentServicesREST_.url:.*}";"discovery", url = "${discovery.service.url}", path = "${discovery.service.path}";g' \
   -e 's;"${alfrescoContentServicesREST_.name:alfrescoContentServicesREST_}", url = "${alfrescoContentServicesREST_.url:.*}";"authentication", url = "${authentication.service.url}", path = "${authentication.service.path}";g' \
   -e 's;"${alfrescoContentServicesREST_.name:alfrescoContentServicesREST_}", url = "${alfrescoContentServicesREST_.url:.*}";"alfresco", url = "${content.service.url}", path = "${content.service.path}";g' \
-  -e 's;"${alfrescoStarterDMNSimulationReST_.name:alfrescoStarterDMNSimulationReST_}", url = "${alfrescoStarterDMNSimulationReST_.url:}";"dmn-simulation", url = "${modeling.url}", path = "${modeling.path}";g' \
+  -e 's;"${alfrescoDMNSimulationSpringBootStarterReST_.name:alfrescoDMNSimulationSpringBootStarterReST_}", url = "${alfrescoDMNSimulationSpringBootStarterReST_.url:}";"dmn-simulation", url = "${modeling.url}", path = "${modeling.path}";g' \
   -e 's;"${alfrescoStarterScriptModelingReST_.name:alfrescoStarterScriptModelingReST_}", url = "${alfrescoStarterScriptModelingReST_.url:}";"script-modeling", url = "${modeling.url}", path = "${modeling.path}";g' \
   -e 's;"${.*Deployment.*}", url = "${.*}";"deployment", url = "${activiti.service.deployment.url}", path = "${activiti.service.deployment.path}";g' \
   -e 's;"${.*Form.*}", url = "${.*}";"form", url = "${activiti.service.form.url}", path = "${activiti.service.form.path}";g' \
@@ -20,7 +20,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;"${.*Runtime.*}", url = "${.*}", configuration = ClientConfiguration\.class, decode404 = true;"runtime", url = "${activiti.service.runtime.url}", path = "${activiti.service.runtime.path}", configuration = ClientConfiguration.class;g' \
   -e 's;"${apiDocumentation.name:apiDocumentation}", url = "${apiDocumentation.url:.*}";"audit", url = "${activiti.service.audit.url}", path = "${activiti.service.audit.path}";g' \
   -e 's;"${query.name:query}", url = "${query.url:.*}";"query", url = "${activiti.service.query.url}", path = "${activiti.service.query.path}";g' \
-  -e 's;"${alfrescoProcessStorageService_.name:alfrescoProcessStorageService_}", url = "${alfrescoProcessStorageService_.url:.*}";"process-storage", url = "${activiti.service.process-storage.url}", path = "${activiti.service.process-storage.path}";g' \
+  -e 's;"${alfrescoProcessStorageSpringBootStarterReST_.name:alfrescoProcessStorageSpringBootStarterReST_}", url = "${alfrescoProcessStorageSpringBootStarterReST_.url:.*}";"process-storage", url = "${activiti.service.process-storage.url}", path = "${activiti.service.process-storage.path}";g' \
   -e 's@import com\.alfresco\..*\.ResponseEntity;@@g' \
   -i '' {} +
 

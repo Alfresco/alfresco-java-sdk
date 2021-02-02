@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class NodeChildAssociationPagingList   {
   @JsonProperty("pagination")
   private Pagination pagination = null;
@@ -43,7 +42,6 @@ public class NodeChildAssociationPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Pagination getPagination() {
     return pagination;
@@ -74,7 +72,6 @@ public class NodeChildAssociationPagingList   {
 
   @Valid
 
-
   public List<NodeChildAssociationEntry> getEntries() {
     return entries;
   }
@@ -95,7 +92,6 @@ public class NodeChildAssociationPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Node getSource() {
     return source;

@@ -42,32 +42,7 @@ public interface TransferContainersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<TransferContainerEntry
-> getTransferContainer(
-
-
-@ApiParam(value = "The identifier of a transfer container. You can also use the -transfers- alias.",required=true) @PathVariable("transferContainerId") String
- transferContainerId
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the transfer container. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<TransferContainerEntry> getTransferContainer(@ApiParam(value = "The identifier of a transfer container. You can also use the -transfers- alias.",required=true) @PathVariable("transferContainerId") String transferContainerId,@ApiParam(value = "Returns additional information about the transfer container. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List transfer container's children", nickname = "listTransfers", notes = "Returns a list of transfers.  Minimal information for each child is returned by default.  You can use the **include** parameter (include=allowableOperations) to return additional information. ", response = TransferContainerAssociationPaging.class, authorizations = {
@@ -83,56 +58,7 @@ public interface TransferContainersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<TransferContainerAssociationPaging
-> listTransfers(
-
-
-@ApiParam(value = "The identifier of a transfer container. You can also use the -transfers- alias.",required=true) @PathVariable("transferContainerId") String
- transferContainerId
-
-
-
-,@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the transfer folders. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * properties * transferPDFIndicator * transferLocation * transferAccessionIndicator ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the specified parent **transferContainerId**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean
- includeSource
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<TransferContainerAssociationPaging> listTransfers(@ApiParam(value = "The identifier of a transfer container. You can also use the -transfers- alias.",required=true) @PathVariable("transferContainerId") String transferContainerId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "Returns additional information about the transfer folders. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * properties * transferPDFIndicator * transferLocation * transferAccessionIndicator ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the specified parent **transferContainerId**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Update transfer container", nickname = "updateTransferContainer", notes = "Updates the transfer container **transferContainerId**. For example, you can rename transfer container: ```JSON {   \"name\":\"My new name\" } ``` You can also set or update description and title properties: ```JSON {   \"properties\":     {        \"cm:description\": \"New Description\",        \"cm:title\":\"New Title\"     } } ``` **Note:** Currently there is no optimistic locking for updates, so they are applied in \"last one wins\" order. ", response = TransferContainerEntry.class, authorizations = {
@@ -151,36 +77,6 @@ public interface TransferContainersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<TransferContainerEntry
-> updateTransferContainer(
-
-
-@ApiParam(value = "The identifier of a transfer container. You can also use the -transfers- alias.",required=true) @PathVariable("transferContainerId") String
- transferContainerId
-
-
-
-,
-
-
-@ApiParam(value = "The node information to update." ,required=true )  @Valid @RequestBody TransferContainerBodyUpdate nodeBodyUpdate
-
-,
-
-@ApiParam(value = "Returns additional information about the transfer container. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<TransferContainerEntry> updateTransferContainer(@ApiParam(value = "The identifier of a transfer container. You can also use the -transfers- alias.",required=true) @PathVariable("transferContainerId") String transferContainerId,@ApiParam(value = "The node information to update." ,required=true )  @Valid @RequestBody TransferContainerBodyUpdate nodeBodyUpdate,@ApiParam(value = "Returns additional information about the transfer container. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

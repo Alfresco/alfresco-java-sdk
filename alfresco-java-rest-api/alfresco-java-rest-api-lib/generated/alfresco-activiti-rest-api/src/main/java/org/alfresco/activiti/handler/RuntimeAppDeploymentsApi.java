@@ -35,16 +35,7 @@ public interface RuntimeAppDeploymentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteAppDeploymentUsingDELETE(
-
-
-@ApiParam(value = "appDeploymentId",required=true) @PathVariable("appDeploymentId") Long
- appDeploymentId
-
-
-
-);
+    ResponseEntity<Void> deleteAppDeploymentUsingDELETE(@ApiParam(value = "appDeploymentId",required=true) @PathVariable("appDeploymentId") Long appDeploymentId);
 
 
     @ApiOperation(value = "Export the app archive for a deployment", nickname = "exportAppDefinitionUsingGET1", notes = "", authorizations = {
@@ -56,16 +47,7 @@ public interface RuntimeAppDeploymentsApi {
         produces = "application/zip", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> exportAppDefinitionUsingGET1(
-
-
-@ApiParam(value = "deploymentId",required=true) @PathVariable("deploymentId") String
- deploymentId
-
-
-
-);
+    ResponseEntity<Void> exportAppDefinitionUsingGET1(@ApiParam(value = "deploymentId",required=true) @PathVariable("deploymentId") String deploymentId);
 
 
     @ApiOperation(value = "Query app deployments", nickname = "getAppDefinitionsUsingGET1", notes = "", response = ResultListDataRepresentationAppDeploymentRepresentation.class, authorizations = {
@@ -77,64 +59,7 @@ public interface RuntimeAppDeploymentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAppDeploymentRepresentation
-> getAppDefinitionsUsingGET1(
-
-@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String
- nameLike
-
-
-
-
-,
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-,
-
-@ApiParam(value = "latest") @Valid @RequestParam(value = "latest", required = false) Boolean
- latest
-
-
-
-
-,
-
-@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer
- start
-
-
-
-
-,
-
-@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String
- sort
-
-
-
-
-,
-
-@ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String
- order
-
-
-
-
-,
-
-@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer
- size
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationAppDeploymentRepresentation> getAppDefinitionsUsingGET1(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike,@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId,@ApiParam(value = "latest") @Valid @RequestParam(value = "latest", required = false) Boolean latest,@ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start,@ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort,@ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order,@ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
     @ApiOperation(value = "Get an app deployment", nickname = "getAppDeploymentUsingGET", notes = "", response = AppDeploymentRepresentation.class, authorizations = {
@@ -146,16 +71,7 @@ public interface RuntimeAppDeploymentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<AppDeploymentRepresentation
-> getAppDeploymentUsingGET(
-
-
-@ApiParam(value = "appDeploymentId",required=true) @PathVariable("appDeploymentId") Long
- appDeploymentId
-
-
-
-);
+    ResponseEntity<AppDeploymentRepresentation> getAppDeploymentUsingGET(@ApiParam(value = "appDeploymentId",required=true) @PathVariable("appDeploymentId") Long appDeploymentId);
 
 
     @ApiOperation(value = "Get an app by deployment ID or DMN deployment ID", nickname = "getRuntimeAppDeploymentByDeploymentUsingGET", notes = "Either a deploymentId or a dmnDeploymentId must be provided", response = AppDeploymentRepresentation.class, authorizations = {
@@ -167,23 +83,6 @@ public interface RuntimeAppDeploymentsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<AppDeploymentRepresentation
-> getRuntimeAppDeploymentByDeploymentUsingGET(
-
-@ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) String
- deploymentId
-
-
-
-
-,
-
-@ApiParam(value = "dmnDeploymentId") @Valid @RequestParam(value = "dmnDeploymentId", required = false) Long
- dmnDeploymentId
-
-
-
-
-);
+    ResponseEntity<AppDeploymentRepresentation> getRuntimeAppDeploymentByDeploymentUsingGET(@ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) String deploymentId,@ApiParam(value = "dmnDeploymentId") @Valid @RequestParam(value = "dmnDeploymentId", required = false) Long dmnDeploymentId);
 
 }

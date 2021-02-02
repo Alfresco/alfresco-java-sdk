@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class BulkUserUpdateRepresentation   {
   @JsonProperty("accountType")
   private String accountType = null;
@@ -52,7 +51,6 @@ public class BulkUserUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAccountType() {
     return accountType;
   }
@@ -71,7 +69,6 @@ public class BulkUserUpdateRepresentation   {
    * @return password
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getPassword() {
@@ -94,7 +91,6 @@ public class BulkUserUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getPrimaryGroupId() {
     return primaryGroupId;
   }
@@ -113,7 +109,6 @@ public class BulkUserUpdateRepresentation   {
    * @return sendNotifications
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isSendNotifications() {
@@ -136,7 +131,6 @@ public class BulkUserUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getStatus() {
     return status;
   }
@@ -155,7 +149,6 @@ public class BulkUserUpdateRepresentation   {
    * @return tenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getTenantId() {
@@ -184,7 +177,6 @@ public class BulkUserUpdateRepresentation   {
    * @return users
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<Long> getUsers() {

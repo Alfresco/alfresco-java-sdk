@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A specific preference. ")
 @Validated
 
-
 public class Preference   {
   @JsonProperty("id")
   private String id = null;
@@ -36,7 +35,6 @@ public class Preference   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -55,7 +53,6 @@ public class Preference   {
    * @return value
   **/
   @ApiModelProperty(value = "The value of the preference. Note that this can be of any JSON type.")
-
 
 
   public String getValue() {

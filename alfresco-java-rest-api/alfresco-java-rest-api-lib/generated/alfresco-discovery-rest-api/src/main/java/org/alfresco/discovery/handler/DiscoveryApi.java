@@ -36,7 +36,6 @@ public interface DiscoveryApi {
     @RequestMapping(value = "/discovery",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<DiscoveryEntry
-> getRepositoryInformation();
+    ResponseEntity<DiscoveryEntry> getRepositoryInformation();
 
 }

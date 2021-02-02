@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class BoxContent   {
   @JsonProperty("folder")
   private Boolean folder = null;
@@ -43,7 +42,6 @@ public class BoxContent   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isFolder() {
     return folder;
   }
@@ -62,7 +60,6 @@ public class BoxContent   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -85,7 +82,6 @@ public class BoxContent   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMimeType() {
     return mimeType;
   }
@@ -106,7 +102,6 @@ public class BoxContent   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSimpleType() {
     return simpleType;
   }
@@ -125,7 +120,6 @@ public class BoxContent   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {

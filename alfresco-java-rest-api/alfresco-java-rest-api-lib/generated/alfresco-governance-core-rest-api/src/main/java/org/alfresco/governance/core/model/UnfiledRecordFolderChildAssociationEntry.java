@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UnfiledRecordFolderChildAssociationEntry   {
   @JsonProperty("entry")
   private UnfiledRecordFolderChildAssociation entry = null;
@@ -33,7 +32,6 @@ public class UnfiledRecordFolderChildAssociationEntry   {
   @NotNull
 
   @Valid
-
 
   public UnfiledRecordFolderChildAssociation getEntry() {
     return entry;

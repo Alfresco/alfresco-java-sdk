@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ChecklistOrderRepresentation   {
   @JsonProperty("order")
   @Valid
@@ -40,7 +39,6 @@ public class ChecklistOrderRepresentation   {
    * @return order
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getOrder() {

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "The id and name of a topic or classification guide that is an ancestor of this topic, along with a descriptor string to indicate whether its a guide or topic.")
 @Validated
 
-
 public class PathElement   {
   @JsonProperty("id")
   private String id = null;
@@ -39,7 +38,6 @@ public class PathElement   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -61,7 +59,6 @@ public class PathElement   {
   @NotNull
 
 
-
   public String getName() {
     return name;
   }
@@ -81,7 +78,6 @@ public class PathElement   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getType() {

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ActionDefinitionEntry   {
   @JsonProperty("entry")
   private ActionDefinition entry = null;
@@ -33,7 +32,6 @@ public class ActionDefinitionEntry   {
   @NotNull
 
   @Valid
-
 
   public ActionDefinition getEntry() {
     return entry;

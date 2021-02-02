@@ -20,7 +20,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A network is the group of users and sites that belong to an organization. Networks are organized by email domain. When a user signs up for an Alfresco account , their email domain becomes their Home Network. ")
 @Validated
 
-
 public class PersonNetwork   {
   @JsonProperty("id")
   private String id = null;
@@ -90,7 +89,6 @@ public class PersonNetwork   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -109,7 +107,6 @@ public class PersonNetwork   {
    * @return homeNetwork
   **/
   @ApiModelProperty(value = "Is this the home network?")
-
 
 
   public Boolean isHomeNetwork() {
@@ -133,7 +130,6 @@ public class PersonNetwork   {
   @NotNull
 
 
-
   public Boolean isIsEnabled() {
     return isEnabled;
   }
@@ -155,7 +151,6 @@ public class PersonNetwork   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -176,7 +171,6 @@ public class PersonNetwork   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isPaidNetwork() {
     return paidNetwork;
   }
@@ -195,7 +189,6 @@ public class PersonNetwork   {
    * @return subscriptionLevel
   **/
   @ApiModelProperty(value = "")
-
 
 
   public SubscriptionLevelEnum getSubscriptionLevel() {
@@ -226,7 +219,6 @@ public class PersonNetwork   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<NetworkQuota> getQuotas() {
     return quotas;

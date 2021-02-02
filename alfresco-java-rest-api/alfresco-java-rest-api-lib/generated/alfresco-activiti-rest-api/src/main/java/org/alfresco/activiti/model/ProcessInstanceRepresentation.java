@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessInstanceRepresentation   {
   @JsonProperty("businessKey")
   private String businessKey = null;
@@ -88,7 +87,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getBusinessKey() {
     return businessKey;
   }
@@ -110,7 +108,6 @@ public class ProcessInstanceRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getEnded() {
     return ended;
   }
@@ -129,7 +126,6 @@ public class ProcessInstanceRepresentation   {
    * @return graphicalNotationDefined
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isGraphicalNotationDefined() {
@@ -152,7 +148,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -171,7 +166,6 @@ public class ProcessInstanceRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -194,7 +188,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionCategory() {
     return processDefinitionCategory;
   }
@@ -213,7 +206,6 @@ public class ProcessInstanceRepresentation   {
    * @return processDefinitionDeploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionDeploymentId() {
@@ -236,7 +228,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionDescription() {
     return processDefinitionDescription;
   }
@@ -255,7 +246,6 @@ public class ProcessInstanceRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -278,7 +268,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
@@ -297,7 +286,6 @@ public class ProcessInstanceRepresentation   {
    * @return processDefinitionName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionName() {
@@ -320,7 +308,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
@@ -339,7 +326,6 @@ public class ProcessInstanceRepresentation   {
    * @return startFormDefined
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isStartFormDefined() {
@@ -363,7 +349,6 @@ public class ProcessInstanceRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getStarted() {
     return started;
   }
@@ -385,7 +370,6 @@ public class ProcessInstanceRepresentation   {
 
   @Valid
 
-
   public LightUserRepresentation getStartedBy() {
     return startedBy;
   }
@@ -406,7 +390,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isSuspended() {
     return suspended;
   }
@@ -425,7 +408,6 @@ public class ProcessInstanceRepresentation   {
    * @return tenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTenantId() {
@@ -456,7 +438,6 @@ public class ProcessInstanceRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<RestVariable> getVariables() {
     return variables;

@@ -34,15 +34,6 @@ public interface DataSourcesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationDataSourceRepresentation
-> getDataSourcesUsingGET(
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationDataSourceRepresentation> getDataSourcesUsingGET(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId);
 
 }

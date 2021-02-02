@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class LightGroupRepresentation   {
   @JsonProperty("externalId")
   private String externalId = null;
@@ -50,7 +49,6 @@ public class LightGroupRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getExternalId() {
     return externalId;
   }
@@ -80,7 +78,6 @@ public class LightGroupRepresentation   {
 
   @Valid
 
-
   public List<LightGroupRepresentation> getGroups() {
     return groups;
   }
@@ -99,7 +96,6 @@ public class LightGroupRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -122,7 +118,6 @@ public class LightGroupRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -143,7 +138,6 @@ public class LightGroupRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getParentGroupId() {
     return parentGroupId;
   }
@@ -162,7 +156,6 @@ public class LightGroupRepresentation   {
    * @return status
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getStatus() {

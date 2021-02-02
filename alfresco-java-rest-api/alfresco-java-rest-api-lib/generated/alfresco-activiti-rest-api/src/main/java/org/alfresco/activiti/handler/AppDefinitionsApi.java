@@ -38,16 +38,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteAppDefinitionUsingDELETE(
-
-
-@ApiParam(value = "appDefinitionId",required=true) @PathVariable("appDefinitionId") Long
- appDefinitionId
-
-
-
-);
+    ResponseEntity<Void> deleteAppDefinitionUsingDELETE(@ApiParam(value = "appDefinitionId",required=true) @PathVariable("appDefinitionId") Long appDefinitionId);
 
 
     @ApiOperation(value = "Export an app definition", nickname = "exportAppDefinitionUsingGET", notes = "This will return a zip file containing the app definition model and all related models (process definitions and forms).", authorizations = {
@@ -62,16 +53,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> exportAppDefinitionUsingGET(
-
-
-@ApiParam(value = "modelId from a runtime app or the id of an app definition model",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-);
+    ResponseEntity<Void> exportAppDefinitionUsingGET(@ApiParam(value = "modelId from a runtime app or the id of an app definition model",required=true) @PathVariable("modelId") Long modelId);
 
 
     @ApiOperation(value = "Get an app definition", nickname = "getAppDefinitionUsingGET", notes = "", response = AppDefinitionRepresentation.class, authorizations = {
@@ -83,16 +65,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<AppDefinitionRepresentation
-> getAppDefinitionUsingGET(
-
-
-@ApiParam(value = "Application definition ID",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-);
+    ResponseEntity<AppDefinitionRepresentation> getAppDefinitionUsingGET(@ApiParam(value = "Application definition ID",required=true) @PathVariable("modelId") Long modelId);
 
 
     @ApiOperation(value = "importAndPublishApp", nickname = "importAndPublishAppUsingPOST", notes = "", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
@@ -104,13 +77,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<AppDefinitionUpdateResultRepresentation
-> importAndPublishAppUsingPOST(
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<AppDefinitionUpdateResultRepresentation> importAndPublishAppUsingPOST(@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 
     @ApiOperation(value = "importAndPublishApp", nickname = "importAndPublishAppUsingPOST1", notes = "", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
@@ -122,21 +89,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<AppDefinitionUpdateResultRepresentation
-> importAndPublishAppUsingPOST1(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<AppDefinitionUpdateResultRepresentation> importAndPublishAppUsingPOST1(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 
     @ApiOperation(value = "Import a new app definition", nickname = "importAppDefinitionUsingPOST", notes = "Allows a zip file to be uploaded containing an app definition and any number of included models.<p>This is useful to bootstrap an environment (for users or continuous integration).<p>Before using any processes included in the import the app must be published and deployed.", response = AppDefinitionRepresentation.class, authorizations = {
@@ -148,21 +101,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<AppDefinitionRepresentation
-> importAppDefinitionUsingPOST(
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-,
-
-@ApiParam(value = "Whether to renew user and group identifiers", defaultValue = "false") @Valid @RequestParam(value = "renewIdmEntries", required = false, defaultValue="false") String
- renewIdmEntries
-
-
-
-
-);
+    ResponseEntity<AppDefinitionRepresentation> importAppDefinitionUsingPOST(@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file,@ApiParam(value = "Whether to renew user and group identifiers", defaultValue = "false") @Valid @RequestParam(value = "renewIdmEntries", required = false, defaultValue="false") String renewIdmEntries);
 
 
     @ApiOperation(value = "Update the content of an existing app", nickname = "importAppDefinitionUsingPOST1", notes = "Imports an app inside an existing app definition and creates a new version<p>Before using any new or updated processes included in the import the app must be (re-)published and deployed.", response = AppDefinitionRepresentation.class, authorizations = {
@@ -174,21 +113,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<AppDefinitionRepresentation
-> importAppDefinitionUsingPOST1(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<AppDefinitionRepresentation> importAppDefinitionUsingPOST1(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 
     @ApiOperation(value = "Publish an app definition", nickname = "publishAppDefinitionUsingPOST", notes = "Publishing an app definition makes it available for use. The application must not have any validation errors or an error will be returned.<p>Before an app definition can be used by other users, it must also be deployed for their use", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
@@ -200,21 +125,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<AppDefinitionUpdateResultRepresentation
-> publishAppDefinitionUsingPOST(
-
-
-@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-@ApiParam(value = "publishModel" ,required=true )  @Valid @RequestBody AppDefinitionPublishRepresentation publishModel
-
-);
+    ResponseEntity<AppDefinitionUpdateResultRepresentation> publishAppDefinitionUsingPOST(@ApiParam(value = "modelId",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "publishModel" ,required=true )  @Valid @RequestBody AppDefinitionPublishRepresentation publishModel);
 
 
     @ApiOperation(value = "Update an app definition", nickname = "updateAppDefinitionUsingPUT", notes = "", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
@@ -226,20 +137,6 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<AppDefinitionUpdateResultRepresentation
-> updateAppDefinitionUsingPUT(
-
-
-@ApiParam(value = "Application definition ID",required=true) @PathVariable("modelId") Long
- modelId
-
-
-
-,
-
-
-@ApiParam(value = "updatedModel" ,required=true )  @Valid @RequestBody AppDefinitionSaveRepresentation updatedModel
-
-);
+    ResponseEntity<AppDefinitionUpdateResultRepresentation> updateAppDefinitionUsingPUT(@ApiParam(value = "Application definition ID",required=true) @PathVariable("modelId") Long modelId,@ApiParam(value = "updatedModel" ,required=true )  @Valid @RequestBody AppDefinitionSaveRepresentation updatedModel);
 
 }

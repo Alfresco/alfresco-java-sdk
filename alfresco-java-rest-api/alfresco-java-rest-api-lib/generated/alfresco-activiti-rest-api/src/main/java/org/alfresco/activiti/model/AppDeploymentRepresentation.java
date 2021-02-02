@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AppDeploymentRepresentation   {
   @JsonProperty("appDefinition")
   private AppDefinitionRepresentation appDefinition = null;
@@ -50,7 +49,6 @@ public class AppDeploymentRepresentation   {
 
   @Valid
 
-
   public AppDefinitionRepresentation getAppDefinition() {
     return appDefinition;
   }
@@ -71,7 +69,6 @@ public class AppDeploymentRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getCreated() {
     return created;
@@ -94,7 +91,6 @@ public class AppDeploymentRepresentation   {
 
   @Valid
 
-
   public LightUserRepresentation getCreatedBy() {
     return createdBy;
   }
@@ -113,7 +109,6 @@ public class AppDeploymentRepresentation   {
    * @return deploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDeploymentId() {
@@ -136,7 +131,6 @@ public class AppDeploymentRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getDmnDeploymentId() {
     return dmnDeploymentId;
   }
@@ -155,7 +149,6 @@ public class AppDeploymentRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {

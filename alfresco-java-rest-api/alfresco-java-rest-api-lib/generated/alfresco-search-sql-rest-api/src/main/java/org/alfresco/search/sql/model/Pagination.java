@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Pagination   {
   @JsonProperty("count")
   private Long count = null;
@@ -44,7 +43,6 @@ public class Pagination   {
   @NotNull
 
 
-
   public Long getCount() {
     return count;
   }
@@ -66,7 +64,6 @@ public class Pagination   {
   @NotNull
 
 
-
   public Boolean isHasMoreItems() {
     return hasMoreItems;
   }
@@ -85,7 +82,6 @@ public class Pagination   {
    * @return totalItems
   **/
   @ApiModelProperty(value = "An integer describing the total number of entities in the collection. The API might not be able to determine this value, in which case this property will not be present. ")
-
 
 
   public Long getTotalItems() {
@@ -109,7 +105,6 @@ public class Pagination   {
   @NotNull
 
 
-
   public Long getSkipCount() {
     return skipCount;
   }
@@ -129,7 +124,6 @@ public class Pagination   {
   **/
   @ApiModelProperty(required = true, value = "The value of the **maxItems** parameter used to generate this list, or if there was no **maxItems** parameter the default value is 100 ")
   @NotNull
-
 
 
   public Long getMaxItems() {

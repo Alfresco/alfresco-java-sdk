@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormFieldRepresentation   {
   @JsonProperty("className")
   private String className = null;
@@ -127,7 +126,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getClassName() {
     return className;
   }
@@ -146,7 +144,6 @@ public class FormFieldRepresentation   {
    * @return col
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getCol() {
@@ -169,7 +166,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getColspan() {
     return colspan;
   }
@@ -188,7 +184,6 @@ public class FormFieldRepresentation   {
    * @return dateDisplayFormat
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDateDisplayFormat() {
@@ -211,7 +206,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isHasEmptyValue() {
     return hasEmptyValue;
   }
@@ -230,7 +224,6 @@ public class FormFieldRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getId() {
@@ -254,7 +247,6 @@ public class FormFieldRepresentation   {
 
   @Valid
 
-
   public LayoutRepresentation getLayout() {
     return layout;
   }
@@ -273,7 +265,6 @@ public class FormFieldRepresentation   {
    * @return maxLength
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getMaxLength() {
@@ -296,7 +287,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMaxValue() {
     return maxValue;
   }
@@ -315,7 +305,6 @@ public class FormFieldRepresentation   {
    * @return minLength
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getMinLength() {
@@ -338,7 +327,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMinValue() {
     return minValue;
   }
@@ -359,7 +347,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -378,7 +365,6 @@ public class FormFieldRepresentation   {
    * @return optionType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOptionType() {
@@ -410,7 +396,6 @@ public class FormFieldRepresentation   {
 
   @Valid
 
-
   public List<OptionRepresentation> getOptions() {
     return options;
   }
@@ -429,7 +414,6 @@ public class FormFieldRepresentation   {
    * @return overrideId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isOverrideId() {
@@ -452,7 +436,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Object getParams() {
     return params;
   }
@@ -471,7 +454,6 @@ public class FormFieldRepresentation   {
    * @return placeholder
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getPlaceholder() {
@@ -494,7 +476,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isReadOnly() {
     return readOnly;
   }
@@ -513,7 +494,6 @@ public class FormFieldRepresentation   {
    * @return regexPattern
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRegexPattern() {
@@ -536,7 +516,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isRequired() {
     return required;
   }
@@ -555,7 +534,6 @@ public class FormFieldRepresentation   {
    * @return restIdProperty
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRestIdProperty() {
@@ -578,7 +556,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getRestLabelProperty() {
     return restLabelProperty;
   }
@@ -597,7 +574,6 @@ public class FormFieldRepresentation   {
    * @return restResponsePath
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRestResponsePath() {
@@ -620,7 +596,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getRestUrl() {
     return restUrl;
   }
@@ -639,7 +614,6 @@ public class FormFieldRepresentation   {
    * @return row
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getRow() {
@@ -662,7 +636,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getSizeX() {
     return sizeX;
   }
@@ -681,7 +654,6 @@ public class FormFieldRepresentation   {
    * @return sizeY
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getSizeY() {
@@ -704,7 +676,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTab() {
     return tab;
   }
@@ -723,7 +694,6 @@ public class FormFieldRepresentation   {
    * @return type
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getType() {
@@ -746,7 +716,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Object getValue() {
     return value;
   }
@@ -767,7 +736,6 @@ public class FormFieldRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ConditionRepresentation getVisibilityCondition() {
     return visibilityCondition;

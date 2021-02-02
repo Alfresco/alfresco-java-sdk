@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class EntitlementsInfo   {
   @JsonProperty("maxUsers")
   private Long maxUsers = null;
@@ -40,7 +39,6 @@ public class EntitlementsInfo   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getMaxUsers() {
     return maxUsers;
   }
@@ -59,7 +57,6 @@ public class EntitlementsInfo   {
    * @return maxDocs
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getMaxDocs() {
@@ -82,7 +79,6 @@ public class EntitlementsInfo   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsClusterEnabled() {
     return isClusterEnabled;
   }
@@ -101,7 +97,6 @@ public class EntitlementsInfo   {
    * @return isCryptodocEnabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsCryptodocEnabled() {

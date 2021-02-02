@@ -42,13 +42,7 @@ public interface ClassificationReasonsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ClassificationReasonEntry
-> createClassificationReason(
-
-
-@ApiParam(value = "Classification reason" ,required=true )  @Valid @RequestBody ClassificationReasonBody classificationReason
-
-);
+    ResponseEntity<ClassificationReasonEntry> createClassificationReason(@ApiParam(value = "Classification reason" ,required=true )  @Valid @RequestBody ClassificationReasonBody classificationReason);
 
 
     @ApiOperation(value = "Delete a classification reason", nickname = "deleteClassificationReason", notes = "Deletes the classification reason  **classificationReasonId**. You can't delete a classification reason that is being used to classify content. There must be at least one classification reason.", authorizations = {
@@ -66,16 +60,7 @@ public interface ClassificationReasonsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteClassificationReason(
-
-
-@ApiParam(value = "The identifier for the classification reason",required=true) @PathVariable("classificationReasonId") String
- classificationReasonId
-
-
-
-);
+    ResponseEntity<Void> deleteClassificationReason(@ApiParam(value = "The identifier for the classification reason",required=true) @PathVariable("classificationReasonId") String classificationReasonId);
 
 
     @ApiOperation(value = "List all classification reasons", nickname = "listClassificationReasons", notes = "Gets all classification reasons.", response = ClassificationReasonsPaging.class, authorizations = {
@@ -89,32 +74,7 @@ public interface ClassificationReasonsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ClassificationReasonsPaging
-> listClassificationReasons(@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<ClassificationReasonsPaging> listClassificationReasons(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Get classification reason information", nickname = "showClassificationReasonById", notes = "Gets the classification reason  **classificationReasonId**.", response = ClassificationReasonEntry.class, authorizations = {
@@ -130,16 +90,7 @@ public interface ClassificationReasonsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ClassificationReasonEntry
-> showClassificationReasonById(
-
-
-@ApiParam(value = "The identifier for the classification reason",required=true) @PathVariable("classificationReasonId") String
- classificationReasonId
-
-
-
-);
+    ResponseEntity<ClassificationReasonEntry> showClassificationReasonById(@ApiParam(value = "The identifier for the classification reason",required=true) @PathVariable("classificationReasonId") String classificationReasonId);
 
 
     @ApiOperation(value = "Update a classification reason", nickname = "updateClassificationReason", notes = "Updates the classification reason with id **classificationReasonId**. For example, you can change a classification reason code or description.", response = ClassificationReasonEntry.class, authorizations = {
@@ -157,20 +108,6 @@ public interface ClassificationReasonsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<ClassificationReasonEntry
-> updateClassificationReason(
-
-
-@ApiParam(value = "The identifier for the classification reason",required=true) @PathVariable("classificationReasonId") String
- classificationReasonId
-
-
-
-,
-
-
-@ApiParam(value = "Classification reason" ,required=true )  @Valid @RequestBody ClassificationReasonBody classificationReason
-
-);
+    ResponseEntity<ClassificationReasonEntry> updateClassificationReason(@ApiParam(value = "The identifier for the classification reason",required=true) @PathVariable("classificationReasonId") String classificationReasonId,@ApiParam(value = "Classification reason" ,required=true )  @Valid @RequestBody ClassificationReasonBody classificationReason);
 
 }

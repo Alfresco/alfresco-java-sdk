@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Download   {
   @JsonProperty("filesAdded")
   private Integer filesAdded = null;
@@ -84,7 +83,6 @@ public class Download   {
   @ApiModelProperty(value = "number of files added so far in the zip")
 
 
-
   public Integer getFilesAdded() {
     return filesAdded;
   }
@@ -103,7 +101,6 @@ public class Download   {
    * @return bytesAdded
   **/
   @ApiModelProperty(value = "number of bytes added so far in the zip")
-
 
 
   public Integer getBytesAdded() {
@@ -126,7 +123,6 @@ public class Download   {
   @ApiModelProperty(value = "the id of the download node")
 
 
-
   public String getId() {
     return id;
   }
@@ -145,7 +141,6 @@ public class Download   {
    * @return totalFiles
   **/
   @ApiModelProperty(value = "the total number of files to be added in the zip")
-
 
 
   public Integer getTotalFiles() {
@@ -168,7 +163,6 @@ public class Download   {
   @ApiModelProperty(value = "the total number of bytes to be added in the zip")
 
 
-
   public Integer getTotalBytes() {
     return totalBytes;
   }
@@ -187,7 +181,6 @@ public class Download   {
    * @return status
   **/
   @ApiModelProperty(value = "the current status of the download node creation")
-
 
 
   public StatusEnum getStatus() {

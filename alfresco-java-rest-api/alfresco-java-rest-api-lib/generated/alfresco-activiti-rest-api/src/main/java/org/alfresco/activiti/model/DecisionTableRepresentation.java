@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DecisionTableRepresentation   {
   @JsonProperty("decisionTableDefinition")
   private DecisionTableDefinitionRepresentation decisionTableDefinition = null;
@@ -58,7 +57,6 @@ public class DecisionTableRepresentation   {
 
   @Valid
 
-
   public DecisionTableDefinitionRepresentation getDecisionTableDefinition() {
     return decisionTableDefinition;
   }
@@ -79,7 +77,6 @@ public class DecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -98,7 +95,6 @@ public class DecisionTableRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -122,7 +118,6 @@ public class DecisionTableRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
@@ -141,7 +136,6 @@ public class DecisionTableRepresentation   {
    * @return lastUpdatedBy
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getLastUpdatedBy() {
@@ -164,7 +158,6 @@ public class DecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLastUpdatedByFullName() {
     return lastUpdatedByFullName;
   }
@@ -183,7 +176,6 @@ public class DecisionTableRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -206,7 +198,6 @@ public class DecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getReferenceId() {
     return referenceId;
   }
@@ -225,7 +216,6 @@ public class DecisionTableRepresentation   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getVersion() {

@@ -34,16 +34,7 @@ public interface EndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<EndpointConfigurationRepresentation
-> getEndpointConfigurationUsingGET(
-
-
-@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long
- endpointConfigurationId
-
-
-
-);
+    ResponseEntity<EndpointConfigurationRepresentation> getEndpointConfigurationUsingGET(@ApiParam(value = "endpointConfigurationId",required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId);
 
 
     @ApiOperation(value = "List endpoint configurations", nickname = "getEndpointConfigurationsUsingGET", notes = "", response = EndpointConfigurationRepresentation.class, responseContainer = "List", authorizations = {
@@ -55,7 +46,6 @@ public interface EndpointsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<EndpointConfigurationRepresentation>
-> getEndpointConfigurationsUsingGET();
+    ResponseEntity<List<EndpointConfigurationRepresentation>> getEndpointConfigurationsUsingGET();
 
 }

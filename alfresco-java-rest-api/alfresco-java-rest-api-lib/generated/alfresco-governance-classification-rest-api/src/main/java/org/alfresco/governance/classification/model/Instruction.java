@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Information about how a piece of content should be secured. This field is only included when requested.")
 @Validated
 
-
 public class Instruction   {
   @JsonProperty("classificationInformation")
   private ClassificationInformation classificationInformation = null;
@@ -37,7 +36,6 @@ public class Instruction   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ClassificationInformation getClassificationInformation() {
     return classificationInformation;
@@ -59,7 +57,6 @@ public class Instruction   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public SecurityMarkInformation getSecurityMarkInformation() {
     return securityMarkInformation;

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FieldValueInfo   {
   @JsonProperty("type")
   private String type = null;
@@ -32,7 +31,6 @@ public class FieldValueInfo   {
    * @return type
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getType() {
@@ -53,7 +51,6 @@ public class FieldValueInfo   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getValue() {

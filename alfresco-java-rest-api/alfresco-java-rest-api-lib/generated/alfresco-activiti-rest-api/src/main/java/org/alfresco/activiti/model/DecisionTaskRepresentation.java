@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DecisionTaskRepresentation   {
   @JsonProperty("activityId")
   private String activityId = null;
@@ -65,7 +64,6 @@ public class DecisionTaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getActivityId() {
     return activityId;
   }
@@ -84,7 +82,6 @@ public class DecisionTaskRepresentation   {
    * @return activityName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getActivityName() {
@@ -108,7 +105,6 @@ public class DecisionTaskRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDecisionExecutionEnded() {
     return decisionExecutionEnded;
   }
@@ -127,7 +123,6 @@ public class DecisionTaskRepresentation   {
    * @return decisionExecutionFailed
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isDecisionExecutionFailed() {
@@ -150,7 +145,6 @@ public class DecisionTaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDecisionKey() {
     return decisionKey;
   }
@@ -169,7 +163,6 @@ public class DecisionTaskRepresentation   {
    * @return decisionName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDecisionName() {
@@ -192,7 +185,6 @@ public class DecisionTaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getDmnDeploymentId() {
     return dmnDeploymentId;
   }
@@ -211,7 +203,6 @@ public class DecisionTaskRepresentation   {
    * @return executionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getExecutionId() {
@@ -234,7 +225,6 @@ public class DecisionTaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -253,7 +243,6 @@ public class DecisionTaskRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -276,7 +265,6 @@ public class DecisionTaskRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
@@ -295,7 +283,6 @@ public class DecisionTaskRepresentation   {
    * @return processInstanceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceId() {

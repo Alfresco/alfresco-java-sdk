@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessInstanceFilterRequestRepresentation   {
   @JsonProperty("appDefinitionId")
   private Long appDefinitionId = null;
@@ -44,7 +43,6 @@ public class ProcessInstanceFilterRequestRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getAppDefinitionId() {
     return appDefinitionId;
   }
@@ -66,7 +64,6 @@ public class ProcessInstanceFilterRequestRepresentation   {
 
   @Valid
 
-
   public ProcessInstanceFilterRepresentation getFilter() {
     return filter;
   }
@@ -85,7 +82,6 @@ public class ProcessInstanceFilterRequestRepresentation   {
    * @return filterId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getFilterId() {
@@ -108,7 +104,6 @@ public class ProcessInstanceFilterRequestRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getPage() {
     return page;
   }
@@ -127,7 +122,6 @@ public class ProcessInstanceFilterRequestRepresentation   {
    * @return size
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getSize() {

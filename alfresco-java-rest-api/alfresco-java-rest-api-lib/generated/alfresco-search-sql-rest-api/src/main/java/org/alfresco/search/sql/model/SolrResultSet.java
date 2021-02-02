@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "SQL results in Solr formatting")
 @Validated
 
-
 public class SolrResultSet   {
   @JsonProperty("result-set")
   private Docs resultSet = null;
@@ -33,7 +32,6 @@ public class SolrResultSet   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Docs getResultSet() {
     return resultSet;

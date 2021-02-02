@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SaveFormRepresentation   {
   @JsonProperty("values")
   private Object values = null;
@@ -29,7 +28,6 @@ public class SaveFormRepresentation   {
    * @return values
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getValues() {

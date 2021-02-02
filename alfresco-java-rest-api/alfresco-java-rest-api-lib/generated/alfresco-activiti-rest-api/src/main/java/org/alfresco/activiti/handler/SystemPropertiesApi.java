@@ -36,16 +36,7 @@ public interface SystemPropertiesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<GlobalDateFormatRepresentation
-> getGlobalDateFormatUsingGET(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-);
+    ResponseEntity<GlobalDateFormatRepresentation> getGlobalDateFormatUsingGET(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId);
 
 
     @ApiOperation(value = "Get password validation constraints", nickname = "getPasswordValidationConstraintsUsingGET", notes = "", response = PasswordValidationConstraints.class, authorizations = {
@@ -57,16 +48,7 @@ public interface SystemPropertiesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<PasswordValidationConstraints
-> getPasswordValidationConstraintsUsingGET(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-);
+    ResponseEntity<PasswordValidationConstraints> getPasswordValidationConstraintsUsingGET(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId);
 
 
     @ApiOperation(value = "Retrieve system properties", nickname = "getPropertiesUsingGET", notes = "Typical value is AllowInvolveByEmail", response = SystemPropertiesRepresentation.class, authorizations = {
@@ -78,8 +60,7 @@ public interface SystemPropertiesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<SystemPropertiesRepresentation
-> getPropertiesUsingGET();
+    ResponseEntity<SystemPropertiesRepresentation> getPropertiesUsingGET();
 
 
     @ApiOperation(value = "Get involved users who can edit forms", nickname = "involvedUsersCanEditFormsUsingGET", notes = "", response = Boolean.class, authorizations = {
@@ -91,15 +72,6 @@ public interface SystemPropertiesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Boolean
-> involvedUsersCanEditFormsUsingGET(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-);
+    ResponseEntity<Boolean> involvedUsersCanEditFormsUsingGET(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId);
 
 }

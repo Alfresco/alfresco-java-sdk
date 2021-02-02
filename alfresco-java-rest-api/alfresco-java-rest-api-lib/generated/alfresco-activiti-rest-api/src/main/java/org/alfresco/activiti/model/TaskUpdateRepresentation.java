@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TaskUpdateRepresentation   {
   @JsonProperty("category")
   private String category = null;
@@ -71,7 +70,6 @@ public class TaskUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getCategory() {
     return category;
   }
@@ -90,7 +88,6 @@ public class TaskUpdateRepresentation   {
    * @return categorySet
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isCategorySet() {
@@ -113,7 +110,6 @@ public class TaskUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -132,7 +128,6 @@ public class TaskUpdateRepresentation   {
    * @return descriptionSet
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isDescriptionSet() {
@@ -156,7 +151,6 @@ public class TaskUpdateRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getDueDate() {
     return dueDate;
   }
@@ -175,7 +169,6 @@ public class TaskUpdateRepresentation   {
    * @return dueDateSet
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isDueDateSet() {
@@ -198,7 +191,6 @@ public class TaskUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getFormKey() {
     return formKey;
   }
@@ -217,7 +209,6 @@ public class TaskUpdateRepresentation   {
    * @return formKeySet
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isFormKeySet() {
@@ -240,7 +231,6 @@ public class TaskUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -259,7 +249,6 @@ public class TaskUpdateRepresentation   {
    * @return nameSet
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isNameSet() {
@@ -282,7 +271,6 @@ public class TaskUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getParentTaskId() {
     return parentTaskId;
   }
@@ -301,7 +289,6 @@ public class TaskUpdateRepresentation   {
    * @return parentTaskIdSet
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isParentTaskIdSet() {
@@ -324,7 +311,6 @@ public class TaskUpdateRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getPriority() {
     return priority;
   }
@@ -343,7 +329,6 @@ public class TaskUpdateRepresentation   {
    * @return prioritySet
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isPrioritySet() {

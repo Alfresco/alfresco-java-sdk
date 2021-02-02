@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AppDefinitionPublishRepresentation   {
   @JsonProperty("comment")
   private String comment = null;
@@ -32,7 +31,6 @@ public class AppDefinitionPublishRepresentation   {
    * @return comment
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getComment() {
@@ -53,7 +51,6 @@ public class AppDefinitionPublishRepresentation   {
    * @return force
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isForce() {

@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RuntimeAppDefinitionSaveRepresentation   {
   @JsonProperty("appDefinitions")
   @Valid
@@ -43,7 +42,6 @@ public class RuntimeAppDefinitionSaveRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<AppDefinitionRepresentation> getAppDefinitions() {
     return appDefinitions;

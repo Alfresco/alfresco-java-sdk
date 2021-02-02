@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A list of pivots.")
 @Validated
 
-
 public class RequestPivot   {
   @JsonProperty("key")
   private String key = null;
@@ -37,7 +36,6 @@ public class RequestPivot   {
    * @return key
   **/
   @ApiModelProperty(value = "A key corresponding to a matching field facet label or stats.")
-
 
 
   public String getKey() {
@@ -68,7 +66,6 @@ public class RequestPivot   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<RequestPivot> getPivots() {
     return pivots;

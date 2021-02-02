@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RuntimeDecisionTableRepresentation   {
   @JsonProperty("category")
   private String category = null;
@@ -55,7 +54,6 @@ public class RuntimeDecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getCategory() {
     return category;
   }
@@ -74,7 +72,6 @@ public class RuntimeDecisionTableRepresentation   {
    * @return deploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getDeploymentId() {
@@ -97,7 +94,6 @@ public class RuntimeDecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -116,7 +112,6 @@ public class RuntimeDecisionTableRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -139,7 +134,6 @@ public class RuntimeDecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getKey() {
     return key;
   }
@@ -158,7 +152,6 @@ public class RuntimeDecisionTableRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -181,7 +174,6 @@ public class RuntimeDecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getResourceName() {
     return resourceName;
   }
@@ -202,7 +194,6 @@ public class RuntimeDecisionTableRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTenantId() {
     return tenantId;
   }
@@ -221,7 +212,6 @@ public class RuntimeDecisionTableRepresentation   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getVersion() {

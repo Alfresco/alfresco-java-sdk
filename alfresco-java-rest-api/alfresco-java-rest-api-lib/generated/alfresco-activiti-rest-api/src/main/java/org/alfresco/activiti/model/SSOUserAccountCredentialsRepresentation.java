@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SSOUserAccountCredentialsRepresentation   {
   @JsonProperty("authenticationURL")
   private String authenticationURL = null;
@@ -44,7 +43,6 @@ public class SSOUserAccountCredentialsRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAuthenticationURL() {
     return authenticationURL;
   }
@@ -66,7 +64,6 @@ public class SSOUserAccountCredentialsRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getExpireDate() {
     return expireDate;
   }
@@ -85,7 +82,6 @@ public class SSOUserAccountCredentialsRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -108,7 +104,6 @@ public class SSOUserAccountCredentialsRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getOwnerEmail() {
     return ownerEmail;
   }
@@ -127,7 +122,6 @@ public class SSOUserAccountCredentialsRepresentation   {
    * @return repositoryId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getRepositoryId() {

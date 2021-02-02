@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TaskAuditInfoRepresentation   {
   @JsonProperty("assignee")
   private String assignee = null;
@@ -67,7 +66,6 @@ public class TaskAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAssignee() {
     return assignee;
   }
@@ -97,7 +95,6 @@ public class TaskAuditInfoRepresentation   {
 
   @Valid
 
-
   public List<CommentAuditInfo> getComments() {
     return comments;
   }
@@ -116,7 +113,6 @@ public class TaskAuditInfoRepresentation   {
    * @return endTime
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEndTime() {
@@ -148,7 +144,6 @@ public class TaskAuditInfoRepresentation   {
 
   @Valid
 
-
   public List<AuditLogFormDataRepresentation> getFormData() {
     return formData;
   }
@@ -167,7 +162,6 @@ public class TaskAuditInfoRepresentation   {
    * @return processDefinitionName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionName() {
@@ -190,7 +184,6 @@ public class TaskAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
@@ -209,7 +202,6 @@ public class TaskAuditInfoRepresentation   {
    * @return processInstanceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceId() {
@@ -232,7 +224,6 @@ public class TaskAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSelectedOutcome() {
     return selectedOutcome;
   }
@@ -251,7 +242,6 @@ public class TaskAuditInfoRepresentation   {
    * @return startTime
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getStartTime() {
@@ -274,7 +264,6 @@ public class TaskAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskId() {
     return taskId;
   }
@@ -293,7 +282,6 @@ public class TaskAuditInfoRepresentation   {
    * @return taskName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskName() {

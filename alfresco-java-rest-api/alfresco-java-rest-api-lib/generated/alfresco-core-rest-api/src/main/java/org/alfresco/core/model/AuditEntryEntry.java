@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditEntryEntry   {
   @JsonProperty("entry")
   private AuditEntry entry = null;
@@ -32,7 +31,6 @@ public class AuditEntryEntry   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public AuditEntry getEntry() {
     return entry;

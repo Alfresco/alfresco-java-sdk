@@ -24,7 +24,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormDefinitionRepresentation   {
   @JsonProperty("className")
   private String className = null;
@@ -112,7 +111,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getClassName() {
     return className;
   }
@@ -139,7 +137,6 @@ public class FormDefinitionRepresentation   {
    * @return customFieldTemplates
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Map<String, String> getCustomFieldTemplates() {
@@ -171,7 +168,6 @@ public class FormDefinitionRepresentation   {
 
   @Valid
 
-
   public Map<String, FieldValueInfo> getCustomFieldsValueInfo() {
     return customFieldsValueInfo;
   }
@@ -201,7 +197,6 @@ public class FormDefinitionRepresentation   {
 
   @Valid
 
-
   public List<FormFieldRepresentation> getFields() {
     return fields;
   }
@@ -220,7 +215,6 @@ public class FormDefinitionRepresentation   {
    * @return globalDateFormat
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getGlobalDateFormat() {
@@ -243,7 +237,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isGridsterForm() {
     return gridsterForm;
   }
@@ -262,7 +255,6 @@ public class FormDefinitionRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -294,7 +286,6 @@ public class FormDefinitionRepresentation   {
 
   @Valid
 
-
   public List<FormJavascriptEventRepresentation> getJavascriptEvents() {
     return javascriptEvents;
   }
@@ -323,7 +314,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Map<String, String> getMetadata() {
     return metadata;
   }
@@ -344,7 +334,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -363,7 +352,6 @@ public class FormDefinitionRepresentation   {
    * @return outcomeTarget
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOutcomeTarget() {
@@ -395,7 +383,6 @@ public class FormDefinitionRepresentation   {
 
   @Valid
 
-
   public List<FormOutcomeRepresentation> getOutcomes() {
     return outcomes;
   }
@@ -414,7 +401,6 @@ public class FormDefinitionRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -437,7 +423,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
@@ -456,7 +441,6 @@ public class FormDefinitionRepresentation   {
    * @return processDefinitionName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionName() {
@@ -479,7 +463,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSelectedOutcome() {
     return selectedOutcome;
   }
@@ -498,7 +481,6 @@ public class FormDefinitionRepresentation   {
    * @return style
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getStyle() {
@@ -530,7 +512,6 @@ public class FormDefinitionRepresentation   {
 
   @Valid
 
-
   public List<FormTabRepresentation> getTabs() {
     return tabs;
   }
@@ -549,7 +530,6 @@ public class FormDefinitionRepresentation   {
    * @return taskDefinitionKey
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskDefinitionKey() {
@@ -572,7 +552,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTaskId() {
     return taskId;
   }
@@ -591,7 +570,6 @@ public class FormDefinitionRepresentation   {
    * @return taskName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTaskName() {
@@ -622,7 +600,6 @@ public class FormDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<FormVariableRepresentation> getVariables() {
     return variables;

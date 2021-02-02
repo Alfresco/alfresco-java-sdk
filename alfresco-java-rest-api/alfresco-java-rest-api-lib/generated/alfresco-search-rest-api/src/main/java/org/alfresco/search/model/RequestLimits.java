@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Limit the time and resources used for query execution")
 @Validated
 
-
 public class RequestLimits   {
   @JsonProperty("permissionEvaluationTime")
   private Integer permissionEvaluationTime = null;
@@ -33,7 +32,6 @@ public class RequestLimits   {
    * @return permissionEvaluationTime
   **/
   @ApiModelProperty(value = "Maximum time for post query permission evaluation")
-
 
 
   public Integer getPermissionEvaluationTime() {
@@ -54,7 +52,6 @@ public class RequestLimits   {
    * @return permissionEvaluationCount
   **/
   @ApiModelProperty(value = "Maximum count of post query permission evaluations")
-
 
 
   public Integer getPermissionEvaluationCount() {

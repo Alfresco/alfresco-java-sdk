@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SharedLinkPagingList   {
   @JsonProperty("pagination")
   private Pagination pagination = null;
@@ -40,7 +39,6 @@ public class SharedLinkPagingList   {
   @NotNull
 
   @Valid
-
 
   public Pagination getPagination() {
     return pagination;
@@ -68,7 +66,6 @@ public class SharedLinkPagingList   {
   @NotNull
 
   @Valid
-
 
   public List<SharedLinkEntry> getEntries() {
     return entries;

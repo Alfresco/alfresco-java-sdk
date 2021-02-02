@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class VersionInfo   {
   @JsonProperty("major")
   private String major = null;
@@ -50,7 +49,6 @@ public class VersionInfo   {
   @NotNull
 
 
-
   public String getMajor() {
     return major;
   }
@@ -70,7 +68,6 @@ public class VersionInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getMinor() {
@@ -94,7 +91,6 @@ public class VersionInfo   {
   @NotNull
 
 
-
   public String getPatch() {
     return patch;
   }
@@ -114,7 +110,6 @@ public class VersionInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getHotfix() {
@@ -138,7 +133,6 @@ public class VersionInfo   {
   @NotNull
 
 
-
   public Integer getSchema() {
     return schema;
   }
@@ -160,7 +154,6 @@ public class VersionInfo   {
   @NotNull
 
 
-
   public String getLabel() {
     return label;
   }
@@ -180,7 +173,6 @@ public class VersionInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getDisplay() {

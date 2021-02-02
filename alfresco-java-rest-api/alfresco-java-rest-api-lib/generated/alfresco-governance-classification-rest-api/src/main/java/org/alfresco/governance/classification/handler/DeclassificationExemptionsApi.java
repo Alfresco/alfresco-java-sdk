@@ -42,13 +42,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<DeclassificationExemptionEntry
-> createDeclassificationExemption(
-
-
-@ApiParam(value = "Declassification exemption" ,required=true )  @Valid @RequestBody DeclassificationExemptionBody declassificationExemption
-
-);
+    ResponseEntity<DeclassificationExemptionEntry> createDeclassificationExemption(@ApiParam(value = "Declassification exemption" ,required=true )  @Valid @RequestBody DeclassificationExemptionBody declassificationExemption);
 
 
     @ApiOperation(value = "Delete a declassification exemption", nickname = "deleteDeclassificationExemption", notes = "Deletes the declassification exemption with id **declassificationExemptionId**. You can't delete a classification exemption that is being used to classify content.", authorizations = {
@@ -66,16 +60,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteDeclassificationExemption(
-
-
-@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String
- declassificationExemptionId
-
-
-
-);
+    ResponseEntity<Void> deleteDeclassificationExemption(@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String declassificationExemptionId);
 
 
     @ApiOperation(value = "List all declassification exemptions", nickname = "listDeclassificationExemptions", notes = "Gets all declassification exemptions.", response = DeclassificationExemptionsPaging.class, authorizations = {
@@ -89,24 +74,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeclassificationExemptionsPaging
-> listDeclassificationExemptions(@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer
- maxItems
-
-
-
-
-);
+    ResponseEntity<DeclassificationExemptionsPaging> listDeclassificationExemptions(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems);
 
 
     @ApiOperation(value = "Get declassification exemption information", nickname = "showDeclassificationExemptionById", notes = "Gets the declassification exemption with id **declassificationExemptionId**.", response = DeclassificationExemptionEntry.class, authorizations = {
@@ -122,16 +90,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeclassificationExemptionEntry
-> showDeclassificationExemptionById(
-
-
-@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String
- declassificationExemptionId
-
-
-
-);
+    ResponseEntity<DeclassificationExemptionEntry> showDeclassificationExemptionById(@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String declassificationExemptionId);
 
 
     @ApiOperation(value = "Update a declassification exemption", nickname = "updateDeclassificationExemption", notes = "Updates the declassification exemption with id **declassificationExemptionId**. For example, you can rename a declassification exemption.", response = DeclassificationExemptionEntry.class, authorizations = {
@@ -149,20 +108,6 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<DeclassificationExemptionEntry
-> updateDeclassificationExemption(
-
-
-@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String
- declassificationExemptionId
-
-
-
-,
-
-
-@ApiParam(value = "Declassification exemption" ,required=true )  @Valid @RequestBody DeclassificationExemptionBody declassificationExemption
-
-);
+    ResponseEntity<DeclassificationExemptionEntry> updateDeclassificationExemption(@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String declassificationExemptionId,@ApiParam(value = "Declassification exemption" ,required=true )  @Valid @RequestBody DeclassificationExemptionBody declassificationExemption);
 
 }

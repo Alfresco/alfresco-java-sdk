@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SearchEntry   {
   @JsonProperty("score")
   private Float score = null;
@@ -36,7 +35,6 @@ public class SearchEntry   {
    * @return score
   **/
   @ApiModelProperty(value = "The score for this row")
-
 
 
   public Float getScore() {
@@ -67,7 +65,6 @@ public class SearchEntry   {
   @ApiModelProperty(value = "Highlight fragments if requested and available. A match can happen in any of the requested field. ")
 
   @Valid
-
 
   public List<SearchEntryHighlight> getHighlight() {
     return highlight;

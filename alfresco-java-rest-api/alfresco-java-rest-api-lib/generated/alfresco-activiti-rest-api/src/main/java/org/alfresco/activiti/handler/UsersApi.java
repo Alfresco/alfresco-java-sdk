@@ -37,21 +37,7 @@ public interface UsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> executeActionUsingPOST(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-,
-
-
-@ApiParam(value = "actionRequest" ,required=true )  @Valid @RequestBody UserActionRepresentation actionRequest
-
-);
+    ResponseEntity<Void> executeActionUsingPOST(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId,@ApiParam(value = "actionRequest" ,required=true )  @Valid @RequestBody UserActionRepresentation actionRequest);
 
 
     @ApiOperation(value = "Stream user profile picture", nickname = "getProfilePictureUsingGET1", notes = "", authorizations = {
@@ -63,16 +49,7 @@ public interface UsersApi {
         produces = "*/*", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getProfilePictureUsingGET1(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-);
+    ResponseEntity<Void> getProfilePictureUsingGET1(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId);
 
 
     @ApiOperation(value = "Get a user", nickname = "getUserUsingGET1", notes = "", response = UserRepresentation.class, authorizations = {
@@ -84,16 +61,7 @@ public interface UsersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<UserRepresentation
-> getUserUsingGET1(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-);
+    ResponseEntity<UserRepresentation> getUserUsingGET1(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId);
 
 
     @ApiOperation(value = "Query users", nickname = "getUsersUsingGET1", notes = "A common use case is that a user wants to select another user (eg. when assigning a task) or group.", response = ResultListDataRepresentationLightUserRepresentation.class, authorizations = {
@@ -105,72 +73,7 @@ public interface UsersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationLightUserRepresentation
-> getUsersUsingGET1(
-
-@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-,
-
-@ApiParam(value = "email") @Valid @RequestParam(value = "email", required = false) String
- email
-
-
-
-
-,
-
-@ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String
- externalId
-
-
-
-
-,
-
-@ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String
- externalIdCaseInsensitive
-
-
-
-
-,
-
-@ApiParam(value = "excludeTaskId") @Valid @RequestParam(value = "excludeTaskId", required = false) String
- excludeTaskId
-
-
-
-
-,
-
-@ApiParam(value = "excludeProcessId") @Valid @RequestParam(value = "excludeProcessId", required = false) String
- excludeProcessId
-
-
-
-
-,
-
-@ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long
- groupId
-
-
-
-
-,
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getUsersUsingGET1(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter,@ApiParam(value = "email") @Valid @RequestParam(value = "email", required = false) String email,@ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String externalId,@ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String externalIdCaseInsensitive,@ApiParam(value = "excludeTaskId") @Valid @RequestParam(value = "excludeTaskId", required = false) String excludeTaskId,@ApiParam(value = "excludeProcessId") @Valid @RequestParam(value = "excludeProcessId", required = false) String excludeProcessId,@ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId,@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId);
 
 
     @ApiOperation(value = "Request a password reset", nickname = "requestPasswordResetUsingPOST", notes = "", authorizations = {
@@ -182,13 +85,7 @@ public interface UsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> requestPasswordResetUsingPOST(
-
-
-@ApiParam(value = "resetPassword" ,required=true )  @Valid @RequestBody ResetPasswordRepresentation resetPassword
-
-);
+    ResponseEntity<Void> requestPasswordResetUsingPOST(@ApiParam(value = "resetPassword" ,required=true )  @Valid @RequestBody ResetPasswordRepresentation resetPassword);
 
 
     @ApiOperation(value = "Update a user", nickname = "updateUserUsingPUT", notes = "", response = UserRepresentation.class, authorizations = {
@@ -200,20 +97,6 @@ public interface UsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<UserRepresentation
-> updateUserUsingPUT(
-
-
-@ApiParam(value = "userId",required=true) @PathVariable("userId") Long
- userId
-
-
-
-,
-
-
-@ApiParam(value = "userRequest" ,required=true )  @Valid @RequestBody UserRepresentation userRequest
-
-);
+    ResponseEntity<UserRepresentation> updateUserUsingPUT(@ApiParam(value = "userId",required=true) @PathVariable("userId") Long userId,@ApiParam(value = "userRequest" ,required=true )  @Valid @RequestBody UserRepresentation userRequest);
 
 }

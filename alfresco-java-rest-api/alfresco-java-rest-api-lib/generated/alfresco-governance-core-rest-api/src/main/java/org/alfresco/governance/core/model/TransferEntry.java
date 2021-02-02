@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TransferEntry   {
   @JsonProperty("entry")
   private Transfer entry = null;
@@ -33,7 +32,6 @@ public class TransferEntry   {
   @NotNull
 
   @Valid
-
 
   public Transfer getEntry() {
     return entry;

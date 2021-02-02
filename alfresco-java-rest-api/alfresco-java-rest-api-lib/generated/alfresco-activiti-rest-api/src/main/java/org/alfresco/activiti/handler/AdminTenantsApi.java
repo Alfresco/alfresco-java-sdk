@@ -39,13 +39,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<LightTenantRepresentation
-> createTenantUsingPOST(
-
-
-@ApiParam(value = "createTenantRepresentation" ,required=true )  @Valid @RequestBody CreateTenantRepresentation createTenantRepresentation
-
-);
+    ResponseEntity<LightTenantRepresentation> createTenantUsingPOST(@ApiParam(value = "createTenantRepresentation" ,required=true )  @Valid @RequestBody CreateTenantRepresentation createTenantRepresentation);
 
 
     @ApiOperation(value = "Delete a tenant", nickname = "deleteTenantUsingDELETE", notes = "", authorizations = {
@@ -57,16 +51,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteTenantUsingDELETE(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-);
+    ResponseEntity<Void> deleteTenantUsingDELETE(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId);
 
 
     @ApiOperation(value = "Get tenant events", nickname = "getTenantEventsUsingGET", notes = "", response = TenantEvent.class, responseContainer = "List", authorizations = {
@@ -78,16 +63,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<TenantEvent>
-> getTenantEventsUsingGET(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-);
+    ResponseEntity<List<TenantEvent>> getTenantEventsUsingGET(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId);
 
 
     @ApiOperation(value = "Get a tenant's logo", nickname = "getTenantLogoUsingGET", notes = "", authorizations = {
@@ -99,16 +75,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> getTenantLogoUsingGET(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-);
+    ResponseEntity<Void> getTenantLogoUsingGET(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId);
 
 
     @ApiOperation(value = "Get a tenant", nickname = "getTenantUsingGET", notes = "", response = TenantRepresentation.class, authorizations = {
@@ -120,16 +87,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<TenantRepresentation
-> getTenantUsingGET(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-);
+    ResponseEntity<TenantRepresentation> getTenantUsingGET(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId);
 
 
     @ApiOperation(value = "List tenants", nickname = "getTenantsUsingGET", notes = "Only a tenant manager may access this endpoint", response = LightTenantRepresentation.class, responseContainer = "List", authorizations = {
@@ -141,8 +99,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<LightTenantRepresentation>
-> getTenantsUsingGET();
+    ResponseEntity<List<LightTenantRepresentation>> getTenantsUsingGET();
 
 
     @ApiOperation(value = "Update a tenant", nickname = "updateUsingPUT", notes = "", response = TenantRepresentation.class, authorizations = {
@@ -154,21 +111,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<TenantRepresentation
-> updateUsingPUT(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-,
-
-
-@ApiParam(value = "createTenantRepresentation" ,required=true )  @Valid @RequestBody CreateTenantRepresentation createTenantRepresentation
-
-);
+    ResponseEntity<TenantRepresentation> updateUsingPUT(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId,@ApiParam(value = "createTenantRepresentation" ,required=true )  @Valid @RequestBody CreateTenantRepresentation createTenantRepresentation);
 
 
     @ApiOperation(value = "Update a tenant's logo", nickname = "uploadTenantLogoUsingPOST", notes = "", response = ImageUploadRepresentation.class, authorizations = {
@@ -180,20 +123,6 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<ImageUploadRepresentation
-> uploadTenantLogoUsingPOST(
-
-
-@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long
- tenantId
-
-
-
-,
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<ImageUploadRepresentation> uploadTenantLogoUsingPOST(@ApiParam(value = "tenantId",required=true) @PathVariable("tenantId") Long tenantId,@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 }

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UserActionRepresentation   {
   @JsonProperty("action")
   private String action = null;
@@ -37,7 +36,6 @@ public class UserActionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAction() {
     return action;
   }
@@ -58,7 +56,6 @@ public class UserActionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getNewPassword() {
     return newPassword;
   }
@@ -77,7 +74,6 @@ public class UserActionRepresentation   {
    * @return oldPassword
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOldPassword() {

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormJavascriptEventRepresentation   {
   @JsonProperty("event")
   private String event = null;
@@ -32,7 +31,6 @@ public class FormJavascriptEventRepresentation   {
    * @return event
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEvent() {
@@ -53,7 +51,6 @@ public class FormJavascriptEventRepresentation   {
    * @return javascriptLogic
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getJavascriptLogic() {

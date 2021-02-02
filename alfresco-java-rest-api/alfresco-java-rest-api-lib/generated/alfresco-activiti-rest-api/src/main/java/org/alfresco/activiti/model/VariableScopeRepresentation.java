@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class VariableScopeRepresentation   {
   @JsonProperty("mapVariable")
   private String mapVariable = null;
@@ -49,7 +48,6 @@ public class VariableScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMapVariable() {
     return mapVariable;
   }
@@ -68,7 +66,6 @@ public class VariableScopeRepresentation   {
    * @return mappedColumn
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMappedColumn() {
@@ -91,7 +88,6 @@ public class VariableScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getMappedDataModel() {
     return mappedDataModel;
   }
@@ -110,7 +106,6 @@ public class VariableScopeRepresentation   {
    * @return mappedEntity
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMappedEntity() {
@@ -133,7 +128,6 @@ public class VariableScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getMappedVariableName() {
     return mappedVariableName;
   }
@@ -154,7 +148,6 @@ public class VariableScopeRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessVariableName() {
     return processVariableName;
   }
@@ -173,7 +166,6 @@ public class VariableScopeRepresentation   {
    * @return processVariableType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessVariableType() {

@@ -34,7 +34,6 @@ public interface AccountIntegrationApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationAccountRepresentation
-> getAccountsUsingGET();
+    ResponseEntity<ResultListDataRepresentationAccountRepresentation> getAccountsUsingGET();
 
 }

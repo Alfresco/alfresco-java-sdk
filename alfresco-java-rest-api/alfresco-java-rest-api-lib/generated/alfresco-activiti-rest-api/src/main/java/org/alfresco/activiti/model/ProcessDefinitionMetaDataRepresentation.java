@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessDefinitionMetaDataRepresentation   {
   @JsonProperty("key")
   private String key = null;
@@ -32,7 +31,6 @@ public class ProcessDefinitionMetaDataRepresentation   {
    * @return key
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getKey() {
@@ -53,7 +51,6 @@ public class ProcessDefinitionMetaDataRepresentation   {
    * @return value
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getValue() {

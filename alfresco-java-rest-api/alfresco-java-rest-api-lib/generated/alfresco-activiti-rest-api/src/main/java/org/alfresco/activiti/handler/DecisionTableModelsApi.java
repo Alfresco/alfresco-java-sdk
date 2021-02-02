@@ -39,16 +39,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> exportDecisionTableUsingGET(
-
-
-@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long
- decisionTableId
-
-
-
-);
+    ResponseEntity<Void> exportDecisionTableUsingGET(@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
     @ApiOperation(value = "Export specific version for decision table model.", nickname = "exportHistoricDecisionTableUsingGET", notes = "", authorizations = {
@@ -60,16 +51,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Void
-> exportHistoricDecisionTableUsingGET(
-
-
-@ApiParam(value = "Id of another version of same decision table model.",required=true) @PathVariable("historyModelId") Long
- historyModelId
-
-
-
-);
+    ResponseEntity<Void> exportHistoricDecisionTableUsingGET(@ApiParam(value = "Id of another version of same decision table model.",required=true) @PathVariable("historyModelId") Long historyModelId);
 
 
     @ApiOperation(value = "Get a decision table model by id.", nickname = "getDecisionTableUsingGET1", notes = "", response = DecisionTableRepresentation.class, authorizations = {
@@ -81,16 +63,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DecisionTableRepresentation
-> getDecisionTableUsingGET1(
-
-
-@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long
- decisionTableId
-
-
-
-);
+    ResponseEntity<DecisionTableRepresentation> getDecisionTableUsingGET1(@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
     @ApiOperation(value = "Get a specific list of decision table models (with decision table definition) by their ids.", nickname = "getDecisionTablesUsingGET1", notes = "", response = DecisionTableRepresentation.class, responseContainer = "List", authorizations = {
@@ -102,16 +75,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<List<DecisionTableRepresentation>
-> getDecisionTablesUsingGET1(@NotNull 
-
-@ApiParam(value = "The id of the decision table. This id can be specified multiple times in the request for each decision table model id wanted to be returned.", required = true) @Valid @RequestParam(value = "decisionTableId", required = true) List<String>
- decisionTableId
-
-
-
-
-);
+    ResponseEntity<List<DecisionTableRepresentation>> getDecisionTablesUsingGET1(@NotNull @ApiParam(value = "The id of the decision table. This id can be specified multiple times in the request for each decision table model id wanted to be returned.", required = true) @Valid @RequestParam(value = "decisionTableId", required = true) List<String> decisionTableId);
 
 
     @ApiOperation(value = "Get a list of decision table models (without decision table definition).", nickname = "getDecisionTablesUsingGET2", notes = "", response = ResultListDataRepresentationDecisionTableRepresentation.class, authorizations = {
@@ -123,24 +87,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationDecisionTableRepresentation
-> getDecisionTablesUsingGET2(
-
-@ApiParam(value = "A reference to another model (ie. a process) associated with one or more decision table models.") @Valid @RequestParam(value = "referenceId", required = false) Long
- referenceId
-
-
-
-
-,
-
-@ApiParam(value = "Filter (search for a specified pattern) the decision tables associated with another model (i.e. a process) by name or description.") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationDecisionTableRepresentation> getDecisionTablesUsingGET2(@ApiParam(value = "A reference to another model (ie. a process) associated with one or more decision table models.") @Valid @RequestParam(value = "referenceId", required = false) Long referenceId,@ApiParam(value = "Filter (search for a specified pattern) the decision tables associated with another model (i.e. a process) by name or description.") @Valid @RequestParam(value = "filter", required = false) String filter);
 
 
     @ApiOperation(value = "Get specific version of a decision table model by id.", nickname = "getHistoricDecisionTableUsingGET", notes = "", response = DecisionTableRepresentation.class, authorizations = {
@@ -152,16 +99,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DecisionTableRepresentation
-> getHistoricDecisionTableUsingGET(
-
-
-@ApiParam(value = "Id of another version of same decision table model.",required=true) @PathVariable("historyModelId") Long
- historyModelId
-
-
-
-);
+    ResponseEntity<DecisionTableRepresentation> getHistoricDecisionTableUsingGET(@ApiParam(value = "Id of another version of same decision table model.",required=true) @PathVariable("historyModelId") Long historyModelId);
 
 
     @ApiOperation(value = "Import decision table. This method return the decision table representation response as plain text.", nickname = "importDecisionTableTextUsingPOST", notes = "", response = String.class, authorizations = {
@@ -173,13 +111,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<String
-> importDecisionTableTextUsingPOST(
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<String> importDecisionTableTextUsingPOST(@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 
     @ApiOperation(value = "Import decision table model.", nickname = "importDecisionTableUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
@@ -191,13 +123,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<ModelRepresentation
-> importDecisionTableUsingPOST(
-
-
-
-@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file
-);
+    ResponseEntity<ModelRepresentation> importDecisionTableUsingPOST(@ApiParam(value = "file detail") @RequestParam("file") MultipartFile file);
 
 
     @ApiOperation(value = "Update decision table model.", nickname = "saveDecisionTableUsingPUT", notes = "", response = DecisionTableRepresentation.class, authorizations = {
@@ -209,21 +135,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<DecisionTableRepresentation
-> saveDecisionTableUsingPUT(
-
-
-@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long
- decisionTableId
-
-
-
-,
-
-
-@ApiParam(value = "Decision table definition."  )  @Valid @RequestBody DecisionTableSaveRepresentation file
-
-);
+    ResponseEntity<DecisionTableRepresentation> saveDecisionTableUsingPUT(@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long decisionTableId,@ApiParam(value = "Decision table definition."  )  @Valid @RequestBody DecisionTableSaveRepresentation file);
 
 
     @ApiOperation(value = "Validate decision table model.", nickname = "validateModelUsingPUT", notes = "", response = ValidationErrorRepresentation.class, responseContainer = "List", authorizations = {
@@ -235,20 +147,6 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<List<ValidationErrorRepresentation>
-> validateModelUsingPUT(
-
-
-@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long
- decisionTableId
-
-
-
-,
-
-
-@ApiParam(value = "Decision table definition."  )  @Valid @RequestBody DecisionTableSaveRepresentation file
-
-);
+    ResponseEntity<List<ValidationErrorRepresentation>> validateModelUsingPUT(@ApiParam(value = "Decision table id.",required=true) @PathVariable("decisionTableId") Long decisionTableId,@ApiParam(value = "Decision table definition."  )  @Valid @RequestBody DecisionTableSaveRepresentation file);
 
 }

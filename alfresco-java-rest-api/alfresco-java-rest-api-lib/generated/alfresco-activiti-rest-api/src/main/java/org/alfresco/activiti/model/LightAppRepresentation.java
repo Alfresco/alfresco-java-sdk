@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class LightAppRepresentation   {
   @JsonProperty("description")
   private String description = null;
@@ -43,7 +42,6 @@ public class LightAppRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -62,7 +60,6 @@ public class LightAppRepresentation   {
    * @return icon
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getIcon() {
@@ -85,7 +82,6 @@ public class LightAppRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -106,7 +102,6 @@ public class LightAppRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -125,7 +120,6 @@ public class LightAppRepresentation   {
    * @return theme
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTheme() {

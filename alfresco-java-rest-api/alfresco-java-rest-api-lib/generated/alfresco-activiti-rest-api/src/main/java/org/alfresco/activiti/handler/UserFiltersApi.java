@@ -38,13 +38,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<UserProcessInstanceFilterRepresentation
-> createUserProcessInstanceFilterUsingPOST(
-
-
-@ApiParam(value = "userProcessInstanceFilterRepresentation" ,required=true )  @Valid @RequestBody UserProcessInstanceFilterRepresentation userProcessInstanceFilterRepresentation
-
-);
+    ResponseEntity<UserProcessInstanceFilterRepresentation> createUserProcessInstanceFilterUsingPOST(@ApiParam(value = "userProcessInstanceFilterRepresentation" ,required=true )  @Valid @RequestBody UserProcessInstanceFilterRepresentation userProcessInstanceFilterRepresentation);
 
 
     @ApiOperation(value = "Create a task filter", nickname = "createUserTaskFilterUsingPOST", notes = "", response = UserTaskFilterRepresentation.class, authorizations = {
@@ -56,13 +50,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<UserTaskFilterRepresentation
-> createUserTaskFilterUsingPOST(
-
-
-@ApiParam(value = "userTaskFilterRepresentation" ,required=true )  @Valid @RequestBody UserTaskFilterRepresentation userTaskFilterRepresentation
-
-);
+    ResponseEntity<UserTaskFilterRepresentation> createUserTaskFilterUsingPOST(@ApiParam(value = "userTaskFilterRepresentation" ,required=true )  @Valid @RequestBody UserTaskFilterRepresentation userTaskFilterRepresentation);
 
 
     @ApiOperation(value = "Delete a process instance filter", nickname = "deleteUserProcessInstanceFilterUsingDELETE", notes = "", authorizations = {
@@ -74,16 +62,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteUserProcessInstanceFilterUsingDELETE(
-
-
-@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long
- userFilterId
-
-
-
-);
+    ResponseEntity<Void> deleteUserProcessInstanceFilterUsingDELETE(@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
     @ApiOperation(value = "Delete a task filter", nickname = "deleteUserTaskFilterUsingDELETE", notes = "", authorizations = {
@@ -95,16 +74,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteUserTaskFilterUsingDELETE(
-
-
-@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long
- userFilterId
-
-
-
-);
+    ResponseEntity<Void> deleteUserTaskFilterUsingDELETE(@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
     @ApiOperation(value = "Get a process instance filter", nickname = "getUserProcessInstanceFilterUsingGET", notes = "", response = UserProcessInstanceFilterRepresentation.class, authorizations = {
@@ -116,16 +86,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<UserProcessInstanceFilterRepresentation
-> getUserProcessInstanceFilterUsingGET(
-
-
-@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long
- userFilterId
-
-
-
-);
+    ResponseEntity<UserProcessInstanceFilterRepresentation> getUserProcessInstanceFilterUsingGET(@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
     @ApiOperation(value = "List process instance filters", nickname = "getUserProcessInstanceFiltersUsingGET", notes = "Returns filters for the current user, optionally filtered by *appId*.", response = ResultListDataRepresentationUserProcessInstanceFilterRepresentation.class, authorizations = {
@@ -137,16 +98,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationUserProcessInstanceFilterRepresentation
-> getUserProcessInstanceFiltersUsingGET(
-
-@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long
- appId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationUserProcessInstanceFilterRepresentation> getUserProcessInstanceFiltersUsingGET(@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId);
 
 
     @ApiOperation(value = "Get a task filter", nickname = "getUserTaskFilterUsingGET", notes = "", response = UserTaskFilterRepresentation.class, authorizations = {
@@ -158,16 +110,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<UserTaskFilterRepresentation
-> getUserTaskFilterUsingGET(
-
-
-@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long
- userFilterId
-
-
-
-);
+    ResponseEntity<UserTaskFilterRepresentation> getUserTaskFilterUsingGET(@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
     @ApiOperation(value = "List task filters", nickname = "getUserTaskFiltersUsingGET", notes = "Returns filters for the current user, optionally filtered by *appId*.", response = ResultListDataRepresentationUserTaskFilterRepresentation.class, authorizations = {
@@ -179,16 +122,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationUserTaskFilterRepresentation
-> getUserTaskFiltersUsingGET(
-
-@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long
- appId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationUserTaskFilterRepresentation> getUserTaskFiltersUsingGET(@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId);
 
 
     @ApiOperation(value = "Re-order the list of user process instance filters", nickname = "orderUserProcessInstanceFiltersUsingPUT", notes = "", authorizations = {
@@ -200,13 +134,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> orderUserProcessInstanceFiltersUsingPUT(
-
-
-@ApiParam(value = "filterOrderRepresentation" ,required=true )  @Valid @RequestBody UserFilterOrderRepresentation filterOrderRepresentation
-
-);
+    ResponseEntity<Void> orderUserProcessInstanceFiltersUsingPUT(@ApiParam(value = "filterOrderRepresentation" ,required=true )  @Valid @RequestBody UserFilterOrderRepresentation filterOrderRepresentation);
 
 
     @ApiOperation(value = "Re-order the list of user task filters", nickname = "orderUserTaskFiltersUsingPUT", notes = "", authorizations = {
@@ -218,13 +146,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> orderUserTaskFiltersUsingPUT(
-
-
-@ApiParam(value = "filterOrderRepresentation" ,required=true )  @Valid @RequestBody UserFilterOrderRepresentation filterOrderRepresentation
-
-);
+    ResponseEntity<Void> orderUserTaskFiltersUsingPUT(@ApiParam(value = "filterOrderRepresentation" ,required=true )  @Valid @RequestBody UserFilterOrderRepresentation filterOrderRepresentation);
 
 
     @ApiOperation(value = "Update a process instance filter", nickname = "updateUserProcessInstanceFilterUsingPUT", notes = "", response = UserProcessInstanceFilterRepresentation.class, authorizations = {
@@ -236,21 +158,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<UserProcessInstanceFilterRepresentation
-> updateUserProcessInstanceFilterUsingPUT(
-
-
-@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long
- userFilterId
-
-
-
-,
-
-
-@ApiParam(value = "userProcessInstanceFilterRepresentation" ,required=true )  @Valid @RequestBody UserProcessInstanceFilterRepresentation userProcessInstanceFilterRepresentation
-
-);
+    ResponseEntity<UserProcessInstanceFilterRepresentation> updateUserProcessInstanceFilterUsingPUT(@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long userFilterId,@ApiParam(value = "userProcessInstanceFilterRepresentation" ,required=true )  @Valid @RequestBody UserProcessInstanceFilterRepresentation userProcessInstanceFilterRepresentation);
 
 
     @ApiOperation(value = "Update a task filter", nickname = "updateUserTaskFilterUsingPUT", notes = "", response = UserTaskFilterRepresentation.class, authorizations = {
@@ -262,20 +170,6 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<UserTaskFilterRepresentation
-> updateUserTaskFilterUsingPUT(
-
-
-@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long
- userFilterId
-
-
-
-,
-
-
-@ApiParam(value = "userTaskFilterRepresentation" ,required=true )  @Valid @RequestBody UserTaskFilterRepresentation userTaskFilterRepresentation
-
-);
+    ResponseEntity<UserTaskFilterRepresentation> updateUserTaskFilterUsingPUT(@ApiParam(value = "userFilterId",required=true) @PathVariable("userFilterId") Long userFilterId,@ApiParam(value = "userTaskFilterRepresentation" ,required=true )  @Valid @RequestBody UserTaskFilterRepresentation userTaskFilterRepresentation);
 
 }

@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AppDefinitionRepresentation   {
   @JsonProperty("defaultAppId")
   private String defaultAppId = null;
@@ -55,7 +54,6 @@ public class AppDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDefaultAppId() {
     return defaultAppId;
   }
@@ -74,7 +72,6 @@ public class AppDefinitionRepresentation   {
    * @return deploymentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDeploymentId() {
@@ -97,7 +94,6 @@ public class AppDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -116,7 +112,6 @@ public class AppDefinitionRepresentation   {
    * @return icon
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getIcon() {
@@ -139,7 +134,6 @@ public class AppDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getId() {
     return id;
   }
@@ -158,7 +152,6 @@ public class AppDefinitionRepresentation   {
    * @return modelId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getModelId() {
@@ -181,7 +174,6 @@ public class AppDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -202,7 +194,6 @@ public class AppDefinitionRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getTenantId() {
     return tenantId;
   }
@@ -221,7 +212,6 @@ public class AppDefinitionRepresentation   {
    * @return theme
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTheme() {

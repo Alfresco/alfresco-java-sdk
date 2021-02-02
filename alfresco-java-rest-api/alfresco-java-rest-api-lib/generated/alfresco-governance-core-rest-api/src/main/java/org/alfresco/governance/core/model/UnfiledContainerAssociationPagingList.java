@@ -19,7 +19,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UnfiledContainerAssociationPagingList   {
   @JsonProperty("pagination")
   private Pagination pagination = null;
@@ -43,7 +42,6 @@ public class UnfiledContainerAssociationPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Pagination getPagination() {
     return pagination;
@@ -74,7 +72,6 @@ public class UnfiledContainerAssociationPagingList   {
 
   @Valid
 
-
   public List<UnfiledContainerChildAssociationEntry> getEntries() {
     return entries;
   }
@@ -95,7 +92,6 @@ public class UnfiledContainerAssociationPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public UnfiledContainer getSource() {
     return source;

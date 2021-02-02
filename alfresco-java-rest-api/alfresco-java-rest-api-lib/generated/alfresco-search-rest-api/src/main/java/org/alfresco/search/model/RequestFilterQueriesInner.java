@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RequestFilterQueriesInner   {
   @JsonProperty("query")
   private String query = null;
@@ -35,7 +34,6 @@ public class RequestFilterQueriesInner   {
    * @return query
   **/
   @ApiModelProperty(value = "The filter query expression. For multi-select facets selected facets must be order together ")
-
 
 
   public String getQuery() {
@@ -64,7 +62,6 @@ public class RequestFilterQueriesInner   {
    * @return tags
   **/
   @ApiModelProperty(value = "Tags used exclude the filters from facet evaluation for multi-select facet support")
-
 
 
   public List<String> getTags() {

@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AppModelDefinition   {
   @JsonProperty("createdBy")
   private Long createdBy = null;
@@ -62,7 +61,6 @@ public class AppModelDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getCreatedBy() {
     return createdBy;
   }
@@ -81,7 +79,6 @@ public class AppModelDefinition   {
    * @return createdByFullName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getCreatedByFullName() {
@@ -104,7 +101,6 @@ public class AppModelDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -123,7 +119,6 @@ public class AppModelDefinition   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -147,7 +142,6 @@ public class AppModelDefinition   {
 
   @Valid
 
-
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
@@ -166,7 +160,6 @@ public class AppModelDefinition   {
    * @return lastUpdatedBy
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getLastUpdatedBy() {
@@ -189,7 +182,6 @@ public class AppModelDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLastUpdatedByFullName() {
     return lastUpdatedByFullName;
   }
@@ -208,7 +200,6 @@ public class AppModelDefinition   {
    * @return modelType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getModelType() {
@@ -231,7 +222,6 @@ public class AppModelDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -252,7 +242,6 @@ public class AppModelDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public Long getStencilSetId() {
     return stencilSetId;
   }
@@ -271,7 +260,6 @@ public class AppModelDefinition   {
    * @return version
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getVersion() {

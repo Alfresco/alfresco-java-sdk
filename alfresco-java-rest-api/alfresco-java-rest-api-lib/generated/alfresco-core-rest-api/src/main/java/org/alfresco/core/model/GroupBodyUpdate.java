@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupBodyUpdate   {
   @JsonProperty("displayName")
   private String displayName = null;
@@ -30,7 +29,6 @@ public class GroupBodyUpdate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getDisplayName() {

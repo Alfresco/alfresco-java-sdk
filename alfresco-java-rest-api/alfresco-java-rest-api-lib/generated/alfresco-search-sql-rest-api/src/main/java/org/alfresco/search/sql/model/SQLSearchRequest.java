@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SQLSearchRequest   {
   @JsonProperty("stmt")
   private String stmt = null;
@@ -50,7 +49,6 @@ public class SQLSearchRequest   {
   @ApiModelProperty(value = "")
 
 
-
   public String getStmt() {
     return stmt;
   }
@@ -69,7 +67,6 @@ public class SQLSearchRequest   {
    * @return format
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getFormat() {
@@ -100,7 +97,6 @@ public class SQLSearchRequest   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getLocales() {
     return locales;
   }
@@ -119,7 +115,6 @@ public class SQLSearchRequest   {
    * @return timezone
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTimezone() {
@@ -150,7 +145,6 @@ public class SQLSearchRequest   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getFilterQueries() {
     return filterQueries;
   }
@@ -169,7 +163,6 @@ public class SQLSearchRequest   {
    * @return includeMetadata
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIncludeMetadata() {

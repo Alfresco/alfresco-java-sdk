@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DataSourceRepresentation   {
   @JsonProperty("config")
   private DataSourceConfigRepresentation config = null;
@@ -42,7 +41,6 @@ public class DataSourceRepresentation   {
 
   @Valid
 
-
   public DataSourceConfigRepresentation getConfig() {
     return config;
   }
@@ -61,7 +59,6 @@ public class DataSourceRepresentation   {
    * @return id
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getId() {
@@ -84,7 +81,6 @@ public class DataSourceRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -103,7 +99,6 @@ public class DataSourceRepresentation   {
    * @return tenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getTenantId() {

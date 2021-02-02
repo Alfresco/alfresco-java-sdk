@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "The consistency state of the index used to execute the query")
 @Validated
 
-
 public class ResponseConsistency   {
   @JsonProperty("lastTxId")
   private Integer lastTxId = null;
@@ -30,7 +29,6 @@ public class ResponseConsistency   {
    * @return lastTxId
   **/
   @ApiModelProperty(value = "The id of the last indexed transaction")
-
 
 
   public Integer getLastTxId() {

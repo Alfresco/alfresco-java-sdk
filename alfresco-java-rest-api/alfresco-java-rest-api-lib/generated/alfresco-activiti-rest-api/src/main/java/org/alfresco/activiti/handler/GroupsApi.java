@@ -35,48 +35,7 @@ public interface GroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationLightGroupRepresentation
-> getGroupsUsingGET(
-
-@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String
- filter
-
-
-
-
-,
-
-@ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long
- groupId
-
-
-
-
-,
-
-@ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String
- externalId
-
-
-
-
-,
-
-@ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String
- externalIdCaseInsensitive
-
-
-
-
-,
-
-@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long
- tenantId
-
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationLightGroupRepresentation> getGroupsUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter,@ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId,@ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String externalId,@ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String externalIdCaseInsensitive,@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId);
 
 
     @ApiOperation(value = "List members of a group", nickname = "getUsersForGroupUsingGET", notes = "", response = ResultListDataRepresentationLightUserRepresentation.class, authorizations = {
@@ -88,15 +47,6 @@ public interface GroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ResultListDataRepresentationLightUserRepresentation
-> getUsersForGroupUsingGET(
-
-
-@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long
- groupId
-
-
-
-);
+    ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getUsersForGroupUsingGET(@ApiParam(value = "groupId",required=true) @PathVariable("groupId") Long groupId);
 
 }

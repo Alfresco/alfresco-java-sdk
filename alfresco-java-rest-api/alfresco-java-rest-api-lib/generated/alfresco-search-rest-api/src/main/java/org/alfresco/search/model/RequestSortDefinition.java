@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "How to sort the rows? An array of sort specifications. The array order defines the ordering precedence.")
 @Validated
 
-
 public class RequestSortDefinition extends ArrayList<RequestSortDefinitionInner>  {
 
   @Override

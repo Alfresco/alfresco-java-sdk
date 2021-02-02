@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FormIdentifierRepresentation   {
   @JsonProperty("formId")
   private Long formId = null;
@@ -29,7 +28,6 @@ public class FormIdentifierRepresentation   {
    * @return formId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getFormId() {

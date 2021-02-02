@@ -17,7 +17,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Localization settings")
 @Validated
 
-
 public class RequestLocalization   {
   @JsonProperty("timezone")
   private String timezone = null;
@@ -36,7 +35,6 @@ public class RequestLocalization   {
    * @return timezone
   **/
   @ApiModelProperty(value = "A valid timezone id supported by @see java.time.ZoneId")
-
 
 
   public String getTimezone() {
@@ -65,7 +63,6 @@ public class RequestLocalization   {
    * @return locales
   **/
   @ApiModelProperty(value = "A list of Locales definied by IETF BCP 47.  The ordering is significant.  The first locale (leftmost) is used for sort and query localization, whereas the remaining locales are used for query only.")
-
 
 
   public List<String> getLocales() {

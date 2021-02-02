@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessInstanceFilterRepresentation   {
   @JsonProperty("asc")
   private Boolean asc = null;
@@ -46,7 +45,6 @@ public class ProcessInstanceFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isAsc() {
     return asc;
   }
@@ -65,7 +63,6 @@ public class ProcessInstanceFilterRepresentation   {
    * @return name
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getName() {
@@ -88,7 +85,6 @@ public class ProcessInstanceFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionId() {
     return processDefinitionId;
   }
@@ -107,7 +103,6 @@ public class ProcessInstanceFilterRepresentation   {
    * @return processDefinitionKey
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionKey() {
@@ -130,7 +125,6 @@ public class ProcessInstanceFilterRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSort() {
     return sort;
   }
@@ -149,7 +143,6 @@ public class ProcessInstanceFilterRepresentation   {
    * @return state
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getState() {

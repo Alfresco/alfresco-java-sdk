@@ -15,7 +15,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RecordCategoryEntry   {
   @JsonProperty("entry")
   private RecordCategory entry = null;
@@ -33,7 +32,6 @@ public class RecordCategoryEntry   {
   @NotNull
 
   @Valid
-
 
   public RecordCategory getEntry() {
     return entry;

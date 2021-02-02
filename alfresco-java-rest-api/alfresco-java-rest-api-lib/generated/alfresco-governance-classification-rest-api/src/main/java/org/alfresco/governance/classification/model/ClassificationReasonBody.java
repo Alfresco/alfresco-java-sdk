@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ClassificationReasonBody   {
   @JsonProperty("code")
   private String code = null;
@@ -33,7 +32,6 @@ public class ClassificationReasonBody   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getCode() {
@@ -55,7 +53,6 @@ public class ClassificationReasonBody   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getDescription() {

@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class HistoricProcessInstanceQueryRepresentation   {
   @JsonProperty("excludeSubprocesses")
   private Boolean excludeSubprocesses = null;
@@ -103,7 +102,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isExcludeSubprocesses() {
     return excludeSubprocesses;
   }
@@ -122,7 +120,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return finished
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isFinished() {
@@ -146,7 +143,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getFinishedAfter() {
     return finishedAfter;
   }
@@ -168,7 +164,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getFinishedBefore() {
     return finishedBefore;
   }
@@ -187,7 +182,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return includeProcessVariables
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIncludeProcessVariables() {
@@ -210,7 +204,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getInvolvedUser() {
     return involvedUser;
   }
@@ -229,7 +222,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return order
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getOrder() {
@@ -252,7 +244,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessBusinessKey() {
     return processBusinessKey;
   }
@@ -271,7 +262,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return processDefinitionId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionId() {
@@ -294,7 +284,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
@@ -313,7 +302,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return processInstanceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceId() {
@@ -344,7 +332,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getProcessInstanceIds() {
     return processInstanceIds;
   }
@@ -363,7 +350,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return size
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getSize() {
@@ -386,7 +372,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSort() {
     return sort;
   }
@@ -405,7 +390,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return start
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getStart() {
@@ -429,7 +413,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getStartedAfter() {
     return startedAfter;
   }
@@ -451,7 +434,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
 
   @Valid
 
-
   public OffsetDateTime getStartedBefore() {
     return startedBefore;
   }
@@ -470,7 +452,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return startedBy
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getStartedBy() {
@@ -493,7 +474,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getSuperProcessInstanceId() {
     return superProcessInstanceId;
   }
@@ -514,7 +494,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTenantId() {
     return tenantId;
   }
@@ -533,7 +512,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return tenantIdLike
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTenantIdLike() {
@@ -565,7 +543,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
 
   @Valid
 
-
   public List<QueryVariable> getVariables() {
     return variables;
   }
@@ -584,7 +561,6 @@ public class HistoricProcessInstanceQueryRepresentation   {
    * @return withoutTenantId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isWithoutTenantId() {

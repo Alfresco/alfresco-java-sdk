@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessScopeIdentifierRepresentation   {
   @JsonProperty("processActivityId")
   private String processActivityId = null;
@@ -32,7 +31,6 @@ public class ProcessScopeIdentifierRepresentation   {
    * @return processActivityId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessActivityId() {
@@ -53,7 +51,6 @@ public class ProcessScopeIdentifierRepresentation   {
    * @return processModelId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getProcessModelId() {

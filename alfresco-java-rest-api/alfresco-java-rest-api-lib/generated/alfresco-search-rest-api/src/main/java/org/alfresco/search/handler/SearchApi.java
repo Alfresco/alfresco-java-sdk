@@ -37,12 +37,6 @@ public interface SearchApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResultSetPaging
-> search(
-
-
-@ApiParam(value = "Generic query API " ,required=true )  @Valid @RequestBody SearchRequest queryBody
-
-);
+    ResponseEntity<ResultSetPaging> search(@ApiParam(value = "Generic query API " ,required=true )  @Valid @RequestBody SearchRequest queryBody);
 
 }

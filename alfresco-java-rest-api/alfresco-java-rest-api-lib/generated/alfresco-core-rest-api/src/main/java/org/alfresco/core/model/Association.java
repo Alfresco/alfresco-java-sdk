@@ -14,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Association   {
   @JsonProperty("targetId")
   private String targetId = null;
@@ -33,7 +32,6 @@ public class Association   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getTargetId() {
@@ -55,7 +53,6 @@ public class Association   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getAssocType() {

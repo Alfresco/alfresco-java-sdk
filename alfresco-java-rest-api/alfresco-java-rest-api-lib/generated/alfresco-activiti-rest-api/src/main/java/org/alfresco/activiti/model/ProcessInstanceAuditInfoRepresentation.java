@@ -18,7 +18,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProcessInstanceAuditInfoRepresentation   {
   @JsonProperty("decisionInfo")
   private AuditDecisionInfoRepresentation decisionInfo = null;
@@ -64,7 +63,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
 
   @Valid
 
-
   public AuditDecisionInfoRepresentation getDecisionInfo() {
     return decisionInfo;
   }
@@ -94,7 +92,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
 
   @Valid
 
-
   public List<AuditLogEntryRepresentation> getEntries() {
     return entries;
   }
@@ -113,7 +110,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
    * @return processDefinitionName
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessDefinitionName() {
@@ -136,7 +132,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
@@ -155,7 +150,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
    * @return processInstanceDurationInMillis
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Long getProcessInstanceDurationInMillis() {
@@ -178,7 +172,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessInstanceEndTime() {
     return processInstanceEndTime;
   }
@@ -197,7 +190,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
    * @return processInstanceId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceId() {
@@ -220,7 +212,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessInstanceInitiator() {
     return processInstanceInitiator;
   }
@@ -241,7 +232,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
   @ApiModelProperty(value = "")
 
 
-
   public String getProcessInstanceName() {
     return processInstanceName;
   }
@@ -260,7 +250,6 @@ public class ProcessInstanceAuditInfoRepresentation   {
    * @return processInstanceStartTime
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getProcessInstanceStartTime() {

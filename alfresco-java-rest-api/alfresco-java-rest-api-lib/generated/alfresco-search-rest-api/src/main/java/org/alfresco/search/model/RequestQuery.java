@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Query.")
 @Validated
 
-
 public class RequestQuery   {
   /**
    * The query language in which the query is written.
@@ -72,7 +71,6 @@ public class RequestQuery   {
   @ApiModelProperty(value = "The query language in which the query is written.")
 
 
-
   public LanguageEnum getLanguage() {
     return language;
   }
@@ -91,7 +89,6 @@ public class RequestQuery   {
    * @return userQuery
   **/
   @ApiModelProperty(value = "The exact search request typed in by the user")
-
 
 
   public String getUserQuery() {
@@ -113,7 +110,6 @@ public class RequestQuery   {
   **/
   @ApiModelProperty(required = true, value = "The query which may have been generated in some way from the userQuery")
   @NotNull
-
 
 
   public String getQuery() {
