@@ -53,7 +53,7 @@ public class EventHandlingRegistry {
      * @return the {@link List} of {@link EventHandler}s registered for the corresponding event type
      */
     public List<EventHandler> getEventHandlers(final RepoEvent repoEvent) {
-        return eventHandlers.getOrDefault(repoEvent.getType(), Collections.EMPTY_LIST);
+        return eventHandlers.getOrDefault(repoEvent.getType(), Collections.emptyList());
     }
 
     private void registerHandler(final EventHandler eventHandler) {
