@@ -44,7 +44,7 @@ public class PeerAssocInfo {
         if (!(o instanceof PeerAssocInfo)) {
             return false;
         }
-        final PeerAssocInfo that = (PeerAssocInfo) o;
+        final PeerAssocInfo that = (PeerAssocInfo)o;
         return Objects.equals(id, that.id);
     }
 
@@ -56,6 +56,5 @@ public class PeerAssocInfo {
     @Override
     public String toString() {
         return "PeerAssocInfo [id=" + id + ']';
-        return sb;
     }
 }
