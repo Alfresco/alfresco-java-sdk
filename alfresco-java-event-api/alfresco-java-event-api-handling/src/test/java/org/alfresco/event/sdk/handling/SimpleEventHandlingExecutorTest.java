@@ -78,7 +78,7 @@ public class SimpleEventHandlingExecutorTest {
     public void should_notExecuteEventHandler_when_repEventForNonExistingEventHandlerIsSent() {
         final RepoEvent<DataAttributes<Resource>> repoEvent = RepoEvent.<DataAttributes<Resource>>builder()
                 .build();
-        given(mockEventHandlingRegistry.getEventHandlers(repoEvent)).willReturn(Collections.EMPTY_LIST);
+        given(mockEventHandlingRegistry.getEventHandlers(repoEvent)).willReturn(Collections.emptyList());
         given(mockEventHandler.getEventFilter()).willReturn(event -> false);
 
         simpleEventHandlingExecutor.executeEventHandlers(repoEvent);
