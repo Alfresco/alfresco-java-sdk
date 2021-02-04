@@ -6,15 +6,12 @@
 
   <parent>
     <groupId>org.alfresco</groupId>
-    <artifactId>alfresco-java-sdk</artifactId>
+    <artifactId>alfresco-java-rest-api</artifactId>
     <version>5.0.0-SNAPSHOT</version>
-    <relativePath>../../</relativePath>
   </parent>
 
-  <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-rest-api-lib</artifactId>
-  <version>5.0.0-SNAPSHOT</version>
-  <name>Alfresco Java REST API</name>
+  <name>Alfresco Java Rest API :: Clients Library</name>
   <packaging>pom</packaging>
 
   <properties>
