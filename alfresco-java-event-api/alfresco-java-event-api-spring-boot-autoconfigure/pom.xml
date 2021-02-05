@@ -63,11 +63,5 @@
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-model</artifactId>
     </dependency>
-
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>acs-enterprise-event-model</artifactId>
-      <optional>true</optional>
-    </dependency>
   </dependencies>
 </project>

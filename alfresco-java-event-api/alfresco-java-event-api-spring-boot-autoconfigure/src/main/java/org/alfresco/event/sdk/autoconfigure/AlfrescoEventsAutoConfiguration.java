@@ -17,10 +17,6 @@
 package org.alfresco.event.sdk.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.ArrayList;
-import java.util.List;
-import javax.jms.Topic;
-import org.alfresco.enterprise.repo.event.databind.EnterpriseObjectMapperFactory;
 import org.alfresco.event.sdk.handling.EventHandlingExecutor;
 import org.alfresco.event.sdk.handling.EventHandlingRegistry;
 import org.alfresco.event.sdk.handling.SimpleEventHandlingExecutor;
@@ -36,7 +32,6 @@ import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration;
 import org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration;
 import org.springframework.boot.autoconfigure.jms.activemq.ActiveMQAutoConfiguration;
@@ -51,6 +46,10 @@ import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.integration.jms.dsl.Jms;
 import org.springframework.integration.transformer.GenericTransformer;
 
+import javax.jms.Topic;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * {@link org.springframework.boot.autoconfigure.EnableAutoConfiguration Auto-configuration} for Alfresco Event Java API.
  * <p>
@@ -64,16 +63,15 @@ import org.springframework.integration.transformer.GenericTransformer;
  * This way the integrator can configure the Alfresco Java Event API to consume the events using Spring Integration or plain Java event handlers.
  */
 @Configuration
-@AutoConfigureAfter({IntegrationAutoConfiguration.class, ActiveMQAutoConfiguration.class, JmsAutoConfiguration.class})
+@AutoConfigureAfter({ IntegrationAutoConfiguration.class, ActiveMQAutoConfiguration.class, JmsAutoConfiguration.class })
 @ConditionalOnClass(RepoEvent.class)
 @EnableConfigurationProperties(AlfrescoEventsProperties.class)
 public class AlfrescoEventsAutoConfiguration {
 
-    @Autowired
-    private AlfrescoEventsProperties alfrescoEventsProperties;
-
     @Autowired(required = false)
     private final List<EventHandler> eventHandlers = new ArrayList<>();
+    @Autowired
+    private AlfrescoEventsProperties alfrescoEventsProperties;
 
     // CORE INTEGRATION WITH BROKER CONFIGURATION
     @Bean
@@ -105,16 +103,9 @@ public class AlfrescoEventsAutoConfiguration {
         return new EventGenericTransformer(acsEventObjectMapper());
     }
 
-    @ConditionalOnMissingClass("org.alfresco.enterprise.repo.event.databind.EnterpriseObjectMapperFactory")
     @Bean
     public ObjectMapper acsEventObjectMapper() {
         return ObjectMapperFactory.createInstance();
-    }
-
-    @ConditionalOnClass(name = "org.alfresco.enterprise.repo.event.databind.EnterpriseObjectMapperFactory")
-    @Bean(name = "acsEventObjectMapper")
-    public ObjectMapper acsEventEnterpriseObjectMapper() {
-        return EnterpriseObjectMapperFactory.createInstance();
     }
 
     // SPRING INTEGRATION OPTION CONFIGURATION
