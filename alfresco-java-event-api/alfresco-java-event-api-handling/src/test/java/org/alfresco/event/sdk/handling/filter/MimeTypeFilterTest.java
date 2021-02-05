@@ -16,15 +16,10 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import org.alfresco.event.sdk.model.v1.model.ContentInfo;
-import org.alfresco.event.sdk.model.v1.model.DataAttributes;
-import org.alfresco.event.sdk.model.v1.model.EventData;
-import org.alfresco.event.sdk.model.v1.model.NodeResource;
-import org.alfresco.event.sdk.model.v1.model.RepoEvent;
-import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.alfresco.event.sdk.model.v1.model.*;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Unit tests for {@link MimeTypeFilter}.
@@ -32,8 +27,9 @@ import org.junit.Test;
 public class MimeTypeFilterTest {
 
     private static final String TEST_MIMETYPE = "test/test";
+    private static final String TEST_ALTERNATIVE_MIMETYPE = "test/alternative";
 
-    private final MimeTypeFilter mimeTypeFilter = MimeTypeFilter.of(TEST_MIMETYPE);
+    private final MimeTypeFilter mimeTypeFilter = MimeTypeFilter.of(TEST_MIMETYPE, TEST_ALTERNATIVE_MIMETYPE);
 
     @Test
     public void should_testTrue_when_eventWithAcceptedMimeTypeIsSent() {
@@ -47,7 +43,24 @@ public class MimeTypeFilterTest {
                 .setData(eventData)
                 .build();
 
-        final boolean result = mimeTypeFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
+        final boolean result = mimeTypeFilter.test((RepoEvent<DataAttributes<Resource>>)repoEvent);
+
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void should_testTrue_when_eventWithAnyOfTheAcceptedMimeTypesIsSent() {
+        final NodeResource nodeResource = NodeResource.builder()
+                .setContent(new ContentInfo(TEST_ALTERNATIVE_MIMETYPE, 16L, "UTF-8"))
+                .build();
+        final EventData<NodeResource> eventData = EventData.<NodeResource>builder()
+                .setResource(nodeResource)
+                .build();
+        final RepoEvent<? extends DataAttributes<? extends Resource>> repoEvent = RepoEvent.<EventData<NodeResource>>builder()
+                .setData(eventData)
+                .build();
+
+        final boolean result = mimeTypeFilter.test((RepoEvent<DataAttributes<Resource>>)repoEvent);
 
         assertThat(result).isTrue();
     }
@@ -64,7 +77,7 @@ public class MimeTypeFilterTest {
                 .setData(eventData)
                 .build();
 
-        final boolean result = mimeTypeFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
+        final boolean result = mimeTypeFilter.test((RepoEvent<DataAttributes<Resource>>)repoEvent);
 
         assertThat(result).isFalse();
     }
@@ -80,7 +93,7 @@ public class MimeTypeFilterTest {
                 .setData(eventData)
                 .build();
 
-        final boolean result = mimeTypeFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
+        final boolean result = mimeTypeFilter.test((RepoEvent<DataAttributes<Resource>>)repoEvent);
 
         assertThat(result).isFalse();
     }

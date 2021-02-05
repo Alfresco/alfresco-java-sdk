@@ -16,7 +16,6 @@
 
 package org.alfresco.event.sdk.handling.filter;
 
-import java.util.Objects;
 import org.alfresco.event.sdk.model.v1.model.DataAttributes;
 import org.alfresco.event.sdk.model.v1.model.NodeResource;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
@@ -24,32 +23,38 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
 /**
- * {@link EventFilter} that checks if an events makes reference to a content with a specific mime-type.
+ * {@link EventFilter} that checks if an events makes reference to a content with a specific mime-type within a set of them.
  */
 public class MimeTypeFilter extends AbstractEventFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MimeTypeFilter.class);
 
-    private final String acceptedMimeType;
+    private final Set<String> acceptedMimeTypes;
 
-    private MimeTypeFilter(final String acceptedMimeType) {
-        this.acceptedMimeType = Objects.requireNonNull(acceptedMimeType);
+    private MimeTypeFilter(final Set<String> acceptedMimeTypes) {
+        this.acceptedMimeTypes = acceptedMimeTypes;
     }
 
     /**
      * Obtain a {@link MimeTypeFilter} for a specific mime-type.
      *
-     * @param acceptedMimeType given mime-type that must be accepted by the filter
+     * @param acceptedMimeTypes given list of mime-type's that must be accepted by the filter
      * @return created {@link MimeTypeFilter}
      */
-    public static MimeTypeFilter of(final String acceptedMimeType) {
-        return new MimeTypeFilter(acceptedMimeType);
+    public static MimeTypeFilter of(final String... acceptedMimeTypes) {
+        Objects.requireNonNull(acceptedMimeTypes);
+        return new MimeTypeFilter(new HashSet<>(Arrays.asList(acceptedMimeTypes)));
     }
 
     @Override
     public boolean test(final RepoEvent<DataAttributes<Resource>> event) {
-        LOGGER.debug("Checking filter for MimeType {} and event {}", acceptedMimeType, event);
-        return isContentEvent(event) && acceptedMimeType.equals(((NodeResource) event.getData().getResource()).getContent().getMimeType());
+        LOGGER.debug("Checking filter for MimeTypes {} and event {}", acceptedMimeTypes, event);
+        return isContentEvent(event) && acceptedMimeTypes.contains(((NodeResource)event.getData().getResource()).getContent().getMimeType());
     }
 }
