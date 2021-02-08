@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.4.2</version>
+    <relativePath/>
+  </parent>
+  <groupId>org.alfresco.sdk</groupId>
+  <artifactId>alfresco-java-sdk</artifactId>
+  <version>5.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Alfresco :: Java SDK :: Parent</name>
+  <description>Parent for Alfresco Java SDK</description>
+  <url>https://github.com/Alfresco/${project.scm.repository}</url>
+  <inceptionYear>2021</inceptionYear>
+  <organization>
+    <name>Alfresco Software, Ltd</name>
+    <url>https://www.alfresco.com</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Zoltan Palfi</name>
+      <email>zoltan.palfi@alfresco.com</email>
+    </developer>
+    <developer>
+      <name>Martin Bergljung</name>
+      <email>martin.bergljung@alfresco.com</email>
+    </developer>
+    <developer>
+      <name>Marcello Teodori</name>
+      <email>marcello.teodori@alfresco.com</email>
+    </developer>
+    <developer>
+      <name>Jose Luis Osorno</name>
+      <email>joseluis.osorno@ixxus.com</email>
+    </developer>
+    <developer>
+      <name>Miguel Angel Martin</name>
+      <email>miguelangel.martin@ixxus.com</email>
+    </developer>
+  </developers>
+  <modules>
+    <!--   <module>alfresco-java-event-api</module> -->
+    <!--   <module>alfresco-java-rest-api</module> -->
+    <!--   <module>samples</module> -->
+  </modules>
+  <scm>
+    <url>http://github.com/${project.scm.organisation}/${project.scm.repository}</url>
+    <connection>scm:git:git://github.com/${project.scm.organisation}/${project.scm.repository}.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/${project.scm.organisation}/${project.scm.repository}.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/Alfresco/alfresco-sdk/issues</url>
+  </issueManagement>
+  <ciManagement>
+    <system>travis-ci</system>
+    <url>https://travis-ci.com/${project.scm.organisation}/${project.scm.repository}</url>
+  </ciManagement>
+  <distributionManagement>
+    <repository>
+      <id>alfresco-internal</id>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-enterprise-releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>alfresco-internal-snapshots</id>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-enterprise-snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <properties>
+    <project.scm.organisation>Alfresco</project.scm.organisation>
+    <project.scm.repository>alfresco-java-sdk</project.scm.repository>
+    <project.year>2021</project.year>
+    <java.release>11</java.release>
+    <java.version>1.${java.release}</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.release>${java.release}</maven.compiler.release>
+    <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
+  </properties>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>${javax-jaxb.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+    </dependency>
+  </dependencies>
+</project>
