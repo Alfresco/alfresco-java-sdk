@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.alfresco.rest.sdk.config.AlfrescoRestApiAutoConfiguration
