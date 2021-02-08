@@ -4,9 +4,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.alfresco</groupId>
+  <parent>
+    <groupId>org.alfresco</groupId>
+    <artifactId>alfresco-java-sdk-samples</artifactId>
+    <version>5.0.0-SNAPSHOT</version>
+  </parent>
+
   <artifactId>event-api-handlers</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>Alfresco Java Event API :: Sample Handlers App</name>
   <description>Sample application to demonstrate Java Event API client handlers approach</description>
 
@@ -31,7 +35,7 @@
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>5.0.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
