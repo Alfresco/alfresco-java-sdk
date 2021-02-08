@@ -1,0 +1,48 @@
+{
+  "$schema" : "https://json-schema.org/draft/2019-09/schema",
+  "$defs" : {
+    "Resource" : {
+      "type" : "object"
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "specversion" : {
+      "type" : "string"
+    },
+    "type" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "string"
+    },
+    "source" : {
+      "type" : "string"
+    },
+    "time" : {
+      "type" : "string"
+    },
+    "dataschema" : {
+      "type" : "string"
+    },
+    "datacontenttype" : {
+      "type" : "string"
+    },
+    "data" : {
+      "type" : "object",
+      "properties" : {
+        "eventGroupId" : {
+          "type" : "string"
+        },
+        "resource" : {
+          "$ref" : "#/$defs/Resource"
+        },
+        "resourceBefore" : {
+          "$ref" : "#/$defs/Resource"
+        }
+      },
+      "required" : [ "eventGroupId", "resource", "resourceBefore" ]
+    }
+  },
+  "required" : [ "specversion", "type", "id", "source", "time", "dataschema", "datacontenttype", "data" ]
+}
