@@ -8,14 +8,14 @@
     <version>2.4.2</version>
     <relativePath/>
   </parent>
-  <groupId>org.alfresco.sdk</groupId>
+  <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
   <version>5.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Parent</name>
   <description>Parent for Alfresco Java SDK</description>
   <url>https://github.com/Alfresco/${project.scm.repository}</url>
-  <inceptionYear>2021</inceptionYear>
+  <inceptionYear>${project.year}</inceptionYear>
   <organization>
     <name>Alfresco Software, Ltd</name>
     <url>https://www.alfresco.com</url>
@@ -67,16 +67,10 @@
     <system>travis-ci</system>
     <url>https://travis-ci.com/${project.scm.organisation}/${project.scm.repository}</url>
   </ciManagement>
+
   <distributionManagement>
-    <repository>
-      <id>alfresco-internal</id>
-      <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-enterprise-releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>alfresco-internal-snapshots</id>
-      <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-enterprise-snapshots</url>
-    </snapshotRepository>
   </distributionManagement>
+
   <properties>
     <project.scm.organisation>Alfresco</project.scm.organisation>
     <project.scm.repository>alfresco-java-sdk</project.scm.repository>
@@ -98,6 +92,21 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+    <repository>
+      <id>alfresco-public</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+    </repository>
+    <repository>
+      <id>alfresco-public-snapshots</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>alfresco-private-repository</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/private</url>
+    </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
@@ -113,23 +122,4 @@
       </releases>
     </pluginRepository>
   </pluginRepositories>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.sun.xml.bind</groupId>
-        <artifactId>jaxb-impl</artifactId>
-        <version>${javax-jaxb.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.sun.xml.bind</groupId>
-      <artifactId>jaxb-impl</artifactId>
-    </dependency>
-  </dependencies>
 </project>
