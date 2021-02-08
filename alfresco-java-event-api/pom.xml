@@ -43,19 +43,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>11</release>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
   <modules>
     <module>alfresco-java-event-api-handling</module>
     <module>alfresco-java-event-api-integration</module>
@@ -63,11 +50,4 @@
     <module>alfresco-java-event-api-spring-boot-autoconfigure</module>
     <module>alfresco-java-event-api-spring-boot-starter</module>
   </modules>
-
-  <repositories>
-    <repository>
-      <id>alfresco-maven-repo</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
-    </repository>
-  </repositories>
 </project>
