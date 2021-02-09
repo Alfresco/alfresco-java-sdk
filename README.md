@@ -27,18 +27,25 @@ Alfresco Java SDK consist of the following groups of libraries:
 * [alfresco-java-rest-api](alfresco-java-event-api): Allows applications to consume Alfresco public REST APIs.
 * [alfresco-java-event-api](alfresco-java-event-api): Allows applications to react to events produced by Alfresco Repository.
 
-# Pre-Requisites
+The [samples](samples) folder includes examples, sample applications and code snippets of the different features supported by the SDK. Each sample application contains a `docker-compose` file and scripts that allows you to build and run the extension.  
+
+
+### Pre-Requisites
 
 * Java version 11 or higher
 * Maven version 3.3 or higher
 
-# Quick start
+### Quick start
 
-Create a new SpringBoot application
 
-Import the following Maven dependencies
 
-```
+#### 1. Create a new SpringBoot application
+
+#### 2. Add this dependency to your project's build file:
+
+Maven:
+
+```xml
   <dependencies>
 
     <!-- Java REST API -->
@@ -57,3 +64,113 @@ Import the following Maven dependencies
   </dependencies>
 ```
 
+Gradle:
+
+```groovy
+compile "org.alfresco:alfresco-java-rest-api-spring-boot-starter:5.0"
+compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.0"
+```
+
+
+#### 3. In your ```application.properties``` file define the properties required to connect to the ActiveMQ broker in order to handle Repository events:
+
+```
+spring.activemq.brokerUrl=tcp://activemq-host:61616
+```
+Alternatively, set `SPRING_ACTIVEMQ_BROKER_URL` environment variable. 
+
+For additional configuration properties of Event API, check [alfresco-java-event-api](alfresco-java-event-api).
+
+#### 4. In your ```application.properties``` file provide URL, authentication mechanism and credentials for accessing the REST API:
+
+```
+content.service.url=http://repository:8080
+content.service.security.basicAuth.username=admin
+content.service.security.basicAuth.password=admin
+```
+
+Alternatively, if you are using OAuth2, you can use client-credential based authentication:
+
+```
+security.oauth2.client.grantType=client_credentials
+security.oauth2.client.clientId=clientId
+security.oauth2.client.clientSecret=clientSecret
+security.oauth2.client.accessTokenUri=${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/token
+```
+
+#### 5. Handle events produced by the Repository
+
+Use out-of-the-box Event Handlers to handle specific events, using Event Filters to react to the event, only if it meets certain conditions.
+
+```java
+/**
+ * Sample event handler to demonstrate reacting to the update of a content in the repository.
+ */
+@Component
+public class ContentUpdatedHandler implements OnNodeUpdatedEventHandler {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ContentUpdatedHandler.class);
+
+    @Override
+    public void handleEvent(final RepoEvent<DataAttributes<Resource>> repoEvent) {
+        LOGGER.info("The content of the node {} has been updated!", ((NodeResource) repoEvent.getData().getResource()).getName());
+    }
+
+    @Override
+    public EventFilter getEventFilter() {
+        return ContentChangedFilter.get();
+    }
+}
+```
+
+Use `@Order` annotation to define an execution order of multiple event handlers.
+
+
+```java
+    /**
+     * This event handler definition illustrates how you can use Spring's {@link Order} annotation to sort the execution of event handlers.
+     */
+    @Bean
+    @Order(10)
+    public OnNodeCreatedEventHandler firstCustomNodeCreatedEventHandler() {
+        return repoEvent -> LOGGER.info("First Event handler triggered on node created - Event: {}", repoEvent);
+    }
+
+    /**
+     * This event handler definition illustrates how you can use Spring's {@link Order} annotation to sort the execution of event handlers.
+     */
+    @Bean
+    @Order(20)
+    public OnNodeCreatedEventHandler secondCustomNodeCreatedEventHandler() {
+        return repoEvent -> LOGGER.info("Second Event handler triggered on node created - Event: {}", repoEvent);
+    }
+```
+
+Alternatively, use Spring Integration to consume events:
+
+```java
+    @Bean
+    public IntegrationFlow logTheCreationOfHTMLContent() {
+        return IntegrationFlows.from(EventChannels.MAIN)
+                .filter(IntegrationEventFilter.of(EventTypeFilter.NODE_CREATED
+                                                    .and(MimeTypeFilter.of("text/html"))))
+                .handle(t -> LOGGER.info("An HTML content has been created! - Event: {}", t.getPayload().toString()))
+                .get();
+    }
+```
+
+You can find more information about how to consume events at [alfresco-java-event-api](alfresco-java-event-api).
+
+#### 6. Consume the REST API
+
+```java
+    CommentsApi commentsApi;
+
+    public void addComentToNode(final String nodeId) {
+        CommentBody commentBody = new CommentBody().content("I like this file");
+        commentsApi.createComment(nodeId, commentBody);
+    }
+}
+```
+
+You can find more information about how to consume REST API at [alfresco-java-rest-api](alfresco-java-rest-api).
