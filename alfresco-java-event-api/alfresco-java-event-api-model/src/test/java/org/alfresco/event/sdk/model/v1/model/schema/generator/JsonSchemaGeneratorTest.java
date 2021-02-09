@@ -45,9 +45,6 @@ import org.alfresco.event.sdk.model.v1.model.schema.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.schema.Required;
 import org.junit.Test;
 
-/**
- * @author Jamal Kaabi-Mofrad
- */
 public class JsonSchemaGeneratorTest {
 
     @Test

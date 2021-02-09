@@ -17,8 +17,6 @@ package org.alfresco.event.sdk.model.v1.model;
 
 /**
  * Alfresco event's data.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public interface DataAttributes<R extends Resource> {
 

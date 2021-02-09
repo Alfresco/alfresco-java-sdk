@@ -25,8 +25,6 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * Jackson deserializer for the {@link ZonedDateTime} type.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public class DateTimeDeserializer extends StdDeserializer<ZonedDateTime> {
 

@@ -29,9 +29,6 @@ import org.alfresco.event.sdk.model.v1.model.NodeResource;
 import org.alfresco.event.sdk.model.v1.model.PeerAssociationResource;
 import org.alfresco.event.sdk.model.v1.model.Resource;
 
-/**
- * @author Jamal Kaabi-Mofrad
- */
 public class ResourceDeserializer extends JsonDeserializer<Resource> {
 
     private static final String TYPE_FIELD = "@type";

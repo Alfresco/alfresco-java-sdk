@@ -24,8 +24,6 @@ import org.alfresco.event.sdk.model.EventAttributes;
 
 /**
  * Represents Alfresco event.
- *
- * @author Jamal Kaabi-Mofrad
  */
 @JsonDeserialize(builder = RepoEvent.Builder.class)
 public class RepoEvent<D extends DataAttributes<? extends Resource>> implements EventAttributes {

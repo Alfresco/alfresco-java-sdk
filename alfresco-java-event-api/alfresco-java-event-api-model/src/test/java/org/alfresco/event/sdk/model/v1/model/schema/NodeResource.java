@@ -28,8 +28,6 @@ import org.alfresco.event.sdk.model.v1.model.UserInfo;
 
 /**
  * Event data object to generate the JSON schema for {@code NodeResource}.
- *
- * @author Jamal Kaabi-Mofrad
  */
 // Used with jsonschema-generator to control the order
 @JsonPropertyOrder

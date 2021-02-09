@@ -34,9 +34,6 @@ import org.alfresco.event.sdk.model.util.TestUtil;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
-/**
- * @author Jamal Kaabi-Mofrad
- */
 public class EventTest {
 
     private static final ObjectMapper OBJECT_MAPPER = ObjectMapperFactory.createInstance();
