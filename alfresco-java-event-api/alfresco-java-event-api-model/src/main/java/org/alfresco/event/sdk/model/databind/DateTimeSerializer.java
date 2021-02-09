@@ -24,8 +24,6 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * Jackson serializer for the values of type {@link ZonedDateTime}.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public class DateTimeSerializer extends StdSerializer<ZonedDateTime> {
 

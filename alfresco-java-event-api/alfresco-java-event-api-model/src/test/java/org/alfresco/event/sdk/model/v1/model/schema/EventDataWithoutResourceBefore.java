@@ -22,8 +22,6 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
 
 /**
  * Event data object to generate the JSON schema without {@code resourceBefore} property.
- *
- * @author Jamal Kaabi-Mofrad
  */
 // Used with jsonschema-generator to control the order
 @JsonPropertyOrder

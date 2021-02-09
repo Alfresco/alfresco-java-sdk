@@ -25,8 +25,6 @@ import java.util.Objects;
 
 /**
  * Represents Alfresco event's data.
- *
- * @author Jamal Kaabi-Mofrad
  */
 @JsonDeserialize(builder = EventData.Builder.class)
 public class EventData<R extends Resource> implements DataAttributes<R> {

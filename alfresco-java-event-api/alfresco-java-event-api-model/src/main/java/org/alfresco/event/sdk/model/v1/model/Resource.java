@@ -17,8 +17,6 @@ package org.alfresco.event.sdk.model.v1.model;
 
 /**
  * Marker interface for resource classes.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public interface Resource {
 

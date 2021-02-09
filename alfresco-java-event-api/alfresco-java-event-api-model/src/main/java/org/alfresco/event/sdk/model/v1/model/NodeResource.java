@@ -29,8 +29,6 @@ import java.util.Set;
 
 /**
  * Represents Alfresco node resource.
- *
- * @author Jamal Kaabi-Mofrad
  */
 //Any attribute that its value is null, will not be serialized.
 @JsonInclude(Include.NON_NULL)

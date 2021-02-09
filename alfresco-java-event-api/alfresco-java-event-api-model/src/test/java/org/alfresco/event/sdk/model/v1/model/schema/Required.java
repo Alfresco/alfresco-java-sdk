@@ -23,9 +23,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 
-/**
- * @author Jamal Kaabi-Mofrad
- */
 @Target({FIELD})
 @Retention(RUNTIME)
 @Documented

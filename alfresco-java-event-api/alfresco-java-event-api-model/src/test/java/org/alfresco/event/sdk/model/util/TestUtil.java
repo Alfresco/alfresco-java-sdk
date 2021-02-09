@@ -33,9 +33,6 @@ import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.skyscreamer.jsonassert.ValueMatcher;
 import org.skyscreamer.jsonassert.comparator.CustomComparator;
 
-/**
- * @author Jamal Kaabi-Mofrad
- */
 public class TestUtil {
 
     // Ignore array elements ordering

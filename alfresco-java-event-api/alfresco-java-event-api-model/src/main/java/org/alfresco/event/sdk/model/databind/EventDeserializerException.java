@@ -15,9 +15,6 @@
  */
 package org.alfresco.event.sdk.model.databind;
 
-/**
- * @author Jamal Kaabi-Mofrad
- */
 public class EventDeserializerException extends RuntimeException {
 
     private static final long serialVersionUID = -1834047952479124360L;

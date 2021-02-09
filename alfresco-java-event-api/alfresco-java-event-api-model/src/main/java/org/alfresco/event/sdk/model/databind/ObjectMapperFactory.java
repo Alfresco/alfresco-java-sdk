@@ -28,8 +28,6 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
 
 /**
  * Repo Event object factory.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public class ObjectMapperFactory {
 

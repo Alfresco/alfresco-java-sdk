@@ -22,8 +22,6 @@ import java.util.Objects;
 
 /**
  * Base node resource object representing the common attributes of the resource affected.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public abstract class AbstractNodeResource implements Resource {
 

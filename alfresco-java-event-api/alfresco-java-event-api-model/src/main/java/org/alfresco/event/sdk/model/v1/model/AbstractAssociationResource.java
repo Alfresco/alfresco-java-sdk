@@ -19,8 +19,6 @@ import java.util.Objects;
 
 /**
  * Base association resource.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public abstract class AbstractAssociationResource implements Resource {
 

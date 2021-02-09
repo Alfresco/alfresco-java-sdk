@@ -17,8 +17,6 @@ package org.alfresco.event.sdk.model.v1.model;
 
 /**
  * List of supported event types.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public enum EventType {
     NODE_CREATED(EventTypeConst.CREATED, ContextType.NODE), NODE_UPDATED(EventTypeConst.UPDATED, ContextType.NODE), NODE_DELETED(EventTypeConst.DELETED,
@@ -36,7 +34,7 @@ public enum EventType {
         this.contextType = contextType;
     }
 
-    /* package*/ String getContext() {
+    String getContext() {
         return contextType.getContext();
     }
 

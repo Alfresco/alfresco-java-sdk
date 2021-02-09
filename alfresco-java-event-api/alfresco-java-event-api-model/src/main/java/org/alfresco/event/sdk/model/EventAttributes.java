@@ -21,8 +21,6 @@ import java.time.ZonedDateTime;
 /**
  * Event's attributes conforming to
  * <a href="https://github.com/cloudevents/spec/blob/v1.0/spec.md">CloudEvents</a> <i>v1.0</i> specification.
- *
- * @author Jamal Kaabi-Mofrad
  */
 public interface EventAttributes {
 

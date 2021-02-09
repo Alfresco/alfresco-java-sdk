@@ -17,9 +17,6 @@ package org.alfresco.event.sdk.model.v1.model;
 
 import java.util.Objects;
 
-/**
- * @author Jamal Kaabi-Mofrad
- */
 public class PeerAssocInfo {
 
     private String id;
