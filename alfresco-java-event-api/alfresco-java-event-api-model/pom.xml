@@ -14,7 +14,7 @@
   <name>Alfresco Java Event API :: Event Model</name>
 
   <properties>
-    <jsonschema-generator.version>4.12.2</jsonschema-generator.version>
+    <jsonschema-generator.version>4.17.0</jsonschema-generator.version>
     <commons-io.version>2.6</commons-io.version>
   </properties>
 
