@@ -14,10 +14,6 @@
   <packaging>pom</packaging>
   <name>Alfresco Java Event API :: Parent</name>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -37,7 +33,7 @@
       </dependency>
       <dependency>
         <groupId>org.alfresco</groupId>
-        <artifactId>alfresco-java-event-api-spring-boot-autoconfigure</artifactId>
+        <artifactId>alfresco-java-event-api-spring-boot</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
@@ -47,7 +43,7 @@
     <module>alfresco-java-event-api-handling</module>
     <module>alfresco-java-event-api-integration</module>
     <module>alfresco-java-event-api-model</module>
-    <module>alfresco-java-event-api-spring-boot-autoconfigure</module>
+    <module>alfresco-java-event-api-spring-boot</module>
     <module>alfresco-java-event-api-spring-boot-starter</module>
   </modules>
 </project>

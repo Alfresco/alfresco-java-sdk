@@ -13,14 +13,10 @@
   <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
   <name>Alfresco Java Event API :: Spring Boot Starter</name>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-java-event-api-spring-boot-autoconfigure</artifactId>
+      <artifactId>alfresco-java-event-api-spring-boot</artifactId>
     </dependency>
   </dependencies>
 </project>
