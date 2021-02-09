@@ -37,11 +37,9 @@ The [samples](samples) folder includes examples, sample applications and code sn
 
 ### Quick start
 
+#### 1. Create a new Spring Boot application
 
-
-#### 1. Create a new SpringBoot application
-
-#### 2. Add this dependency to your project's build file:
+#### 2. Add these dependencies to your project's build file:
 
 Maven:
 
@@ -52,14 +50,14 @@ Maven:
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-rest-api-spring-boot-starter</artifactId>
-      <version>5.0</version>
+      <version>5.0.0</version>
     </dependency>
 
     <!-- Java Event API -->
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-      <version>5.0</version>
+      <version>5.0.0</version>
     </dependency>
   </dependencies>
 ```
@@ -67,8 +65,8 @@ Maven:
 Gradle:
 
 ```groovy
-compile "org.alfresco:alfresco-java-rest-api-spring-boot-starter:5.0"
-compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.0"
+compile "org.alfresco:alfresco-java-rest-api-spring-boot-starter:5.0.0"
+compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.0.0"
 ```
 
 
@@ -129,7 +127,6 @@ public class ContentUpdatedHandler implements OnNodeUpdatedEventHandler {
 
 Use `@Order` annotation to define an execution order of multiple event handlers.
 
-
 ```java
     /**
      * This event handler definition illustrates how you can use Spring's {@link Order} annotation to sort the execution of event handlers.
@@ -177,4 +174,4 @@ You can find more information about how to consume events at [alfresco-java-even
 }
 ```
 
-You can find more information about how to consume REST API at [alfresco-java-rest-api](alfresco-java-rest-api).
+You can find more information about how to consume the REST API at [alfresco-java-rest-api](alfresco-java-rest-api).
