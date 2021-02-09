@@ -1,0 +1,10 @@
+import:
+  - source: Alfresco/alfresco-build-tools:.travis.library.yml@v1.0.0
+  - source: Alfresco/alfresco-build-tools:.travis.pre-commit.yml@v1.0.0
+  - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
+before_script:
+  - |-
+    export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
+      -DaltReleaseDeploymentRepository=alfresco-internal::default::https://artifacts.alfresco.com/nexus/content/repositories/enterprise-releases/ \
+      -DaltSnapshotDeploymentRepository=alfresco-internal-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/enterprise-snapshots"
+
