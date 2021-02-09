@@ -72,7 +72,7 @@ interface to combine several simpler filters in any way.
 For instance, you can create a filter to react to an event related to the modification of the title of a content of type ```cm:content``` with a mime-type of 
 ```text/html``` this way:
 
-```
+```java
 PropertyChangedFilter.of("cm:title")
     .and(NodeTypeFilter.of("cm:content"))
     .and(MimeTypeFilter.of("text/html"))
@@ -127,7 +127,7 @@ The steps to integrate with the Alfresco Java Event API using the Spring Boot st
 
 * In you ```pom.xml``` file, add the dependency of the custom starter:
 
-```
+```xml
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
@@ -142,6 +142,8 @@ spring.activemq.brokerUrl=tcp://activemq-host:61616
 # This property is required if you want Spring Boot to auto-define the ActiveMQConnectionFactory, otherwise you can define that bean in Spring config
 spring.jms.cache.enabled=false
 ```
+
+Additional integration properties can be found [here](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties-integration).
 
 * In your ```application.properties``` file define the properties to set the type of integration you want to use (spring integration and/or plain Java 
 handlers):
@@ -164,7 +166,7 @@ If you're working on a Spring Integration application, but you don't want to use
 
 In order to use them, you only need to add the corresponding dependency to your ```pom.xml``` file:
 
-```
+```xml
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-integration</artifactId>
@@ -181,7 +183,7 @@ the event handling library explained in the [section above](#event-handling-libr
 
 In order to use them, you only need to add the corresponding dependency to your ```pom.xml``` file:
 
-```
+```xml
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-handling</artifactId>
