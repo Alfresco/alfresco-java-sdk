@@ -15,11 +15,8 @@
  */
 package org.alfresco.event.sdk.handling.filter;
 
-import java.io.Serializable;
-import java.util.Map;
 import java.util.Objects;
 import org.alfresco.event.sdk.model.v1.model.DataAttributes;
-import org.alfresco.event.sdk.model.v1.model.NodeResource;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
@@ -51,16 +48,10 @@ public class PropertyAddedFilter extends AbstractEventFilter {
     @Override
     public boolean test(final RepoEvent<DataAttributes<Resource>> event) {
         LOGGER.debug("Checking filter for property {} added and event {}", addedProperty, event);
-        return isNodeEvent(event) && hasResourceBefore(event) && checkPropertyAdded(event);
+        return isNodeEvent(event) && checkPropertyAdded(event);
     }
 
     private boolean checkPropertyAdded(final RepoEvent<DataAttributes<Resource>> event) {
-        final Map<String, Serializable> propertiesBefore = ((NodeResource) event.getData().getResourceBefore()).getProperties();
-        final Map<String, Serializable> propertiesAfter = ((NodeResource) event.getData().getResource()).getProperties();
-        return propertiesBefore != null && propertiesAfter != null && checkProperty(propertiesBefore, propertiesAfter);
-    }
-
-    private boolean checkProperty(final Map<String, Serializable> propertiesBefore, final Map<String, Serializable> propertiesAfter) {
-        return propertiesAfter.containsKey(addedProperty) && (!propertiesBefore.containsKey(addedProperty) || propertiesBefore.get(addedProperty) == null);
+        return !hasPropertyBefore(event, addedProperty) && hasPropertyAfter(event, addedProperty);
     }
 }

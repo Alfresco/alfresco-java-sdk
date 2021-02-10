@@ -15,6 +15,9 @@
  */
 package org.alfresco.event.sdk.handling.filter;
 
+import java.io.Serializable;
+import java.util.Map;
+import java.util.Set;
 import org.alfresco.event.sdk.model.v1.model.AbstractAssociationResource;
 import org.alfresco.event.sdk.model.v1.model.DataAttributes;
 import org.alfresco.event.sdk.model.v1.model.NodeResource;
@@ -44,5 +47,35 @@ public abstract class AbstractEventFilter implements EventFilter {
 
     protected boolean hasResourceBefore(final RepoEvent<DataAttributes<Resource>> event) {
         return isEventWellFormed(event) && event.getData().getResourceBefore() != null;
+    }
+
+    protected boolean hasAspectBefore(final RepoEvent<DataAttributes<Resource>> event, final String aspect) {
+        return hasResourceBefore(event) && hasAspect(event, aspect, true);
+    }
+
+    protected boolean hasAspectAfter(final RepoEvent<DataAttributes<Resource>> event, final String aspect) {
+        return hasAspect(event, aspect, false);
+    }
+
+    private boolean hasAspect(final RepoEvent<DataAttributes<Resource>> event, final String aspect, final boolean before) {
+        final Set<String> aspects = getNodeResource(event, before).getAspectNames();
+        return aspects != null && aspects.contains(aspect);
+    }
+
+    protected boolean hasPropertyBefore(final RepoEvent<DataAttributes<Resource>> event, final String property) {
+        return hasResourceBefore(event) && hasProperty(event, property, true);
+    }
+
+    protected boolean hasPropertyAfter(final RepoEvent<DataAttributes<Resource>> event, final String property) {
+        return hasProperty(event, property, false);
+    }
+
+    private boolean hasProperty(final RepoEvent<DataAttributes<Resource>> event, final String property, final boolean before) {
+        final Map<String, Serializable> properties = getNodeResource(event, before).getProperties();
+        return properties != null && properties.containsKey(property) && properties.get(property) != null;
+    }
+
+    private NodeResource getNodeResource(final RepoEvent<DataAttributes<Resource>> event, final boolean before) {
+        return before ? ((NodeResource) event.getData().getResourceBefore()) : ((NodeResource) event.getData().getResource());
     }
 }
