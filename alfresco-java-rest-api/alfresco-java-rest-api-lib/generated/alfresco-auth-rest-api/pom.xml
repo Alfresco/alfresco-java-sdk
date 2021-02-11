@@ -3,15 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>@project.groupId@</groupId>
-    <artifactId>@project.artifactId@</artifactId>
-    <version>@project.version@</version>
+    <groupId>org.alfresco</groupId>
+    <artifactId>alfresco-java-rest-api-lib</artifactId>
+    <version>5.0.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <groupId>{{groupId}}</groupId>
-  <artifactId>{{artifactId}}</artifactId>
-  <name>{{artifactId}}</name>
-  <version>{{artifactVersion}}</version>
+  <groupId>org.alfresco</groupId>
+  <artifactId>alfresco-auth-rest-api</artifactId>
+  <name>alfresco-auth-rest-api</name>
+  <version>5.0.0-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
@@ -25,38 +25,15 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-oauth2-client</artifactId>
     </dependency>
-    {{#withXml}}
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-xml</artifactId>
-    </dependency>
-    {{/withXml}}
-    {{#java8}}
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
     </dependency>
-    {{/java8}}
-    {{#joda}}
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-joda</artifactId>
-    </dependency>
-    {{/joda}}
-    {{#threetenbp}}
-    <dependency>
-      <groupId>com.github.joschi.jackson</groupId>
-      <artifactId>jackson-datatype-threetenbp</artifactId>
-      <version>2.6.4</version>
-    </dependency>
-    {{/threetenbp}}
-    {{#useBeanValidation}}
       <dependency>
         <groupId>javax.validation</groupId>
         <artifactId>validation-api</artifactId>
         <scope>provided</scope>
       </dependency>
-    {{/useBeanValidation}}
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>

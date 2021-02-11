@@ -8,6 +8,10 @@ echo "***** GENERATING *****"
 
 mvn -N -P generate clean generate-sources ${MAVEN_CLI_OPTS}
 
+echo "***** ADDING LICENSE HEADER *****"
+
+mvn license:format
+
 echo "***** BUILDING *****"
 
 mvn clean install ${MAVEN_CLI_OPTS}
