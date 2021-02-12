@@ -26,30 +26,30 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * {@link EventFilter} that checks if an event represents a node with a specific property with a specific new value.
+ * {@link EventFilter} that checks if an event represents a node with a specific property with a specific current value.
  */
-public class PropertyNewValueFilter extends PropertyValueFilter {
+public class PropertyCurrentValueFilter extends PropertyValueFilter {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(PropertyNewValueFilter.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PropertyCurrentValueFilter.class);
 
-    private PropertyNewValueFilter(final String propertyName, final Serializable propertyValue) {
+    private PropertyCurrentValueFilter(final String propertyName, final Serializable propertyValue) {
         this.propertyName = Objects.requireNonNull(propertyName);
         this.propertyValue = Objects.requireNonNull(propertyValue);
     }
 
     /**
-     * Obtain a {@link PropertyNewValueFilter} for a specific property and value.
+     * Obtain a {@link PropertyCurrentValueFilter} for a specific property and value.
      *
      * @param propertyName  given name of the property
      * @param propertyValue given value for the property
-     * @return created {@link PropertyNewValueFilter}
+     * @return created {@link PropertyCurrentValueFilter}
      */
-    public static PropertyNewValueFilter of(final String propertyName, final Serializable propertyValue) {
-        return new PropertyNewValueFilter(propertyName, propertyValue);
+    public static PropertyCurrentValueFilter of(final String propertyName, final Serializable propertyValue) {
+        return new PropertyCurrentValueFilter(propertyName, propertyValue);
     }
 
     protected boolean checkPropertyValue(final RepoEvent<DataAttributes<Resource>> event) {
-        LOGGER.debug("Checking filter for property {}, new value {} and event {}", propertyName, propertyValue, event);
+        LOGGER.debug("Checking filter for property {}, current value {} and event {}", propertyName, propertyValue, event);
         return hasPropertyAfter(event, propertyName) && checkValue(event);
     }
 

@@ -28,14 +28,14 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.junit.Test;
 
 /**
- * Unit tests for {@link PropertyNewValueFilter}.
+ * Unit tests for {@link PropertyCurrentValueFilter}.
  */
-public class PropertyNewValueFilterTest {
+public class PropertyCurrentValueFilterTest {
 
     private static final String TEST_PROPERTY = "test:prop";
     private static final String TEST_VALUE = "value";
 
-    private final PropertyNewValueFilter propertyNewValueFilter = PropertyNewValueFilter.of(TEST_PROPERTY, TEST_VALUE);
+    private final PropertyCurrentValueFilter propertyCurrentValueFilter = PropertyCurrentValueFilter.of(TEST_PROPERTY, TEST_VALUE);
 
     @Test
     public void should_testTrue_when_eventWithCorrespondingPropertyAndValueIsSent() {
@@ -51,7 +51,7 @@ public class PropertyNewValueFilterTest {
             .setData(eventData)
             .build();
 
-        final boolean result = propertyNewValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
+        final boolean result = propertyCurrentValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
 
         assertThat(result).isTrue();
     }
@@ -70,7 +70,7 @@ public class PropertyNewValueFilterTest {
             .setData(eventData)
             .build();
 
-        final boolean result = propertyNewValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
+        final boolean result = propertyCurrentValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
 
         assertThat(result).isFalse();
     }
@@ -89,7 +89,7 @@ public class PropertyNewValueFilterTest {
             .setData(eventData)
             .build();
 
-        final boolean result = propertyNewValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
+        final boolean result = propertyCurrentValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
 
         assertThat(result).isFalse();
     }
@@ -105,7 +105,7 @@ public class PropertyNewValueFilterTest {
             .setData(eventData)
             .build();
 
-        final boolean result = propertyNewValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
+        final boolean result = propertyCurrentValueFilter.test((RepoEvent<DataAttributes<Resource>>) repoEvent);
 
         assertThat(result).isFalse();
     }
