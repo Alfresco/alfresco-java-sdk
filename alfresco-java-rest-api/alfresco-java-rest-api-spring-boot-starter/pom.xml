@@ -22,7 +22,7 @@
 
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-java-rest-api-lib</artifactId>
+      <artifactId>alfresco-auth-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
