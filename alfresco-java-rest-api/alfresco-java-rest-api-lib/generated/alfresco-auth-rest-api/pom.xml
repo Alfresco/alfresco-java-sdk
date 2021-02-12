@@ -8,7 +8,6 @@
     <version>5.0.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <groupId>org.alfresco</groupId>
   <artifactId>alfresco-auth-rest-api</artifactId>
   <name>alfresco-auth-rest-api</name>
   <version>5.0.0-SNAPSHOT</version>
