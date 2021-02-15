@@ -36,6 +36,7 @@
   </properties>
   <modules>
 <!--    <module>generated/alfresco-activiti-rest-api</module>-->
+    <module>generated/alfresco-core-rest-api</module>
     <module>generated/alfresco-auth-rest-api</module>
   </modules>
   <dependencyManagement>
@@ -179,6 +180,40 @@
                     <apiPackage>${project.groupId}.auth.handler</apiPackage>
                     <modelPackage>${project.groupId}.auth.model</modelPackage>
                     <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-core-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.core.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-core-rest-api</output>
+                  <artifactId>alfresco-core-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.core.handler</apiPackage>
+                    <modelPackage>${project.groupId}.core.model</modelPackage>
+                    <invokerPackage>${project.groupId}.core</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-core-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${acs.core.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-core-rest-api</output>
+                  <artifactId>alfresco-core-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.core.handler</apiPackage>
+                    <modelPackage>${project.groupId}.core.model</modelPackage>
+                    <invokerPackage>${project.groupId}.core</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>

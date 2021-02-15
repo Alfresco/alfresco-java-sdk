@@ -22,6 +22,11 @@
 
     <dependency>
       <groupId>org.alfresco</groupId>
+      <artifactId>alfresco-core-rest-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-auth-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
