@@ -16,9 +16,7 @@
 package org.alfresco.event.sdk.handling.filter;
 
 import java.util.Objects;
-import java.util.Set;
 import org.alfresco.event.sdk.model.v1.model.DataAttributes;
-import org.alfresco.event.sdk.model.v1.model.NodeResource;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.slf4j.Logger;
@@ -50,11 +48,6 @@ public class NodeAspectFilter extends AbstractEventFilter {
     @Override
     public boolean test(final RepoEvent<DataAttributes<Resource>> event) {
         LOGGER.debug("Checking filter for aspect {} and event {}", acceptedAspect, event);
-        return isNodeEvent(event) && checkAspect(event);
-    }
-
-    private boolean checkAspect(final RepoEvent<DataAttributes<Resource>> event) {
-        final Set<String> aspectNames = ((NodeResource) event.getData().getResource()).getAspectNames();
-        return aspectNames != null && aspectNames.contains(acceptedAspect);
+        return isNodeEvent(event) && hasAspectAfter(event, acceptedAspect);
     }
 }

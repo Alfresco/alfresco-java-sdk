@@ -50,18 +50,17 @@ public class PropertyChangedFilter extends AbstractEventFilter {
 
     @Override
     public boolean test(final RepoEvent<DataAttributes<Resource>> event) {
-        LOGGER.debug("Checking filter for property {} added and event {}", changedProperty, event);
-        return isNodeEvent(event) && hasResourceBefore(event) && checkPropertyAdded(event);
+        LOGGER.debug("Checking filter for property {} changed and event {}", changedProperty, event);
+        return isNodeEvent(event) && checkProperty(event) && checkPropertyChanged(event);
     }
 
-    private boolean checkPropertyAdded(final RepoEvent<DataAttributes<Resource>> event) {
+    private boolean checkProperty(final RepoEvent<DataAttributes<Resource>> event) {
+        return hasPropertyBefore(event, changedProperty) && hasPropertyAfter(event, changedProperty);
+    }
+
+    private boolean checkPropertyChanged(final RepoEvent<DataAttributes<Resource>> event) {
         final Map<String, Serializable> propertiesBefore = ((NodeResource) event.getData().getResourceBefore()).getProperties();
         final Map<String, Serializable> propertiesAfter = ((NodeResource) event.getData().getResource()).getProperties();
-        return propertiesBefore != null && propertiesAfter != null && checkProperty(propertiesBefore, propertiesAfter);
-    }
-
-    private boolean checkProperty(final Map<String, Serializable> propertiesBefore, final Map<String, Serializable> propertiesAfter) {
-        return propertiesAfter.containsKey(changedProperty) && propertiesBefore.containsKey(changedProperty) &&
-                !propertiesBefore.get(changedProperty).equals(propertiesAfter.get(changedProperty));
+        return !propertiesBefore.get(changedProperty).equals(propertiesAfter.get(changedProperty));
     }
 }
