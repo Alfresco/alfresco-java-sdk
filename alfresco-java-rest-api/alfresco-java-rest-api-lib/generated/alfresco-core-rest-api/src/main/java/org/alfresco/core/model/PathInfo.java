@@ -32,7 +32,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PathInfo   {
   @JsonProperty("elements")
   @Valid
@@ -65,7 +64,6 @@ public class PathInfo   {
 
   @Valid
 
-
   public List<PathElement> getElements() {
     return elements;
   }
@@ -86,7 +84,6 @@ public class PathInfo   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -105,7 +102,6 @@ public class PathInfo   {
    * @return isComplete
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsComplete() {

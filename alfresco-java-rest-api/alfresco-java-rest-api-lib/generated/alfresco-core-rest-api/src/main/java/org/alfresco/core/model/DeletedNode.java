@@ -37,7 +37,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeletedNode   {
   @JsonProperty("id")
   private String id = null;
@@ -117,7 +116,6 @@ public class DeletedNode   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -139,7 +137,6 @@ public class DeletedNode   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -159,7 +156,6 @@ public class DeletedNode   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -183,7 +179,6 @@ public class DeletedNode   {
   @NotNull
 
 
-
   public Boolean isIsFolder() {
     return isFolder;
   }
@@ -205,7 +200,6 @@ public class DeletedNode   {
   @NotNull
 
 
-
   public Boolean isIsFile() {
     return isFile;
   }
@@ -224,7 +218,6 @@ public class DeletedNode   {
    * @return isLocked
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsLocked() {
@@ -249,7 +242,6 @@ public class DeletedNode   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -271,7 +263,6 @@ public class DeletedNode   {
   @NotNull
 
   @Valid
-
 
   public UserInfo getModifiedByUser() {
     return modifiedByUser;
@@ -295,7 +286,6 @@ public class DeletedNode   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -318,7 +308,6 @@ public class DeletedNode   {
 
   @Valid
 
-
   public UserInfo getCreatedByUser() {
     return createdByUser;
   }
@@ -337,7 +326,6 @@ public class DeletedNode   {
    * @return parentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getParentId() {
@@ -360,7 +348,6 @@ public class DeletedNode   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isIsLink() {
     return isLink;
   }
@@ -379,7 +366,6 @@ public class DeletedNode   {
    * @return isFavorite
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsFavorite() {
@@ -402,7 +388,6 @@ public class DeletedNode   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public ContentInfo getContent() {
     return content;
@@ -432,7 +417,6 @@ public class DeletedNode   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -451,7 +435,6 @@ public class DeletedNode   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -482,7 +465,6 @@ public class DeletedNode   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAllowableOperations() {
     return allowableOperations;
   }
@@ -504,7 +486,6 @@ public class DeletedNode   {
 
   @Valid
 
-
   public PathInfo getPath() {
     return path;
   }
@@ -525,7 +506,6 @@ public class DeletedNode   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public PermissionsInfo getPermissions() {
     return permissions;
@@ -549,7 +529,6 @@ public class DeletedNode   {
 
   @Valid
 
-
   public UserInfo getArchivedByUser() {
     return archivedByUser;
   }
@@ -571,7 +550,6 @@ public class DeletedNode   {
   @NotNull
 
   @Valid
-
 
   public OffsetDateTime getArchivedAt() {
     return archivedAt;

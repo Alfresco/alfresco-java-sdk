@@ -35,7 +35,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class NodeBodyCreate   {
   @JsonProperty("name")
   private String name = null;
@@ -80,7 +79,6 @@ public class NodeBodyCreate   {
   @NotNull
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }
@@ -100,7 +98,6 @@ public class NodeBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeType() {
@@ -131,7 +128,6 @@ public class NodeBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -150,7 +146,6 @@ public class NodeBodyCreate   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
@@ -174,7 +169,6 @@ public class NodeBodyCreate   {
 
   @Valid
 
-
   public PermissionsBody getPermissions() {
     return permissions;
   }
@@ -193,7 +187,6 @@ public class NodeBodyCreate   {
    * @return relativePath
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRelativePath() {
@@ -216,7 +209,6 @@ public class NodeBodyCreate   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public NodeBodyCreateAssociation getAssociation() {
     return association;
@@ -247,7 +239,6 @@ public class NodeBodyCreate   {
 
   @Valid
 
-
   public List<ChildAssociationBody> getSecondaryChildren() {
     return secondaryChildren;
   }
@@ -276,7 +267,6 @@ public class NodeBodyCreate   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<AssociationBody> getTargets() {
     return targets;

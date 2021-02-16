@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteMembershipApprovalBody   {
   @JsonProperty("role")
   private String role = null;
@@ -44,7 +43,6 @@ public class SiteMembershipApprovalBody   {
    * @return role
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getRole() {

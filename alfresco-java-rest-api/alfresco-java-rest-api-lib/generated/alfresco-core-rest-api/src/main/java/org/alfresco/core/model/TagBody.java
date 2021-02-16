@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TagBody   {
   @JsonProperty("tag")
   private String tag = null;
@@ -45,7 +44,6 @@ public class TagBody   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getTag() {

@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RevertBody   {
   @JsonProperty("majorVersion")
   private Boolean majorVersion = null;
@@ -47,7 +46,6 @@ public class RevertBody   {
    * @return majorVersion
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isMajorVersion() {
@@ -68,7 +66,6 @@ public class RevertBody   {
    * @return comment
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getComment() {

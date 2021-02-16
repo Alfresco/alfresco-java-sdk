@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteEntry   {
   @JsonProperty("entry")
   private Site entry = null;
@@ -48,7 +47,6 @@ public class SiteEntry   {
   @NotNull
 
   @Valid
-
 
   public Site getEntry() {
     return entry;

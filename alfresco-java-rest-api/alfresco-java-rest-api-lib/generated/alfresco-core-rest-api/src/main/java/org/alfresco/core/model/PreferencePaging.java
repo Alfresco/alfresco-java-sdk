@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PreferencePaging   {
   @JsonProperty("list")
   private PreferencePagingList list = null;
@@ -48,7 +47,6 @@ public class PreferencePaging   {
   @NotNull
 
   @Valid
-
 
   public PreferencePagingList getList() {
     return list;

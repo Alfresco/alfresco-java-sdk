@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class CommentPaging   {
   @JsonProperty("list")
   private CommentPagingList list = null;
@@ -48,7 +47,6 @@ public class CommentPaging   {
   @NotNull
 
   @Valid
-
 
   public CommentPagingList getList() {
     return list;

@@ -31,7 +31,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DownloadBodyCreate   {
   @JsonProperty("nodeIds")
   @Valid
@@ -53,7 +52,6 @@ public class DownloadBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public List<String> getNodeIds() {

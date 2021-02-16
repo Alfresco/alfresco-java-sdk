@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteMembershipRequestBodyCreate   {
   @JsonProperty("message")
   private String message = null;
@@ -50,7 +49,6 @@ public class SiteMembershipRequestBodyCreate   {
    * @return message
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMessage() {
@@ -74,7 +72,6 @@ public class SiteMembershipRequestBodyCreate   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -93,7 +90,6 @@ public class SiteMembershipRequestBodyCreate   {
    * @return title
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTitle() {

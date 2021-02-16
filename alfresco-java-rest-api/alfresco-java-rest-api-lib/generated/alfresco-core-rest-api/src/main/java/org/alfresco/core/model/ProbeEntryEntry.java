@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ProbeEntryEntry   {
   @JsonProperty("message")
   private String message = null;
@@ -45,7 +44,6 @@ public class ProbeEntryEntry   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getMessage() {

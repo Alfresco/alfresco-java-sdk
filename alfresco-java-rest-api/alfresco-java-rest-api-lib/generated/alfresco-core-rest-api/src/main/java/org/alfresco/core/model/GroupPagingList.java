@@ -33,7 +33,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupPagingList   {
   @JsonProperty("pagination")
   private Pagination pagination = null;
@@ -54,7 +53,6 @@ public class GroupPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Pagination getPagination() {
     return pagination;
@@ -84,7 +82,6 @@ public class GroupPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<GroupEntry> getEntries() {
     return entries;

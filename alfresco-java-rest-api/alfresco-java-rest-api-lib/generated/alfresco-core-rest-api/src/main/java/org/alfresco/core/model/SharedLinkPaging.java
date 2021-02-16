@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SharedLinkPaging   {
   @JsonProperty("list")
   private SharedLinkPagingList list = null;
@@ -48,7 +47,6 @@ public class SharedLinkPaging   {
   @NotNull
 
   @Valid
-
 
   public SharedLinkPagingList getList() {
     return list;

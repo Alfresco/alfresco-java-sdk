@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupMemberPaging   {
   @JsonProperty("list")
   private GroupMemberPagingList list = null;
@@ -47,7 +46,6 @@ public class GroupMemberPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public GroupMemberPagingList getList() {
     return list;

@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "Limits and usage of each quota. A network will have quotas for File space, the number of sites in the network, the number of people in the network, and the number of network administrators ")
 @Validated
 
-
 public class NetworkQuota   {
   @JsonProperty("id")
   private String id = null;
@@ -54,7 +53,6 @@ public class NetworkQuota   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -76,7 +74,6 @@ public class NetworkQuota   {
   @NotNull
 
 
-
   public Long getLimit() {
     return limit;
   }
@@ -96,7 +93,6 @@ public class NetworkQuota   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Long getUsage() {

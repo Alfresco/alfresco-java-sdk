@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ChildAssociationEntry   {
   @JsonProperty("entry")
   private ChildAssociation entry = null;
@@ -48,7 +47,6 @@ public class ChildAssociationEntry   {
   @NotNull
 
   @Valid
-
 
   public ChildAssociation getEntry() {
     return entry;

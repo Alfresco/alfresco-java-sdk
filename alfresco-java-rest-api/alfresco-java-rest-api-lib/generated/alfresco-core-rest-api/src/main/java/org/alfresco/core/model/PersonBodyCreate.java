@@ -32,7 +32,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PersonBodyCreate   {
   @JsonProperty("id")
   private String id = null;
@@ -105,7 +104,6 @@ public class PersonBodyCreate   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -125,7 +123,6 @@ public class PersonBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getFirstName() {
@@ -148,7 +145,6 @@ public class PersonBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getLastName() {
     return lastName;
   }
@@ -167,7 +163,6 @@ public class PersonBodyCreate   {
    * @return description
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDescription() {
@@ -191,7 +186,6 @@ public class PersonBodyCreate   {
   @NotNull
 
 
-
   public String getEmail() {
     return email;
   }
@@ -210,7 +204,6 @@ public class PersonBodyCreate   {
    * @return skypeId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getSkypeId() {
@@ -233,7 +226,6 @@ public class PersonBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getGoogleId() {
     return googleId;
   }
@@ -252,7 +244,6 @@ public class PersonBodyCreate   {
    * @return instantMessageId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getInstantMessageId() {
@@ -275,7 +266,6 @@ public class PersonBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getJobTitle() {
     return jobTitle;
   }
@@ -294,7 +284,6 @@ public class PersonBodyCreate   {
    * @return location
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getLocation() {
@@ -318,7 +307,6 @@ public class PersonBodyCreate   {
 
   @Valid
 
-
   public Company getCompany() {
     return company;
   }
@@ -337,7 +325,6 @@ public class PersonBodyCreate   {
    * @return mobile
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getMobile() {
@@ -360,7 +347,6 @@ public class PersonBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTelephone() {
     return telephone;
   }
@@ -379,7 +365,6 @@ public class PersonBodyCreate   {
    * @return userStatus
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getUserStatus() {
@@ -402,7 +387,6 @@ public class PersonBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isEnabled() {
     return enabled;
   }
@@ -421,7 +405,6 @@ public class PersonBodyCreate   {
    * @return emailNotificationsEnabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isEmailNotificationsEnabled() {
@@ -443,7 +426,6 @@ public class PersonBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getPassword() {
@@ -474,7 +456,6 @@ public class PersonBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getAspectNames() {
     return aspectNames;
   }
@@ -493,7 +474,6 @@ public class PersonBodyCreate   {
    * @return properties
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getProperties() {
