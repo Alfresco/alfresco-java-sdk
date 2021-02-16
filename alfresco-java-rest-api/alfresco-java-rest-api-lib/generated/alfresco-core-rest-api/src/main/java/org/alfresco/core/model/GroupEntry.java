@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupEntry   {
   @JsonProperty("entry")
   private Group entry = null;
@@ -48,7 +47,6 @@ public class GroupEntry   {
   @NotNull
 
   @Valid
-
 
   public Group getEntry() {
     return entry;

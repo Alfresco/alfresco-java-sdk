@@ -63,21 +63,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<PersonEntry
-> createPerson(
-
-
-@ApiParam(value = "The person details." ,required=true )  @Valid @RequestBody PersonBodyCreate personBodyCreate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<PersonEntry> createPerson(@ApiParam(value = "The person details." ,required=true )  @Valid @RequestBody PersonBodyCreate personBodyCreate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Delete avatar image", nickname = "deleteAvatarImage", notes = "**Note:** this endpoint is available in Alfresco 5.2.2 and newer versions.  Deletes the avatar image related to person **personId**.  You must be the person or have admin rights to update a person's avatar.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", authorizations = {
@@ -93,16 +79,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void
-> deleteAvatarImage(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-);
+    ResponseEntity<Void> deleteAvatarImage(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId);
 
 
     @ApiOperation(value = "Get avatar image", nickname = "getAvatarImage", notes = "**Note:** this endpoint is available in Alfresco 5.2.2 and newer versions.  Gets the avatar image related to the person **personId**. If the person has no related avatar then  the **placeholder** query parameter can be optionally used to request a placeholder image to be returned.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", response = Resource.class, authorizations = {
@@ -119,38 +96,7 @@ public interface PeopleApi {
         produces = "application/octet-stream", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<Resource
-> getAvatarImage(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean
- attachment
-
-
-
-
-,
-
-@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime
- ifModifiedSince
-
-
-,
-
-@ApiParam(value = "If **true** and there is no avatar for this **personId**  then the placeholder image is returned, rather than a 404 response. ", defaultValue = "true") @Valid @RequestParam(value = "placeholder", required = false, defaultValue="true") Boolean
- placeholder
-
-
-
-
-);
+    ResponseEntity<Resource> getAvatarImage(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince,@ApiParam(value = "If **true** and there is no avatar for this **personId**  then the placeholder image is returned, rather than a 404 response. ", defaultValue = "true") @Valid @RequestParam(value = "placeholder", required = false, defaultValue="true") Boolean placeholder);
 
 
     @ApiOperation(value = "Get a person", nickname = "getPerson", notes = "Gets information for the person **personId**.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", response = PersonEntry.class, authorizations = {
@@ -165,24 +111,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<PersonEntry
-> getPerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<PersonEntry> getPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "List people", nickname = "listPeople", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  List people.  You can use the **include** parameter to return any additional information.  The default sort order for the returned list is for people to be sorted by ascending id. You can override the default by using the **orderBy** parameter.  You can use any of the following fields to order the results: * id * firstName * lastName ", response = PersonPaging.class, authorizations = {
@@ -197,48 +126,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<PersonPaging
-> listPeople(@Min(0)
-
-@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer
- skipCount
-
-
-
-
-,@Min(1)
-
-@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer
- maxItems
-
-
-
-
-,
-
-@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String>
- orderBy
-
-
-
-
-,
-
-@ApiParam(value = "Returns additional information about the person. The following optional fields can be requested: * properties * aspectNames * capabilities ") @Valid @RequestParam(value = "include", required = false) List<String>
- include
-
-
-
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<PersonPaging> listPeople(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@ApiParam(value = "Returns additional information about the person. The following optional fields can be requested: * properties * aspectNames * capabilities ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
     @ApiOperation(value = "Request password reset", nickname = "requestPasswordReset", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Initiates the reset password workflow to send an email with reset password instruction to the user's registered email.  The client is mandatory in the request body. For example: ```JSON {   \"client\": \"myClient\" } ``` **Note:** The client must be registered before this API can send an email. See [server documentation]. However, out-of-the-box share is registered as a default client, so you could pass **share** as the client name: ```JSON {   \"client\": \"share\" } ``` **Note:** No authentication is required to call this endpoint. ", authorizations = {
@@ -251,21 +139,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> requestPasswordReset(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The client name to send email with app-specific url." ,required=true )  @Valid @RequestBody ClientBody clientBody
-
-);
+    ResponseEntity<Void> requestPasswordReset(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The client name to send email with app-specific url." ,required=true )  @Valid @RequestBody ClientBody clientBody);
 
 
     @ApiOperation(value = "Reset password", nickname = "resetPassword", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Resets user's password  The password, id and key properties are mandatory in the request body. For example: ```JSON {   \"password\":\"newPassword\",   \"id\":\"activiti$10\",   \"key\":\"4dad6d00-0daf-413a-b200-f64af4e12345\" } ``` **Note:** No authentication is required to call this endpoint. ", authorizations = {
@@ -278,21 +152,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void
-> resetPassword(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The reset password details" ,required=true )  @Valid @RequestBody PasswordResetBody passwordResetBody
-
-);
+    ResponseEntity<Void> resetPassword(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The reset password details" ,required=true )  @Valid @RequestBody PasswordResetBody passwordResetBody);
 
 
     @ApiOperation(value = "Update avatar image", nickname = "updateAvatarImage", notes = "**Note:** this endpoint is available in Alfresco 5.2.2 and newer versions.  Updates the avatar image related to the person **personId**.  The request body should be the binary stream for the avatar image. The content type of the file  should be an image file. This will be used to generate an \"avatar\" thumbnail rendition.  You must be the person or have admin rights to update a person's avatar.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user. ", authorizations = {
@@ -312,21 +172,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/octet-stream",
         method = RequestMethod.PUT)
-    ResponseEntity<Void
-> updateAvatarImage(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The binary content" ,required=true )  @Valid @RequestBody byte[] contentBodyUpdate
-
-);
+    ResponseEntity<Void> updateAvatarImage(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The binary content" ,required=true )  @Valid @RequestBody byte[] contentBodyUpdate);
 
 
     @ApiOperation(value = "Update person", nickname = "updatePerson", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Update the given person's details.  You can use the `-me-` string in place of `<personId>` to specify the currently authenticated user.  If applicable, the given person's login access can also be optionally disabled or re-enabled.  You must have admin rights to update a person — unless updating your own details.  If you are changing your password, as a non-admin user, then the existing password must also be supplied (using the oldPassword field in addition to the new password value).  Admin users cannot be disabled by setting enabled to false.  Non-admin users may not disable themselves.  You can set custom properties when you update a person: ```JSON {   \"firstName\": \"Alice\",   \"properties\":   {     \"my:property\": \"The value\"   } } ``` **Note:** setting properties of type d:content and d:category are not supported. ", response = PersonEntry.class, authorizations = {
@@ -344,28 +190,6 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<PersonEntry
-> updatePerson(
-
-
-@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String
- personId
-
-
-
-,
-
-
-@ApiParam(value = "The person details." ,required=true )  @Valid @RequestBody PersonBodyUpdate personBodyUpdate
-
-,
-
-@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String>
- fields
-
-
-
-
-);
+    ResponseEntity<PersonEntry> updatePerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The person details." ,required=true )  @Valid @RequestBody PersonBodyUpdate personBodyUpdate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

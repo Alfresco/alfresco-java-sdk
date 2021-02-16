@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PermissionElement   {
   @JsonProperty("authorityId")
   private String authorityId = null;
@@ -84,7 +83,6 @@ public class PermissionElement   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAuthorityId() {
     return authorityId;
   }
@@ -105,7 +103,6 @@ public class PermissionElement   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -124,7 +121,6 @@ public class PermissionElement   {
    * @return accessStatus
   **/
   @ApiModelProperty(value = "")
-
 
 
   public AccessStatusEnum getAccessStatus() {

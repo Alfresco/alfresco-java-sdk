@@ -32,7 +32,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ActionDefinition   {
   @JsonProperty("id")
   private String id = null;
@@ -70,7 +69,6 @@ public class ActionDefinition   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -89,7 +87,6 @@ public class ActionDefinition   {
    * @return name
   **/
   @ApiModelProperty(value = "name of the action definition, e.g. \"move\"")
-
 
 
   public String getName() {
@@ -112,7 +109,6 @@ public class ActionDefinition   {
   @ApiModelProperty(value = "title of the action definition, e.g. \"Move\"")
 
 
-
   public String getTitle() {
     return title;
   }
@@ -131,7 +127,6 @@ public class ActionDefinition   {
    * @return description
   **/
   @ApiModelProperty(value = "describes the action definition, e.g. \"This will move the matched item to another space.\"")
-
 
 
   public String getDescription() {
@@ -160,7 +155,6 @@ public class ActionDefinition   {
   @NotNull
 
 
-
   public List<String> getApplicableTypes() {
     return applicableTypes;
   }
@@ -180,7 +174,6 @@ public class ActionDefinition   {
   **/
   @ApiModelProperty(required = true, value = "whether the basic action definition supports action tracking or not")
   @NotNull
-
 
 
   public Boolean isTrackStatus() {
@@ -211,7 +204,6 @@ public class ActionDefinition   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<ActionParameterDefinition> getParameterDefinitions() {
     return parameterDefinitions;

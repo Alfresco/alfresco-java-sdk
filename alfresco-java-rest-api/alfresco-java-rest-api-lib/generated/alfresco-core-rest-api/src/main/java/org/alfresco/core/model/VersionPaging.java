@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class VersionPaging   {
   @JsonProperty("list")
   private VersionPagingList list = null;
@@ -47,7 +46,6 @@ public class VersionPaging   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public VersionPagingList getList() {
     return list;

@@ -31,7 +31,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PathElement   {
   @JsonProperty("id")
   private String id = null;
@@ -58,7 +57,6 @@ public class PathElement   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -79,7 +77,6 @@ public class PathElement   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -98,7 +95,6 @@ public class PathElement   {
    * @return nodeType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getNodeType() {
@@ -127,7 +123,6 @@ public class PathElement   {
    * @return aspectNames
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getAspectNames() {

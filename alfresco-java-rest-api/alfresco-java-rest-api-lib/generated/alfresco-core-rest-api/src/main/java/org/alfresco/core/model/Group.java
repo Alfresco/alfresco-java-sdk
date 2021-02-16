@@ -31,7 +31,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Group   {
   @JsonProperty("id")
   private String id = null;
@@ -63,7 +62,6 @@ public class Group   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -85,7 +83,6 @@ public class Group   {
   @NotNull
 
 
-
   public String getDisplayName() {
     return displayName;
   }
@@ -105,7 +102,6 @@ public class Group   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isIsRoot() {
@@ -136,7 +132,6 @@ public class Group   {
   @ApiModelProperty(value = "")
 
 
-
   public List<String> getParentIds() {
     return parentIds;
   }
@@ -163,7 +158,6 @@ public class Group   {
    * @return zones
   **/
   @ApiModelProperty(value = "")
-
 
 
   public List<String> getZones() {

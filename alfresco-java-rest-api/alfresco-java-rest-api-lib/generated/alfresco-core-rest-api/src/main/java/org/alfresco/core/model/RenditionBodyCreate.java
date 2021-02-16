@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RenditionBodyCreate   {
   @JsonProperty("id")
   private String id = null;
@@ -45,7 +44,6 @@ public class RenditionBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getId() {

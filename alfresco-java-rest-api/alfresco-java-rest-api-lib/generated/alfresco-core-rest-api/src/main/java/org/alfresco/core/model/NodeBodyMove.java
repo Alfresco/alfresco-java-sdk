@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class NodeBodyMove   {
   @JsonProperty("targetParentId")
   private String targetParentId = null;
@@ -48,7 +47,6 @@ public class NodeBodyMove   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getTargetParentId() {
@@ -71,7 +69,6 @@ public class NodeBodyMove   {
   @ApiModelProperty(value = "The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |. The character . must not be used at the end of the name. ")
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
-
   public String getName() {
     return name;
   }

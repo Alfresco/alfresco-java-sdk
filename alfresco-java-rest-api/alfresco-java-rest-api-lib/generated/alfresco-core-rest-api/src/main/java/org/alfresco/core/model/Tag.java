@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Tag   {
   @JsonProperty("id")
   private String id = null;
@@ -48,7 +47,6 @@ public class Tag   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getId() {
@@ -70,7 +68,6 @@ public class Tag   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getTag() {

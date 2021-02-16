@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ActionBodyExec   {
   @JsonProperty("actionDefinitionId")
   private String actionDefinitionId = null;
@@ -53,7 +52,6 @@ public class ActionBodyExec   {
   @NotNull
 
 
-
   public String getActionDefinitionId() {
     return actionDefinitionId;
   }
@@ -74,7 +72,6 @@ public class ActionBodyExec   {
   @ApiModelProperty(value = "The entity upon which to execute the action, typically a node ID or similar.")
 
 
-
   public String getTargetId() {
     return targetId;
   }
@@ -93,7 +90,6 @@ public class ActionBodyExec   {
    * @return params
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Object getParams() {

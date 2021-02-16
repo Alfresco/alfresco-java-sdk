@@ -33,7 +33,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TagPagingList   {
   @JsonProperty("pagination")
   private Pagination pagination = null;
@@ -55,7 +54,6 @@ public class TagPagingList   {
   @NotNull
 
   @Valid
-
 
   public Pagination getPagination() {
     return pagination;
@@ -83,7 +81,6 @@ public class TagPagingList   {
   @NotNull
 
   @Valid
-
 
   public List<TagEntry> getEntries() {
     return entries;

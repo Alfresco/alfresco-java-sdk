@@ -31,7 +31,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Comment   {
   @JsonProperty("id")
   private String id = null;
@@ -76,7 +75,6 @@ public class Comment   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -98,7 +96,6 @@ public class Comment   {
   @NotNull
 
 
-
   public String getTitle() {
     return title;
   }
@@ -118,7 +115,6 @@ public class Comment   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getContent() {
@@ -143,7 +139,6 @@ public class Comment   {
 
   @Valid
 
-
   public Person getCreatedBy() {
     return createdBy;
   }
@@ -166,7 +161,6 @@ public class Comment   {
 
   @Valid
 
-
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -186,7 +180,6 @@ public class Comment   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isEdited() {
@@ -211,7 +204,6 @@ public class Comment   {
 
   @Valid
 
-
   public Person getModifiedBy() {
     return modifiedBy;
   }
@@ -234,7 +226,6 @@ public class Comment   {
 
   @Valid
 
-
   public OffsetDateTime getModifiedAt() {
     return modifiedAt;
   }
@@ -256,7 +247,6 @@ public class Comment   {
   @NotNull
 
 
-
   public Boolean isCanEdit() {
     return canEdit;
   }
@@ -276,7 +266,6 @@ public class Comment   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Boolean isCanDelete() {

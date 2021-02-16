@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteBodyCreate   {
   @JsonProperty("id")
   private String id = null;
@@ -89,7 +88,6 @@ public class SiteBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -109,7 +107,6 @@ public class SiteBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getTitle() {
@@ -132,7 +129,6 @@ public class SiteBodyCreate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -152,7 +148,6 @@ public class SiteBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public VisibilityEnum getVisibility() {

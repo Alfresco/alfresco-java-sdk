@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class UserInfo   {
   @JsonProperty("displayName")
   private String displayName = null;
@@ -48,7 +47,6 @@ public class UserInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getDisplayName() {
@@ -70,7 +68,6 @@ public class UserInfo   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getId() {

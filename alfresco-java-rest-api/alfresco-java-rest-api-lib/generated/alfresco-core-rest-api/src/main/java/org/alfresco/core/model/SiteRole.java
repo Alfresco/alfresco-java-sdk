@@ -31,7 +31,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteRole   {
   @JsonProperty("site")
   private Site site = null;
@@ -94,7 +93,6 @@ public class SiteRole   {
 
   @Valid
 
-
   public Site getSite() {
     return site;
   }
@@ -114,7 +112,6 @@ public class SiteRole   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getId() {
@@ -138,7 +135,6 @@ public class SiteRole   {
   @NotNull
 
 
-
   public String getGuid() {
     return guid;
   }
@@ -158,7 +154,6 @@ public class SiteRole   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public RoleEnum getRole() {

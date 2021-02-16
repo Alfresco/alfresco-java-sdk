@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class FavoriteBodyCreate   {
   @JsonProperty("target")
   private Object target = null;
@@ -45,7 +44,6 @@ public class FavoriteBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public Object getTarget() {
