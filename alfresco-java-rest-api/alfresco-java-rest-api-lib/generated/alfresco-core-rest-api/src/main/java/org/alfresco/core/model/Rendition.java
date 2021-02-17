@@ -31,7 +31,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Rendition   {
   @JsonProperty("id")
   private String id = null;
@@ -85,7 +84,6 @@ public class Rendition   {
   @ApiModelProperty(value = "")
 
 
-
   public String getId() {
     return id;
   }
@@ -107,7 +105,6 @@ public class Rendition   {
 
   @Valid
 
-
   public ContentInfo getContent() {
     return content;
   }
@@ -126,7 +123,6 @@ public class Rendition   {
    * @return status
   **/
   @ApiModelProperty(value = "")
-
 
 
   public StatusEnum getStatus() {

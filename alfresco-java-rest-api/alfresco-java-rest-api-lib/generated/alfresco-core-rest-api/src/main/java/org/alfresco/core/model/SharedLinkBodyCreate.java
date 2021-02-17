@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SharedLinkBodyCreate   {
   @JsonProperty("nodeId")
   private String nodeId = null;
@@ -49,7 +48,6 @@ public class SharedLinkBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public String getNodeId() {
@@ -72,7 +70,6 @@ public class SharedLinkBodyCreate   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public OffsetDateTime getExpiresAt() {
     return expiresAt;

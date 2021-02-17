@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class TagPaging   {
   @JsonProperty("list")
   private TagPagingList list = null;
@@ -48,7 +47,6 @@ public class TagPaging   {
   @NotNull
 
   @Valid
-
 
   public TagPagingList getList() {
     return list;

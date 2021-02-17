@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditBodyUpdate   {
   @JsonProperty("isEnabled")
   private Boolean isEnabled = null;
@@ -44,7 +43,6 @@ public class AuditBodyUpdate   {
    * @return isEnabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsEnabled() {

@@ -53,15 +53,6 @@ public interface ProbesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<ProbeEntry
-> getProbe(
-
-
-@ApiParam(value = "The name of the probe: * -ready- * -live- ",required=true) @PathVariable("probeId") String
- probeId
-
-
-
-);
+    ResponseEntity<ProbeEntry> getProbe(@ApiParam(value = "The name of the probe: * -ready- * -live- ",required=true) @PathVariable("probeId") String probeId);
 
 }

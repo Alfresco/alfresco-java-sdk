@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class PasswordResetBody   {
   @JsonProperty("password")
   private String password = null;
@@ -53,7 +52,6 @@ public class PasswordResetBody   {
   @NotNull
 
 
-
   public String getPassword() {
     return password;
   }
@@ -75,7 +73,6 @@ public class PasswordResetBody   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -95,7 +92,6 @@ public class PasswordResetBody   {
   **/
   @ApiModelProperty(required = true, value = "the workflow key provided in the reset password email")
   @NotNull
-
 
 
   public String getKey() {

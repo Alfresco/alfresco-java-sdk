@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditApp   {
   @JsonProperty("id")
   private String id = null;
@@ -53,7 +52,6 @@ public class AuditApp   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -74,7 +72,6 @@ public class AuditApp   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -93,7 +90,6 @@ public class AuditApp   {
    * @return isEnabled
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Boolean isIsEnabled() {

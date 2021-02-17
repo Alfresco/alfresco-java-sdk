@@ -33,7 +33,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class AuditEntryPagingList   {
   @JsonProperty("pagination")
   private Pagination pagination = null;
@@ -54,7 +53,6 @@ public class AuditEntryPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public Pagination getPagination() {
     return pagination;
@@ -84,7 +82,6 @@ public class AuditEntryPagingList   {
   @ApiModelProperty(value = "")
 
   @Valid
-
 
   public List<AuditEntryEntry> getEntries() {
     return entries;

@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class Company   {
   @JsonProperty("organization")
   private String organization = null;
@@ -67,7 +66,6 @@ public class Company   {
   @ApiModelProperty(value = "")
 
 
-
   public String getOrganization() {
     return organization;
   }
@@ -86,7 +84,6 @@ public class Company   {
    * @return address1
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAddress1() {
@@ -109,7 +106,6 @@ public class Company   {
   @ApiModelProperty(value = "")
 
 
-
   public String getAddress2() {
     return address2;
   }
@@ -128,7 +124,6 @@ public class Company   {
    * @return address3
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAddress3() {
@@ -151,7 +146,6 @@ public class Company   {
   @ApiModelProperty(value = "")
 
 
-
   public String getPostcode() {
     return postcode;
   }
@@ -170,7 +164,6 @@ public class Company   {
    * @return telephone
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTelephone() {
@@ -193,7 +186,6 @@ public class Company   {
   @ApiModelProperty(value = "")
 
 
-
   public String getFax() {
     return fax;
   }
@@ -212,7 +204,6 @@ public class Company   {
    * @return email
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getEmail() {

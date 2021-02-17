@@ -31,7 +31,6 @@ import javax.validation.constraints.*;
 @ApiModel(description = "A favorite describes an Alfresco entity that a person has marked as a favorite. The target can be a site, file or folder. ")
 @Validated
 
-
 public class Favorite   {
   @JsonProperty("targetGuid")
   private String targetGuid = null;
@@ -58,7 +57,6 @@ public class Favorite   {
   @NotNull
 
 
-
   public String getTargetGuid() {
     return targetGuid;
   }
@@ -79,7 +77,6 @@ public class Favorite   {
   @ApiModelProperty(value = "The time the object was made a favorite.")
 
   @Valid
-
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -102,7 +99,6 @@ public class Favorite   {
   @NotNull
 
 
-
   public Object getTarget() {
     return target;
   }
@@ -121,7 +117,6 @@ public class Favorite   {
    * @return properties
   **/
   @ApiModelProperty(value = "A subset of the target favorite properties, system properties and properties already available in the target are excluded.")
-
 
 
   public Object getProperties() {

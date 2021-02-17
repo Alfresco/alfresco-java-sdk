@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class DeletedNodeBodyRestore   {
   @JsonProperty("targetParentId")
   private String targetParentId = null;
@@ -47,7 +46,6 @@ public class DeletedNodeBodyRestore   {
    * @return targetParentId
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getTargetParentId() {
@@ -68,7 +66,6 @@ public class DeletedNodeBodyRestore   {
    * @return assocType
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getAssocType() {

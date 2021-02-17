@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class RatingAggregate   {
   @JsonProperty("numberOfRatings")
   private Integer numberOfRatings = null;
@@ -50,7 +49,6 @@ public class RatingAggregate   {
   @NotNull
 
 
-
   public Integer getNumberOfRatings() {
     return numberOfRatings;
   }
@@ -69,7 +67,6 @@ public class RatingAggregate   {
    * @return average
   **/
   @ApiModelProperty(value = "")
-
 
 
   public Integer getAverage() {

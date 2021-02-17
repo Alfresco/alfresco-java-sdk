@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class SiteBodyUpdate   {
   @JsonProperty("title")
   private String title = null;
@@ -86,7 +85,6 @@ public class SiteBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getTitle() {
     return title;
   }
@@ -107,7 +105,6 @@ public class SiteBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-
   public String getDescription() {
     return description;
   }
@@ -126,7 +123,6 @@ public class SiteBodyUpdate   {
    * @return visibility
   **/
   @ApiModelProperty(value = "")
-
 
 
   public VisibilityEnum getVisibility() {

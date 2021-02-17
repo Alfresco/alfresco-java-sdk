@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ClientBody   {
   @JsonProperty("client")
   private String client = null;
@@ -45,7 +44,6 @@ public class ClientBody   {
   **/
   @ApiModelProperty(required = true, value = "the client name")
   @NotNull
-
 
 
   public String getClient() {

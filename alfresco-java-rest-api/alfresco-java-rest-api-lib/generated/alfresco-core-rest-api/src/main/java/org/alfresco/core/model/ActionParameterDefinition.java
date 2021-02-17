@@ -29,7 +29,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class ActionParameterDefinition   {
   @JsonProperty("name")
   private String name = null;
@@ -58,7 +57,6 @@ public class ActionParameterDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public String getName() {
     return name;
   }
@@ -77,7 +75,6 @@ public class ActionParameterDefinition   {
    * @return type
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getType() {
@@ -100,7 +97,6 @@ public class ActionParameterDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isMultiValued() {
     return multiValued;
   }
@@ -121,7 +117,6 @@ public class ActionParameterDefinition   {
   @ApiModelProperty(value = "")
 
 
-
   public Boolean isMandatory() {
     return mandatory;
   }
@@ -140,7 +135,6 @@ public class ActionParameterDefinition   {
    * @return displayLabel
   **/
   @ApiModelProperty(value = "")
-
 
 
   public String getDisplayLabel() {

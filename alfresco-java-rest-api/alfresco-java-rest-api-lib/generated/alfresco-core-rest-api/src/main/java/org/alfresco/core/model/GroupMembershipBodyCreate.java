@@ -30,7 +30,6 @@ import javax.validation.constraints.*;
  */
 @Validated
 
-
 public class GroupMembershipBodyCreate   {
   @JsonProperty("id")
   private String id = null;
@@ -82,7 +81,6 @@ public class GroupMembershipBodyCreate   {
   @NotNull
 
 
-
   public String getId() {
     return id;
   }
@@ -102,7 +100,6 @@ public class GroupMembershipBodyCreate   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
 
 
   public MemberTypeEnum getMemberType() {
