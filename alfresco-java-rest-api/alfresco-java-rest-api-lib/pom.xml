@@ -35,9 +35,9 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
   <modules>
-<!--    <module>generated/alfresco-activiti-rest-api</module>-->
     <module>generated/alfresco-core-rest-api</module>
     <module>generated/alfresco-auth-rest-api</module>
+    <module>generated/alfresco-activiti-rest-api</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -199,6 +199,40 @@
                   </configOptions>
                 </configuration>
               </execution>
+              <execution>
+                <id>generate-activiti-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${aps.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
+                  <artifactId>alfresco-activiti-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
+                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
+                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-activiti-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${aps.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
+                  <artifactId>alfresco-activiti-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
+                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
+                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
             </executions>
           </plugin>
           <plugin>
@@ -238,7 +272,6 @@
       </properties>
     </profile>
   </profiles>
-
 
 
 </project>
