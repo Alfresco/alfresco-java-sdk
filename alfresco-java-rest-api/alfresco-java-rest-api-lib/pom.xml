@@ -27,6 +27,7 @@
     <!-- API definitions -->
     <acs.core.api>${project.build.directory}/definitions/alfresco-core.yaml</acs.core.api>
     <acs.auth.api>${project.build.directory}/definitions/alfresco-auth.yaml</acs.auth.api>
+    <acs.discovery.api>${project.build.directory}/definitions/alfresco-discovery.yaml</acs.discovery.api>
     <!-- APS (using the online definition as the one in the artifact does not build and looks outdated) -->
     <aps.api>https://activiti.alfresco.com/activiti-app/api/v2/api-docs?group=enterprise</aps.api>
 
@@ -37,6 +38,7 @@
   <modules>
     <module>generated/alfresco-core-rest-api</module>
     <module>generated/alfresco-auth-rest-api</module>
+    <module>generated/alfresco-discovery-rest-api</module>
     <module>generated/alfresco-activiti-rest-api</module>
   </modules>
   <dependencyManagement>
@@ -200,6 +202,40 @@
                 </configuration>
               </execution>
               <execution>
+                <id>generate-discovery-rest-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.discovery.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-discovery-rest-api</output>
+                  <artifactId>alfresco-discovery-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.discovery.handler</apiPackage>
+                    <modelPackage>${project.groupId}.discovery.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-discovery-rest-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${acs.discovery.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-discovery-rest-api</output>
+                  <artifactId>alfresco-discovery-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.discovery.handler</apiPackage>
+                    <modelPackage>${project.groupId}.discovery.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
                 <id>generate-activiti-api-documentation</id>
                 <goals>
                   <goal>generate</goal>
@@ -272,6 +308,5 @@
       </properties>
     </profile>
   </profiles>
-
 
 </project>
