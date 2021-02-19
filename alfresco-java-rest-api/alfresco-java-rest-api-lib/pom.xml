@@ -28,6 +28,7 @@
     <acs.core.api>${project.build.directory}/definitions/alfresco-core.yaml</acs.core.api>
     <acs.auth.api>${project.build.directory}/definitions/alfresco-auth.yaml</acs.auth.api>
     <acs.discovery.api>${project.build.directory}/definitions/alfresco-discovery.yaml</acs.discovery.api>
+    <acs.search.api>${project.build.directory}/definitions/alfresco-search.yaml</acs.search.api>
     <!-- APS (using the online definition as the one in the artifact does not build and looks outdated) -->
     <aps.api>https://activiti.alfresco.com/activiti-app/api/v2/api-docs?group=enterprise</aps.api>
 
@@ -39,6 +40,8 @@
     <module>generated/alfresco-core-rest-api</module>
     <module>generated/alfresco-auth-rest-api</module>
     <module>generated/alfresco-discovery-rest-api</module>
+    <module>generated/alfresco-search-rest-api</module>
+    <module>generated/alfresco-search-sql-rest-api</module>
     <module>generated/alfresco-activiti-rest-api</module>
   </modules>
   <dependencyManagement>
@@ -250,6 +253,74 @@
                     <apiPackage>${project.groupId}.activiti.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-search-rest-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.search.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-search-rest-api</output>
+                  <artifactId>alfresco-search-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.search.handler</apiPackage>
+                    <modelPackage>${project.groupId}.search.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-search-rest-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${acs.search.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-search-rest-api</output>
+                  <artifactId>alfresco-search-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.search.handler</apiPackage>
+                    <modelPackage>${project.groupId}.search.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-search-sql-rest-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.search-sql.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-search-sql-rest-api</output>
+                  <artifactId>alfresco-search-sql-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.search.sql.handler</apiPackage>
+                    <modelPackage>${project.groupId}.search.sql.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-search-sql-rest-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${acs.search-sql.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-search-sql-rest-api</output>
+                  <artifactId>alfresco-search-sql-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.search.sql.handler</apiPackage>
+                    <modelPackage>${project.groupId}.search.sql.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
