@@ -8,37 +8,17 @@
     <version>5.0.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <groupId>org.alfresco</groupId>
   <artifactId>alfresco-search-sql-rest-api</artifactId>
   <name>alfresco-search-sql-rest-api</name>
   <version>5.0.0-SNAPSHOT</version>
-  <properties>
-    <swagger-core.version>1.5.18</swagger-core.version>
-  </properties>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Hoxton.SR5</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
       <artifactId>swagger-annotations</artifactId>
-      <version>${swagger-core.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-security</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>

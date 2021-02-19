@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021-2021 Alfresco Software, Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.alfresco.search.model;
 
 import java.util.Objects;
@@ -13,7 +28,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Simple facet fields to include The Properties reflect the global properties related to field facts in SOLR. They are descripbed in detail by the SOLR documentation
+ * Simple facet fields to include The Properties reflect the global properties related to field facts in SOLR. They are descripbed in detail by the SOLR documentation 
  */
 @ApiModel(description = "Simple facet fields to include The Properties reflect the global properties related to field facts in SOLR. They are descripbed in detail by the SOLR documentation ")
 @Validated
@@ -37,7 +52,7 @@ public class RequestFacetFields   {
   }
 
   /**
-   * Define specifc fields on which to facet (adds SOLR facet.field and f.<field>.facet.* options)
+   * Define specifc fields on which to facet (adds SOLR facet.field and f.<field>.facet.* options) 
    * @return facets
   **/
   @ApiModelProperty(value = "Define specifc fields on which to facet (adds SOLR facet.field and f.<field>.facet.* options) ")
@@ -74,7 +89,7 @@ public class RequestFacetFields   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestFacetFields {\n");
-
+    
     sb.append("    facets: ").append(toIndentedString(facets)).append("\n");
     sb.append("}");
     return sb.toString();

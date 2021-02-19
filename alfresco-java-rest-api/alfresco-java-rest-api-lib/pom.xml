@@ -29,6 +29,7 @@
     <acs.auth.api>${project.build.directory}/definitions/alfresco-auth.yaml</acs.auth.api>
     <acs.discovery.api>${project.build.directory}/definitions/alfresco-discovery.yaml</acs.discovery.api>
     <acs.search.api>${project.build.directory}/definitions/alfresco-search.yaml</acs.search.api>
+    <acs.search-sql.api>${project.build.directory}/definitions/alfresco-search-sql.yaml</acs.search-sql.api>
     <!-- APS (using the online definition as the one in the artifact does not build and looks outdated) -->
     <aps.api>https://activiti.alfresco.com/activiti-app/api/v2/api-docs?group=enterprise</aps.api>
 

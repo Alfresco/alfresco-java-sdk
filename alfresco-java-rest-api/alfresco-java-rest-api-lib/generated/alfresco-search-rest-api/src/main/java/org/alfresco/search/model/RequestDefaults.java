@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021-2021 Alfresco Software, Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.alfresco.search.model;
 
 import java.util.Objects;
@@ -24,11 +39,11 @@ public class RequestDefaults   {
   private List<String> textAttributes = null;
 
   /**
-   * The default way to combine query parts when AND or OR is not explicitly stated - includes ! - + one two three (one two three)
+   * The default way to combine query parts when AND or OR is not explicitly stated - includes ! - + one two three (one two three) 
    */
   public enum DefaultFTSOperatorEnum {
     AND("AND"),
-
+    
     OR("OR");
 
     private String value;
@@ -58,11 +73,11 @@ public class RequestDefaults   {
   private DefaultFTSOperatorEnum defaultFTSOperator = DefaultFTSOperatorEnum.AND;
 
   /**
-   * The default way to combine query parts in field query groups when AND or OR is not explicitly stated - includes ! - + FIELD:(one two three)
+   * The default way to combine query parts in field query groups when AND or OR is not explicitly stated - includes ! - + FIELD:(one two three) 
    */
   public enum DefaultFTSFieldOperatorEnum {
     AND("AND"),
-
+    
     OR("OR");
 
     private String value;
@@ -111,7 +126,7 @@ public class RequestDefaults   {
   }
 
   /**
-   * A list of query fields/properties used to expand TEXT: queries. The default is cm:content. You could include all content properties using d:content or list all individual content properties or types. As more terms are included the query size, complexity, memory impact and query time will increase.
+   * A list of query fields/properties used to expand TEXT: queries. The default is cm:content. You could include all content properties using d:content or list all individual content properties or types. As more terms are included the query size, complexity, memory impact and query time will increase. 
    * @return textAttributes
   **/
   @ApiModelProperty(value = "A list of query fields/properties used to expand TEXT: queries. The default is cm:content. You could include all content properties using d:content or list all individual content properties or types. As more terms are included the query size, complexity, memory impact and query time will increase. ")
@@ -131,7 +146,7 @@ public class RequestDefaults   {
   }
 
   /**
-   * The default way to combine query parts when AND or OR is not explicitly stated - includes ! - + one two three (one two three)
+   * The default way to combine query parts when AND or OR is not explicitly stated - includes ! - + one two three (one two three) 
    * @return defaultFTSOperator
   **/
   @ApiModelProperty(value = "The default way to combine query parts when AND or OR is not explicitly stated - includes ! - + one two three (one two three) ")
@@ -151,7 +166,7 @@ public class RequestDefaults   {
   }
 
   /**
-   * The default way to combine query parts in field query groups when AND or OR is not explicitly stated - includes ! - + FIELD:(one two three)
+   * The default way to combine query parts in field query groups when AND or OR is not explicitly stated - includes ! - + FIELD:(one two three) 
    * @return defaultFTSFieldOperator
   **/
   @ApiModelProperty(value = "The default way to combine query parts in field query groups when AND or OR is not explicitly stated - includes ! - + FIELD:(one two three) ")
@@ -231,7 +246,7 @@ public class RequestDefaults   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestDefaults {\n");
-
+    
     sb.append("    textAttributes: ").append(toIndentedString(textAttributes)).append("\n");
     sb.append("    defaultFTSOperator: ").append(toIndentedString(defaultFTSOperator)).append("\n");
     sb.append("    defaultFTSFieldOperator: ").append(toIndentedString(defaultFTSFieldOperator)).append("\n");

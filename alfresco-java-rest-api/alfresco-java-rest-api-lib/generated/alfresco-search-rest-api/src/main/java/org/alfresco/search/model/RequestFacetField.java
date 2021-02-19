@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021-2021 Alfresco Software, Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.alfresco.search.model;
 
 import java.util.Objects;
@@ -33,7 +48,7 @@ public class RequestFacetField   {
    */
   public enum SortEnum {
     COUNT("COUNT"),
-
+    
     INDEX("INDEX");
 
     private String value;
@@ -67,7 +82,7 @@ public class RequestFacetField   {
    */
   public enum MethodEnum {
     ENUM("ENUM"),
-
+    
     FC("FC");
 
     private String value;
@@ -329,7 +344,7 @@ public class RequestFacetField   {
   }
 
   /**
-   * Filter Queries with tags listed here will not be included in facet counts. This is used for multi-select facetting.
+   * Filter Queries with tags listed here will not be included in facet counts. This is used for multi-select facetting. 
    * @return excludeFilters
   **/
   @ApiModelProperty(value = "Filter Queries with tags listed here will not be included in facet counts. This is used for multi-select facetting. ")
@@ -375,7 +390,7 @@ public class RequestFacetField   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestFacetField {\n");
-
+    
     sb.append("    field: ").append(toIndentedString(field)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");

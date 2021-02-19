@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021-2021 Alfresco Software, Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.alfresco.search.model;
 
 import java.util.Objects;
@@ -18,13 +33,13 @@ import javax.validation.constraints.*;
 
 public class RequestScope   {
   /**
-   * The locations to include in the query
+   * The locations to include in the query 
    */
   public enum LocationsEnum {
     NODES("nodes"),
-
+    
     VERSIONS("versions"),
-
+    
     DELETED_NODES("deleted-nodes");
 
     private String value;
@@ -59,7 +74,7 @@ public class RequestScope   {
   }
 
   /**
-   * The locations to include in the query
+   * The locations to include in the query 
    * @return locations
   **/
   @ApiModelProperty(value = "The locations to include in the query ")
@@ -95,7 +110,7 @@ public class RequestScope   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestScope {\n");
-
+    
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("}");
     return sb.toString();

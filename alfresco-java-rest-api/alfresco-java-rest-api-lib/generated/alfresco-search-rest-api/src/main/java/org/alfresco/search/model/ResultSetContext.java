@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021-2021 Alfresco Software, Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.alfresco.search.model;
 
 import java.util.Objects;
@@ -189,7 +204,7 @@ public class ResultSetContext   {
   }
 
   /**
-   * Suggested corrections  If zero results were found for the original query then a single entry of type \"searchInsteadFor\" will be returned. If alternatives were found that return more results than the original query they are returned as \"didYouMean\" options. The highest quality suggestion is first.
+   * Suggested corrections  If zero results were found for the original query then a single entry of type \"searchInsteadFor\" will be returned. If alternatives were found that return more results than the original query they are returned as \"didYouMean\" options. The highest quality suggestion is first. 
    * @return spellcheck
   **/
   @ApiModelProperty(value = "Suggested corrections  If zero results were found for the original query then a single entry of type \"searchInsteadFor\" will be returned. If alternatives were found that return more results than the original query they are returned as \"didYouMean\" options. The highest quality suggestion is first. ")
@@ -231,7 +246,7 @@ public class ResultSetContext   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResultSetContext {\n");
-
+    
     sb.append("    consistency: ").append(toIndentedString(consistency)).append("\n");
     sb.append("    request: ").append(toIndentedString(request)).append("\n");
     sb.append("    facetQueries: ").append(toIndentedString(facetQueries)).append("\n");

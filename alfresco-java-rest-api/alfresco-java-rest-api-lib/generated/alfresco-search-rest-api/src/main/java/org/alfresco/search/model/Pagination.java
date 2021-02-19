@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021-2021 Alfresco Software, Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.alfresco.search.model;
 
 import java.util.Objects;
@@ -36,7 +51,7 @@ public class Pagination   {
   }
 
   /**
-   * The number of objects in the entries array.
+   * The number of objects in the entries array. 
    * @return count
   **/
   @ApiModelProperty(required = true, value = "The number of objects in the entries array. ")
@@ -57,7 +72,7 @@ public class Pagination   {
   }
 
   /**
-   * A boolean value which is **true** if there are more entities in the collection beyond those in this response. A true value means a request with a larger value for the **skipCount** or the **maxItems** parameter will return more entities.
+   * A boolean value which is **true** if there are more entities in the collection beyond those in this response. A true value means a request with a larger value for the **skipCount** or the **maxItems** parameter will return more entities. 
    * @return hasMoreItems
   **/
   @ApiModelProperty(required = true, value = "A boolean value which is **true** if there are more entities in the collection beyond those in this response. A true value means a request with a larger value for the **skipCount** or the **maxItems** parameter will return more entities. ")
@@ -78,7 +93,7 @@ public class Pagination   {
   }
 
   /**
-   * An integer describing the total number of entities in the collection. The API might not be able to determine this value, in which case this property will not be present.
+   * An integer describing the total number of entities in the collection. The API might not be able to determine this value, in which case this property will not be present. 
    * @return totalItems
   **/
   @ApiModelProperty(value = "An integer describing the total number of entities in the collection. The API might not be able to determine this value, in which case this property will not be present. ")
@@ -98,7 +113,7 @@ public class Pagination   {
   }
 
   /**
-   * An integer describing how many entities exist in the collection before those included in this list.
+   * An integer describing how many entities exist in the collection before those included in this list. 
    * @return skipCount
   **/
   @ApiModelProperty(required = true, value = "An integer describing how many entities exist in the collection before those included in this list. ")
@@ -119,7 +134,7 @@ public class Pagination   {
   }
 
   /**
-   * The value of the **maxItems** parameter used to generate this list, or if there was no **maxItems** parameter the default value is 100
+   * The value of the **maxItems** parameter used to generate this list, or if there was no **maxItems** parameter the default value is 100 
    * @return maxItems
   **/
   @ApiModelProperty(required = true, value = "The value of the **maxItems** parameter used to generate this list, or if there was no **maxItems** parameter the default value is 100 ")
@@ -160,7 +175,7 @@ public class Pagination   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Pagination {\n");
-
+    
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    hasMoreItems: ").append(toIndentedString(hasMoreItems)).append("\n");
     sb.append("    totalItems: ").append(toIndentedString(totalItems)).append("\n");
