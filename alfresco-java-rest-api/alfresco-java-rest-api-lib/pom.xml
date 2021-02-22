@@ -23,11 +23,13 @@
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <!-- Base Paths -->
     <acs.version>6.2.0</acs.version>
-    <ags.version>3.4.0</ags.version>
+    <ags.version>3.5.0-SNAPSHOT</ags.version>
     <!-- API definitions -->
     <acs.core.api>${project.build.directory}/definitions/alfresco-core.yaml</acs.core.api>
     <acs.auth.api>${project.build.directory}/definitions/alfresco-auth.yaml</acs.auth.api>
     <acs.discovery.api>${project.build.directory}/definitions/alfresco-discovery.yaml</acs.discovery.api>
+    <acs.governance-core.api>${project.build.directory}/definitions/gs-core-api.yaml</acs.governance-core.api>
+    <acs.governance-classification.api>${project.build.directory}/definitions/gs-classification-api.yaml</acs.governance-classification.api>
     <acs.search.api>${project.build.directory}/definitions/alfresco-search.yaml</acs.search.api>
     <acs.search-sql.api>${project.build.directory}/definitions/alfresco-search-sql.yaml</acs.search-sql.api>
     <!-- APS (using the online definition as the one in the artifact does not build and looks outdated) -->
@@ -41,6 +43,8 @@
     <module>generated/alfresco-core-rest-api</module>
     <module>generated/alfresco-auth-rest-api</module>
     <module>generated/alfresco-discovery-rest-api</module>
+    <module>generated/alfresco-governance-core-rest-api</module>
+    <module>generated/alfresco-governance-classification-rest-api</module>
     <module>generated/alfresco-search-rest-api</module>
     <module>generated/alfresco-search-sql-rest-api</module>
     <module>generated/alfresco-activiti-rest-api</module>
@@ -254,6 +258,74 @@
                     <apiPackage>${project.groupId}.activiti.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-governance-core-rest-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.governance-core.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-governance-core-rest-api</output>
+                  <artifactId>alfresco-governance-core-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.governance.core.handler</apiPackage>
+                    <modelPackage>${project.groupId}.governance.core.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-governance-core-rest-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${acs.governance-core.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-governance-core-rest-api</output>
+                  <artifactId>alfresco-governance-core-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.governance.core.handler</apiPackage>
+                    <modelPackage>${project.groupId}.governance.core.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-governance-classification-rest-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.governance-classification.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-governance-classification-rest-api</output>
+                  <artifactId>alfresco-governance-classification-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.governance.classification.handler</apiPackage>
+                    <modelPackage>${project.groupId}.governance.classification.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-governance-classification-rest-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${acs.governance-classification.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-governance-classification-rest-api</output>
+                  <artifactId>alfresco-governance-classification-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.governance.classification.handler</apiPackage>
+                    <modelPackage>${project.groupId}.governance.classification.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
