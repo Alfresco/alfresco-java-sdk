@@ -21,12 +21,15 @@ import org.alfresco.event.sdk.model.v1.model.EventType;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.Resource;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Interface that declares the operations of a repo event handler.
  * <p>
  * An event handler will be triggered (the method <code>handleEvent</code> will be executed) when:
  * <ul>
- *     <li>The event type matches with the one returned by the method <code>getHandledEventType</code></li>
+ *     <li>The event type matches with the one of the returned by the method <code>getHandledEventTypes</code></li>
  *     <li>The event fulfills the conditions specified by the {@link EventFilter} returned by the method <code>getEventFilter</code></li>
  * </ul>
  * <p>
@@ -36,11 +39,11 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
 public interface EventHandler {
 
     /**
-     * Obtain the {@link EventType} that this handler will handle.
+     * Obtain the set of {@link EventType}'s that this handler will handle.
      *
-     * @return the {@link EventType} handled by this handler. Ths value must not be <code>null</code>
+     * @return the set of {@link EventType}'s handled by this handler. Ths value must not be <code>null</code>
      */
-    EventType getHandledEventType();
+    Set<EventType> getHandledEventTypes();
 
     /**
      * Obtain the {@link EventFilter} that any event must fulfill to be handled by this handler.

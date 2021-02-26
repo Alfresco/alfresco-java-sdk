@@ -57,13 +57,10 @@ public class EventHandlingRegistry {
 
     private void registerHandler(final EventHandler eventHandler) {
         LOGGER.debug("Registering event handler {}", eventHandler);
-        final EventType handledEventType = eventHandler.getHandledEventType();
-        if (handledEventType != null) {
+        eventHandler.getHandledEventTypes().forEach(handledEventType -> {
             final List<EventHandler> typedEventHandlers = eventHandlers.getOrDefault(handledEventType.getType(), new ArrayList<>());
             typedEventHandlers.add(eventHandler);
             eventHandlers.put(handledEventType.getType(), typedEventHandlers);
-        } else {
-            LOGGER.warn("Skipping registry of event handler {} because the event type handled is null", eventHandler);
-        }
+        });
     }
 }

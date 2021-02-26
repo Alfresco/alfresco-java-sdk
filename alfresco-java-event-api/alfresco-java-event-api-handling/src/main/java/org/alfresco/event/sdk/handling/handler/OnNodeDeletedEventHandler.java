@@ -17,13 +17,15 @@ package org.alfresco.event.sdk.handling.handler;
 
 import org.alfresco.event.sdk.model.v1.model.EventType;
 
+import java.util.Set;
+
 /**
  * {@link EventHandler} for node deletion handling.
  */
 @FunctionalInterface
 public interface OnNodeDeletedEventHandler extends NodeEventHandler {
 
-    default EventType getHandledEventType() {
-        return EventType.NODE_DELETED;
+    default Set<EventType> getHandledEventTypes() {
+        return Set.of(EventType.NODE_DELETED);
     }
 }
