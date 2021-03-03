@@ -32,13 +32,29 @@ The main four items in this library are explained in the next sections.
 contract of each implementation of a behaviour to be triggered as a reaction to an event.
 
 This contract has been reduced to a minimum, which is:
-* The type of event the handler will tackle.
+* The type(s) of event(s) the handler will tackle.
 * Other conditions the event must match to be handled (defaulted to none). See [Event Filter](#event-filter).
 * The code to execute as a reaction to the event.
 
 A hierarchy of interfaces that extend [```EventHandler```](./alfresco-java-event-api-handling/src/main/java/org/alfresco/event/sdk/handling/handler/EventHandler.java) 
 has been already defined to cover the different types of events that can be currently triggered by the API (i.e. 
 [```OnNodeDeletedEventHandler```](./alfresco-java-event-api-handling/src/main/java/org/alfresco/event/sdk/handling/handler/OnNodeDeletedEventHandler.java)).
+
+If you want to implement an [```EventHandler```](./alfresco-java-event-api-handling/src/main/java/org/alfresco/event/sdk/handling/handler/EventHandler.java) 
+that implements more than one interface in the hierarchy you will need to provide an implementation of the method ```getHandledEventTypes``` to solve the 
+conflict of default implementations of this method provided by each interface. It would be as easy as implementing the method returning a set with all the 
+event types that your handler should handle.
+
+```java
+public class MyMultipleEventTypeHandler implements OnNodeCreatedEventHandler,OnNodeUpdatedEventHandler {
+    ...
+    @Override 
+    public Set<EventType> getHandledEventTypes() {
+        return Set.of(EventType.NODE_CREATED, EventType.NODE_UPDATED);
+    }
+    ...
+}
+```
 
 #### Event Handling Registry
 

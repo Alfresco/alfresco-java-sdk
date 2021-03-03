@@ -17,13 +17,15 @@ package org.alfresco.event.sdk.handling.handler;
 
 import org.alfresco.event.sdk.model.v1.model.EventType;
 
+import java.util.Set;
+
 /**
  * {@link EventHandler} for node update handling.
  */
 @FunctionalInterface
 public interface OnNodeUpdatedEventHandler extends NodeEventHandler {
 
-    default EventType getHandledEventType() {
-        return EventType.NODE_UPDATED;
+    default Set<EventType> getHandledEventTypes() {
+        return Set.of(EventType.NODE_UPDATED);
     }
 }

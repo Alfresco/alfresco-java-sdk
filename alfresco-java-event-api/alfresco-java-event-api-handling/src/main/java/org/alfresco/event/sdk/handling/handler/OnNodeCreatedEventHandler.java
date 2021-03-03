@@ -17,13 +17,15 @@ package org.alfresco.event.sdk.handling.handler;
 
 import org.alfresco.event.sdk.model.v1.model.EventType;
 
+import java.util.Set;
+
 /**
  * {@link EventHandler} for node creation handling.
  */
 @FunctionalInterface
 public interface OnNodeCreatedEventHandler extends NodeEventHandler {
 
-    default EventType getHandledEventType() {
-        return EventType.NODE_CREATED;
+    default Set<EventType> getHandledEventTypes() {
+        return Set.of(EventType.NODE_CREATED);
     }
 }

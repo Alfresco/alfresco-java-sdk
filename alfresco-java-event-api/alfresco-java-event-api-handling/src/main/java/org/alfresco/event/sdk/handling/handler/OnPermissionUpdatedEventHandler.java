@@ -17,13 +17,15 @@ package org.alfresco.event.sdk.handling.handler;
 
 import org.alfresco.event.sdk.model.v1.model.EventType;
 
+import java.util.Set;
+
 /**
  * {@link EventHandler} for permission update handling.
  */
 @FunctionalInterface
 public interface OnPermissionUpdatedEventHandler extends PermissionEventHandler {
 
-    default EventType getHandledEventType() {
-        return EventType.PERMISSION_UPDATED;
+    default Set<EventType> getHandledEventTypes() {
+        return Set.of(EventType.PERMISSION_UPDATED);
     }
 }

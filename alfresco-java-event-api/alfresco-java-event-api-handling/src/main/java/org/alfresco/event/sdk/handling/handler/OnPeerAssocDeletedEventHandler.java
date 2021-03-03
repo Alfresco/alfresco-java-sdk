@@ -17,13 +17,15 @@ package org.alfresco.event.sdk.handling.handler;
 
 import org.alfresco.event.sdk.model.v1.model.EventType;
 
+import java.util.Set;
+
 /**
  * {@link EventHandler} for peer to peer association deletion handling.
  */
 @FunctionalInterface
 public interface OnPeerAssocDeletedEventHandler extends PeerAssocEventHandler {
 
-    default EventType getHandledEventType() {
-        return EventType.PEER_ASSOC_DELETED;
+    default Set<EventType> getHandledEventTypes() {
+        return Set.of(EventType.PEER_ASSOC_DELETED);
     }
 }
