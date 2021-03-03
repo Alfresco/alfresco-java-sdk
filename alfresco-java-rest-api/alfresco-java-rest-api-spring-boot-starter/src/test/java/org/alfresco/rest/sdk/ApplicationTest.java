@@ -13,11 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.alfresco.activiti.handler;
+package org.alfresco.rest.sdk;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import io.swagger.configuration.ClientConfiguration;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 
-@FeignClient(name = "alfrescoIntegrationAlfrescoOnpremiseApi", url = "${process.service.url}", path = "${process.service.path}", configuration = ClientConfiguration.class, decode404 = true)
-public interface IntegrationAlfrescoOnpremiseApiClient extends IntegrationAlfrescoOnpremiseApi {
+@SpringBootTest
+@TestPropertySource("classpath:application-test.properties")
+class ApplicationTest {
+
+    @Test
+    void contextLoads() {
+
+    }
+
 }
