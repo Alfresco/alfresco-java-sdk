@@ -32,8 +32,6 @@
     <acs.governance-classification.api>${project.build.directory}/definitions/gs-classification-api.yaml</acs.governance-classification.api>
     <acs.search.api>${project.build.directory}/definitions/alfresco-search.yaml</acs.search.api>
     <acs.search-sql.api>${project.build.directory}/definitions/alfresco-search-sql.yaml</acs.search-sql.api>
-    <!-- APS (using the online definition as the one in the artifact does not build and looks outdated) -->
-    <aps.api>https://activiti.alfresco.com/activiti-app/api/v2/api-docs?group=enterprise</aps.api>
 
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -47,7 +45,6 @@
     <module>generated/alfresco-governance-classification-rest-api</module>
     <module>generated/alfresco-search-rest-api</module>
     <module>generated/alfresco-search-sql-rest-api</module>
-    <module>generated/alfresco-activiti-rest-api</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -244,24 +241,6 @@
                 </configuration>
               </execution>
               <execution>
-                <id>generate-activiti-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aps.api}</inputSpec>
-                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
-                  <artifactId>alfresco-activiti-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
                 <id>generate-governance-core-rest-api-documentation</id>
                 <goals>
                   <goal>generate</goal>
@@ -394,22 +373,6 @@
                     <apiPackage>${project.groupId}.search.sql.handler</apiPackage>
                     <modelPackage>${project.groupId}.search.sql.model</modelPackage>
                     <invokerPackage>${project.groupId}</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-api</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <inputSpec>${aps.api}</inputSpec>
-                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
-                  <artifactId>alfresco-activiti-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
