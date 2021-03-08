@@ -15,45 +15,44 @@ services:
       context: .
 
   alfresco:
-    image: alfresco/alfresco-content-repository-community:7.0.0-A20
+    image: alfresco/alfresco-content-repository-community:7.0.0-A28
     mem_limit: 1500m
     environment:
       JAVA_TOOL_OPTIONS: "
-        -Dencryption.keystore.type=JCEKS
-        -Dencryption.cipherAlgorithm=DESede/CBC/PKCS5Padding
-        -Dencryption.keyAlgorithm=DESede
-        -Dencryption.keystore.location=/usr/local/tomcat/shared/classes/alfresco/extension/keystore/keystore
-        -Dmetadata-keystore.password=mp6yc0UD9e
-        -Dmetadata-keystore.aliases=metadata
-        -Dmetadata-keystore.metadata.password=oKIWzVdEdA
-        -Dmetadata-keystore.metadata.algorithm=DESede
-        "
+                -Dencryption.keystore.type=JCEKS
+                -Dencryption.cipherAlgorithm=DESede/CBC/PKCS5Padding
+                -Dencryption.keyAlgorithm=DESede
+                -Dencryption.keystore.location=/usr/local/tomcat/shared/classes/alfresco/extension/keystore/keystore
+                -Dmetadata-keystore.password=mp6yc0UD9e
+                -Dmetadata-keystore.aliases=metadata
+                -Dmetadata-keystore.metadata.password=oKIWzVdEdA
+                -Dmetadata-keystore.metadata.algorithm=DESede
+                "
       JAVA_OPTS: "
-        -Ddb.driver=org.postgresql.Driver
-        -Ddb.username=alfresco
-        -Ddb.password=alfresco
-        -Ddb.url=jdbc:postgresql://postgres:5432/alfresco
-        -Dsolr.host=solr6
-        -Dsolr.port=8983
-        -Dsolr.secureComms=none
-        -Dsolr.base.url=/solr
-        -Dindex.subsystem.name=solr6
-        -Dshare.host=127.0.0.1
-        -Dshare.port=8080
-        -Dalfresco.host=localhost
-        -Dalfresco.port=8080
-        -Daos.baseUrlOverwrite=http://localhost:8080/alfresco/aos
-        -Dmessaging.broker.url=\"failover:(nio://activemq:61616)?timeout=3000&jms.useCompression=true\"
-        -Ddeployment.method=DOCKER_COMPOSE
-        -DlocalTransform.core-aio.url=http://transform-core-aio:8090/
-        -Dcsrf.filter.enabled=false
-        -XX:MinRAMPercentage=50 -XX:MaxRAMPercentage=80
-        "
-    volumes:
-      - alfresco-volume:/usr/local/tomcat/alf_data
+                -Ddb.driver=org.postgresql.Driver
+                -Ddb.username=alfresco
+                -Ddb.password=alfresco
+                -Ddb.url=jdbc:postgresql://postgres:5432/alfresco
+                -Dsolr.host=solr6
+                -Dsolr.port=8983
+                -Dsolr.http.connection.timeout=1000
+                -Dsolr.secureComms=none
+                -Dsolr.base.url=/solr
+                -Dindex.subsystem.name=solr6
+                -Dshare.host=127.0.0.1
+                -Dshare.port=8080
+                -Dalfresco.host=localhost
+                -Dalfresco.port=8080
+                -Daos.baseUrlOverwrite=http://localhost:8080/alfresco/aos
+                -Dmessaging.broker.url=\"failover:(nio://activemq:61616)?timeout=3000&jms.useCompression=true\"
+                -Ddeployment.method=DOCKER_COMPOSE
+                -DlocalTransform.core-aio.url=http://transform-core-aio:8090/
+                -Dcsrf.filter.enabled=false
+                -XX:MinRAMPercentage=50 -XX:MaxRAMPercentage=80
+                "
 
   transform-core-aio:
-    image: alfresco/alfresco-transform-core-aio:2.3.6
+    image: alfresco/alfresco-transform-core-aio:2.3.8
     mem_limit: 1536m
     environment:
       JAVA_OPTS: " -XX:MinRAMPercentage=50 -XX:MaxRAMPercentage=80"
@@ -67,16 +66,16 @@ services:
       REPO_HOST: "alfresco"
       REPO_PORT: "8080"
       JAVA_OPTS: "
-        -XX:MinRAMPercentage=50
-        -XX:MaxRAMPercentage=80
-        -Dalfresco.host=localhost
-        -Dalfresco.port=8080
-        -Dalfresco.context=alfresco
-        -Dalfresco.protocol=http
-        "
+                -XX:MinRAMPercentage=50
+                -XX:MaxRAMPercentage=80
+                -Dalfresco.host=localhost
+                -Dalfresco.port=8080
+                -Dalfresco.context=alfresco
+                -Dalfresco.protocol=http
+                "
 
   postgres:
-    image: postgres:11.7
+    image: postgres:13.1
     mem_limit: 512m
     environment:
       - POSTGRES_PASSWORD=alfresco
@@ -85,8 +84,6 @@ services:
     command: postgres -c max_connections=300 -c log_min_messages=LOG
     ports:
       - 5432:5432
-    volumes:
-      - db-volume:/var/lib/postgresql/data
 
   solr6:
     image: alfresco/alfresco-search-services:2.0.1
@@ -104,12 +101,9 @@ services:
       - ALFRESCO_SECURE_COMMS=none
     ports:
       - 8083:8983 #Browser port
-    volumes:
-      - solr-volume:/opt/alfresco-search-services/contentstore
-      - solr-volume:/opt/alfresco-search-services/data
 
   activemq:
-    image: alfresco/alfresco-activemq:5.15.8
+    image: alfresco/alfresco-activemq:5.16.1
     mem_limit: 1g
     ports:
       - 8161:8161 # Web Console
@@ -122,6 +116,7 @@ services:
 
   proxy:
     image: alfresco/alfresco-acs-nginx:3.1.0
+    mem_limit: 128m
     environment:
       ADW_URL: http://content-app:8080
       DISABLE_SYNCSERVICE: "true"
@@ -135,10 +130,4 @@ services:
       - content-app
       - alfresco
       - share
-volumes:
-  alfresco-volume:
-    external: false
-  db-volume:
-    external: false
-  solr-volume:
-    external: false
+
