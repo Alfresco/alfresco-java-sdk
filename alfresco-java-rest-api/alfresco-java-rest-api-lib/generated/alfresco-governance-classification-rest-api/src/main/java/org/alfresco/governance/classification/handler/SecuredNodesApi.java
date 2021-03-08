@@ -42,13 +42,14 @@ import java.util.List;
 @Api(value = "SecuredNodes")
 public interface SecuredNodesApi {
 
-    @ApiOperation(value = "List all security marks assigned to a node.", nickname = "getSecuringMarks", notes = "List all the existing security marks assigned to a node with id **nodeId**.", response = SecuringMarksPaging.class, authorizations = {
+    @ApiOperation(value = "List all security marks assigned to a node.", nickname = "getSecuringMarks", notes = "List all the existing security marks assigned to a node with id **nodeId**.  **Note:** The control of the list size using pagination is currently not supported. ", response = SecuringMarksPaging.class, authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "secured-nodes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = SecuringMarksPaging.class),
         @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** is not in valid format "),
         @ApiResponse(code = 401, message = "Authentication failed"),
+        @ApiResponse(code = 403, message = "Current user does not have permission to retrieve security marks assigned to **nodeId**"),
         @ApiResponse(code = 404, message = "**nodeId** does not exist"),
         @ApiResponse(code = 405, message = "Classification is not supported for **nodeId**"),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
@@ -63,17 +64,18 @@ public interface SecuredNodesApi {
         @Authorization(value = "basicAuth")
     }, tags={ "secured-nodes", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successful response", response = SecuringMarksPaging.class),
-        @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** is not in a valid format or the **nodeId** is invalid "),
+        @ApiResponse(code = 201, message = "Successful response", response = SecuringMarksPaging.class),
+        @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** is not in a valid format or the **securityMarksUpdate** is invalid "),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "Current user does not have permission to update **nodeId**"),
         @ApiResponse(code = 404, message = "**nodeId** does not exist"),
         @ApiResponse(code = 405, message = "Classification is not supported for **nodeId**"),
+        @ApiResponse(code = 422, message = "There is a problem with the internal state that prevents the update of security marks for a node, for example current user would lose access to **nodeId**. "),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/secured-nodes/{nodeId}/securing-marks",
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<SecuringMarksPaging> updateSecuringMarks(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The list of security marks updates." ,required=true )  @Valid @RequestBody SecuringMarksUpdateBody nodeBodyCreate);
+    ResponseEntity<SecuringMarksPaging> updateSecuringMarks(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The list of security marks updates." ,required=true )  @Valid @RequestBody SecuringMarksUpdateBody securityMarksUpdates);
 
 }

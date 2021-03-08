@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 List all security marks assigned to a node.
 
-List all the existing security marks assigned to a node with id **nodeId**.
+List all the existing security marks assigned to a node with id **nodeId**.  **Note:** The control of the list size using pagination is currently not supported. 
 
 ### Example
 ```java
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSecuringMarks"></a>
 # **updateSecuringMarks**
-> SecuringMarksPaging updateSecuringMarks(nodeId, nodeBodyCreate)
+> SecuringMarksPaging updateSecuringMarks(nodeId, securityMarksUpdates)
 
 Manage the existing security marks for a node
 
@@ -92,9 +92,9 @@ Manage the list of existing security marks for a node with id **nodeId**.
 
 SecuredNodesApi apiInstance = new SecuredNodesApi();
 String nodeId = "nodeId_example"; // String | The identifier of a node.
-SecuringMarksUpdateBody nodeBodyCreate = new SecuringMarksUpdateBody(); // SecuringMarksUpdateBody | The list of security marks updates.
+SecuringMarksUpdateBody securityMarksUpdates = new SecuringMarksUpdateBody(); // SecuringMarksUpdateBody | The list of security marks updates.
 try {
-    SecuringMarksPaging result = apiInstance.updateSecuringMarks(nodeId, nodeBodyCreate);
+    SecuringMarksPaging result = apiInstance.updateSecuringMarks(nodeId, securityMarksUpdates);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SecuredNodesApi#updateSecuringMarks");
@@ -107,7 +107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
- **nodeBodyCreate** | [**SecuringMarksUpdateBody**](SecuringMarksUpdateBody.md)| The list of security marks updates. |
+ **securityMarksUpdates** | [**SecuringMarksUpdateBody**](SecuringMarksUpdateBody.md)| The list of security marks updates. |
 
 ### Return type
 

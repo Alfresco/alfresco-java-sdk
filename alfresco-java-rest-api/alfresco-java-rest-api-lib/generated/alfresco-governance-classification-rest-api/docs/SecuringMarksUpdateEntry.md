@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **groupId** | **String** |  | 
-**operation** | [**OperationEnum**](#OperationEnum) |  | 
+**op** | [**OpEnum**](#OpEnum) |  | 
 
 
-<a name="OperationEnum"></a>
-## Enum: OperationEnum
+<a name="OpEnum"></a>
+## Enum: OpEnum
 Name | Value
 ---- | -----
 ADD | &quot;ADD&quot;
