@@ -28,14 +28,14 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties
 public class ClientConfiguration {
 
-  @Value("${alfrescoGovernanceServicesREST_.security.basicAuth.username:}")
+  @Value("${governance.service.security.basicAuth.username}")
   private String basicAuthUsername;
 
-  @Value("${alfrescoGovernanceServicesREST_.security.basicAuth.password:}")
+  @Value("${governance.service.security.basicAuth.password}")
   private String basicAuthPassword;
 
   @Bean
-  @ConditionalOnProperty(name = "alfrescoGovernanceServicesREST_.security.basicAuth.username")
+  @ConditionalOnProperty(name = "governance.service.security.basicAuth.username")
   public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
     return new BasicAuthRequestInterceptor(this.basicAuthUsername, this.basicAuthPassword);
   }

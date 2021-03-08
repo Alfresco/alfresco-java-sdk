@@ -6,9 +6,21 @@ GENERATED_SOURCE_DIR=${GENERATED_SOURCE_DIR:-generated}
 find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;, url = "${processServicesEnterprise_.url:.*}";, url = "${process.service.url}", path = "${process.service.path}";g' \
   -e 's;, url = "${alfrescoContentServicesREST_.url:.*}";, url = "${content.service.url}", path = "${content.service.path}";g' \
+  -e 's;"${alfrescoContentServicesREST_.security.basicAuth.username:.*}";"${content.service.security.basicAuth.username}";g' \
+  -e 's;"${alfrescoContentServicesREST_.security.basicAuth.password:.*}";"${content.service.security.basicAuth.password}";g' \
+  -e 's;"alfrescoContentServicesREST_.security.basicAuth.username";"content.service.security.basicAuth.username";g' \
   -e 's;, url = "${alfrescoGovernanceServicesSecurityControls.url:.*}";, url = "${governance.service.url}", path = "${governance.service.path}";g' \
+  -e 's;"${alfrescoGovernanceServicesSecurityControls.security.basicAuth.username:.*}";"${governance.service.security.basicAuth.username}";g' \
+  -e 's;"${alfrescoGovernanceServicesSecurityControls.security.basicAuth.password:.*}";"${governance.service.security.basicAuth.password}";g' \
+  -e 's;"alfrescoGovernanceServicesSecurityControls.security.basicAuth.username";"governance.service.security.basicAuth.username";g' \
   -e 's;, url = "${alfrescoGovernanceServicesREST_.url:.*}";, url = "${governance.service.url}", path = "${governance.service.path}";g' \
+  -e 's;"${alfrescoGovernanceServicesREST_.security.basicAuth.username:.*}";"${governance.service.security.basicAuth.username}";g' \
+  -e 's;"${alfrescoGovernanceServicesREST_.security.basicAuth.password:.*}";"${governance.service.security.basicAuth.password}";g' \
+  -e 's;"alfrescoGovernanceServicesREST_.security.basicAuth.username";"governance.service.security.basicAuth.username";g' \
   -e 's;, url = "${alfrescoInsightEngineREST_.url:.*}";, url = "${content.service.url}", path = "${content.service.path}";g' \
+  -e 's;"${alfrescoInsightEngineREST_.security.basicAuth.username:.*}";"${content.service.security.basicAuth.username}";g' \
+  -e 's;"${alfrescoInsightEngineREST_.security.basicAuth.password:.*}";"${content.service.security.basicAuth.password}";g' \
+  -e 's;"alfrescoInsightEngineREST_.security.basicAuth.username";"content.service.security.basicAuth.username";g' \
   -e 's@import com\.alfresco\..*\.ResponseEntity;@@g' \
   -i '' {} +
 
