@@ -16,9 +16,18 @@
 package org.alfresco.rest.sdk.config;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableFeignClients(basePackages = {
+    "org.alfresco.core.handler",
+    "org.alfresco.discovery.handler",
+    "org.alfresco.governance.core.handler",
+    "org.alfresco.governance.classification.handler",
+    "org.alfresco.search.handler",
+    "org.alfresco.search.sql.handler"
+})
 @EnableConfigurationProperties(AlfrescoRestApiProperties.class)
 public class AlfrescoRestApiAutoConfiguration {
 
