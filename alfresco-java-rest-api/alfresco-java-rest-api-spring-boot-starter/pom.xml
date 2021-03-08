@@ -20,41 +20,7 @@
       <version>${project.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-core-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-auth-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-discovery-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-governance-core-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-governance-classification-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-search-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-search-sql-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
+
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
