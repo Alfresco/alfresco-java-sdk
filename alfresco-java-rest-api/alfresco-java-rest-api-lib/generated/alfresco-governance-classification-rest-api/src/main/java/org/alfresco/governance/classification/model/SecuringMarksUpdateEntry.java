@@ -38,16 +38,16 @@ public class SecuringMarksUpdateEntry   {
   private String groupId = null;
 
   /**
-   * Gets or Sets operation
+   * Gets or Sets op
    */
-  public enum OperationEnum {
+  public enum OpEnum {
     ADD("ADD"),
     
     REMOVE("REMOVE");
 
     private String value;
 
-    OperationEnum(String value) {
+    OpEnum(String value) {
       this.value = value;
     }
 
@@ -58,8 +58,8 @@ public class SecuringMarksUpdateEntry   {
     }
 
     @JsonCreator
-    public static OperationEnum fromValue(String text) {
-      for (OperationEnum b : OperationEnum.values()) {
+    public static OpEnum fromValue(String text) {
+      for (OpEnum b : OpEnum.values()) {
         if (String.valueOf(b.value).equals(text)) {
           return b;
         }
@@ -68,8 +68,8 @@ public class SecuringMarksUpdateEntry   {
     }
   }
 
-  @JsonProperty("operation")
-  private OperationEnum operation = null;
+  @JsonProperty("op")
+  private OpEnum op = null;
 
   public SecuringMarksUpdateEntry id(String id) {
     this.id = id;
@@ -113,25 +113,25 @@ public class SecuringMarksUpdateEntry   {
     this.groupId = groupId;
   }
 
-  public SecuringMarksUpdateEntry operation(OperationEnum operation) {
-    this.operation = operation;
+  public SecuringMarksUpdateEntry op(OpEnum op) {
+    this.op = op;
     return this;
   }
 
   /**
-   * Get operation
-   * @return operation
+   * Get op
+   * @return op
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
 
-  public OperationEnum getOperation() {
-    return operation;
+  public OpEnum getOp() {
+    return op;
   }
 
-  public void setOperation(OperationEnum operation) {
-    this.operation = operation;
+  public void setOp(OpEnum op) {
+    this.op = op;
   }
 
 
@@ -146,12 +146,12 @@ public class SecuringMarksUpdateEntry   {
     SecuringMarksUpdateEntry securingMarksUpdateEntry = (SecuringMarksUpdateEntry) o;
     return Objects.equals(this.id, securingMarksUpdateEntry.id) &&
         Objects.equals(this.groupId, securingMarksUpdateEntry.groupId) &&
-        Objects.equals(this.operation, securingMarksUpdateEntry.operation);
+        Objects.equals(this.op, securingMarksUpdateEntry.op);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, groupId, operation);
+    return Objects.hash(id, groupId, op);
   }
 
   @Override
@@ -161,7 +161,7 @@ public class SecuringMarksUpdateEntry   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+    sb.append("    op: ").append(toIndentedString(op)).append("\n");
     sb.append("}");
     return sb.toString();
   }

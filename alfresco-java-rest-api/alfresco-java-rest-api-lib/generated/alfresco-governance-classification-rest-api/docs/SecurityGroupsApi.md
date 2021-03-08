@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 List all security groups
 
-Gets all security groups.
+Gets all security groups.  **Note:** The control of the list size using pagination is currently not supported. 
 
 ### Example
 ```java

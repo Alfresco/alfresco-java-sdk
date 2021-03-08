@@ -47,10 +47,10 @@ public interface SecurityGroupsApi {
     }, tags={ "security-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "Successful response", response = SecurityGroupModel.class),
-        @ApiResponse(code = 400, message = "\"**groupName** is a mandatory parameter or **groupType** is a mandatory parameter or could not find enum with name\" "),
+        @ApiResponse(code = 400, message = "**groupName** is a mandatory parameter or **groupType** is a mandatory parameter or the value provided for groupType is not one of the values accepted for Enum class: [HIERARCHICAL, USER_REQUIRES_ALL, USER_REQUIRES_ANY] "),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "The user doesn't have permission to create a security group."),
-        @ApiResponse(code = 409, message = "A security group with the display label **securityGroupId** already exists."),
+        @ApiResponse(code = 409, message = "A security group with the name **groupName** already exists."),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/security-groups",
         produces = "application/json", 
@@ -64,10 +64,11 @@ public interface SecurityGroupsApi {
     }, tags={ "security-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "Successful response"),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format"),
         @ApiResponse(code = 401, message = "Authentication failed"),
-        @ApiResponse(code = 403, message = "User is not cleared to delete the security group with id **securityGroupId**"),
+        @ApiResponse(code = 403, message = "The user doesn't have permission to delete a security group."),
         @ApiResponse(code = 404, message = "Could not find security group with id **securityGroupId**"),
-        @ApiResponse(code = 422, message = "The security group with id **securityGroupId** is in use and cannot be deleted."),
+        @ApiResponse(code = 422, message = "There is a problem with the internal state that prevents the delete of the security group, for example the security group with id **securityGroupId** is in use. "),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/security-groups/{securityGroupId}",
         produces = "application/json", 
@@ -81,6 +82,7 @@ public interface SecurityGroupsApi {
     }, tags={ "security-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = SecurityGroupModel.class),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format"),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 404, message = "Could not find security group with id **securityGroupId**"),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
@@ -91,7 +93,7 @@ public interface SecurityGroupsApi {
     ResponseEntity<SecurityGroupModel> getSecurityGroup(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "The extra fields that should be added in the response.") @Valid @RequestParam(value = "include", required = false) String include);
 
 
-    @ApiOperation(value = "List all security groups", nickname = "listSecurityGroups", notes = "Gets all security groups.", response = SecurityGroupPaging.class, authorizations = {
+    @ApiOperation(value = "List all security groups", nickname = "listSecurityGroups", notes = "Gets all security groups.  **Note:** The control of the list size using pagination is currently not supported. ", response = SecurityGroupPaging.class, authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "security-groups", })
     @ApiResponses(value = { 
@@ -110,11 +112,11 @@ public interface SecurityGroupsApi {
     }, tags={ "security-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = SecurityGroupModel.class),
-        @ApiResponse(code = 400, message = "**groupName** is a mandatory parameter"),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format or **groupName** is a mandatory parameter"),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "The user doesn't have permission to update a security group"),
         @ApiResponse(code = 404, message = "Could not find security group with id **securityGroupId**"),
-        @ApiResponse(code = 409, message = "A security group with the display label **groupName** already exists."),
+        @ApiResponse(code = 409, message = "A security group with the name **groupName** already exists."),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/security-groups/{securityGroupId}",
         produces = "application/json", 

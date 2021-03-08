@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import org.alfresco.governance.classification.model.Pagination;
-import org.alfresco.governance.classification.model.SecurityMarkModel;
+import org.alfresco.governance.classification.model.SecurityMarkModelEntry;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -39,7 +39,7 @@ public class SecurityMarksPagingList   {
 
   @JsonProperty("entries")
   @Valid
-  private List<SecurityMarkModel> entries = null;
+  private List<SecurityMarkModelEntry> entries = null;
 
   public SecurityMarksPagingList pagination(Pagination pagination) {
     this.pagination = pagination;
@@ -62,12 +62,12 @@ public class SecurityMarksPagingList   {
     this.pagination = pagination;
   }
 
-  public SecurityMarksPagingList entries(List<SecurityMarkModel> entries) {
+  public SecurityMarksPagingList entries(List<SecurityMarkModelEntry> entries) {
     this.entries = entries;
     return this;
   }
 
-  public SecurityMarksPagingList addEntriesItem(SecurityMarkModel entriesItem) {
+  public SecurityMarksPagingList addEntriesItem(SecurityMarkModelEntry entriesItem) {
     if (this.entries == null) {
       this.entries = new ArrayList<>();
     }
@@ -83,11 +83,11 @@ public class SecurityMarksPagingList   {
 
   @Valid
 
-  public List<SecurityMarkModel> getEntries() {
+  public List<SecurityMarkModelEntry> getEntries() {
     return entries;
   }
 
-  public void setEntries(List<SecurityMarkModel> entries) {
+  public void setEntries(List<SecurityMarkModelEntry> entries) {
     this.entries = entries;
   }
 

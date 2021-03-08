@@ -47,11 +47,12 @@ public interface SecurityMarksApi {
     }, tags={ "security-marks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "Successful response", response = SecurityMarkModel.class),
-        @ApiResponse(code = 400, message = "**name** is a mandatory parameter"),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format or **name** is a mandatory parameter"),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "The user doesn't have permission to create a security mark"),
         @ApiResponse(code = 404, message = "Could not find security group with id **securityGroupId**"),
-        @ApiResponse(code = 409, message = "A security control with the display label **name** already exists in the security group."),
+        @ApiResponse(code = 409, message = "A security mark with the name **name** already exists in the security group."),
+        @ApiResponse(code = 422, message = "There is a problem with the internal state that prevents adding security marks, for example the mark cannot be added to a system security group. "),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/security-groups/{securityGroupId}/security-marks",
         produces = "application/json", 
@@ -65,10 +66,11 @@ public interface SecurityMarksApi {
     }, tags={ "security-marks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "Successful response"),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format or **securityMarkId** is not in valid format"),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "The user doesn't have permission to delete a security mark"),
-        @ApiResponse(code = 404, message = "Could not find security control with id **securityMarkId** or security group with id **securityGroupId**"),
-        @ApiResponse(code = 422, message = "The security control with id **securityMarkId** is a member of **securityGroupId** which is in use and so the control cannot be deleted."),
+        @ApiResponse(code = 404, message = "Could not find security mark with id **securityMarkId** or security group with id **securityGroupId**"),
+        @ApiResponse(code = 422, message = "There is a problem with the internal state that prevents the delete of the security mark, for example the security mark with id **securityMarkId** is a member of **securityGroupId** which is in use. "),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/security-groups/{securityGroupId}/security-marks/{securityMarkId}",
         produces = "application/json", 
@@ -82,6 +84,7 @@ public interface SecurityMarksApi {
     }, tags={ "security-marks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = SecurityMarkModel.class),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format or **securityMarkId** is not in valid format"),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 404, message = "Could not find security mark with id **securityMarkId** or security group with id **securityGroupId**"),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
@@ -92,12 +95,14 @@ public interface SecurityMarksApi {
     ResponseEntity<SecurityMarkModel> getSecurityGroupMark(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "The identifier for the security mark",required=true) @PathVariable("securityMarkId") String securityMarkId);
 
 
-    @ApiOperation(value = "Gets all the marks in a security group", nickname = "getSecurityGroupMarks", notes = "Gets all the marks in a security group with id **securityGroupId**.", response = SecurityMarksPaging.class, authorizations = {
+    @ApiOperation(value = "Gets all the marks in a security group", nickname = "getSecurityGroupMarks", notes = "Gets all the marks in a security group with id **securityGroupId**.  **Note:** The control of the list size using pagination is currently not supported. ", response = SecurityMarksPaging.class, authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "security-marks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = SecurityMarksPaging.class),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format"),
         @ApiResponse(code = 401, message = "Authentication failed"),
+        @ApiResponse(code = 404, message = "Could not find security group with id: **securityGroupId**"),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/security-groups/{securityGroupId}/security-marks",
         produces = "application/json", 
@@ -111,11 +116,11 @@ public interface SecurityMarksApi {
     }, tags={ "security-marks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = SecurityMarkModel.class),
-        @ApiResponse(code = 400, message = "**id** is a mandatory parameter or **name** is a mandatory parameter"),
+        @ApiResponse(code = 400, message = "Invalid parameter: **securityGroupId** is not in valid format or **securityMarkId** is not in valid format or **name** is a mandatory parameter "),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "The user doesn't have permission to update a security mark"),
-        @ApiResponse(code = 404, message = "Could not find security control with id **securityMarkId** or security group with id **securityGroupId**"),
-        @ApiResponse(code = 409, message = "A security control with the display label **name** already exists in the security group."),
+        @ApiResponse(code = 404, message = "Could not find security mark with id **securityMarkId** or security group with id **securityGroupId**"),
+        @ApiResponse(code = 409, message = "A security mark with the name **name** already exists in the security group."),
         @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
     @RequestMapping(value = "/security-groups/{securityGroupId}/security-marks/{securityMarkId}",
         produces = "application/json", 

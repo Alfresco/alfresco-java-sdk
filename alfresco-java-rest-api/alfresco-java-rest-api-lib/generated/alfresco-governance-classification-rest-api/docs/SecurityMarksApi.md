@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 Gets all the marks in a security group
 
-Gets all the marks in a security group with id **securityGroupId**.
+Gets all the marks in a security group with id **securityGroupId**.  **Note:** The control of the list size using pagination is currently not supported. 
 
 ### Example
 ```java
