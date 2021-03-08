@@ -16,6 +16,7 @@
   <description>Sample application of the Java SDK</description>
 
   <modules>
+    <module>extension-template</module>
     <module>event-api-handlers</module>
     <module>event-api-spring-integration</module>
   </modules>
