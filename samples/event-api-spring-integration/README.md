@@ -24,14 +24,14 @@ OpenJDK 64-Bit Server VM 18.9 (build 11.0.1+13, mixed mode)
 ```bash
 $ mvn -version
 
-Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T07:57:37-04:00)
+Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-04T21:00:29+02:00)
 ```
 
 * [Docker](https://docs.docker.com/install/) version 1.12 or higher:
 ```bash
 $ docker -v
 
-Docker version 18.09.2, build 6247962
+Docker version 20.10.2, build 2291f61
 ```
 
 * [Docker compose](https://docs.docker.com/compose/install/):
@@ -47,7 +47,7 @@ This sample project local development environment is based on Docker, so a ```ru
 easily. This script will require execution permissions, so add it if it hasn't.
 
 ```bash
-$ chmod +x docker-run.sh
+$ chmod +x run.sh
 ```
 
 See [```run.sh```](run.sh) or [```run.bat```](run.bat) if you would like to know how each function exactly works.
