@@ -72,8 +72,7 @@ public class ContentInfo   {
    * Get mimeTypeName
    * @return mimeTypeName
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
 
   public String getMimeTypeName() {
@@ -93,8 +92,7 @@ public class ContentInfo   {
    * Get sizeInBytes
    * @return sizeInBytes
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
 
   public Long getSizeInBytes() {

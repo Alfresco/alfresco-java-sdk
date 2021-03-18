@@ -21,7 +21,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.alfresco.core.model.PermissionsBody;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
@@ -44,7 +46,8 @@ public class NodeBodyUpdate   {
   private List<String> aspectNames = null;
 
   @JsonProperty("properties")
-  private Object properties = null;
+  @Valid
+  private Map<String, Object> properties = null;
 
   @JsonProperty("permissions")
   private PermissionsBody permissions = null;
@@ -117,8 +120,16 @@ public class NodeBodyUpdate   {
     this.aspectNames = aspectNames;
   }
 
-  public NodeBodyUpdate properties(Object properties) {
+  public NodeBodyUpdate properties(Map<String, Object> properties) {
     this.properties = properties;
+    return this;
+  }
+
+  public NodeBodyUpdate putPropertiesItem(String key, Object propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new HashMap<>();
+    }
+    this.properties.put(key, propertiesItem);
     return this;
   }
 
@@ -129,11 +140,11 @@ public class NodeBodyUpdate   {
   @ApiModelProperty(value = "")
 
 
-  public Object getProperties() {
+  public Map<String, Object> getProperties() {
     return properties;
   }
 
-  public void setProperties(Object properties) {
+  public void setProperties(Map<String, Object> properties) {
     this.properties = properties;
   }
 

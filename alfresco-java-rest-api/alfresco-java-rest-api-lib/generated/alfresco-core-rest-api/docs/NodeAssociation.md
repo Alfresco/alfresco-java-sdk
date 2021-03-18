@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **allowableOperations** | **List&lt;String&gt;** |  |  [optional]
 **path** | [**PathInfo**](PathInfo.md) |  |  [optional]
 **permissions** | [**PermissionsInfo**](PermissionsInfo.md) |  |  [optional]
+**definition** | [**Definition**](Definition.md) |  |  [optional]
 **association** | [**AssociationInfo**](AssociationInfo.md) |  |  [optional]
 
 

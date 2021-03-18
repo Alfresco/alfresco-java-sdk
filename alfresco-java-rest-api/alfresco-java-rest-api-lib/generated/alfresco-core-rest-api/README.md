@@ -188,25 +188,30 @@ Class | Method | HTTP request | Description
 *SharedLinksApi* | [**listSharedLinks**](docs/SharedLinksApi.md#listSharedLinks) | **GET** /shared-links | List shared links
 *SitesApi* | [**approveSiteMembershipRequest**](docs/SitesApi.md#approveSiteMembershipRequest) | **POST** /sites/{siteId}/site-membership-requests/{inviteeId}/approve | Approve a site membership request
 *SitesApi* | [**createSite**](docs/SitesApi.md#createSite) | **POST** /sites | Create a site
+*SitesApi* | [**createSiteGroupMembership**](docs/SitesApi.md#createSiteGroupMembership) | **POST** /sites/{siteId}/group-members | Create a site membership for group
 *SitesApi* | [**createSiteMembership**](docs/SitesApi.md#createSiteMembership) | **POST** /sites/{siteId}/members | Create a site membership
 *SitesApi* | [**createSiteMembershipRequestForPerson**](docs/SitesApi.md#createSiteMembershipRequestForPerson) | **POST** /people/{personId}/site-membership-requests | Create a site membership request
 *SitesApi* | [**deleteSite**](docs/SitesApi.md#deleteSite) | **DELETE** /sites/{siteId} | Delete a site
+*SitesApi* | [**deleteSiteGroupMembership**](docs/SitesApi.md#deleteSiteGroupMembership) | **DELETE** /sites/{siteId}/group-members/{groupId} | Delete a group membership for site
 *SitesApi* | [**deleteSiteMembership**](docs/SitesApi.md#deleteSiteMembership) | **DELETE** /sites/{siteId}/members/{personId} | Delete a site membership
 *SitesApi* | [**deleteSiteMembershipForPerson**](docs/SitesApi.md#deleteSiteMembershipForPerson) | **DELETE** /people/{personId}/sites/{siteId} | Delete a site membership
 *SitesApi* | [**deleteSiteMembershipRequestForPerson**](docs/SitesApi.md#deleteSiteMembershipRequestForPerson) | **DELETE** /people/{personId}/site-membership-requests/{siteId} | Delete a site membership request
 *SitesApi* | [**getSite**](docs/SitesApi.md#getSite) | **GET** /sites/{siteId} | Get a site
 *SitesApi* | [**getSiteContainer**](docs/SitesApi.md#getSiteContainer) | **GET** /sites/{siteId}/containers/{containerId} | Get a site container
+*SitesApi* | [**getSiteGroupMembership**](docs/SitesApi.md#getSiteGroupMembership) | **GET** /sites/{siteId}/group-members/{groupId} | Get information about site membership of group
 *SitesApi* | [**getSiteMembership**](docs/SitesApi.md#getSiteMembership) | **GET** /sites/{siteId}/members/{personId} | Get a site membership
 *SitesApi* | [**getSiteMembershipForPerson**](docs/SitesApi.md#getSiteMembershipForPerson) | **GET** /people/{personId}/sites/{siteId} | Get a site membership
 *SitesApi* | [**getSiteMembershipRequestForPerson**](docs/SitesApi.md#getSiteMembershipRequestForPerson) | **GET** /people/{personId}/site-membership-requests/{siteId} | Get a site membership request
 *SitesApi* | [**getSiteMembershipRequests**](docs/SitesApi.md#getSiteMembershipRequests) | **GET** /site-membership-requests | Get site membership requests
 *SitesApi* | [**listSiteContainers**](docs/SitesApi.md#listSiteContainers) | **GET** /sites/{siteId}/containers | List site containers
+*SitesApi* | [**listSiteGroups**](docs/SitesApi.md#listSiteGroups) | **GET** /sites/{siteId}/group-members | List group membership for site
 *SitesApi* | [**listSiteMembershipRequestsForPerson**](docs/SitesApi.md#listSiteMembershipRequestsForPerson) | **GET** /people/{personId}/site-membership-requests | List site membership requests
 *SitesApi* | [**listSiteMemberships**](docs/SitesApi.md#listSiteMemberships) | **GET** /sites/{siteId}/members | List site memberships
 *SitesApi* | [**listSiteMembershipsForPerson**](docs/SitesApi.md#listSiteMembershipsForPerson) | **GET** /people/{personId}/sites | List site memberships
 *SitesApi* | [**listSites**](docs/SitesApi.md#listSites) | **GET** /sites | List sites
 *SitesApi* | [**rejectSiteMembershipRequest**](docs/SitesApi.md#rejectSiteMembershipRequest) | **POST** /sites/{siteId}/site-membership-requests/{inviteeId}/reject | Reject a site membership request
 *SitesApi* | [**updateSite**](docs/SitesApi.md#updateSite) | **PUT** /sites/{siteId} | Update a site
+*SitesApi* | [**updateSiteGroupMembership**](docs/SitesApi.md#updateSiteGroupMembership) | **PUT** /sites/{siteId}/group-members/{groupId} | Update site membership of group
 *SitesApi* | [**updateSiteMembership**](docs/SitesApi.md#updateSiteMembership) | **PUT** /sites/{siteId}/members/{personId} | Update a site membership
 *SitesApi* | [**updateSiteMembershipRequestForPerson**](docs/SitesApi.md#updateSiteMembershipRequestForPerson) | **PUT** /people/{personId}/site-membership-requests/{siteId} | Update a site membership request
 *TagsApi* | [**createTagForNode**](docs/TagsApi.md#createTagForNode) | **POST** /nodes/{nodeId}/tags | Create a tag for a node
@@ -223,10 +228,14 @@ Class | Method | HTTP request | Description
 *TrashcanApi* | [**listDeletedNodeRenditions**](docs/TrashcanApi.md#listDeletedNodeRenditions) | **GET** /deleted-nodes/{nodeId}/renditions | List renditions for a deleted node
 *TrashcanApi* | [**listDeletedNodes**](docs/TrashcanApi.md#listDeletedNodes) | **GET** /deleted-nodes | List deleted nodes
 *TrashcanApi* | [**restoreDeletedNode**](docs/TrashcanApi.md#restoreDeletedNode) | **POST** /deleted-nodes/{nodeId}/restore | Restore a deleted node
+*VersionsApi* | [**createVersionRendition**](docs/VersionsApi.md#createVersionRendition) | **POST** /nodes/{nodeId}/versions/{versionId}/renditions | Create rendition for a file version
 *VersionsApi* | [**deleteVersion**](docs/VersionsApi.md#deleteVersion) | **DELETE** /nodes/{nodeId}/versions/{versionId} | Delete a version
 *VersionsApi* | [**getVersion**](docs/VersionsApi.md#getVersion) | **GET** /nodes/{nodeId}/versions/{versionId} | Get version information
 *VersionsApi* | [**getVersionContent**](docs/VersionsApi.md#getVersionContent) | **GET** /nodes/{nodeId}/versions/{versionId}/content | Get version content
+*VersionsApi* | [**getVersionRendition**](docs/VersionsApi.md#getVersionRendition) | **GET** /nodes/{nodeId}/versions/{versionId}/renditions/{renditionId} | Get rendition information for a file version
+*VersionsApi* | [**getVersionRenditionContent**](docs/VersionsApi.md#getVersionRenditionContent) | **GET** /nodes/{nodeId}/versions/{versionId}/renditions/{renditionId}/content | Get rendition content for a file version
 *VersionsApi* | [**listVersionHistory**](docs/VersionsApi.md#listVersionHistory) | **GET** /nodes/{nodeId}/versions | List version history
+*VersionsApi* | [**listVersionRenditions**](docs/VersionsApi.md#listVersionRenditions) | **GET** /nodes/{nodeId}/versions/{versionId}/renditions | List renditions for a file version
 *VersionsApi* | [**revertVersion**](docs/VersionsApi.md#revertVersion) | **POST** /nodes/{nodeId}/versions/{versionId}/revert | Revert a version
 
 
@@ -257,6 +266,7 @@ Class | Method | HTTP request | Description
  - [AuditEntryEntry](docs/AuditEntryEntry.md)
  - [AuditEntryPaging](docs/AuditEntryPaging.md)
  - [AuditEntryPagingList](docs/AuditEntryPagingList.md)
+ - [Capabilities](docs/Capabilities.md)
  - [ChildAssociation](docs/ChildAssociation.md)
  - [ChildAssociationBody](docs/ChildAssociationBody.md)
  - [ChildAssociationEntry](docs/ChildAssociationEntry.md)
@@ -268,11 +278,14 @@ Class | Method | HTTP request | Description
  - [CommentPaging](docs/CommentPaging.md)
  - [CommentPagingList](docs/CommentPagingList.md)
  - [Company](docs/Company.md)
+ - [Constraint](docs/Constraint.md)
  - [ContentInfo](docs/ContentInfo.md)
+ - [Definition](docs/Definition.md)
  - [DeletedNodeBodyRestore](docs/DeletedNodeBodyRestore.md)
  - [DeletedNodeEntry](docs/DeletedNodeEntry.md)
  - [DeletedNodesPaging](docs/DeletedNodesPaging.md)
  - [DeletedNodesPagingList](docs/DeletedNodesPagingList.md)
+ - [DirectAccessUrlBodyCreate](docs/DirectAccessUrlBodyCreate.md)
  - [Download](docs/Download.md)
  - [DownloadBodyCreate](docs/DownloadBodyCreate.md)
  - [DownloadEntry](docs/DownloadEntry.md)
@@ -337,6 +350,7 @@ Class | Method | HTTP request | Description
  - [PreferencePagingList](docs/PreferencePagingList.md)
  - [ProbeEntry](docs/ProbeEntry.md)
  - [ProbeEntryEntry](docs/ProbeEntryEntry.md)
+ - [Property](docs/Property.md)
  - [Rating](docs/Rating.md)
  - [RatingAggregate](docs/RatingAggregate.md)
  - [RatingBody](docs/RatingBody.md)
@@ -363,6 +377,10 @@ Class | Method | HTTP request | Description
  - [SiteContainerPaging](docs/SiteContainerPaging.md)
  - [SiteContainerPagingList](docs/SiteContainerPagingList.md)
  - [SiteEntry](docs/SiteEntry.md)
+ - [SiteGroup](docs/SiteGroup.md)
+ - [SiteGroupEntry](docs/SiteGroupEntry.md)
+ - [SiteGroupPaging](docs/SiteGroupPaging.md)
+ - [SiteGroupPagingList](docs/SiteGroupPagingList.md)
  - [SiteMember](docs/SiteMember.md)
  - [SiteMemberEntry](docs/SiteMemberEntry.md)
  - [SiteMemberPaging](docs/SiteMemberPaging.md)

@@ -53,7 +53,7 @@ public interface TrashcanApi {
     }, tags={ "trashcan", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "Successful response"),
-        @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** is not a valid format           "),
+        @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** is not a valid format "),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "User does not have permission to permanently delete the deleted node"),
         @ApiResponse(code = 404, message = "**nodeId** does not exist "),
@@ -116,7 +116,7 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeletedNodeEntry> getDeletedNode(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions ") @Valid @RequestParam(value = "include", required = false) List<String> include);
+    ResponseEntity<DeletedNodeEntry> getDeletedNode(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
     @ApiOperation(value = "Get deleted node content", nickname = "getDeletedNodeContent", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets the content of the deleted node with identifier **nodeId**. ", response = Resource.class, authorizations = {
@@ -168,15 +168,15 @@ public interface TrashcanApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
-    ResponseEntity<DeletedNodesPaging> listDeletedNodes(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.  If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isLocked * path * properties * permissions ") @Valid @RequestParam(value = "include", required = false) List<String> include);
+    ResponseEntity<DeletedNodesPaging> listDeletedNodes(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list. If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isLocked * path * properties * permissions ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
-    @ApiOperation(value = "Restore a deleted node", nickname = "restoreDeletedNode", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Attempts to restore the deleted node **nodeId** to its original location or to a new location.  If the node is successfully restored to its former primary parent, then only the  primary child association will be restored, including recursively for any primary  children. It should be noted that no other secondary child associations or peer  associations will be restored, for any of the nodes within the primary parent-child  hierarchy of restored nodes, irrespective of whether these associations were to  nodes within or outside of the restored hierarchy.   Also, any previously shared link will not be restored since it is deleted at the time  of delete of each node. ", response = NodeEntry.class, authorizations = {
+    @ApiOperation(value = "Restore a deleted node", nickname = "restoreDeletedNode", notes = "**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Attempts to restore the deleted node **nodeId** to its original location or to a new location.  If the node is successfully restored to its former primary parent, then only the primary child association will be restored, including recursively for any primary children. It should be noted that no other secondary child associations or peer associations will be restored, for any of the nodes within the primary parent-child hierarchy of restored nodes, irrespective of whether these associations were to nodes within or outside of the restored hierarchy.  Also, any previously shared link will not be restored since it is deleted at the time of delete of each node. ", response = NodeEntry.class, authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "trashcan", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response", response = NodeEntry.class),
-        @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** or **targetNodeId** is not a valid format              "),
+        @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** or **targetNodeId** is not a valid format "),
         @ApiResponse(code = 401, message = "Authentication failed"),
         @ApiResponse(code = 403, message = "User does not have permission to restore the deleted node or user does not have permission to the target node"),
         @ApiResponse(code = 404, message = "**nodeId** does not exist or the restore destination parent node does not exists "),

@@ -39,6 +39,12 @@ public class AuditApp   {
   @JsonProperty("isEnabled")
   private Boolean isEnabled = true;
 
+  @JsonProperty("maxEntryId")
+  private Integer maxEntryId = null;
+
+  @JsonProperty("minEntryId")
+  private Integer minEntryId = null;
+
   public AuditApp id(String id) {
     this.id = id;
     return this;
@@ -100,6 +106,46 @@ public class AuditApp   {
     this.isEnabled = isEnabled;
   }
 
+  public AuditApp maxEntryId(Integer maxEntryId) {
+    this.maxEntryId = maxEntryId;
+    return this;
+  }
+
+  /**
+   * Get maxEntryId
+   * @return maxEntryId
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Integer getMaxEntryId() {
+    return maxEntryId;
+  }
+
+  public void setMaxEntryId(Integer maxEntryId) {
+    this.maxEntryId = maxEntryId;
+  }
+
+  public AuditApp minEntryId(Integer minEntryId) {
+    this.minEntryId = minEntryId;
+    return this;
+  }
+
+  /**
+   * Get minEntryId
+   * @return minEntryId
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Integer getMinEntryId() {
+    return minEntryId;
+  }
+
+  public void setMinEntryId(Integer minEntryId) {
+    this.minEntryId = minEntryId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,12 +158,14 @@ public class AuditApp   {
     AuditApp auditApp = (AuditApp) o;
     return Objects.equals(this.id, auditApp.id) &&
         Objects.equals(this.name, auditApp.name) &&
-        Objects.equals(this.isEnabled, auditApp.isEnabled);
+        Objects.equals(this.isEnabled, auditApp.isEnabled) &&
+        Objects.equals(this.maxEntryId, auditApp.maxEntryId) &&
+        Objects.equals(this.minEntryId, auditApp.minEntryId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, isEnabled);
+    return Objects.hash(id, name, isEnabled, maxEntryId, minEntryId);
   }
 
   @Override
@@ -128,6 +176,8 @@ public class AuditApp   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    isEnabled: ").append(toIndentedString(isEnabled)).append("\n");
+    sb.append("    maxEntryId: ").append(toIndentedString(maxEntryId)).append("\n");
+    sb.append("    minEntryId: ").append(toIndentedString(minEntryId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

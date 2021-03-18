@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Create a tag for a node
 
-Creates a tag on the node **nodeId**. You specify the tag in a JSON body like this:  &#x60;&#x60;&#x60;JSON {   \&quot;tag\&quot;:\&quot;test-tag-1\&quot; } &#x60;&#x60;&#x60;  **Note:** You can create more than one tag by  specifying a list of tags in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;tag\&quot;:\&quot;test-tag-1\&quot;   },   {     \&quot;tag\&quot;:\&quot;test-tag-2\&quot;   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {          ...         }       }     ]   } } &#x60;&#x60;&#x60; 
+Creates a tag on the node **nodeId**. You specify the tag in a JSON body like this:  &#x60;&#x60;&#x60;JSON {   \&quot;tag\&quot;:\&quot;test-tag-1\&quot; } &#x60;&#x60;&#x60;  **Note:** You can create more than one tag by specifying a list of tags in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;tag\&quot;:\&quot;test-tag-1\&quot;   },   {     \&quot;tag\&quot;:\&quot;test-tag-2\&quot;   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {          ...         }       }     ]   } } &#x60;&#x60;&#x60; 
 
 ### Example
 ```java
@@ -206,8 +206,8 @@ Gets a list of tags in this repository.  You can use the **include** parameter t
 
 
 TagsApi apiInstance = new TagsApi();
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
 List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the tag. The following optional fields can be requested: * count 
 try {
@@ -223,8 +223,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
  **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the tag. The following optional fields can be requested: * count  | [optional]
 
@@ -267,8 +267,8 @@ Gets a list of tags for node **nodeId**.
 
 TagsApi apiInstance = new TagsApi();
 String nodeId = "nodeId_example"; // String | The identifier of a node.
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
 try {
     TagPaging result = apiInstance.listTagsForNode(nodeId, skipCount, maxItems, fields);
@@ -284,8 +284,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type

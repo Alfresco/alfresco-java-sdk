@@ -54,8 +54,7 @@ public class Pagination   {
    * The number of objects in the entries array. 
    * @return count
   **/
-  @ApiModelProperty(required = true, value = "The number of objects in the entries array. ")
-  @NotNull
+  @ApiModelProperty(value = "The number of objects in the entries array. ")
 
 
   public Long getCount() {
@@ -75,8 +74,7 @@ public class Pagination   {
    * A boolean value which is **true** if there are more entities in the collection beyond those in this response. A true value means a request with a larger value for the **skipCount** or the **maxItems** parameter will return more entities. 
    * @return hasMoreItems
   **/
-  @ApiModelProperty(required = true, value = "A boolean value which is **true** if there are more entities in the collection beyond those in this response. A true value means a request with a larger value for the **skipCount** or the **maxItems** parameter will return more entities. ")
-  @NotNull
+  @ApiModelProperty(value = "A boolean value which is **true** if there are more entities in the collection beyond those in this response. A true value means a request with a larger value for the **skipCount** or the **maxItems** parameter will return more entities. ")
 
 
   public Boolean isHasMoreItems() {
@@ -113,11 +111,10 @@ public class Pagination   {
   }
 
   /**
-   * An integer describing how many entities exist in the collection before those included in this list. If there was no **skipCount** parameter then the  default value is 0. 
+   * An integer describing how many entities exist in the collection before those included in this list. If there was no **skipCount** parameter then the default value is 0. 
    * @return skipCount
   **/
-  @ApiModelProperty(required = true, value = "An integer describing how many entities exist in the collection before those included in this list. If there was no **skipCount** parameter then the  default value is 0. ")
-  @NotNull
+  @ApiModelProperty(value = "An integer describing how many entities exist in the collection before those included in this list. If there was no **skipCount** parameter then the default value is 0. ")
 
 
   public Long getSkipCount() {
@@ -137,8 +134,7 @@ public class Pagination   {
    * The value of the **maxItems** parameter used to generate this list. If there was no **maxItems** parameter then the default value is 100. 
    * @return maxItems
   **/
-  @ApiModelProperty(required = true, value = "The value of the **maxItems** parameter used to generate this list. If there was no **maxItems** parameter then the default value is 100. ")
-  @NotNull
+  @ApiModelProperty(value = "The value of the **maxItems** parameter used to generate this list. If there was no **maxItems** parameter then the default value is 100. ")
 
 
   public Long getMaxItems() {

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **aspectNames** | **List&lt;String&gt;** |  |  [optional]
 **properties** | **Object** |  |  [optional]
 **permissions** | [**PermissionsBody**](PermissionsBody.md) |  |  [optional]
+**definition** | [**Definition**](Definition.md) |  |  [optional]
 **relativePath** | **String** |  |  [optional]
 **association** | [**NodeBodyCreateAssociation**](NodeBodyCreateAssociation.md) |  |  [optional]
 **secondaryChildren** | [**List&lt;ChildAssociationBody&gt;**](ChildAssociationBody.md) |  |  [optional]

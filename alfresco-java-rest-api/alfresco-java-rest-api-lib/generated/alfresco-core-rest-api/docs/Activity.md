@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **siteId** | **String** | The unique id of the site on which the activity was performed |  [optional]
 **postedAt** | [**OffsetDateTime**](OffsetDateTime.md) | The date time at which the activity was performed |  [optional]
 **feedPersonId** | **String** | The feed on which this activity was posted | 
-**activitySummary** | **Object** | An object summarizing the activity |  [optional]
+**activitySummary** | **Map&lt;String, String&gt;** | An object summarizing the activity |  [optional]
 **activityType** | **String** | The type of the activity posted | 
 
 

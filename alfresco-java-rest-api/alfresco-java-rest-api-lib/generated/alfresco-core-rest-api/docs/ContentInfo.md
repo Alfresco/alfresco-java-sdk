@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mimeType** | **String** |  | 
-**mimeTypeName** | **String** |  | 
-**sizeInBytes** | **Long** |  | 
+**mimeTypeName** | **String** |  |  [optional]
+**sizeInBytes** | **Long** |  |  [optional]
 **encoding** | **String** |  |  [optional]
 
 

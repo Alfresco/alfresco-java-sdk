@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.alfresco.core.model.AssociationInfo;
 import org.alfresco.core.model.ContentInfo;
+import org.alfresco.core.model.Definition;
 import org.alfresco.core.model.Node;
 import org.alfresco.core.model.PathInfo;
 import org.alfresco.core.model.PermissionsInfo;
@@ -97,6 +98,9 @@ public class NodeAssociation   {
 
   @JsonProperty("permissions")
   private PermissionsInfo permissions = null;
+
+  @JsonProperty("definition")
+  private Definition definition = null;
 
   @JsonProperty("association")
   private AssociationInfo association = null;
@@ -513,6 +517,27 @@ public class NodeAssociation   {
     this.permissions = permissions;
   }
 
+  public NodeAssociation definition(Definition definition) {
+    this.definition = definition;
+    return this;
+  }
+
+  /**
+   * Get definition
+   * @return definition
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public Definition getDefinition() {
+    return definition;
+  }
+
+  public void setDefinition(Definition definition) {
+    this.definition = definition;
+  }
+
   public NodeAssociation association(AssociationInfo association) {
     this.association = association;
     return this;
@@ -563,12 +588,13 @@ public class NodeAssociation   {
         Objects.equals(this.allowableOperations, nodeAssociation.allowableOperations) &&
         Objects.equals(this.path, nodeAssociation.path) &&
         Objects.equals(this.permissions, nodeAssociation.permissions) &&
+        Objects.equals(this.definition, nodeAssociation.definition) &&
         Objects.equals(this.association, nodeAssociation.association);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, association);
+    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, definition, association);
   }
 
   @Override
@@ -595,6 +621,7 @@ public class NodeAssociation   {
     sb.append("    allowableOperations: ").append(toIndentedString(allowableOperations)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
     sb.append("    association: ").append(toIndentedString(association)).append("\n");
     sb.append("}");
     return sb.toString();

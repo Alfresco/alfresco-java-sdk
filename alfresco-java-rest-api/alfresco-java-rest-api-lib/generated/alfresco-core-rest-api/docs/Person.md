@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **emailNotificationsEnabled** | **Boolean** |  |  [optional]
 **aspectNames** | **List&lt;String&gt;** |  |  [optional]
 **properties** | **Object** |  |  [optional]
-**capabilities** | **Object** |  |  [optional]
+**capabilities** | [**Capabilities**](Capabilities.md) |  |  [optional]
 
 
 
