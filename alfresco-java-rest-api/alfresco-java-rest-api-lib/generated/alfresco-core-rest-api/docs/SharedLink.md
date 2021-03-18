@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** |  |  [optional]
 **expiresAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **nodeId** | **String** |  |  [optional]
-**name** | **String** | The name must not contain spaces or the following special characters: * \&quot; &lt; &gt; \\ / ? : and |.  The character . must not be used at the end of the name.  |  [optional]
+**name** | **String** | The name must not contain spaces or the following special characters: * \&quot; &lt; &gt; \\ / ? : and |. The character . must not be used at the end of the name.  |  [optional]
 **title** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **modifiedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **isFavorite** | **Boolean** |  |  [optional]
 **properties** | **Object** | A subset of the target node&#39;s properties, system properties and properties already available in the SharedLink are excluded.  |  [optional]
 **aspectNames** | **List&lt;String&gt;** |  |  [optional]
+**path** | [**PathInfo**](PathInfo.md) |  |  [optional]
 
 
 

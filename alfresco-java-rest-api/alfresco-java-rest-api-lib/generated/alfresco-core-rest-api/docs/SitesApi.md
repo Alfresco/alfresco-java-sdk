@@ -6,25 +6,30 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**approveSiteMembershipRequest**](SitesApi.md#approveSiteMembershipRequest) | **POST** /sites/{siteId}/site-membership-requests/{inviteeId}/approve | Approve a site membership request
 [**createSite**](SitesApi.md#createSite) | **POST** /sites | Create a site
+[**createSiteGroupMembership**](SitesApi.md#createSiteGroupMembership) | **POST** /sites/{siteId}/group-members | Create a site membership for group
 [**createSiteMembership**](SitesApi.md#createSiteMembership) | **POST** /sites/{siteId}/members | Create a site membership
 [**createSiteMembershipRequestForPerson**](SitesApi.md#createSiteMembershipRequestForPerson) | **POST** /people/{personId}/site-membership-requests | Create a site membership request
 [**deleteSite**](SitesApi.md#deleteSite) | **DELETE** /sites/{siteId} | Delete a site
+[**deleteSiteGroupMembership**](SitesApi.md#deleteSiteGroupMembership) | **DELETE** /sites/{siteId}/group-members/{groupId} | Delete a group membership for site
 [**deleteSiteMembership**](SitesApi.md#deleteSiteMembership) | **DELETE** /sites/{siteId}/members/{personId} | Delete a site membership
 [**deleteSiteMembershipForPerson**](SitesApi.md#deleteSiteMembershipForPerson) | **DELETE** /people/{personId}/sites/{siteId} | Delete a site membership
 [**deleteSiteMembershipRequestForPerson**](SitesApi.md#deleteSiteMembershipRequestForPerson) | **DELETE** /people/{personId}/site-membership-requests/{siteId} | Delete a site membership request
 [**getSite**](SitesApi.md#getSite) | **GET** /sites/{siteId} | Get a site
 [**getSiteContainer**](SitesApi.md#getSiteContainer) | **GET** /sites/{siteId}/containers/{containerId} | Get a site container
+[**getSiteGroupMembership**](SitesApi.md#getSiteGroupMembership) | **GET** /sites/{siteId}/group-members/{groupId} | Get information about site membership of group
 [**getSiteMembership**](SitesApi.md#getSiteMembership) | **GET** /sites/{siteId}/members/{personId} | Get a site membership
 [**getSiteMembershipForPerson**](SitesApi.md#getSiteMembershipForPerson) | **GET** /people/{personId}/sites/{siteId} | Get a site membership
 [**getSiteMembershipRequestForPerson**](SitesApi.md#getSiteMembershipRequestForPerson) | **GET** /people/{personId}/site-membership-requests/{siteId} | Get a site membership request
 [**getSiteMembershipRequests**](SitesApi.md#getSiteMembershipRequests) | **GET** /site-membership-requests | Get site membership requests
 [**listSiteContainers**](SitesApi.md#listSiteContainers) | **GET** /sites/{siteId}/containers | List site containers
+[**listSiteGroups**](SitesApi.md#listSiteGroups) | **GET** /sites/{siteId}/group-members | List group membership for site
 [**listSiteMembershipRequestsForPerson**](SitesApi.md#listSiteMembershipRequestsForPerson) | **GET** /people/{personId}/site-membership-requests | List site membership requests
 [**listSiteMemberships**](SitesApi.md#listSiteMemberships) | **GET** /sites/{siteId}/members | List site memberships
 [**listSiteMembershipsForPerson**](SitesApi.md#listSiteMembershipsForPerson) | **GET** /people/{personId}/sites | List site memberships
 [**listSites**](SitesApi.md#listSites) | **GET** /sites | List sites
 [**rejectSiteMembershipRequest**](SitesApi.md#rejectSiteMembershipRequest) | **POST** /sites/{siteId}/site-membership-requests/{inviteeId}/reject | Reject a site membership request
 [**updateSite**](SitesApi.md#updateSite) | **PUT** /sites/{siteId} | Update a site
+[**updateSiteGroupMembership**](SitesApi.md#updateSiteGroupMembership) | **PUT** /sites/{siteId}/group-members/{groupId} | Update site membership of group
 [**updateSiteMembership**](SitesApi.md#updateSiteMembership) | **PUT** /sites/{siteId}/members/{personId} | Update a site membership
 [**updateSiteMembershipRequestForPerson**](SitesApi.md#updateSiteMembershipRequestForPerson) | **PUT** /people/{personId}/site-membership-requests/{siteId} | Update a site membership request
 
@@ -92,7 +97,7 @@ null (empty response body)
 
 Create a site
 
-**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Creates a default site with the given details.  Unless explicitly specified, the site id will be generated from the site title. The site id must be unique and only contain alphanumeric and/or dash characters.  Note: the id of a site cannot be updated once the site has been created.  For example, to create a public site called \&quot;Marketing\&quot; the following body could be used: &#x60;&#x60;&#x60;JSON {   \&quot;title\&quot;: \&quot;Marketing\&quot;,   \&quot;visibility\&quot;: \&quot;PUBLIC\&quot; } &#x60;&#x60;&#x60;  The creation of the (surf) configuration files required by Share can be skipped via the **skipConfiguration** query parameter.  **Note:** if skipped then such a site will **not** work within Share.  The addition of the site to the user&#39;s site favorites can be skipped via the **skipAddToFavorites** query parameter.  The creator will be added as a member with Site Manager role.  When you create a site, a container called **documentLibrary** is created for you in the new site.  This container is the root folder for content stored in the site. 
+**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Creates a default site with the given details.  Unless explicitly specified, the site id will be generated from the site title. The site id must be unique and only contain alphanumeric and/or dash characters.  Note: the id of a site cannot be updated once the site has been created.  For example, to create a public site called \&quot;Marketing\&quot; the following body could be used: &#x60;&#x60;&#x60;JSON {   \&quot;title\&quot;: \&quot;Marketing\&quot;,   \&quot;visibility\&quot;: \&quot;PUBLIC\&quot; } &#x60;&#x60;&#x60;  The creation of the (surf) configuration files required by Share can be skipped via the **skipConfiguration** query parameter.  **Note:** if skipped then such a site will **not** work within Share.  The addition of the site to the user&#39;s site favorites can be skipped via the **skipAddToFavorites** query parameter.  The creator will be added as a member with Site Manager role.  When you create a site, a container called **documentLibrary** is created for you in the new site. This container is the root folder for content stored in the site. 
 
 ### Example
 ```java
@@ -146,13 +151,71 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="createSiteGroupMembership"></a>
+# **createSiteGroupMembership**
+> SiteGroupEntry createSiteGroupMembership(siteId, siteMembershipBodyCreate, fields)
+
+Create a site membership for group
+
+**Note:** this endpoint is available in Alfresco 7.0.0 and newer versions.  Creates a site membership for group **groupId** on site **siteId**. You can set the **role** to one of four types: * SiteConsumer * SiteCollaborator * SiteContributor * SiteManager **Note:** You can create more than one site membership by specifying a list of group in the JSON body like this:  &#x60;&#x60;&#x60;JSON   [    {      \&quot;role\&quot;: \&quot;SiteConsumer\&quot;,      \&quot;id\&quot;: \&quot;authorityId\&quot;    },    {      \&quot;role\&quot;: \&quot;SiteConsumer\&quot;,      \&quot;id\&quot;: \&quot;authorityId\&quot;    }   ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example: &#x60;&#x60;&#x60;JSON   {     \&quot;list\&quot;: {       \&quot;pagination\&quot;: {         \&quot;count\&quot;: 2,         \&quot;hasMoreItems\&quot;: false,         \&quot;totalItems\&quot;: 2,         \&quot;skipCount\&quot;: 0,         \&quot;maxItems\&quot;: 100       },       \&quot;entries\&quot;: [         {           \&quot;entry\&quot;: {             ...           }         },         {           \&quot;entry\&quot;: {             ...           }         }       ]     }   } &#x60;&#x60;&#x60; 
+
+### Example
+```java
+// Import classes:
+//import org.alfresco.core.ApiClient;
+//import org.alfresco.core.ApiException;
+//import org.alfresco.core.Configuration;
+//import org.alfresco.core.auth.*;
+//import org.alfresco.core.handler.SitesApi;
+
+
+
+
+
+
+
+
+SitesApi apiInstance = new SitesApi();
+String siteId = "siteId_example"; // String | The identifier of a site.
+SiteMembershipBodyCreate siteMembershipBodyCreate = new SiteMembershipBodyCreate(); // SiteMembershipBodyCreate | The group to add and their role
+List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
+try {
+    SiteGroupEntry result = apiInstance.createSiteGroupMembership(siteId, siteMembershipBodyCreate, fields);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SitesApi#createSiteGroupMembership");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **siteId** | **String**| The identifier of a site. |
+ **siteMembershipBodyCreate** | [**SiteMembershipBodyCreate**](SiteMembershipBodyCreate.md)| The group to add and their role |
+ **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
+
+### Return type
+
+[**SiteGroupEntry**](SiteGroupEntry.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="createSiteMembership"></a>
 # **createSiteMembership**
 > SiteMemberEntry createSiteMembership(siteId, siteMembershipBodyCreate, fields)
 
 Create a site membership
 
-Creates a site membership for person **personId** on site **siteId**.  You can set the **role** to one of four types:  * SiteConsumer * SiteCollaborator * SiteContributor * SiteManager  **Note:** You can create more than one site membership by  specifying a list of people in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;role\&quot;: \&quot;SiteConsumer\&quot;,     \&quot;id\&quot;: \&quot;joe\&quot;   },   {     \&quot;role\&quot;: \&quot;SiteConsumer\&quot;,     \&quot;id\&quot;: \&quot;fred\&quot;   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {           ...         }       }     ]   } } &#x60;&#x60;&#x60; 
+Creates a site membership for person **personId** on site **siteId**.  You can set the **role** to one of four types:  * SiteConsumer * SiteCollaborator * SiteContributor * SiteManager  **Note:** You can create more than one site membership by specifying a list of people in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;role\&quot;: \&quot;SiteConsumer\&quot;,     \&quot;id\&quot;: \&quot;joe\&quot;   },   {     \&quot;role\&quot;: \&quot;SiteConsumer\&quot;,     \&quot;id\&quot;: \&quot;fred\&quot;   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {           ...         }       }     ]   } } &#x60;&#x60;&#x60; 
 
 ### Example
 ```java
@@ -210,7 +273,7 @@ Name | Type | Description  | Notes
 
 Create a site membership request
 
-Create a site membership request for yourself on the site with the identifier of **id**, specified in the JSON body.  The result of the request differs depending on the type of site.  * For a **public** site, you join the site immediately as a SiteConsumer. * For a **moderated** site, your request is added to the site membership request list. The request waits for approval from the Site Manager. * You cannot request membership of a **private** site. Members are invited by the site administrator.  You can use the &#x60;-me-&#x60; string in place of &#x60;&lt;personId&gt;&#x60; to specify the currently authenticated user.   **Note:** You can create site membership requests for more than one site by  specifying a list of sites in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;message\&quot;: \&quot;Please can you add me\&quot;,     \&quot;id\&quot;: \&quot;test-site-1\&quot;,     \&quot;title\&quot;: \&quot;Request for test site 1\&quot;,   },   {     \&quot;message\&quot;: \&quot;Please can you add me\&quot;,     \&quot;id\&quot;: \&quot;test-site-2\&quot;,     \&quot;title\&quot;: \&quot;Request for test site 2\&quot;,   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {           ...         }       }     ]   } } &#x60;&#x60;&#x60; 
+Create a site membership request for yourself on the site with the identifier of **id**, specified in the JSON body. The result of the request differs depending on the type of site.  * For a **public** site, you join the site immediately as a SiteConsumer. * For a **moderated** site, your request is added to the site membership request list. The request waits for approval from the Site Manager. * You cannot request membership of a **private** site. Members are invited by the site administrator.  You can use the &#x60;-me-&#x60; string in place of &#x60;&lt;personId&gt;&#x60; to specify the currently authenticated user.   **Note:** You can create site membership requests for more than one site by specifying a list of sites in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;message\&quot;: \&quot;Please can you add me\&quot;,     \&quot;id\&quot;: \&quot;test-site-1\&quot;,     \&quot;title\&quot;: \&quot;Request for test site 1\&quot;,   },   {     \&quot;message\&quot;: \&quot;Please can you add me\&quot;,     \&quot;id\&quot;: \&quot;test-site-2\&quot;,     \&quot;title\&quot;: \&quot;Request for test site 2\&quot;,   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {           ...         }       }     ]   } } &#x60;&#x60;&#x60; 
 
 ### Example
 ```java
@@ -303,6 +366,61 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **siteId** | **String**| The identifier of a site. |
  **permanent** | **Boolean**| Flag to indicate whether the site should be permanently deleted i.e. bypass the trashcan. | [optional] [default to false]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteSiteGroupMembership"></a>
+# **deleteSiteGroupMembership**
+> deleteSiteGroupMembership(siteId, groupId)
+
+Delete a group membership for site
+
+**Note:** this endpoint is available in Alfresco 7.0.0 and newer versions.  Deletes group **groupId** as a member of site **siteId**. 
+
+### Example
+```java
+// Import classes:
+//import org.alfresco.core.ApiClient;
+//import org.alfresco.core.ApiException;
+//import org.alfresco.core.Configuration;
+//import org.alfresco.core.auth.*;
+//import org.alfresco.core.handler.SitesApi;
+
+
+
+
+
+
+
+
+SitesApi apiInstance = new SitesApi();
+String siteId = "siteId_example"; // String | The identifier of a site.
+String groupId = "groupId_example"; // String | The identifier of a group.
+try {
+    apiInstance.deleteSiteGroupMembership(siteId, groupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SitesApi#deleteSiteGroupMembership");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **siteId** | **String**| The identifier of a site. |
+ **groupId** | **String**| The identifier of a group. |
 
 ### Return type
 
@@ -598,6 +716,64 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getSiteGroupMembership"></a>
+# **getSiteGroupMembership**
+> SiteGroupEntry getSiteGroupMembership(siteId, groupId, fields)
+
+Get information about site membership of group
+
+**Note:** this endpoint is available in Alfresco 7.0.0 and newer versions.  Gets site membership information for group **groupId** on site **siteId**. 
+
+### Example
+```java
+// Import classes:
+//import org.alfresco.core.ApiClient;
+//import org.alfresco.core.ApiException;
+//import org.alfresco.core.Configuration;
+//import org.alfresco.core.auth.*;
+//import org.alfresco.core.handler.SitesApi;
+
+
+
+
+
+
+
+
+SitesApi apiInstance = new SitesApi();
+String siteId = "siteId_example"; // String | The identifier of a site.
+String groupId = "groupId_example"; // String | The identifier of a group.
+List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
+try {
+    SiteGroupEntry result = apiInstance.getSiteGroupMembership(siteId, groupId, fields);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SitesApi#getSiteGroupMembership");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **siteId** | **String**| The identifier of a site. |
+ **groupId** | **String**| The identifier of a group. |
+ **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
+
+### Return type
+
+[**SiteGroupEntry**](SiteGroupEntry.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getSiteMembership"></a>
 # **getSiteMembership**
 > SiteMemberEntry getSiteMembership(siteId, personId, fields)
@@ -795,8 +971,8 @@ Get the list of site membership requests the user can action.  You can use the *
 
 
 SitesApi apiInstance = new SitesApi();
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 String where = "where_example"; // String | A string to restrict the returned objects by using a predicate.
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
 try {
@@ -812,8 +988,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **where** | **String**| A string to restrict the returned objects by using a predicate. | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
@@ -856,8 +1032,8 @@ Gets a list of containers for the site **siteId**.
 
 SitesApi apiInstance = new SitesApi();
 String siteId = "siteId_example"; // String | The identifier of a site.
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
 try {
     SiteContainerPaging result = apiInstance.listSiteContainers(siteId, skipCount, maxItems, fields);
@@ -873,13 +1049,73 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **siteId** | **String**| The identifier of a site. |
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
 
 [**SiteContainerPaging**](SiteContainerPaging.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="listSiteGroups"></a>
+# **listSiteGroups**
+> SiteGroupPaging listSiteGroups(siteId, skipCount, maxItems, fields)
+
+List group membership for site
+
+**Note:** this endpoint is available in Alfresco 7.0.0 and newer versions.  Gets a list of group membership for site **siteId**. 
+
+### Example
+```java
+// Import classes:
+//import org.alfresco.core.ApiClient;
+//import org.alfresco.core.ApiException;
+//import org.alfresco.core.Configuration;
+//import org.alfresco.core.auth.*;
+//import org.alfresco.core.handler.SitesApi;
+
+
+
+
+
+
+
+
+SitesApi apiInstance = new SitesApi();
+String siteId = "siteId_example"; // String | The identifier of a site.
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
+List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
+try {
+    SiteGroupPaging result = apiInstance.listSiteGroups(siteId, skipCount, maxItems, fields);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SitesApi#listSiteGroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **siteId** | **String**| The identifier of a site. |
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
+ **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
+
+### Return type
+
+[**SiteGroupPaging**](SiteGroupPaging.md)
 
 ### Authorization
 
@@ -916,8 +1152,8 @@ Gets a list of the current site membership requests for person **personId**.  Yo
 
 SitesApi apiInstance = new SitesApi();
 String personId = "personId_example"; // String | The identifier of a person.
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
 try {
     SiteMembershipRequestPaging result = apiInstance.listSiteMembershipRequestsForPerson(personId, skipCount, maxItems, fields);
@@ -933,8 +1169,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **personId** | **String**| The identifier of a person. |
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -952,7 +1188,7 @@ Name | Type | Description  | Notes
 
 <a name="listSiteMemberships"></a>
 # **listSiteMemberships**
-> SiteMemberPaging listSiteMemberships(siteId, skipCount, maxItems, fields)
+> SiteMemberPaging listSiteMemberships(siteId, skipCount, maxItems, fields, where)
 
 List site memberships
 
@@ -976,11 +1212,12 @@ Gets a list of site memberships for site **siteId**.
 
 SitesApi apiInstance = new SitesApi();
 String siteId = "siteId_example"; // String | The identifier of a site.
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
+String where = "where_example"; // String | Optionally filter the list. *   ```where=(isMemberOfGroup=false|true)``` 
 try {
-    SiteMemberPaging result = apiInstance.listSiteMemberships(siteId, skipCount, maxItems, fields);
+    SiteMemberPaging result = apiInstance.listSiteMemberships(siteId, skipCount, maxItems, fields, where);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SitesApi#listSiteMemberships");
@@ -993,9 +1230,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **siteId** | **String**| The identifier of a site. |
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
+ **where** | **String**| Optionally filter the list. *   &#x60;&#x60;&#x60;where&#x3D;(isMemberOfGroup&#x3D;false|true)&#x60;&#x60;&#x60;  | [optional]
 
 ### Return type
 
@@ -1036,8 +1274,8 @@ Gets a list of site membership information for person **personId**.  You can use
 
 SitesApi apiInstance = new SitesApi();
 String personId = "personId_example"; // String | The identifier of a person.
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 List<String> orderBy = Arrays.asList("orderBy_example"); // List<String> | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. 
 List<String> relations = Arrays.asList("relations_example"); // List<String> | Use the relations parameter to include one or more related entities in a single response.
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -1056,8 +1294,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **personId** | **String**| The identifier of a person. |
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **orderBy** | [**List&lt;String&gt;**](String.md)| A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.  | [optional]
  **relations** | [**List&lt;String&gt;**](String.md)| Use the relations parameter to include one or more related entities in a single response. | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
@@ -1101,8 +1339,8 @@ Gets a list of sites in this repository.  You can use the **where** parameter to
 
 
 SitesApi apiInstance = new SitesApi();
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list.  If not supplied then the default value is 100. 
+Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
+Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
 List<String> orderBy = Arrays.asList("orderBy_example"); // List<String> | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. 
 List<String> relations = Arrays.asList("relations_example"); // List<String> | Use the relations parameter to include one or more related entities in a single response.
 List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
@@ -1120,8 +1358,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list.  If not supplied then the default value is 0.  | [optional] [default to 0]
- **maxItems** | **Integer**| The maximum number of items to return in the list.  If not supplied then the default value is 100.  | [optional] [default to 100]
+ **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
+ **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **orderBy** | [**List&lt;String&gt;**](String.md)| A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.  | [optional]
  **relations** | [**List&lt;String&gt;**](String.md)| Use the relations parameter to include one or more related entities in a single response. | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
@@ -1203,7 +1441,7 @@ null (empty response body)
 
 Update a site
 
-**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Update the details for the given site **siteId**. Site Manager or otherwise a  (site) admin can update title, description or visibility.  Note: the id of a site cannot be updated once the site has been created. 
+**Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Update the details for the given site **siteId**. Site Manager or otherwise a (site) admin can update title, description or visibility.  Note: the id of a site cannot be updated once the site has been created. 
 
 ### Example
 ```java
@@ -1245,6 +1483,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SiteEntry**](SiteEntry.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateSiteGroupMembership"></a>
+# **updateSiteGroupMembership**
+> SiteGroupEntry updateSiteGroupMembership(siteId, groupId, siteMembershipBodyUpdate, fields)
+
+Update site membership of group
+
+**Note:** this endpoint is available in Alfresco 7.0.0 and newer versions.  Update the membership of person **groupId** in site **siteId**. You can set the **role** to one of four types: * SiteConsumer * SiteCollaborator * SiteContributor * SiteManager 
+
+### Example
+```java
+// Import classes:
+//import org.alfresco.core.ApiClient;
+//import org.alfresco.core.ApiException;
+//import org.alfresco.core.Configuration;
+//import org.alfresco.core.auth.*;
+//import org.alfresco.core.handler.SitesApi;
+
+
+
+
+
+
+
+
+SitesApi apiInstance = new SitesApi();
+String siteId = "siteId_example"; // String | The identifier of a site.
+String groupId = "groupId_example"; // String | The identifier of a group.
+SiteMembershipBodyUpdate siteMembershipBodyUpdate = new SiteMembershipBodyUpdate(); // SiteMembershipBodyUpdate | The groupId new role
+List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
+try {
+    SiteGroupEntry result = apiInstance.updateSiteGroupMembership(siteId, groupId, siteMembershipBodyUpdate, fields);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SitesApi#updateSiteGroupMembership");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **siteId** | **String**| The identifier of a site. |
+ **groupId** | **String**| The identifier of a group. |
+ **siteMembershipBodyUpdate** | [**SiteMembershipBodyUpdate**](SiteMembershipBodyUpdate.md)| The groupId new role |
+ **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
+
+### Return type
+
+[**SiteGroupEntry**](SiteGroupEntry.md)
 
 ### Authorization
 

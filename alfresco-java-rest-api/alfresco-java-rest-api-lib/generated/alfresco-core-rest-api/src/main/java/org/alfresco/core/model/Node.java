@@ -24,6 +24,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.alfresco.core.model.ContentInfo;
+import org.alfresco.core.model.Definition;
 import org.alfresco.core.model.PathInfo;
 import org.alfresco.core.model.PermissionsInfo;
 import org.alfresco.core.model.UserInfo;
@@ -95,6 +96,9 @@ public class Node   {
 
   @JsonProperty("permissions")
   private PermissionsInfo permissions = null;
+
+  @JsonProperty("definition")
+  private Definition definition = null;
 
   public Node id(String id) {
     this.id = id;
@@ -508,6 +512,27 @@ public class Node   {
     this.permissions = permissions;
   }
 
+  public Node definition(Definition definition) {
+    this.definition = definition;
+    return this;
+  }
+
+  /**
+   * Get definition
+   * @return definition
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public Definition getDefinition() {
+    return definition;
+  }
+
+  public void setDefinition(Definition definition) {
+    this.definition = definition;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -536,12 +561,13 @@ public class Node   {
         Objects.equals(this.properties, node.properties) &&
         Objects.equals(this.allowableOperations, node.allowableOperations) &&
         Objects.equals(this.path, node.path) &&
-        Objects.equals(this.permissions, node.permissions);
+        Objects.equals(this.permissions, node.permissions) &&
+        Objects.equals(this.definition, node.definition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions);
+    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, definition);
   }
 
   @Override
@@ -568,6 +594,7 @@ public class Node   {
     sb.append("    allowableOperations: ").append(toIndentedString(allowableOperations)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

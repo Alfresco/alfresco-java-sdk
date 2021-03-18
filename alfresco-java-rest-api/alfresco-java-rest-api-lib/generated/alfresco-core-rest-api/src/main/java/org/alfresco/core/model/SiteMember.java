@@ -76,6 +76,9 @@ public class SiteMember   {
   @JsonProperty("role")
   private RoleEnum role = null;
 
+  @JsonProperty("isMemberOfGroup")
+  private Boolean isMemberOfGroup = null;
+
   public SiteMember id(String id) {
     this.id = id;
     return this;
@@ -140,6 +143,26 @@ public class SiteMember   {
     this.role = role;
   }
 
+  public SiteMember isMemberOfGroup(Boolean isMemberOfGroup) {
+    this.isMemberOfGroup = isMemberOfGroup;
+    return this;
+  }
+
+  /**
+   * Get isMemberOfGroup
+   * @return isMemberOfGroup
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Boolean isIsMemberOfGroup() {
+    return isMemberOfGroup;
+  }
+
+  public void setIsMemberOfGroup(Boolean isMemberOfGroup) {
+    this.isMemberOfGroup = isMemberOfGroup;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +175,13 @@ public class SiteMember   {
     SiteMember siteMember = (SiteMember) o;
     return Objects.equals(this.id, siteMember.id) &&
         Objects.equals(this.person, siteMember.person) &&
-        Objects.equals(this.role, siteMember.role);
+        Objects.equals(this.role, siteMember.role) &&
+        Objects.equals(this.isMemberOfGroup, siteMember.isMemberOfGroup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, person, role);
+    return Objects.hash(id, person, role, isMemberOfGroup);
   }
 
   @Override
@@ -168,6 +192,7 @@ public class SiteMember   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("    isMemberOfGroup: ").append(toIndentedString(isMemberOfGroup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

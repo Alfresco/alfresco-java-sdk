@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.alfresco.core.model.AssociationBody;
 import org.alfresco.core.model.ChildAssociationBody;
+import org.alfresco.core.model.Definition;
 import org.alfresco.core.model.NodeBodyCreateAssociation;
 import org.alfresco.core.model.PermissionsBody;
 import org.springframework.validation.annotation.Validated;
@@ -51,6 +52,9 @@ public class NodeBodyCreate   {
 
   @JsonProperty("permissions")
   private PermissionsBody permissions = null;
+
+  @JsonProperty("definition")
+  private Definition definition = null;
 
   @JsonProperty("relativePath")
   private String relativePath = null;
@@ -177,6 +181,27 @@ public class NodeBodyCreate   {
     this.permissions = permissions;
   }
 
+  public NodeBodyCreate definition(Definition definition) {
+    this.definition = definition;
+    return this;
+  }
+
+  /**
+   * Get definition
+   * @return definition
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public Definition getDefinition() {
+    return definition;
+  }
+
+  public void setDefinition(Definition definition) {
+    this.definition = definition;
+  }
+
   public NodeBodyCreate relativePath(String relativePath) {
     this.relativePath = relativePath;
     return this;
@@ -291,6 +316,7 @@ public class NodeBodyCreate   {
         Objects.equals(this.aspectNames, nodeBodyCreate.aspectNames) &&
         Objects.equals(this.properties, nodeBodyCreate.properties) &&
         Objects.equals(this.permissions, nodeBodyCreate.permissions) &&
+        Objects.equals(this.definition, nodeBodyCreate.definition) &&
         Objects.equals(this.relativePath, nodeBodyCreate.relativePath) &&
         Objects.equals(this.association, nodeBodyCreate.association) &&
         Objects.equals(this.secondaryChildren, nodeBodyCreate.secondaryChildren) &&
@@ -299,7 +325,7 @@ public class NodeBodyCreate   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, nodeType, aspectNames, properties, permissions, relativePath, association, secondaryChildren, targets);
+    return Objects.hash(name, nodeType, aspectNames, properties, permissions, definition, relativePath, association, secondaryChildren, targets);
   }
 
   @Override
@@ -312,6 +338,7 @@ public class NodeBodyCreate   {
     sb.append("    aspectNames: ").append(toIndentedString(aspectNames)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
     sb.append("    relativePath: ").append(toIndentedString(relativePath)).append("\n");
     sb.append("    association: ").append(toIndentedString(association)).append("\n");
     sb.append("    secondaryChildren: ").append(toIndentedString(secondaryChildren)).append("\n");

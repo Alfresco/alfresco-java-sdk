@@ -24,6 +24,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.alfresco.core.model.ContentInfo;
+import org.alfresco.core.model.Definition;
 import org.alfresco.core.model.Node;
 import org.alfresco.core.model.PathInfo;
 import org.alfresco.core.model.PermissionsInfo;
@@ -96,6 +97,9 @@ public class DeletedNode   {
 
   @JsonProperty("permissions")
   private PermissionsInfo permissions = null;
+
+  @JsonProperty("definition")
+  private Definition definition = null;
 
   @JsonProperty("archivedByUser")
   private UserInfo archivedByUser = null;
@@ -515,6 +519,27 @@ public class DeletedNode   {
     this.permissions = permissions;
   }
 
+  public DeletedNode definition(Definition definition) {
+    this.definition = definition;
+    return this;
+  }
+
+  /**
+   * Get definition
+   * @return definition
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public Definition getDefinition() {
+    return definition;
+  }
+
+  public void setDefinition(Definition definition) {
+    this.definition = definition;
+  }
+
   public DeletedNode archivedByUser(UserInfo archivedByUser) {
     this.archivedByUser = archivedByUser;
     return this;
@@ -588,13 +613,14 @@ public class DeletedNode   {
         Objects.equals(this.allowableOperations, deletedNode.allowableOperations) &&
         Objects.equals(this.path, deletedNode.path) &&
         Objects.equals(this.permissions, deletedNode.permissions) &&
+        Objects.equals(this.definition, deletedNode.definition) &&
         Objects.equals(this.archivedByUser, deletedNode.archivedByUser) &&
         Objects.equals(this.archivedAt, deletedNode.archivedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, archivedByUser, archivedAt);
+    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, definition, archivedByUser, archivedAt);
   }
 
   @Override
@@ -621,6 +647,7 @@ public class DeletedNode   {
     sb.append("    allowableOperations: ").append(toIndentedString(allowableOperations)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
     sb.append("    archivedByUser: ").append(toIndentedString(archivedByUser)).append("\n");
     sb.append("    archivedAt: ").append(toIndentedString(archivedAt)).append("\n");
     sb.append("}");

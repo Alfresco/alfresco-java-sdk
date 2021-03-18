@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -35,6 +36,9 @@ public class Tag   {
 
   @JsonProperty("tag")
   private String tag = null;
+
+  @JsonProperty("count")
+  private BigDecimal count = null;
 
   public Tag id(String id) {
     this.id = id;
@@ -78,6 +82,27 @@ public class Tag   {
     this.tag = tag;
   }
 
+  public Tag count(BigDecimal count) {
+    this.count = count;
+    return this;
+  }
+
+  /**
+   * Get count
+   * @return count
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public BigDecimal getCount() {
+    return count;
+  }
+
+  public void setCount(BigDecimal count) {
+    this.count = count;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,12 +114,13 @@ public class Tag   {
     }
     Tag tag = (Tag) o;
     return Objects.equals(this.id, tag.id) &&
-        Objects.equals(this.tag, tag.tag);
+        Objects.equals(this.tag, tag.tag) &&
+        Objects.equals(this.count, tag.count);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, tag);
+    return Objects.hash(id, tag, count);
   }
 
   @Override
@@ -104,6 +130,7 @@ public class Tag   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("}");
     return sb.toString();
   }

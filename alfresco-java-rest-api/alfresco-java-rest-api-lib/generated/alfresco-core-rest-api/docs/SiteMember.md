@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **person** | [**Person**](Person.md) |  | 
 **role** | [**RoleEnum**](#RoleEnum) |  | 
+**isMemberOfGroup** | **Boolean** |  |  [optional]
 
 
 <a name="RoleEnum"></a>

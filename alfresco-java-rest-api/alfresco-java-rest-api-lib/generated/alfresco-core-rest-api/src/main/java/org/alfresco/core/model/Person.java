@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import org.alfresco.core.model.Capabilities;
 import org.alfresco.core.model.Company;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
@@ -99,7 +100,7 @@ public class Person   {
   private Object properties = null;
 
   @JsonProperty("capabilities")
-  private Object capabilities = null;
+  private Capabilities capabilities = null;
 
   public Person id(String id) {
     this.id = id;
@@ -535,7 +536,7 @@ public class Person   {
     this.properties = properties;
   }
 
-  public Person capabilities(Object capabilities) {
+  public Person capabilities(Capabilities capabilities) {
     this.capabilities = capabilities;
     return this;
   }
@@ -546,12 +547,13 @@ public class Person   {
   **/
   @ApiModelProperty(value = "")
 
+  @Valid
 
-  public Object getCapabilities() {
+  public Capabilities getCapabilities() {
     return capabilities;
   }
 
-  public void setCapabilities(Object capabilities) {
+  public void setCapabilities(Capabilities capabilities) {
     this.capabilities = capabilities;
   }
 

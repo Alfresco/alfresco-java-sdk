@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -48,7 +51,8 @@ public class Activity   {
   private String feedPersonId = null;
 
   @JsonProperty("activitySummary")
-  private Object activitySummary = null;
+  @Valid
+  private Map<String, String> activitySummary = null;
 
   @JsonProperty("activityType")
   private String activityType = null;
@@ -157,8 +161,16 @@ public class Activity   {
     this.feedPersonId = feedPersonId;
   }
 
-  public Activity activitySummary(Object activitySummary) {
+  public Activity activitySummary(Map<String, String> activitySummary) {
     this.activitySummary = activitySummary;
+    return this;
+  }
+
+  public Activity putActivitySummaryItem(String key, String activitySummaryItem) {
+    if (this.activitySummary == null) {
+      this.activitySummary = new HashMap<>();
+    }
+    this.activitySummary.put(key, activitySummaryItem);
     return this;
   }
 
@@ -169,11 +181,11 @@ public class Activity   {
   @ApiModelProperty(value = "An object summarizing the activity")
 
 
-  public Object getActivitySummary() {
+  public Map<String, String> getActivitySummary() {
     return activitySummary;
   }
 
-  public void setActivitySummary(Object activitySummary) {
+  public void setActivitySummary(Map<String, String> activitySummary) {
     this.activitySummary = activitySummary;
   }
 

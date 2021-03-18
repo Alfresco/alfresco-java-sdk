@@ -24,6 +24,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.alfresco.core.model.ContentInfo;
+import org.alfresco.core.model.PathInfo;
 import org.alfresco.core.model.UserInfo;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
@@ -82,6 +83,9 @@ public class SharedLink   {
   @JsonProperty("aspectNames")
   @Valid
   private List<String> aspectNames = null;
+
+  @JsonProperty("path")
+  private PathInfo path = null;
 
   public SharedLink id(String id) {
     this.id = id;
@@ -150,10 +154,10 @@ public class SharedLink   {
   }
 
   /**
-   * The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |.  The character . must not be used at the end of the name. 
+   * The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |. The character . must not be used at the end of the name. 
    * @return name
   **/
-  @ApiModelProperty(value = "The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |.  The character . must not be used at the end of the name. ")
+  @ApiModelProperty(value = "The name must not contain spaces or the following special characters: * \" < > \\ / ? : and |. The character . must not be used at the end of the name. ")
 
 @Pattern(regexp="^(?!(.*[\\\"\\*\\\\\\>\\<\\?/\\:\\|]+.*)|(.*[\\.]?.*[\\.]+$)|(.*[ ]+$))") 
   public String getName() {
@@ -412,6 +416,27 @@ public class SharedLink   {
     this.aspectNames = aspectNames;
   }
 
+  public SharedLink path(PathInfo path) {
+    this.path = path;
+    return this;
+  }
+
+  /**
+   * Get path
+   * @return path
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public PathInfo getPath() {
+    return path;
+  }
+
+  public void setPath(PathInfo path) {
+    this.path = path;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -436,12 +461,13 @@ public class SharedLink   {
         Objects.equals(this.allowableOperationsOnTarget, sharedLink.allowableOperationsOnTarget) &&
         Objects.equals(this.isFavorite, sharedLink.isFavorite) &&
         Objects.equals(this.properties, sharedLink.properties) &&
-        Objects.equals(this.aspectNames, sharedLink.aspectNames);
+        Objects.equals(this.aspectNames, sharedLink.aspectNames) &&
+        Objects.equals(this.path, sharedLink.path);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, expiresAt, nodeId, name, title, description, modifiedAt, modifiedByUser, sharedByUser, content, allowableOperations, allowableOperationsOnTarget, isFavorite, properties, aspectNames);
+    return Objects.hash(id, expiresAt, nodeId, name, title, description, modifiedAt, modifiedByUser, sharedByUser, content, allowableOperations, allowableOperationsOnTarget, isFavorite, properties, aspectNames, path);
   }
 
   @Override
@@ -464,6 +490,7 @@ public class SharedLink   {
     sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    aspectNames: ").append(toIndentedString(aspectNames)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("}");
     return sb.toString();
   }

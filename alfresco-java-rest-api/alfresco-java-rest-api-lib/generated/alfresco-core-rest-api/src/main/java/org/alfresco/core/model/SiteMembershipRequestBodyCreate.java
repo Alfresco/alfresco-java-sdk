@@ -39,6 +39,9 @@ public class SiteMembershipRequestBodyCreate   {
   @JsonProperty("title")
   private String title = null;
 
+  @JsonProperty("client")
+  private String client = null;
+
   public SiteMembershipRequestBodyCreate message(String message) {
     this.message = message;
     return this;
@@ -100,6 +103,26 @@ public class SiteMembershipRequestBodyCreate   {
     this.title = title;
   }
 
+  public SiteMembershipRequestBodyCreate client(String client) {
+    this.client = client;
+    return this;
+  }
+
+  /**
+   * Optional client name used when sending an email to the end user, defaults to \"share\" if not provided. **Note:** The client must be registered before this API can send an email. **Note:** This is available in Alfresco 7.0.0 and newer versions. 
+   * @return client
+  **/
+  @ApiModelProperty(value = "Optional client name used when sending an email to the end user, defaults to \"share\" if not provided. **Note:** The client must be registered before this API can send an email. **Note:** This is available in Alfresco 7.0.0 and newer versions. ")
+
+
+  public String getClient() {
+    return client;
+  }
+
+  public void setClient(String client) {
+    this.client = client;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,12 +135,13 @@ public class SiteMembershipRequestBodyCreate   {
     SiteMembershipRequestBodyCreate siteMembershipRequestBodyCreate = (SiteMembershipRequestBodyCreate) o;
     return Objects.equals(this.message, siteMembershipRequestBodyCreate.message) &&
         Objects.equals(this.id, siteMembershipRequestBodyCreate.id) &&
-        Objects.equals(this.title, siteMembershipRequestBodyCreate.title);
+        Objects.equals(this.title, siteMembershipRequestBodyCreate.title) &&
+        Objects.equals(this.client, siteMembershipRequestBodyCreate.client);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, id, title);
+    return Objects.hash(message, id, title, client);
   }
 
   @Override
@@ -128,6 +152,7 @@ public class SiteMembershipRequestBodyCreate   {
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("}");
     return sb.toString();
   }

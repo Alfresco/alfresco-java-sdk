@@ -42,7 +42,7 @@ import java.util.List;
 @Api(value = "Downloads")
 public interface DownloadsApi {
 
-    @ApiOperation(value = "Cancel a download", nickname = "cancelDownload", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Cancels the creation of a download request.  **Note:** The download node can be deleted using the **DELETE /nodes/{downloadId}** endpoint   By default, if the download node is not deleted it will be picked up by a cleaner job which removes download nodes older than a configurable amount of time (default is 1 hour)  Information about the existing progress at the time of cancelling can be retrieved by calling the **GET /downloads/{downloadId}** endpoint  The cancel operation is done asynchronously. ", authorizations = {
+    @ApiOperation(value = "Cancel a download", nickname = "cancelDownload", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Cancels the creation of a download request.  **Note:** The download node can be deleted using the **DELETE /nodes/{downloadId}** endpoint  By default, if the download node is not deleted it will be picked up by a cleaner job which removes download nodes older than a configurable amount of time (default is 1 hour)  Information about the existing progress at the time of cancelling can be retrieved by calling the **GET /downloads/{downloadId}** endpoint  The cancel operation is done asynchronously. ", authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "downloads", })
     @ApiResponses(value = { 
@@ -58,7 +58,7 @@ public interface DownloadsApi {
     ResponseEntity<Void> cancelDownload(@ApiParam(value = "The identifier of a download node.",required=true) @PathVariable("downloadId") String downloadId);
 
 
-    @ApiOperation(value = "Create a new download", nickname = "createDownload", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Creates a new download node asynchronously, the content of which will be the zipped content of the **nodeIds** specified in the JSON body like this:  ```JSON {     \"nodeIds\":      [        \"c8bb482a-ff3c-4704-a3a3-de1c83ccd84c\",        \"cffa62db-aa01-493d-9594-058bc058eeb1\"      ] } ```  **Note:** The content of the download node can be obtained using the **GET /nodes/{downloadId}/content** endpoint         ", response = DownloadEntry.class, authorizations = {
+    @ApiOperation(value = "Create a new download", nickname = "createDownload", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Creates a new download node asynchronously, the content of which will be the zipped content of the **nodeIds** specified in the JSON body like this:  ```JSON {     \"nodeIds\":      [        \"c8bb482a-ff3c-4704-a3a3-de1c83ccd84c\",        \"cffa62db-aa01-493d-9594-058bc058eeb1\"      ] } ```  **Note:** The content of the download node can be obtained using the **GET /nodes/{downloadId}/content** endpoint ", response = DownloadEntry.class, authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "downloads", })
     @ApiResponses(value = { 
