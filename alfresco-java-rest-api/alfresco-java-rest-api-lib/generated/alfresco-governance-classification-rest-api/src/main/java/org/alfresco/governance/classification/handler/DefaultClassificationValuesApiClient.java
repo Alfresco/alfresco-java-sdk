@@ -18,6 +18,6 @@ package org.alfresco.governance.classification.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(name = "alfrescoDefaultClassificationValuesApi", url = "${governance.service.url}", path = "${governance.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(name = "alfrescoDefaultClassificationValuesApi", url = "${content.service.url}", path = "${governance.service.path}", configuration = ClientConfiguration.class, decode404 = true)
 public interface DefaultClassificationValuesApiClient extends DefaultClassificationValuesApi {
 }

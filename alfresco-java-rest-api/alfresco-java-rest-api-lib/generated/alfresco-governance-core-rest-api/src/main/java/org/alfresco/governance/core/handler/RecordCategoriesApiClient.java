@@ -18,6 +18,6 @@ package org.alfresco.governance.core.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(name = "alfrescoRecordCategoriesApi", url = "${governance.service.url}", path = "${governance.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(name = "alfrescoRecordCategoriesApi", url = "${content.service.url}", path = "${governance.service.path}", configuration = ClientConfiguration.class, decode404 = true)
 public interface RecordCategoriesApiClient extends RecordCategoriesApi {
 }
