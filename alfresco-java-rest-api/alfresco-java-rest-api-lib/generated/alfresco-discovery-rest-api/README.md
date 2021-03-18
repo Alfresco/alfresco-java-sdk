@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-discovery-rest-api</artifactId>
-    <version>5.0.0-M1</version>
+    <version>5.0.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.alfresco:alfresco-discovery-rest-api:5.0.0-M1"
+compile "org.alfresco:alfresco-discovery-rest-api:5.0.0-SNAPSHOT"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-discovery-rest-api-5.0.0-M1.jar
+* target/alfresco-discovery-rest-api-5.0.0-SNAPSHOT.jar
 * target/lib/*.jar
 
 ## Getting Started
