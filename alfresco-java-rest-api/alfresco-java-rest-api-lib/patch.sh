@@ -9,15 +9,15 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;"${alfrescoContentServicesREST_.security.basicAuth.username:.*}";"${content.service.security.basicAuth.username}";g' \
   -e 's;"${alfrescoContentServicesREST_.security.basicAuth.password:.*}";"${content.service.security.basicAuth.password}";g' \
   -e 's;"alfrescoContentServicesREST_.security.basicAuth.username";"content.service.security.basicAuth.username";g' \
-  -e 's;, url = "${alfrescoGovernanceServicesSecurityControls.url:.*}";, url = "${governance.service.url}", path = "${governance.service.path}";g' \
-  -e 's;"${alfrescoGovernanceServicesSecurityControls.security.basicAuth.username:.*}";"${governance.service.security.basicAuth.username}";g' \
-  -e 's;"${alfrescoGovernanceServicesSecurityControls.security.basicAuth.password:.*}";"${governance.service.security.basicAuth.password}";g' \
-  -e 's;"alfrescoGovernanceServicesSecurityControls.security.basicAuth.username";"governance.service.security.basicAuth.username";g' \
-  -e 's;, url = "${alfrescoGovernanceServicesREST_.url:.*}";, url = "${governance.service.url}", path = "${governance.service.path}";g' \
-  -e 's;"${alfrescoGovernanceServicesREST_.security.basicAuth.username:.*}";"${governance.service.security.basicAuth.username}";g' \
-  -e 's;"${alfrescoGovernanceServicesREST_.security.basicAuth.password:.*}";"${governance.service.security.basicAuth.password}";g' \
-  -e 's;"alfrescoGovernanceServicesREST_.security.basicAuth.username";"governance.service.security.basicAuth.username";g' \
-  -e 's;, url = "${alfrescoInsightEngineREST_.url:.*}";, url = "${content.service.url}", path = "${content.service.path}";g' \
+  -e 's;, url = "${alfrescoGovernanceServicesSecurityControls.url:.*}";, url = "${content.service.url}", path = "${governance.service.path}";g' \
+  -e 's;"${alfrescoGovernanceServicesSecurityControls.security.basicAuth.username:.*}";"${content.service.security.basicAuth.username}";g' \
+  -e 's;"${alfrescoGovernanceServicesSecurityControls.security.basicAuth.password:.*}";"${content.service.security.basicAuth.password}";g' \
+  -e 's;"alfrescoGovernanceServicesSecurityControls.security.basicAuth.username";"content.service.security.basicAuth.username";g' \
+  -e 's;, url = "${alfrescoGovernanceServicesREST_.url:.*}";, url = "${content.service.url}", path = "${governance.service.path}";g' \
+  -e 's;"${alfrescoGovernanceServicesREST_.security.basicAuth.username:.*}";"${content.service.security.basicAuth.username}";g' \
+  -e 's;"${alfrescoGovernanceServicesREST_.security.basicAuth.password:.*}";"${content.service.security.basicAuth.password}";g' \
+  -e 's;"alfrescoGovernanceServicesREST_.security.basicAuth.username";"content.service.security.basicAuth.username";g' \
+  -e 's;, url = "${alfrescoInsightEngineREST_.url:.*}";, url = "${content.service.url}", path = "${search-sql.service.path}";g' \
   -e 's;"${alfrescoInsightEngineREST_.security.basicAuth.username:.*}";"${content.service.security.basicAuth.username}";g' \
   -e 's;"${alfrescoInsightEngineREST_.security.basicAuth.password:.*}";"${content.service.security.basicAuth.password}";g' \
   -e 's;"alfrescoInsightEngineREST_.security.basicAuth.username";"content.service.security.basicAuth.username";g' \
@@ -49,6 +49,13 @@ find ${GENERATED_SOURCE_DIR} -type f -iname 'ModelsApi.java' -exec sed \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
   -i '' {} +
 
+find ${GENERATED_SOURCE_DIR} -type f -name 'SearchApiClient.java' -exec sed \
+  -e 's/path = "${content.service.path}"/path = "${search.service.path}"/' \
+  -i '' {} +
+
+find ${GENERATED_SOURCE_DIR} -type f -name 'DiscoveryApiClient.java' -exec sed \
+  -e 's/path = "${content.service.path}"/path = "${discovery.service.path}"/' \
+  -i '' {} +
 
 find "${GENERATED_SOURCE_DIR}" -type d \( \
   -name 'gradle' \

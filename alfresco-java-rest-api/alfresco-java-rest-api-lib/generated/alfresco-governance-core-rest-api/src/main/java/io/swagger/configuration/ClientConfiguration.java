@@ -28,14 +28,14 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties
 public class ClientConfiguration {
 
-  @Value("${governance.service.security.basicAuth.username}")
+  @Value("${content.service.security.basicAuth.username}")
   private String basicAuthUsername;
 
-  @Value("${governance.service.security.basicAuth.password}")
+  @Value("${content.service.security.basicAuth.password}")
   private String basicAuthPassword;
 
   @Bean
-  @ConditionalOnProperty(name = "governance.service.security.basicAuth.username")
+  @ConditionalOnProperty(name = "content.service.security.basicAuth.username")
   public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
     return new BasicAuthRequestInterceptor(this.basicAuthUsername, this.basicAuthPassword);
   }
