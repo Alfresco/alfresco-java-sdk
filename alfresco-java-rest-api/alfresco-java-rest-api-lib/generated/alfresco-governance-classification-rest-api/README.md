@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-governance-classification-rest-api</artifactId>
-    <version>5.0.0</version>
+    <version>5.0.1-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.alfresco:alfresco-governance-classification-rest-api:5.0.0"
+compile "org.alfresco:alfresco-governance-classification-rest-api:5.0.1-SNAPSHOT"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-governance-classification-rest-api-5.0.0.jar
+* target/alfresco-governance-classification-rest-api-5.0.1-SNAPSHOT.jar
 * target/lib/*.jar
 
 ## Getting Started
