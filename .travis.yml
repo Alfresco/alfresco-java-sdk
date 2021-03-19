@@ -5,5 +5,5 @@ import:
 before_script:
   - |-
     export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
-      -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/groups/public \
-      -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/groups/public-snapshots"
+      -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
+      -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots"

@@ -71,11 +71,11 @@
   <distributionManagement>
     <repository>
       <id>alfresco-public</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
       <id>alfresco-public-snapshots</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 
