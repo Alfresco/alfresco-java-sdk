@@ -64,8 +64,8 @@
   </dependencyManagement>
   <repositories>
     <repository>
-      <id>alfresco-internal</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/internal</url>
+      <id>alfresco-public</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
     </repository>
   </repositories>
   <profiles>
