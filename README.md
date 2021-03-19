@@ -24,7 +24,7 @@ Existing projects with business logic that could be lifted out and implemented a
 ## How does it work?
 
 Alfresco Java SDK consist of the following groups of libraries:
-* [alfresco-java-rest-api](alfresco-java-event-api): Allows applications to consume Alfresco public REST APIs.
+* [alfresco-java-rest-api](alfresco-java-rest-api): Allows applications to consume Alfresco public REST APIs.
 * [alfresco-java-event-api](alfresco-java-event-api): Allows applications to react to events produced by Alfresco Repository.
 
 The [samples](samples) folder includes examples, sample applications and code snippets of the different features supported by the SDK. Each sample application contains a `docker-compose` file and scripts that allows you to build and run the extension.  
