@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-core-rest-api</artifactId>
-    <version>5.0.0-SNAPSHOT</version>
+    <version>5.0.0</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.alfresco:alfresco-core-rest-api:5.0.0-SNAPSHOT"
+compile "org.alfresco:alfresco-core-rest-api:5.0.0"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-core-rest-api-5.0.0-SNAPSHOT.jar
+* target/alfresco-core-rest-api-5.0.0.jar
 * target/lib/*.jar
 
 ## Getting Started
