@@ -69,6 +69,14 @@
   </ciManagement>
 
   <distributionManagement>
+    <repository>
+      <id>alfresco-public</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+    </repository>
+    <snapshotRepository>
+      <id>alfresco-public-snapshots</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <properties>
