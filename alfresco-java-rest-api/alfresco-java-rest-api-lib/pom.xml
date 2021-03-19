@@ -62,12 +62,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <repositories>
-    <repository>
-      <id>alfresco-internal</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/internal</url>
-    </repository>
-  </repositories>
   <profiles>
     <profile>
       <id>generate</id>
