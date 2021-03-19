@@ -43,6 +43,18 @@ The [samples](samples) folder includes examples, sample applications and code sn
 
 Maven:
 
+First, add to the repositories the Alfresco public repository containing the artifacts:
+```xml
+  <repositories>
+  
+    <repository>
+      <id>alfresco-public</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+    </repository>
+  
+  </repositories>
+```
+Then, add the dependency on the desired starter(s)
 ```xml
   <dependencies>
 
@@ -63,6 +75,15 @@ Maven:
 ```
 
 Gradle:
+
+First, add to the repositories the Alfresco public repository containing the artifacts:
+```groovy
+repositories {
+    maven {
+        url "https://artifacts.alfresco.com/nexus/content/groups/public"
+    }
+}
+```
 
 ```groovy
 compile "org.alfresco:alfresco-java-rest-api-spring-boot-starter:5.0.0"
