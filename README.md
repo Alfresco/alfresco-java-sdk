@@ -84,7 +84,7 @@ repositories {
     }
 }
 ```
-
+Then, add the dependency on the desired starter(s)
 ```groovy
 compile "org.alfresco:alfresco-java-rest-api-spring-boot-starter:5.0.0"
 compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.0.0"
