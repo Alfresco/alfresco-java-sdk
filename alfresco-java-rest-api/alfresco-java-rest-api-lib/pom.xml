@@ -15,9 +15,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <spring-cloud.version>2020.0.1</spring-cloud.version>
     <project.build.generatedSourceDirectory>generated</project.build.generatedSourceDirectory>
-    <swagger-core.version>1.5.20</swagger-core.version>
     <swagger-codegen-maven-plugin.groupId>io.swagger</swagger-codegen-maven-plugin.groupId>
     <swagger-codegen-maven-plugin.version>2.4.10</swagger-codegen-maven-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
@@ -46,22 +44,6 @@
     <module>generated/alfresco-search-rest-api</module>
     <module>generated/alfresco-search-sql-rest-api</module>
   </modules>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring-cloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.swagger</groupId>
-        <artifactId>swagger-annotations</artifactId>
-        <version>${swagger-core.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <repositories>
     <repository>
       <id>alfresco-public</id>
