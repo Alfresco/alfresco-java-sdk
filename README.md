@@ -103,6 +103,7 @@ Also, this property is required if you want Spring Boot to auto-define the Activ
 ```
 spring.jms.cache.enabled=false
 ```
+Similarly, you can alternatively set `SPRING_JMS_CACHE_ENABLED` environment variable.
 
 For additional configuration properties of Event API, check [alfresco-java-event-api](alfresco-java-event-api).
 
