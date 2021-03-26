@@ -94,11 +94,15 @@ compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.0.0"
 #### 3. Configure Event API 
 
 In your ```application.properties``` file define the properties required to connect to the ActiveMQ broker in order to handle Repository events:
-
 ```
 spring.activemq.brokerUrl=tcp://activemq-host:61616
 ```
-Alternatively, set `SPRING_ACTIVEMQ_BROKER_URL` environment variable. 
+Alternatively, set `SPRING_ACTIVEMQ_BROKER_URL` environment variable.
+
+Also, this property is required if you want Spring Boot to auto-define the ActiveMQConnectionFactory, otherwise you can define that bean in Spring config
+```
+spring.jms.cache.enabled=false
+```
 
 For additional configuration properties of Event API, check [alfresco-java-event-api](alfresco-java-event-api).
 
