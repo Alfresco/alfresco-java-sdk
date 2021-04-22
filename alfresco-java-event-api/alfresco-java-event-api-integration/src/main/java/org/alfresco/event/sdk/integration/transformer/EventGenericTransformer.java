@@ -19,6 +19,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.alfresco.event.sdk.handling.EventHandlingException;
+import org.alfresco.event.sdk.model.databind.ObjectMapperFactory;
 import org.alfresco.event.sdk.model.v1.model.DataAttributes;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.Resource;
@@ -36,19 +37,9 @@ public class EventGenericTransformer implements GenericTransformer<String, RepoE
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EventGenericTransformer.class);
 
-    private final ObjectMapper objectMapper;
-
-    /**
-     * Public constructor.
-     *
-     * @param objectMapper given @{@link ObjectMapper} to use in the JSON transformation process
-     */
-    public EventGenericTransformer(final ObjectMapper objectMapper) {
-        this.objectMapper = Objects.requireNonNull(objectMapper);
-    }
-
     @Override
     public RepoEvent<DataAttributes<Resource>> transform(final String eventJSON) {
+        final ObjectMapper objectMapper = new ObjectMapperFactory().createObjectMapper();
         LOGGER.debug("Transforming JSON event {}", eventJSON);
         try {
             return objectMapper.readValue(eventJSON, new TypeReference<>() {

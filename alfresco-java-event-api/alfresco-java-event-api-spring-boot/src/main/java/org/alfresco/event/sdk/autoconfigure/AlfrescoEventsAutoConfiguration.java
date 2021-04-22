@@ -15,14 +15,12 @@
  */
 package org.alfresco.event.sdk.autoconfigure;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.alfresco.event.sdk.handling.EventHandlingExecutor;
 import org.alfresco.event.sdk.handling.EventHandlingRegistry;
 import org.alfresco.event.sdk.handling.SimpleEventHandlingExecutor;
 import org.alfresco.event.sdk.handling.handler.EventHandler;
 import org.alfresco.event.sdk.integration.EventChannels;
 import org.alfresco.event.sdk.integration.transformer.EventGenericTransformer;
-import org.alfresco.event.sdk.model.databind.ObjectMapperFactory;
 import org.alfresco.event.sdk.model.v1.model.DataAttributes;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.Resource;
@@ -97,12 +95,7 @@ public class AlfrescoEventsAutoConfiguration {
 
     @Bean
     public GenericTransformer<String, RepoEvent<DataAttributes<Resource>>> acsEventTransformer() {
-        return new EventGenericTransformer(acsEventObjectMapper());
-    }
-
-    @Bean
-    public ObjectMapper acsEventObjectMapper() {
-        return ObjectMapperFactory.createInstance();
+        return new EventGenericTransformer();
     }
 
     // SPRING INTEGRATION OPTION CONFIGURATION
