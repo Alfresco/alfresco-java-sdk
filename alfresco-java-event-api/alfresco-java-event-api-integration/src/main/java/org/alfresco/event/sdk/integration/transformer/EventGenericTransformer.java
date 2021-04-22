@@ -37,9 +37,10 @@ public class EventGenericTransformer implements GenericTransformer<String, RepoE
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EventGenericTransformer.class);
 
+    private final ObjectMapper objectMapper = new ObjectMapperFactory().createObjectMapper();
+
     @Override
     public RepoEvent<DataAttributes<Resource>> transform(final String eventJSON) {
-        final ObjectMapper objectMapper = new ObjectMapperFactory().createObjectMapper();
         LOGGER.debug("Transforming JSON event {}", eventJSON);
         try {
             return objectMapper.readValue(eventJSON, new TypeReference<>() {
