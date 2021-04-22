@@ -46,7 +46,7 @@ public class EventGenericTransformerTest {
     @Before
     public void setup() {
         MockitoAnnotations.openMocks(this);
-        eventGenericTransformer = new EventGenericTransformer(mockObjectMapper);
+        eventGenericTransformer = new EventGenericTransformer();
     }
 
     @Test
