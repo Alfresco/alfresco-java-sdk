@@ -15,7 +15,7 @@
 
   <properties>
     <jsonschema-generator.version>4.12.2</jsonschema-generator.version>
-    <commons-io.version>2.7</commons-io.version>
+    <commons-io.version>2.8.0</commons-io.version>
   </properties>
 
   <dependencies>
