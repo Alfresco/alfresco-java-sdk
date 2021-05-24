@@ -52,6 +52,7 @@
     <module>alfresco-java-event-api</module>
     <module>alfresco-java-rest-api</module>
     <module>samples</module>
+    <module>integration-tests</module>
   </modules>
   <scm>
     <url>http://github.com/${project.scm.organisation}/${project.scm.repository}</url>
