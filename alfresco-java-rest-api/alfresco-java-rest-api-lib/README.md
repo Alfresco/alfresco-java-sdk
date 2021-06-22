@@ -21,3 +21,11 @@ MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dags.version=3.5.0-A4"
 ```
 This overwrites the `acs.version` to 6.2.0 and `ags.version` to 3.5.0-A4 from here:
 https://github.com/Alfresco/alfresco-java-sdk/blob/develop/alfresco-java-rest-api/alfresco-java-rest-api-lib/pom.xml#L23-L24
+
+As part of the script `generate.sh`, the following maven command is executed:
+
+```console
+mvn -N -P generate clean generate-sources ${MAVEN_CLI_OPTS}
+```
+
+And in the `generate-sources` phase the script `patch.sh` is executed. This script finds and replaces in the generated code configurations with the correct names and cleans unnecessary files.
