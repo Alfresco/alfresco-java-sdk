@@ -28,4 +28,4 @@ As part of the script `generate.sh`, the following maven command is executed:
 mvn -N -P generate clean generate-sources ${MAVEN_CLI_OPTS}
 ```
 
-And in the `generate-sources` phase the script `patch.sh` is executed. This script find and replace the needed configuration to generate the API.
+And in the `generate-sources` phase the script `patch.sh` is executed. This script finds and replaces in the generated code configurations with the correct names and cleans unnecessary files.
