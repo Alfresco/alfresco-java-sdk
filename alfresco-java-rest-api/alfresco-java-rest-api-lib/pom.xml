@@ -49,6 +49,10 @@
       <id>alfresco-public</id>
       <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
     </repository>
+    <repository>
+      <id>alfresco-private</id>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/private</url>
+    </repository>
   </repositories>
   <profiles>
     <profile>
