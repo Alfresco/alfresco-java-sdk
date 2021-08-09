@@ -21,7 +21,7 @@
   </modules>
 
   <properties>
-    <spring-cloud.version>2020.0.1</spring-cloud.version>
+    <spring-cloud.version>2020.0.3</spring-cloud.version>
     <swagger-core.version>1.5.20</swagger-core.version>
   </properties>
 
