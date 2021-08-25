@@ -130,7 +130,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The subscription id |
- **body** | [**JsonNode**](JsonNode.md)| The JSON snippet holding the new status of the subscription | [optional]
+ **body** | [**JsonNode**]| The JSON snippet holding the new status of the subscription | [optional]
 
 ### Return type
 

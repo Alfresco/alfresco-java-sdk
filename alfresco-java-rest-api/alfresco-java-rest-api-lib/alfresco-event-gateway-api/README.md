@@ -94,7 +94,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Filter](docs/Filter.md)
- - [JsonNode](docs/JsonNode.md)
  - [Subscription](docs/Subscription.md)
 
 ## Recommendation
