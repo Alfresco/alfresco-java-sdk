@@ -20,7 +20,7 @@
  */
 package org.alfresco.gateway.handler;
 
-import org.alfresco.gateway.model.JsonNode;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.alfresco.gateway.model.Subscription;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;

@@ -69,14 +69,14 @@ Please follow the [installation](#installation) instruction and execute the foll
   public static void main(String[] args) {
   
   DefaultApi apiInstance = new DefaultApi();
-    Subscription body = new Subscription(); // Subscription | The subscription object to be created
-  try {
-  Subscription result = apiInstance.createSubscription(body);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling DefaultApi#createSubscription");
-  e.printStackTrace();
-  }
+  Subscription body = new Subscription(); // Subscription | The subscription object to be created
+    try {
+      Subscription result = apiInstance.createSubscription(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#createSubscription");
+      e.printStackTrace();
+    }
   }
   }
 ```
@@ -97,15 +97,8 @@ Class | Method | HTTP request | Description
  - [JsonNode](docs/JsonNode.md)
  - [Subscription](docs/Subscription.md)
 
-## Documentation for Authorization
-
-All endpoints do not require authorization.
-Authentication schemes defined for the API:
-
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
 
 
