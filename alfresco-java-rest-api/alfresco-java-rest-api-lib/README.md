@@ -30,4 +30,4 @@ mvn -N -P generate clean generate-sources ${MAVEN_CLI_OPTS}
 
 And in the `generate-sources` phase the script `patch.sh` is executed. This script finds and replaces in the generated code configurations with the correct names and cleans unnecessary files.
 
-TODO: include alfresco-event-gateway-api generation into the automated script generation once `swagger-codegen` plugin is updated to `3.0.x`
+TODO: include alfresco-event-gateway-api generation into the automated script generation once `swagger-codegen` plugin is updated to `3.0.x`. See: https://alfresco.atlassian.net/browse/REPO-5667
