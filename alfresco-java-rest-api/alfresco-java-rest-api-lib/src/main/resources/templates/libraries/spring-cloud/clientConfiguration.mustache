@@ -32,18 +32,18 @@ import org.springframework.security.oauth2.core.OAuth2AccessToken;
 public class ClientConfiguration {
 
   @Configuration
-  @ConditionalOnProperty(name = "{{{title}}}.security.{{{name}}}.username")
+  @ConditionalOnProperty("content.service.security.basicAuth.username")
   protected static class BasicAuthConfiguration {
 
-    {{=<% %>=}}@Value("${<%title%>.security.<%name%>.username:}")<%={{ }}=%>
-    private String {{{name}}}Username;
-    {{=<% %>=}}@Value("${<%title%>.security.<%name%>.password:}")<%={{ }}=%>
-    private String {{{name}}}Password;
+    @Value("${content.service.security.basicAuth.username:#{null}}")
+    private String basicAuthUsername;
+    @Value("${content.service.security.basicAuth.password:#{null}}")
+    private String basicAuthPassword;
 
     @Bean
-    @ConditionalOnProperty("{{{title}}}.security.{{{name}}}.username")
+    @ConditionalOnProperty("content.service.security.basicAuth.username")
     public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
-      return new BasicAuthRequestInterceptor(this.{{{name}}}Username, this.{{{name}}}Password);
+      return new BasicAuthRequestInterceptor(this.basicAuthUsername, this.basicAuthPassword);
     }
   }
 
