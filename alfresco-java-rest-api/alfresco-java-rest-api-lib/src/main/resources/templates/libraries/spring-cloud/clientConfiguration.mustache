@@ -1,96 +1,22 @@
 package {{configPackage}};
 
-{{#authMethods}}{{#isBasic}}import feign.auth.BasicAuthRequestInterceptor;{{/isBasic}}{{/authMethods}}
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Bean;
+import org.alfresco.rest.sdk.feign.config.BasicAuthConfiguration;
+import org.alfresco.rest.sdk.feign.config.DelegatedAuthenticationConfiguration;
+import org.alfresco.rest.sdk.feign.config.OAuth2Configuration;
 import org.springframework.context.annotation.Configuration;
-{{#authMethods}}{{#isOAuth}}import org.springframework.cloud.openfeign.security.OAuth2FeignRequestInterceptor;{{/isOAuth}}{{/authMethods}}
+import org.springframework.context.annotation.Import;
 
+/**
+ * Feign client Spring configuration that provides support for different authentication methods. Currently, supported methods are:
+ * <ul>
+ *     <li>Basic Authentication</li>
+ *     <li>OAuth2 - Client credentials flow</li>
+ *     <li>OAuth2 - Password flow</li>
+ *     <li>Delegated (external) authentication</li>
+ * </ul>
+ */
 @Configuration
-@EnableConfigurationProperties
+@Import({BasicAuthConfiguration.class, OAuth2Configuration.class, DelegatedAuthenticationConfiguration.class})
 public class ClientConfiguration {
 
-{{#authMethods}}
-    {{#isBasic}}
-  {{=<% %>=}}@Value("${<%title%>.security.<%name%>.username:}")<%={{ }}=%>
-  private String {{{name}}}Username;
-
-  {{=<% %>=}}@Value("${<%title%>.security.<%name%>.password:}")<%={{ }}=%>
-  private String {{{name}}}Password;
-
-  @Bean
-  @ConditionalOnProperty(name = "{{{title}}}.security.{{{name}}}.username")
-  public BasicAuthRequestInterceptor {{{name}}}RequestInterceptor() {
-    return new BasicAuthRequestInterceptor(this.{{{name}}}Username, this.{{{name}}}Password);
-  }
-
-    {{/isBasic}}
-    {{#isApiKey}}
-  {{=<% %>=}}@Value("${<%title%>.security.<%name%>.key:}")<%={{ }}=%>
-  private String {{{name}}}Key;
-
-  @Bean
-  @ConditionalOnProperty(name = "{{{title}}}.security.{{{name}}}.key")
-  public ApiKeyRequestInterceptor {{{name}}}RequestInterceptor() {
-    return new ApiKeyRequestInterceptor({{#isKeyInHeader}}"header"{{/isKeyInHeader}}{{^isKeyInHeader}}"query"{{/isKeyInHeader}}, "{{{keyParamName}}}", this.{{{name}}}Key);
-  }
-
-    {{/isApiKey}}
-    {{#isOAuth}}
-  @Bean
-  @ConditionalOnProperty("{{{title}}}.security.{{{name}}}.client-id")
-  public OAuth2FeignRequestInterceptor {{{name}}}RequestInterceptor() {
-    return new OAuth2FeignRequestInterceptor(new DefaultOAuth2ClientContext(), {{{name}}}ResourceDetails());
-  }
-
-        {{#isCode}}
-  @Bean
-  @ConditionalOnProperty("{{{title}}}.security.{{{name}}}.client-id")
-  @ConfigurationProperties("{{{title}}}.security.{{{name}}}")
-  public AuthorizationCodeResourceDetails {{{name}}}ResourceDetails() {
-    AuthorizationCodeResourceDetails details = new AuthorizationCodeResourceDetails();
-    details.setAccessTokenUri("{{{tokenUrl}}}");
-    details.setUserAuthorizationUri("{{{authorizationUrl}}}");
-    return details;
-  }
-
-        {{/isCode}}
-        {{#isPassword}}
-  @Bean
-  @ConditionalOnProperty("{{{title}}}.security.{{{name}}}.client-id")
-  @ConfigurationProperties("{{{title}}}.security.{{{name}}}")
-  public ResourceOwnerPasswordResourceDetails {{{name}}}ResourceDetails() {
-    ResourceOwnerPasswordResourceDetails details = new ResourceOwnerPasswordResourceDetails();
-    details.setAccessTokenUri("{{{tokenUrl}}}");
-    return details;
-  }
-
-        {{/isPassword}}
-        {{#isApplication}}
-  @Bean
-  @ConditionalOnProperty("{{{title}}}.security.{{{name}}}.client-id")
-  @ConfigurationProperties("{{{title}}}.security.{{{name}}}")
-  public ClientCredentialsResourceDetails {{{name}}}ResourceDetails() {
-    ClientCredentialsResourceDetails details = new ClientCredentialsResourceDetails();
-    details.setAccessTokenUri("{{{tokenUrl}}}");
-    return details;
-  }
-
-        {{/isApplication}}
-        {{#isImplicit}}
-  @Bean
-  @ConditionalOnProperty("{{{title}}}.security.{{{name}}}.client-id")
-  @ConfigurationProperties("{{{title}}}.security.{{{name}}}")
-  public ImplicitResourceDetails {{{name}}}ResourceDetails() {
-    ImplicitResourceDetails details = new ImplicitResourceDetails();
-    details.setUserAuthorizationUri("{{{authorizationUrl}}}");
-    return details;
-  }
-
-        {{/isImplicit}}
-    {{/isOAuth}}
-{{/authMethods}}
 }

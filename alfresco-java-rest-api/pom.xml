@@ -15,6 +15,7 @@
   <name>Alfresco Java Rest API :: Parent</name>
 
   <modules>
+    <module>alfresco-java-rest-api-common</module>
     <module>alfresco-java-rest-api-lib</module>
     <module>alfresco-java-rest-api-spring-boot</module>
     <module>alfresco-java-rest-api-spring-boot-starter</module>
@@ -43,6 +44,11 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-openfeign-dependencies</artifactId>
         <version>${spring-cloud.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.alfresco</groupId>
+        <artifactId>alfresco-java-rest-api-common</artifactId>
+        <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
