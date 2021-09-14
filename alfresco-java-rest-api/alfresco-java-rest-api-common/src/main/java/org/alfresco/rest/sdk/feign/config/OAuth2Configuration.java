@@ -77,6 +77,7 @@ public class OAuth2Configuration {
         return OAuth2AuthorizedClientProviderBuilder.builder()
             .clientCredentials()
             .password()
+            .refreshToken()
             .build();
     }
 
