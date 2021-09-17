@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-rest-api-lib</artifactId>
-    <version>5.0.5-SNAPSHOT</version>
+    <version>5.0.5</version>
     <relativePath>../..</relativePath>
   </parent>
   <artifactId>alfresco-governance-core-rest-api</artifactId>
   <name>alfresco-governance-core-rest-api</name>
-  <version>5.0.5-SNAPSHOT</version>
+  <version>5.0.5</version>
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
