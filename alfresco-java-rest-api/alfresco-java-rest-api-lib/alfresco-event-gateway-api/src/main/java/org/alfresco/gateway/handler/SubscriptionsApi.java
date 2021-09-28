@@ -37,34 +37,54 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
-@Api(value = "Default")
-public interface DefaultApi {
+@Api(value = "Subscriptions")
+public interface SubscriptionsApi {
 
-    @ApiOperation(value = "", nickname = "createSubscription", notes = "Create a Subscription", response = Subscription.class, tags={  })
+    @ApiOperation(value = "", nickname = "createSubscription", notes = "Create a Subscription", response = Subscription.class, authorizations = {
+        @Authorization(value = "basic-auth"),
+        @Authorization(value = "bearer-key")    }, tags={ "subscriptions", })
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "default response", response = Subscription.class) })
+        @ApiResponse(code = 200, message = "Successful operation", response = Subscription.class),
+        @ApiResponse(code = 422, message = "Invalid subscription or filter configuration"),
+        @ApiResponse(code = 400, message = "Invalid subscription format or unsupported subscription or filter type"),
+        @ApiResponse(code = 401, message = "Invalid authentication provided"),
+        @ApiResponse(code = 403, message = "User not authorized to perform the operation"),
+        @ApiResponse(code = 500, message = "Uncategorized server error") })
     @RequestMapping(value = "/subscriptions",
         produces = "application/json",
-        consumes = "*/*",
+        consumes = "application/json",
         method = RequestMethod.POST)
     ResponseEntity<Subscription> createSubscription(@ApiParam(value = "The subscription object to be created"  )  @Valid @RequestBody Subscription body);
 
 
-    @ApiOperation(value = "", nickname = "getSubscription", notes = "Get a Subscription by its id", response = Subscription.class, tags={  })
+    @ApiOperation(value = "", nickname = "getSubscription", notes = "Get a Subscription by its id", response = Subscription.class, authorizations = {
+        @Authorization(value = "basic-auth"),
+        @Authorization(value = "bearer-key")    }, tags={ "subscriptions", })
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "default response", response = Subscription.class) })
+        @ApiResponse(code = 200, message = "Successful operation", response = Subscription.class),
+        @ApiResponse(code = 404, message = "Subscription not found"),
+        @ApiResponse(code = 401, message = "Invalid authentication provided"),
+        @ApiResponse(code = 403, message = "User not authorized to perform the operation"),
+        @ApiResponse(code = 500, message = "Uncategorized server error") })
     @RequestMapping(value = "/subscriptions/{id}",
         produces = "application/json",
         method = RequestMethod.GET)
     ResponseEntity<Subscription> getSubscription(@ApiParam(value = "The subscription id",required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "", nickname = "partiallyUpdateSubscription", notes = "Update the status of a Subscription", response = Subscription.class, tags={  })
+    @ApiOperation(value = "", nickname = "partiallyUpdateSubscription", notes = "Update the status of a Subscription", response = Subscription.class, authorizations = {
+        @Authorization(value = "basic-auth"),
+        @Authorization(value = "bearer-key")    }, tags={ "subscriptions", })
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "default response", response = Subscription.class) })
+        @ApiResponse(code = 200, message = "Successful operation", response = Subscription.class),
+        @ApiResponse(code = 400, message = "Invalid request format"),
+        @ApiResponse(code = 422, message = "Invalid request attributes"),
+        @ApiResponse(code = 401, message = "Invalid authentication provided"),
+        @ApiResponse(code = 403, message = "User not authorized to perform the operation"),
+        @ApiResponse(code = 500, message = "Uncategorized server error") })
     @RequestMapping(value = "/subscriptions/{id}",
         produces = "application/json",
-        consumes = "*/*",
+        consumes = "application/merge-patch+json",
         method = RequestMethod.PATCH)
     ResponseEntity<Subscription> partiallyUpdateSubscription(@ApiParam(value = "The subscription id",required=true) @PathVariable("id") String id, @ApiParam(value = "The JSON snippet holding the new status of the subscription"  )  @Valid @RequestBody JsonNode body);
 

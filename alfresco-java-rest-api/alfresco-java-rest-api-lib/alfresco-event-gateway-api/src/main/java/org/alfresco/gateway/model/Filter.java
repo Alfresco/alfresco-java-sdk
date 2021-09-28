@@ -129,7 +129,7 @@ public class Filter   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Filter {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");

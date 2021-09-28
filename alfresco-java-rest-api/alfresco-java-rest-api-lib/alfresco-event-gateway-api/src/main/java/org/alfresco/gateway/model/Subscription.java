@@ -46,7 +46,7 @@ public class Subscription   {
    */
   public enum StatusEnum {
     ACTIVE("ACTIVE"),
-    
+
     INACTIVE("INACTIVE");
 
     private String value;
@@ -281,7 +281,7 @@ public class Subscription   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Subscription {\n");
-    
+
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
