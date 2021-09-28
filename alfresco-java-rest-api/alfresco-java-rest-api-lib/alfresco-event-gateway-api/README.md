@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-event-gateway-api</artifactId>
-    <version>5.0.5-SNAPSHOT</version>
+    <version>5.1.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.alfresco:alfresco-event-gateway-api:5.0.5-SNAPSHOT"
+compile "org.alfresco:alfresco-event-gateway-api:5.1.0-SNAPSHOT"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-event-gateway-api-5.0.5-SNAPSHOT.jar
+* target/alfresco-event-gateway-api-5.1.0-SNAPSHOT.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -56,35 +56,36 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-  import org.alfresco.gateway.*;
-  import org.alfresco.gateway.auth.*;
-  import org.alfresco.gateway.model.*;
-  import org.alfresco.gateway.handler.SubscriptionsApi;
+import java.util.HashMap;
+import java.util.Map;
 
-  import java.io.File;
-  import java.util.*;
+import org.alfresco.gateway.handler.SubscriptionsApi;
+import org.alfresco.gateway.model.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-  public class SubscriptionsApiExample {
+public class Sample {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Sample.class);
 
   public static void main(String[] args) {
 
-    // Configure HTTP basic authorization: basic-auth
-    HttpBasicAuth basic-auth = (HttpBasicAuth) defaultClient.getAuthentication("basic-auth");
-    basic-auth.setUsername("YOUR USERNAME");
-    basic-auth.setPassword("YOUR PASSWORD");
+    @Inject
+    SubscriptionsApi subscriptionsApi;
 
+    Map<String, String> config = new HashMap<>();
+    config.put("broker-id", "sample-broker"); // Id of the a broker in alfresco-event-gateway configuration
+    config.put("destination", "topic:sample-topic"); // Name of the topic to which the gateway shall publish the events
 
-  SubscriptionsApi apiInstance = new SubscriptionsApi();
-    Subscription body = new Subscription(); // Subscription | The subscription object to be created
-  try {
-  Subscription result = apiInstance.createSubscription(body);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling SubscriptionsApi#createSubscription");
-  e.printStackTrace();
+    Subscription subscriptionRequest = new Subscription();
+
+    subscriptionRequest.setType("jms-activemq");
+    subscriptionRequest.setConfig(config);
+
+    Subscription result = subscriptionsApi.createSubscription(subscriptionRequest);
+    LOGGER.info("Created subscription with id: {}", result.getId());
   }
-  }
-  }
+}
 ```
 
 ## Documentation for API Endpoints
@@ -101,19 +102,4 @@ Class | Method | HTTP request | Description
 
  - [Filter](docs/Filter.md)
  - [Subscription](docs/Subscription.md)
-
-## Documentation for Authorization
-
-Authentication schemes defined for the API:
-### basicAuth
-
-- **Type**: HTTP basic authentication
-
-### bearerKey
-
-
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 

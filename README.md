@@ -248,12 +248,89 @@ at [alfresco-java-event-api](alfresco-java-event-api).
 ```java
     CommentsApi commentsApi;
 
-public void addComentToNode(final String nodeId){
+public void addComentToNode(final String nodeId) {
   CommentBody commentBody=new CommentBody().content("I like this file");
   commentsApi.createComment(nodeId,commentBody);
   }
-  }
+}
 ```
 
 You can find more information about how to consume the REST API
 at [alfresco-java-rest-api](alfresco-java-rest-api).
+
+#### Integrating Alfresco Event Gateway
+
+Alfresco Java SDK is now compatible with [Alfresco Event Gateway](https://www.github.com/Alfresco/alfresco-event-gateway).
+
+Using [Alfresco Event Gateway REST API](alfresco-java-rest-api/alfresco-java-rest-api-lib/alfresco-event-gateway-api), extensions can manage the lifecycle of an event subscription.
+
+For example, an out-of-process extension may create a subscription to receive certain types of events in a specific topic of an ActiveMQ broker.
+
+```java
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.alfresco.gateway.handler.SubscriptionsApi;
+import org.alfresco.gateway.model.Filter;
+import org.alfresco.gateway.model.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Sample {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Sample.class);
+
+
+  public static void create(String[] args) {
+
+    @Inject
+    SubscriptionsApi subscriptionsApi;
+
+    Map<String, String> config = new HashMap<>();
+    config.put("broker-id", "my-broker"); // Id of the a broker in alfresco-event-gateway configuration
+    config.put("destination", "topic:sample-topic"); // Name of the topic to which the gateway shall publish the events
+
+    Filter filter = new Filter();
+    filter.setType("event-type");
+
+    Subscription subscriptionRequest = new Subscription();
+
+    subscriptionRequest.setType("jms-activemq");
+    subscriptionRequest.setConfig(config);
+    subscriptionRequest.setFilters(Collections.singletonList(filter));
+
+    Subscription result = subscriptionsApi.createSubscription(subscriptionRequest);
+    LOGGER.info("Created subscription with id: {}", result.getId());
+  }
+}
+```
+
+The ActiveMQ broker can be different from the one used by the Alfresco Repository and is configured in both the out-of-process extension and the Event Gateway.
+
+##### Configuring a specific ActiveMQ broker for an out-of-process extension - (Alfresco Event SDK):
+
+```
+spring.activemq.brokerUrl=tcp://my-broker-host:61616
+spring.activemq.username=test
+spring.activemq.password=my-secret
+
+# This property is required if you want Spring Boot to auto-define the ActiveMQConnectionFactory, otherwise you can define that bean in Spring config
+spring.jms.cache.enabled=false
+
+alfresco.events.topicName=topic:sample-topic
+```
+More Information: [Configuring out-of-process extensions] (alfresco-java-event-api)
+
+##### Configuring a specific ActiveMQ broker for an out-of-process extension - (Alfresco Event Gateway):
+
+```
+## EVENT GATEWAY BROKER CONFIG
+# This is a sample about how to configure a broker config with id "my-broker" (only broker-url is
+# mandatory). You can add any number of different broker configurations
+
+alfresco.event.gateway.publication.jms.broker.my-broker.broker-url=tcp://my-broker-host:61616
+alfresco.event.gateway.publication.jms.broker.my-broker.username=admin
+alfresco.event.gateway.publication.jms.broker.my-broker.password=my-secret
+```
+More Information: [Configuring Alfresco Event Gateway] (https://www.github.com/Alfresco/alfresco-event-gateway)

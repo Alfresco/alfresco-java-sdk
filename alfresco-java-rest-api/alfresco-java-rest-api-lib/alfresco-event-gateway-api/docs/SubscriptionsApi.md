@@ -18,29 +18,37 @@ Create a Subscription
 
 ### Example
 ```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SubscriptionsApi;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.alfresco.gateway.handler.SubscriptionsApi;
+import org.alfresco.gateway.model.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-// Configure HTTP basic authorization: basic-auth
-HttpBasicAuth basic-auth = (HttpBasicAuth) defaultClient.getAuthentication("basic-auth");
-basic-auth.setUsername("YOUR USERNAME");
-basic-auth.setPassword("YOUR PASSWORD");
+public class Sample {
 
+  private static final Logger LOGGER = LoggerFactory.getLogger(Sample.class);
 
-SubscriptionsApi apiInstance = new SubscriptionsApi();
-Subscription body = new Subscription(); // Subscription | The subscription object to be created
-try {
-    Subscription result = apiInstance.createSubscription(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SubscriptionsApi#createSubscription");
-    e.printStackTrace();
+  public static void main(String[] args) {
+
+    @Inject
+    SubscriptionsApi subscriptionsApi;
+
+    Map<String, String> config = new HashMap<>();
+    config.put("broker-id", "sample-broker"); // Id of the a broker in alfresco-event-gateway configuration
+    config.put("destination", "topic:sample-topic"); // Name of the topic to which the gateway shall publish the events
+
+    Subscription subscriptionRequest = new Subscription();
+
+    subscriptionRequest.setType("jms-activemq");
+    subscriptionRequest.setConfig(config);
+
+    Subscription result = subscriptionsApi.createSubscription(subscriptionRequest);
+    LOGGER.info("Created subscription with id: {}", result.getId());
+  }
 }
+
 ```
 
 ### Parameters
@@ -53,47 +61,33 @@ Name | Type | Description  | Notes
 
 [**Subscription**](Subscription.md)
 
-### Authorization
-
-[basic-auth](../README.md#basic-auth)[bearer-key](../README.md#bearer-key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getSubscription"></a>
-# **getSubscription**
-> Subscription getSubscription(id)
-
 
 
 Get a Subscription by its id
 
 ### Example
 ```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SubscriptionsApi;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.alfresco.gateway.handler.SubscriptionsApi;
+import org.alfresco.gateway.model.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Sample {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Sample.class);
 
 
-// Configure HTTP basic authorization: basic-auth
-HttpBasicAuth basic-auth = (HttpBasicAuth) defaultClient.getAuthentication("basic-auth");
-basic-auth.setUsername("YOUR USERNAME");
-basic-auth.setPassword("YOUR PASSWORD");
+  public static void main(String[] args) {
 
+    @Inject
+    SubscriptionsApi subscriptionsApi;
 
-SubscriptionsApi apiInstance = new SubscriptionsApi();
-String id = "id_example"; // String | The subscription id
-try {
-    Subscription result = apiInstance.getSubscription(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SubscriptionsApi#getSubscription");
-    e.printStackTrace();
+    Subscription result = subscriptionsApi.getSubscription("my-subscription-id");
+    LOGGER.info("Retrieved subscription: {}", result);
+  }
 }
 ```
 
@@ -107,48 +101,34 @@ Name | Type | Description  | Notes
 
 [**Subscription**](Subscription.md)
 
-### Authorization
-
-[basic-auth](../README.md#basic-auth)[bearer-key](../README.md#bearer-key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="partiallyUpdateSubscription"></a>
-# **partiallyUpdateSubscription**
-> Subscription partiallyUpdateSubscription(id, body)
-
-
 
 Update the status of a Subscription
 
 ### Example
 ```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SubscriptionsApi;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.alfresco.gateway.handler.SubscriptionsApi;
+import org.alfresco.gateway.model.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-// Configure HTTP basic authorization: basic-auth
-HttpBasicAuth basic-auth = (HttpBasicAuth) defaultClient.getAuthentication("basic-auth");
-basic-auth.setUsername("YOUR USERNAME");
-basic-auth.setPassword("YOUR PASSWORD");
+public class Sample {
 
+  private static final Logger LOGGER = LoggerFactory.getLogger(Sample.class);
 
-SubscriptionsApi apiInstance = new SubscriptionsApi();
-String id = "id_example"; // String | The subscription id
-JsonNode body = new JsonNode(); // JsonNode | The JSON snippet holding the new status of the subscription
-try {
-    Subscription result = apiInstance.partiallyUpdateSubscription(id, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SubscriptionsApi#partiallyUpdateSubscription");
-    e.printStackTrace();
+  public static void main(String[] args) {
+
+    @Inject
+    SubscriptionsApi subscriptionsApi;
+
+    Subscription subscription = subscriptionsApi.getSubscription("my-subscription-id");
+    subscription.setStatus(Subscription.StatusEnum.ACTIVE);
+    Subscription result = subscriptionsApi.partiallyUpdateSubscription(subscription);
+
+    LOGGER.info("Updated subscription: {}", result);
+  }
 }
 ```
 
@@ -162,13 +142,3 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Subscription**](Subscription.md)
-
-### Authorization
-
-[basic-auth](../README.md#basic-auth)[bearer-key](../README.md#bearer-key)
-
-### HTTP request headers
-
- - **Content-Type**: application/merge-patch+json
- - **Accept**: */*, application/json
-
