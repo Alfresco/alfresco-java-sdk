@@ -18,10 +18,10 @@
  * https://github.com/swagger-api/swagger-codegen
  * Do not edit the class manually.
  */
-package org.alfresco.core.handler;
+package org.alfresco.gateway.handler;
 
-import org.alfresco.core.model.JsonNode;
-import org.alfresco.core.model.Subscription;
+import com.fasterxml.jackson.databind.JsonNode;
+import org.alfresco.gateway.model.Subscription;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

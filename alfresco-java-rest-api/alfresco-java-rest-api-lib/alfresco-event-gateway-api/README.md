@@ -56,10 +56,10 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-  import org.alfresco.core.*;
-  import org.alfresco.core.auth.*;
-  import org.alfresco.core.model.*;
-  import org.alfresco.core.handler.SubscriptionsApi;
+  import org.alfresco.gateway.*;
+  import org.alfresco.gateway.auth.*;
+  import org.alfresco.gateway.model.*;
+  import org.alfresco.gateway.handler.SubscriptionsApi;
 
   import java.io.File;
   import java.util.*;
@@ -116,7 +116,4 @@ Authentication schemes defined for the API:
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
 
