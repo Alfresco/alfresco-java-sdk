@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.alfresco.gateway.handler;
+package org.alfresco.core.handler;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(name = "alfrescoDefaultApi", url = "${event.gateway.service.url}", path = "${event.gateway.service.path}", configuration = ClientConfiguration.class, decode404 = true)
-public interface DefaultApiClient extends DefaultApi {
+@FeignClient(name = "alfrescoSubscriptionsApi", url = "${event.gateway.service.url}", path = "${event.gateway.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+public interface SubscriptionsApiClient extends SubscriptionsApi {
 }

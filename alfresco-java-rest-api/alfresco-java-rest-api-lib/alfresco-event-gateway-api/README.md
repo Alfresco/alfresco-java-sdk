@@ -56,48 +56,67 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-  import org.alfresco.gateway.*;
-  import org.alfresco.gateway.auth.*;
-  import org.alfresco.gateway.model.*;
-  import org.alfresco.gateway.handler.DefaultApi;
+  import org.alfresco.core.*;
+  import org.alfresco.core.auth.*;
+  import org.alfresco.core.model.*;
+  import org.alfresco.core.handler.SubscriptionsApi;
 
   import java.io.File;
   import java.util.*;
 
-  public class DefaultApiExample {
+  public class SubscriptionsApiExample {
 
   public static void main(String[] args) {
-  
-  DefaultApi apiInstance = new DefaultApi();
-  Subscription body = new Subscription(); // Subscription | The subscription object to be created
-    try {
-      Subscription result = apiInstance.createSubscription(body);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#createSubscription");
-      e.printStackTrace();
-    }
+
+    // Configure HTTP basic authorization: basic-auth
+    HttpBasicAuth basic-auth = (HttpBasicAuth) defaultClient.getAuthentication("basic-auth");
+    basic-auth.setUsername("YOUR USERNAME");
+    basic-auth.setPassword("YOUR PASSWORD");
+
+
+  SubscriptionsApi apiInstance = new SubscriptionsApi();
+    Subscription body = new Subscription(); // Subscription | The subscription object to be created
+  try {
+  Subscription result = apiInstance.createSubscription(body);
+    System.out.println(result);
+  } catch (ApiException e) {
+  System.err.println("Exception when calling SubscriptionsApi#createSubscription");
+  e.printStackTrace();
+  }
   }
   }
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:7070*
+All URIs are relative to */v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**createSubscription**](docs/DefaultApi.md#createSubscription) | **POST** /subscriptions | 
-*DefaultApi* | [**getSubscription**](docs/DefaultApi.md#getSubscription) | **GET** /subscriptions/{id} | 
-*DefaultApi* | [**partiallyUpdateSubscription**](docs/DefaultApi.md#partiallyUpdateSubscription) | **PATCH** /subscriptions/{id} | 
+*SubscriptionsApi* | [**createSubscription**](docs/SubscriptionsApi.md#createSubscription) | **POST** /subscriptions | 
+*SubscriptionsApi* | [**getSubscription**](docs/SubscriptionsApi.md#getSubscription) | **GET** /subscriptions/{id} | 
+*SubscriptionsApi* | [**partiallyUpdateSubscription**](docs/SubscriptionsApi.md#partiallyUpdateSubscription) | **PATCH** /subscriptions/{id} | 
 
 ## Documentation for Models
 
  - [Filter](docs/Filter.md)
  - [Subscription](docs/Subscription.md)
 
+## Documentation for Authorization
+
+Authentication schemes defined for the API:
+### basicAuth
+
+- **Type**: HTTP basic authentication
+
+### bearerKey
+
+
+
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
+
+## Author
 
 
