@@ -320,7 +320,7 @@ spring.jms.cache.enabled=false
 
 alfresco.events.topicName=topic:sample-topic
 ```
-More Information: [Configuring out-of-process extensions] (alfresco-java-event-api)
+More Information: [Configuring out-of-process extensions](alfresco-java-event-api)
 
 ##### Configuring a specific ActiveMQ broker for an out-of-process extension - (Alfresco Event Gateway):
 
@@ -333,4 +333,4 @@ alfresco.event.gateway.publication.jms.broker.my-broker.broker-url=tcp://my-brok
 alfresco.event.gateway.publication.jms.broker.my-broker.username=admin
 alfresco.event.gateway.publication.jms.broker.my-broker.password=my-secret
 ```
-More Information: [Configuring Alfresco Event Gateway] (https://www.github.com/Alfresco/alfresco-event-gateway)
+More Information: [Configuring Alfresco Event Gateway](https://www.github.com/Alfresco/alfresco-event-gateway)
