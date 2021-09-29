@@ -51,44 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-search-sql-rest-api-5.0.5-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-
-  import org.alfresco.*;
-  import org.alfresco.auth.*;
-  import org.alfresco.search.sql.model.*;
-  import org.alfresco.search.sql.handler.SqlApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class SqlApiExample {
-
-  public static void main(String[] args) {
-
-  
-
-
-
-
-
-  SqlApi apiInstance = new SqlApi();
-    SQLSearchRequest queryBody = new SQLSearchRequest(); // SQLSearchRequest | Generic query API 
-  try {
-  SQLResultSetPaging result = apiInstance.search(queryBody);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling SqlApi#search");
-  e.printStackTrace();
-  }
-  }
-  }
-
-```
-
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/search/versions/1*
@@ -119,10 +81,6 @@ Authentication schemes defined for the API:
 
 - **Type**: HTTP basic authentication
 
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

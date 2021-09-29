@@ -18,35 +18,6 @@ Create a rating
 
 Create a rating for the node with identifier **nodeId**
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.RatingsApi;
-
-
-
-
-
-
-
-
-RatingsApi apiInstance = new RatingsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-RatingBody ratingBodyCreate = new RatingBody(); // RatingBody | For \"myRating\" the type is specific to the rating scheme, boolean for the likes and an integer for the fiveStar.  For example, to \"like\" a file the following body would be used:  ```JSON   {     \"id\": \"likes\",     \"myRating\": true   } ``` 
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    RatingEntry result = apiInstance.createRating(nodeId, ratingBodyCreate, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RatingsApi#createRating");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -76,33 +47,6 @@ Delete a rating
 
 Deletes rating **ratingId** from node **nodeId**.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.RatingsApi;
-
-
-
-
-
-
-
-
-RatingsApi apiInstance = new RatingsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-String ratingId = "ratingId_example"; // String | The identifier of a rating.
-try {
-    apiInstance.deleteRating(nodeId, ratingId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RatingsApi#deleteRating");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -130,35 +74,6 @@ null (empty response body)
 Get a rating
 
 Get the specific rating **ratingId** on node **nodeId**.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.RatingsApi;
-
-
-
-
-
-
-
-
-RatingsApi apiInstance = new RatingsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-String ratingId = "ratingId_example"; // String | The identifier of a rating.
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    RatingEntry result = apiInstance.getRating(nodeId, ratingId, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RatingsApi#getRating");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -188,36 +103,6 @@ Name | Type | Description  | Notes
 List ratings
 
 Gets a list of ratings for node **nodeId**.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.RatingsApi;
-
-
-
-
-
-
-
-
-RatingsApi apiInstance = new RatingsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    RatingPaging result = apiInstance.listRatings(nodeId, skipCount, maxItems, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RatingsApi#listRatings");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

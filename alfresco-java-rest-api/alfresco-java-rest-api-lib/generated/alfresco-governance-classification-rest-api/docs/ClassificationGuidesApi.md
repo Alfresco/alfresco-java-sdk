@@ -27,33 +27,6 @@ Combined instructions
 
 Combines instructions from the given topics and the user defined instruction, if any.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-CombinedInstructionBody instructions = new CombinedInstructionBody(); // CombinedInstructionBody | Instructions
-try {
-    InstructionEntry result = apiInstance.combinedInstructions(instructions);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#combinedInstructions");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -81,33 +54,6 @@ Create a classification guide
 
 Creates a new classification guide.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-ClassificationGuideBody classificationGuide = new ClassificationGuideBody(); // ClassificationGuideBody | Classification guide
-try {
-    ClassificationGuideEntry result = apiInstance.createClassificationGuide(classificationGuide);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#createClassificationGuide");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -134,35 +80,6 @@ Name | Type | Description  | Notes
 Create a subtopic
 
 Creates a new subtopic of a topic.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String topicId = "topicId_example"; // String | The identifier for the topic
-TopicBody topic = new TopicBody(); // TopicBody | Subtopic
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. 
-try {
-    TopicEntry result = apiInstance.createSubtopic(topicId, topic, include);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#createSubtopic");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -193,35 +110,6 @@ Create a topic
 
 Creates a new topic.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String classificationGuideId = "classificationGuideId_example"; // String | The identifier for the classification guide
-TopicBody topic = new TopicBody(); // TopicBody | Topic
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. 
-try {
-    TopicEntry result = apiInstance.createTopic(classificationGuideId, topic, include);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#createTopic");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -251,32 +139,6 @@ Delete a classification guide
 
 Deletes the classification guide with id **classificationGuideId**, including any topics and instructions.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String classificationGuideId = "classificationGuideId_example"; // String | The identifier for the classification guide
-try {
-    apiInstance.deleteClassificationGuide(classificationGuideId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#deleteClassificationGuide");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -304,32 +166,6 @@ Delete a topic
 
 Deletes the topic with id  **topicId**, including any subtopics and instructions.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String topicId = "topicId_example"; // String | The identifier for the topic
-try {
-    apiInstance.deleteTopic(topicId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#deleteTopic");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -356,37 +192,6 @@ null (empty response body)
 List all classification guides
 
 Gets all classification guides.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the guide. The following optional fields can be requested: * hasTopics - A flag indicating whether the guide already contains any topics. 
-Integer skipCount = 56; // Integer | The number of entities that exist in the collection before those included in this list.
-Integer maxItems = 56; // Integer | The maximum number of items to return in the list.
-List<String> orderBy = Arrays.asList("orderBy_example"); // List<String> | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally acending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. 
-String where = "where_example"; // String | A string to restrict the returned objects by using a predicate. Supported operations are AND, NOT, and OR. Fields to filter on: * enabled - e.g. (enabled = true OR enabled = false) 
-try {
-    ClassificationGuidePaging result = apiInstance.listClassificationGuides(include, skipCount, maxItems, orderBy, where);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#listClassificationGuides");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -418,39 +223,6 @@ Name | Type | Description  | Notes
 List all subtopics
 
 Gets all subtopics of a topic.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String topicId = "topicId_example"; // String | The identifier for the topic
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. 
-Integer skipCount = 56; // Integer | The number of entities that exist in the collection before those included in this list.
-Integer maxItems = 56; // Integer | The maximum number of items to return in the list.
-List<String> orderBy = Arrays.asList("orderBy_example"); // List<String> | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally acending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. 
-String where = "where_example"; // String | A string to restrict the returned objects by using a predicate. Supported operations are AND, NOT, and OR. Fields to filter on: * hasInstruction * hasSubtopics 
-Boolean includeSource = true; // Boolean | Also include **source** in addition to **entries** with folder information on the parent guide/topic
-try {
-    SubtopicPaging result = apiInstance.listSubtopics(topicId, include, skipCount, maxItems, orderBy, where, includeSource);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#listSubtopics");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -485,39 +257,6 @@ List all topics
 
 Gets all topics.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String classificationGuideId = "classificationGuideId_example"; // String | The identifier for the classification guide
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. 
-Integer skipCount = 56; // Integer | The number of entities that exist in the collection before those included in this list.
-Integer maxItems = 56; // Integer | The maximum number of items to return in the list.
-List<String> orderBy = Arrays.asList("orderBy_example"); // List<String> | A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally acending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. 
-String where = "where_example"; // String | A string to restrict the returned objects by using a predicate. Supported operations are AND, NOT, and OR e.g. (instruction=true and hasSubtopics=false). Fields to filter on: * hasInstruction * hasSubtopics 
-Boolean includeSource = true; // Boolean | Also include **source** in addition to **entries** with folder information on the parent guide/topic
-try {
-    TopicPaging result = apiInstance.listTopics(classificationGuideId, include, skipCount, maxItems, orderBy, where, includeSource);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#listTopics");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -551,33 +290,6 @@ Get classification guide information
 
 Gets the classification guide with id **classificationGuideId**.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String classificationGuideId = "classificationGuideId_example"; // String | The identifier for the classification guide
-try {
-    ClassificationGuideEntry result = apiInstance.showClassificationGuideById(classificationGuideId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#showClassificationGuideById");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -604,34 +316,6 @@ Name | Type | Description  | Notes
 Get topic information
 
 Gets the topic with id **topicId**.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String topicId = "topicId_example"; // String | The identifier for the topic
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. 
-try {
-    TopicEntry result = apiInstance.showTopicById(topicId, include);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#showTopicById");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -661,34 +345,6 @@ Update a classification guide
 
 Updates the classification guide with id **classificationGuideId**. For example, you can rename a classification guide.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String classificationGuideId = "classificationGuideId_example"; // String | The identifier for the classification guide
-ClassificationGuideBody classificationGuide = new ClassificationGuideBody(); // ClassificationGuideBody | Classification guide
-try {
-    ClassificationGuideEntry result = apiInstance.updateClassificationGuide(classificationGuideId, classificationGuide);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#updateClassificationGuide");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -716,35 +372,6 @@ Name | Type | Description  | Notes
 Update a topic
 
 Updates the topic with id **topicId**.  Use this to rename a topic or to add, edit, or remove the instruction associated with it. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.ClassificationGuidesApi;
-
-
-
-
-
-
-
-
-ClassificationGuidesApi apiInstance = new ClassificationGuidesApi();
-String topicId = "topicId_example"; // String | The identifier for the topic
-TopicBody topic = new TopicBody(); // TopicBody | Topic
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. 
-try {
-    TopicEntry result = apiInstance.updateTopic(topicId, topic, include);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClassificationGuidesApi#updateTopic");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

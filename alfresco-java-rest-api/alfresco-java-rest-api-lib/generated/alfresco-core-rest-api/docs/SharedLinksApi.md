@@ -23,35 +23,6 @@ Create a shared link to a file
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Create a shared link to the file **nodeId** in the request body. Also, an optional expiry date could be set, so the shared link would become invalid when the expiry date is reached. For example:  &#x60;&#x60;&#x60;JSON   {     \&quot;nodeId\&quot;: \&quot;1ff9da1a-ee2f-4b9c-8c34-3333333333\&quot;,     \&quot;expiresAt\&quot;: \&quot;2017-03-23T23:00:00.000+0000\&quot;   } &#x60;&#x60;&#x60;  **Note:** You can create shared links to more than one file specifying a list of **nodeId**s in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;nodeId\&quot;: \&quot;1ff9da1a-ee2f-4b9c-8c34-4444444444\&quot;   },   {     \&quot;nodeId\&quot;: \&quot;1ff9da1a-ee2f-4b9c-8c34-5555555555\&quot;   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {           ...         }       }     ]   } } &#x60;&#x60;&#x60; 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-SharedLinkBodyCreate sharedLinkBodyCreate = new SharedLinkBodyCreate(); // SharedLinkBodyCreate | The nodeId to create a shared link for.
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path * properties * isFavorite * aspectNames 
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    SharedLinkEntry result = apiInstance.createSharedLink(sharedLinkBodyCreate, include, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#createSharedLink");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -81,32 +52,6 @@ Deletes a shared link
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Deletes the shared link with identifier **sharedId**. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-String sharedId = "sharedId_example"; // String | The identifier of a shared link to a file.
-try {
-    apiInstance.deleteSharedLink(sharedId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#deleteSharedLink");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -133,33 +78,6 @@ null (empty response body)
 Email shared link
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Sends email with app-specific url including identifier **sharedId**.  The client and recipientEmails properties are mandatory in the request body. For example, to email a shared link with minimum info: &#x60;&#x60;&#x60;JSON {     \&quot;client\&quot;: \&quot;myClient\&quot;,     \&quot;recipientEmails\&quot;: [\&quot;john.doe@acme.com\&quot;, \&quot;joe.bloggs@acme.com\&quot;] } &#x60;&#x60;&#x60; A plain text message property can be optionally provided in the request body to customise the sent email. Also, a locale property can be optionally provided in the request body to send the emails in a particular language (if the locale is supported by Alfresco). For example, to email a shared link with a messages and a locale: &#x60;&#x60;&#x60;JSON {     \&quot;client\&quot;: \&quot;myClient\&quot;,     \&quot;recipientEmails\&quot;: [\&quot;john.doe@acme.com\&quot;, \&quot;joe.bloggs@acme.com\&quot;],     \&quot;message\&quot;: \&quot;myMessage\&quot;,     \&quot;locale\&quot;:\&quot;en-GB\&quot; } &#x60;&#x60;&#x60; **Note:** The client must be registered before you can send a shared link email. See [server documentation]. However, out-of-the-box  share is registered as a default client, so you could pass **share** as the client name: &#x60;&#x60;&#x60;JSON {     \&quot;client\&quot;: \&quot;share\&quot;,     \&quot;recipientEmails\&quot;: [\&quot;john.doe@acme.com\&quot;] } &#x60;&#x60;&#x60; 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-String sharedId = "sharedId_example"; // String | The identifier of a shared link to a file.
-SharedLinkBodyEmail sharedLinkBodyEmail = new SharedLinkBodyEmail(); // SharedLinkBodyEmail | The shared link email to send.
-try {
-    apiInstance.emailSharedLink(sharedId, sharedLinkBodyEmail);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#emailSharedLink");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -189,34 +107,6 @@ Get a shared link
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets minimal information for the file with shared link identifier **sharedId**.  **Note:** No authentication is required to call this endpoint. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-String sharedId = "sharedId_example"; // String | The identifier of a shared link to a file.
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    SharedLinkEntry result = apiInstance.getSharedLink(sharedId, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#getSharedLink");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -244,36 +134,6 @@ Name | Type | Description  | Notes
 Get shared link content
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets the content of the file with shared link identifier **sharedId**.  **Note:** No authentication is required to call this endpoint. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-String sharedId = "sharedId_example"; // String | The identifier of a shared link to a file.
-Boolean attachment = true; // Boolean | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. 
-OffsetDateTime ifModifiedSince = OffsetDateTime.now(); // OffsetDateTime | Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. 
-String range = "range_example"; // String | The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. 
-try {
-    File result = apiInstance.getSharedLinkContent(sharedId, attachment, ifModifiedSince, range);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#getSharedLinkContent");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -305,34 +165,6 @@ Get shared link rendition information
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets rendition information for the file with shared link identifier **sharedId**.  This API method returns rendition information where the rendition status is CREATED, which means the rendition is available to view/download.  **Note:** No authentication is required to call this endpoint. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-String sharedId = "sharedId_example"; // String | The identifier of a shared link to a file.
-String renditionId = "renditionId_example"; // String | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
-try {
-    RenditionEntry result = apiInstance.getSharedLinkRendition(sharedId, renditionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#getSharedLinkRendition");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -360,37 +192,6 @@ Name | Type | Description  | Notes
 Get shared link rendition content
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets the rendition content for file with shared link identifier **sharedId**.  **Note:** No authentication is required to call this endpoint. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-String sharedId = "sharedId_example"; // String | The identifier of a shared link to a file.
-String renditionId = "renditionId_example"; // String | The name of a thumbnail rendition, for example *doclib*, or *pdf*.
-Boolean attachment = true; // Boolean | **true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. 
-OffsetDateTime ifModifiedSince = OffsetDateTime.now(); // OffsetDateTime | Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. 
-String range = "range_example"; // String | The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. 
-try {
-    File result = apiInstance.getSharedLinkRenditionContent(sharedId, renditionId, attachment, ifModifiedSince, range);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#getSharedLinkRenditionContent");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -423,33 +224,6 @@ List renditions for a shared link
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Gets a list of the rendition information for the file with shared link identifier **sharedId**.  This API method returns rendition information, including the rendition id, for each rendition where the rendition status is CREATED, which means the rendition is available to view/download.  **Note:** No authentication is required to call this endpoint. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-String sharedId = "sharedId_example"; // String | The identifier of a shared link to a file.
-try {
-    RenditionPaging result = apiInstance.listSharedLinkRenditions(sharedId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#listSharedLinkRenditions");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -476,37 +250,6 @@ Name | Type | Description  | Notes
 List shared links
 
 **Note:** this endpoint is available in Alfresco 5.2 and newer versions.  Get a list of links that the current user has read permission on source node.  The list is ordered in descending modified order.  **Note:** The list of links is eventually consistent so newly created shared links may not appear immediately. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.SharedLinksApi;
-
-
-
-
-
-
-
-
-SharedLinksApi apiInstance = new SharedLinksApi();
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
-String where = "where_example"; // String | Optionally filter the list by \"sharedByUser\" userid of person who shared the link (can also use -me-)  *   ```where=(sharedByUser='jbloggs')```  *   ```where=(sharedByUser='-me-')``` 
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path * properties * isFavorite * aspectNames 
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    SharedLinkPaging result = apiInstance.listSharedLinks(skipCount, maxItems, where, include, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SharedLinksApi#listSharedLinks");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

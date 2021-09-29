@@ -19,33 +19,6 @@ Create a security group
 
 Creates a new security group.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecurityGroupsApi;
-
-
-
-
-
-
-
-
-SecurityGroupsApi apiInstance = new SecurityGroupsApi();
-SecurityGroupModel securityGroup = new SecurityGroupModel(); // SecurityGroupModel | Security Group
-try {
-    SecurityGroupModel result = apiInstance.createSecurityGroup(securityGroup);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecurityGroupsApi#createSecurityGroup");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -73,32 +46,6 @@ Delete a security group
 
 Deletes the security group with id **securityGroupId**, including any marks.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecurityGroupsApi;
-
-
-
-
-
-
-
-
-SecurityGroupsApi apiInstance = new SecurityGroupsApi();
-String securityGroupId = "securityGroupId_example"; // String | The identifier for the security group
-try {
-    apiInstance.deleteSecurityGroup(securityGroupId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecurityGroupsApi#deleteSecurityGroup");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -125,34 +72,6 @@ null (empty response body)
 Get security group information
 
 Gets the security group with id **securityGroupId**.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecurityGroupsApi;
-
-
-
-
-
-
-
-
-SecurityGroupsApi apiInstance = new SecurityGroupsApi();
-String securityGroupId = "securityGroupId_example"; // String | The identifier for the security group
-String include = "include_example"; // String | The extra fields that should be added in the response.
-try {
-    SecurityGroupModel result = apiInstance.getSecurityGroup(securityGroupId, include);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecurityGroupsApi#getSecurityGroup");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -182,33 +101,6 @@ List all security groups
 
 Gets all security groups.  **Note:** The control of the list size using pagination is currently not supported. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecurityGroupsApi;
-
-
-
-
-
-
-
-
-SecurityGroupsApi apiInstance = new SecurityGroupsApi();
-String include = "include_example"; // String | The extra fields that should be added in the response.
-try {
-    SecurityGroupPaging result = apiInstance.listSecurityGroups(include);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecurityGroupsApi#listSecurityGroups");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -235,34 +127,6 @@ Name | Type | Description  | Notes
 Update a security group
 
 Updates the security group with id **securityGroupId**. For example, you can rename a security group.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecurityGroupsApi;
-
-
-
-
-
-
-
-
-SecurityGroupsApi apiInstance = new SecurityGroupsApi();
-String securityGroupId = "securityGroupId_example"; // String | The identifier for the security group
-SecurityGroupModel securityGroup = new SecurityGroupModel(); // SecurityGroupModel | Security Group
-try {
-    SecurityGroupModel result = apiInstance.updateSecurityGroup(securityGroupId, securityGroup);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecurityGroupsApi#updateSecurityGroup");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

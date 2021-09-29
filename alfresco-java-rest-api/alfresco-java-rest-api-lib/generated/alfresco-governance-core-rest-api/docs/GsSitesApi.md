@@ -18,34 +18,6 @@ Create the Records Management (RM) site
 
  Creates the RM site with the given details.  **Note:** The default site id is rm and the default site name is Records Management. The id of a site cannot be updated once the site has been created.  For example, to create an RM site named \&quot;Records Management\&quot; with \&quot;Records Management Description\&quot; as description, the following body could be used: &#x60;&#x60;&#x60;JSON {   \&quot;title\&quot;: \&quot;Records Management\&quot;,   \&quot;description\&quot;: \&quot;Records Management Description\&quot; } &#x60;&#x60;&#x60;  The creator will be added as a member with Site Manager role.  When you create the RM site, the **filePlan** structure is also created including special containers, such as containers for transfers, holds and, unfiled records. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.core.handler.GsSitesApi;
-
-
-
-
-
-
-
-
-GsSitesApi apiInstance = new GsSitesApi();
-RMSiteBodyCreate siteBodyCreate = new RMSiteBodyCreate(); // RMSiteBodyCreate | The site details
-Boolean skipAddToFavorites = false; // Boolean | Flag to indicate whether the RM site should not be added to the user's site favorites.
-try {
-    RMSiteEntry result = apiInstance.createRMSite(siteBodyCreate, skipAddToFavorites);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GsSitesApi#createRMSite");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -74,31 +46,6 @@ Delete the Records Management (RM) site
 
  Deletes the RM site. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.core.handler.GsSitesApi;
-
-
-
-
-
-
-
-
-GsSitesApi apiInstance = new GsSitesApi();
-try {
-    apiInstance.deleteRMSite();
-} catch (ApiException e) {
-    System.err.println("Exception when calling GsSitesApi#deleteRMSite");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -122,33 +69,6 @@ null (empty response body)
 Get the Records Management (RM) site
 
  Gets information for RM site. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.core.handler.GsSitesApi;
-
-
-
-
-
-
-
-
-GsSitesApi apiInstance = new GsSitesApi();
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    RMSiteEntry result = apiInstance.getRMSite(fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GsSitesApi#getRMSite");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -176,34 +96,6 @@ Name | Type | Description  | Notes
 Update the Records Management (RM) site
 
  Update the details for the RM site. Site Manager or other (site) admin can update title or description.  **Note**: the id, site visibility, or compliance of the RM site cannot be updated once the site has been created. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.core.handler.GsSitesApi;
-
-
-
-
-
-
-
-
-GsSitesApi apiInstance = new GsSitesApi();
-RMSiteBodyUpdate siteBodyUpdate = new RMSiteBodyUpdate(); // RMSiteBodyUpdate | The RM site information to update.
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    RMSiteEntry result = apiInstance.updateRMSite(siteBodyUpdate, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GsSitesApi#updateRMSite");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

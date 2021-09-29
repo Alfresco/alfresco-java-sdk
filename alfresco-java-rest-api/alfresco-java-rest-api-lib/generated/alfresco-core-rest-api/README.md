@@ -51,44 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-core-rest-api-5.0.5-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-
-  import org.alfresco.core.*;
-  import org.alfresco.core.auth.*;
-  import org.alfresco.core.model.*;
-  import org.alfresco.core.handler.ActionsApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class ActionsApiExample {
-
-  public static void main(String[] args) {
-
-  
-
-
-
-
-
-  ActionsApi apiInstance = new ActionsApi();
-    String actionDefinitionId = "actionDefinitionId_example"; // String | The identifier of an action definition.
-  try {
-  ActionDefinitionEntry result = apiInstance.actionDetails(actionDefinitionId);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling ActionsApi#actionDetails");
-  e.printStackTrace();
-  }
-  }
-  }
-
-```
-
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/alfresco/versions/1*
@@ -427,10 +389,6 @@ Authentication schemes defined for the API:
 
 - **Type**: HTTP basic authentication
 
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

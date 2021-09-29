@@ -18,33 +18,6 @@ Calculate the default declassification date
 
 Calculates the default declassification date for **nodeId** based on the properties of the node and the current declassification time frame.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.DefaultClassificationValuesApi;
-
-
-
-
-
-
-
-
-DefaultClassificationValuesApi apiInstance = new DefaultClassificationValuesApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-try {
-    String result = apiInstance.calculateDefaultDeclassificationDate(nodeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DefaultClassificationValuesApi#calculateDefaultDeclassificationDate");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -72,32 +45,6 @@ Get declassification date recalculation information
 
 Find the status of the declassification date recalculation process(es).
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.DefaultClassificationValuesApi;
-
-
-
-
-
-
-
-
-DefaultClassificationValuesApi apiInstance = new DefaultClassificationValuesApi();
-try {
-    DeclassificationDateRecalculationProcessPaging result = apiInstance.declassificationDateRecalculationProcessesGet();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DefaultClassificationValuesApi#declassificationDateRecalculationProcessesGet");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -121,33 +68,6 @@ This endpoint does not need any parameter.
 Start the declassification date recalculation process
 
 Start the declassification date recalculation process with id **processId** if it is not already running.  The only supported id is \&quot;-declassificationDateRecalculationProcess-\&quot;. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.DefaultClassificationValuesApi;
-
-
-
-
-
-
-
-
-DefaultClassificationValuesApi apiInstance = new DefaultClassificationValuesApi();
-DeclassificationDateRecalculationProcessBody declassificationDateRecalculationProcess = new DeclassificationDateRecalculationProcessBody(); // DeclassificationDateRecalculationProcessBody | The entity containing the identifier for the declassification date recalculation process. The id should be set to \"-declassificationDateRecalculationProcess-\".
-try {
-    DeclassificationDateRecalculationProcessEntry result = apiInstance.declassificationDateRecalculationProcessesPost(declassificationDateRecalculationProcess);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DefaultClassificationValuesApi#declassificationDateRecalculationProcessesPost");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -175,33 +95,6 @@ Name | Type | Description  | Notes
 Get declassification date recalculation process information
 
 Gets the declassification date recalculation process with id **processId**.  The only supported id is \&quot;-declassificationDateRecalculationProcess-\&quot;.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.DefaultClassificationValuesApi;
-
-
-
-
-
-
-
-
-DefaultClassificationValuesApi apiInstance = new DefaultClassificationValuesApi();
-String processId = "processId_example"; // String | The identifier for the declassification date recalculation process. This should be set to \"-declassificationDateRecalculationProcess-\".
-try {
-    DeclassificationDateRecalculationProcessEntry result = apiInstance.declassificationDateRecalculationProcessesProcessIdGet(processId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DefaultClassificationValuesApi#declassificationDateRecalculationProcessesProcessIdGet");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
