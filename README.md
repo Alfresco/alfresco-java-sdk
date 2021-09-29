@@ -293,9 +293,10 @@ public class Sample {
 
     Filter filter = new Filter();
     filter.setType("event-type");
+    // Comma-separated list of event types accepted by the filter
+    filter.setConfig(Collections.singletonMap("event-types", "org.alfresco.event.node.Created,org.alfresco.event.node.Updated"));
 
     Subscription subscriptionRequest = new Subscription();
-
     subscriptionRequest.setType("jms-activemq");
     subscriptionRequest.setConfig(config);
     subscriptionRequest.setFilters(Collections.singletonList(filter));
