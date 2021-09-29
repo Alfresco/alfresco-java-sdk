@@ -51,44 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-auth-rest-api-5.0.5-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-
-  import org.alfresco.*;
-  import org.alfresco.auth.*;
-  import org.alfresco.auth.model.*;
-  import org.alfresco.auth.handler.AuthenticationApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class AuthenticationApiExample {
-
-  public static void main(String[] args) {
-
-  
-
-
-
-
-
-  AuthenticationApi apiInstance = new AuthenticationApi();
-    TicketBody ticketBodyCreate = new TicketBody(); // TicketBody | The user credential.
-  try {
-  TicketEntry result = apiInstance.createTicket(ticketBodyCreate);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling AuthenticationApi#createTicket");
-  e.printStackTrace();
-  }
-  }
-  }
-
-```
-
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/authentication/versions/1*
@@ -118,10 +80,6 @@ Authentication schemes defined for the API:
 
 - **Type**: HTTP basic authentication
 
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

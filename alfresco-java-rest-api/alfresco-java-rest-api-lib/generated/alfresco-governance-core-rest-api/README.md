@@ -51,48 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-governance-core-rest-api-5.0.5-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-
-  import org.alfresco.*;
-  import org.alfresco.auth.*;
-  import org.alfresco.governance.core.model.*;
-  import org.alfresco.governance.core.handler.FilePlansApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class FilePlansApiExample {
-
-  public static void main(String[] args) {
-
-  
-
-
-
-
-
-  FilePlansApi apiInstance = new FilePlansApi();
-    String filePlanId = "filePlanId_example"; // String | The identifier of a file plan. You can also use the -filePlan- alias.
-    RootCategoryBodyCreate nodeBodyCreate = new RootCategoryBodyCreate(); // RootCategoryBodyCreate | The node information to create.
-    Boolean autoRename = true; // Boolean | If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. 
-    List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the record category. Any optional field from the response model can be requested. For example: * allowableOperations * hasRetentionSchedule * path 
-    List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-  try {
-  RecordCategoryEntry result = apiInstance.createFilePlanCategories(filePlanId, nodeBodyCreate, autoRename, include, fields);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling FilePlansApi#createFilePlanCategories");
-  e.printStackTrace();
-  }
-  }
-  }
-
-```
-
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://localhost/alfresco/api/-default-/public/gs/versions/1*
@@ -218,10 +176,6 @@ Authentication schemes defined for the API:
 
 - **Type**: HTTP basic authentication
 
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

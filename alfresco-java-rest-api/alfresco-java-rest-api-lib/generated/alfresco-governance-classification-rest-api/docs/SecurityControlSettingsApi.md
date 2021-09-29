@@ -16,33 +16,6 @@ Get security control setting value
 
 Gets the value for a selected **securityControlSettingKey**.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecurityControlSettingsApi;
-
-
-
-
-
-
-
-
-SecurityControlSettingsApi apiInstance = new SecurityControlSettingsApi();
-String securityControlSettingKey = "securityControlSettingKey_example"; // String | The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file 
-try {
-    SecurityControlSettingEntry result = apiInstance.getSecurityControlSetting(securityControlSettingKey);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecurityControlSettingsApi#getSecurityControlSetting");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -69,34 +42,6 @@ Name | Type | Description  | Notes
 Update security control setting value
 
 Updates the value of a selected **securityControlSettingKey**.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecurityControlSettingsApi;
-
-
-
-
-
-
-
-
-SecurityControlSettingsApi apiInstance = new SecurityControlSettingsApi();
-String securityControlSettingKey = "securityControlSettingKey_example"; // String | The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file 
-SecurityControlSettingBody securityControlSettingValue = new SecurityControlSettingBody(); // SecurityControlSettingBody | The new value for the security control setting. This can be a string or number, depending on the setting key.
-try {
-    SecurityControlSettingEntry result = apiInstance.updateSecurityControlSetting(securityControlSettingKey, securityControlSettingValue);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecurityControlSettingsApi#updateSecurityControlSetting");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

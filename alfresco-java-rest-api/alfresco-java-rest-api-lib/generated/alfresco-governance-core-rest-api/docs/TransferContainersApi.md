@@ -17,35 +17,6 @@ Get a transfer container
 
 Gets information for transfer container **transferContainerId**  Mandatory fields and the transfer container&#39;s aspects and properties are returned by default.  You can use the **include** parameter (include&#x3D;allowableOperations) to return additional information. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.core.handler.TransferContainersApi;
-
-
-
-
-
-
-
-
-TransferContainersApi apiInstance = new TransferContainersApi();
-String transferContainerId = "transferContainerId_example"; // String | The identifier of a transfer container. You can also use the -transfers- alias.
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the transfer container. Any optional field from the response model can be requested. For example: * allowableOperations * path 
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    TransferContainerEntry result = apiInstance.getTransferContainer(transferContainerId, include, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TransferContainersApi#getTransferContainer");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -74,38 +45,6 @@ Name | Type | Description  | Notes
 List transfer container&#39;s children
 
 Returns a list of transfers.  Minimal information for each child is returned by default.  You can use the **include** parameter (include&#x3D;allowableOperations) to return additional information. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.core.handler.TransferContainersApi;
-
-
-
-
-
-
-
-
-TransferContainersApi apiInstance = new TransferContainersApi();
-String transferContainerId = "transferContainerId_example"; // String | The identifier of a transfer container. You can also use the -transfers- alias.
-Integer skipCount = 56; // Integer | The number of entities that exist in the collection before those included in this list.
-Integer maxItems = 56; // Integer | The maximum number of items to return in the list.
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the transfer folders. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * properties * transferPDFIndicator * transferLocation * transferAccessionIndicator 
-Boolean includeSource = true; // Boolean | Also include **source** (in addition to **entries**) with folder information on the specified parent **transferContainerId**.
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    TransferContainerAssociationPaging result = apiInstance.listTransfers(transferContainerId, skipCount, maxItems, include, includeSource, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TransferContainersApi#listTransfers");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -138,36 +77,6 @@ Name | Type | Description  | Notes
 Update transfer container
 
 Updates the transfer container **transferContainerId**. For example, you can rename transfer container: &#x60;&#x60;&#x60;JSON {   \&quot;name\&quot;:\&quot;My new name\&quot; } &#x60;&#x60;&#x60; You can also set or update description and title properties: &#x60;&#x60;&#x60;JSON {   \&quot;properties\&quot;:     {        \&quot;cm:description\&quot;: \&quot;New Description\&quot;,        \&quot;cm:title\&quot;:\&quot;New Title\&quot;     } } &#x60;&#x60;&#x60; **Note:** Currently there is no optimistic locking for updates, so they are applied in \&quot;last one wins\&quot; order. 
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.core.handler.TransferContainersApi;
-
-
-
-
-
-
-
-
-TransferContainersApi apiInstance = new TransferContainersApi();
-String transferContainerId = "transferContainerId_example"; // String | The identifier of a transfer container. You can also use the -transfers- alias.
-TransferContainerBodyUpdate nodeBodyUpdate = new TransferContainerBodyUpdate(); // TransferContainerBodyUpdate | The node information to update.
-List<String> include = Arrays.asList("include_example"); // List<String> | Returns additional information about the transfer container. Any optional field from the response model can be requested. For example: * allowableOperations * path 
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    TransferContainerEntry result = apiInstance.updateTransferContainer(transferContainerId, nodeBodyUpdate, include, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TransferContainersApi#updateTransferContainer");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

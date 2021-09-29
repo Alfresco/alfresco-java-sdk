@@ -18,35 +18,6 @@ Create a comment
 
 Creates a comment on node **nodeId**. You specify the comment in a JSON body like this:  &#x60;&#x60;&#x60;JSON {   \&quot;content\&quot;: \&quot;This is a comment\&quot; } &#x60;&#x60;&#x60;  **Note:** You can create more than one comment by specifying a list of comments in the JSON body like this:  &#x60;&#x60;&#x60;JSON [   {     \&quot;content\&quot;: \&quot;This is a comment\&quot;   },   {     \&quot;content\&quot;: \&quot;This is another comment\&quot;   } ] &#x60;&#x60;&#x60; If you specify a list as input, then a paginated list rather than an entry is returned in the response body. For example:  &#x60;&#x60;&#x60;JSON {   \&quot;list\&quot;: {     \&quot;pagination\&quot;: {       \&quot;count\&quot;: 2,       \&quot;hasMoreItems\&quot;: false,       \&quot;totalItems\&quot;: 2,       \&quot;skipCount\&quot;: 0,       \&quot;maxItems\&quot;: 100     },     \&quot;entries\&quot;: [       {         \&quot;entry\&quot;: {           ...         }       },       {         \&quot;entry\&quot;: {           ...         }       }     ]   } } &#x60;&#x60;&#x60; 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.CommentsApi;
-
-
-
-
-
-
-
-
-CommentsApi apiInstance = new CommentsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-CommentBody commentBodyCreate = new CommentBody(); // CommentBody | The comment text. Note that you can also provide a list of comments.
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    CommentEntry result = apiInstance.createComment(nodeId, commentBodyCreate, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CommentsApi#createComment");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -76,33 +47,6 @@ Delete a comment
 
 Deletes the comment **commentId** from node **nodeId**.
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.CommentsApi;
-
-
-
-
-
-
-
-
-CommentsApi apiInstance = new CommentsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-String commentId = "commentId_example"; // String | The identifier of a comment.
-try {
-    apiInstance.deleteComment(nodeId, commentId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CommentsApi#deleteComment");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -130,36 +74,6 @@ null (empty response body)
 List comments
 
 Gets a list of comments for the node **nodeId**, sorted chronologically with the newest comment first.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.CommentsApi;
-
-
-
-
-
-
-
-
-CommentsApi apiInstance = new CommentsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-Integer skipCount = 0; // Integer | The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. 
-Integer maxItems = 100; // Integer | The maximum number of items to return in the list. If not supplied then the default value is 100. 
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    CommentPaging result = apiInstance.listComments(nodeId, skipCount, maxItems, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CommentsApi#listComments");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
@@ -190,36 +104,6 @@ Name | Type | Description  | Notes
 Update a comment
 
 Updates an existing comment **commentId** on node **nodeId**.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.core.ApiClient;
-//import org.alfresco.core.ApiException;
-//import org.alfresco.core.Configuration;
-//import org.alfresco.core.auth.*;
-//import org.alfresco.core.handler.CommentsApi;
-
-
-
-
-
-
-
-
-CommentsApi apiInstance = new CommentsApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-String commentId = "commentId_example"; // String | The identifier of a comment.
-CommentBody commentBodyUpdate = new CommentBody(); // CommentBody | The JSON representing the comment to be updated.
-List<String> fields = Arrays.asList("fields_example"); // List<String> | A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. 
-try {
-    CommentEntry result = apiInstance.updateComment(nodeId, commentId, commentBodyUpdate, fields);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CommentsApi#updateComment");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 

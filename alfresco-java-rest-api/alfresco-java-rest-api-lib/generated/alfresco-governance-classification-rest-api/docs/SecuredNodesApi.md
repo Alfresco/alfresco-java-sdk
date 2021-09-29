@@ -16,35 +16,6 @@ List all security marks assigned to a node.
 
 List all the existing security marks assigned to a node with id **nodeId**.  **Note:** The control of the list size using pagination is currently not supported. 
 
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecuredNodesApi;
-
-
-
-
-
-
-
-
-SecuredNodesApi apiInstance = new SecuredNodesApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-Integer skipCount = 56; // Integer | The number of entities that exist in the collection before those included in this list.
-Integer maxItems = 56; // Integer | The maximum number of items to return in the list.
-try {
-    SecuringMarksPaging result = apiInstance.getSecuringMarks(nodeId, skipCount, maxItems);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecuredNodesApi#getSecuringMarks");
-    e.printStackTrace();
-}
-```
-
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -73,34 +44,6 @@ Name | Type | Description  | Notes
 Manage the existing security marks for a node
 
 Manage the list of existing security marks for a node with id **nodeId**.
-
-### Example
-```java
-// Import classes:
-//import org.alfresco.ApiClient;
-//import org.alfresco.ApiException;
-//import org.alfresco.Configuration;
-//import org.alfresco.auth.*;
-//import org.alfresco.governance.classification.handler.SecuredNodesApi;
-
-
-
-
-
-
-
-
-SecuredNodesApi apiInstance = new SecuredNodesApi();
-String nodeId = "nodeId_example"; // String | The identifier of a node.
-SecuringMarksUpdateBody securityMarksUpdates = new SecuringMarksUpdateBody(); // SecuringMarksUpdateBody | The list of security marks updates.
-try {
-    SecuringMarksPaging result = apiInstance.updateSecuringMarks(nodeId, securityMarksUpdates);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SecuredNodesApi#updateSecuringMarks");
-    e.printStackTrace();
-}
-```
 
 ### Parameters
 
