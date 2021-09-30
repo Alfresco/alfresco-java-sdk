@@ -18,6 +18,6 @@ package org.alfresco.core.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(name = "alfrescoPeopleApi", url = "${content.service.url}", path = "${content.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(name = "alfrescoPeopleApi", url = "${content.service.url}", path = "${content.service.path}", configuration = ClientConfiguration.class)
 public interface PeopleApiClient extends PeopleApi {
 }

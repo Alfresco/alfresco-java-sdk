@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import {{configPackage}}.ClientConfiguration;
 
 {{=<% %>=}}
-@FeignClient(name = "alfresco<%classname%>", url = "${<%title%>.url:<%hostWithoutBasePath%>}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(name = "alfresco<%classname%>", url = "${<%title%>.url:<%hostWithoutBasePath%>}", configuration = ClientConfiguration.class)
 <%={{ }}=%>
 public interface {{classname}}Client extends {{classname}} {
 }

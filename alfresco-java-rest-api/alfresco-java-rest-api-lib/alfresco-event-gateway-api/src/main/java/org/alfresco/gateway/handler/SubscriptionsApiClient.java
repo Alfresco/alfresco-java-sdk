@@ -18,6 +18,6 @@ package org.alfresco.gateway.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(name = "alfrescoSubscriptionsApi", url = "${event.gateway.service.url}", path = "${event.gateway.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(name = "alfrescoSubscriptionsApi", url = "${event.gateway.service.url}", path = "${event.gateway.service.path}", configuration = ClientConfiguration.class)
 public interface SubscriptionsApiClient extends SubscriptionsApi {
 }

@@ -18,6 +18,6 @@ package org.alfresco.search.sql.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(name = "alfrescoSqlApi", url = "${content.service.url}", path = "${search-sql.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(name = "alfrescoSqlApi", url = "${content.service.url}", path = "${search-sql.service.path}", configuration = ClientConfiguration.class)
 public interface SqlApiClient extends SqlApi {
 }
