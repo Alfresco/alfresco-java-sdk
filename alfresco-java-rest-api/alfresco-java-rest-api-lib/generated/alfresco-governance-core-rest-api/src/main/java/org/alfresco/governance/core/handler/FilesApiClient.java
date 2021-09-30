@@ -18,6 +18,6 @@ package org.alfresco.governance.core.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(name = "alfrescoFilesApi", url = "${content.service.url}", path = "${governance.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(name = "alfrescoFilesApi", url = "${content.service.url}", path = "${governance.service.path}", configuration = ClientConfiguration.class)
 public interface FilesApiClient extends FilesApi {
 }
