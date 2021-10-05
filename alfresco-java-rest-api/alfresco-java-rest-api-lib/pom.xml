@@ -43,7 +43,7 @@
     <module>generated/alfresco-governance-classification-rest-api</module>
     <module>generated/alfresco-search-rest-api</module>
     <module>generated/alfresco-search-sql-rest-api</module>
-    <module>alfresco-event-gateway-api</module>
+    <module>alfresco-event-gateway-api-client</module>
   </modules>
   <repositories>
     <repository>
