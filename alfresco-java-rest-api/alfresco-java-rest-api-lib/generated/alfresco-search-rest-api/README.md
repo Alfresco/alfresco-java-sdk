@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-search-rest-api</artifactId>
-    <version>5.1.1</version>
+    <version>5.1.2-SNAPSHOT</version>
 </dependency>
 ```
 
