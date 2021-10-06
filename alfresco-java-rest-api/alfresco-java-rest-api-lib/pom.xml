@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-rest-api</artifactId>
-    <version>5.1.1-SNAPSHOT</version>
+    <version>5.1.1</version>
   </parent>
 
   <artifactId>alfresco-java-rest-api-lib</artifactId>
@@ -20,7 +20,7 @@
     <swagger-codegen-maven-plugin.version>2.4.10</swagger-codegen-maven-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <!-- Base Paths -->
-    <acs.version>7.0.0</acs.version>
+    <acs.version>7.1.0</acs.version>
     <ags.version>3.5.0-A7</ags.version>
     <!-- API definitions -->
     <acs.core.api>${project.build.directory}/definitions/alfresco-core.yaml</acs.core.api>

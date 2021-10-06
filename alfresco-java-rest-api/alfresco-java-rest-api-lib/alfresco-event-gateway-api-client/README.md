@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-event-gateway-api-client</artifactId>
-    <version>5.1.1-SNAPSHOT</version>
+    <version>5.1.1</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.alfresco:alfresco-event-gateway-api:5.1.1-SNAPSHOT"
+compile "org.alfresco:alfresco-event-gateway-api:5.1.1"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-event-gateway-api-5.1.1-SNAPSHOT.jar
+* target/alfresco-event-gateway-api-5.1.1.jar
 * target/lib/*.jar
 
 ## Getting Started
