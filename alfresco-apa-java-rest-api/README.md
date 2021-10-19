@@ -1,4 +1,4 @@
-# Alfresco Java REST API
+# Alfresco APA Java REST API
 
 [![Build Status](https://travis-ci.com/Alfresco/alfresco-java-rest-api.svg?token=aELT1YKccmqjzhwsQQzQ&branch=develop)](https://travis-ci.com/Alfresco/alfresco-java-rest-api)
 
