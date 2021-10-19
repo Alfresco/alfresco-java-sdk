@@ -29,6 +29,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.md" -exec sed \
   -e 's, *ApiClient defaultClient = Configuration.getDefaultApiClient();,,g' \
   -e 's,ErrorModelNamenamespaceorgSpringframeworkHateoasNameEntityModelOfJobExecution,EntryResponseContentOfJobExecution,g' \
   -e 's, *// Configure HTTP basic authorization: basicAuth,,g' \
+  -e 's,.*All URIs are relative to.*,All URIs are relative to the environment set via -Denvironment.host and -Denvironment.application.name,g' \
   -e 's, *HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");,,g' \
   -e 's, *basicAuth.setUsername("YOUR USERNAME");,,g' \
   -e 's, *basicAuth.setPassword("YOUR PASSWORD");,,g' \
