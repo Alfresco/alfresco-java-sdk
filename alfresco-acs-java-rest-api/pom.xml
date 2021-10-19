@@ -10,15 +10,15 @@
     <artifactId>alfresco-java-sdk</artifactId>
   </parent>
 
-  <artifactId>alfresco-java-rest-api</artifactId>
+  <artifactId>alfresco-acs-java-rest-api</artifactId>
   <packaging>pom</packaging>
   <name>Alfresco Java Rest API :: Parent</name>
 
   <modules>
-    <module>alfresco-java-rest-api-common</module>
-    <module>alfresco-java-rest-api-lib</module>
-    <module>alfresco-java-rest-api-spring-boot</module>
-    <module>alfresco-java-rest-api-spring-boot-starter</module>
+    <module>alfresco-acs-java-rest-api-common</module>
+    <module>alfresco-acs-java-rest-api-lib</module>
+    <module>alfresco-acs-java-rest-api-spring-boot</module>
+    <module>alfresco-acs-java-rest-api-spring-boot-starter</module>
   </modules>
 
   <properties>

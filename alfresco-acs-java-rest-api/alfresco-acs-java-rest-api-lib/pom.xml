@@ -10,7 +10,7 @@
     <version>5.1.2-SNAPSHOT</version>
   </parent>
 
-  <artifactId>alfresco-java-rest-api-lib</artifactId>
+  <artifactId>alfresco-acs-java-rest-api-lib</artifactId>
   <name>Alfresco Java Rest API :: Rest Clients</name>
   <packaging>pom</packaging>
 
