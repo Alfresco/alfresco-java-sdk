@@ -84,7 +84,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://apadev.envalfresco.comtrue*
+All URIs are relative to the environment set via -Denvironment.host and -Denvironment.application.name
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

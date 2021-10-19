@@ -1,6 +1,6 @@
 # ProcessInstanceControllerApi
 
-All URIs are relative to *https://apadev.envalfresco.comtrue*
+All URIs are relative to the environment set via -Denvironment.host and -Denvironment.application.name
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

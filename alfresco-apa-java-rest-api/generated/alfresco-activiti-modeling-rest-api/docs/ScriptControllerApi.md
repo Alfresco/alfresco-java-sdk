@@ -1,6 +1,6 @@
 # ScriptControllerApi
 
-All URIs are relative to *http://{{gatewayUrl}}*
+All URIs are relative to the environment set via -Denvironment.host and -Denvironment.application.name
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
