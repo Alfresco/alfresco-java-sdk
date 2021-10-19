@@ -16,8 +16,8 @@
   <packaging>pom</packaging>
   <developers/>
   <properties>
-    <environment.host>apadev.envalfresco.com</environment.host>
-    <environment.application.name>simpleapp</environment.application.name>
+    <environment.host>your-installed-environment-host</environment.host>
+    <environment.application.name>your-deployed-APA-application-name</environment.application.name>
     <spring-boot.version>${project.parent.version}</spring-boot.version>
     <spring-cloud.version>2020.0.2</spring-cloud.version>
     <project.build.generatedSourceDirectory>generated</project.build.generatedSourceDirectory>

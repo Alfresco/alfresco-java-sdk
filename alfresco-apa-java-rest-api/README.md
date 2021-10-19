@@ -19,18 +19,18 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Regenerate & Build
 
-Run the following sh script (SOME REALLY IMPORTANT MINOR MANUAL CHANGE ARE NEEDED)
+Firstly, you have to set the environment from which to fetch the API definitions via Maven properties in the following way:
 
 ```console
-./generate.sh
-```
-
-You can set the environment to fetch the API definitions using Maven properties, for example:
-```console
-MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Denvironment.host=apadev"
-MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Denvironment.application.name=simpleapp"
+MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Denvironment.host=your-installed-environment-host"
+MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Denvironment.application.name=your-deployed-APA-application-name"
 MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -U"
 export MAVEN_CLI_OPTS
+```
+
+Then run the following sh script:
+
+```console
 ./generate.sh
 ```
 
