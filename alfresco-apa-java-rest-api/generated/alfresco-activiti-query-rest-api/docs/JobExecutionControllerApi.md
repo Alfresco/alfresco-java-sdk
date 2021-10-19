@@ -1,0 +1,188 @@
+# JobExecutionControllerApi
+
+All URIs are relative to *https://apadev.envalfresco.comtrue*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**allUsingGET1**](JobExecutionControllerApi.md#allUsingGET1) | **GET** /admin/v1/batch/jobs/executions | all
+[**getUsingGET1**](JobExecutionControllerApi.md#getUsingGET1) | **GET** /admin/v1/batch/jobs/executions/{id} | get
+[**logUsingGET**](JobExecutionControllerApi.md#logUsingGET) | **GET** /admin/v1/batch/jobs/executions/{executionId}/log | log
+[**postUsingPOST**](JobExecutionControllerApi.md#postUsingPOST) | **POST** /admin/v1/batch/jobs/executions | post
+
+
+<a name="allUsingGET1"></a>
+# **allUsingGET1**
+> ListResponseContentOfJobExecution allUsingGET1(maxItems, skipCount, sort)
+
+all
+
+### Example
+```java
+// Import classes:
+//import com.alfresco.activiti.query.ApiException;
+//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+
+
+JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
+Integer maxItems = 56; // Integer | 
+Integer skipCount = 56; // Integer | 
+String sort = "sort_example"; // String | 
+try {
+    ListResponseContentOfJobExecution result = apiInstance.allUsingGET1(maxItems, skipCount, sort);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JobExecutionControllerApi#allUsingGET1");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **maxItems** | **Integer**|  | [optional]
+ **skipCount** | **Integer**|  | [optional]
+ **sort** | **String**|  | [optional]
+
+### Return type
+
+[**ListResponseContentOfJobExecution**](ListResponseContentOfJobExecution.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json
+
+<a name="getUsingGET1"></a>
+# **getUsingGET1**
+> EntryResponseContentOfJobExecution getUsingGET1(id)
+
+get
+
+### Example
+```java
+// Import classes:
+//import com.alfresco.activiti.query.ApiException;
+//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+
+
+JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
+Long id = 789L; // Long | id
+try {
+    EntryResponseContentOfJobExecution result = apiInstance.getUsingGET1(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JobExecutionControllerApi#getUsingGET1");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Long**| id |
+
+### Return type
+
+[**EntryResponseContentOfJobExecution**](EntryResponseContentOfJobExecution.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json
+
+<a name="logUsingGET"></a>
+# **logUsingGET**
+> InputStreamResource logUsingGET(executionId)
+
+log
+
+### Example
+```java
+// Import classes:
+//import com.alfresco.activiti.query.ApiException;
+//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+
+
+JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
+Long executionId = 789L; // Long | executionId
+try {
+    InputStreamResource result = apiInstance.logUsingGET(executionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JobExecutionControllerApi#logUsingGET");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **executionId** | **Long**| executionId |
+
+### Return type
+
+[**InputStreamResource**](InputStreamResource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+<a name="postUsingPOST"></a>
+# **postUsingPOST**
+> EntryResponseContentOfJobExecution postUsingPOST(jobConfig)
+
+post
+
+### Example
+```java
+// Import classes:
+//import com.alfresco.activiti.query.ApiException;
+//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+
+
+JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
+JobConfig jobConfig = new JobConfig(); // JobConfig | jobConfig
+try {
+    EntryResponseContentOfJobExecution result = apiInstance.postUsingPOST(jobConfig);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JobExecutionControllerApi#postUsingPOST");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **jobConfig** | [**JobConfig**](JobConfig.md)| jobConfig |
+
+### Return type
+
+[**EntryResponseContentOfJobExecution**](EntryResponseContentOfJobExecution.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/hal+json, application/json
+
