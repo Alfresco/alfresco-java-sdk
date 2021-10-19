@@ -1,0 +1,52 @@
+# ScriptControllerApi
+
+All URIs are relative to *http://{{gatewayUrl}}*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**runScriptUsingPOST**](ScriptControllerApi.md#runScriptUsingPOST) | **POST** /v1/scripts | runScript
+
+
+<a name="runScriptUsingPOST"></a>
+# **runScriptUsingPOST**
+> Object runScriptUsingPOST(inputVariables)
+
+runScript
+
+### Example
+```java
+// Import classes:
+//import com.alfresco.activiti.dmn.simulation.ApiException;
+//import com.alfresco.activiti.dmn.simulation.handler.ScriptControllerApi;
+
+
+ScriptControllerApi apiInstance = new ScriptControllerApi();
+Object inputVariables = null; // Object | inputVariables
+try {
+    Object result = apiInstance.runScriptUsingPOST(inputVariables);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ScriptControllerApi#runScriptUsingPOST");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inputVariables** | **Object**| inputVariables |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+

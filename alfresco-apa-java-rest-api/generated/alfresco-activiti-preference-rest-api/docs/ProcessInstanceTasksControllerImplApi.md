@@ -1,0 +1,58 @@
+# ProcessInstanceTasksControllerImplApi
+
+All URIs are relative to *https://apadev.envalfresco.comtrue*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getTasksUsingGET**](ProcessInstanceTasksControllerImplApi.md#getTasksUsingGET) | **GET** /v1/process-instances/{processInstanceId}/tasks | getTasks
+
+
+<a name="getTasksUsingGET"></a>
+# **getTasksUsingGET**
+> ListResponseContentCloudTask getTasksUsingGET(processInstanceId, maxItems, skipCount, sort)
+
+getTasks
+
+### Example
+```java
+// Import classes:
+//import com.alfresco.activiti.preference.ApiException;
+//import com.alfresco.activiti.preference.handler.ProcessInstanceTasksControllerImplApi;
+
+
+ProcessInstanceTasksControllerImplApi apiInstance = new ProcessInstanceTasksControllerImplApi();
+String processInstanceId = "processInstanceId_example"; // String | processInstanceId
+Integer maxItems = 56; // Integer | 
+Integer skipCount = 56; // Integer | 
+String sort = "sort_example"; // String | 
+try {
+    ListResponseContentCloudTask result = apiInstance.getTasksUsingGET(processInstanceId, maxItems, skipCount, sort);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProcessInstanceTasksControllerImplApi#getTasksUsingGET");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **processInstanceId** | **String**| processInstanceId |
+ **maxItems** | **Integer**|  | [optional]
+ **skipCount** | **Integer**|  | [optional]
+ **sort** | **String**|  | [optional]
+
+### Return type
+
+[**ListResponseContentCloudTask**](ListResponseContentCloudTask.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json
+
