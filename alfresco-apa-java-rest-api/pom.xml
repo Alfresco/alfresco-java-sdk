@@ -11,6 +11,10 @@
 
   <packaging>pom</packaging>
 
+  <modules>
+    <module>alfresco-apa-java-rest-api-lib</module>
+  </modules>
+
 
   <artifactId>alfresco-apa-java-rest-api</artifactId>
 

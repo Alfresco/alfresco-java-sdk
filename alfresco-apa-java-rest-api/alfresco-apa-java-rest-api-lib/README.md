@@ -7,11 +7,11 @@ This API has been generated using [Swagger Codegen](https://swagger.io/tools/swa
 ## Documentation
 - [APS](/generated/alfresco-activiti-rest-api/README.md)
 - [Auth](/generated/alfresco-auth-rest-api/README.md)
-- [Deployment](/generated/alfresco-activiti-deployment-rest-api/README.md)
-- [Modeling](/generated/alfresco-activiti-modeling-rest-api/README.md)
-- [Form](/generated/alfresco-activiti-form-rest-api/README.md)
-- [Audit](/generated/alfresco-activiti-audit-rest-api/README.md)
-- [Query](/generated/alfresco-activiti-query-rest-api/README.md)
+- [Deployment](/README.md)
+- [Modeling](/README.md)
+- [Form](/README.md)
+- [Audit](/README.md)
+- [Query](/README.md)
 - [RuntimeBundle](/generated/alfresco-activiti-rb-rest-api/README.md)
 
 ## Recommendation
