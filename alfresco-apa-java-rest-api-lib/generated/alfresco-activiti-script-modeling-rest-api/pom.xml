@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.alfresco</groupId>
-    <artifactId>alfresco-apa-java-rest-api</artifactId>
+    <artifactId>alfresco-apa-java-rest-api-lib</artifactId>
     <version>7.1.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
