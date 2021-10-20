@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.alfresco</groupId>
-    <artifactId>alfresco-java-rest-api-lib</artifactId>
+    <artifactId>alfresco-acs-java-rest-api-lib</artifactId>
     <version>5.1.2-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
@@ -26,7 +26,7 @@
     </dependency>
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-java-rest-api-common</artifactId>
+      <artifactId>alfresco-acs-java-rest-api-common</artifactId>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
