@@ -47,7 +47,7 @@
       </dependency>
       <dependency>
         <groupId>org.alfresco</groupId>
-        <artifactId>alfresco-acs-java-rest-api-common</artifactId>
+        <artifactId>alfresco-java-rest-api-common</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
