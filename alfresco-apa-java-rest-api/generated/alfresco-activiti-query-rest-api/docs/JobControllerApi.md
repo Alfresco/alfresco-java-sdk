@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**allUsingGET**](JobControllerApi.md#allUsingGET) | **GET** /admin/v1/batch/jobs | all
 [**getUsingGET**](JobControllerApi.md#getUsingGET) | **GET** /admin/v1/batch/jobs/{jobName} | get
 
-
 <a name="allUsingGET"></a>
 # **allUsingGET**
 > ListResponseContentOfJob allUsingGET()

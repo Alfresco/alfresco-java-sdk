@@ -49,7 +49,7 @@ public interface DescriptorDataEntityApi {
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
-    @RequestMapping(value = "/deployment-service/descriptorDatas/{id}/descriptor",
+    @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         method = RequestMethod.DELETE)
     ResponseEntity<Void> descriptorDataDescriptorUsingDELETE(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
@@ -60,7 +60,7 @@ public interface DescriptorDataEntityApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/descriptorDatas/{id}/descriptor",
+    @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "application/hal+json", 
         method = RequestMethod.GET)
     ResponseEntity<EntryResponseContentDescriptor> descriptorDataDescriptorUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
@@ -72,7 +72,7 @@ public interface DescriptorDataEntityApi {
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
-    @RequestMapping(value = "/deployment-service/descriptorDatas/{id}/descriptor",
+    @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "*/*", 
         consumes = "text/uri-list",
         method = RequestMethod.PATCH)
@@ -86,7 +86,7 @@ public interface DescriptorDataEntityApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/descriptorDatas/{id}/descriptor",
+    @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "*/*", 
         consumes = "text/uri-list",
         method = RequestMethod.POST)
@@ -100,7 +100,7 @@ public interface DescriptorDataEntityApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/descriptorDatas/{id}/descriptor",
+    @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "*/*", 
         consumes = "text/uri-list",
         method = RequestMethod.PUT)

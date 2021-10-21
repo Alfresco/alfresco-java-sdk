@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CloudServiceTask   {
   @JsonProperty("activityName")
   private String activityName = null;
@@ -123,7 +124,6 @@ public class CloudServiceTask   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -135,11 +135,10 @@ public class CloudServiceTask   {
   /**
    * Get activityName
    * @return activityName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getActivityName() {
+  
+    public String getActivityName() {
     return activityName;
   }
 
@@ -155,11 +154,10 @@ public class CloudServiceTask   {
   /**
    * Get activityType
    * @return activityType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getActivityType() {
+  
+    public String getActivityType() {
     return activityType;
   }
 
@@ -175,11 +173,10 @@ public class CloudServiceTask   {
   /**
    * Get appName
    * @return appName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppName() {
+  
+    public String getAppName() {
     return appName;
   }
 
@@ -195,11 +192,10 @@ public class CloudServiceTask   {
   /**
    * Get appVersion
    * @return appVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppVersion() {
+  
+    public String getAppVersion() {
     return appVersion;
   }
 
@@ -215,11 +211,10 @@ public class CloudServiceTask   {
   /**
    * Get businessKey
    * @return businessKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getBusinessKey() {
+  
+    public String getBusinessKey() {
     return businessKey;
   }
 
@@ -235,12 +230,11 @@ public class CloudServiceTask   {
   /**
    * Get cancelledDate
    * @return cancelledDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCancelledDate() {
+  
+    @Valid
+    public OffsetDateTime getCancelledDate() {
     return cancelledDate;
   }
 
@@ -256,12 +250,11 @@ public class CloudServiceTask   {
   /**
    * Get completedDate
    * @return completedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCompletedDate() {
+  
+    @Valid
+    public OffsetDateTime getCompletedDate() {
     return completedDate;
   }
 
@@ -277,11 +270,10 @@ public class CloudServiceTask   {
   /**
    * Get elementId
    * @return elementId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getElementId() {
+  
+    public String getElementId() {
     return elementId;
   }
 
@@ -297,11 +289,10 @@ public class CloudServiceTask   {
   /**
    * Get executionId
    * @return executionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getExecutionId() {
+  
+    public String getExecutionId() {
     return executionId;
   }
 
@@ -317,11 +308,10 @@ public class CloudServiceTask   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -337,11 +327,10 @@ public class CloudServiceTask   {
   /**
    * Get processDefinitionId
    * @return processDefinitionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionId() {
+  
+    public String getProcessDefinitionId() {
     return processDefinitionId;
   }
 
@@ -357,11 +346,10 @@ public class CloudServiceTask   {
   /**
    * Get processDefinitionKey
    * @return processDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionKey() {
+  
+    public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
 
@@ -377,11 +365,10 @@ public class CloudServiceTask   {
   /**
    * Get processDefinitionVersion
    * @return processDefinitionVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getProcessDefinitionVersion() {
+  
+    public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
 
@@ -397,11 +384,10 @@ public class CloudServiceTask   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -417,11 +403,10 @@ public class CloudServiceTask   {
   /**
    * Get serviceFullName
    * @return serviceFullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceFullName() {
+  
+    public String getServiceFullName() {
     return serviceFullName;
   }
 
@@ -437,11 +422,10 @@ public class CloudServiceTask   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -457,11 +441,10 @@ public class CloudServiceTask   {
   /**
    * Get serviceType
    * @return serviceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceType() {
+  
+    public String getServiceType() {
     return serviceType;
   }
 
@@ -477,11 +460,10 @@ public class CloudServiceTask   {
   /**
    * Get serviceVersion
    * @return serviceVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceVersion() {
+  
+    public String getServiceVersion() {
     return serviceVersion;
   }
 
@@ -497,12 +479,11 @@ public class CloudServiceTask   {
   /**
    * Get startedDate
    * @return startedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getStartedDate() {
+  
+    @Valid
+    public OffsetDateTime getStartedDate() {
     return startedDate;
   }
 
@@ -518,11 +499,10 @@ public class CloudServiceTask   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -607,4 +587,3 @@ public class CloudServiceTask   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

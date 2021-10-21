@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getVariablesUsingGET3**](TaskVariableControllerApi.md#getVariablesUsingGET3) | **GET** /v1/tasks/{taskId}/variables | getVariables
 
-
 <a name="getVariablesUsingGET3"></a>
 # **getVariablesUsingGET3**
 > ListResponseContentOfCloudVariableInstance getVariablesUsingGET3(taskId, maxItems, skipCount, sort)

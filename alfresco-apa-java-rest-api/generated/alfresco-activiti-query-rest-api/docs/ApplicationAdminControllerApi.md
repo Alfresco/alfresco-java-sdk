@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**findAllUsingGET**](ApplicationAdminControllerApi.md#findAllUsingGET) | **GET** /admin/v1/applications | findAll
 
-
 <a name="findAllUsingGET"></a>
 # **findAllUsingGET**
 > ListResponseContentOfCloudApplication findAllUsingGET(maxItems, skipCount, sort)

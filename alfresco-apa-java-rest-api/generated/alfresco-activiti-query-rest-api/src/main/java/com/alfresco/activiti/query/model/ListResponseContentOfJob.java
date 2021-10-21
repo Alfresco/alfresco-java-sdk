@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ListResponseContentOfJob   {
   @JsonProperty("list")
   private EntriesResponseContentOfJob list = null;
@@ -42,12 +43,11 @@ public class ListResponseContentOfJob   {
   /**
    * Get list
    * @return list
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public EntriesResponseContentOfJob getList() {
+  
+    @Valid
+    public EntriesResponseContentOfJob getList() {
     return list;
   }
 
@@ -94,4 +94,3 @@ public class ListResponseContentOfJob   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

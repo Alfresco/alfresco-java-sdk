@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getVariablesUsingGET1**](ProcessInstanceVariableControllerApi.md#getVariablesUsingGET1) | **GET** /v1/process-instances/{processInstanceId}/variables | getVariables
 
-
 <a name="getVariablesUsingGET1"></a>
 # **getVariablesUsingGET1**
 > ListResponseContentOfCloudVariableInstance getVariablesUsingGET1(processInstanceId, maxItems, skipCount, sort)

@@ -4,11 +4,11 @@ All URIs are relative to the environment set via -Denvironment.host and -Denviro
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**applicationDescriptorUsingDELETE**](ApplicationEntityApi.md#applicationDescriptorUsingDELETE) | **DELETE** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-[**applicationDescriptorUsingGET**](ApplicationEntityApi.md#applicationDescriptorUsingGET) | **GET** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-[**applicationDescriptorUsingPATCH**](ApplicationEntityApi.md#applicationDescriptorUsingPATCH) | **PATCH** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-[**applicationDescriptorUsingPOST**](ApplicationEntityApi.md#applicationDescriptorUsingPOST) | **POST** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-[**applicationDescriptorUsingPUT**](ApplicationEntityApi.md#applicationDescriptorUsingPUT) | **PUT** /deployment-service/applications/{id}/descriptor | applicationDescriptor
+[**applicationDescriptorUsingDELETE**](ApplicationEntityApi.md#applicationDescriptorUsingDELETE) | **DELETE** /applications/{id}/descriptor | applicationDescriptor
+[**applicationDescriptorUsingGET**](ApplicationEntityApi.md#applicationDescriptorUsingGET) | **GET** /applications/{id}/descriptor | applicationDescriptor
+[**applicationDescriptorUsingPATCH**](ApplicationEntityApi.md#applicationDescriptorUsingPATCH) | **PATCH** /applications/{id}/descriptor | applicationDescriptor
+[**applicationDescriptorUsingPOST**](ApplicationEntityApi.md#applicationDescriptorUsingPOST) | **POST** /applications/{id}/descriptor | applicationDescriptor
+[**applicationDescriptorUsingPUT**](ApplicationEntityApi.md#applicationDescriptorUsingPUT) | **PUT** /applications/{id}/descriptor | applicationDescriptor
 
 <a name="applicationDescriptorUsingDELETE"></a>
 # **applicationDescriptorUsingDELETE**

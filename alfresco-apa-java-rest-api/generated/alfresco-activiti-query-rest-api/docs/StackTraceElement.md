@@ -1,4 +1,3 @@
-
 # StackTraceElement
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **moduleName** | **String** |  |  [optional]
 **moduleVersion** | **String** |  |  [optional]
 **nativeMethod** | **Boolean** |  |  [optional]
-
-
-

@@ -4,18 +4,18 @@ All URIs are relative to the environment set via -Denvironment.host and -Denviro
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createApplicationUsingPOST**](DeploymentControllerApi.md#createApplicationUsingPOST) | **POST** /deployment-service/v1/applications | Add a new application.
-[**deleteApplicationUsingDELETE**](DeploymentControllerApi.md#deleteApplicationUsingDELETE) | **DELETE** /deployment-service/v1/applications/{id} | Delete an existing application by id.
-[**getApplicationRuntimeVersionUsingGET**](DeploymentControllerApi.md#getApplicationRuntimeVersionUsingGET) | **GET** /deployment-service/v1/applications/{id}/runtime-version | Retrieve the application runtime version by id.
-[**getApplicationUsingGET**](DeploymentControllerApi.md#getApplicationUsingGET) | **GET** /deployment-service/v1/applications/{id} | Find application by id.
-[**getApplicationsUsingGET**](DeploymentControllerApi.md#getApplicationsUsingGET) | **GET** /deployment-service/v1/applications | Find applications. It allows filtering. This service will return all applications if the user has ACTIVITI_DEVOPS role otherwise it returns only applications belonging to the user.
-[**getGroupsUsingGET**](DeploymentControllerApi.md#getGroupsUsingGET) | **GET** /deployment-service/v1/applications/{id}/groups | Fetch all groups belonging to an application.
-[**getLatestRuntimeVersionUsingGET**](DeploymentControllerApi.md#getLatestRuntimeVersionUsingGET) | **GET** /deployment-service/v1/applications/runtime-versions/latest | Retrieve the latest runtime version available in the deployment service.
-[**getRuntimeVersionsUsingGET**](DeploymentControllerApi.md#getRuntimeVersionsUsingGET) | **GET** /deployment-service/v1/applications/runtime-versions | Retrieve a list of runtime versions available in the deployment service.
-[**getUsersUsingGET**](DeploymentControllerApi.md#getUsersUsingGET) | **GET** /deployment-service/v1/applications/{id}/users | Fetch all users belonging to an application.
-[**retrieveServiceLogsUsingGET**](DeploymentControllerApi.md#retrieveServiceLogsUsingGET) | **GET** /deployment-service/v1/applications/{id}/logs/{serviceName} | retrieveServiceLogs
-[**updateApplicationRuntimeVersionUsingPOST**](DeploymentControllerApi.md#updateApplicationRuntimeVersionUsingPOST) | **POST** /deployment-service/v1/applications/{id}/update | Updates the application runtime version to the selected one.
-[**upgradeApplicationUsingPUT**](DeploymentControllerApi.md#upgradeApplicationUsingPUT) | **PUT** /deployment-service/v1/applications/{id} | Update an existing application by id.
+[**createApplicationUsingPOST**](DeploymentControllerApi.md#createApplicationUsingPOST) | **POST** /v1/applications | Add a new application.
+[**deleteApplicationUsingDELETE**](DeploymentControllerApi.md#deleteApplicationUsingDELETE) | **DELETE** /v1/applications/{id} | Delete an existing application by id.
+[**getApplicationRuntimeVersionUsingGET**](DeploymentControllerApi.md#getApplicationRuntimeVersionUsingGET) | **GET** /v1/applications/{id}/runtime-version | Retrieve the application runtime version by id.
+[**getApplicationUsingGET**](DeploymentControllerApi.md#getApplicationUsingGET) | **GET** /v1/applications/{id} | Find application by id.
+[**getApplicationsUsingGET**](DeploymentControllerApi.md#getApplicationsUsingGET) | **GET** /v1/applications | Find applications. It allows filtering. This service will return all applications if the user has ACTIVITI_DEVOPS role otherwise it returns only applications belonging to the user.
+[**getGroupsUsingGET**](DeploymentControllerApi.md#getGroupsUsingGET) | **GET** /v1/applications/{id}/groups | Fetch all groups belonging to an application.
+[**getLatestRuntimeVersionUsingGET**](DeploymentControllerApi.md#getLatestRuntimeVersionUsingGET) | **GET** /v1/applications/runtime-versions/latest | Retrieve the latest runtime version available in the deployment service.
+[**getRuntimeVersionsUsingGET**](DeploymentControllerApi.md#getRuntimeVersionsUsingGET) | **GET** /v1/applications/runtime-versions | Retrieve a list of runtime versions available in the deployment service.
+[**getUsersUsingGET**](DeploymentControllerApi.md#getUsersUsingGET) | **GET** /v1/applications/{id}/users | Fetch all users belonging to an application.
+[**retrieveServiceLogsUsingGET**](DeploymentControllerApi.md#retrieveServiceLogsUsingGET) | **GET** /v1/applications/{id}/logs/{serviceName} | retrieveServiceLogs
+[**updateApplicationRuntimeVersionUsingPOST**](DeploymentControllerApi.md#updateApplicationRuntimeVersionUsingPOST) | **POST** /v1/applications/{id}/update | Updates the application runtime version to the selected one.
+[**upgradeApplicationUsingPUT**](DeploymentControllerApi.md#upgradeApplicationUsingPUT) | **PUT** /v1/applications/{id} | Update an existing application by id.
 
 <a name="createApplicationUsingPOST"></a>
 # **createApplicationUsingPOST**

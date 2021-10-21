@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntriesResponseContentOfCloudRuntimeEventOfobjectAndstring   {
   @JsonProperty("entries")
   @Valid
@@ -57,12 +58,10 @@ public class EntriesResponseContentOfCloudRuntimeEventOfobjectAndstring   {
   /**
    * Get entries
    * @return entries
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<EntryResponseContentOfCloudRuntimeEventOfobjectAndstring> getEntries() {
+      @Valid
+    public List<EntryResponseContentOfCloudRuntimeEventOfobjectAndstring> getEntries() {
     return entries;
   }
 
@@ -78,12 +77,11 @@ public class EntriesResponseContentOfCloudRuntimeEventOfobjectAndstring   {
   /**
    * Get pagination
    * @return pagination
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PaginationMetadata getPagination() {
+  
+    @Valid
+    public PaginationMetadata getPagination() {
     return pagination;
   }
 
@@ -132,4 +130,3 @@ public class EntriesResponseContentOfCloudRuntimeEventOfobjectAndstring   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

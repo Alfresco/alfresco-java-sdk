@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**logUsingGET**](JobExecutionControllerApi.md#logUsingGET) | **GET** /admin/v1/batch/jobs/executions/{executionId}/log | log
 [**postUsingPOST**](JobExecutionControllerApi.md#postUsingPOST) | **POST** /admin/v1/batch/jobs/executions | post
 
-
 <a name="allUsingGET1"></a>
 # **allUsingGET1**
 > ListResponseContentOfJobExecution allUsingGET1(maxItems, skipCount, sort)
@@ -145,7 +144,7 @@ No authorization required
 
 <a name="postUsingPOST"></a>
 # **postUsingPOST**
-> EntryResponseContentOfJobExecution postUsingPOST(jobConfig)
+> EntryResponseContentOfJobExecution postUsingPOST(body)
 
 post
 
@@ -157,9 +156,9 @@ post
 
 
 JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
-JobConfig jobConfig = new JobConfig(); // JobConfig | jobConfig
+JobConfig body = new JobConfig(); // JobConfig | jobConfig
 try {
-    EntryResponseContentOfJobExecution result = apiInstance.postUsingPOST(jobConfig);
+    EntryResponseContentOfJobExecution result = apiInstance.postUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JobExecutionControllerApi#postUsingPOST");
@@ -171,7 +170,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jobConfig** | [**JobConfig**](JobConfig.md)| jobConfig |
+ **body** | [**JobConfig**](JobConfig.md)| jobConfig |
 
 ### Return type
 

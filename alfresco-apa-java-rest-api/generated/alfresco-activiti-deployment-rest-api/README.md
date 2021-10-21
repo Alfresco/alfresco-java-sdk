@@ -87,35 +87,35 @@ All URIs are relative to the environment set via -Denvironment.host and -Denviro
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ApplicationEntityApi* | [**applicationDescriptorUsingDELETE**](docs/ApplicationEntityApi.md#applicationDescriptorUsingDELETE) | **DELETE** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-*ApplicationEntityApi* | [**applicationDescriptorUsingGET**](docs/ApplicationEntityApi.md#applicationDescriptorUsingGET) | **GET** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-*ApplicationEntityApi* | [**applicationDescriptorUsingPATCH**](docs/ApplicationEntityApi.md#applicationDescriptorUsingPATCH) | **PATCH** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-*ApplicationEntityApi* | [**applicationDescriptorUsingPOST**](docs/ApplicationEntityApi.md#applicationDescriptorUsingPOST) | **POST** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-*ApplicationEntityApi* | [**applicationDescriptorUsingPUT**](docs/ApplicationEntityApi.md#applicationDescriptorUsingPUT) | **PUT** /deployment-service/applications/{id}/descriptor | applicationDescriptor
-*DeploymentControllerApi* | [**createApplicationUsingPOST**](docs/DeploymentControllerApi.md#createApplicationUsingPOST) | **POST** /deployment-service/v1/applications | Add a new application.
-*DeploymentControllerApi* | [**deleteApplicationUsingDELETE**](docs/DeploymentControllerApi.md#deleteApplicationUsingDELETE) | **DELETE** /deployment-service/v1/applications/{id} | Delete an existing application by id.
-*DeploymentControllerApi* | [**getApplicationRuntimeVersionUsingGET**](docs/DeploymentControllerApi.md#getApplicationRuntimeVersionUsingGET) | **GET** /deployment-service/v1/applications/{id}/runtime-version | Retrieve the application runtime version by id.
-*DeploymentControllerApi* | [**getApplicationUsingGET**](docs/DeploymentControllerApi.md#getApplicationUsingGET) | **GET** /deployment-service/v1/applications/{id} | Find application by id.
-*DeploymentControllerApi* | [**getApplicationsUsingGET**](docs/DeploymentControllerApi.md#getApplicationsUsingGET) | **GET** /deployment-service/v1/applications | Find applications. It allows filtering. This service will return all applications if the user has ACTIVITI_DEVOPS role otherwise it returns only applications belonging to the user.
-*DeploymentControllerApi* | [**getGroupsUsingGET**](docs/DeploymentControllerApi.md#getGroupsUsingGET) | **GET** /deployment-service/v1/applications/{id}/groups | Fetch all groups belonging to an application.
-*DeploymentControllerApi* | [**getLatestRuntimeVersionUsingGET**](docs/DeploymentControllerApi.md#getLatestRuntimeVersionUsingGET) | **GET** /deployment-service/v1/applications/runtime-versions/latest | Retrieve the latest runtime version available in the deployment service.
-*DeploymentControllerApi* | [**getRuntimeVersionsUsingGET**](docs/DeploymentControllerApi.md#getRuntimeVersionsUsingGET) | **GET** /deployment-service/v1/applications/runtime-versions | Retrieve a list of runtime versions available in the deployment service.
-*DeploymentControllerApi* | [**getUsersUsingGET**](docs/DeploymentControllerApi.md#getUsersUsingGET) | **GET** /deployment-service/v1/applications/{id}/users | Fetch all users belonging to an application.
-*DeploymentControllerApi* | [**retrieveServiceLogsUsingGET**](docs/DeploymentControllerApi.md#retrieveServiceLogsUsingGET) | **GET** /deployment-service/v1/applications/{id}/logs/{serviceName} | retrieveServiceLogs
-*DeploymentControllerApi* | [**updateApplicationRuntimeVersionUsingPOST**](docs/DeploymentControllerApi.md#updateApplicationRuntimeVersionUsingPOST) | **POST** /deployment-service/v1/applications/{id}/update | Updates the application runtime version to the selected one.
-*DeploymentControllerApi* | [**upgradeApplicationUsingPUT**](docs/DeploymentControllerApi.md#upgradeApplicationUsingPUT) | **PUT** /deployment-service/v1/applications/{id} | Update an existing application by id.
-*DescriptorControllerApi* | [**deleteDescriptorUsingDELETE**](docs/DescriptorControllerApi.md#deleteDescriptorUsingDELETE) | **DELETE** /deployment-service/v1/descriptors/{descriptorId} | Delete an existing descriptor by id.
-*DescriptorControllerApi* | [**deployDescriptorUsingPOST**](docs/DescriptorControllerApi.md#deployDescriptorUsingPOST) | **POST** /deployment-service/v1/deploy/{descriptorId} | Deploy an existing descriptor by id.
-*DescriptorControllerApi* | [**exportDescriptorUsingGET**](docs/DescriptorControllerApi.md#exportDescriptorUsingGET) | **GET** /deployment-service/v1/descriptors/{descriptorId}/export | Export a descriptor by id.
-*DescriptorControllerApi* | [**getDescriptorUsingGET**](docs/DescriptorControllerApi.md#getDescriptorUsingGET) | **GET** /deployment-service/v1/descriptors/{descriptorId} | Find descriptor by id.
-*DescriptorControllerApi* | [**getDescriptorsUsingGET**](docs/DescriptorControllerApi.md#getDescriptorsUsingGET) | **GET** /deployment-service/v1/descriptors | Find descriptors. It allows filtering.
-*DescriptorControllerApi* | [**getReleasedModelContentsUsingGET**](docs/DescriptorControllerApi.md#getReleasedModelContentsUsingGET) | **GET** /deployment-service/v1/descriptors/{descriptorId}/models | getReleasedModelContents
-*DescriptorControllerApi* | [**importDescriptorUsingPOST**](docs/DescriptorControllerApi.md#importDescriptorUsingPOST) | **POST** /deployment-service/v1/descriptors/import | Import descriptor. Format: zip file, containing at root a descriptor.json and the released project
-*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingDELETE**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingDELETE) | **DELETE** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingGET**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingGET) | **GET** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPATCH**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPATCH) | **PATCH** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPOST**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPOST) | **POST** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPUT**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPUT) | **PUT** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+*ApplicationEntityApi* | [**applicationDescriptorUsingDELETE**](docs/ApplicationEntityApi.md#applicationDescriptorUsingDELETE) | **DELETE** /applications/{id}/descriptor | applicationDescriptor
+*ApplicationEntityApi* | [**applicationDescriptorUsingGET**](docs/ApplicationEntityApi.md#applicationDescriptorUsingGET) | **GET** /applications/{id}/descriptor | applicationDescriptor
+*ApplicationEntityApi* | [**applicationDescriptorUsingPATCH**](docs/ApplicationEntityApi.md#applicationDescriptorUsingPATCH) | **PATCH** /applications/{id}/descriptor | applicationDescriptor
+*ApplicationEntityApi* | [**applicationDescriptorUsingPOST**](docs/ApplicationEntityApi.md#applicationDescriptorUsingPOST) | **POST** /applications/{id}/descriptor | applicationDescriptor
+*ApplicationEntityApi* | [**applicationDescriptorUsingPUT**](docs/ApplicationEntityApi.md#applicationDescriptorUsingPUT) | **PUT** /applications/{id}/descriptor | applicationDescriptor
+*DeploymentControllerApi* | [**createApplicationUsingPOST**](docs/DeploymentControllerApi.md#createApplicationUsingPOST) | **POST** /v1/applications | Add a new application.
+*DeploymentControllerApi* | [**deleteApplicationUsingDELETE**](docs/DeploymentControllerApi.md#deleteApplicationUsingDELETE) | **DELETE** /v1/applications/{id} | Delete an existing application by id.
+*DeploymentControllerApi* | [**getApplicationRuntimeVersionUsingGET**](docs/DeploymentControllerApi.md#getApplicationRuntimeVersionUsingGET) | **GET** /v1/applications/{id}/runtime-version | Retrieve the application runtime version by id.
+*DeploymentControllerApi* | [**getApplicationUsingGET**](docs/DeploymentControllerApi.md#getApplicationUsingGET) | **GET** /v1/applications/{id} | Find application by id.
+*DeploymentControllerApi* | [**getApplicationsUsingGET**](docs/DeploymentControllerApi.md#getApplicationsUsingGET) | **GET** /v1/applications | Find applications. It allows filtering. This service will return all applications if the user has ACTIVITI_DEVOPS role otherwise it returns only applications belonging to the user.
+*DeploymentControllerApi* | [**getGroupsUsingGET**](docs/DeploymentControllerApi.md#getGroupsUsingGET) | **GET** /v1/applications/{id}/groups | Fetch all groups belonging to an application.
+*DeploymentControllerApi* | [**getLatestRuntimeVersionUsingGET**](docs/DeploymentControllerApi.md#getLatestRuntimeVersionUsingGET) | **GET** /v1/applications/runtime-versions/latest | Retrieve the latest runtime version available in the deployment service.
+*DeploymentControllerApi* | [**getRuntimeVersionsUsingGET**](docs/DeploymentControllerApi.md#getRuntimeVersionsUsingGET) | **GET** /v1/applications/runtime-versions | Retrieve a list of runtime versions available in the deployment service.
+*DeploymentControllerApi* | [**getUsersUsingGET**](docs/DeploymentControllerApi.md#getUsersUsingGET) | **GET** /v1/applications/{id}/users | Fetch all users belonging to an application.
+*DeploymentControllerApi* | [**retrieveServiceLogsUsingGET**](docs/DeploymentControllerApi.md#retrieveServiceLogsUsingGET) | **GET** /v1/applications/{id}/logs/{serviceName} | retrieveServiceLogs
+*DeploymentControllerApi* | [**updateApplicationRuntimeVersionUsingPOST**](docs/DeploymentControllerApi.md#updateApplicationRuntimeVersionUsingPOST) | **POST** /v1/applications/{id}/update | Updates the application runtime version to the selected one.
+*DeploymentControllerApi* | [**upgradeApplicationUsingPUT**](docs/DeploymentControllerApi.md#upgradeApplicationUsingPUT) | **PUT** /v1/applications/{id} | Update an existing application by id.
+*DescriptorControllerApi* | [**deleteDescriptorUsingDELETE**](docs/DescriptorControllerApi.md#deleteDescriptorUsingDELETE) | **DELETE** /v1/descriptors/{descriptorId} | Delete an existing descriptor by id.
+*DescriptorControllerApi* | [**deployDescriptorUsingPOST**](docs/DescriptorControllerApi.md#deployDescriptorUsingPOST) | **POST** /v1/deploy/{descriptorId} | Deploy an existing descriptor by id.
+*DescriptorControllerApi* | [**exportDescriptorUsingGET**](docs/DescriptorControllerApi.md#exportDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId}/export | Export a descriptor by id.
+*DescriptorControllerApi* | [**getDescriptorUsingGET**](docs/DescriptorControllerApi.md#getDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId} | Find descriptor by id.
+*DescriptorControllerApi* | [**getDescriptorsUsingGET**](docs/DescriptorControllerApi.md#getDescriptorsUsingGET) | **GET** /v1/descriptors | Find descriptors. It allows filtering.
+*DescriptorControllerApi* | [**getReleasedModelContentsUsingGET**](docs/DescriptorControllerApi.md#getReleasedModelContentsUsingGET) | **GET** /v1/descriptors/{descriptorId}/models | getReleasedModelContents
+*DescriptorControllerApi* | [**importDescriptorUsingPOST**](docs/DescriptorControllerApi.md#importDescriptorUsingPOST) | **POST** /v1/descriptors/import | Import descriptor. Format: zip file, containing at root a descriptor.json and the released project
+*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingDELETE**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingDELETE) | **DELETE** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingGET**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingGET) | **GET** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPATCH**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPATCH) | **PATCH** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPOST**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPOST) | **POST** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+*DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPUT**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPUT) | **PUT** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
 
 ## Documentation for Models
 

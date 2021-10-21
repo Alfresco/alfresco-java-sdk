@@ -56,7 +56,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications",
+    @RequestMapping(value = "/v1/applications",
         consumes = "application/json",
         method = RequestMethod.POST)
     ResponseEntity<Void> createApplicationUsingPOST(@ApiParam(value = "applicationRepresentation", required=true ) @Valid @RequestBody ApplicationRepresentation body);
@@ -68,7 +68,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}",
+    @RequestMapping(value = "/v1/applications/{id}",
         method = RequestMethod.DELETE)
     ResponseEntity<Void> deleteApplicationUsingDELETE(@ApiParam(value = "ID of application to delete", required=true) @PathVariable("id") String id);
 
@@ -79,7 +79,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}/runtime-version",
+    @RequestMapping(value = "/v1/applications/{id}/runtime-version",
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<RuntimeVersionRepresentation> getApplicationRuntimeVersionUsingGET(@ApiParam(value = "ID of application which runtime version is queried", required=true) @PathVariable("id") String id);
@@ -91,7 +91,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}",
+    @RequestMapping(value = "/v1/applications/{id}",
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<ApplicationResponseRepresentation> getApplicationUsingGET(@ApiParam(value = "ID of application to return", required=true) @PathVariable("id") String id);
@@ -103,7 +103,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications",
+    @RequestMapping(value = "/v1/applications",
         produces = "application/json", 
         method = RequestMethod.GET)
     ResponseEntity<ListResponseContentApplicationResponseRepresentation> getApplicationsUsingGET(@ApiParam(value = "Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.") @Valid @RequestParam(value = "createdDateFrom", required = false) LocalDate createdDateFrom, @ApiParam(value = "Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.") @Valid @RequestParam(value = "createdDateTo", required = false) LocalDate createdDateTo, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "Filter on application name, showing all applications that contains the search key.") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "Roles that user must have on the application.") @Valid @RequestParam(value = "roles", required = false) List<String> roles, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "Application status", allowableValues="CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR"
@@ -116,7 +116,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}/groups",
+    @RequestMapping(value = "/v1/applications/{id}/groups",
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<List<String>> getGroupsUsingGET(@ApiParam(value = "ID of application", required=true) @PathVariable("id") String id, @ApiParam(value = "Filter on group name, showing all groups that contains the search key") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "Roles that user must have on the application.") @Valid @RequestParam(value = "roles", required = false) List<String> roles);
@@ -128,7 +128,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/runtime-versions/latest",
+    @RequestMapping(value = "/v1/applications/runtime-versions/latest",
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<RuntimeVersionRepresentation> getLatestRuntimeVersionUsingGET();
@@ -140,7 +140,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/runtime-versions",
+    @RequestMapping(value = "/v1/applications/runtime-versions",
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<List<RuntimeVersionRepresentation>> getRuntimeVersionsUsingGET(@ApiParam(value = "versionEqualOrLater") @Valid @RequestParam(value = "versionEqualOrLater", required = false) String versionEqualOrLater);
@@ -152,7 +152,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}/users",
+    @RequestMapping(value = "/v1/applications/{id}/users",
         produces = "*/*", 
         method = RequestMethod.GET)
     ResponseEntity<List<String>> getUsersUsingGET(@ApiParam(value = "ID of application", required=true) @PathVariable("id") String id, @ApiParam(value = "If the value is 'true' the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned.", defaultValue = "false") @Valid @RequestParam(value = "excludeServiceClients", required = false, defaultValue="false") Boolean excludeServiceClients, @ApiParam(value = "If the value is 'true' the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned.", defaultValue = "false") @Valid @RequestParam(value = "group", required = false, defaultValue="false") Boolean group, @ApiParam(value = "Filter on username, showing all users that contains the search key") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "Roles that user must have on the application.") @Valid @RequestParam(value = "roles", required = false) List<String> roles);
@@ -164,7 +164,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}/logs/{serviceName}",
+    @RequestMapping(value = "/v1/applications/{id}/logs/{serviceName}",
         produces = "application/json", 
         method = RequestMethod.GET)
     ResponseEntity<ApplicationLog> retrieveServiceLogsUsingGET(@ApiParam(value = "ID of application to get logs from", required=true) @PathVariable("id") String id, @ApiParam(value = "Name of the service to get logs from", required=true) @PathVariable("serviceName") String serviceName);
@@ -177,7 +177,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}/update",
+    @RequestMapping(value = "/v1/applications/{id}/update",
         produces = "*/*", 
         method = RequestMethod.POST)
     ResponseEntity<ApplicationResponseRepresentation> updateApplicationRuntimeVersionUsingPOST(@ApiParam(value = "ID of application which runtime version is updated", required=true) @PathVariable("id") String id, @ApiParam(value = "runtimeVersion") @Valid @RequestParam(value = "runtimeVersion", required = false) String runtimeVersion);
@@ -190,7 +190,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/deployment-service/v1/applications/{id}",
+    @RequestMapping(value = "/v1/applications/{id}",
         consumes = "application/json",
         method = RequestMethod.PUT)
     ResponseEntity<Void> upgradeApplicationUsingPUT(@ApiParam(value = "ID of application to update", required=true) @PathVariable("id") String id, @ApiParam(value = "applicationPutRequestRepresentation", required=true ) @Valid @RequestBody ApplicationPutRequestRepresentation body);

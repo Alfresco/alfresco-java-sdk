@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntryResponseContentOfCloudRuntimeEventOfobjectAndstring   {
   @JsonProperty("entry")
   private CloudRuntimeEventModel entry = null;
@@ -42,12 +43,11 @@ public class EntryResponseContentOfCloudRuntimeEventOfobjectAndstring   {
   /**
    * Get entry
    * @return entry
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CloudRuntimeEventModel getEntry() {
+  
+    @Valid
+    public CloudRuntimeEventModel getEntry() {
     return entry;
   }
 
@@ -94,4 +94,3 @@ public class EntryResponseContentOfCloudRuntimeEventOfobjectAndstring   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

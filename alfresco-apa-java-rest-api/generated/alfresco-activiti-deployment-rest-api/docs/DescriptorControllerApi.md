@@ -4,13 +4,13 @@ All URIs are relative to the environment set via -Denvironment.host and -Denviro
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDescriptorUsingDELETE**](DescriptorControllerApi.md#deleteDescriptorUsingDELETE) | **DELETE** /deployment-service/v1/descriptors/{descriptorId} | Delete an existing descriptor by id.
-[**deployDescriptorUsingPOST**](DescriptorControllerApi.md#deployDescriptorUsingPOST) | **POST** /deployment-service/v1/deploy/{descriptorId} | Deploy an existing descriptor by id.
-[**exportDescriptorUsingGET**](DescriptorControllerApi.md#exportDescriptorUsingGET) | **GET** /deployment-service/v1/descriptors/{descriptorId}/export | Export a descriptor by id.
-[**getDescriptorUsingGET**](DescriptorControllerApi.md#getDescriptorUsingGET) | **GET** /deployment-service/v1/descriptors/{descriptorId} | Find descriptor by id.
-[**getDescriptorsUsingGET**](DescriptorControllerApi.md#getDescriptorsUsingGET) | **GET** /deployment-service/v1/descriptors | Find descriptors. It allows filtering.
-[**getReleasedModelContentsUsingGET**](DescriptorControllerApi.md#getReleasedModelContentsUsingGET) | **GET** /deployment-service/v1/descriptors/{descriptorId}/models | getReleasedModelContents
-[**importDescriptorUsingPOST**](DescriptorControllerApi.md#importDescriptorUsingPOST) | **POST** /deployment-service/v1/descriptors/import | Import descriptor. Format: zip file, containing at root a descriptor.json and the released project
+[**deleteDescriptorUsingDELETE**](DescriptorControllerApi.md#deleteDescriptorUsingDELETE) | **DELETE** /v1/descriptors/{descriptorId} | Delete an existing descriptor by id.
+[**deployDescriptorUsingPOST**](DescriptorControllerApi.md#deployDescriptorUsingPOST) | **POST** /v1/deploy/{descriptorId} | Deploy an existing descriptor by id.
+[**exportDescriptorUsingGET**](DescriptorControllerApi.md#exportDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId}/export | Export a descriptor by id.
+[**getDescriptorUsingGET**](DescriptorControllerApi.md#getDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId} | Find descriptor by id.
+[**getDescriptorsUsingGET**](DescriptorControllerApi.md#getDescriptorsUsingGET) | **GET** /v1/descriptors | Find descriptors. It allows filtering.
+[**getReleasedModelContentsUsingGET**](DescriptorControllerApi.md#getReleasedModelContentsUsingGET) | **GET** /v1/descriptors/{descriptorId}/models | getReleasedModelContents
+[**importDescriptorUsingPOST**](DescriptorControllerApi.md#importDescriptorUsingPOST) | **POST** /v1/descriptors/import | Import descriptor. Format: zip file, containing at root a descriptor.json and the released project
 
 <a name="deleteDescriptorUsingDELETE"></a>
 # **deleteDescriptorUsingDELETE**

@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ListResponseContentOfCloudVariableInstance   {
   @JsonProperty("list")
   private EntriesResponseContentOfCloudVariableInstance list = null;
@@ -42,12 +43,11 @@ public class ListResponseContentOfCloudVariableInstance   {
   /**
    * Get list
    * @return list
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public EntriesResponseContentOfCloudVariableInstance getList() {
+  
+    @Valid
+    public EntriesResponseContentOfCloudVariableInstance getList() {
     return list;
   }
 
@@ -94,4 +94,3 @@ public class ListResponseContentOfCloudVariableInstance   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
