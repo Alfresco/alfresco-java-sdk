@@ -57,6 +57,7 @@
     </snapshotRepository>
   </distributionManagement>
   <modules>
+    <module>generated/alfresco-activiti-rest-api</module>
     <module>generated/alfresco-activiti-deployment-rest-api</module>
     <module>generated/alfresco-activiti-modeling-rest-api</module>
     <module>generated/alfresco-activiti-form-rest-api</module>
@@ -153,7 +154,40 @@
               </configOptions>
             </configuration>
             <executions>
-              <!-- //TODO: Add back APS client executions when generation plugin is upgraded to v3: https://alfresco.atlassian.net/browse/AAE-6134 -->
+              <execution>
+                <id>generate-activiti-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${aps.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
+                  <artifactId>alfresco-activiti-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
+                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
+                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-activiti-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${aps.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
+                  <artifactId>alfresco-activiti-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
+                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
+                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
               <execution>
                 <id>alfresco-activiti-deployment-rest-api-documentation</id>
                 <goals>
