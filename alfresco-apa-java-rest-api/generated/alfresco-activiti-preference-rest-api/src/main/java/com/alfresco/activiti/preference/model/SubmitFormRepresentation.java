@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class SubmitFormRepresentation   {
   @JsonProperty("metadata")
   private Object metadata = null;
@@ -56,11 +57,10 @@ public class SubmitFormRepresentation   {
   /**
    * Get metadata
    * @return metadata
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getMetadata() {
+  
+    public Object getMetadata() {
     return metadata;
   }
 
@@ -76,11 +76,10 @@ public class SubmitFormRepresentation   {
   /**
    * Get outcome
    * @return outcome
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getOutcome() {
+  
+    public String getOutcome() {
     return outcome;
   }
 
@@ -96,11 +95,10 @@ public class SubmitFormRepresentation   {
   /**
    * Get processDefinitionKey
    * @return processDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionKey() {
+  
+    public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
 
@@ -116,11 +114,10 @@ public class SubmitFormRepresentation   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -136,11 +133,10 @@ public class SubmitFormRepresentation   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -156,11 +152,10 @@ public class SubmitFormRepresentation   {
   /**
    * Get values
    * @return values
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getValues() {
+  
+    public Object getValues() {
     return values;
   }
 
@@ -217,4 +212,3 @@ public class SubmitFormRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

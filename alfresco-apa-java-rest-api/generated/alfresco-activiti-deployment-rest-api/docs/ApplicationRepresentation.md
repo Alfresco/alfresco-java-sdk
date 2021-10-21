@@ -1,4 +1,3 @@
-
 # ApplicationRepresentation
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **releaseVersion** | **String** |  |  [optional]
 **security** | [**List&lt;SecurityRepresentation&gt;**](SecurityRepresentation.md) |  |  [optional]
 **variables** | [**VariablesRepresentation**](VariablesRepresentation.md) |  |  [optional]
-
-
-

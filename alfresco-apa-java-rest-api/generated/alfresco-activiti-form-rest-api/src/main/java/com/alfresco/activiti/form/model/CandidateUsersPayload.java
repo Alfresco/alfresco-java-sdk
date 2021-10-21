@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CandidateUsersPayload   {
   @JsonProperty("candidateUsers")
   @Valid
@@ -68,7 +69,6 @@ public class CandidateUsersPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -91,11 +91,10 @@ public class CandidateUsersPayload   {
   /**
    * Get candidateUsers
    * @return candidateUsers
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getCandidateUsers() {
+  
+    public List<String> getCandidateUsers() {
     return candidateUsers;
   }
 
@@ -111,11 +110,10 @@ public class CandidateUsersPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -131,11 +129,10 @@ public class CandidateUsersPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -151,11 +148,10 @@ public class CandidateUsersPayload   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -208,4 +204,3 @@ public class CandidateUsersPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

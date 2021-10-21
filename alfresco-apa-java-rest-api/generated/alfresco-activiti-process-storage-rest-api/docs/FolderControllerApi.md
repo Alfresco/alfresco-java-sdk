@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getApplicationStoreFolderUsingGET**](FolderControllerApi.md#getApplicationStoreFolderUsingGET) | **GET** /v1/folders/ | getApplicationStoreFolder
 
-
 <a name="getApplicationStoreFolderUsingGET"></a>
 # **getApplicationStoreFolderUsingGET**
 > Folder getApplicationStoreFolderUsingGET()

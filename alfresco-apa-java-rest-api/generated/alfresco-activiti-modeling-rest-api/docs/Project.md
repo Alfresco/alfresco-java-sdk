@@ -1,4 +1,3 @@
-
 # Project
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **lastModifiedDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **name** | **String** |  |  [optional]
 **version** | **String** |  |  [optional]
-
-
-

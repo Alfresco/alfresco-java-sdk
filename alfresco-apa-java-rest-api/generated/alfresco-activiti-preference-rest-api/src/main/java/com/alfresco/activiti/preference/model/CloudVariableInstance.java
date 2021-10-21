@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CloudVariableInstance   {
   @JsonProperty("appName")
   private String appName = null;
@@ -74,11 +75,10 @@ public class CloudVariableInstance   {
   /**
    * Get appName
    * @return appName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppName() {
+  
+    public String getAppName() {
     return appName;
   }
 
@@ -94,11 +94,10 @@ public class CloudVariableInstance   {
   /**
    * Get appVersion
    * @return appVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppVersion() {
+  
+    public String getAppVersion() {
     return appVersion;
   }
 
@@ -114,11 +113,10 @@ public class CloudVariableInstance   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -134,11 +132,10 @@ public class CloudVariableInstance   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -154,11 +151,10 @@ public class CloudVariableInstance   {
   /**
    * Get serviceFullName
    * @return serviceFullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceFullName() {
+  
+    public String getServiceFullName() {
     return serviceFullName;
   }
 
@@ -174,11 +170,10 @@ public class CloudVariableInstance   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -194,11 +189,10 @@ public class CloudVariableInstance   {
   /**
    * Get serviceType
    * @return serviceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceType() {
+  
+    public String getServiceType() {
     return serviceType;
   }
 
@@ -214,11 +208,10 @@ public class CloudVariableInstance   {
   /**
    * Get serviceVersion
    * @return serviceVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceVersion() {
+  
+    public String getServiceVersion() {
     return serviceVersion;
   }
 
@@ -234,11 +227,10 @@ public class CloudVariableInstance   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -254,11 +246,10 @@ public class CloudVariableInstance   {
   /**
    * Get taskVariable
    * @return taskVariable
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isTaskVariable() {
+  
+    public Boolean isTaskVariable() {
     return taskVariable;
   }
 
@@ -274,11 +265,10 @@ public class CloudVariableInstance   {
   /**
    * Get type
    * @return type
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getType() {
+  
+    public String getType() {
     return type;
   }
 
@@ -294,11 +284,10 @@ public class CloudVariableInstance   {
   /**
    * Get value
    * @return value
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getValue() {
+  
+    public Object getValue() {
     return value;
   }
 
@@ -367,4 +356,3 @@ public class CloudVariableInstance   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

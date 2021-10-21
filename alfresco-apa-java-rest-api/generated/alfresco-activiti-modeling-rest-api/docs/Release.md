@@ -1,4 +1,3 @@
-
 # Release
 
 ## Properties
@@ -17,6 +16,3 @@ Name | Type | Description | Notes
 **projectName** | **String** |  |  [optional]
 **users** | **List&lt;String&gt;** |  |  [optional]
 **version** | **String** |  |  [optional]
-
-
-

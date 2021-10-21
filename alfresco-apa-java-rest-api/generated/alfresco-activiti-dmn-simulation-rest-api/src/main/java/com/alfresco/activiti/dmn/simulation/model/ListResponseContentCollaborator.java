@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ListResponseContentCollaborator   {
   @JsonProperty("list")
   private EntriesResponseContentCollaborator list = null;
@@ -42,12 +43,11 @@ public class ListResponseContentCollaborator   {
   /**
    * Get list
    * @return list
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public EntriesResponseContentCollaborator getList() {
+  
+    @Valid
+    public EntriesResponseContentCollaborator getList() {
     return list;
   }
 
@@ -94,4 +94,3 @@ public class ListResponseContentCollaborator   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

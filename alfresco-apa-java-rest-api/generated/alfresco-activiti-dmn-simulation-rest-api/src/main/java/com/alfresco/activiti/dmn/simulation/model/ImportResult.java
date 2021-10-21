@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ImportResult   {
   @JsonProperty("id")
   private String id = null;
@@ -51,11 +52,10 @@ public class ImportResult   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -71,11 +71,10 @@ public class ImportResult   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -99,12 +98,10 @@ public class ImportResult   {
   /**
    * Get results
    * @return results
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<ConversionInfo> getResults() {
+      @Valid
+    public List<ConversionInfo> getResults() {
     return results;
   }
 
@@ -155,4 +152,3 @@ public class ImportResult   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

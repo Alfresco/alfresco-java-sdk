@@ -1,4 +1,3 @@
-
 # CloudIntegrationContext
 
 ## Properties
@@ -34,7 +33,6 @@ Name | Type | Description | Notes
 **stackTraceElements** | [**List&lt;StackTraceElement&gt;**](StackTraceElement.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 
-
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
 Name | Value
@@ -42,6 +40,3 @@ Name | Value
 ERROR_RECEIVED | &quot;INTEGRATION_ERROR_RECEIVED&quot;
 REQUESTED | &quot;INTEGRATION_REQUESTED&quot;
 RESULT_RECEIVED | &quot;INTEGRATION_RESULT_RECEIVED&quot;
-
-
-

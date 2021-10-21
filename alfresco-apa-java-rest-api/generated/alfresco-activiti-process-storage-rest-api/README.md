@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org) to be installed.
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
 
 ## Installation
 
@@ -56,7 +56,6 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
   import com.alfresco.activiti.process.storage.*;
   import com.alfresco.activiti.process.storage.auth.*;
   import com.alfresco.activiti.process.storage.model.*;
@@ -79,7 +78,6 @@ Please follow the [installation](#installation) instruction and execute the foll
   }
   }
   }
-
 ```
 
 ## Documentation for API Endpoints
@@ -90,11 +88,9 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *FolderControllerApi* | [**getApplicationStoreFolderUsingGET**](docs/FolderControllerApi.md#getApplicationStoreFolderUsingGET) | **GET** /v1/folders/ | getApplicationStoreFolder
 
-
 ## Documentation for Models
 
  - [Folder](docs/Folder.md)
-
 
 ## Documentation for Authorization
 
@@ -106,6 +102,5 @@ Authentication schemes defined for the API:
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
-
 
 

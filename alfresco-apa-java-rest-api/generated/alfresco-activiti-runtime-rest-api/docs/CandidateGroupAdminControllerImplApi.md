@@ -8,10 +8,9 @@ Method | HTTP request | Description
 [**deleteCandidateGroupsUsingDELETE**](CandidateGroupAdminControllerImplApi.md#deleteCandidateGroupsUsingDELETE) | **DELETE** /admin/v1/tasks/{taskId}/candidate-groups | deleteCandidateGroups
 [**getGroupCandidatesUsingGET**](CandidateGroupAdminControllerImplApi.md#getGroupCandidatesUsingGET) | **GET** /admin/v1/tasks/{taskId}/candidate-groups | getGroupCandidates
 
-
 <a name="addCandidateGroupsUsingPOST"></a>
 # **addCandidateGroupsUsingPOST**
-> addCandidateGroupsUsingPOST(candidateGroupsPayload, taskId)
+> addCandidateGroupsUsingPOST(body, taskId)
 
 addCandidateGroups
 
@@ -23,10 +22,10 @@ addCandidateGroups
 
 
 CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
-CandidateGroupsPayload candidateGroupsPayload = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
+CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
 String taskId = "taskId_example"; // String | taskId
 try {
-    apiInstance.addCandidateGroupsUsingPOST(candidateGroupsPayload, taskId);
+    apiInstance.addCandidateGroupsUsingPOST(body, taskId);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#addCandidateGroupsUsingPOST");
     e.printStackTrace();
@@ -37,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **candidateGroupsPayload** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
+ **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
  **taskId** | **String**| taskId |
 
 ### Return type
@@ -51,11 +50,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="deleteCandidateGroupsUsingDELETE"></a>
 # **deleteCandidateGroupsUsingDELETE**
-> deleteCandidateGroupsUsingDELETE(candidateGroupsPayload, taskId)
+> deleteCandidateGroupsUsingDELETE(body, taskId)
 
 deleteCandidateGroups
 
@@ -67,10 +66,10 @@ deleteCandidateGroups
 
 
 CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
-CandidateGroupsPayload candidateGroupsPayload = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
+CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
 String taskId = "taskId_example"; // String | taskId
 try {
-    apiInstance.deleteCandidateGroupsUsingDELETE(candidateGroupsPayload, taskId);
+    apiInstance.deleteCandidateGroupsUsingDELETE(body, taskId);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#deleteCandidateGroupsUsingDELETE");
     e.printStackTrace();
@@ -81,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **candidateGroupsPayload** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
+ **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
  **taskId** | **String**| taskId |
 
 ### Return type
@@ -94,8 +93,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Content-Type**: */*
+ - **Accept**: Not defined
 
 <a name="getGroupCandidatesUsingGET"></a>
 # **getGroupCandidatesUsingGET**

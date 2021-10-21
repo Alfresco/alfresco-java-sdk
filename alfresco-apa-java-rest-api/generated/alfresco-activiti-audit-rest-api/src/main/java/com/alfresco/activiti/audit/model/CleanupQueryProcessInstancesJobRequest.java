@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CleanupQueryProcessInstancesJobRequest   {
   @JsonProperty("async")
   private Boolean async = null;
@@ -53,12 +54,11 @@ public class CleanupQueryProcessInstancesJobRequest   {
   /**
    * Get async
    * @return async
-  **/
+   **/
   @ApiModelProperty(required = true, value = "")
-  @NotNull
+      @NotNull
 
-
-  public Boolean isAsync() {
+    public Boolean isAsync() {
     return async;
   }
 
@@ -74,12 +74,11 @@ public class CleanupQueryProcessInstancesJobRequest   {
   /**
    * Get historicRetentionDays
    * @return historicRetentionDays
-  **/
+   **/
   @ApiModelProperty(required = true, value = "")
-  @NotNull
+      @NotNull
 
-
-  public Integer getHistoricRetentionDays() {
+    public Integer getHistoricRetentionDays() {
     return historicRetentionDays;
   }
 
@@ -95,11 +94,10 @@ public class CleanupQueryProcessInstancesJobRequest   {
   /**
    * Get limitSize
    * @return limitSize
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getLimitSize() {
+  
+    public Integer getLimitSize() {
     return limitSize;
   }
 
@@ -123,11 +121,10 @@ public class CleanupQueryProcessInstancesJobRequest   {
   /**
    * Get processDefinitionKeys
    * @return processDefinitionKeys
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getProcessDefinitionKeys() {
+  
+    public List<String> getProcessDefinitionKeys() {
     return processDefinitionKeys;
   }
 
@@ -180,4 +177,3 @@ public class CleanupQueryProcessInstancesJobRequest   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

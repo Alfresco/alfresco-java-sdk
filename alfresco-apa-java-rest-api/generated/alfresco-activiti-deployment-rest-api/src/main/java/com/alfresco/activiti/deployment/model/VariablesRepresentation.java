@@ -36,6 +36,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class VariablesRepresentation   {
   @JsonProperty("bridges")
   @Valid
@@ -89,12 +90,10 @@ public class VariablesRepresentation   {
   /**
    * Get bridges
    * @return bridges
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, Map<String, String>> getBridges() {
+      @Valid
+    public Map<String, Map<String, String>> getBridges() {
     return bridges;
   }
 
@@ -118,12 +117,10 @@ public class VariablesRepresentation   {
   /**
    * Get connectors
    * @return connectors
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, Map<String, String>> getConnectors() {
+      @Valid
+    public Map<String, Map<String, String>> getConnectors() {
     return connectors;
   }
 
@@ -139,12 +136,11 @@ public class VariablesRepresentation   {
   /**
    * Get contentService
    * @return contentService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ContentVariablesRepresentation getContentService() {
+  
+    @Valid
+    public ContentVariablesRepresentation getContentService() {
     return contentService;
   }
 
@@ -160,12 +156,11 @@ public class VariablesRepresentation   {
   /**
    * Get identityService
    * @return identityService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public IdentityVariablesRepresentation getIdentityService() {
+  
+    @Valid
+    public IdentityVariablesRepresentation getIdentityService() {
     return identityService;
   }
 
@@ -181,12 +176,11 @@ public class VariablesRepresentation   {
   /**
    * Get messagingService
    * @return messagingService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public MessagingVariablesRepresentation getMessagingService() {
+  
+    @Valid
+    public MessagingVariablesRepresentation getMessagingService() {
     return messagingService;
   }
 
@@ -202,12 +196,11 @@ public class VariablesRepresentation   {
   /**
    * Get postgresqlService
    * @return postgresqlService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PostgresqlVariablesRepresentation getPostgresqlService() {
+  
+    @Valid
+    public PostgresqlVariablesRepresentation getPostgresqlService() {
     return postgresqlService;
   }
 
@@ -231,11 +224,10 @@ public class VariablesRepresentation   {
   /**
    * Get processRuntimeService
    * @return processRuntimeService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Map<String, String> getProcessRuntimeService() {
+  
+    public Map<String, String> getProcessRuntimeService() {
     return processRuntimeService;
   }
 
@@ -259,11 +251,10 @@ public class VariablesRepresentation   {
   /**
    * Get processStorageService
    * @return processStorageService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Map<String, String> getProcessStorageService() {
+  
+    public Map<String, String> getProcessStorageService() {
     return processStorageService;
   }
 
@@ -287,11 +278,10 @@ public class VariablesRepresentation   {
   /**
    * Get queryService
    * @return queryService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Map<String, String> getQueryService() {
+  
+    public Map<String, String> getQueryService() {
     return queryService;
   }
 
@@ -315,12 +305,10 @@ public class VariablesRepresentation   {
   /**
    * Get uis
    * @return uis
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, Map<String, String>> getUis() {
+      @Valid
+    public Map<String, Map<String, String>> getUis() {
     return uis;
   }
 
@@ -385,4 +373,3 @@ public class VariablesRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

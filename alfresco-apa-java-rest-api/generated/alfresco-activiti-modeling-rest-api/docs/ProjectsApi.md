@@ -17,7 +17,6 @@ Method | HTTP request | Description
 [**updateProjectUsingPUT**](ProjectsApi.md#updateProjectUsingPUT) | **PUT** /v1/projects/{projectId} | Update project details
 [**validateProjectUsingGET**](ProjectsApi.md#validateProjectUsingGET) | **GET** /v1/projects/{projectId}/validate | Validate an project by id
 
-
 <a name="copyProjectUsingPOST"></a>
 # **copyProjectUsingPOST**
 > EntryResponseContentProject copyProjectUsingPOST(name, projectId)
@@ -62,7 +61,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/hal+json, application/json
 
 <a name="createProjectFromExampleUsingPOST"></a>
@@ -109,12 +108,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 <a name="createProjectUsingPOST"></a>
 # **createProjectUsingPOST**
-> EntryResponseContentProject createProjectUsingPOST(project)
+> EntryResponseContentProject createProjectUsingPOST(body)
 
 Create new project
 
@@ -126,9 +125,9 @@ Create new project
 
 
 ProjectsApi apiInstance = new ProjectsApi();
-Project project = new Project(); // Project | The details of the project to create
+Project body = new Project(); // Project | The details of the project to create
 try {
-    EntryResponseContentProject result = apiInstance.createProjectUsingPOST(project);
+    EntryResponseContentProject result = apiInstance.createProjectUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#createProjectUsingPOST");
@@ -140,7 +139,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | [**Project**](Project.md)| The details of the project to create |
+ **body** | [**Project**](Project.md)| The details of the project to create |
 
 ### Return type
 
@@ -195,7 +194,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="exportProjectUsingGET"></a>
 # **exportProjectUsingGET**
@@ -241,7 +240,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="getProjectReleaseUsingGET"></a>
 # **getProjectReleaseUsingGET**
@@ -394,7 +393,7 @@ No authorization required
 
 <a name="importProjectUsingPOST"></a>
 # **importProjectUsingPOST**
-> EntryResponseContentProject importProjectUsingPOST(file, name)
+> EntryResponseContentProject importProjectUsingPOST(name)
 
 Import an project as zip file
 
@@ -408,10 +407,9 @@ Allows a zip file to be uploaded containing an project definition and any number
 
 
 ProjectsApi apiInstance = new ProjectsApi();
-byte[] file = BINARY_DATA_HERE; // byte[] | The file containing the zipped project
 String name = "name_example"; // String | 
 try {
-    EntryResponseContentProject result = apiInstance.importProjectUsingPOST(file, name);
+    EntryResponseContentProject result = apiInstance.importProjectUsingPOST(name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#importProjectUsingPOST");
@@ -423,7 +421,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **byte[]**| The file containing the zipped project |
  **name** | **String**|  | [optional]
 
 ### Return type
@@ -481,12 +478,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateProjectUsingPUT"></a>
 # **updateProjectUsingPUT**
-> EntryResponseContentProject updateProjectUsingPUT(project, projectId)
+> EntryResponseContentProject updateProjectUsingPUT(body, projectId)
 
 Update project details
 
@@ -498,10 +495,10 @@ Update project details
 
 
 ProjectsApi apiInstance = new ProjectsApi();
-Project project = new Project(); // Project | The new values to update
+Project body = new Project(); // Project | The new values to update
 String projectId = "projectId_example"; // String | The id of the project to update
 try {
-    EntryResponseContentProject result = apiInstance.updateProjectUsingPUT(project, projectId);
+    EntryResponseContentProject result = apiInstance.updateProjectUsingPUT(body, projectId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#updateProjectUsingPUT");
@@ -513,7 +510,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | [**Project**](Project.md)| The new values to update |
+ **body** | [**Project**](Project.md)| The new values to update |
  **projectId** | **String**| The id of the project to update |
 
 ### Return type
@@ -569,5 +566,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 

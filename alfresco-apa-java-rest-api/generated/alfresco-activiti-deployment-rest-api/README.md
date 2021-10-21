@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org) to be installed.
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
 
 ## Installation
 
@@ -56,7 +56,6 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
   import com.alfresco.activiti.deployment.*;
   import com.alfresco.activiti.deployment.auth.*;
   import com.alfresco.activiti.deployment.model.*;
@@ -80,7 +79,6 @@ Please follow the [installation](#installation) instruction and execute the foll
   }
   }
   }
-
 ```
 
 ## Documentation for API Endpoints
@@ -119,7 +117,6 @@ Class | Method | HTTP request | Description
 *DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPOST**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPOST) | **POST** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
 *DescriptorDataEntityApi* | [**descriptorDataDescriptorUsingPUT**](docs/DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPUT) | **PUT** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
 
-
 ## Documentation for Models
 
  - [ApplicationLog](docs/ApplicationLog.md)
@@ -145,13 +142,13 @@ Class | Method | HTTP request | Description
  - [MessagingVariablesRepresentation](docs/MessagingVariablesRepresentation.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PostgresqlVariablesRepresentation](docs/PostgresqlVariablesRepresentation.md)
+ - [RuntimeVersionRepresentation](docs/RuntimeVersionRepresentation.md)
  - [SecurityRepresentation](docs/SecurityRepresentation.md)
  - [ServiceRepresentation](docs/ServiceRepresentation.md)
  - [UiInfrastructureRepresentation](docs/UiInfrastructureRepresentation.md)
  - [Variable](docs/Variable.md)
  - [VariablesPutRepresentation](docs/VariablesPutRepresentation.md)
  - [VariablesRepresentation](docs/VariablesRepresentation.md)
-
 
 ## Documentation for Authorization
 
@@ -163,6 +160,5 @@ Authentication schemes defined for the API:
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
-
 
 

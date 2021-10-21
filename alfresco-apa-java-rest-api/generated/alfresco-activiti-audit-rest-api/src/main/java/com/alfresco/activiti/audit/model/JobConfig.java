@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class JobConfig   {
   @JsonProperty("async")
   private Boolean async = null;
@@ -47,11 +48,10 @@ public class JobConfig   {
   /**
    * Get async
    * @return async
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isAsync() {
+  
+    public Boolean isAsync() {
     return async;
   }
 
@@ -67,11 +67,10 @@ public class JobConfig   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -87,11 +86,10 @@ public class JobConfig   {
   /**
    * Get properties
    * @return properties
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getProperties() {
+  
+    public Object getProperties() {
     return properties;
   }
 
@@ -142,4 +140,3 @@ public class JobConfig   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

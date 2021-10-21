@@ -1,4 +1,3 @@
-
 # CloudVariableInstance
 
 ## Properties
@@ -16,6 +15,3 @@ Name | Type | Description | Notes
 **taskVariable** | **Boolean** |  |  [optional]
 **type** | **String** |  |  [optional]
 **value** | **Object** |  |  [optional]
-
-
-

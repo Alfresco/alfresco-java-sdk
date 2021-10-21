@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class DMNTable   {
   @JsonProperty("inputs")
   private Object inputs = null;
@@ -47,11 +48,10 @@ public class DMNTable   {
   /**
    * Get inputs
    * @return inputs
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getInputs() {
+  
+    public Object getInputs() {
     return inputs;
   }
 
@@ -67,11 +67,10 @@ public class DMNTable   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -87,11 +86,10 @@ public class DMNTable   {
   /**
    * Get xml
    * @return xml
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getXml() {
+  
+    public String getXml() {
     return xml;
   }
 
@@ -142,4 +140,3 @@ public class DMNTable   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

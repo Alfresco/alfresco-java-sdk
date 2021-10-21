@@ -1,4 +1,3 @@
-
 # UpdateProcessPayload
 
 ## Properties
@@ -11,12 +10,8 @@ Name | Type | Description | Notes
 **payloadType** | [**PayloadTypeEnum**](#PayloadTypeEnum) |  |  [optional]
 **processInstanceId** | **String** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 UPDATEPROCESSPAYLOAD | &quot;UpdateProcessPayload&quot;
-
-
-

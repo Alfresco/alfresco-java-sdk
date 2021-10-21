@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class DescriptorResponseRepresentation   {
   @JsonProperty("createdAt")
   private String createdAt = null;
@@ -103,7 +104,6 @@ public class DescriptorResponseRepresentation   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -115,11 +115,10 @@ public class DescriptorResponseRepresentation   {
   /**
    * Get createdAt
    * @return createdAt
-  **/
+   **/
   @ApiModelProperty(example = "yyyy-MM-dd[['T']HH:mm:ss[.SSS'Z']]", value = "")
-
-
-  public String getCreatedAt() {
+  
+    public String getCreatedAt() {
     return createdAt;
   }
 
@@ -135,11 +134,10 @@ public class DescriptorResponseRepresentation   {
   /**
    * Get deployed
    * @return deployed
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isDeployed() {
+  
+    public Boolean isDeployed() {
     return deployed;
   }
 
@@ -155,12 +153,11 @@ public class DescriptorResponseRepresentation   {
   /**
    * Get descriptor
    * @return descriptor
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ApplicationRepresentation getDescriptor() {
+  
+    @Valid
+    public ApplicationRepresentation getDescriptor() {
     return descriptor;
   }
 
@@ -176,11 +173,10 @@ public class DescriptorResponseRepresentation   {
   /**
    * Get lastModifiedAt
    * @return lastModifiedAt
-  **/
+   **/
   @ApiModelProperty(example = "yyyy-MM-dd[['T']HH:mm:ss[.SSS'Z']]", value = "")
-
-
-  public String getLastModifiedAt() {
+  
+    public String getLastModifiedAt() {
     return lastModifiedAt;
   }
 
@@ -196,11 +192,10 @@ public class DescriptorResponseRepresentation   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -216,11 +211,10 @@ public class DescriptorResponseRepresentation   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -277,4 +271,3 @@ public class DescriptorResponseRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

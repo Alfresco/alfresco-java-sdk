@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntryResponseContentCloudTask   {
   @JsonProperty("entry")
   private CloudTask entry = null;
@@ -42,12 +43,11 @@ public class EntryResponseContentCloudTask   {
   /**
    * Get entry
    * @return entry
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public CloudTask getEntry() {
+  
+    @Valid
+    public CloudTask getEntry() {
     return entry;
   }
 
@@ -94,4 +94,3 @@ public class EntryResponseContentCloudTask   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

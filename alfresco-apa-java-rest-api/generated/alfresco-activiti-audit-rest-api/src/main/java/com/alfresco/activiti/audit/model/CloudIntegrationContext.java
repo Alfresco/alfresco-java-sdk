@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CloudIntegrationContext   {
   @JsonProperty("appName")
   private String appName = null;
@@ -152,7 +153,6 @@ public class CloudIntegrationContext   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -164,11 +164,10 @@ public class CloudIntegrationContext   {
   /**
    * Get appName
    * @return appName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppName() {
+  
+    public String getAppName() {
     return appName;
   }
 
@@ -184,11 +183,10 @@ public class CloudIntegrationContext   {
   /**
    * Get appVersion
    * @return appVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppVersion() {
+  
+    public String getAppVersion() {
     return appVersion;
   }
 
@@ -204,11 +202,10 @@ public class CloudIntegrationContext   {
   /**
    * Get businessKey
    * @return businessKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getBusinessKey() {
+  
+    public String getBusinessKey() {
     return businessKey;
   }
 
@@ -224,11 +221,10 @@ public class CloudIntegrationContext   {
   /**
    * Get clientId
    * @return clientId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getClientId() {
+  
+    public String getClientId() {
     return clientId;
   }
 
@@ -244,11 +240,10 @@ public class CloudIntegrationContext   {
   /**
    * Get clientName
    * @return clientName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getClientName() {
+  
+    public String getClientName() {
     return clientName;
   }
 
@@ -264,11 +259,10 @@ public class CloudIntegrationContext   {
   /**
    * Get clientType
    * @return clientType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getClientType() {
+  
+    public String getClientType() {
     return clientType;
   }
 
@@ -284,11 +278,10 @@ public class CloudIntegrationContext   {
   /**
    * Get connectorType
    * @return connectorType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getConnectorType() {
+  
+    public String getConnectorType() {
     return connectorType;
   }
 
@@ -304,11 +297,10 @@ public class CloudIntegrationContext   {
   /**
    * Get errorClassName
    * @return errorClassName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getErrorClassName() {
+  
+    public String getErrorClassName() {
     return errorClassName;
   }
 
@@ -324,11 +316,10 @@ public class CloudIntegrationContext   {
   /**
    * Get errorCode
    * @return errorCode
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getErrorCode() {
+  
+    public String getErrorCode() {
     return errorCode;
   }
 
@@ -344,12 +335,11 @@ public class CloudIntegrationContext   {
   /**
    * Get errorDate
    * @return errorDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getErrorDate() {
+  
+    @Valid
+    public OffsetDateTime getErrorDate() {
     return errorDate;
   }
 
@@ -365,11 +355,10 @@ public class CloudIntegrationContext   {
   /**
    * Get errorMessage
    * @return errorMessage
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getErrorMessage() {
+  
+    public String getErrorMessage() {
     return errorMessage;
   }
 
@@ -385,11 +374,10 @@ public class CloudIntegrationContext   {
   /**
    * Get executionId
    * @return executionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getExecutionId() {
+  
+    public String getExecutionId() {
     return executionId;
   }
 
@@ -405,11 +393,10 @@ public class CloudIntegrationContext   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -425,11 +412,10 @@ public class CloudIntegrationContext   {
   /**
    * Get inBoundVariables
    * @return inBoundVariables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getInBoundVariables() {
+  
+    public Object getInBoundVariables() {
     return inBoundVariables;
   }
 
@@ -445,11 +431,10 @@ public class CloudIntegrationContext   {
   /**
    * Get outBoundVariables
    * @return outBoundVariables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getOutBoundVariables() {
+  
+    public Object getOutBoundVariables() {
     return outBoundVariables;
   }
 
@@ -465,11 +450,10 @@ public class CloudIntegrationContext   {
   /**
    * Get parentProcessInstanceId
    * @return parentProcessInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getParentProcessInstanceId() {
+  
+    public String getParentProcessInstanceId() {
     return parentProcessInstanceId;
   }
 
@@ -485,11 +469,10 @@ public class CloudIntegrationContext   {
   /**
    * Get processDefinitionId
    * @return processDefinitionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionId() {
+  
+    public String getProcessDefinitionId() {
     return processDefinitionId;
   }
 
@@ -505,11 +488,10 @@ public class CloudIntegrationContext   {
   /**
    * Get processDefinitionKey
    * @return processDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionKey() {
+  
+    public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
 
@@ -525,11 +507,10 @@ public class CloudIntegrationContext   {
   /**
    * Get processDefinitionVersion
    * @return processDefinitionVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getProcessDefinitionVersion() {
+  
+    public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
 
@@ -545,11 +526,10 @@ public class CloudIntegrationContext   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -565,12 +545,11 @@ public class CloudIntegrationContext   {
   /**
    * Get requestDate
    * @return requestDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getRequestDate() {
+  
+    @Valid
+    public OffsetDateTime getRequestDate() {
     return requestDate;
   }
 
@@ -586,12 +565,11 @@ public class CloudIntegrationContext   {
   /**
    * Get resultDate
    * @return resultDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getResultDate() {
+  
+    @Valid
+    public OffsetDateTime getResultDate() {
     return resultDate;
   }
 
@@ -607,11 +585,10 @@ public class CloudIntegrationContext   {
   /**
    * Get rootProcessInstanceId
    * @return rootProcessInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getRootProcessInstanceId() {
+  
+    public String getRootProcessInstanceId() {
     return rootProcessInstanceId;
   }
 
@@ -627,11 +604,10 @@ public class CloudIntegrationContext   {
   /**
    * Get serviceFullName
    * @return serviceFullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceFullName() {
+  
+    public String getServiceFullName() {
     return serviceFullName;
   }
 
@@ -647,11 +623,10 @@ public class CloudIntegrationContext   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -667,11 +642,10 @@ public class CloudIntegrationContext   {
   /**
    * Get serviceType
    * @return serviceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceType() {
+  
+    public String getServiceType() {
     return serviceType;
   }
 
@@ -687,11 +661,10 @@ public class CloudIntegrationContext   {
   /**
    * Get serviceVersion
    * @return serviceVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceVersion() {
+  
+    public String getServiceVersion() {
     return serviceVersion;
   }
 
@@ -715,12 +688,10 @@ public class CloudIntegrationContext   {
   /**
    * Get stackTraceElements
    * @return stackTraceElements
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<StackTraceElement> getStackTraceElements() {
+      @Valid
+    public List<StackTraceElement> getStackTraceElements() {
     return stackTraceElements;
   }
 
@@ -736,11 +707,10 @@ public class CloudIntegrationContext   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -843,4 +813,3 @@ public class CloudIntegrationContext   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

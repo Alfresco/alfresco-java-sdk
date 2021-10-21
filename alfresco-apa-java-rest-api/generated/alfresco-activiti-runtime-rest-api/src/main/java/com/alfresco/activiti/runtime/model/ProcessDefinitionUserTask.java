@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ProcessDefinitionUserTask   {
   @JsonProperty("taskDocumentation")
   private String taskDocumentation = null;
@@ -44,11 +45,10 @@ public class ProcessDefinitionUserTask   {
   /**
    * Get taskDocumentation
    * @return taskDocumentation
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskDocumentation() {
+  
+    public String getTaskDocumentation() {
     return taskDocumentation;
   }
 
@@ -64,11 +64,10 @@ public class ProcessDefinitionUserTask   {
   /**
    * Get taskName
    * @return taskName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskName() {
+  
+    public String getTaskName() {
     return taskName;
   }
 
@@ -117,4 +116,3 @@ public class ProcessDefinitionUserTask   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntriesResponseContentRelease   {
   @JsonProperty("entries")
   @Valid
@@ -57,12 +58,10 @@ public class EntriesResponseContentRelease   {
   /**
    * Get entries
    * @return entries
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<EntryResponseContentRelease> getEntries() {
+      @Valid
+    public List<EntryResponseContentRelease> getEntries() {
     return entries;
   }
 
@@ -78,12 +77,11 @@ public class EntriesResponseContentRelease   {
   /**
    * Get pagination
    * @return pagination
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PaginationMetadata getPagination() {
+  
+    @Valid
+    public PaginationMetadata getPagination() {
     return pagination;
   }
 
@@ -132,4 +130,3 @@ public class EntriesResponseContentRelease   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

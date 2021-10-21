@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntryResponseContentProcessDefinitionMeta   {
   @JsonProperty("entry")
   private ProcessDefinitionMeta entry = null;
@@ -42,12 +43,11 @@ public class EntryResponseContentProcessDefinitionMeta   {
   /**
    * Get entry
    * @return entry
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ProcessDefinitionMeta getEntry() {
+  
+    @Valid
+    public ProcessDefinitionMeta getEntry() {
     return entry;
   }
 
@@ -94,4 +94,3 @@ public class EntryResponseContentProcessDefinitionMeta   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

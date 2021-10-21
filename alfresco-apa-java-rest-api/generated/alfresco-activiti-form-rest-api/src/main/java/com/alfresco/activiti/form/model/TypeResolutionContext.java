@@ -25,6 +25,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class TypeResolutionContext   {
 
   @Override
@@ -63,4 +64,3 @@ public class TypeResolutionContext   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

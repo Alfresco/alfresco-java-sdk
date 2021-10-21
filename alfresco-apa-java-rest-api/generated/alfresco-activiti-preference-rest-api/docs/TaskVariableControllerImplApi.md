@@ -8,10 +8,9 @@ Method | HTTP request | Description
 [**getVariablesUsingGET2**](TaskVariableControllerImplApi.md#getVariablesUsingGET2) | **GET** /v1/tasks/{taskId}/variables | getVariables
 [**updateVariableUsingPUT1**](TaskVariableControllerImplApi.md#updateVariableUsingPUT1) | **PUT** /v1/tasks/{taskId}/variables/{variableName} | updateVariable
 
-
 <a name="createVariableUsingPOST1"></a>
 # **createVariableUsingPOST1**
-> createVariableUsingPOST1(createTaskVariablePayload, taskId)
+> createVariableUsingPOST1(body, taskId)
 
 createVariable
 
@@ -23,10 +22,10 @@ createVariable
 
 
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
-CreateTaskVariablePayload createTaskVariablePayload = new CreateTaskVariablePayload(); // CreateTaskVariablePayload | createTaskVariablePayload
+CreateTaskVariablePayload body = new CreateTaskVariablePayload(); // CreateTaskVariablePayload | createTaskVariablePayload
 String taskId = "taskId_example"; // String | taskId
 try {
-    apiInstance.createVariableUsingPOST1(createTaskVariablePayload, taskId);
+    apiInstance.createVariableUsingPOST1(body, taskId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskVariableControllerImplApi#createVariableUsingPOST1");
     e.printStackTrace();
@@ -37,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createTaskVariablePayload** | [**CreateTaskVariablePayload**](CreateTaskVariablePayload.md)| createTaskVariablePayload |
+ **body** | [**CreateTaskVariablePayload**](CreateTaskVariablePayload.md)| createTaskVariablePayload |
  **taskId** | **String**| taskId |
 
 ### Return type
@@ -51,7 +50,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="getVariablesUsingGET2"></a>
 # **getVariablesUsingGET2**
@@ -98,7 +97,7 @@ No authorization required
 
 <a name="updateVariableUsingPUT1"></a>
 # **updateVariableUsingPUT1**
-> updateVariableUsingPUT1(taskId, updateTaskVariablePayload, variableName)
+> updateVariableUsingPUT1(body, taskId, variableName)
 
 updateVariable
 
@@ -110,11 +109,11 @@ updateVariable
 
 
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
+UpdateTaskVariablePayload body = new UpdateTaskVariablePayload(); // UpdateTaskVariablePayload | updateTaskVariablePayload
 String taskId = "taskId_example"; // String | taskId
-UpdateTaskVariablePayload updateTaskVariablePayload = new UpdateTaskVariablePayload(); // UpdateTaskVariablePayload | updateTaskVariablePayload
 String variableName = "variableName_example"; // String | variableName
 try {
-    apiInstance.updateVariableUsingPUT1(taskId, updateTaskVariablePayload, variableName);
+    apiInstance.updateVariableUsingPUT1(body, taskId, variableName);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskVariableControllerImplApi#updateVariableUsingPUT1");
     e.printStackTrace();
@@ -125,8 +124,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateTaskVariablePayload**](UpdateTaskVariablePayload.md)| updateTaskVariablePayload |
  **taskId** | **String**| taskId |
- **updateTaskVariablePayload** | [**UpdateTaskVariablePayload**](UpdateTaskVariablePayload.md)| updateTaskVariablePayload |
  **variableName** | **String**| variableName |
 
 ### Return type
@@ -140,5 +139,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 

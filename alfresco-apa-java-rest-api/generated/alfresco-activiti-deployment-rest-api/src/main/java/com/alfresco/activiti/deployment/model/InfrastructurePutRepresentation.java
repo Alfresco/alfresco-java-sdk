@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class InfrastructurePutRepresentation   {
   @JsonProperty("bridges")
   @Valid
@@ -61,12 +62,10 @@ public class InfrastructurePutRepresentation   {
   /**
    * Get bridges
    * @return bridges
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, ServiceRepresentation> getBridges() {
+      @Valid
+    public Map<String, ServiceRepresentation> getBridges() {
     return bridges;
   }
 
@@ -90,12 +89,10 @@ public class InfrastructurePutRepresentation   {
   /**
    * Get connectors
    * @return connectors
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, ServiceRepresentation> getConnectors() {
+      @Valid
+    public Map<String, ServiceRepresentation> getConnectors() {
     return connectors;
   }
 
@@ -111,11 +108,10 @@ public class InfrastructurePutRepresentation   {
   /**
    * Get runtimeVersion
    * @return runtimeVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getRuntimeVersion() {
+  
+    public String getRuntimeVersion() {
     return runtimeVersion;
   }
 
@@ -166,4 +162,3 @@ public class InfrastructurePutRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteEventsUsingDELETE**](AuditEventsDeleteControllerApi.md#deleteEventsUsingDELETE) | **DELETE** /admin/v1/events | deleteEvents
 
-
 <a name="deleteEventsUsingDELETE"></a>
 # **deleteEventsUsingDELETE**
 > ListResponseContentOfCloudRuntimeEventOfobjectAndstring deleteEventsUsingDELETE()

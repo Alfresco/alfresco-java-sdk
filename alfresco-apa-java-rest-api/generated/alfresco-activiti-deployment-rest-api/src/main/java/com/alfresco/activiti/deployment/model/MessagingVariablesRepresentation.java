@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class MessagingVariablesRepresentation   {
   @JsonProperty("host")
   private String host = null;
@@ -50,11 +51,10 @@ public class MessagingVariablesRepresentation   {
   /**
    * Get host
    * @return host
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getHost() {
+  
+    public String getHost() {
     return host;
   }
 
@@ -70,11 +70,10 @@ public class MessagingVariablesRepresentation   {
   /**
    * Get password
    * @return password
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getPassword() {
+  
+    public String getPassword() {
     return password;
   }
 
@@ -90,11 +89,10 @@ public class MessagingVariablesRepresentation   {
   /**
    * Get port
    * @return port
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getPort() {
+  
+    public String getPort() {
     return port;
   }
 
@@ -110,11 +108,10 @@ public class MessagingVariablesRepresentation   {
   /**
    * Get username
    * @return username
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUsername() {
+  
+    public String getUsername() {
     return username;
   }
 
@@ -167,4 +164,3 @@ public class MessagingVariablesRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

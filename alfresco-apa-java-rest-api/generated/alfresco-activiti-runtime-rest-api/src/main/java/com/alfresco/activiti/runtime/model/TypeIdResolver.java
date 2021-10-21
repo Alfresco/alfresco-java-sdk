@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class TypeIdResolver   {
   @JsonProperty("descForKnownTypeIds")
   private String descForKnownTypeIds = null;
@@ -72,7 +73,6 @@ public class TypeIdResolver   {
       return null;
     }
   }
-
   @JsonProperty("mechanism")
   private MechanismEnum mechanism = null;
 
@@ -84,11 +84,10 @@ public class TypeIdResolver   {
   /**
    * Get descForKnownTypeIds
    * @return descForKnownTypeIds
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescForKnownTypeIds() {
+  
+    public String getDescForKnownTypeIds() {
     return descForKnownTypeIds;
   }
 
@@ -104,11 +103,10 @@ public class TypeIdResolver   {
   /**
    * Get mechanism
    * @return mechanism
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public MechanismEnum getMechanism() {
+  
+    public MechanismEnum getMechanism() {
     return mechanism;
   }
 
@@ -157,4 +155,3 @@ public class TypeIdResolver   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

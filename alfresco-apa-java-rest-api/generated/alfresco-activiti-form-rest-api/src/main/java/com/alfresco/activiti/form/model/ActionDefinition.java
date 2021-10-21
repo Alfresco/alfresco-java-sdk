@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ActionDefinition   {
   @JsonProperty("description")
   private String description = null;
@@ -58,11 +59,10 @@ public class ActionDefinition   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -78,11 +78,10 @@ public class ActionDefinition   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -106,12 +105,10 @@ public class ActionDefinition   {
   /**
    * Get inputs
    * @return inputs
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<VariableDefinition> getInputs() {
+      @Valid
+    public List<VariableDefinition> getInputs() {
     return inputs;
   }
 
@@ -127,11 +124,10 @@ public class ActionDefinition   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -155,12 +151,10 @@ public class ActionDefinition   {
   /**
    * Get outputs
    * @return outputs
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<VariableDefinition> getOutputs() {
+      @Valid
+    public List<VariableDefinition> getOutputs() {
     return outputs;
   }
 
@@ -215,4 +209,3 @@ public class ActionDefinition   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

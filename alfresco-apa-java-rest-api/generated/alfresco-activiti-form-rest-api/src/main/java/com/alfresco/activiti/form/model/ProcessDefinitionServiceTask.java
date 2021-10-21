@@ -35,6 +35,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ProcessDefinitionServiceTask   {
   @JsonProperty("cachable")
   private Boolean cachable = null;
@@ -74,7 +75,6 @@ public class ProcessDefinitionServiceTask   {
       return null;
     }
   }
-
   @JsonProperty("emptyAccessPattern")
   private EmptyAccessPatternEnum emptyAccessPattern = null;
 
@@ -117,7 +117,6 @@ public class ProcessDefinitionServiceTask   {
       return null;
     }
   }
-
   @JsonProperty("nullAccessPattern")
   private NullAccessPatternEnum nullAccessPattern = null;
 
@@ -142,11 +141,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get cachable
    * @return cachable
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isCachable() {
+  
+    public Boolean isCachable() {
     return cachable;
   }
 
@@ -162,12 +160,11 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get delegatee
    * @return delegatee
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JsonDeserializerobject getDelegatee() {
+  
+    @Valid
+    public JsonDeserializerobject getDelegatee() {
     return delegatee;
   }
 
@@ -183,11 +180,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get emptyAccessPattern
    * @return emptyAccessPattern
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public EmptyAccessPatternEnum getEmptyAccessPattern() {
+  
+    public EmptyAccessPatternEnum getEmptyAccessPattern() {
     return emptyAccessPattern;
   }
 
@@ -203,11 +199,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get emptyValue
    * @return emptyValue
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getEmptyValue() {
+  
+    public Object getEmptyValue() {
     return emptyValue;
   }
 
@@ -231,11 +226,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get knownPropertyNames
    * @return knownPropertyNames
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<Object> getKnownPropertyNames() {
+  
+    public List<Object> getKnownPropertyNames() {
     return knownPropertyNames;
   }
 
@@ -251,11 +245,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get nullAccessPattern
    * @return nullAccessPattern
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public NullAccessPatternEnum getNullAccessPattern() {
+  
+    public NullAccessPatternEnum getNullAccessPattern() {
     return nullAccessPattern;
   }
 
@@ -279,12 +272,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get nullValue
    * @return nullValue
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<ProcessDefinitionServiceTask> getNullValue() {
+      @Valid
+    public List<ProcessDefinitionServiceTask> getNullValue() {
     return nullValue;
   }
 
@@ -300,12 +291,11 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get objectIdReader
    * @return objectIdReader
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ObjectIdReader getObjectIdReader() {
+  
+    @Valid
+    public ObjectIdReader getObjectIdReader() {
     return objectIdReader;
   }
 
@@ -321,11 +311,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get taskImplementation
    * @return taskImplementation
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskImplementation() {
+  
+    public String getTaskImplementation() {
     return taskImplementation;
   }
 
@@ -341,11 +330,10 @@ public class ProcessDefinitionServiceTask   {
   /**
    * Get taskName
    * @return taskName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskName() {
+  
+    public String getTaskName() {
     return taskName;
   }
 
@@ -410,4 +398,3 @@ public class ProcessDefinitionServiceTask   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

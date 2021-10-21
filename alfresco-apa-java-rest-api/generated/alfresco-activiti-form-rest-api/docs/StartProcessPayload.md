@@ -1,4 +1,3 @@
-
 # StartProcessPayload
 
 ## Properties
@@ -12,12 +11,8 @@ Name | Type | Description | Notes
 **processDefinitionKey** | **String** |  |  [optional]
 **variables** | **Object** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 STARTPROCESSPAYLOAD | &quot;StartProcessPayload&quot;
-
-
-

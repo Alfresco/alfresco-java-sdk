@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class StartProcessPayload   {
   @JsonProperty("businessKey")
   private String businessKey = null;
@@ -68,7 +69,6 @@ public class StartProcessPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -89,11 +89,10 @@ public class StartProcessPayload   {
   /**
    * Get businessKey
    * @return businessKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getBusinessKey() {
+  
+    public String getBusinessKey() {
     return businessKey;
   }
 
@@ -109,11 +108,10 @@ public class StartProcessPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -129,11 +127,10 @@ public class StartProcessPayload   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -149,11 +146,10 @@ public class StartProcessPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -169,11 +165,10 @@ public class StartProcessPayload   {
   /**
    * Get processDefinitionId
    * @return processDefinitionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionId() {
+  
+    public String getProcessDefinitionId() {
     return processDefinitionId;
   }
 
@@ -189,11 +184,10 @@ public class StartProcessPayload   {
   /**
    * Get processDefinitionKey
    * @return processDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionKey() {
+  
+    public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
 
@@ -209,11 +203,10 @@ public class StartProcessPayload   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getVariables() {
+  
+    public Object getVariables() {
     return variables;
   }
 
@@ -272,4 +265,3 @@ public class StartProcessPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

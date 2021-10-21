@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CloudApplication   {
   @JsonProperty("id")
   private String id = null;
@@ -47,11 +48,10 @@ public class CloudApplication   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -67,11 +67,10 @@ public class CloudApplication   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -87,11 +86,10 @@ public class CloudApplication   {
   /**
    * Get version
    * @return version
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getVersion() {
+  
+    public String getVersion() {
     return version;
   }
 
@@ -142,4 +140,3 @@ public class CloudApplication   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

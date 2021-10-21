@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**findAllUsingGET4**](ProcessDefinitionAdminControllerApi.md#findAllUsingGET4) | **GET** /admin/v1/process-definitions | findAll
 
-
 <a name="findAllUsingGET4"></a>
 # **findAllUsingGET4**
 > ListResponseContentOfCloudProcessDefinition findAllUsingGET4(maxItems, skipCount, sort)

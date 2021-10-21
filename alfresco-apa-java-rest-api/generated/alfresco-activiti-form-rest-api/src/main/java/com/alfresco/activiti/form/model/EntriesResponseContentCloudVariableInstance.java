@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntriesResponseContentCloudVariableInstance   {
   @JsonProperty("entries")
   @Valid
@@ -57,12 +58,10 @@ public class EntriesResponseContentCloudVariableInstance   {
   /**
    * Get entries
    * @return entries
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<EntryResponseContentCloudVariableInstance> getEntries() {
+      @Valid
+    public List<EntryResponseContentCloudVariableInstance> getEntries() {
     return entries;
   }
 
@@ -78,12 +77,11 @@ public class EntriesResponseContentCloudVariableInstance   {
   /**
    * Get pagination
    * @return pagination
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PaginationMetadata getPagination() {
+  
+    @Valid
+    public PaginationMetadata getPagination() {
     return pagination;
   }
 
@@ -132,4 +130,3 @@ public class EntriesResponseContentCloudVariableInstance   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -1,4 +1,3 @@
-
 # Variable
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **required** | **Boolean** |  |  [optional]
 **secure** | **Boolean** |  |  [optional]
 **value** | **String** |  |  [optional]
-
-
-

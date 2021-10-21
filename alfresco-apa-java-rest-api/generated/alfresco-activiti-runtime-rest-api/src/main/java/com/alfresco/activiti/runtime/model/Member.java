@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Member   {
   @JsonProperty("modifiers")
   private Integer modifiers = null;
@@ -47,11 +48,10 @@ public class Member   {
   /**
    * Get modifiers
    * @return modifiers
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getModifiers() {
+  
+    public Integer getModifiers() {
     return modifiers;
   }
 
@@ -67,11 +67,10 @@ public class Member   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -87,11 +86,10 @@ public class Member   {
   /**
    * Get synthetic
    * @return synthetic
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isSynthetic() {
+  
+    public Boolean isSynthetic() {
     return synthetic;
   }
 
@@ -142,4 +140,3 @@ public class Member   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org) to be installed.
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
 
 ## Installation
 
@@ -56,7 +56,6 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
   import com.alfresco.activiti.script.modeling.*;
   import com.alfresco.activiti.script.modeling.auth.*;
   import com.alfresco.activiti.script.modeling.model.*;
@@ -70,10 +69,9 @@ Please follow the [installation](#installation) instruction and execute the foll
   public static void main(String[] args) {
   
   ApsModelControllerApi apiInstance = new ApsModelControllerApi();
-    byte[] file = BINARY_DATA_HERE; // byte[] | file
     String projectId = "projectId_example"; // String | projectId
   try {
-  EntryResponseContentImportResult result = apiInstance.importProcessModelUsingPOST(file, projectId);
+  EntryResponseContentImportResult result = apiInstance.importProcessModelUsingPOST(projectId);
     System.out.println(result);
   } catch (ApiException e) {
   System.err.println("Exception when calling ApsModelControllerApi#importProcessModelUsingPOST");
@@ -81,7 +79,6 @@ Please follow the [installation](#installation) instruction and execute the foll
   }
   }
   }
-
 ```
 
 ## Documentation for API Endpoints
@@ -126,7 +123,6 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**validateProjectUsingGET**](docs/ProjectsApi.md#validateProjectUsingGET) | **GET** /v1/projects/{projectId}/validate | Validate an project by id
 *ScriptControllerApi* | [**runScriptUsingPOST**](docs/ScriptControllerApi.md#runScriptUsingPOST) | **POST** /v1/scripts | runScript
 
-
 ## Documentation for Models
 
  - [Collaborator](docs/Collaborator.md)
@@ -150,13 +146,15 @@ Class | Method | HTTP request | Description
  - [ListResponseContentProject](docs/ListResponseContentProject.md)
  - [ListResponseContentRelease](docs/ListResponseContentRelease.md)
  - [Model](docs/Model.md)
+ - [ModelIdContentBody](docs/ModelIdContentBody.md)
  - [ModelReq](docs/ModelReq.md)
  - [ModelRes](docs/ModelRes.md)
  - [ModelType](docs/ModelType.md)
+ - [ModelsImportBody](docs/ModelsImportBody.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [Project](docs/Project.md)
+ - [ProjectsImportBody](docs/ProjectsImportBody.md)
  - [Release](docs/Release.md)
-
 
 ## Documentation for Authorization
 
@@ -168,6 +166,5 @@ Authentication schemes defined for the API:
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
-
 
 

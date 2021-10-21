@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**getPreferenceUsingGET**](PreferenceApi.md#getPreferenceUsingGET) | **GET** /v1/preferences/{preferenceKey} | Get preference
 [**savePreferenceUsingPUT**](PreferenceApi.md#savePreferenceUsingPUT) | **PUT** /v1/preferences/{preferenceKey} | Create/Save preference
 
-
 <a name="deletePreferenceUsingDELETE"></a>
 # **deletePreferenceUsingDELETE**
 > ResponseEntity deletePreferenceUsingDELETE(preferenceKey)
@@ -145,7 +144,7 @@ No authorization required
 
 <a name="savePreferenceUsingPUT"></a>
 # **savePreferenceUsingPUT**
-> ResponseEntity savePreferenceUsingPUT(preferenceKey, preferenceValue)
+> ResponseEntity savePreferenceUsingPUT(body, preferenceKey)
 
 Create/Save preference
 
@@ -157,10 +156,10 @@ Create/Save preference
 
 
 PreferenceApi apiInstance = new PreferenceApi();
+String body = "body_example"; // String | preferenceValue
 String preferenceKey = "preferenceKey_example"; // String | The Key of the preference to be created
-String preferenceValue = "preferenceValue_example"; // String | preferenceValue
 try {
-    ResponseEntity result = apiInstance.savePreferenceUsingPUT(preferenceKey, preferenceValue);
+    ResponseEntity result = apiInstance.savePreferenceUsingPUT(body, preferenceKey);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PreferenceApi#savePreferenceUsingPUT");
@@ -172,8 +171,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**String**](String.md)| preferenceValue |
  **preferenceKey** | **String**| The Key of the preference to be created |
- **preferenceValue** | **String**| preferenceValue |
 
 ### Return type
 

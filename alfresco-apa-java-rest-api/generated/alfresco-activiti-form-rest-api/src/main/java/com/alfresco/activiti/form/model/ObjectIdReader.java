@@ -35,6 +35,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ObjectIdReader   {
   @JsonProperty("deserializer")
   private JsonDeserializerobject deserializer = null;
@@ -62,12 +63,11 @@ public class ObjectIdReader   {
   /**
    * Get deserializer
    * @return deserializer
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JsonDeserializerobject getDeserializer() {
+  
+    @Valid
+    public JsonDeserializerobject getDeserializer() {
     return deserializer;
   }
 
@@ -83,12 +83,11 @@ public class ObjectIdReader   {
   /**
    * Get generator
    * @return generator
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ObjectIdGeneratorobject getGenerator() {
+  
+    @Valid
+    public ObjectIdGeneratorobject getGenerator() {
     return generator;
   }
 
@@ -104,12 +103,11 @@ public class ObjectIdReader   {
   /**
    * Get idProperty
    * @return idProperty
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public SettableBeanProperty getIdProperty() {
+  
+    @Valid
+    public SettableBeanProperty getIdProperty() {
     return idProperty;
   }
 
@@ -125,12 +123,11 @@ public class ObjectIdReader   {
   /**
    * Get idType
    * @return idType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JavaType getIdType() {
+  
+    @Valid
+    public JavaType getIdType() {
     return idType;
   }
 
@@ -146,12 +143,11 @@ public class ObjectIdReader   {
   /**
    * Get propertyName
    * @return propertyName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PropertyName getPropertyName() {
+  
+    @Valid
+    public PropertyName getPropertyName() {
     return propertyName;
   }
 
@@ -167,12 +163,11 @@ public class ObjectIdReader   {
   /**
    * Get resolver
    * @return resolver
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ObjectIdResolver getResolver() {
+  
+    @Valid
+    public ObjectIdResolver getResolver() {
     return resolver;
   }
 
@@ -229,4 +224,3 @@ public class ObjectIdReader   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

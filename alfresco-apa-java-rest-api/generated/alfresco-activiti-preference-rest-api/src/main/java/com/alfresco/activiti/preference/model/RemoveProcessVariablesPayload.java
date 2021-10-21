@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class RemoveProcessVariablesPayload   {
   @JsonProperty("id")
   private String id = null;
@@ -64,7 +65,6 @@ public class RemoveProcessVariablesPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -83,11 +83,10 @@ public class RemoveProcessVariablesPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -103,11 +102,10 @@ public class RemoveProcessVariablesPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -123,11 +121,10 @@ public class RemoveProcessVariablesPayload   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -151,11 +148,10 @@ public class RemoveProcessVariablesPayload   {
   /**
    * Get variableNames
    * @return variableNames
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getVariableNames() {
+  
+    public List<String> getVariableNames() {
     return variableNames;
   }
 
@@ -208,4 +204,3 @@ public class RemoveProcessVariablesPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

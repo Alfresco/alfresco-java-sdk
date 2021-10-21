@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class SaveTaskPayload   {
   @JsonProperty("id")
   private String id = null;
@@ -62,7 +63,6 @@ public class SaveTaskPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -80,11 +80,10 @@ public class SaveTaskPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -100,11 +99,10 @@ public class SaveTaskPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -120,11 +118,10 @@ public class SaveTaskPayload   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -140,11 +137,10 @@ public class SaveTaskPayload   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getVariables() {
+  
+    public Object getVariables() {
     return variables;
   }
 
@@ -197,4 +193,3 @@ public class SaveTaskPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

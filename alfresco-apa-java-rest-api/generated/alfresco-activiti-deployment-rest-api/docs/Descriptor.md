@@ -1,4 +1,3 @@
-
 # Descriptor
 
 ## Properties
@@ -11,7 +10,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **payload** | **String** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
-
 
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
@@ -32,6 +30,3 @@ RUNNING | &quot;Running&quot;
 UNKNOWN | &quot;Unknown&quot;
 UPDATEAPP | &quot;UpdateApp&quot;
 WAITINGFORDESCRIPTOR | &quot;WaitingForDescriptor&quot;
-
-
-

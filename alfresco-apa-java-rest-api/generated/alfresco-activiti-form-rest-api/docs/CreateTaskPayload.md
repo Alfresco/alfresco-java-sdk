@@ -1,4 +1,3 @@
-
 # CreateTaskPayload
 
 ## Properties
@@ -16,12 +15,8 @@ Name | Type | Description | Notes
 **payloadType** | [**PayloadTypeEnum**](#PayloadTypeEnum) |  |  [optional]
 **priority** | **Integer** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 CREATETASKPAYLOAD | &quot;CreateTaskPayload&quot;
-
-
-

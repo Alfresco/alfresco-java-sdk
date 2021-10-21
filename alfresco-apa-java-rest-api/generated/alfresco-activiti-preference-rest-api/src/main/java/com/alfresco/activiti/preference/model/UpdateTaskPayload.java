@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class UpdateTaskPayload   {
   @JsonProperty("assignee")
   private String assignee = null;
@@ -81,7 +82,6 @@ public class UpdateTaskPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -99,11 +99,10 @@ public class UpdateTaskPayload   {
   /**
    * Get assignee
    * @return assignee
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAssignee() {
+  
+    public String getAssignee() {
     return assignee;
   }
 
@@ -119,11 +118,10 @@ public class UpdateTaskPayload   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -139,12 +137,11 @@ public class UpdateTaskPayload   {
   /**
    * Get dueDate
    * @return dueDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getDueDate() {
+  
+    @Valid
+    public OffsetDateTime getDueDate() {
     return dueDate;
   }
 
@@ -160,11 +157,10 @@ public class UpdateTaskPayload   {
   /**
    * Get formKey
    * @return formKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFormKey() {
+  
+    public String getFormKey() {
     return formKey;
   }
 
@@ -180,11 +176,10 @@ public class UpdateTaskPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -200,11 +195,10 @@ public class UpdateTaskPayload   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -220,11 +214,10 @@ public class UpdateTaskPayload   {
   /**
    * Get parentTaskId
    * @return parentTaskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getParentTaskId() {
+  
+    public String getParentTaskId() {
     return parentTaskId;
   }
 
@@ -240,11 +233,10 @@ public class UpdateTaskPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -260,11 +252,10 @@ public class UpdateTaskPayload   {
   /**
    * Get priority
    * @return priority
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getPriority() {
+  
+    public Integer getPriority() {
     return priority;
   }
 
@@ -280,11 +271,10 @@ public class UpdateTaskPayload   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -349,4 +339,3 @@ public class UpdateTaskPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

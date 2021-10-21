@@ -17,10 +17,9 @@ Method | HTTP request | Description
 [**updateApplicationRuntimeVersionUsingPOST**](DeploymentControllerApi.md#updateApplicationRuntimeVersionUsingPOST) | **POST** /deployment-service/v1/applications/{id}/update | Updates the application runtime version to the selected one.
 [**upgradeApplicationUsingPUT**](DeploymentControllerApi.md#upgradeApplicationUsingPUT) | **PUT** /deployment-service/v1/applications/{id} | Update an existing application by id.
 
-
 <a name="createApplicationUsingPOST"></a>
 # **createApplicationUsingPOST**
-> createApplicationUsingPOST(applicationRepresentation)
+> createApplicationUsingPOST(body)
 
 Add a new application.
 
@@ -32,9 +31,9 @@ Add a new application.
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
-ApplicationRepresentation applicationRepresentation = new ApplicationRepresentation(); // ApplicationRepresentation | applicationRepresentation
+ApplicationRepresentation body = new ApplicationRepresentation(); // ApplicationRepresentation | applicationRepresentation
 try {
-    apiInstance.createApplicationUsingPOST(applicationRepresentation);
+    apiInstance.createApplicationUsingPOST(body);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#createApplicationUsingPOST");
     e.printStackTrace();
@@ -45,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **applicationRepresentation** | [**ApplicationRepresentation**](ApplicationRepresentation.md)| applicationRepresentation |
+ **body** | [**ApplicationRepresentation**](ApplicationRepresentation.md)| applicationRepresentation |
 
 ### Return type
 
@@ -58,7 +57,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="deleteApplicationUsingDELETE"></a>
 # **deleteApplicationUsingDELETE**
@@ -100,11 +99,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 <a name="getApplicationRuntimeVersionUsingGET"></a>
 # **getApplicationRuntimeVersionUsingGET**
-> String getApplicationRuntimeVersionUsingGET(id)
+> RuntimeVersionRepresentation getApplicationRuntimeVersionUsingGET(id)
 
 Retrieve the application runtime version by id.
 
@@ -118,7 +117,7 @@ Retrieve the application runtime version by id.
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
 String id = "id_example"; // String | ID of application which runtime version is queried
 try {
-    String result = apiInstance.getApplicationRuntimeVersionUsingGET(id);
+    RuntimeVersionRepresentation result = apiInstance.getApplicationRuntimeVersionUsingGET(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#getApplicationRuntimeVersionUsingGET");
@@ -134,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**RuntimeVersionRepresentation**](RuntimeVersionRepresentation.md)
 
 ### Authorization
 
@@ -202,8 +201,8 @@ Find applications. It allows filtering. This service will return all application
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
-LocalDate createdDateFrom = LocalDate.now(); // LocalDate | Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
-LocalDate createdDateTo = LocalDate.now(); // LocalDate | Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
+LocalDate createdDateFrom = new LocalDate(); // LocalDate | Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
+LocalDate createdDateTo = new LocalDate(); // LocalDate | Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
 Integer maxItems = 56; // Integer | 
 String name = "name_example"; // String | Filter on application name, showing all applications that contains the search key.
 List<String> roles = Arrays.asList("roles_example"); // List<String> | Roles that user must have on the application.
@@ -294,7 +293,7 @@ No authorization required
 
 <a name="getLatestRuntimeVersionUsingGET"></a>
 # **getLatestRuntimeVersionUsingGET**
-> String getLatestRuntimeVersionUsingGET()
+> RuntimeVersionRepresentation getLatestRuntimeVersionUsingGET()
 
 Retrieve the latest runtime version available in the deployment service.
 
@@ -307,7 +306,7 @@ Retrieve the latest runtime version available in the deployment service.
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
 try {
-    String result = apiInstance.getLatestRuntimeVersionUsingGET();
+    RuntimeVersionRepresentation result = apiInstance.getLatestRuntimeVersionUsingGET();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#getLatestRuntimeVersionUsingGET");
@@ -320,7 +319,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**String**
+[**RuntimeVersionRepresentation**](RuntimeVersionRepresentation.md)
 
 ### Authorization
 
@@ -333,7 +332,7 @@ No authorization required
 
 <a name="getRuntimeVersionsUsingGET"></a>
 # **getRuntimeVersionsUsingGET**
-> List&lt;String&gt; getRuntimeVersionsUsingGET(versionEqualOrLater)
+> List&lt;RuntimeVersionRepresentation&gt; getRuntimeVersionsUsingGET(versionEqualOrLater)
 
 Retrieve a list of runtime versions available in the deployment service.
 
@@ -347,7 +346,7 @@ Retrieve a list of runtime versions available in the deployment service.
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
 String versionEqualOrLater = "versionEqualOrLater_example"; // String | versionEqualOrLater
 try {
-    List<String> result = apiInstance.getRuntimeVersionsUsingGET(versionEqualOrLater);
+    List<RuntimeVersionRepresentation> result = apiInstance.getRuntimeVersionsUsingGET(versionEqualOrLater);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#getRuntimeVersionsUsingGET");
@@ -363,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**List&lt;RuntimeVersionRepresentation&gt;**](RuntimeVersionRepresentation.md)
 
 ### Authorization
 
@@ -407,8 +406,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of application |
- **excludeServiceClients** | **Boolean**| If the value is &#39;true&#39; the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned. | [optional] [default to false]
- **group** | **Boolean**| If the value is &#39;true&#39; the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned. | [optional] [default to false]
+ **excludeServiceClients** | **Boolean**| If the value is &#x27;true&#x27; the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned. | [optional] [default to false]
+ **group** | **Boolean**| If the value is &#x27;true&#x27; the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned. | [optional] [default to false]
  **name** | **String**| Filter on username, showing all users that contains the search key | [optional]
  **roles** | [**List&lt;String&gt;**](String.md)| Roles that user must have on the application. | [optional]
 
@@ -512,12 +511,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 <a name="upgradeApplicationUsingPUT"></a>
 # **upgradeApplicationUsingPUT**
-> upgradeApplicationUsingPUT(applicationPutRequestRepresentation, id)
+> upgradeApplicationUsingPUT(body, id)
 
 Update an existing application by id.
 
@@ -529,10 +528,10 @@ Update an existing application by id.
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
-ApplicationPutRequestRepresentation applicationPutRequestRepresentation = new ApplicationPutRequestRepresentation(); // ApplicationPutRequestRepresentation | applicationPutRequestRepresentation
+ApplicationPutRequestRepresentation body = new ApplicationPutRequestRepresentation(); // ApplicationPutRequestRepresentation | applicationPutRequestRepresentation
 String id = "id_example"; // String | ID of application to update
 try {
-    apiInstance.upgradeApplicationUsingPUT(applicationPutRequestRepresentation, id);
+    apiInstance.upgradeApplicationUsingPUT(body, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#upgradeApplicationUsingPUT");
     e.printStackTrace();
@@ -543,7 +542,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **applicationPutRequestRepresentation** | [**ApplicationPutRequestRepresentation**](ApplicationPutRequestRepresentation.md)| applicationPutRequestRepresentation |
+ **body** | [**ApplicationPutRequestRepresentation**](ApplicationPutRequestRepresentation.md)| applicationPutRequestRepresentation |
  **id** | **String**| ID of application to update |
 
 ### Return type
@@ -557,5 +556,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 

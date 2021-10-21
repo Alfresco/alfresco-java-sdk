@@ -1,4 +1,3 @@
-
 # InfrastructureRepresentation
 
 ## Properties
@@ -13,6 +12,3 @@ Name | Type | Description | Notes
 **queryService** | [**ServiceRepresentation**](ServiceRepresentation.md) |  |  [optional]
 **runtimeVersion** | **String** |  |  [optional]
 **uis** | [**Map&lt;String, UiInfrastructureRepresentation&gt;**](UiInfrastructureRepresentation.md) |  |  [optional]
-
-
-

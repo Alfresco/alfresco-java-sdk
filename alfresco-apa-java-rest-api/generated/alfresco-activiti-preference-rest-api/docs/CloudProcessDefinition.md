@@ -1,4 +1,3 @@
-
 # CloudProcessDefinition
 
 ## Properties
@@ -16,6 +15,3 @@ Name | Type | Description | Notes
 **serviceType** | **String** |  |  [optional]
 **serviceVersion** | **String** |  |  [optional]
 **version** | **Integer** |  |  [optional]
-
-
-

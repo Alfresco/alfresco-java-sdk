@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class DeployDescriptorRequestRepresentation   {
   @JsonProperty("security")
   @Valid
@@ -57,12 +58,10 @@ public class DeployDescriptorRequestRepresentation   {
   /**
    * Get security
    * @return security
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<SecurityRepresentation> getSecurity() {
+      @Valid
+    public List<SecurityRepresentation> getSecurity() {
     return security;
   }
 
@@ -78,12 +77,11 @@ public class DeployDescriptorRequestRepresentation   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public DeployDescriptorVariablesRepresentation getVariables() {
+  
+    @Valid
+    public DeployDescriptorVariablesRepresentation getVariables() {
     return variables;
   }
 
@@ -132,4 +130,3 @@ public class DeployDescriptorRequestRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

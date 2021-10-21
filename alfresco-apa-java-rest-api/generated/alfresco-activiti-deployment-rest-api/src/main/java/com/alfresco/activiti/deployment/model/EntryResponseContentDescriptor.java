@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntryResponseContentDescriptor   {
   @JsonProperty("entry")
   private Descriptor entry = null;
@@ -42,12 +43,11 @@ public class EntryResponseContentDescriptor   {
   /**
    * Get entry
    * @return entry
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Descriptor getEntry() {
+  
+    @Valid
+    public Descriptor getEntry() {
     return entry;
   }
 
@@ -94,4 +94,3 @@ public class EntryResponseContentDescriptor   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

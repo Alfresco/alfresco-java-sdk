@@ -1,4 +1,3 @@
-
 # TypeIdResolver
 
 ## Properties
@@ -6,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **descForKnownTypeIds** | **String** |  |  [optional]
 **mechanism** | [**MechanismEnum**](#MechanismEnum) |  |  [optional]
-
 
 <a name="MechanismEnum"></a>
 ## Enum: MechanismEnum
@@ -18,6 +16,3 @@ DEDUCTION | &quot;DEDUCTION&quot;
 MINIMAL_CLASS | &quot;MINIMAL_CLASS&quot;
 NAME | &quot;NAME&quot;
 NONE | &quot;NONE&quot;
-
-
-

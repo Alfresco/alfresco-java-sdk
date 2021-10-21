@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class NamedEventBody   {
   @JsonProperty("nodes")
   @Valid
@@ -52,11 +53,10 @@ public class NamedEventBody   {
   /**
    * Get nodes
    * @return nodes
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<Object> getNodes() {
+  
+    public List<Object> getNodes() {
     return nodes;
   }
 
@@ -103,4 +103,3 @@ public class NamedEventBody   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class MergeInfo   {
   @JsonProperty("fromDefaults")
   private Boolean fromDefaults = null;
@@ -45,11 +46,10 @@ public class MergeInfo   {
   /**
    * Get fromDefaults
    * @return fromDefaults
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isFromDefaults() {
+  
+    public Boolean isFromDefaults() {
     return fromDefaults;
   }
 
@@ -65,12 +65,11 @@ public class MergeInfo   {
   /**
    * Get getter
    * @return getter
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public AnnotatedMember getGetter() {
+  
+    @Valid
+    public AnnotatedMember getGetter() {
     return getter;
   }
 
@@ -119,4 +118,3 @@ public class MergeInfo   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

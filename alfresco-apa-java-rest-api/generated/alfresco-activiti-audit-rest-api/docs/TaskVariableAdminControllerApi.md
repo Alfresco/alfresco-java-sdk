@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getVariablesUsingGET2**](TaskVariableAdminControllerApi.md#getVariablesUsingGET2) | **GET** /admin/v1/tasks/{taskId}/variables | getVariables
 
-
 <a name="getVariablesUsingGET2"></a>
 # **getVariablesUsingGET2**
 > ListResponseContentOfCloudVariableInstance getVariablesUsingGET2(taskId, maxItems, skipCount, sort)

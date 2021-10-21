@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class PostgresqlVariablesRepresentation   {
   @JsonProperty("jpaDatabasePlatform")
   private String jpaDatabasePlatform = null;
@@ -47,11 +48,10 @@ public class PostgresqlVariablesRepresentation   {
   /**
    * Get jpaDatabasePlatform
    * @return jpaDatabasePlatform
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getJpaDatabasePlatform() {
+  
+    public String getJpaDatabasePlatform() {
     return jpaDatabasePlatform;
   }
 
@@ -67,11 +67,10 @@ public class PostgresqlVariablesRepresentation   {
   /**
    * Get url
    * @return url
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUrl() {
+  
+    public String getUrl() {
     return url;
   }
 
@@ -87,11 +86,10 @@ public class PostgresqlVariablesRepresentation   {
   /**
    * Get username
    * @return username
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUsername() {
+  
+    public String getUsername() {
     return username;
   }
 
@@ -142,4 +140,3 @@ public class PostgresqlVariablesRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

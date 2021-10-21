@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**getConnectorDefinitionUsingGET**](ConnectorDefinitionControllerImplApi.md#getConnectorDefinitionUsingGET) | **GET** /v1/connector-definitions/{id} | getConnectorDefinition
 [**getConnectorDefinitionsUsingGET**](ConnectorDefinitionControllerImplApi.md#getConnectorDefinitionsUsingGET) | **GET** /v1/connector-definitions | getConnectorDefinitions
 
-
 <a name="getConnectorDefinitionUsingGET"></a>
 # **getConnectorDefinitionUsingGET**
 > EntryResponseContentConnectorDefinition getConnectorDefinitionUsingGET(id)

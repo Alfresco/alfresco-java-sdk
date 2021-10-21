@@ -1,4 +1,3 @@
-
 # PropertyMetadata
 
 ## Properties
@@ -12,7 +11,6 @@ Name | Type | Description | Notes
 **required** | **Boolean** |  |  [optional]
 **valueNulls** | [**ValueNullsEnum**](#ValueNullsEnum) |  |  [optional]
 
-
 <a name="ContentNullsEnum"></a>
 ## Enum: ContentNullsEnum
 Name | Value
@@ -23,7 +21,6 @@ FAIL | &quot;FAIL&quot;
 SET | &quot;SET&quot;
 SKIP | &quot;SKIP&quot;
 
-
 <a name="ValueNullsEnum"></a>
 ## Enum: ValueNullsEnum
 Name | Value
@@ -33,6 +30,3 @@ DEFAULT | &quot;DEFAULT&quot;
 FAIL | &quot;FAIL&quot;
 SET | &quot;SET&quot;
 SKIP | &quot;SKIP&quot;
-
-
-

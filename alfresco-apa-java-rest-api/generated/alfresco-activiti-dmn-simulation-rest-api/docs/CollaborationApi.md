@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**getCollaboratorsUsingGET**](CollaborationApi.md#getCollaboratorsUsingGET) | **GET** /v1/projects/{projectId}/collaborators | List collaborators
 [**removeCollaboratorUsingDELETE**](CollaborationApi.md#removeCollaboratorUsingDELETE) | **DELETE** /v1/projects/{projectId}/collaborators/{username} | Remove a collaborator
 
-
 <a name="addCollaboratorUsingPUT"></a>
 # **addCollaboratorUsingPUT**
 > EntryResponseContentCollaborator addCollaboratorUsingPUT(projectId, username)
@@ -51,7 +50,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 <a name="getCollaboratorsUsingGET"></a>
@@ -147,5 +146,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 

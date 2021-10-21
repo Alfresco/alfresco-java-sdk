@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class JsonDeserializerobject   {
   @JsonProperty("cachable")
   private Boolean cachable = null;
@@ -73,7 +74,6 @@ public class JsonDeserializerobject   {
       return null;
     }
   }
-
   @JsonProperty("emptyAccessPattern")
   private EmptyAccessPatternEnum emptyAccessPattern = null;
 
@@ -116,7 +116,6 @@ public class JsonDeserializerobject   {
       return null;
     }
   }
-
   @JsonProperty("nullAccessPattern")
   private NullAccessPatternEnum nullAccessPattern = null;
 
@@ -134,11 +133,10 @@ public class JsonDeserializerobject   {
   /**
    * Get cachable
    * @return cachable
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isCachable() {
+  
+    public Boolean isCachable() {
     return cachable;
   }
 
@@ -154,12 +152,11 @@ public class JsonDeserializerobject   {
   /**
    * Get delegatee
    * @return delegatee
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JsonDeserializerobject getDelegatee() {
+  
+    @Valid
+    public JsonDeserializerobject getDelegatee() {
     return delegatee;
   }
 
@@ -175,11 +172,10 @@ public class JsonDeserializerobject   {
   /**
    * Get emptyAccessPattern
    * @return emptyAccessPattern
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public EmptyAccessPatternEnum getEmptyAccessPattern() {
+  
+    public EmptyAccessPatternEnum getEmptyAccessPattern() {
     return emptyAccessPattern;
   }
 
@@ -195,11 +191,10 @@ public class JsonDeserializerobject   {
   /**
    * Get emptyValue
    * @return emptyValue
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getEmptyValue() {
+  
+    public Object getEmptyValue() {
     return emptyValue;
   }
 
@@ -223,11 +218,10 @@ public class JsonDeserializerobject   {
   /**
    * Get knownPropertyNames
    * @return knownPropertyNames
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<Object> getKnownPropertyNames() {
+  
+    public List<Object> getKnownPropertyNames() {
     return knownPropertyNames;
   }
 
@@ -243,11 +237,10 @@ public class JsonDeserializerobject   {
   /**
    * Get nullAccessPattern
    * @return nullAccessPattern
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public NullAccessPatternEnum getNullAccessPattern() {
+  
+    public NullAccessPatternEnum getNullAccessPattern() {
     return nullAccessPattern;
   }
 
@@ -263,11 +256,10 @@ public class JsonDeserializerobject   {
   /**
    * Get nullValue
    * @return nullValue
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getNullValue() {
+  
+    public Object getNullValue() {
     return nullValue;
   }
 
@@ -283,12 +275,11 @@ public class JsonDeserializerobject   {
   /**
    * Get objectIdReader
    * @return objectIdReader
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ObjectIdReader getObjectIdReader() {
+  
+    @Valid
+    public ObjectIdReader getObjectIdReader() {
     return objectIdReader;
   }
 
@@ -349,4 +340,3 @@ public class JsonDeserializerobject   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

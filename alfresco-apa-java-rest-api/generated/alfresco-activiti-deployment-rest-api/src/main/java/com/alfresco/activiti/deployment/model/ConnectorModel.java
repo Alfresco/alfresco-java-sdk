@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ConnectorModel   {
   @JsonProperty("config")
   @Valid
@@ -59,12 +60,10 @@ public class ConnectorModel   {
   /**
    * Get config
    * @return config
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<Variable> getConfig() {
+      @Valid
+    public List<Variable> getConfig() {
     return config;
   }
 
@@ -80,11 +79,10 @@ public class ConnectorModel   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -100,11 +98,10 @@ public class ConnectorModel   {
   /**
    * Get template
    * @return template
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTemplate() {
+  
+    public String getTemplate() {
     return template;
   }
 
@@ -155,4 +152,3 @@ public class ConnectorModel   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

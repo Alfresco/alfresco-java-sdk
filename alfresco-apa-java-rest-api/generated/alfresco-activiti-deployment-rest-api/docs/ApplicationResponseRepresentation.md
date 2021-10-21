@@ -1,4 +1,3 @@
-
 # ApplicationResponseRepresentation
 
 ## Properties
@@ -10,7 +9,6 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **version** | **Integer** |  |  [optional]
-
 
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
@@ -31,6 +29,3 @@ RUNNING | &quot;Running&quot;
 UNKNOWN | &quot;Unknown&quot;
 UPDATEAPP | &quot;UpdateApp&quot;
 WAITINGFORDESCRIPTOR | &quot;WaitingForDescriptor&quot;
-
-
-

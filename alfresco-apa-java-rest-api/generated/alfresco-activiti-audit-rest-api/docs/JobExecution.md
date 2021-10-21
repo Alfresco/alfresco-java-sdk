@@ -1,4 +1,3 @@
-
 # JobExecution
 
 ## Properties
@@ -12,7 +11,6 @@ Name | Type | Description | Notes
 **startTime** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 
-
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
 Name | Value
@@ -25,6 +23,3 @@ STARTING | &quot;STARTING&quot;
 STOPPED | &quot;STOPPED&quot;
 STOPPING | &quot;STOPPING&quot;
 UNKNOWN | &quot;UNKNOWN&quot;
-
-
-

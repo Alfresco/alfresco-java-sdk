@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**findByIdUsingGET2**](ProcessInstanceControllerApi.md#findByIdUsingGET2) | **GET** /v1/process-instances/{processInstanceId} | findById
 [**subprocessesUsingGET**](ProcessInstanceControllerApi.md#subprocessesUsingGET) | **GET** /v1/process-instances/{processInstanceId}/subprocesses | subprocesses
 
-
 <a name="findAllUsingGET7"></a>
 # **findAllUsingGET7**
 > ListResponseContentOfCloudProcessInstance findAllUsingGET7(maxItems, skipCount, sort)

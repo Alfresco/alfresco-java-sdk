@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CloudProcessInstance   {
   @JsonProperty("appName")
   private String appName = null;
@@ -119,7 +120,6 @@ public class CloudProcessInstance   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -131,11 +131,10 @@ public class CloudProcessInstance   {
   /**
    * Get appName
    * @return appName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppName() {
+  
+    public String getAppName() {
     return appName;
   }
 
@@ -151,11 +150,10 @@ public class CloudProcessInstance   {
   /**
    * Get appVersion
    * @return appVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppVersion() {
+  
+    public String getAppVersion() {
     return appVersion;
   }
 
@@ -171,11 +169,10 @@ public class CloudProcessInstance   {
   /**
    * Get businessKey
    * @return businessKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getBusinessKey() {
+  
+    public String getBusinessKey() {
     return businessKey;
   }
 
@@ -191,12 +188,11 @@ public class CloudProcessInstance   {
   /**
    * Get completedDate
    * @return completedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCompletedDate() {
+  
+    @Valid
+    public OffsetDateTime getCompletedDate() {
     return completedDate;
   }
 
@@ -212,11 +208,10 @@ public class CloudProcessInstance   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -232,11 +227,10 @@ public class CloudProcessInstance   {
   /**
    * Get initiator
    * @return initiator
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getInitiator() {
+  
+    public String getInitiator() {
     return initiator;
   }
 
@@ -252,11 +246,10 @@ public class CloudProcessInstance   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -272,11 +265,10 @@ public class CloudProcessInstance   {
   /**
    * Get parentId
    * @return parentId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getParentId() {
+  
+    public String getParentId() {
     return parentId;
   }
 
@@ -292,11 +284,10 @@ public class CloudProcessInstance   {
   /**
    * Get processDefinitionId
    * @return processDefinitionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionId() {
+  
+    public String getProcessDefinitionId() {
     return processDefinitionId;
   }
 
@@ -312,11 +303,10 @@ public class CloudProcessInstance   {
   /**
    * Get processDefinitionKey
    * @return processDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionKey() {
+  
+    public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
 
@@ -332,11 +322,10 @@ public class CloudProcessInstance   {
   /**
    * Get processDefinitionName
    * @return processDefinitionName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionName() {
+  
+    public String getProcessDefinitionName() {
     return processDefinitionName;
   }
 
@@ -352,11 +341,10 @@ public class CloudProcessInstance   {
   /**
    * Get processDefinitionVersion
    * @return processDefinitionVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getProcessDefinitionVersion() {
+  
+    public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
 
@@ -372,11 +360,10 @@ public class CloudProcessInstance   {
   /**
    * Get serviceFullName
    * @return serviceFullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceFullName() {
+  
+    public String getServiceFullName() {
     return serviceFullName;
   }
 
@@ -392,11 +379,10 @@ public class CloudProcessInstance   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -412,11 +398,10 @@ public class CloudProcessInstance   {
   /**
    * Get serviceType
    * @return serviceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceType() {
+  
+    public String getServiceType() {
     return serviceType;
   }
 
@@ -432,11 +417,10 @@ public class CloudProcessInstance   {
   /**
    * Get serviceVersion
    * @return serviceVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceVersion() {
+  
+    public String getServiceVersion() {
     return serviceVersion;
   }
 
@@ -452,12 +436,11 @@ public class CloudProcessInstance   {
   /**
    * Get startDate
    * @return startDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getStartDate() {
+  
+    @Valid
+    public OffsetDateTime getStartDate() {
     return startDate;
   }
 
@@ -473,11 +456,10 @@ public class CloudProcessInstance   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -558,4 +540,3 @@ public class CloudProcessInstance   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

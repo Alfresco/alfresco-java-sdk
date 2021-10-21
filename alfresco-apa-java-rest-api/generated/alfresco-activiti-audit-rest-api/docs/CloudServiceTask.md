@@ -1,4 +1,3 @@
-
 # CloudServiceTask
 
 ## Properties
@@ -25,7 +24,6 @@ Name | Type | Description | Notes
 **startedDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 
-
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
 Name | Value
@@ -34,6 +32,3 @@ CANCELLED | &quot;CANCELLED&quot;
 COMPLETED | &quot;COMPLETED&quot;
 ERROR | &quot;ERROR&quot;
 STARTED | &quot;STARTED&quot;
-
-
-

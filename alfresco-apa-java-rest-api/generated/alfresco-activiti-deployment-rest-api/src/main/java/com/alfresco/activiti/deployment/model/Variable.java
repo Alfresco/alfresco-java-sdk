@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Variable   {
   @JsonProperty("name")
   private String name = null;
@@ -50,11 +51,10 @@ public class Variable   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -70,11 +70,10 @@ public class Variable   {
   /**
    * Get required
    * @return required
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isRequired() {
+  
+    public Boolean isRequired() {
     return required;
   }
 
@@ -90,11 +89,10 @@ public class Variable   {
   /**
    * Get secure
    * @return secure
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isSecure() {
+  
+    public Boolean isSecure() {
     return secure;
   }
 
@@ -110,11 +108,10 @@ public class Variable   {
   /**
    * Get value
    * @return value
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getValue() {
+  
+    public String getValue() {
     return value;
   }
 
@@ -167,4 +164,3 @@ public class Variable   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

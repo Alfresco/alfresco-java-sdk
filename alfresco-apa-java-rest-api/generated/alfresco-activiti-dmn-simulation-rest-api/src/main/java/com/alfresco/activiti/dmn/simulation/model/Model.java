@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Model   {
   @JsonProperty("content")
   private byte[] content = null;
@@ -96,7 +97,6 @@ public class Model   {
       return null;
     }
   }
-
   @JsonProperty("scope")
   private ScopeEnum scope = null;
 
@@ -117,11 +117,10 @@ public class Model   {
   /**
    * Get content
    * @return content
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-@Pattern(regexp="^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$") 
-  public byte[] getContent() {
+  
+    public byte[] getContent() {
     return content;
   }
 
@@ -137,11 +136,10 @@ public class Model   {
   /**
    * Get contentType
    * @return contentType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getContentType() {
+  
+    public String getContentType() {
     return contentType;
   }
 
@@ -157,11 +155,10 @@ public class Model   {
   /**
    * Get createdBy
    * @return createdBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getCreatedBy() {
+  
+    public Object getCreatedBy() {
     return createdBy;
   }
 
@@ -177,12 +174,11 @@ public class Model   {
   /**
    * Get creationDate
    * @return creationDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCreationDate() {
+  
+    @Valid
+    public OffsetDateTime getCreationDate() {
     return creationDate;
   }
 
@@ -198,11 +194,10 @@ public class Model   {
   /**
    * Get extensions
    * @return extensions
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getExtensions() {
+  
+    public Object getExtensions() {
     return extensions;
   }
 
@@ -218,11 +213,10 @@ public class Model   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -238,11 +232,10 @@ public class Model   {
   /**
    * Get lastModifiedBy
    * @return lastModifiedBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getLastModifiedBy() {
+  
+    public Object getLastModifiedBy() {
     return lastModifiedBy;
   }
 
@@ -258,12 +251,11 @@ public class Model   {
   /**
    * Get lastModifiedDate
    * @return lastModifiedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getLastModifiedDate() {
+  
+    @Valid
+    public OffsetDateTime getLastModifiedDate() {
     return lastModifiedDate;
   }
 
@@ -279,11 +271,10 @@ public class Model   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -307,12 +298,10 @@ public class Model   {
   /**
    * Get projects
    * @return projects
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<Project> getProjects() {
+      @Valid
+    public List<Project> getProjects() {
     return projects;
   }
 
@@ -328,11 +317,10 @@ public class Model   {
   /**
    * Get scope
    * @return scope
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public ScopeEnum getScope() {
+  
+    public ScopeEnum getScope() {
     return scope;
   }
 
@@ -348,11 +336,10 @@ public class Model   {
   /**
    * Get template
    * @return template
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTemplate() {
+  
+    public String getTemplate() {
     return template;
   }
 
@@ -368,11 +355,10 @@ public class Model   {
   /**
    * Get type
    * @return type
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getType() {
+  
+    public String getType() {
     return type;
   }
 
@@ -388,11 +374,10 @@ public class Model   {
   /**
    * Get version
    * @return version
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getVersion() {
+  
+    public String getVersion() {
     return version;
   }
 
@@ -465,4 +450,3 @@ public class Model   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

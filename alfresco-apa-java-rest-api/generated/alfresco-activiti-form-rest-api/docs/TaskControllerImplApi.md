@@ -16,10 +16,9 @@ Method | HTTP request | Description
 [**saveTaskUsingPOST**](TaskControllerImplApi.md#saveTaskUsingPOST) | **POST** /v1/tasks/{taskId}/save | saveTask
 [**updateTaskUsingPUT1**](TaskControllerImplApi.md#updateTaskUsingPUT1) | **PUT** /v1/tasks/{taskId} | updateTask
 
-
 <a name="assignUsingPOST1"></a>
 # **assignUsingPOST1**
-> EntryResponseContentCloudTask assignUsingPOST1(assignTaskPayload, taskId)
+> EntryResponseContentCloudTask assignUsingPOST1(body, taskId)
 
 assign
 
@@ -31,10 +30,10 @@ assign
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
-AssignTaskPayload assignTaskPayload = new AssignTaskPayload(); // AssignTaskPayload | assignTaskPayload
+AssignTaskPayload body = new AssignTaskPayload(); // AssignTaskPayload | assignTaskPayload
 String taskId = "taskId_example"; // String | taskId
 try {
-    EntryResponseContentCloudTask result = apiInstance.assignUsingPOST1(assignTaskPayload, taskId);
+    EntryResponseContentCloudTask result = apiInstance.assignUsingPOST1(body, taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskControllerImplApi#assignUsingPOST1");
@@ -46,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **assignTaskPayload** | [**AssignTaskPayload**](AssignTaskPayload.md)| assignTaskPayload |
+ **body** | [**AssignTaskPayload**](AssignTaskPayload.md)| assignTaskPayload |
  **taskId** | **String**| taskId |
 
 ### Return type
@@ -102,12 +101,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/hal+json, application/json
 
 <a name="completeTaskUsingPOST1"></a>
 # **completeTaskUsingPOST1**
-> EntryResponseContentCloudTask completeTaskUsingPOST1(taskId, completeTaskPayload)
+> EntryResponseContentCloudTask completeTaskUsingPOST1(taskId, body)
 
 completeTask
 
@@ -120,9 +119,9 @@ completeTask
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
-CompleteTaskPayload completeTaskPayload = new CompleteTaskPayload(); // CompleteTaskPayload | completeTaskPayload
+CompleteTaskPayload body = new CompleteTaskPayload(); // CompleteTaskPayload | completeTaskPayload
 try {
-    EntryResponseContentCloudTask result = apiInstance.completeTaskUsingPOST1(taskId, completeTaskPayload);
+    EntryResponseContentCloudTask result = apiInstance.completeTaskUsingPOST1(taskId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskControllerImplApi#completeTaskUsingPOST1");
@@ -135,7 +134,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taskId** | **String**| taskId |
- **completeTaskPayload** | [**CompleteTaskPayload**](CompleteTaskPayload.md)| completeTaskPayload | [optional]
+ **body** | [**CompleteTaskPayload**](CompleteTaskPayload.md)| completeTaskPayload | [optional]
 
 ### Return type
 
@@ -152,7 +151,7 @@ No authorization required
 
 <a name="createNewTaskUsingPOST"></a>
 # **createNewTaskUsingPOST**
-> EntryResponseContentCloudTask createNewTaskUsingPOST(createTaskPayload)
+> EntryResponseContentCloudTask createNewTaskUsingPOST(body)
 
 createNewTask
 
@@ -164,9 +163,9 @@ createNewTask
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
-CreateTaskPayload createTaskPayload = new CreateTaskPayload(); // CreateTaskPayload | createTaskPayload
+CreateTaskPayload body = new CreateTaskPayload(); // CreateTaskPayload | createTaskPayload
 try {
-    EntryResponseContentCloudTask result = apiInstance.createNewTaskUsingPOST(createTaskPayload);
+    EntryResponseContentCloudTask result = apiInstance.createNewTaskUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskControllerImplApi#createNewTaskUsingPOST");
@@ -178,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createTaskPayload** | [**CreateTaskPayload**](CreateTaskPayload.md)| createTaskPayload |
+ **body** | [**CreateTaskPayload**](CreateTaskPayload.md)| createTaskPayload |
 
 ### Return type
 
@@ -415,12 +414,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/hal+json, application/json
 
 <a name="saveTaskUsingPOST"></a>
 # **saveTaskUsingPOST**
-> saveTaskUsingPOST(saveTaskPayload, taskId)
+> saveTaskUsingPOST(body, taskId)
 
 saveTask
 
@@ -432,10 +431,10 @@ saveTask
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
-SaveTaskPayload saveTaskPayload = new SaveTaskPayload(); // SaveTaskPayload | saveTaskPayload
+SaveTaskPayload body = new SaveTaskPayload(); // SaveTaskPayload | saveTaskPayload
 String taskId = "taskId_example"; // String | taskId
 try {
-    apiInstance.saveTaskUsingPOST(saveTaskPayload, taskId);
+    apiInstance.saveTaskUsingPOST(body, taskId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskControllerImplApi#saveTaskUsingPOST");
     e.printStackTrace();
@@ -446,7 +445,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **saveTaskPayload** | [**SaveTaskPayload**](SaveTaskPayload.md)| saveTaskPayload |
+ **body** | [**SaveTaskPayload**](SaveTaskPayload.md)| saveTaskPayload |
  **taskId** | **String**| taskId |
 
 ### Return type
@@ -460,11 +459,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="updateTaskUsingPUT1"></a>
 # **updateTaskUsingPUT1**
-> EntryResponseContentCloudTask updateTaskUsingPUT1(taskId, updateTaskPayload)
+> EntryResponseContentCloudTask updateTaskUsingPUT1(body, taskId)
 
 updateTask
 
@@ -476,10 +475,10 @@ updateTask
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
+UpdateTaskPayload body = new UpdateTaskPayload(); // UpdateTaskPayload | updateTaskPayload
 String taskId = "taskId_example"; // String | taskId
-UpdateTaskPayload updateTaskPayload = new UpdateTaskPayload(); // UpdateTaskPayload | updateTaskPayload
 try {
-    EntryResponseContentCloudTask result = apiInstance.updateTaskUsingPUT1(taskId, updateTaskPayload);
+    EntryResponseContentCloudTask result = apiInstance.updateTaskUsingPUT1(body, taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskControllerImplApi#updateTaskUsingPUT1");
@@ -491,8 +490,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateTaskPayload**](UpdateTaskPayload.md)| updateTaskPayload |
  **taskId** | **String**| taskId |
- **updateTaskPayload** | [**UpdateTaskPayload**](UpdateTaskPayload.md)| updateTaskPayload |
 
 ### Return type
 

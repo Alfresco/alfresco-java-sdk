@@ -1,4 +1,3 @@
-
 # CleanupQueryProcessInstancesJobRequest
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **historicRetentionDays** | **Integer** |  | 
 **limitSize** | **Integer** |  |  [optional]
 **processDefinitionKeys** | **List&lt;String&gt;** |  |  [optional]
-
-
-

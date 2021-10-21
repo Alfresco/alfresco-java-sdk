@@ -1,4 +1,3 @@
-
 # ResponseEntity
 
 ## Properties
@@ -7,7 +6,6 @@ Name | Type | Description | Notes
 **body** | **Object** |  |  [optional]
 **statusCode** | [**StatusCodeEnum**](#StatusCodeEnum) |  |  [optional]
 **statusCodeValue** | **Integer** |  |  [optional]
-
 
 <a name="StatusCodeEnum"></a>
 ## Enum: StatusCodeEnum
@@ -81,6 +79,3 @@ UPGRADE_REQUIRED | &quot;UPGRADE_REQUIRED&quot;
 URI_TOO_LONG | &quot;URI_TOO_LONG&quot;
 USE_PROXY | &quot;USE_PROXY&quot;
 VARIANT_ALSO_NEGOTIATES | &quot;VARIANT_ALSO_NEGOTIATES&quot;
-
-
-

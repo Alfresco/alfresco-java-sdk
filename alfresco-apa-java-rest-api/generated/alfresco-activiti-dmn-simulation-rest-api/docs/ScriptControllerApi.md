@@ -6,10 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**runScriptUsingPOST**](ScriptControllerApi.md#runScriptUsingPOST) | **POST** /v1/scripts | runScript
 
-
 <a name="runScriptUsingPOST"></a>
 # **runScriptUsingPOST**
-> Object runScriptUsingPOST(inputVariables)
+> Object runScriptUsingPOST(body)
 
 runScript
 
@@ -21,9 +20,9 @@ runScript
 
 
 ScriptControllerApi apiInstance = new ScriptControllerApi();
-Object inputVariables = null; // Object | inputVariables
+Object body = null; // Object | inputVariables
 try {
-    Object result = apiInstance.runScriptUsingPOST(inputVariables);
+    Object result = apiInstance.runScriptUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptControllerApi#runScriptUsingPOST");
@@ -35,7 +34,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inputVariables** | **Object**| inputVariables |
+ **body** | [**Object**](Object.md)| inputVariables |
 
 ### Return type
 

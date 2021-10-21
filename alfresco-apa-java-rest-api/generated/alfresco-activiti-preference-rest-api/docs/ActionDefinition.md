@@ -1,4 +1,3 @@
-
 # ActionDefinition
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **inputs** | [**List&lt;VariableDefinition&gt;**](VariableDefinition.md) |  |  [optional]
 **name** | **String** |  |  [optional]
 **outputs** | [**List&lt;VariableDefinition&gt;**](VariableDefinition.md) |  |  [optional]
-
-
-

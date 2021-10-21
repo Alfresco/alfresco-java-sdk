@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class JavaType   {
   @JsonProperty("abstract")
   private Boolean _abstract = null;
@@ -127,11 +128,10 @@ public class JavaType   {
   /**
    * Get _abstract
    * @return _abstract
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isAbstract() {
+  
+    public Boolean isAbstract() {
     return _abstract;
   }
 
@@ -147,11 +147,10 @@ public class JavaType   {
   /**
    * Get arrayType
    * @return arrayType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isArrayType() {
+  
+    public Boolean isArrayType() {
     return arrayType;
   }
 
@@ -167,12 +166,11 @@ public class JavaType   {
   /**
    * Get bindings
    * @return bindings
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public TypeBindings getBindings() {
+  
+    @Valid
+    public TypeBindings getBindings() {
     return bindings;
   }
 
@@ -188,11 +186,10 @@ public class JavaType   {
   /**
    * Get collectionLikeType
    * @return collectionLikeType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isCollectionLikeType() {
+  
+    public Boolean isCollectionLikeType() {
     return collectionLikeType;
   }
 
@@ -208,11 +205,10 @@ public class JavaType   {
   /**
    * Get concrete
    * @return concrete
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isConcrete() {
+  
+    public Boolean isConcrete() {
     return concrete;
   }
 
@@ -228,11 +224,10 @@ public class JavaType   {
   /**
    * Get containerType
    * @return containerType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isContainerType() {
+  
+    public Boolean isContainerType() {
     return containerType;
   }
 
@@ -248,12 +243,11 @@ public class JavaType   {
   /**
    * Get contentType
    * @return contentType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JavaType getContentType() {
+  
+    @Valid
+    public JavaType getContentType() {
     return contentType;
   }
 
@@ -269,11 +263,10 @@ public class JavaType   {
   /**
    * Get contentTypeHandler
    * @return contentTypeHandler
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getContentTypeHandler() {
+  
+    public Object getContentTypeHandler() {
     return contentTypeHandler;
   }
 
@@ -289,11 +282,10 @@ public class JavaType   {
   /**
    * Get contentValueHandler
    * @return contentValueHandler
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getContentValueHandler() {
+  
+    public Object getContentValueHandler() {
     return contentValueHandler;
   }
 
@@ -309,11 +301,10 @@ public class JavaType   {
   /**
    * Get enumImplType
    * @return enumImplType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isEnumImplType() {
+  
+    public Boolean isEnumImplType() {
     return enumImplType;
   }
 
@@ -329,11 +320,10 @@ public class JavaType   {
   /**
    * Get enumType
    * @return enumType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isEnumType() {
+  
+    public Boolean isEnumType() {
     return enumType;
   }
 
@@ -349,11 +339,10 @@ public class JavaType   {
   /**
    * Get erasedSignature
    * @return erasedSignature
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getErasedSignature() {
+  
+    public String getErasedSignature() {
     return erasedSignature;
   }
 
@@ -369,11 +358,10 @@ public class JavaType   {
   /**
    * Get _final
    * @return _final
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isFinal() {
+  
+    public Boolean isFinal() {
     return _final;
   }
 
@@ -389,11 +377,10 @@ public class JavaType   {
   /**
    * Get genericSignature
    * @return genericSignature
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getGenericSignature() {
+  
+    public String getGenericSignature() {
     return genericSignature;
   }
 
@@ -409,11 +396,10 @@ public class JavaType   {
   /**
    * Get _interface
    * @return _interface
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isInterface() {
+  
+    public Boolean isInterface() {
     return _interface;
   }
 
@@ -437,12 +423,10 @@ public class JavaType   {
   /**
    * Get interfaces
    * @return interfaces
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<JavaType> getInterfaces() {
+      @Valid
+    public List<JavaType> getInterfaces() {
     return interfaces;
   }
 
@@ -458,11 +442,10 @@ public class JavaType   {
   /**
    * Get javaLangObject
    * @return javaLangObject
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isJavaLangObject() {
+  
+    public Boolean isJavaLangObject() {
     return javaLangObject;
   }
 
@@ -478,12 +461,11 @@ public class JavaType   {
   /**
    * Get keyType
    * @return keyType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JavaType getKeyType() {
+  
+    @Valid
+    public JavaType getKeyType() {
     return keyType;
   }
 
@@ -499,11 +481,10 @@ public class JavaType   {
   /**
    * Get mapLikeType
    * @return mapLikeType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isMapLikeType() {
+  
+    public Boolean isMapLikeType() {
     return mapLikeType;
   }
 
@@ -519,11 +500,10 @@ public class JavaType   {
   /**
    * Get primitive
    * @return primitive
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isPrimitive() {
+  
+    public Boolean isPrimitive() {
     return primitive;
   }
 
@@ -539,11 +519,10 @@ public class JavaType   {
   /**
    * Get recordType
    * @return recordType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isRecordType() {
+  
+    public Boolean isRecordType() {
     return recordType;
   }
 
@@ -559,11 +538,10 @@ public class JavaType   {
   /**
    * Get referenceType
    * @return referenceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isReferenceType() {
+  
+    public Boolean isReferenceType() {
     return referenceType;
   }
 
@@ -579,12 +557,11 @@ public class JavaType   {
   /**
    * Get referencedType
    * @return referencedType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JavaType getReferencedType() {
+  
+    @Valid
+    public JavaType getReferencedType() {
     return referencedType;
   }
 
@@ -600,12 +577,11 @@ public class JavaType   {
   /**
    * Get superClass
    * @return superClass
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JavaType getSuperClass() {
+  
+    @Valid
+    public JavaType getSuperClass() {
     return superClass;
   }
 
@@ -621,11 +597,10 @@ public class JavaType   {
   /**
    * Get throwable
    * @return throwable
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isThrowable() {
+  
+    public Boolean isThrowable() {
     return throwable;
   }
 
@@ -641,11 +616,10 @@ public class JavaType   {
   /**
    * Get typeHandler
    * @return typeHandler
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getTypeHandler() {
+  
+    public Object getTypeHandler() {
     return typeHandler;
   }
 
@@ -661,11 +635,10 @@ public class JavaType   {
   /**
    * Get typeName
    * @return typeName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTypeName() {
+  
+    public String getTypeName() {
     return typeName;
   }
 
@@ -681,11 +654,10 @@ public class JavaType   {
   /**
    * Get valueHandler
    * @return valueHandler
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getValueHandler() {
+  
+    public Object getValueHandler() {
     return valueHandler;
   }
 
@@ -786,4 +758,3 @@ public class JavaType   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

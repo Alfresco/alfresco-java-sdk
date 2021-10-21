@@ -1,4 +1,3 @@
-
 # QueryCloudTask
 
 ## Properties
@@ -35,7 +34,6 @@ Name | Type | Description | Notes
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **taskDefinitionKey** | **String** |  |  [optional]
 
-
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
 Name | Value
@@ -46,6 +44,3 @@ COMPLETED | &quot;COMPLETED&quot;
 CREATED | &quot;CREATED&quot;
 DELETED | &quot;DELETED&quot;
 SUSPENDED | &quot;SUSPENDED&quot;
-
-
-

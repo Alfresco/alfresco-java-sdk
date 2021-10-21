@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getTasksUsingGET**](ProcessInstanceServiceTasksAdminControllerApi.md#getTasksUsingGET) | **GET** /admin/v1/process-instances/{processInstanceId}/service-tasks | getTasks
 
-
 <a name="getTasksUsingGET"></a>
 # **getTasksUsingGET**
 > ListResponseContentOfCloudServiceTask getTasksUsingGET(processInstanceId, maxItems, skipCount, sort)

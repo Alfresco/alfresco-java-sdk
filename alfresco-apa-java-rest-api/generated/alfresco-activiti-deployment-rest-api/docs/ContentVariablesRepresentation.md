@@ -1,4 +1,3 @@
-
 # ContentVariablesRepresentation
 
 ## Properties
@@ -8,13 +7,9 @@ Name | Type | Description | Notes
 **storageType** | [**StorageTypeEnum**](#StorageTypeEnum) |  |  [optional]
 **url** | **String** |  |  [optional]
 
-
 <a name="StorageTypeEnum"></a>
 ## Enum: StorageTypeEnum
 Name | Value
 ---- | -----
 FOLDER | &quot;folder&quot;
 SITE | &quot;site&quot;
-
-
-

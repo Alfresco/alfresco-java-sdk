@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**applicationDescriptorUsingPOST**](ApplicationEntityApi.md#applicationDescriptorUsingPOST) | **POST** /deployment-service/applications/{id}/descriptor | applicationDescriptor
 [**applicationDescriptorUsingPUT**](ApplicationEntityApi.md#applicationDescriptorUsingPUT) | **PUT** /deployment-service/applications/{id}/descriptor | applicationDescriptor
 
-
 <a name="applicationDescriptorUsingDELETE"></a>
 # **applicationDescriptorUsingDELETE**
 > applicationDescriptorUsingDELETE(id)
@@ -50,8 +49,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="applicationDescriptorUsingGET"></a>
 # **applicationDescriptorUsingGET**
@@ -125,7 +124,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**| body |
+ **body** | [**String**](String.md)| body |
  **id** | **String**| id |
 
 ### Return type
@@ -170,7 +169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**| body |
+ **body** | [**String**](String.md)| body |
  **id** | **String**| id |
 
 ### Return type
@@ -215,7 +214,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**| body |
+ **body** | [**String**](String.md)| body |
  **id** | **String**| id |
 
 ### Return type

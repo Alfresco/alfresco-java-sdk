@@ -7,10 +7,9 @@ Method | HTTP request | Description
 [**removeVariablesUsingDELETE**](ProcessInstanceVariableAdminControllerImplApi.md#removeVariablesUsingDELETE) | **DELETE** /admin/v1/process-instances/{processInstanceId}/variables | removeVariables
 [**updateVariablesUsingPUT**](ProcessInstanceVariableAdminControllerImplApi.md#updateVariablesUsingPUT) | **PUT** /admin/v1/process-instances/{processInstanceId}/variables | updateVariables
 
-
 <a name="removeVariablesUsingDELETE"></a>
 # **removeVariablesUsingDELETE**
-> removeVariablesUsingDELETE(processInstanceId, removeProcessVariablesPayload)
+> removeVariablesUsingDELETE(body, processInstanceId)
 
 removeVariables
 
@@ -22,10 +21,10 @@ removeVariables
 
 
 ProcessInstanceVariableAdminControllerImplApi apiInstance = new ProcessInstanceVariableAdminControllerImplApi();
+RemoveProcessVariablesPayload body = new RemoveProcessVariablesPayload(); // RemoveProcessVariablesPayload | removeProcessVariablesPayload
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
-RemoveProcessVariablesPayload removeProcessVariablesPayload = new RemoveProcessVariablesPayload(); // RemoveProcessVariablesPayload | removeProcessVariablesPayload
 try {
-    apiInstance.removeVariablesUsingDELETE(processInstanceId, removeProcessVariablesPayload);
+    apiInstance.removeVariablesUsingDELETE(body, processInstanceId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceVariableAdminControllerImplApi#removeVariablesUsingDELETE");
     e.printStackTrace();
@@ -36,8 +35,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**RemoveProcessVariablesPayload**](RemoveProcessVariablesPayload.md)| removeProcessVariablesPayload |
  **processInstanceId** | **String**| processInstanceId |
- **removeProcessVariablesPayload** | [**RemoveProcessVariablesPayload**](RemoveProcessVariablesPayload.md)| removeProcessVariablesPayload |
 
 ### Return type
 
@@ -49,12 +48,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Content-Type**: */*
+ - **Accept**: Not defined
 
 <a name="updateVariablesUsingPUT"></a>
 # **updateVariablesUsingPUT**
-> updateVariablesUsingPUT(processInstanceId, setProcessVariablesPayload)
+> updateVariablesUsingPUT(body, processInstanceId)
 
 updateVariables
 
@@ -66,10 +65,10 @@ updateVariables
 
 
 ProcessInstanceVariableAdminControllerImplApi apiInstance = new ProcessInstanceVariableAdminControllerImplApi();
+SetProcessVariablesPayload body = new SetProcessVariablesPayload(); // SetProcessVariablesPayload | setProcessVariablesPayload
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
-SetProcessVariablesPayload setProcessVariablesPayload = new SetProcessVariablesPayload(); // SetProcessVariablesPayload | setProcessVariablesPayload
 try {
-    apiInstance.updateVariablesUsingPUT(processInstanceId, setProcessVariablesPayload);
+    apiInstance.updateVariablesUsingPUT(body, processInstanceId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceVariableAdminControllerImplApi#updateVariablesUsingPUT");
     e.printStackTrace();
@@ -80,8 +79,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SetProcessVariablesPayload**](SetProcessVariablesPayload.md)| setProcessVariablesPayload |
  **processInstanceId** | **String**| processInstanceId |
- **setProcessVariablesPayload** | [**SetProcessVariablesPayload**](SetProcessVariablesPayload.md)| setProcessVariablesPayload |
 
 ### Return type
 
@@ -94,5 +93,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
