@@ -19,7 +19,6 @@
     <environment.host>your-installed-environment-host</environment.host>
     <environment.application.name>your-deployed-APA-application-name</environment.application.name>
     <spring-boot.version>${project.parent.version}</spring-boot.version>
-    <spring-cloud.version>2020.0.2</spring-cloud.version>
     <project.build.generatedSourceDirectory>generated</project.build.generatedSourceDirectory>
     <swagger-core.version>1.5.20</swagger-core.version>
     <swagger-core-v3-version>2.1.11</swagger-core-v3-version>

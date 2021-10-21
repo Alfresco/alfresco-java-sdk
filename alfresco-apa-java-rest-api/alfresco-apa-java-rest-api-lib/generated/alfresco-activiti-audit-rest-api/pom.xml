@@ -8,7 +8,6 @@
     <version>7.1.0-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
-  <groupId>com.alfresco</groupId>
   <artifactId>alfresco-activiti-audit-rest-api</artifactId>
   <name>alfresco-activiti-audit-rest-api</name>
   <version>7.1.0-SNAPSHOT</version>

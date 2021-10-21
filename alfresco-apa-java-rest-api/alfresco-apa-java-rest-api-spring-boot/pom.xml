@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>alfresco-apa-java-rest-api</artifactId>
+    <groupId>org.alfresco</groupId>
+    <version>5.1.2-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>alfresco-apa-java-rest-api-spring-boot</artifactId>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-httpclient</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-audit-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-deployment-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-dmn-simulation-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-form-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-modeling-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-preference-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-query-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-runtime-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alfresco</groupId>
+      <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
+      <version>7.1.0-SNAPSHOT</version>
+    </dependency>
+
+  </dependencies>
+
+</project>
