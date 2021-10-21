@@ -30,7 +30,6 @@ Add this dependency to your project's POM:
     <groupId>{{{groupId}}}</groupId>
     <artifactId>{{{artifactId}}}</artifactId>
     <version>{{{artifactVersion}}}</version>
-    <scope>compile</scope>
 </dependency>
 ```
 
@@ -87,7 +86,7 @@ public interface PetClient extends PetApi {
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-{{#apiInfo}}{{#apis}}{{#-first}}{{#operations}}{{#operation}}{{#-first}}
+{{#apiInfo}}{{#apis}}{{#@first}}{{#operations}}{{#operation}}{{#@first}}
   import {{{invokerPackage}}}.*;
   import {{{invokerPackage}}}.auth.*;
   import {{{modelPackage}}}.*;
@@ -129,7 +128,7 @@ Please follow the [installation](#installation) instruction and execute the foll
   }
   }
   }
-{{/-first}}{{/operation}}{{/operations}}{{/-first}}{{/apis}}{{/apiInfo}}
+{{/@first}}{{/operation}}{{/operations}}{{/@first}}{{/apis}}{{/apiInfo}}
 ```
 
 ## Documentation for API Endpoints
