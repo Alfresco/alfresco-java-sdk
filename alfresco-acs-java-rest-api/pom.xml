@@ -15,7 +15,6 @@
   <name>Alfresco Java Rest API :: Parent</name>
 
   <modules>
-    <module>alfresco-acs-java-rest-api-common</module>
     <module>alfresco-acs-java-rest-api-lib</module>
     <module>alfresco-acs-java-rest-api-spring-boot</module>
     <module>alfresco-acs-java-rest-api-spring-boot-starter</module>

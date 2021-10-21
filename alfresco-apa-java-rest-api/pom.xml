@@ -23,4 +23,14 @@
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.alfresco</groupId>
+        <artifactId>alfresco-java-rest-api-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
 </project>
