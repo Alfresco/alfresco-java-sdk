@@ -1,15 +1,10 @@
 package {{package}};
 
-{{^isOpenFeign}}
-import org.springframework.cloud.netflix.feign.FeignClient;
-{{/isOpenFeign}}
-{{#isOpenFeign}}
 import org.springframework.cloud.openfeign.FeignClient;
-{{/isOpenFeign}}
 import {{configPackage}}.ClientConfiguration;
 
 {{=<% %>=}}
-@FeignClient(<%#isOpenFeign%>contextId="<%classname%>Client", <%/isOpenFeign%>name="${<%title%>.name:<%title%>}", url="${<%title%>.url:<%basePath%>}", configuration = ClientConfiguration.class)
+@FeignClient(value = "${<%title%>.name:<%title%>}", url = "${<%title%>.url:<%hostWithoutBasePath%>}", configuration = ClientConfiguration.class, decode404 = true)
 <%={{ }}=%>
 public interface {{classname}}Client extends {{classname}} {
 }
