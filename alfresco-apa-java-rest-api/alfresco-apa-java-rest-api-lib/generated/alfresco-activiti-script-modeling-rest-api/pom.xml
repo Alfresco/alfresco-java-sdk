@@ -8,7 +8,6 @@
     <version>5.1.2-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
-  <groupId>com.alfresco</groupId>
   <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
   <name>alfresco-activiti-script-modeling-rest-api</name>
   <version>5.1.2-SNAPSHOT</version>

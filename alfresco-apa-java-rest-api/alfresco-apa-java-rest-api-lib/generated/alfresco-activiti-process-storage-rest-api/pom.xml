@@ -8,7 +8,6 @@
     <version>5.1.2-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
-  <groupId>com.alfresco</groupId>
   <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
   <name>alfresco-activiti-process-storage-rest-api</name>
   <version>5.1.2-SNAPSHOT</version>
