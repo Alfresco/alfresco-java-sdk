@@ -15,7 +15,6 @@ Method | HTTP request | Description
 [**suspendUsingPOST**](ProcessInstanceAdminControllerImplApi.md#suspendUsingPOST) | **POST** /admin/v1/process-instances/{processInstanceId}/suspend | suspend
 [**updateProcessUsingPUT**](ProcessInstanceAdminControllerImplApi.md#updateProcessUsingPUT) | **PUT** /admin/v1/process-instances/{processInstanceId} | updateProcess
 
-
 <a name="deleteProcessInstanceUsingDELETE"></a>
 # **deleteProcessInstanceUsingDELETE**
 > EntryResponseContentCloudProcessInstance deleteProcessInstanceUsingDELETE(processInstanceId)
@@ -151,7 +150,7 @@ No authorization required
 
 <a name="receiveUsingPUT"></a>
 # **receiveUsingPUT**
-> receiveUsingPUT(receiveMessagePayload)
+> receiveUsingPUT(body)
 
 receive
 
@@ -163,9 +162,9 @@ receive
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
-ReceiveMessagePayload receiveMessagePayload = new ReceiveMessagePayload(); // ReceiveMessagePayload | receiveMessagePayload
+ReceiveMessagePayload body = new ReceiveMessagePayload(); // ReceiveMessagePayload | receiveMessagePayload
 try {
-    apiInstance.receiveUsingPUT(receiveMessagePayload);
+    apiInstance.receiveUsingPUT(body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceAdminControllerImplApi#receiveUsingPUT");
     e.printStackTrace();
@@ -176,7 +175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receiveMessagePayload** | [**ReceiveMessagePayload**](ReceiveMessagePayload.md)| receiveMessagePayload |
+ **body** | [**ReceiveMessagePayload**](ReceiveMessagePayload.md)| receiveMessagePayload |
 
 ### Return type
 
@@ -189,7 +188,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="resumeUsingPOST"></a>
 # **resumeUsingPOST**
@@ -231,12 +230,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/hal+json, application/json
 
 <a name="startProcessUsingPOST"></a>
 # **startProcessUsingPOST**
-> EntryResponseContentCloudProcessInstance startProcessUsingPOST(startProcessPayload)
+> EntryResponseContentCloudProcessInstance startProcessUsingPOST(body)
 
 startProcess
 
@@ -248,9 +247,9 @@ startProcess
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
-StartProcessPayload startProcessPayload = new StartProcessPayload(); // StartProcessPayload | startProcessPayload
+StartProcessPayload body = new StartProcessPayload(); // StartProcessPayload | startProcessPayload
 try {
-    EntryResponseContentCloudProcessInstance result = apiInstance.startProcessUsingPOST(startProcessPayload);
+    EntryResponseContentCloudProcessInstance result = apiInstance.startProcessUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceAdminControllerImplApi#startProcessUsingPOST");
@@ -262,7 +261,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startProcessPayload** | [**StartProcessPayload**](StartProcessPayload.md)| startProcessPayload |
+ **body** | [**StartProcessPayload**](StartProcessPayload.md)| startProcessPayload |
 
 ### Return type
 
@@ -279,7 +278,7 @@ No authorization required
 
 <a name="startUsingPOST"></a>
 # **startUsingPOST**
-> EntryResponseContentCloudProcessInstance startUsingPOST(startMessagePayload)
+> EntryResponseContentCloudProcessInstance startUsingPOST(body)
 
 start
 
@@ -291,9 +290,9 @@ start
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
-StartMessagePayload startMessagePayload = new StartMessagePayload(); // StartMessagePayload | startMessagePayload
+StartMessagePayload body = new StartMessagePayload(); // StartMessagePayload | startMessagePayload
 try {
-    EntryResponseContentCloudProcessInstance result = apiInstance.startUsingPOST(startMessagePayload);
+    EntryResponseContentCloudProcessInstance result = apiInstance.startUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceAdminControllerImplApi#startUsingPOST");
@@ -305,7 +304,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startMessagePayload** | [**StartMessagePayload**](StartMessagePayload.md)| startMessagePayload |
+ **body** | [**StartMessagePayload**](StartMessagePayload.md)| startMessagePayload |
 
 ### Return type
 
@@ -409,12 +408,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/hal+json, application/json
 
 <a name="updateProcessUsingPUT"></a>
 # **updateProcessUsingPUT**
-> EntryResponseContentCloudProcessInstance updateProcessUsingPUT(payload, processInstanceId)
+> EntryResponseContentCloudProcessInstance updateProcessUsingPUT(body, processInstanceId)
 
 updateProcess
 
@@ -426,10 +425,10 @@ updateProcess
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
-UpdateProcessPayload payload = new UpdateProcessPayload(); // UpdateProcessPayload | payload
+UpdateProcessPayload body = new UpdateProcessPayload(); // UpdateProcessPayload | payload
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
 try {
-    EntryResponseContentCloudProcessInstance result = apiInstance.updateProcessUsingPUT(payload, processInstanceId);
+    EntryResponseContentCloudProcessInstance result = apiInstance.updateProcessUsingPUT(body, processInstanceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceAdminControllerImplApi#updateProcessUsingPUT");
@@ -441,7 +440,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**UpdateProcessPayload**](UpdateProcessPayload.md)| payload |
+ **body** | [**UpdateProcessPayload**](UpdateProcessPayload.md)| payload |
  **processInstanceId** | **String**| processInstanceId |
 
 ### Return type

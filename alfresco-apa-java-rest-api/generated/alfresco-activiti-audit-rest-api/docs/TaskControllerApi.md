@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**getTaskCandidateGroupsUsingGET1**](TaskControllerApi.md#getTaskCandidateGroupsUsingGET1) | **GET** /v1/tasks/{taskId}/candidate-groups | getTaskCandidateGroups
 [**getTaskCandidateUsersUsingGET1**](TaskControllerApi.md#getTaskCandidateUsersUsingGET1) | **GET** /v1/tasks/{taskId}/candidate-users | getTaskCandidateUsers
 
-
 <a name="findAllUsingGET10"></a>
 # **findAllUsingGET10**
 > ListResponseContentOfQueryCloudTask findAllUsingGET10(maxItems, rootTasksOnly, skipCount, sort, standalone, variablesName, variablesType, variablesValue)

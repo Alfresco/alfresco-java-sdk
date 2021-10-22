@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ApplicationRepresentation   {
   @JsonProperty("infrastructure")
   private InfrastructureRepresentation infrastructure = null;
@@ -68,12 +69,11 @@ public class ApplicationRepresentation   {
   /**
    * Get infrastructure
    * @return infrastructure
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfrastructureRepresentation getInfrastructure() {
+  
+    @Valid
+    public InfrastructureRepresentation getInfrastructure() {
     return infrastructure;
   }
 
@@ -89,11 +89,10 @@ public class ApplicationRepresentation   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -109,11 +108,10 @@ public class ApplicationRepresentation   {
   /**
    * Get projectId
    * @return projectId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProjectId() {
+  
+    public String getProjectId() {
     return projectId;
   }
 
@@ -129,11 +127,10 @@ public class ApplicationRepresentation   {
   /**
    * Get projectName
    * @return projectName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProjectName() {
+  
+    public String getProjectName() {
     return projectName;
   }
 
@@ -149,11 +146,10 @@ public class ApplicationRepresentation   {
   /**
    * Get releaseId
    * @return releaseId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getReleaseId() {
+  
+    public String getReleaseId() {
     return releaseId;
   }
 
@@ -169,11 +165,10 @@ public class ApplicationRepresentation   {
   /**
    * Get releaseVersion
    * @return releaseVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getReleaseVersion() {
+  
+    public String getReleaseVersion() {
     return releaseVersion;
   }
 
@@ -197,12 +192,10 @@ public class ApplicationRepresentation   {
   /**
    * Get security
    * @return security
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<SecurityRepresentation> getSecurity() {
+      @Valid
+    public List<SecurityRepresentation> getSecurity() {
     return security;
   }
 
@@ -218,12 +211,11 @@ public class ApplicationRepresentation   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public VariablesRepresentation getVariables() {
+  
+    @Valid
+    public VariablesRepresentation getVariables() {
     return variables;
   }
 
@@ -284,4 +276,3 @@ public class ApplicationRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

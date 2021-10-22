@@ -1,4 +1,3 @@
-
 # ApplicationPutRequestRepresentation
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **releaseId** | **String** |  |  [optional]
 **security** | [**List&lt;SecurityRepresentation&gt;**](SecurityRepresentation.md) |  |  [optional]
 **variables** | [**VariablesPutRepresentation**](VariablesPutRepresentation.md) |  |  [optional]
-
-
-

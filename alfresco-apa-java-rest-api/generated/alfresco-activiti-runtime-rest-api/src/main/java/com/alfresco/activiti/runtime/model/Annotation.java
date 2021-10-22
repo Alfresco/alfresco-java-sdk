@@ -25,6 +25,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Annotation   {
 
   @Override
@@ -63,4 +64,3 @@ public class Annotation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**submitFormUsingPOST**](FormsApi.md#submitFormUsingPOST) | **POST** /v1/forms/{formId}/submit/versions/{version} | Submit forms specific version
 [**submitFormUsingPOST1**](FormsApi.md#submitFormUsingPOST1) | **POST** /v1/forms/{formId}/submit | Submit forms latest version
 
-
 <a name="getFormDefinitionUsingGET"></a>
 # **getFormDefinitionUsingGET**
 > ResponseEntity getFormDefinitionUsingGET(formId, version)
@@ -141,7 +140,7 @@ No authorization required
 
 <a name="saveFormUsingPOST"></a>
 # **saveFormUsingPOST**
-> saveFormUsingPOST(formId, saveFormRepresentation)
+> saveFormUsingPOST(body, formId)
 
 Save runtime forms
 
@@ -153,10 +152,10 @@ Save runtime forms
 
 
 FormsApi apiInstance = new FormsApi();
+SaveFormRepresentation body = new SaveFormRepresentation(); // SaveFormRepresentation | saveFormRepresentation
 String formId = "formId_example"; // String | The id of the form instance to be saved
-SaveFormRepresentation saveFormRepresentation = new SaveFormRepresentation(); // SaveFormRepresentation | saveFormRepresentation
 try {
-    apiInstance.saveFormUsingPOST(formId, saveFormRepresentation);
+    apiInstance.saveFormUsingPOST(body, formId);
 } catch (ApiException e) {
     System.err.println("Exception when calling FormsApi#saveFormUsingPOST");
     e.printStackTrace();
@@ -167,8 +166,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SaveFormRepresentation**](SaveFormRepresentation.md)| saveFormRepresentation |
  **formId** | **String**| The id of the form instance to be saved |
- **saveFormRepresentation** | [**SaveFormRepresentation**](SaveFormRepresentation.md)| saveFormRepresentation |
 
 ### Return type
 
@@ -181,11 +180,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="submitFormUsingPOST"></a>
 # **submitFormUsingPOST**
-> ResponseEntity submitFormUsingPOST(formId, submitFormRepresentation, version)
+> ResponseEntity submitFormUsingPOST(body, formId, version)
 
 Submit forms specific version
 
@@ -197,11 +196,11 @@ Submit forms specific version
 
 
 FormsApi apiInstance = new FormsApi();
+SubmitFormRepresentation body = new SubmitFormRepresentation(); // SubmitFormRepresentation | submitFormRepresentation
 String formId = "formId_example"; // String | The id of the form to be submitted
-SubmitFormRepresentation submitFormRepresentation = new SubmitFormRepresentation(); // SubmitFormRepresentation | submitFormRepresentation
 Integer version = 56; // Integer | version
 try {
-    ResponseEntity result = apiInstance.submitFormUsingPOST(formId, submitFormRepresentation, version);
+    ResponseEntity result = apiInstance.submitFormUsingPOST(body, formId, version);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FormsApi#submitFormUsingPOST");
@@ -213,8 +212,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SubmitFormRepresentation**](SubmitFormRepresentation.md)| submitFormRepresentation |
  **formId** | **String**| The id of the form to be submitted |
- **submitFormRepresentation** | [**SubmitFormRepresentation**](SubmitFormRepresentation.md)| submitFormRepresentation |
  **version** | **Integer**| version |
 
 ### Return type
@@ -232,7 +231,7 @@ No authorization required
 
 <a name="submitFormUsingPOST1"></a>
 # **submitFormUsingPOST1**
-> ResponseEntity submitFormUsingPOST1(formId, submitFormRepresentation)
+> ResponseEntity submitFormUsingPOST1(body, formId)
 
 Submit forms latest version
 
@@ -244,10 +243,10 @@ Submit forms latest version
 
 
 FormsApi apiInstance = new FormsApi();
+SubmitFormRepresentation body = new SubmitFormRepresentation(); // SubmitFormRepresentation | submitFormRepresentation
 String formId = "formId_example"; // String | The id of the form to be submitted
-SubmitFormRepresentation submitFormRepresentation = new SubmitFormRepresentation(); // SubmitFormRepresentation | submitFormRepresentation
 try {
-    ResponseEntity result = apiInstance.submitFormUsingPOST1(formId, submitFormRepresentation);
+    ResponseEntity result = apiInstance.submitFormUsingPOST1(body, formId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FormsApi#submitFormUsingPOST1");
@@ -259,8 +258,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SubmitFormRepresentation**](SubmitFormRepresentation.md)| submitFormRepresentation |
  **formId** | **String**| The id of the form to be submitted |
- **submitFormRepresentation** | [**SubmitFormRepresentation**](SubmitFormRepresentation.md)| submitFormRepresentation |
 
 ### Return type
 

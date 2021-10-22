@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class PaginationMetadata   {
   @JsonProperty("count")
   private Long count = null;
@@ -53,11 +54,10 @@ public class PaginationMetadata   {
   /**
    * Get count
    * @return count
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getCount() {
+  
+    public Long getCount() {
     return count;
   }
 
@@ -73,11 +73,10 @@ public class PaginationMetadata   {
   /**
    * Get hasMoreItems
    * @return hasMoreItems
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isHasMoreItems() {
+  
+    public Boolean isHasMoreItems() {
     return hasMoreItems;
   }
 
@@ -93,11 +92,10 @@ public class PaginationMetadata   {
   /**
    * Get maxItems
    * @return maxItems
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getMaxItems() {
+  
+    public Long getMaxItems() {
     return maxItems;
   }
 
@@ -113,11 +111,10 @@ public class PaginationMetadata   {
   /**
    * Get skipCount
    * @return skipCount
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getSkipCount() {
+  
+    public Long getSkipCount() {
     return skipCount;
   }
 
@@ -133,11 +130,10 @@ public class PaginationMetadata   {
   /**
    * Get totalItems
    * @return totalItems
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getTotalItems() {
+  
+    public Long getTotalItems() {
     return totalItems;
   }
 
@@ -192,4 +188,3 @@ public class PaginationMetadata   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

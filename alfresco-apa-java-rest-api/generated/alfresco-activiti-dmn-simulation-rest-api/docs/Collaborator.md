@@ -1,4 +1,3 @@
-
 # Collaborator
 
 ## Properties
@@ -11,6 +10,3 @@ Name | Type | Description | Notes
 **lastModifiedDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **projectId** | **String** |  |  [optional]
 **username** | **String** |  |  [optional]
-
-
-

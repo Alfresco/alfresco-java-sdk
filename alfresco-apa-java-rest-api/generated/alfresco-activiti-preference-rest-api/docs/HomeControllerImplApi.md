@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getHomeInfoUsingGET**](HomeControllerImplApi.md#getHomeInfoUsingGET) | **GET** /v1 | getHomeInfo
 
-
 <a name="getHomeInfoUsingGET"></a>
 # **getHomeInfoUsingGET**
 > EntryResponseContentHomeResource getHomeInfoUsingGET()

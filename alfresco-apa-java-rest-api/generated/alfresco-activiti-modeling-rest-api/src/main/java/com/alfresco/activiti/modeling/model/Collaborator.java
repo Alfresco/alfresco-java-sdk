@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Collaborator   {
   @JsonProperty("createdBy")
   private String createdBy = null;
@@ -60,11 +61,10 @@ public class Collaborator   {
   /**
    * Get createdBy
    * @return createdBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getCreatedBy() {
+  
+    public String getCreatedBy() {
     return createdBy;
   }
 
@@ -80,12 +80,11 @@ public class Collaborator   {
   /**
    * Get creationDate
    * @return creationDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCreationDate() {
+  
+    @Valid
+    public OffsetDateTime getCreationDate() {
     return creationDate;
   }
 
@@ -101,11 +100,10 @@ public class Collaborator   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -121,11 +119,10 @@ public class Collaborator   {
   /**
    * Get lastModifiedBy
    * @return lastModifiedBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getLastModifiedBy() {
+  
+    public String getLastModifiedBy() {
     return lastModifiedBy;
   }
 
@@ -141,12 +138,11 @@ public class Collaborator   {
   /**
    * Get lastModifiedDate
    * @return lastModifiedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getLastModifiedDate() {
+  
+    @Valid
+    public OffsetDateTime getLastModifiedDate() {
     return lastModifiedDate;
   }
 
@@ -162,11 +158,10 @@ public class Collaborator   {
   /**
    * Get projectId
    * @return projectId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProjectId() {
+  
+    public String getProjectId() {
     return projectId;
   }
 
@@ -182,11 +177,10 @@ public class Collaborator   {
   /**
    * Get username
    * @return username
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUsername() {
+  
+    public String getUsername() {
     return username;
   }
 
@@ -245,4 +239,3 @@ public class Collaborator   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

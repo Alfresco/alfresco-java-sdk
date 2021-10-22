@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class VariablesPutRepresentation   {
   @JsonProperty("bridges")
   @Valid
@@ -65,12 +66,10 @@ public class VariablesPutRepresentation   {
   /**
    * Get bridges
    * @return bridges
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, Map<String, String>> getBridges() {
+      @Valid
+    public Map<String, Map<String, String>> getBridges() {
     return bridges;
   }
 
@@ -94,12 +93,10 @@ public class VariablesPutRepresentation   {
   /**
    * Get connectors
    * @return connectors
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, Map<String, String>> getConnectors() {
+      @Valid
+    public Map<String, Map<String, String>> getConnectors() {
     return connectors;
   }
 
@@ -123,11 +120,10 @@ public class VariablesPutRepresentation   {
   /**
    * Get formRuntimeService
    * @return formRuntimeService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Map<String, String> getFormRuntimeService() {
+  
+    public Map<String, String> getFormRuntimeService() {
     return formRuntimeService;
   }
 
@@ -151,11 +147,10 @@ public class VariablesPutRepresentation   {
   /**
    * Get processRuntimeService
    * @return processRuntimeService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Map<String, String> getProcessRuntimeService() {
+  
+    public Map<String, String> getProcessRuntimeService() {
     return processRuntimeService;
   }
 
@@ -208,4 +203,3 @@ public class VariablesPutRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

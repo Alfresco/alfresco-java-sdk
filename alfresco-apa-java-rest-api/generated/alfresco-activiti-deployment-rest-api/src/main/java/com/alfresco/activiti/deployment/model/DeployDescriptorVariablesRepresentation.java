@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class DeployDescriptorVariablesRepresentation   {
   @JsonProperty("connectors")
   @Valid
@@ -53,12 +54,10 @@ public class DeployDescriptorVariablesRepresentation   {
   /**
    * Get connectors
    * @return connectors
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, Map<String, String>> getConnectors() {
+      @Valid
+    public Map<String, Map<String, String>> getConnectors() {
     return connectors;
   }
 
@@ -105,4 +104,3 @@ public class DeployDescriptorVariablesRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

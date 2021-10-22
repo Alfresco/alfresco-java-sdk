@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**findAllUsingGET3**](AuditEventsControllerImplApi.md#findAllUsingGET3) | **GET** /v1/events | findAll
 [**findByIdUsingGET**](AuditEventsControllerImplApi.md#findByIdUsingGET) | **GET** /v1/events/{eventId} | findById
 
-
 <a name="findAllUsingGET3"></a>
 # **findAllUsingGET3**
 > ListResponseContentOfCloudRuntimeEventOfobjectAndstring findAllUsingGET3(maxItems, search, skipCount, sort)

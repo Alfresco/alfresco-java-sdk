@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntryResponseContentPreference   {
   @JsonProperty("entry")
   private Preference entry = null;
@@ -42,12 +43,11 @@ public class EntryResponseContentPreference   {
   /**
    * Get entry
    * @return entry
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Preference getEntry() {
+  
+    @Valid
+    public Preference getEntry() {
     return entry;
   }
 
@@ -94,4 +94,3 @@ public class EntryResponseContentPreference   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

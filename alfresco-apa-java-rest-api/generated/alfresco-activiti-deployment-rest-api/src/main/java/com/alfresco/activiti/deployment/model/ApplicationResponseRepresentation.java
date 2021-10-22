@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ApplicationResponseRepresentation   {
   @JsonProperty("createdAt")
   private String createdAt = null;
@@ -100,7 +101,6 @@ public class ApplicationResponseRepresentation   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -115,11 +115,10 @@ public class ApplicationResponseRepresentation   {
   /**
    * Get createdAt
    * @return createdAt
-  **/
+   **/
   @ApiModelProperty(example = "yyyy-MM-dd[['T']HH:mm:ss[.SSS'Z']]", value = "")
-
-
-  public String getCreatedAt() {
+  
+    public String getCreatedAt() {
     return createdAt;
   }
 
@@ -135,12 +134,11 @@ public class ApplicationResponseRepresentation   {
   /**
    * Get descriptor
    * @return descriptor
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ApplicationRepresentation getDescriptor() {
+  
+    @Valid
+    public ApplicationRepresentation getDescriptor() {
     return descriptor;
   }
 
@@ -156,11 +154,10 @@ public class ApplicationResponseRepresentation   {
   /**
    * Get lastModifiedAt
    * @return lastModifiedAt
-  **/
+   **/
   @ApiModelProperty(example = "yyyy-MM-dd[['T']HH:mm:ss[.SSS'Z']]", value = "")
-
-
-  public String getLastModifiedAt() {
+  
+    public String getLastModifiedAt() {
     return lastModifiedAt;
   }
 
@@ -176,11 +173,10 @@ public class ApplicationResponseRepresentation   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -196,11 +192,10 @@ public class ApplicationResponseRepresentation   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -216,11 +211,10 @@ public class ApplicationResponseRepresentation   {
   /**
    * Get version
    * @return version
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getVersion() {
+  
+    public Integer getVersion() {
     return version;
   }
 
@@ -277,4 +271,3 @@ public class ApplicationResponseRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

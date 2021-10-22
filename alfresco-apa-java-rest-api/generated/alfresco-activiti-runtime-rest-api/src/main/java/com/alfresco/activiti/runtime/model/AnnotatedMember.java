@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class AnnotatedMember   {
   @JsonProperty("allAnnotations")
   private AnnotationMap allAnnotations = null;
@@ -67,12 +68,11 @@ public class AnnotatedMember   {
   /**
    * Get allAnnotations
    * @return allAnnotations
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public AnnotationMap getAllAnnotations() {
+  
+    @Valid
+    public AnnotationMap getAllAnnotations() {
     return allAnnotations;
   }
 
@@ -88,12 +88,11 @@ public class AnnotatedMember   {
   /**
    * Get annotated
    * @return annotated
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public AnnotatedElement getAnnotated() {
+  
+    @Valid
+    public AnnotatedElement getAnnotated() {
     return annotated;
   }
 
@@ -109,11 +108,10 @@ public class AnnotatedMember   {
   /**
    * Get fullName
    * @return fullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFullName() {
+  
+    public String getFullName() {
     return fullName;
   }
 
@@ -129,12 +127,11 @@ public class AnnotatedMember   {
   /**
    * Get member
    * @return member
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Member getMember() {
+  
+    @Valid
+    public Member getMember() {
     return member;
   }
 
@@ -150,11 +147,10 @@ public class AnnotatedMember   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -170,11 +166,10 @@ public class AnnotatedMember   {
   /**
    * Get _public
    * @return _public
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isPublic() {
+  
+    public Boolean isPublic() {
     return _public;
   }
 
@@ -190,12 +185,11 @@ public class AnnotatedMember   {
   /**
    * Get type
    * @return type
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JavaType getType() {
+  
+    @Valid
+    public JavaType getType() {
     return type;
   }
 
@@ -211,12 +205,11 @@ public class AnnotatedMember   {
   /**
    * Get typeContext
    * @return typeContext
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public TypeResolutionContext getTypeContext() {
+  
+    @Valid
+    public TypeResolutionContext getTypeContext() {
     return typeContext;
   }
 
@@ -277,4 +270,3 @@ public class AnnotatedMember   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

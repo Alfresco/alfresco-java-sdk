@@ -1,4 +1,3 @@
-
 # Model
 
 ## Properties
@@ -19,13 +18,9 @@ Name | Type | Description | Notes
 **type** | **String** |  |  [optional]
 **version** | **String** |  |  [optional]
 
-
 <a name="ScopeEnum"></a>
 ## Enum: ScopeEnum
 Name | Value
 ---- | -----
 GLOBAL | &quot;GLOBAL&quot;
 PROJECT | &quot;PROJECT&quot;
-
-
-

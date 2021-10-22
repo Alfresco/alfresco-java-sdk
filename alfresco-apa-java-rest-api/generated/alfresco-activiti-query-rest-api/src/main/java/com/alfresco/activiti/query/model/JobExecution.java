@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class JobExecution   {
   @JsonProperty("endTime")
   private OffsetDateTime endTime = null;
@@ -92,7 +93,6 @@ public class JobExecution   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -104,12 +104,11 @@ public class JobExecution   {
   /**
    * Get endTime
    * @return endTime
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getEndTime() {
+  
+    @Valid
+    public OffsetDateTime getEndTime() {
     return endTime;
   }
 
@@ -125,11 +124,10 @@ public class JobExecution   {
   /**
    * Get exitDescription
    * @return exitDescription
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getExitDescription() {
+  
+    public String getExitDescription() {
     return exitDescription;
   }
 
@@ -145,11 +143,10 @@ public class JobExecution   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getId() {
+  
+    public Long getId() {
     return id;
   }
 
@@ -165,11 +162,10 @@ public class JobExecution   {
   /**
    * Get jobId
    * @return jobId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getJobId() {
+  
+    public Long getJobId() {
     return jobId;
   }
 
@@ -185,11 +181,10 @@ public class JobExecution   {
   /**
    * Get jobName
    * @return jobName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getJobName() {
+  
+    public String getJobName() {
     return jobName;
   }
 
@@ -205,12 +200,11 @@ public class JobExecution   {
   /**
    * Get startTime
    * @return startTime
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getStartTime() {
+  
+    @Valid
+    public OffsetDateTime getStartTime() {
     return startTime;
   }
 
@@ -226,11 +220,10 @@ public class JobExecution   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -289,4 +282,3 @@ public class JobExecution   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

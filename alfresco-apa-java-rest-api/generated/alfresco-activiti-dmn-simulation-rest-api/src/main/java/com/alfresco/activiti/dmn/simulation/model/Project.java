@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Project   {
   @JsonProperty("createdBy")
   private Object createdBy = null;
@@ -63,11 +64,10 @@ public class Project   {
   /**
    * Get createdBy
    * @return createdBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getCreatedBy() {
+  
+    public Object getCreatedBy() {
     return createdBy;
   }
 
@@ -83,12 +83,11 @@ public class Project   {
   /**
    * Get creationDate
    * @return creationDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCreationDate() {
+  
+    @Valid
+    public OffsetDateTime getCreationDate() {
     return creationDate;
   }
 
@@ -104,11 +103,10 @@ public class Project   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -124,11 +122,10 @@ public class Project   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -144,11 +141,10 @@ public class Project   {
   /**
    * Get lastModifiedBy
    * @return lastModifiedBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getLastModifiedBy() {
+  
+    public Object getLastModifiedBy() {
     return lastModifiedBy;
   }
 
@@ -164,12 +160,11 @@ public class Project   {
   /**
    * Get lastModifiedDate
    * @return lastModifiedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getLastModifiedDate() {
+  
+    @Valid
+    public OffsetDateTime getLastModifiedDate() {
     return lastModifiedDate;
   }
 
@@ -185,11 +180,10 @@ public class Project   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -205,11 +199,10 @@ public class Project   {
   /**
    * Get version
    * @return version
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getVersion() {
+  
+    public String getVersion() {
     return version;
   }
 
@@ -270,4 +263,3 @@ public class Project   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

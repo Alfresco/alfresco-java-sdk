@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class StackTraceElement   {
   @JsonProperty("classLoaderName")
   private String classLoaderName = null;
@@ -62,11 +63,10 @@ public class StackTraceElement   {
   /**
    * Get classLoaderName
    * @return classLoaderName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getClassLoaderName() {
+  
+    public String getClassLoaderName() {
     return classLoaderName;
   }
 
@@ -82,11 +82,10 @@ public class StackTraceElement   {
   /**
    * Get className
    * @return className
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getClassName() {
+  
+    public String getClassName() {
     return className;
   }
 
@@ -102,11 +101,10 @@ public class StackTraceElement   {
   /**
    * Get fileName
    * @return fileName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFileName() {
+  
+    public String getFileName() {
     return fileName;
   }
 
@@ -122,11 +120,10 @@ public class StackTraceElement   {
   /**
    * Get lineNumber
    * @return lineNumber
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getLineNumber() {
+  
+    public Integer getLineNumber() {
     return lineNumber;
   }
 
@@ -142,11 +139,10 @@ public class StackTraceElement   {
   /**
    * Get methodName
    * @return methodName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getMethodName() {
+  
+    public String getMethodName() {
     return methodName;
   }
 
@@ -162,11 +158,10 @@ public class StackTraceElement   {
   /**
    * Get moduleName
    * @return moduleName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getModuleName() {
+  
+    public String getModuleName() {
     return moduleName;
   }
 
@@ -182,11 +177,10 @@ public class StackTraceElement   {
   /**
    * Get moduleVersion
    * @return moduleVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getModuleVersion() {
+  
+    public String getModuleVersion() {
     return moduleVersion;
   }
 
@@ -202,11 +196,10 @@ public class StackTraceElement   {
   /**
    * Get nativeMethod
    * @return nativeMethod
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isNativeMethod() {
+  
+    public Boolean isNativeMethod() {
     return nativeMethod;
   }
 
@@ -267,4 +260,3 @@ public class StackTraceElement   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

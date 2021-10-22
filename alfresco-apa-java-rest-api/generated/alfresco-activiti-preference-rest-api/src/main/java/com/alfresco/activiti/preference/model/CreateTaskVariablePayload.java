@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CreateTaskVariablePayload   {
   @JsonProperty("id")
   private String id = null;
@@ -65,7 +66,6 @@ public class CreateTaskVariablePayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -83,11 +83,10 @@ public class CreateTaskVariablePayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -103,11 +102,10 @@ public class CreateTaskVariablePayload   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -123,11 +121,10 @@ public class CreateTaskVariablePayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -143,11 +140,10 @@ public class CreateTaskVariablePayload   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -163,11 +159,10 @@ public class CreateTaskVariablePayload   {
   /**
    * Get value
    * @return value
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getValue() {
+  
+    public Object getValue() {
     return value;
   }
 
@@ -222,4 +217,3 @@ public class CreateTaskVariablePayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

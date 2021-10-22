@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getProcessModelUsingGET1**](ProcessModelControllerApi.md#getProcessModelUsingGET1) | **GET** /v1/process-definitions/{processDefinitionId}/model | getProcessModel
 
-
 <a name="getProcessModelUsingGET1"></a>
 # **getProcessModelUsingGET1**
 > String getProcessModelUsingGET1(processDefinitionId)

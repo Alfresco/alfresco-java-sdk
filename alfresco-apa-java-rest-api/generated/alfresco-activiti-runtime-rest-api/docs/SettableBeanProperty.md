@@ -1,4 +1,3 @@
-
 # SettableBeanProperty
 
 ## Properties
@@ -22,6 +21,3 @@ Name | Type | Description | Notes
 **valueTypeDeserializer** | [**TypeDeserializer**](TypeDeserializer.md) |  |  [optional]
 **virtual** | **Boolean** |  |  [optional]
 **wrapperName** | [**PropertyName**](PropertyName.md) |  |  [optional]
-
-
-

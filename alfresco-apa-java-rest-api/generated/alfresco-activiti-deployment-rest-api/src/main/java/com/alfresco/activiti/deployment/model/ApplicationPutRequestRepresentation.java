@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ApplicationPutRequestRepresentation   {
   @JsonProperty("infrastructure")
   private InfrastructurePutRepresentation infrastructure = null;
@@ -59,12 +60,11 @@ public class ApplicationPutRequestRepresentation   {
   /**
    * Get infrastructure
    * @return infrastructure
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InfrastructurePutRepresentation getInfrastructure() {
+  
+    @Valid
+    public InfrastructurePutRepresentation getInfrastructure() {
     return infrastructure;
   }
 
@@ -80,11 +80,10 @@ public class ApplicationPutRequestRepresentation   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -100,11 +99,10 @@ public class ApplicationPutRequestRepresentation   {
   /**
    * Get releaseId
    * @return releaseId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getReleaseId() {
+  
+    public String getReleaseId() {
     return releaseId;
   }
 
@@ -128,12 +126,10 @@ public class ApplicationPutRequestRepresentation   {
   /**
    * Get security
    * @return security
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<SecurityRepresentation> getSecurity() {
+      @Valid
+    public List<SecurityRepresentation> getSecurity() {
     return security;
   }
 
@@ -149,12 +145,11 @@ public class ApplicationPutRequestRepresentation   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public VariablesPutRepresentation getVariables() {
+  
+    @Valid
+    public VariablesPutRepresentation getVariables() {
     return variables;
   }
 
@@ -209,4 +204,3 @@ public class ApplicationPutRequestRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -1,4 +1,3 @@
-
 # CloudRuntimeEventModel
 
 ## Properties
@@ -23,7 +22,6 @@ Name | Type | Description | Notes
 **serviceType** | **String** |  |  [optional]
 **serviceVersion** | **String** |  |  [optional]
 **timestamp** | **Long** |  |  [optional]
-
 
 <a name="EventTypeEnum"></a>
 ## Enum: EventTypeEnum
@@ -70,6 +68,3 @@ TIMER_SCHEDULED | &quot;TIMER_SCHEDULED&quot;
 VARIABLE_CREATED | &quot;VARIABLE_CREATED&quot;
 VARIABLE_DELETED | &quot;VARIABLE_DELETED&quot;
 VARIABLE_UPDATED | &quot;VARIABLE_UPDATED&quot;
-
-
-

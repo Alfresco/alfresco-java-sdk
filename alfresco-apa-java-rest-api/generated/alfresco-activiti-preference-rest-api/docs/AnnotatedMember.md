@@ -1,4 +1,3 @@
-
 # AnnotatedMember
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **_public** | **Boolean** |  |  [optional]
 **type** | [**JavaType**](JavaType.md) |  |  [optional]
 **typeContext** | [**TypeResolutionContext**](TypeResolutionContext.md) |  |  [optional]
-
-
-

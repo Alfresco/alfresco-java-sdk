@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**getVariablesUsingGET**](ProcessInstanceVariableControllerImplApi.md#getVariablesUsingGET) | **GET** /v1/process-instances/{processInstanceId}/variables | getVariables
 [**setVariablesUsingPOST**](ProcessInstanceVariableControllerImplApi.md#setVariablesUsingPOST) | **POST** /v1/process-instances/{processInstanceId}/variables | setVariables
 
-
 <a name="getVariablesUsingGET"></a>
 # **getVariablesUsingGET**
 > ListResponseContentCloudVariableInstance getVariablesUsingGET(processInstanceId)
@@ -53,7 +52,7 @@ No authorization required
 
 <a name="setVariablesUsingPOST"></a>
 # **setVariablesUsingPOST**
-> setVariablesUsingPOST(processInstanceId, setProcessVariablesPayload)
+> setVariablesUsingPOST(body, processInstanceId)
 
 setVariables
 
@@ -65,10 +64,10 @@ setVariables
 
 
 ProcessInstanceVariableControllerImplApi apiInstance = new ProcessInstanceVariableControllerImplApi();
+SetProcessVariablesPayload body = new SetProcessVariablesPayload(); // SetProcessVariablesPayload | setProcessVariablesPayload
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
-SetProcessVariablesPayload setProcessVariablesPayload = new SetProcessVariablesPayload(); // SetProcessVariablesPayload | setProcessVariablesPayload
 try {
-    apiInstance.setVariablesUsingPOST(processInstanceId, setProcessVariablesPayload);
+    apiInstance.setVariablesUsingPOST(body, processInstanceId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceVariableControllerImplApi#setVariablesUsingPOST");
     e.printStackTrace();
@@ -79,8 +78,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SetProcessVariablesPayload**](SetProcessVariablesPayload.md)| setProcessVariablesPayload |
  **processInstanceId** | **String**| processInstanceId |
- **setProcessVariablesPayload** | [**SetProcessVariablesPayload**](SetProcessVariablesPayload.md)| setProcessVariablesPayload |
 
 ### Return type
 
@@ -93,5 +92,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 

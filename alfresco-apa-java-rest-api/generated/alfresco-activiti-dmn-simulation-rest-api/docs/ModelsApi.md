@@ -22,10 +22,9 @@ Method | HTTP request | Description
 [**validateModelExtensionsUsingPOST**](ModelsApi.md#validateModelExtensionsUsingPOST) | **POST** /v1/models/{modelId}/validate/extensions | Validate model extensions
 [**validateModelUsingPOST**](ModelsApi.md#validateModelUsingPOST) | **POST** /v1/models/{modelId}/validate | Validate a model content
 
-
 <a name="createModelUsingPOST"></a>
 # **createModelUsingPOST**
-> EntryResponseContentModel createModelUsingPOST(model, projectId)
+> EntryResponseContentModel createModelUsingPOST(body, projectId)
 
 Create new model belonging to an project
 
@@ -39,10 +38,10 @@ Create a new model related to an existing project
 
 
 ModelsApi apiInstance = new ModelsApi();
-ModelReq model = new ModelReq(); // ModelReq | The details of the model to create
+ModelReq body = new ModelReq(); // ModelReq | The details of the model to create
 String projectId = "projectId_example"; // String | The id of the project to associate the new model with
 try {
-    EntryResponseContentModel result = apiInstance.createModelUsingPOST(model, projectId);
+    EntryResponseContentModel result = apiInstance.createModelUsingPOST(body, projectId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#createModelUsingPOST");
@@ -54,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**ModelReq**](ModelReq.md)| The details of the model to create |
+ **body** | [**ModelReq**](ModelReq.md)| The details of the model to create |
  **projectId** | **String**| The id of the project to associate the new model with |
 
 ### Return type
@@ -72,7 +71,7 @@ No authorization required
 
 <a name="createModelWithoutProjectUsingPOST"></a>
 # **createModelWithoutProjectUsingPOST**
-> EntryResponseContentModel createModelWithoutProjectUsingPOST(model)
+> EntryResponseContentModel createModelWithoutProjectUsingPOST(body)
 
 Create new model that does note belong to a project
 
@@ -86,9 +85,9 @@ Create a new model with no relationship to other projects
 
 
 ModelsApi apiInstance = new ModelsApi();
-ModelReq model = new ModelReq(); // ModelReq | The details of the model to create
+ModelReq body = new ModelReq(); // ModelReq | The details of the model to create
 try {
-    EntryResponseContentModel result = apiInstance.createModelWithoutProjectUsingPOST(model);
+    EntryResponseContentModel result = apiInstance.createModelWithoutProjectUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#createModelWithoutProjectUsingPOST");
@@ -100,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**ModelReq**](ModelReq.md)| The details of the model to create |
+ **body** | [**ModelReq**](ModelReq.md)| The details of the model to create |
 
 ### Return type
 
@@ -155,7 +154,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="deleteProjectModelRelationshipUsingDELETE"></a>
 # **deleteProjectModelRelationshipUsingDELETE**
@@ -248,7 +247,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="getGlobalModelsUsingGET"></a>
 # **getGlobalModelsUsingGET**
@@ -345,7 +344,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json, image/svg+xml
+ - **Accept**: Not defined
 
 <a name="getModelTypesUsingGET"></a>
 # **getModelTypesUsingGET**
@@ -554,7 +553,7 @@ Allows a file to be uploaded containing a model definition.
 
 ModelsApi apiInstance = new ModelsApi();
 String projectId = "projectId_example"; // String | The id of the project to associate the new model with
-File file = new File("/path/to/file.txt"); // File | 
+File file = new File("file_example"); // File | 
 String type = "type_example"; // String | 
 try {
     EntryResponseContentModel result = apiInstance.importModelUsingPOST(projectId, file, type);
@@ -634,7 +633,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/hal+json, application/json
 
 <a name="updateModelContentUsingPUT"></a>
@@ -654,7 +653,7 @@ Update the content of the model from file.
 
 ModelsApi apiInstance = new ModelsApi();
 String modelId = "modelId_example"; // String | The id of the model to update
-File file = new File("/path/to/file.txt"); // File | 
+File file = new File("file_example"); // File | 
 try {
     apiInstance.updateModelContentUsingPUT(modelId, file);
 } catch (ApiException e) {
@@ -681,11 +680,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="updateModelUsingPUT"></a>
 # **updateModelUsingPUT**
-> EntryResponseContentModel updateModelUsingPUT(model, modelId)
+> EntryResponseContentModel updateModelUsingPUT(body, modelId)
 
 Update model metadata
 
@@ -699,10 +698,10 @@ Update the details of a model.
 
 
 ModelsApi apiInstance = new ModelsApi();
-ModelReq model = new ModelReq(); // ModelReq | The new values to update
+ModelReq body = new ModelReq(); // ModelReq | The new values to update
 String modelId = "modelId_example"; // String | The id of the model to update
 try {
-    EntryResponseContentModel result = apiInstance.updateModelUsingPUT(model, modelId);
+    EntryResponseContentModel result = apiInstance.updateModelUsingPUT(body, modelId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#updateModelUsingPUT");
@@ -714,7 +713,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**ModelReq**](ModelReq.md)| The new values to update |
+ **body** | [**ModelReq**](ModelReq.md)| The new values to update |
  **modelId** | **String**| The id of the model to update |
 
 ### Return type
@@ -732,7 +731,7 @@ No authorization required
 
 <a name="validateModelExtensionsUsingPOST"></a>
 # **validateModelExtensionsUsingPOST**
-> validateModelExtensionsUsingPOST(file, modelId, projectId)
+> validateModelExtensionsUsingPOST(modelId, projectId)
 
 Validate model extensions
 
@@ -746,11 +745,10 @@ Allows to validate the model extensions without save them.
 
 
 ModelsApi apiInstance = new ModelsApi();
-byte[] file = BINARY_DATA_HERE; // byte[] | The file containing the model extensions to validate
 String modelId = "modelId_example"; // String | The id of the model to validate the content for
 String projectId = "projectId_example"; // String | The id of the project in whose context the model is going to be validated
 try {
-    apiInstance.validateModelExtensionsUsingPOST(file, modelId, projectId);
+    apiInstance.validateModelExtensionsUsingPOST(modelId, projectId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#validateModelExtensionsUsingPOST");
     e.printStackTrace();
@@ -761,7 +759,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **byte[]**| The file containing the model extensions to validate |
  **modelId** | **String**| The id of the model to validate the content for |
  **projectId** | **String**| The id of the project in whose context the model is going to be validated | [optional]
 
@@ -776,11 +773,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 
 <a name="validateModelUsingPOST"></a>
 # **validateModelUsingPOST**
-> validateModelUsingPOST(file, modelId, projectId, validateUsage)
+> validateModelUsingPOST(modelId, projectId, validateUsage)
 
 Validate a model content
 
@@ -794,12 +791,11 @@ Allows to validate the model content without save it.
 
 
 ModelsApi apiInstance = new ModelsApi();
-byte[] file = BINARY_DATA_HERE; // byte[] | The file containing the model definition to validate
 String modelId = "modelId_example"; // String | The id of the model to validate the content for
 String projectId = "projectId_example"; // String | The id of the project in whose context the model is going to be validated
 Boolean validateUsage = true; // Boolean | The model is going to be validated and checked used in other model
 try {
-    apiInstance.validateModelUsingPOST(file, modelId, projectId, validateUsage);
+    apiInstance.validateModelUsingPOST(modelId, projectId, validateUsage);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#validateModelUsingPOST");
     e.printStackTrace();
@@ -810,7 +806,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **byte[]**| The file containing the model definition to validate |
  **modelId** | **String**| The id of the model to validate the content for |
  **projectId** | **String**| The id of the project in whose context the model is going to be validated | [optional]
  **validateUsage** | **Boolean**| The model is going to be validated and checked used in other model | [optional]
@@ -826,5 +821,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/hal+json, application/json
+ - **Accept**: Not defined
 

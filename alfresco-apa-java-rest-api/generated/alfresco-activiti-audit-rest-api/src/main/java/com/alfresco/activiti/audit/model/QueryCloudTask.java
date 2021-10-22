@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class QueryCloudTask   {
   @JsonProperty("appName")
   private String appName = null;
@@ -158,7 +159,6 @@ public class QueryCloudTask   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -173,11 +173,10 @@ public class QueryCloudTask   {
   /**
    * Get appName
    * @return appName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppName() {
+  
+    public String getAppName() {
     return appName;
   }
 
@@ -193,11 +192,10 @@ public class QueryCloudTask   {
   /**
    * Get appVersion
    * @return appVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppVersion() {
+  
+    public String getAppVersion() {
     return appVersion;
   }
 
@@ -213,11 +211,10 @@ public class QueryCloudTask   {
   /**
    * Get assignee
    * @return assignee
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAssignee() {
+  
+    public String getAssignee() {
     return assignee;
   }
 
@@ -233,11 +230,10 @@ public class QueryCloudTask   {
   /**
    * Get businessKey
    * @return businessKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getBusinessKey() {
+  
+    public String getBusinessKey() {
     return businessKey;
   }
 
@@ -261,11 +257,10 @@ public class QueryCloudTask   {
   /**
    * Get candidateGroups
    * @return candidateGroups
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getCandidateGroups() {
+  
+    public List<String> getCandidateGroups() {
     return candidateGroups;
   }
 
@@ -289,11 +284,10 @@ public class QueryCloudTask   {
   /**
    * Get candidateUsers
    * @return candidateUsers
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getCandidateUsers() {
+  
+    public List<String> getCandidateUsers() {
     return candidateUsers;
   }
 
@@ -309,12 +303,11 @@ public class QueryCloudTask   {
   /**
    * Get claimedDate
    * @return claimedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getClaimedDate() {
+  
+    @Valid
+    public OffsetDateTime getClaimedDate() {
     return claimedDate;
   }
 
@@ -330,11 +323,10 @@ public class QueryCloudTask   {
   /**
    * Get completedBy
    * @return completedBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getCompletedBy() {
+  
+    public String getCompletedBy() {
     return completedBy;
   }
 
@@ -350,12 +342,11 @@ public class QueryCloudTask   {
   /**
    * Get completedDate
    * @return completedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCompletedDate() {
+  
+    @Valid
+    public OffsetDateTime getCompletedDate() {
     return completedDate;
   }
 
@@ -371,12 +362,11 @@ public class QueryCloudTask   {
   /**
    * Get createdDate
    * @return createdDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCreatedDate() {
+  
+    @Valid
+    public OffsetDateTime getCreatedDate() {
     return createdDate;
   }
 
@@ -392,11 +382,10 @@ public class QueryCloudTask   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -412,12 +401,11 @@ public class QueryCloudTask   {
   /**
    * Get dueDate
    * @return dueDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getDueDate() {
+  
+    @Valid
+    public OffsetDateTime getDueDate() {
     return dueDate;
   }
 
@@ -433,11 +421,10 @@ public class QueryCloudTask   {
   /**
    * Get duration
    * @return duration
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getDuration() {
+  
+    public Long getDuration() {
     return duration;
   }
 
@@ -453,11 +440,10 @@ public class QueryCloudTask   {
   /**
    * Get formKey
    * @return formKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFormKey() {
+  
+    public String getFormKey() {
     return formKey;
   }
 
@@ -473,11 +459,10 @@ public class QueryCloudTask   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -493,11 +478,10 @@ public class QueryCloudTask   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -513,11 +497,10 @@ public class QueryCloudTask   {
   /**
    * Get owner
    * @return owner
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getOwner() {
+  
+    public String getOwner() {
     return owner;
   }
 
@@ -533,11 +516,10 @@ public class QueryCloudTask   {
   /**
    * Get parentTaskId
    * @return parentTaskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getParentTaskId() {
+  
+    public String getParentTaskId() {
     return parentTaskId;
   }
 
@@ -553,11 +535,10 @@ public class QueryCloudTask   {
   /**
    * Get priority
    * @return priority
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getPriority() {
+  
+    public Integer getPriority() {
     return priority;
   }
 
@@ -573,11 +554,10 @@ public class QueryCloudTask   {
   /**
    * Get processDefinitionId
    * @return processDefinitionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionId() {
+  
+    public String getProcessDefinitionId() {
     return processDefinitionId;
   }
 
@@ -593,11 +573,10 @@ public class QueryCloudTask   {
   /**
    * Get processDefinitionName
    * @return processDefinitionName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionName() {
+  
+    public String getProcessDefinitionName() {
     return processDefinitionName;
   }
 
@@ -613,11 +592,10 @@ public class QueryCloudTask   {
   /**
    * Get processDefinitionVersion
    * @return processDefinitionVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getProcessDefinitionVersion() {
+  
+    public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
 
@@ -633,11 +611,10 @@ public class QueryCloudTask   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -653,11 +630,10 @@ public class QueryCloudTask   {
   /**
    * Get serviceFullName
    * @return serviceFullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceFullName() {
+  
+    public String getServiceFullName() {
     return serviceFullName;
   }
 
@@ -673,11 +649,10 @@ public class QueryCloudTask   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -693,11 +668,10 @@ public class QueryCloudTask   {
   /**
    * Get serviceType
    * @return serviceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceType() {
+  
+    public String getServiceType() {
     return serviceType;
   }
 
@@ -713,11 +687,10 @@ public class QueryCloudTask   {
   /**
    * Get serviceVersion
    * @return serviceVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceVersion() {
+  
+    public String getServiceVersion() {
     return serviceVersion;
   }
 
@@ -733,11 +706,10 @@ public class QueryCloudTask   {
   /**
    * Get standalone
    * @return standalone
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isStandalone() {
+  
+    public Boolean isStandalone() {
     return standalone;
   }
 
@@ -753,11 +725,10 @@ public class QueryCloudTask   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -773,11 +744,10 @@ public class QueryCloudTask   {
   /**
    * Get taskDefinitionKey
    * @return taskDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskDefinitionKey() {
+  
+    public String getTaskDefinitionKey() {
     return taskDefinitionKey;
   }
 
@@ -882,4 +852,3 @@ public class QueryCloudTask   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

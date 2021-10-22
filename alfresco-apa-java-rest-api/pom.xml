@@ -22,8 +22,9 @@
     <spring-cloud.version>2020.0.2</spring-cloud.version>
     <project.build.generatedSourceDirectory>generated</project.build.generatedSourceDirectory>
     <swagger-core.version>1.5.20</swagger-core.version>
-    <swagger-codegen-maven-plugin.groupId>io.swagger</swagger-codegen-maven-plugin.groupId>
-    <swagger-codegen-maven-plugin.version>2.4.10</swagger-codegen-maven-plugin.version>
+    <swagger-core-v3-version>2.1.11</swagger-core-v3-version>
+    <swagger-codegen-maven-plugin.groupId>io.swagger.codegen.v3</swagger-codegen-maven-plugin.groupId>
+    <swagger-codegen-maven-plugin.version>3.0.29</swagger-codegen-maven-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <!-- Base Paths -->
     <aae.version>7.1.0-SNAPSHOT</aae.version>
@@ -44,7 +45,6 @@
     <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v2/api-docs
     </aae.process-storage.api>
     <aae.preference.api>https://${environment.host}/${environment.application.name}/preference/v2/api-docs</aae.preference.api>
-    <java.release>8</java.release>
   </properties>
   <distributionManagement>
     <repository>
@@ -57,6 +57,7 @@
     </snapshotRepository>
   </distributionManagement>
   <modules>
+    <module>generated/alfresco-activiti-rest-api</module>
     <module>generated/alfresco-activiti-deployment-rest-api</module>
     <module>generated/alfresco-activiti-modeling-rest-api</module>
     <module>generated/alfresco-activiti-form-rest-api</module>
@@ -81,6 +82,11 @@
         <groupId>io.swagger</groupId>
         <artifactId>swagger-annotations</artifactId>
         <version>${swagger-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger-core-v3-version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -148,7 +154,40 @@
               </configOptions>
             </configuration>
             <executions>
-              <!-- //TODO: Add back APS client executions when generation plugin is upgraded to v3: https://alfresco.atlassian.net/browse/AAE-6134 -->
+              <execution>
+                <id>generate-activiti-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${aps.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
+                  <artifactId>alfresco-activiti-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
+                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
+                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-activiti-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${aps.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
+                  <artifactId>alfresco-activiti-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
+                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
+                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
               <execution>
                 <id>alfresco-activiti-deployment-rest-api-documentation</id>
                 <goals>

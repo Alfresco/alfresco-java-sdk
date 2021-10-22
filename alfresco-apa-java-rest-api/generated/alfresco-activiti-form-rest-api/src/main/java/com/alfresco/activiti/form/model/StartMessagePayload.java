@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class StartMessagePayload   {
   @JsonProperty("businessKey")
   private String businessKey = null;
@@ -50,11 +51,10 @@ public class StartMessagePayload   {
   /**
    * Get businessKey
    * @return businessKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getBusinessKey() {
+  
+    public String getBusinessKey() {
     return businessKey;
   }
 
@@ -70,11 +70,10 @@ public class StartMessagePayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -90,11 +89,10 @@ public class StartMessagePayload   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -110,11 +108,10 @@ public class StartMessagePayload   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getVariables() {
+  
+    public Object getVariables() {
     return variables;
   }
 
@@ -167,4 +164,3 @@ public class StartMessagePayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

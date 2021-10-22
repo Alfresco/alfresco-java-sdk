@@ -1,0 +1,11 @@
+# FormSaveRepresentation
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**comment** | **String** |  |  [optional]
+**formImageBase64** | **String** |  |  [optional]
+**formRepresentation** | [**FormRepresentationReq**](FormRepresentationReq.md) |  |  [optional]
+**newVersion** | **Boolean** |  |  [optional]
+**processScopeIdentifiers** | [**List&lt;ProcessScopeIdentifierRepresentation&gt;**](ProcessScopeIdentifierRepresentation.md) |  |  [optional]
+**reusable** | **Boolean** |  |  [optional]

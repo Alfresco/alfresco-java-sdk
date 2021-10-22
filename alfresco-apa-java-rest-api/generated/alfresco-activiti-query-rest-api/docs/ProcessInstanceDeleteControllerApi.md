@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteProcessInstancesUsingDELETE**](ProcessInstanceDeleteControllerApi.md#deleteProcessInstancesUsingDELETE) | **DELETE** /admin/v1/process-instances | deleteProcessInstances
 
-
 <a name="deleteProcessInstancesUsingDELETE"></a>
 # **deleteProcessInstancesUsingDELETE**
 > ListResponseContentOfCloudProcessInstance deleteProcessInstancesUsingDELETE()

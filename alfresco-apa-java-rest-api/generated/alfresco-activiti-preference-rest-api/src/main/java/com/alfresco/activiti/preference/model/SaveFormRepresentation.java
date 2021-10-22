@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class SaveFormRepresentation   {
   @JsonProperty("metadata")
   private Object metadata = null;
@@ -53,11 +54,10 @@ public class SaveFormRepresentation   {
   /**
    * Get metadata
    * @return metadata
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getMetadata() {
+  
+    public Object getMetadata() {
     return metadata;
   }
 
@@ -73,11 +73,10 @@ public class SaveFormRepresentation   {
   /**
    * Get processDefinitionKey
    * @return processDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionKey() {
+  
+    public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
 
@@ -93,11 +92,10 @@ public class SaveFormRepresentation   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -113,11 +111,10 @@ public class SaveFormRepresentation   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -133,11 +130,10 @@ public class SaveFormRepresentation   {
   /**
    * Get values
    * @return values
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getValues() {
+  
+    public Object getValues() {
     return values;
   }
 
@@ -192,4 +188,3 @@ public class SaveFormRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Descriptor   {
   @JsonProperty("createdAt")
   private String createdAt = null;
@@ -105,7 +106,6 @@ public class Descriptor   {
       return null;
     }
   }
-
   @JsonProperty("status")
   private StatusEnum status = null;
 
@@ -117,11 +117,10 @@ public class Descriptor   {
   /**
    * Get createdAt
    * @return createdAt
-  **/
+   **/
   @ApiModelProperty(example = "yyyy-MM-dd[['T']HH:mm:ss[.SSS'Z']]", value = "")
-
-
-  public String getCreatedAt() {
+  
+    public String getCreatedAt() {
     return createdAt;
   }
 
@@ -137,11 +136,10 @@ public class Descriptor   {
   /**
    * Get deployed
    * @return deployed
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isDeployed() {
+  
+    public Boolean isDeployed() {
     return deployed;
   }
 
@@ -157,11 +155,10 @@ public class Descriptor   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getId() {
+  
+    public Long getId() {
     return id;
   }
 
@@ -177,11 +174,10 @@ public class Descriptor   {
   /**
    * Get lastModifiedAt
    * @return lastModifiedAt
-  **/
+   **/
   @ApiModelProperty(example = "yyyy-MM-dd[['T']HH:mm:ss[.SSS'Z']]", value = "")
-
-
-  public String getLastModifiedAt() {
+  
+    public String getLastModifiedAt() {
     return lastModifiedAt;
   }
 
@@ -197,12 +193,11 @@ public class Descriptor   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(required = true, value = "")
-  @NotNull
+      @NotNull
 
-@Pattern(regexp="[a-z0-9]([-a-z0-9]*[a-z0-9])?") 
-  public String getName() {
+  @Pattern(regexp="[a-z0-9]([-a-z0-9]*[a-z0-9])?")   public String getName() {
     return name;
   }
 
@@ -218,11 +213,10 @@ public class Descriptor   {
   /**
    * Get payload
    * @return payload
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getPayload() {
+  
+    public String getPayload() {
     return payload;
   }
 
@@ -238,11 +232,10 @@ public class Descriptor   {
   /**
    * Get status
    * @return status
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StatusEnum getStatus() {
+  
+    public StatusEnum getStatus() {
     return status;
   }
 
@@ -301,4 +294,3 @@ public class Descriptor   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

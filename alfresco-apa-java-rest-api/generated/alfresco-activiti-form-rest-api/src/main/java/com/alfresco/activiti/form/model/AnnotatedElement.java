@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class AnnotatedElement   {
   @JsonProperty("annotations")
   @Valid
@@ -57,12 +58,10 @@ public class AnnotatedElement   {
   /**
    * Get annotations
    * @return annotations
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<Annotation> getAnnotations() {
+      @Valid
+    public List<Annotation> getAnnotations() {
     return annotations;
   }
 
@@ -86,12 +85,10 @@ public class AnnotatedElement   {
   /**
    * Get declaredAnnotations
    * @return declaredAnnotations
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<Annotation> getDeclaredAnnotations() {
+      @Valid
+    public List<Annotation> getDeclaredAnnotations() {
     return declaredAnnotations;
   }
 
@@ -140,4 +137,3 @@ public class AnnotatedElement   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

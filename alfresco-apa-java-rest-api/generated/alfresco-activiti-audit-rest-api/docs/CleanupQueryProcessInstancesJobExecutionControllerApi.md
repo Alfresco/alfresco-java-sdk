@@ -6,10 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**launchUsingPOST**](CleanupQueryProcessInstancesJobExecutionControllerApi.md#launchUsingPOST) | **POST** /admin/v1/batch/jobs/executions/cleanup-query-process-instance-history-job | launch
 
-
 <a name="launchUsingPOST"></a>
 # **launchUsingPOST**
-> EntryResponseContentOfJobExecution launchUsingPOST(launchRequest)
+> EntryResponseContentOfJobExecution launchUsingPOST(body)
 
 launch
 
@@ -21,9 +20,9 @@ launch
 
 
 CleanupQueryProcessInstancesJobExecutionControllerApi apiInstance = new CleanupQueryProcessInstancesJobExecutionControllerApi();
-CleanupQueryProcessInstancesJobRequest launchRequest = new CleanupQueryProcessInstancesJobRequest(); // CleanupQueryProcessInstancesJobRequest | launchRequest
+CleanupQueryProcessInstancesJobRequest body = new CleanupQueryProcessInstancesJobRequest(); // CleanupQueryProcessInstancesJobRequest | launchRequest
 try {
-    EntryResponseContentOfJobExecution result = apiInstance.launchUsingPOST(launchRequest);
+    EntryResponseContentOfJobExecution result = apiInstance.launchUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CleanupQueryProcessInstancesJobExecutionControllerApi#launchUsingPOST");
@@ -35,7 +34,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **launchRequest** | [**CleanupQueryProcessInstancesJobRequest**](CleanupQueryProcessInstancesJobRequest.md)| launchRequest |
+ **body** | [**CleanupQueryProcessInstancesJobRequest**](CleanupQueryProcessInstancesJobRequest.md)| launchRequest |
 
 ### Return type
 

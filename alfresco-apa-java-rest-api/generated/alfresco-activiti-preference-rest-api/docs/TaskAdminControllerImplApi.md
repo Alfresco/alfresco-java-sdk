@@ -11,10 +11,9 @@ Method | HTTP request | Description
 [**getTasksUsingGET1**](TaskAdminControllerImplApi.md#getTasksUsingGET1) | **GET** /admin/v1/tasks | getTasks
 [**updateTaskUsingPUT**](TaskAdminControllerImplApi.md#updateTaskUsingPUT) | **PUT** /admin/v1/tasks/{taskId} | updateTask
 
-
 <a name="assignUsingPOST"></a>
 # **assignUsingPOST**
-> EntryResponseContentCloudTask assignUsingPOST(assignTaskPayload, taskId)
+> EntryResponseContentCloudTask assignUsingPOST(body, taskId)
 
 assign
 
@@ -26,10 +25,10 @@ assign
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
-AssignTaskPayload assignTaskPayload = new AssignTaskPayload(); // AssignTaskPayload | assignTaskPayload
+AssignTaskPayload body = new AssignTaskPayload(); // AssignTaskPayload | assignTaskPayload
 String taskId = "taskId_example"; // String | taskId
 try {
-    EntryResponseContentCloudTask result = apiInstance.assignUsingPOST(assignTaskPayload, taskId);
+    EntryResponseContentCloudTask result = apiInstance.assignUsingPOST(body, taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#assignUsingPOST");
@@ -41,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **assignTaskPayload** | [**AssignTaskPayload**](AssignTaskPayload.md)| assignTaskPayload |
+ **body** | [**AssignTaskPayload**](AssignTaskPayload.md)| assignTaskPayload |
  **taskId** | **String**| taskId |
 
 ### Return type
@@ -59,7 +58,7 @@ No authorization required
 
 <a name="completeTaskUsingPOST"></a>
 # **completeTaskUsingPOST**
-> EntryResponseContentCloudTask completeTaskUsingPOST(taskId, completeTaskPayload)
+> EntryResponseContentCloudTask completeTaskUsingPOST(taskId, body)
 
 completeTask
 
@@ -72,9 +71,9 @@ completeTask
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
-CompleteTaskPayload completeTaskPayload = new CompleteTaskPayload(); // CompleteTaskPayload | completeTaskPayload
+CompleteTaskPayload body = new CompleteTaskPayload(); // CompleteTaskPayload | completeTaskPayload
 try {
-    EntryResponseContentCloudTask result = apiInstance.completeTaskUsingPOST(taskId, completeTaskPayload);
+    EntryResponseContentCloudTask result = apiInstance.completeTaskUsingPOST(taskId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#completeTaskUsingPOST");
@@ -87,7 +86,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taskId** | **String**| taskId |
- **completeTaskPayload** | [**CompleteTaskPayload**](CompleteTaskPayload.md)| completeTaskPayload | [optional]
+ **body** | [**CompleteTaskPayload**](CompleteTaskPayload.md)| completeTaskPayload | [optional]
 
 ### Return type
 
@@ -237,7 +236,7 @@ No authorization required
 
 <a name="updateTaskUsingPUT"></a>
 # **updateTaskUsingPUT**
-> EntryResponseContentCloudTask updateTaskUsingPUT(taskId, updateTaskPayload)
+> EntryResponseContentCloudTask updateTaskUsingPUT(body, taskId)
 
 updateTask
 
@@ -249,10 +248,10 @@ updateTask
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
+UpdateTaskPayload body = new UpdateTaskPayload(); // UpdateTaskPayload | updateTaskPayload
 String taskId = "taskId_example"; // String | taskId
-UpdateTaskPayload updateTaskPayload = new UpdateTaskPayload(); // UpdateTaskPayload | updateTaskPayload
 try {
-    EntryResponseContentCloudTask result = apiInstance.updateTaskUsingPUT(taskId, updateTaskPayload);
+    EntryResponseContentCloudTask result = apiInstance.updateTaskUsingPUT(body, taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#updateTaskUsingPUT");
@@ -264,8 +263,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateTaskPayload**](UpdateTaskPayload.md)| updateTaskPayload |
  **taskId** | **String**| taskId |
- **updateTaskPayload** | [**UpdateTaskPayload**](UpdateTaskPayload.md)| updateTaskPayload |
 
 ### Return type
 

@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class InfrastructureRepresentation   {
   @JsonProperty("bridges")
   @Valid
@@ -81,12 +82,10 @@ public class InfrastructureRepresentation   {
   /**
    * Get bridges
    * @return bridges
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, ServiceRepresentation> getBridges() {
+      @Valid
+    public Map<String, ServiceRepresentation> getBridges() {
     return bridges;
   }
 
@@ -110,12 +109,10 @@ public class InfrastructureRepresentation   {
   /**
    * Get connectors
    * @return connectors
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, ServiceRepresentation> getConnectors() {
+      @Valid
+    public Map<String, ServiceRepresentation> getConnectors() {
     return connectors;
   }
 
@@ -131,12 +128,11 @@ public class InfrastructureRepresentation   {
   /**
    * Get contentService
    * @return contentService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ServiceRepresentation getContentService() {
+  
+    @Valid
+    public ServiceRepresentation getContentService() {
     return contentService;
   }
 
@@ -152,12 +148,11 @@ public class InfrastructureRepresentation   {
   /**
    * Get identityService
    * @return identityService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ServiceRepresentation getIdentityService() {
+  
+    @Valid
+    public ServiceRepresentation getIdentityService() {
     return identityService;
   }
 
@@ -173,12 +168,11 @@ public class InfrastructureRepresentation   {
   /**
    * Get processRuntimeService
    * @return processRuntimeService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ServiceRepresentation getProcessRuntimeService() {
+  
+    @Valid
+    public ServiceRepresentation getProcessRuntimeService() {
     return processRuntimeService;
   }
 
@@ -194,12 +188,11 @@ public class InfrastructureRepresentation   {
   /**
    * Get processStorageService
    * @return processStorageService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ServiceRepresentation getProcessStorageService() {
+  
+    @Valid
+    public ServiceRepresentation getProcessStorageService() {
     return processStorageService;
   }
 
@@ -215,12 +208,11 @@ public class InfrastructureRepresentation   {
   /**
    * Get queryService
    * @return queryService
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ServiceRepresentation getQueryService() {
+  
+    @Valid
+    public ServiceRepresentation getQueryService() {
     return queryService;
   }
 
@@ -236,11 +228,10 @@ public class InfrastructureRepresentation   {
   /**
    * Get runtimeVersion
    * @return runtimeVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getRuntimeVersion() {
+  
+    public String getRuntimeVersion() {
     return runtimeVersion;
   }
 
@@ -264,12 +255,10 @@ public class InfrastructureRepresentation   {
   /**
    * Get uis
    * @return uis
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, UiInfrastructureRepresentation> getUis() {
+      @Valid
+    public Map<String, UiInfrastructureRepresentation> getUis() {
     return uis;
   }
 
@@ -332,4 +321,3 @@ public class InfrastructureRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

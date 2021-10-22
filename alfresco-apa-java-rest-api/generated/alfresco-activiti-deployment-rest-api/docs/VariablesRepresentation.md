@@ -1,4 +1,3 @@
-
 # VariablesRepresentation
 
 ## Properties
@@ -14,6 +13,3 @@ Name | Type | Description | Notes
 **processStorageService** | **Map&lt;String, String&gt;** |  |  [optional]
 **queryService** | **Map&lt;String, String&gt;** |  |  [optional]
 **uis** | [**Map&lt;String, Map&lt;String, String&gt;&gt;**](Map.md) |  |  [optional]
-
-
-

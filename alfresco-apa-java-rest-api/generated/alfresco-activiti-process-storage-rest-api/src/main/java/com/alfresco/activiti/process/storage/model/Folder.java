@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Folder   {
   @JsonProperty("nodeId")
   private String nodeId = null;
@@ -47,11 +48,10 @@ public class Folder   {
   /**
    * Get nodeId
    * @return nodeId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getNodeId() {
+  
+    public String getNodeId() {
     return nodeId;
   }
 
@@ -67,11 +67,10 @@ public class Folder   {
   /**
    * Get path
    * @return path
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getPath() {
+  
+    public String getPath() {
     return path;
   }
 
@@ -87,11 +86,10 @@ public class Folder   {
   /**
    * Get type
    * @return type
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getType() {
+  
+    public String getType() {
     return type;
   }
 
@@ -142,4 +140,3 @@ public class Folder   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class PropertyMetadata   {
   /**
    * Gets or Sets contentNulls
@@ -68,7 +69,6 @@ public class PropertyMetadata   {
       return null;
     }
   }
-
   @JsonProperty("contentNulls")
   private ContentNullsEnum contentNulls = null;
 
@@ -123,7 +123,6 @@ public class PropertyMetadata   {
       return null;
     }
   }
-
   @JsonProperty("valueNulls")
   private ValueNullsEnum valueNulls = null;
 
@@ -135,11 +134,10 @@ public class PropertyMetadata   {
   /**
    * Get contentNulls
    * @return contentNulls
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public ContentNullsEnum getContentNulls() {
+  
+    public ContentNullsEnum getContentNulls() {
     return contentNulls;
   }
 
@@ -155,11 +153,10 @@ public class PropertyMetadata   {
   /**
    * Get defaultValue
    * @return defaultValue
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDefaultValue() {
+  
+    public String getDefaultValue() {
     return defaultValue;
   }
 
@@ -175,11 +172,10 @@ public class PropertyMetadata   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -195,11 +191,10 @@ public class PropertyMetadata   {
   /**
    * Get index
    * @return index
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getIndex() {
+  
+    public Integer getIndex() {
     return index;
   }
 
@@ -215,12 +210,11 @@ public class PropertyMetadata   {
   /**
    * Get mergeInfo
    * @return mergeInfo
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public MergeInfo getMergeInfo() {
+  
+    @Valid
+    public MergeInfo getMergeInfo() {
     return mergeInfo;
   }
 
@@ -236,11 +230,10 @@ public class PropertyMetadata   {
   /**
    * Get required
    * @return required
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isRequired() {
+  
+    public Boolean isRequired() {
     return required;
   }
 
@@ -256,11 +249,10 @@ public class PropertyMetadata   {
   /**
    * Get valueNulls
    * @return valueNulls
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public ValueNullsEnum getValueNulls() {
+  
+    public ValueNullsEnum getValueNulls() {
     return valueNulls;
   }
 
@@ -319,4 +311,3 @@ public class PropertyMetadata   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

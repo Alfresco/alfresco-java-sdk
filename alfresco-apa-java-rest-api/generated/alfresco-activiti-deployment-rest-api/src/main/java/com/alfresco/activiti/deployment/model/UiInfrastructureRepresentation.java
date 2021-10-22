@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class UiInfrastructureRepresentation   {
   @JsonProperty("adf-template")
   private String adfTemplate = null;
@@ -47,11 +48,10 @@ public class UiInfrastructureRepresentation   {
   /**
    * Get adfTemplate
    * @return adfTemplate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAdfTemplate() {
+  
+    public String getAdfTemplate() {
     return adfTemplate;
   }
 
@@ -67,11 +67,10 @@ public class UiInfrastructureRepresentation   {
   /**
    * Get image
    * @return image
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getImage() {
+  
+    public String getImage() {
     return image;
   }
 
@@ -87,11 +86,10 @@ public class UiInfrastructureRepresentation   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -142,4 +140,3 @@ public class UiInfrastructureRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

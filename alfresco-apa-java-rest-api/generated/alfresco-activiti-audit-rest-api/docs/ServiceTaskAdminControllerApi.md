@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**findAllUsingGET8**](ServiceTaskAdminControllerApi.md#findAllUsingGET8) | **GET** /admin/v1/service-tasks | findAll
 [**findByIdUsingGET3**](ServiceTaskAdminControllerApi.md#findByIdUsingGET3) | **GET** /admin/v1/service-tasks/{serviceTaskId} | findById
 
-
 <a name="findAllUsingGET8"></a>
 # **findAllUsingGET8**
 > ListResponseContentOfCloudServiceTask findAllUsingGET8(maxItems, skipCount, sort)

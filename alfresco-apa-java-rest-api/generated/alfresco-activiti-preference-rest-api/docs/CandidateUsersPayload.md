@@ -1,4 +1,3 @@
-
 # CandidateUsersPayload
 
 ## Properties
@@ -9,12 +8,8 @@ Name | Type | Description | Notes
 **payloadType** | [**PayloadTypeEnum**](#PayloadTypeEnum) |  |  [optional]
 **taskId** | **String** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 CANDIDATEUSERSPAYLOAD | &quot;CandidateUsersPayload&quot;
-
-
-

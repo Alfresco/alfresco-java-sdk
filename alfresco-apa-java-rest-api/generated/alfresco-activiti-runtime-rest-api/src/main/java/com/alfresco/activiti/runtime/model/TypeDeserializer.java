@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class TypeDeserializer   {
   @JsonProperty("propertyName")
   private String propertyName = null;
@@ -74,7 +75,6 @@ public class TypeDeserializer   {
       return null;
     }
   }
-
   @JsonProperty("typeInclusion")
   private TypeInclusionEnum typeInclusion = null;
 
@@ -86,11 +86,10 @@ public class TypeDeserializer   {
   /**
    * Get propertyName
    * @return propertyName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getPropertyName() {
+  
+    public String getPropertyName() {
     return propertyName;
   }
 
@@ -106,12 +105,11 @@ public class TypeDeserializer   {
   /**
    * Get typeIdResolver
    * @return typeIdResolver
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public TypeIdResolver getTypeIdResolver() {
+  
+    @Valid
+    public TypeIdResolver getTypeIdResolver() {
     return typeIdResolver;
   }
 
@@ -127,11 +125,10 @@ public class TypeDeserializer   {
   /**
    * Get typeInclusion
    * @return typeInclusion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public TypeInclusionEnum getTypeInclusion() {
+  
+    public TypeInclusionEnum getTypeInclusion() {
     return typeInclusion;
   }
 
@@ -182,4 +179,3 @@ public class TypeDeserializer   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

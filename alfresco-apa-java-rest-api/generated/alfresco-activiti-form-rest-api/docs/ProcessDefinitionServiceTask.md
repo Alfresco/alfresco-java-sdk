@@ -1,4 +1,3 @@
-
 # ProcessDefinitionServiceTask
 
 ## Properties
@@ -15,7 +14,6 @@ Name | Type | Description | Notes
 **taskImplementation** | **String** |  |  [optional]
 **taskName** | **String** |  |  [optional]
 
-
 <a name="EmptyAccessPatternEnum"></a>
 ## Enum: EmptyAccessPatternEnum
 Name | Value
@@ -24,7 +22,6 @@ ALWAYS_NULL | &quot;ALWAYS_NULL&quot;
 CONSTANT | &quot;CONSTANT&quot;
 DYNAMIC | &quot;DYNAMIC&quot;
 
-
 <a name="NullAccessPatternEnum"></a>
 ## Enum: NullAccessPatternEnum
 Name | Value
@@ -32,6 +29,3 @@ Name | Value
 ALWAYS_NULL | &quot;ALWAYS_NULL&quot;
 CONSTANT | &quot;CONSTANT&quot;
 DYNAMIC | &quot;DYNAMIC&quot;
-
-
-

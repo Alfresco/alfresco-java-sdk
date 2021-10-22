@@ -3,7 +3,7 @@
 
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org) to be installed.
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
 
 ## Installation
 
@@ -72,8 +72,7 @@ public class PetController implements PetApi {
 }
 ```
 
-You can also use the interface to create [Spring-Cloud Feign clients](https://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-inheritance).
-E.g.:
+You can also use the interface to create [Spring-Cloud Feign clients](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-inheritance).Eg:
 ```java
 @FeignClient(name="pet", url="http://petstore.swagger.io/v2")
 public interface PetClient extends PetApi {
@@ -87,7 +86,7 @@ public interface PetClient extends PetApi {
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-{{#apiInfo}}{{#apis}}{{#-first}}{{#operations}}{{#operation}}{{#-first}}
+{{#apiInfo}}{{#apis}}{{#@first}}{{#operations}}{{#operation}}{{#@first}}
   import {{{invokerPackage}}}.*;
   import {{{invokerPackage}}}.auth.*;
   import {{{modelPackage}}}.*;
@@ -129,7 +128,7 @@ Please follow the [installation](#installation) instruction and execute the foll
   }
   }
   }
-{{/-first}}{{/operation}}{{/operations}}{{/-first}}{{/apis}}{{/apiInfo}}
+{{/@first}}{{/operation}}{{/operations}}{{/@first}}{{/apis}}{{/apiInfo}}
 ```
 
 ## Documentation for API Endpoints

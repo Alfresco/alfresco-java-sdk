@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**findAllUsingGET6**](ProcessInstanceAdminControllerApi.md#findAllUsingGET6) | **GET** /admin/v1/process-instances | findAll
 [**findByIdUsingGET1**](ProcessInstanceAdminControllerApi.md#findByIdUsingGET1) | **GET** /admin/v1/process-instances/{processInstanceId} | findById
 
-
 <a name="findAllUsingGET6"></a>
 # **findAllUsingGET6**
 > ListResponseContentOfCloudProcessInstance findAllUsingGET6(maxItems, skipCount, sort)

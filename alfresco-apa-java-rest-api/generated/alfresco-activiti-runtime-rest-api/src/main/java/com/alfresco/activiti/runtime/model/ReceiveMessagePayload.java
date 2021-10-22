@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ReceiveMessagePayload   {
   @JsonProperty("correlationKey")
   private String correlationKey = null;
@@ -50,11 +51,10 @@ public class ReceiveMessagePayload   {
   /**
    * Get correlationKey
    * @return correlationKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getCorrelationKey() {
+  
+    public String getCorrelationKey() {
     return correlationKey;
   }
 
@@ -70,11 +70,10 @@ public class ReceiveMessagePayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -90,11 +89,10 @@ public class ReceiveMessagePayload   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -110,11 +108,10 @@ public class ReceiveMessagePayload   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getVariables() {
+  
+    public Object getVariables() {
     return variables;
   }
 
@@ -167,4 +164,3 @@ public class ReceiveMessagePayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class NullValueProvider   {
   /**
    * Gets or Sets nullAccessPattern
@@ -63,7 +64,6 @@ public class NullValueProvider   {
       return null;
     }
   }
-
   @JsonProperty("nullAccessPattern")
   private NullAccessPatternEnum nullAccessPattern = null;
 
@@ -75,11 +75,10 @@ public class NullValueProvider   {
   /**
    * Get nullAccessPattern
    * @return nullAccessPattern
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public NullAccessPatternEnum getNullAccessPattern() {
+  
+    public NullAccessPatternEnum getNullAccessPattern() {
     return nullAccessPattern;
   }
 
@@ -126,4 +125,3 @@ public class NullValueProvider   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

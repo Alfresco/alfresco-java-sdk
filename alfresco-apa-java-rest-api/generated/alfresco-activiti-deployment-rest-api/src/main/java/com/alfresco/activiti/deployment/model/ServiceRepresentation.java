@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ServiceRepresentation   {
   @JsonProperty("image")
   private String image = null;
@@ -41,11 +42,10 @@ public class ServiceRepresentation   {
   /**
    * Get image
    * @return image
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getImage() {
+  
+    public String getImage() {
     return image;
   }
 
@@ -92,4 +92,3 @@ public class ServiceRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -1,4 +1,3 @@
-
 # SaveTaskPayload
 
 ## Properties
@@ -9,12 +8,8 @@ Name | Type | Description | Notes
 **taskId** | **String** |  |  [optional]
 **variables** | **Object** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 SAVETASKPAYLOAD | &quot;SaveTaskPayload&quot;
-
-
-

@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**getProcessDefinitionUsingGET**](ProcessDefinitionControllerImplApi.md#getProcessDefinitionUsingGET) | **GET** /v1/process-definitions/{id} | getProcessDefinition
 [**getProcessDefinitionsUsingGET**](ProcessDefinitionControllerImplApi.md#getProcessDefinitionsUsingGET) | **GET** /v1/process-definitions | getProcessDefinitions
 
-
 <a name="getBpmnModelUsingGET"></a>
 # **getBpmnModelUsingGET**
 > String getBpmnModelUsingGET(id)

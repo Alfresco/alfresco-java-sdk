@@ -1,4 +1,3 @@
-
 # InputStreamResource
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **readable** | **Boolean** |  |  [optional]
 **uri** | **String** |  |  [optional]
 **url** | **String** |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # CloudProcessInstance
 
 ## Properties
@@ -23,7 +22,6 @@ Name | Type | Description | Notes
 **startDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 
-
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
 Name | Value
@@ -33,6 +31,3 @@ COMPLETED | &quot;COMPLETED&quot;
 CREATED | &quot;CREATED&quot;
 RUNNING | &quot;RUNNING&quot;
 SUSPENDED | &quot;SUSPENDED&quot;
-
-
-

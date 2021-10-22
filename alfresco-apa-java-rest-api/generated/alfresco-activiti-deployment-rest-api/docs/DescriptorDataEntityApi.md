@@ -4,12 +4,11 @@ All URIs are relative to the environment set via -Denvironment.host and -Denviro
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**descriptorDataDescriptorUsingDELETE**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingDELETE) | **DELETE** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-[**descriptorDataDescriptorUsingGET**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingGET) | **GET** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-[**descriptorDataDescriptorUsingPATCH**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPATCH) | **PATCH** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-[**descriptorDataDescriptorUsingPOST**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPOST) | **POST** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-[**descriptorDataDescriptorUsingPUT**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPUT) | **PUT** /deployment-service/descriptorDatas/{id}/descriptor | descriptorDataDescriptor
-
+[**descriptorDataDescriptorUsingDELETE**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingDELETE) | **DELETE** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+[**descriptorDataDescriptorUsingGET**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingGET) | **GET** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+[**descriptorDataDescriptorUsingPATCH**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPATCH) | **PATCH** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+[**descriptorDataDescriptorUsingPOST**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPOST) | **POST** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
+[**descriptorDataDescriptorUsingPUT**](DescriptorDataEntityApi.md#descriptorDataDescriptorUsingPUT) | **PUT** /descriptorDatas/{id}/descriptor | descriptorDataDescriptor
 
 <a name="descriptorDataDescriptorUsingDELETE"></a>
 # **descriptorDataDescriptorUsingDELETE**
@@ -50,8 +49,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="descriptorDataDescriptorUsingGET"></a>
 # **descriptorDataDescriptorUsingGET**
@@ -125,7 +124,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**| body |
+ **body** | [**String**](String.md)| body |
  **id** | **String**| id |
 
 ### Return type
@@ -170,7 +169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**| body |
+ **body** | [**String**](String.md)| body |
  **id** | **String**| id |
 
 ### Return type
@@ -215,7 +214,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**| body |
+ **body** | [**String**](String.md)| body |
  **id** | **String**| id |
 
 ### Return type

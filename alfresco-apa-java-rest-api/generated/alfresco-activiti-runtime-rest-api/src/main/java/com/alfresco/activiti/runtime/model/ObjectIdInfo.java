@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ObjectIdInfo   {
   @JsonProperty("alwaysAsId")
   private Boolean alwaysAsId = null;
@@ -45,11 +46,10 @@ public class ObjectIdInfo   {
   /**
    * Get alwaysAsId
    * @return alwaysAsId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isAlwaysAsId() {
+  
+    public Boolean isAlwaysAsId() {
     return alwaysAsId;
   }
 
@@ -65,12 +65,11 @@ public class ObjectIdInfo   {
   /**
    * Get propertyName
    * @return propertyName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PropertyName getPropertyName() {
+  
+    @Valid
+    public PropertyName getPropertyName() {
     return propertyName;
   }
 
@@ -119,4 +118,3 @@ public class ObjectIdInfo   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ProcessDefinitionVariable   {
   @JsonProperty("variableName")
   private String variableName = null;
@@ -44,11 +45,10 @@ public class ProcessDefinitionVariable   {
   /**
    * Get variableName
    * @return variableName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getVariableName() {
+  
+    public String getVariableName() {
     return variableName;
   }
 
@@ -64,11 +64,10 @@ public class ProcessDefinitionVariable   {
   /**
    * Get variableType
    * @return variableType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getVariableType() {
+  
+    public String getVariableType() {
     return variableType;
   }
 
@@ -117,4 +116,3 @@ public class ProcessDefinitionVariable   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

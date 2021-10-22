@@ -37,6 +37,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class SettableBeanProperty   {
   @JsonProperty("creatorIndex")
   private Integer creatorIndex = null;
@@ -100,11 +101,10 @@ public class SettableBeanProperty   {
   /**
    * Get creatorIndex
    * @return creatorIndex
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getCreatorIndex() {
+  
+    public Integer getCreatorIndex() {
     return creatorIndex;
   }
 
@@ -120,12 +120,11 @@ public class SettableBeanProperty   {
   /**
    * Get fullName
    * @return fullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PropertyName getFullName() {
+  
+    @Valid
+    public PropertyName getFullName() {
     return fullName;
   }
 
@@ -141,11 +140,10 @@ public class SettableBeanProperty   {
   /**
    * Get ignorable
    * @return ignorable
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isIgnorable() {
+  
+    public Boolean isIgnorable() {
     return ignorable;
   }
 
@@ -161,11 +159,10 @@ public class SettableBeanProperty   {
   /**
    * Get injectableValueId
    * @return injectableValueId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getInjectableValueId() {
+  
+    public Object getInjectableValueId() {
     return injectableValueId;
   }
 
@@ -181,11 +178,10 @@ public class SettableBeanProperty   {
   /**
    * Get injectionOnly
    * @return injectionOnly
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isInjectionOnly() {
+  
+    public Boolean isInjectionOnly() {
     return injectionOnly;
   }
 
@@ -201,11 +197,10 @@ public class SettableBeanProperty   {
   /**
    * Get managedReferenceName
    * @return managedReferenceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getManagedReferenceName() {
+  
+    public String getManagedReferenceName() {
     return managedReferenceName;
   }
 
@@ -221,12 +216,11 @@ public class SettableBeanProperty   {
   /**
    * Get member
    * @return member
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public AnnotatedMember getMember() {
+  
+    @Valid
+    public AnnotatedMember getMember() {
     return member;
   }
 
@@ -242,12 +236,11 @@ public class SettableBeanProperty   {
   /**
    * Get metadata
    * @return metadata
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PropertyMetadata getMetadata() {
+  
+    @Valid
+    public PropertyMetadata getMetadata() {
     return metadata;
   }
 
@@ -263,11 +256,10 @@ public class SettableBeanProperty   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -283,12 +275,11 @@ public class SettableBeanProperty   {
   /**
    * Get nullValueProvider
    * @return nullValueProvider
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public NullValueProvider getNullValueProvider() {
+  
+    @Valid
+    public NullValueProvider getNullValueProvider() {
     return nullValueProvider;
   }
 
@@ -304,12 +295,11 @@ public class SettableBeanProperty   {
   /**
    * Get objectIdInfo
    * @return objectIdInfo
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ObjectIdInfo getObjectIdInfo() {
+  
+    @Valid
+    public ObjectIdInfo getObjectIdInfo() {
     return objectIdInfo;
   }
 
@@ -325,11 +315,10 @@ public class SettableBeanProperty   {
   /**
    * Get propertyIndex
    * @return propertyIndex
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getPropertyIndex() {
+  
+    public Integer getPropertyIndex() {
     return propertyIndex;
   }
 
@@ -345,11 +334,10 @@ public class SettableBeanProperty   {
   /**
    * Get required
    * @return required
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isRequired() {
+  
+    public Boolean isRequired() {
     return required;
   }
 
@@ -365,12 +353,11 @@ public class SettableBeanProperty   {
   /**
    * Get type
    * @return type
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JavaType getType() {
+  
+    @Valid
+    public JavaType getType() {
     return type;
   }
 
@@ -386,12 +373,11 @@ public class SettableBeanProperty   {
   /**
    * Get valueDeserializer
    * @return valueDeserializer
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public JsonDeserializerobject getValueDeserializer() {
+  
+    @Valid
+    public JsonDeserializerobject getValueDeserializer() {
     return valueDeserializer;
   }
 
@@ -407,12 +393,11 @@ public class SettableBeanProperty   {
   /**
    * Get valueTypeDeserializer
    * @return valueTypeDeserializer
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public TypeDeserializer getValueTypeDeserializer() {
+  
+    @Valid
+    public TypeDeserializer getValueTypeDeserializer() {
     return valueTypeDeserializer;
   }
 
@@ -428,11 +413,10 @@ public class SettableBeanProperty   {
   /**
    * Get virtual
    * @return virtual
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isVirtual() {
+  
+    public Boolean isVirtual() {
     return virtual;
   }
 
@@ -448,12 +432,11 @@ public class SettableBeanProperty   {
   /**
    * Get wrapperName
    * @return wrapperName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public PropertyName getWrapperName() {
+  
+    @Valid
+    public PropertyName getWrapperName() {
     return wrapperName;
   }
 
@@ -534,4 +517,3 @@ public class SettableBeanProperty   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

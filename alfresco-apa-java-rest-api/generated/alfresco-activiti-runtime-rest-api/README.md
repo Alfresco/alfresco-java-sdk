@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org) to be installed.
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
 
 ## Installation
 
@@ -56,7 +56,6 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
   import com.alfresco.activiti.runtime.*;
   import com.alfresco.activiti.runtime.auth.*;
   import com.alfresco.activiti.runtime.model.*;
@@ -70,10 +69,10 @@ Please follow the [installation](#installation) instruction and execute the foll
   public static void main(String[] args) {
   
   CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
-    CandidateGroupsPayload candidateGroupsPayload = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
+    CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
     String taskId = "taskId_example"; // String | taskId
   try {
-  Void result = apiInstance.addCandidateGroupsUsingPOST(candidateGroupsPayload, taskId);
+  Void result = apiInstance.addCandidateGroupsUsingPOST(body, taskId);
     System.out.println(result);
   } catch (ApiException e) {
   System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#addCandidateGroupsUsingPOST");
@@ -81,7 +80,6 @@ Please follow the [installation](#installation) instruction and execute the foll
   }
   }
   }
-
 ```
 
 ## Documentation for API Endpoints
@@ -175,7 +173,6 @@ Class | Method | HTTP request | Description
 *UserActionsApi* | [**sendNamedEventUsingPOST**](docs/UserActionsApi.md#sendNamedEventUsingPOST) | **POST** /v1/user-action/event/{uiName}/{eventName}/send | Send a named event
 *UserActionsApi* | [**submitFormUsingPOST2**](docs/UserActionsApi.md#submitFormUsingPOST2) | **POST** /v1/user-action/form/{formId}/submit | Submit forms latest version
 
-
 ## Documentation for Models
 
  - [ActionDefinition](docs/ActionDefinition.md)
@@ -263,7 +260,6 @@ Class | Method | HTTP request | Description
  - [UpdateTaskVariablePayload](docs/UpdateTaskVariablePayload.md)
  - [VariableDefinition](docs/VariableDefinition.md)
 
-
 ## Documentation for Authorization
 
 All endpoints do not require authorization.
@@ -274,6 +270,5 @@ Authentication schemes defined for the API:
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
-
 
 

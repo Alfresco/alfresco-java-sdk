@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class SignalPayload   {
   @JsonProperty("id")
   private String id = null;
@@ -65,7 +66,6 @@ public class SignalPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -80,11 +80,10 @@ public class SignalPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -100,11 +99,10 @@ public class SignalPayload   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -120,11 +118,10 @@ public class SignalPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -140,11 +137,10 @@ public class SignalPayload   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getVariables() {
+  
+    public Object getVariables() {
     return variables;
   }
 
@@ -197,4 +193,3 @@ public class SignalPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

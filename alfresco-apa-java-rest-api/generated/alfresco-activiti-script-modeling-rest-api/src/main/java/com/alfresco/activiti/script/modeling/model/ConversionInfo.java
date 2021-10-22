@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ConversionInfo   {
   @JsonProperty("key")
   private String key = null;
@@ -47,11 +48,10 @@ public class ConversionInfo   {
   /**
    * Get key
    * @return key
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getKey() {
+  
+    public String getKey() {
     return key;
   }
 
@@ -67,11 +67,10 @@ public class ConversionInfo   {
   /**
    * Get message
    * @return message
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getMessage() {
+  
+    public String getMessage() {
     return message;
   }
 
@@ -87,11 +86,10 @@ public class ConversionInfo   {
   /**
    * Get type
    * @return type
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getType() {
+  
+    public String getType() {
     return type;
   }
 
@@ -142,4 +140,3 @@ public class ConversionInfo   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

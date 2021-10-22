@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteTasksUsingDELETE**](TaskDeleteControllerApi.md#deleteTasksUsingDELETE) | **DELETE** /admin/v1/tasks | deleteTasks
 
-
 <a name="deleteTasksUsingDELETE"></a>
 # **deleteTasksUsingDELETE**
 > ListResponseContentOfQueryCloudTask deleteTasksUsingDELETE()

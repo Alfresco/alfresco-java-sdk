@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ListResponseContentDescriptorResponseRepresentation   {
   @JsonProperty("list")
   private EntriesResponseContentDescriptorResponseRepresentation list = null;
@@ -42,12 +43,11 @@ public class ListResponseContentDescriptorResponseRepresentation   {
   /**
    * Get list
    * @return list
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public EntriesResponseContentDescriptorResponseRepresentation getList() {
+  
+    @Valid
+    public EntriesResponseContentDescriptorResponseRepresentation getList() {
     return list;
   }
 
@@ -94,4 +94,3 @@ public class ListResponseContentDescriptorResponseRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

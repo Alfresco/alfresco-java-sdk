@@ -1,4 +1,3 @@
-
 # UpdateTaskPayload
 
 ## Properties
@@ -15,12 +14,8 @@ Name | Type | Description | Notes
 **priority** | **Integer** |  |  [optional]
 **taskId** | **String** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 UPDATETASKPAYLOAD | &quot;UpdateTaskPayload&quot;
-
-
-

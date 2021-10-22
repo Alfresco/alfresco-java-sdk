@@ -25,6 +25,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ObjectIdGeneratorobject   {
 
   @Override
@@ -63,4 +64,3 @@ public class ObjectIdGeneratorobject   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

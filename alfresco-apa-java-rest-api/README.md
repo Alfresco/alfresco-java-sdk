@@ -5,6 +5,7 @@
 This API has been generated using [Swagger Codegen](https://swagger.io/tools/swagger-codegen) from the public definitions:
 
 ## Documentation
+- [APS](/generated/alfresco-activiti-rest-api/README.md)
 - [Auth](/generated/alfresco-auth-rest-api/README.md)
 - [Deployment](/generated/alfresco-activiti-deployment-rest-api/README.md)
 - [Modeling](/generated/alfresco-activiti-modeling-rest-api/README.md)

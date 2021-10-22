@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Preference   {
   @JsonProperty("key")
   private String key = null;
@@ -44,11 +45,10 @@ public class Preference   {
   /**
    * Get key
    * @return key
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getKey() {
+  
+    public String getKey() {
     return key;
   }
 
@@ -64,11 +64,10 @@ public class Preference   {
   /**
    * Get value
    * @return value
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getValue() {
+  
+    public String getValue() {
     return value;
   }
 
@@ -117,4 +116,3 @@ public class Preference   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

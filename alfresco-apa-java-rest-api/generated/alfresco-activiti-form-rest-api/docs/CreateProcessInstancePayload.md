@@ -1,4 +1,3 @@
-
 # CreateProcessInstancePayload
 
 ## Properties
@@ -11,12 +10,8 @@ Name | Type | Description | Notes
 **processDefinitionId** | **String** |  |  [optional]
 **processDefinitionKey** | **String** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 CREATEPROCESSINSTANCEPAYLOAD | &quot;CreateProcessInstancePayload&quot;
-
-
-

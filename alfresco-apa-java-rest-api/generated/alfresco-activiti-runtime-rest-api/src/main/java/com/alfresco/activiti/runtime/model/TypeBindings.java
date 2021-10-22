@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class TypeBindings   {
   @JsonProperty("empty")
   private Boolean empty = null;
@@ -48,11 +49,10 @@ public class TypeBindings   {
   /**
    * Get empty
    * @return empty
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isEmpty() {
+  
+    public Boolean isEmpty() {
     return empty;
   }
 
@@ -76,12 +76,10 @@ public class TypeBindings   {
   /**
    * Get typeParameters
    * @return typeParameters
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<JavaType> getTypeParameters() {
+      @Valid
+    public List<JavaType> getTypeParameters() {
     return typeParameters;
   }
 
@@ -130,4 +128,3 @@ public class TypeBindings   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

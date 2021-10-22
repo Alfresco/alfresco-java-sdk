@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class PropertyName   {
   @JsonProperty("empty")
   private Boolean empty = null;
@@ -47,11 +48,10 @@ public class PropertyName   {
   /**
    * Get empty
    * @return empty
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isEmpty() {
+  
+    public Boolean isEmpty() {
     return empty;
   }
 
@@ -67,11 +67,10 @@ public class PropertyName   {
   /**
    * Get namespace
    * @return namespace
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getNamespace() {
+  
+    public String getNamespace() {
     return namespace;
   }
 
@@ -87,11 +86,10 @@ public class PropertyName   {
   /**
    * Get simpleName
    * @return simpleName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getSimpleName() {
+  
+    public String getSimpleName() {
     return simpleName;
   }
 
@@ -142,4 +140,3 @@ public class PropertyName   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

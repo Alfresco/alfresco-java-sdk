@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class InputStreamResource   {
   @JsonProperty("description")
   private String description = null;
@@ -64,11 +65,10 @@ public class InputStreamResource   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -84,12 +84,11 @@ public class InputStreamResource   {
   /**
    * Get file
    * @return file
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Resource getFile() {
+  
+    @Valid
+    public Resource getFile() {
     return file;
   }
 
@@ -105,11 +104,10 @@ public class InputStreamResource   {
   /**
    * Get filename
    * @return filename
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFilename() {
+  
+    public String getFilename() {
     return filename;
   }
 
@@ -125,12 +123,11 @@ public class InputStreamResource   {
   /**
    * Get inputStream
    * @return inputStream
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public InputStream getInputStream() {
+  
+    @Valid
+    public InputStream getInputStream() {
     return inputStream;
   }
 
@@ -146,11 +143,10 @@ public class InputStreamResource   {
   /**
    * Get open
    * @return open
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isOpen() {
+  
+    public Boolean isOpen() {
     return open;
   }
 
@@ -166,11 +162,10 @@ public class InputStreamResource   {
   /**
    * Get readable
    * @return readable
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isReadable() {
+  
+    public Boolean isReadable() {
     return readable;
   }
 
@@ -186,11 +181,10 @@ public class InputStreamResource   {
   /**
    * Get uri
    * @return uri
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUri() {
+  
+    public String getUri() {
     return uri;
   }
 
@@ -206,11 +200,10 @@ public class InputStreamResource   {
   /**
    * Get url
    * @return url
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUrl() {
+  
+    public String getUrl() {
     return url;
   }
 
@@ -271,4 +264,3 @@ public class InputStreamResource   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

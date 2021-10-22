@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**findAllUsingGET2**](AuditEventsAdminControllerImplApi.md#findAllUsingGET2) | **GET** /admin/v1/events | findAll
 
-
 <a name="findAllUsingGET2"></a>
 # **findAllUsingGET2**
 > ListResponseContentOfCloudRuntimeEventOfobjectAndstring findAllUsingGET2(maxItems, skipCount, sort)

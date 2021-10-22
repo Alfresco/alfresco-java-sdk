@@ -34,6 +34,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ProcessDefinitionMeta   {
   @JsonProperty("description")
   private String description = null;
@@ -75,11 +76,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -103,11 +103,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get groups
    * @return groups
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getGroups() {
+  
+    public List<String> getGroups() {
     return groups;
   }
 
@@ -123,11 +122,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -143,11 +141,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -171,12 +168,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get serviceTasks
    * @return serviceTasks
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<ProcessDefinitionServiceTask> getServiceTasks() {
+      @Valid
+    public List<ProcessDefinitionServiceTask> getServiceTasks() {
     return serviceTasks;
   }
 
@@ -200,12 +195,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get userTasks
    * @return userTasks
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<ProcessDefinitionUserTask> getUserTasks() {
+      @Valid
+    public List<ProcessDefinitionUserTask> getUserTasks() {
     return userTasks;
   }
 
@@ -229,11 +222,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get users
    * @return users
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getUsers() {
+  
+    public List<String> getUsers() {
     return users;
   }
 
@@ -257,12 +249,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get variables
    * @return variables
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public List<ProcessDefinitionVariable> getVariables() {
+      @Valid
+    public List<ProcessDefinitionVariable> getVariables() {
     return variables;
   }
 
@@ -278,11 +268,10 @@ public class ProcessDefinitionMeta   {
   /**
    * Get version
    * @return version
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getVersion() {
+  
+    public Integer getVersion() {
     return version;
   }
 
@@ -345,4 +334,3 @@ public class ProcessDefinitionMeta   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CloudRuntimeEventModel   {
   @JsonProperty("appName")
   private String appName = null;
@@ -154,7 +155,6 @@ public class CloudRuntimeEventModel   {
       return null;
     }
   }
-
   @JsonProperty("eventType")
   private EventTypeEnum eventType = null;
 
@@ -205,11 +205,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get appName
    * @return appName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppName() {
+  
+    public String getAppName() {
     return appName;
   }
 
@@ -225,11 +224,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get appVersion
    * @return appVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppVersion() {
+  
+    public String getAppVersion() {
     return appVersion;
   }
 
@@ -245,11 +243,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get businessKey
    * @return businessKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getBusinessKey() {
+  
+    public String getBusinessKey() {
     return businessKey;
   }
 
@@ -265,11 +262,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get entity
    * @return entity
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Object getEntity() {
+  
+    public Object getEntity() {
     return entity;
   }
 
@@ -285,11 +281,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get entityId
    * @return entityId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getEntityId() {
+  
+    public String getEntityId() {
     return entityId;
   }
 
@@ -305,11 +300,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get eventType
    * @return eventType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public EventTypeEnum getEventType() {
+  
+    public EventTypeEnum getEventType() {
     return eventType;
   }
 
@@ -325,11 +319,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -345,11 +338,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get messageId
    * @return messageId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getMessageId() {
+  
+    public String getMessageId() {
     return messageId;
   }
 
@@ -365,11 +357,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get parentProcessInstanceId
    * @return parentProcessInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getParentProcessInstanceId() {
+  
+    public String getParentProcessInstanceId() {
     return parentProcessInstanceId;
   }
 
@@ -385,11 +376,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get processDefinitionId
    * @return processDefinitionId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionId() {
+  
+    public String getProcessDefinitionId() {
     return processDefinitionId;
   }
 
@@ -405,11 +395,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get processDefinitionKey
    * @return processDefinitionKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessDefinitionKey() {
+  
+    public String getProcessDefinitionKey() {
     return processDefinitionKey;
   }
 
@@ -425,11 +414,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get processDefinitionVersion
    * @return processDefinitionVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getProcessDefinitionVersion() {
+  
+    public Integer getProcessDefinitionVersion() {
     return processDefinitionVersion;
   }
 
@@ -445,11 +433,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get processInstanceId
    * @return processInstanceId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProcessInstanceId() {
+  
+    public String getProcessInstanceId() {
     return processInstanceId;
   }
 
@@ -465,11 +452,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get sequenceNumber
    * @return sequenceNumber
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getSequenceNumber() {
+  
+    public Integer getSequenceNumber() {
     return sequenceNumber;
   }
 
@@ -485,11 +471,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get serviceFullName
    * @return serviceFullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceFullName() {
+  
+    public String getServiceFullName() {
     return serviceFullName;
   }
 
@@ -505,11 +490,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -525,11 +509,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get serviceType
    * @return serviceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceType() {
+  
+    public String getServiceType() {
     return serviceType;
   }
 
@@ -545,11 +528,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get serviceVersion
    * @return serviceVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceVersion() {
+  
+    public String getServiceVersion() {
     return serviceVersion;
   }
 
@@ -565,11 +547,10 @@ public class CloudRuntimeEventModel   {
   /**
    * Get timestamp
    * @return timestamp
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Long getTimestamp() {
+  
+    public Long getTimestamp() {
     return timestamp;
   }
 
@@ -652,4 +633,3 @@ public class CloudRuntimeEventModel   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

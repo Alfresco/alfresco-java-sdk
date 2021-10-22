@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**findByIdUsingGET4**](ServiceTaskIntegrationContextAdminControllerApi.md#findByIdUsingGET4) | **GET** /admin/v1/service-tasks/{serviceTaskId}/integration-context | findById
 
-
 <a name="findByIdUsingGET4"></a>
 # **findByIdUsingGET4**
 > EntryResponseContentOfCloudIntegrationContext findByIdUsingGET4(serviceTaskId)

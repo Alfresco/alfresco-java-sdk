@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getProcessDiagramUsingGET**](ProcessInstanceDiagramAdminControllerApi.md#getProcessDiagramUsingGET) | **GET** /admin/v1/process-instances/{processInstanceId}/diagram | getProcessDiagram
 
-
 <a name="getProcessDiagramUsingGET"></a>
 # **getProcessDiagramUsingGET**
 > String getProcessDiagramUsingGET(processInstanceId)

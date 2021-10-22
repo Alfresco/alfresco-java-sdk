@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getProcessDefinitionMetadataUsingGET**](ProcessDefinitionMetaControllerImplApi.md#getProcessDefinitionMetadataUsingGET) | **GET** /v1/process-definitions/{id}/meta | getProcessDefinitionMetadata
 
-
 <a name="getProcessDefinitionMetadataUsingGET"></a>
 # **getProcessDefinitionMetadataUsingGET**
 > EntryResponseContentProcessDefinitionMeta getProcessDefinitionMetadataUsingGET(id)

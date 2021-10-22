@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CandidateGroupsPayload   {
   @JsonProperty("candidateGroups")
   @Valid
@@ -68,7 +69,6 @@ public class CandidateGroupsPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -91,11 +91,10 @@ public class CandidateGroupsPayload   {
   /**
    * Get candidateGroups
    * @return candidateGroups
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getCandidateGroups() {
+  
+    public List<String> getCandidateGroups() {
     return candidateGroups;
   }
 
@@ -111,11 +110,10 @@ public class CandidateGroupsPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -131,11 +129,10 @@ public class CandidateGroupsPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -151,11 +148,10 @@ public class CandidateGroupsPayload   {
   /**
    * Get taskId
    * @return taskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getTaskId() {
+  
+    public String getTaskId() {
     return taskId;
   }
 
@@ -208,4 +204,3 @@ public class CandidateGroupsPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

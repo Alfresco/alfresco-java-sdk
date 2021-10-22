@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAllProcessDefinitionsUsingGET**](ProcessDefinitionAdminControllerImplApi.md#getAllProcessDefinitionsUsingGET) | **GET** /admin/v1/process-definitions | getAllProcessDefinitions
 
-
 <a name="getAllProcessDefinitionsUsingGET"></a>
 # **getAllProcessDefinitionsUsingGET**
 > ListResponseContentCloudProcessDefinition getAllProcessDefinitionsUsingGET(maxItems, skipCount, sort)

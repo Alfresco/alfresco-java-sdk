@@ -1,4 +1,3 @@
-
 # MessagingVariablesRepresentation
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **password** | **String** |  |  [optional]
 **port** | **String** |  |  [optional]
 **username** | **String** |  |  [optional]
-
-
-

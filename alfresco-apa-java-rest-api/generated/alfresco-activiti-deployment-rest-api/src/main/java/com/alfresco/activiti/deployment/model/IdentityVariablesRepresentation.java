@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class IdentityVariablesRepresentation   {
   @JsonProperty("realm")
   private String realm = null;
@@ -44,11 +45,10 @@ public class IdentityVariablesRepresentation   {
   /**
    * Get realm
    * @return realm
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getRealm() {
+  
+    public String getRealm() {
     return realm;
   }
 
@@ -64,11 +64,10 @@ public class IdentityVariablesRepresentation   {
   /**
    * Get url
    * @return url
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUrl() {
+  
+    public String getUrl() {
     return url;
   }
 
@@ -117,4 +116,3 @@ public class IdentityVariablesRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

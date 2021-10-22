@@ -1,4 +1,3 @@
-
 # ModelReq
 
 ## Properties
@@ -17,13 +16,9 @@ Name | Type | Description | Notes
 **template** | **String** |  |  [optional]
 **type** | **String** |  |  [optional]
 
-
 <a name="ScopeEnum"></a>
 ## Enum: ScopeEnum
 Name | Value
 ---- | -----
 GLOBAL | &quot;GLOBAL&quot;
 PROJECT | &quot;PROJECT&quot;
-
-
-

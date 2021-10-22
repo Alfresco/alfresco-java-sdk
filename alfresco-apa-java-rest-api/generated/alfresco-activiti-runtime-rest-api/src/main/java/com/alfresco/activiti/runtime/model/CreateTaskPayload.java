@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CreateTaskPayload   {
   @JsonProperty("assignee")
   private String assignee = null;
@@ -91,7 +92,6 @@ public class CreateTaskPayload   {
       return null;
     }
   }
-
   @JsonProperty("payloadType")
   private PayloadTypeEnum payloadType = null;
 
@@ -106,11 +106,10 @@ public class CreateTaskPayload   {
   /**
    * Get assignee
    * @return assignee
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAssignee() {
+  
+    public String getAssignee() {
     return assignee;
   }
 
@@ -134,11 +133,10 @@ public class CreateTaskPayload   {
   /**
    * Get candidateGroups
    * @return candidateGroups
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getCandidateGroups() {
+  
+    public List<String> getCandidateGroups() {
     return candidateGroups;
   }
 
@@ -162,11 +160,10 @@ public class CreateTaskPayload   {
   /**
    * Get candidateUsers
    * @return candidateUsers
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getCandidateUsers() {
+  
+    public List<String> getCandidateUsers() {
     return candidateUsers;
   }
 
@@ -182,11 +179,10 @@ public class CreateTaskPayload   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -202,12 +198,11 @@ public class CreateTaskPayload   {
   /**
    * Get dueDate
    * @return dueDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getDueDate() {
+  
+    @Valid
+    public OffsetDateTime getDueDate() {
     return dueDate;
   }
 
@@ -223,11 +218,10 @@ public class CreateTaskPayload   {
   /**
    * Get formKey
    * @return formKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFormKey() {
+  
+    public String getFormKey() {
     return formKey;
   }
 
@@ -243,11 +237,10 @@ public class CreateTaskPayload   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -263,11 +256,10 @@ public class CreateTaskPayload   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -283,11 +275,10 @@ public class CreateTaskPayload   {
   /**
    * Get parentTaskId
    * @return parentTaskId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getParentTaskId() {
+  
+    public String getParentTaskId() {
     return parentTaskId;
   }
 
@@ -303,11 +294,10 @@ public class CreateTaskPayload   {
   /**
    * Get payloadType
    * @return payloadType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public PayloadTypeEnum getPayloadType() {
+  
+    public PayloadTypeEnum getPayloadType() {
     return payloadType;
   }
 
@@ -323,11 +313,10 @@ public class CreateTaskPayload   {
   /**
    * Get priority
    * @return priority
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getPriority() {
+  
+    public Integer getPriority() {
     return priority;
   }
 
@@ -394,4 +383,3 @@ public class CreateTaskPayload   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -1,4 +1,3 @@
-
 # CreateTaskVariablePayload
 
 ## Properties
@@ -10,12 +9,8 @@ Name | Type | Description | Notes
 **taskId** | **String** |  |  [optional]
 **value** | **Object** |  |  [optional]
 
-
 <a name="PayloadTypeEnum"></a>
 ## Enum: PayloadTypeEnum
 Name | Value
 ---- | -----
 CREATETASKVARIABLEPAYLOAD | &quot;CreateTaskVariablePayload&quot;
-
-
-

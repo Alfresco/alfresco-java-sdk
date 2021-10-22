@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CandidateGroup   {
   @JsonProperty("group")
   private String group = null;
@@ -41,11 +42,10 @@ public class CandidateGroup   {
   /**
    * Get group
    * @return group
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getGroup() {
+  
+    public String getGroup() {
     return group;
   }
 
@@ -92,4 +92,3 @@ public class CandidateGroup   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class SecurityRepresentation   {
   @JsonProperty("groups")
   @Valid
@@ -59,11 +60,10 @@ public class SecurityRepresentation   {
   /**
    * Get groups
    * @return groups
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getGroups() {
+  
+    public List<String> getGroups() {
     return groups;
   }
 
@@ -79,11 +79,10 @@ public class SecurityRepresentation   {
   /**
    * Get role
    * @return role
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getRole() {
+  
+    public String getRole() {
     return role;
   }
 
@@ -107,11 +106,10 @@ public class SecurityRepresentation   {
   /**
    * Get users
    * @return users
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getUsers() {
+  
+    public List<String> getUsers() {
     return users;
   }
 
@@ -162,4 +160,3 @@ public class SecurityRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -32,6 +32,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Release   {
   @JsonProperty("artifact")
   private byte[] artifact = null;
@@ -82,11 +83,10 @@ public class Release   {
   /**
    * Get artifact
    * @return artifact
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-@Pattern(regexp="^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$") 
-  public byte[] getArtifact() {
+  
+    public byte[] getArtifact() {
     return artifact;
   }
 
@@ -102,11 +102,10 @@ public class Release   {
   /**
    * Get createdBy
    * @return createdBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getCreatedBy() {
+  
+    public String getCreatedBy() {
     return createdBy;
   }
 
@@ -122,12 +121,11 @@ public class Release   {
   /**
    * Get creationDate
    * @return creationDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getCreationDate() {
+  
+    @Valid
+    public OffsetDateTime getCreationDate() {
     return creationDate;
   }
 
@@ -143,11 +141,10 @@ public class Release   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -171,11 +168,10 @@ public class Release   {
   /**
    * Get groups
    * @return groups
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getGroups() {
+  
+    public List<String> getGroups() {
     return groups;
   }
 
@@ -191,11 +187,10 @@ public class Release   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -211,11 +206,10 @@ public class Release   {
   /**
    * Get lastModifiedBy
    * @return lastModifiedBy
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getLastModifiedBy() {
+  
+    public String getLastModifiedBy() {
     return lastModifiedBy;
   }
 
@@ -231,12 +225,11 @@ public class Release   {
   /**
    * Get lastModifiedDate
    * @return lastModifiedDate
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OffsetDateTime getLastModifiedDate() {
+  
+    @Valid
+    public OffsetDateTime getLastModifiedDate() {
     return lastModifiedDate;
   }
 
@@ -252,11 +245,10 @@ public class Release   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -272,11 +264,10 @@ public class Release   {
   /**
    * Get projectId
    * @return projectId
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProjectId() {
+  
+    public String getProjectId() {
     return projectId;
   }
 
@@ -292,11 +283,10 @@ public class Release   {
   /**
    * Get projectName
    * @return projectName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getProjectName() {
+  
+    public String getProjectName() {
     return projectName;
   }
 
@@ -320,11 +310,10 @@ public class Release   {
   /**
    * Get users
    * @return users
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getUsers() {
+  
+    public List<String> getUsers() {
     return users;
   }
 
@@ -340,11 +329,10 @@ public class Release   {
   /**
    * Get version
    * @return version
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getVersion() {
+  
+    public String getVersion() {
     return version;
   }
 
@@ -415,4 +403,3 @@ public class Release   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

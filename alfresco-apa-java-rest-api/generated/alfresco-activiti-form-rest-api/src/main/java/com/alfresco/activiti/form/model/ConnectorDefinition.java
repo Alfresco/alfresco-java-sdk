@@ -33,6 +33,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ConnectorDefinition   {
   @JsonProperty("actions")
   @Valid
@@ -63,12 +64,10 @@ public class ConnectorDefinition   {
   /**
    * Get actions
    * @return actions
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public Map<String, ActionDefinition> getActions() {
+      @Valid
+    public Map<String, ActionDefinition> getActions() {
     return actions;
   }
 
@@ -84,11 +83,10 @@ public class ConnectorDefinition   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -104,11 +102,10 @@ public class ConnectorDefinition   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -124,11 +121,10 @@ public class ConnectorDefinition   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -181,4 +177,3 @@ public class ConnectorDefinition   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

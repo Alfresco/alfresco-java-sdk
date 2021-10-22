@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class CloudProcessDefinition   {
   @JsonProperty("appName")
   private String appName = null;
@@ -74,11 +75,10 @@ public class CloudProcessDefinition   {
   /**
    * Get appName
    * @return appName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppName() {
+  
+    public String getAppName() {
     return appName;
   }
 
@@ -94,11 +94,10 @@ public class CloudProcessDefinition   {
   /**
    * Get appVersion
    * @return appVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getAppVersion() {
+  
+    public String getAppVersion() {
     return appVersion;
   }
 
@@ -114,11 +113,10 @@ public class CloudProcessDefinition   {
   /**
    * Get description
    * @return description
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getDescription() {
+  
+    public String getDescription() {
     return description;
   }
 
@@ -134,11 +132,10 @@ public class CloudProcessDefinition   {
   /**
    * Get formKey
    * @return formKey
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFormKey() {
+  
+    public String getFormKey() {
     return formKey;
   }
 
@@ -154,11 +151,10 @@ public class CloudProcessDefinition   {
   /**
    * Get id
    * @return id
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getId() {
+  
+    public String getId() {
     return id;
   }
 
@@ -174,11 +170,10 @@ public class CloudProcessDefinition   {
   /**
    * Get key
    * @return key
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getKey() {
+  
+    public String getKey() {
     return key;
   }
 
@@ -194,11 +189,10 @@ public class CloudProcessDefinition   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -214,11 +208,10 @@ public class CloudProcessDefinition   {
   /**
    * Get serviceFullName
    * @return serviceFullName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceFullName() {
+  
+    public String getServiceFullName() {
     return serviceFullName;
   }
 
@@ -234,11 +227,10 @@ public class CloudProcessDefinition   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -254,11 +246,10 @@ public class CloudProcessDefinition   {
   /**
    * Get serviceType
    * @return serviceType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceType() {
+  
+    public String getServiceType() {
     return serviceType;
   }
 
@@ -274,11 +265,10 @@ public class CloudProcessDefinition   {
   /**
    * Get serviceVersion
    * @return serviceVersion
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceVersion() {
+  
+    public String getServiceVersion() {
     return serviceVersion;
   }
 
@@ -294,11 +284,10 @@ public class CloudProcessDefinition   {
   /**
    * Get version
    * @return version
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Integer getVersion() {
+  
+    public Integer getVersion() {
     return version;
   }
 
@@ -367,4 +356,3 @@ public class CloudProcessDefinition   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

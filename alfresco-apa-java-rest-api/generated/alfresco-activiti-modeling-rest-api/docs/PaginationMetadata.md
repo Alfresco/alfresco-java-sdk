@@ -1,4 +1,3 @@
-
 # PaginationMetadata
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **maxItems** | **Long** |  |  [optional]
 **skipCount** | **Long** |  |  [optional]
 **totalItems** | **Long** |  |  [optional]
-
-
-

@@ -31,6 +31,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ModelType   {
   @JsonProperty("allowedContentFileExtension")
   @Valid
@@ -64,11 +65,10 @@ public class ModelType   {
   /**
    * Get allowedContentFileExtension
    * @return allowedContentFileExtension
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public List<String> getAllowedContentFileExtension() {
+  
+    public List<String> getAllowedContentFileExtension() {
     return allowedContentFileExtension;
   }
 
@@ -84,11 +84,10 @@ public class ModelType   {
   /**
    * Get contentFileExtension
    * @return contentFileExtension
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getContentFileExtension() {
+  
+    public String getContentFileExtension() {
     return contentFileExtension;
   }
 
@@ -104,11 +103,10 @@ public class ModelType   {
   /**
    * Get extensionsFileSuffix
    * @return extensionsFileSuffix
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getExtensionsFileSuffix() {
+  
+    public String getExtensionsFileSuffix() {
     return extensionsFileSuffix;
   }
 
@@ -124,11 +122,10 @@ public class ModelType   {
   /**
    * Get folderName
    * @return folderName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getFolderName() {
+  
+    public String getFolderName() {
     return folderName;
   }
 
@@ -144,11 +141,10 @@ public class ModelType   {
   /**
    * Get name
    * @return name
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getName() {
+  
+    public String getName() {
     return name;
   }
 
@@ -203,4 +199,3 @@ public class ModelType   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

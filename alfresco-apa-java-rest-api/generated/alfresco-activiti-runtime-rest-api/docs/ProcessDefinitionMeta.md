@@ -1,4 +1,3 @@
-
 # ProcessDefinitionMeta
 
 ## Properties
@@ -13,6 +12,3 @@ Name | Type | Description | Notes
 **users** | **List&lt;String&gt;** |  |  [optional]
 **variables** | [**List&lt;ProcessDefinitionVariable&gt;**](ProcessDefinitionVariable.md) |  |  [optional]
 **version** | **Integer** |  |  [optional]
-
-
-

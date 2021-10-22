@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ApplicationLog   {
   @JsonProperty("applicationName")
   private String applicationName = null;
@@ -47,11 +48,10 @@ public class ApplicationLog   {
   /**
    * Get applicationName
    * @return applicationName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getApplicationName() {
+  
+    public String getApplicationName() {
     return applicationName;
   }
 
@@ -67,11 +67,10 @@ public class ApplicationLog   {
   /**
    * Get content
    * @return content
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getContent() {
+  
+    public String getContent() {
     return content;
   }
 
@@ -87,11 +86,10 @@ public class ApplicationLog   {
   /**
    * Get serviceName
    * @return serviceName
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getServiceName() {
+  
+    public String getServiceName() {
     return serviceName;
   }
 
@@ -142,4 +140,3 @@ public class ApplicationLog   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class EntryResponseContentConnectorDefinition   {
   @JsonProperty("entry")
   private ConnectorDefinition entry = null;
@@ -42,12 +43,11 @@ public class EntryResponseContentConnectorDefinition   {
   /**
    * Get entry
    * @return entry
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ConnectorDefinition getEntry() {
+  
+    @Valid
+    public ConnectorDefinition getEntry() {
     return entry;
   }
 
@@ -94,4 +94,3 @@ public class EntryResponseContentConnectorDefinition   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

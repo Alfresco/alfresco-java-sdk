@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org) to be installed.
+Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
 
 ## Installation
 
@@ -56,7 +56,6 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
   import com.alfresco.activiti.audit.*;
   import com.alfresco.activiti.audit.auth.*;
   import com.alfresco.activiti.audit.model.*;
@@ -82,7 +81,6 @@ Please follow the [installation](#installation) instruction and execute the foll
   }
   }
   }
-
 ```
 
 ## Documentation for API Endpoints
@@ -135,7 +133,6 @@ Class | Method | HTTP request | Description
 *TaskVariableAdminControllerApi* | [**getVariablesUsingGET2**](docs/TaskVariableAdminControllerApi.md#getVariablesUsingGET2) | **GET** /admin/v1/tasks/{taskId}/variables | getVariables
 *TaskVariableControllerApi* | [**getVariablesUsingGET3**](docs/TaskVariableControllerApi.md#getVariablesUsingGET3) | **GET** /v1/tasks/{taskId}/variables | getVariables
 
-
 ## Documentation for Models
 
  - [CleanupQueryProcessInstancesJobRequest](docs/CleanupQueryProcessInstancesJobRequest.md)
@@ -184,7 +181,6 @@ Class | Method | HTTP request | Description
  - [QueryCloudTask](docs/QueryCloudTask.md)
  - [StackTraceElement](docs/StackTraceElement.md)
 
-
 ## Documentation for Authorization
 
 All endpoints do not require authorization.
@@ -195,6 +191,5 @@ Authentication schemes defined for the API:
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
-
 
 

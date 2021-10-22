@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class HomeResource   {
   @JsonProperty("welcome")
   private String welcome = null;
@@ -41,11 +42,10 @@ public class HomeResource   {
   /**
    * Get welcome
    * @return welcome
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getWelcome() {
+  
+    public String getWelcome() {
     return welcome;
   }
 
@@ -92,4 +92,3 @@ public class HomeResource   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

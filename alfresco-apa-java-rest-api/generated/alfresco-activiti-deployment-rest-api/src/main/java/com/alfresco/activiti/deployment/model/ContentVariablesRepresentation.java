@@ -30,6 +30,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class ContentVariablesRepresentation   {
   @JsonProperty("storageTarget")
   private String storageTarget = null;
@@ -64,7 +65,6 @@ public class ContentVariablesRepresentation   {
       return null;
     }
   }
-
   @JsonProperty("storageType")
   private StorageTypeEnum storageType = null;
 
@@ -79,11 +79,10 @@ public class ContentVariablesRepresentation   {
   /**
    * Get storageTarget
    * @return storageTarget
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getStorageTarget() {
+  
+    public String getStorageTarget() {
     return storageTarget;
   }
 
@@ -99,11 +98,10 @@ public class ContentVariablesRepresentation   {
   /**
    * Get storageType
    * @return storageType
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public StorageTypeEnum getStorageType() {
+  
+    public StorageTypeEnum getStorageType() {
     return storageType;
   }
 
@@ -119,11 +117,10 @@ public class ContentVariablesRepresentation   {
   /**
    * Get url
    * @return url
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public String getUrl() {
+  
+    public String getUrl() {
     return url;
   }
 
@@ -174,4 +171,3 @@ public class ContentVariablesRepresentation   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

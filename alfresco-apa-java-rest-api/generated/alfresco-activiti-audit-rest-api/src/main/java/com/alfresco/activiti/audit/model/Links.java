@@ -29,6 +29,7 @@ import javax.validation.constraints.*;
  */
 @Validated
 
+
 public class Links   {
   @JsonProperty("empty")
   private Boolean empty = null;
@@ -41,11 +42,10 @@ public class Links   {
   /**
    * Get empty
    * @return empty
-  **/
+   **/
   @ApiModelProperty(value = "")
-
-
-  public Boolean isEmpty() {
+  
+    public Boolean isEmpty() {
     return empty;
   }
 
@@ -92,4 +92,3 @@ public class Links   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

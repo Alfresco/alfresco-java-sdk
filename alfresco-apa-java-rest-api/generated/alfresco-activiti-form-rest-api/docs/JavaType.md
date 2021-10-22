@@ -1,4 +1,3 @@
-
 # JavaType
 
 ## Properties
@@ -32,6 +31,3 @@ Name | Type | Description | Notes
 **typeHandler** | **Object** |  |  [optional]
 **typeName** | **String** |  |  [optional]
 **valueHandler** | **Object** |  |  [optional]
-
-
-
