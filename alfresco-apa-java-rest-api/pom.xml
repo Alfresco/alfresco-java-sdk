@@ -14,7 +14,7 @@
   <modules>
     <module>alfresco-apa-java-rest-api-lib</module>
     <module>alfresco-apa-java-rest-api-spring-boot</module>
-    <module>alfresco-apa-rest-api-spring-boot-starter</module>
+    <module>alfresco-apa-java-rest-api-spring-boot-starter</module>
   </modules>
 
 

@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>alfresco-apa-rest-api-spring-boot-starter</artifactId>
+  <artifactId>alfresco-apa-java-rest-api-spring-boot-starter</artifactId>
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
