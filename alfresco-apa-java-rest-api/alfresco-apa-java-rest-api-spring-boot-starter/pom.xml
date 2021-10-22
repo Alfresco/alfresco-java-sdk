@@ -20,7 +20,7 @@
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-apa-java-rest-api-spring-boot</artifactId>
-      <version>5.1.2-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>

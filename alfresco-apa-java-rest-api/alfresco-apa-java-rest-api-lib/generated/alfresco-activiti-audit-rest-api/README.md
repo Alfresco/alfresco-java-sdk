@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.alfresco</groupId>
     <artifactId>alfresco-activiti-audit-rest-api</artifactId>
-    <version>7.1.0-SNAPSHOT</version>
+    <version>5.1.2-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.alfresco:alfresco-activiti-audit-rest-api:7.1.0-SNAPSHOT"
+compile "com.alfresco:alfresco-activiti-audit-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-activiti-audit-rest-api-7.1.0-SNAPSHOT.jar
+* target/alfresco-activiti-audit-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
 ## Getting Started

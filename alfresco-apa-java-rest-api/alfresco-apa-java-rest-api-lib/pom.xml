@@ -8,9 +8,10 @@
     <groupId>org.alfresco</groupId>
     <version>5.1.2-SNAPSHOT</version>
   </parent>
+
   <groupId>com.alfresco</groupId>
   <artifactId>alfresco-apa-java-rest-api-lib</artifactId>
-  <version>7.1.0-SNAPSHOT</version>
+
   <name>Alfresco Java REST API</name>
   <description>${project.name}</description>
   <packaging>pom</packaging>
