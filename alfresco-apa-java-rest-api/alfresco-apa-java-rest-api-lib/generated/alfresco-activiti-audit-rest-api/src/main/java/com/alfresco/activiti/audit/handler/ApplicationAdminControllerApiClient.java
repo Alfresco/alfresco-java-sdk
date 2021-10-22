@@ -18,6 +18,6 @@ package com.alfresco.activiti.audit.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "${alfrescoProcessQueryServiceReST_.name:alfrescoProcessQueryServiceReST_}", url = "${alfrescoProcessQueryServiceReST_.url:}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(value = "query", url = "${activiti.service.query.url}", path = "${activiti.service.query.path}", configuration = ClientConfiguration.class, decode404 = true)
 public interface ApplicationAdminControllerApiClient extends ApplicationAdminControllerApi {
 }
