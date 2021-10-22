@@ -21,7 +21,7 @@ import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
 @TestPropertySource("classpath:application-test.properties")
-public class ApplicationTest {
+public class APAApplicationTest {
 
     @Test
     void contextLoads() {
