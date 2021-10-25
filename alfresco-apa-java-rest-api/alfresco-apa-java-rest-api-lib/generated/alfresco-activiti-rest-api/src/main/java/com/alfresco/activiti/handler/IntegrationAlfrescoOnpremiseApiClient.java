@@ -18,6 +18,6 @@ package com.alfresco.activiti.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "process", url = "${process.service.url}", path = "${process.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(value = "alfrescoIntegrationAlfrescoOnpremiseApi", url = "${process.service.url}", path = "${process.service.path}", configuration = ClientConfiguration.class, decode404 = true)
 public interface IntegrationAlfrescoOnpremiseApiClient extends IntegrationAlfrescoOnpremiseApi {
 }

@@ -18,6 +18,6 @@ package com.alfresco.activiti.modeling.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "modeling", url = "${modeling.url}", path = "${modeling.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(value = "alfrescoScriptControllerApi", url = "${modeling.url}", path = "${modeling.path}", configuration = ClientConfiguration.class, decode404 = true)
 public interface ScriptControllerApiClient extends ScriptControllerApi {
 }
