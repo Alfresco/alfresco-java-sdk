@@ -11,9 +11,26 @@
 
   <artifactId>java-rest-api-clients</artifactId>
 
-  <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-  </properties>
+  <name>Alfresco Java REST APIs :: Sample App</name>
+  <description>Sample application to demonstrate Java ACS and APA REST APIs working together</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.alfresco</groupId>
+      <artifactId>alfresco-acs-java-rest-api-spring-boot</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.alfresco</groupId>
+      <artifactId>alfresco-apa-java-rest-api-spring-boot</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
 </project>
