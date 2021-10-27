@@ -52,6 +52,7 @@
     <module>alfresco-java-event-api</module>
     <module>alfresco-acs-java-rest-api</module>
     <module>alfresco-apa-java-rest-api</module>
+    <module>alfresco-java-rest-api-common</module>
     <module>samples</module>
   </modules>
   <scm>
