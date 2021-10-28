@@ -30,18 +30,18 @@
     <!-- APS -->
     <aps.api>https://${environment.host}/activiti-app/v3/api-docs?group=enterprise</aps.api>
     <!-- AAE INFRASTRUCTURE -->
-    <aae.deployment.api>https://${environment.host}/deployment-service/v2/api-docs</aae.deployment.api>
-    <aae.modeling.api>https://${environment.host}/modeling-service/v2/api-docs</aae.modeling.api>
-    <aae.dmn-simulation.api>https://${environment.host}/dmn-service/v2/api-docs/</aae.dmn-simulation.api>
-    <aae.script-modeling.api>https://${environment.host}/script-service/v2/api-docs/</aae.script-modeling.api>
+    <aae.deployment.api>https://${environment.host}/deployment-service/v3/api-docs</aae.deployment.api>
+    <aae.modeling.api>https://${environment.host}/modeling-service/v3/api-docs</aae.modeling.api>
+    <aae.dmn-simulation.api>https://${environment.host}/dmn-service/v3/api-docs/</aae.dmn-simulation.api>
+    <aae.script-modeling.api>https://${environment.host}/script-service/v3/api-docs/</aae.script-modeling.api>
     <!-- AAE APPLICATION -->
-    <aae.form.api>https://${environment.host}/${environment.application.name}/form/v2/api-docs</aae.form.api>
-    <aae.query.api>https://${environment.host}/${environment.application.name}/query/v2/api-docs</aae.query.api>
-    <aae.runtime.api>https://${environment.host}/${environment.application.name}/rb/v2/api-docs</aae.runtime.api>
-    <aae.audit.api>https://${environment.host}/${environment.application.name}/audit/v2/api-docs</aae.audit.api>
-    <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v2/api-docs
+    <aae.form.api>https://${environment.host}/${environment.application.name}/form/v3/api-docs</aae.form.api>
+    <aae.query.api>https://${environment.host}/${environment.application.name}/query/v3/api-docs</aae.query.api>
+    <aae.runtime.api>https://${environment.host}/${environment.application.name}/rb/v3/api-docs</aae.runtime.api>
+    <aae.audit.api>https://${environment.host}/${environment.application.name}/audit/v3/api-docs</aae.audit.api>
+    <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v3/api-docs
     </aae.process-storage.api>
-    <aae.preference.api>https://${environment.host}/${environment.application.name}/preference/v2/api-docs</aae.preference.api>
+    <aae.preference.api>https://${environment.host}/${environment.application.name}/preference/v3/api-docs</aae.preference.api>
   </properties>
   <distributionManagement>
     <repository>
