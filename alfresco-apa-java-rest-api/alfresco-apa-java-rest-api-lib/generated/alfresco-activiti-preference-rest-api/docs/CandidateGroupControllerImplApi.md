@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="addCandidateGroupsUsingPOST1"></a>
 # **addCandidateGroupsUsingPOST1**
-> addCandidateGroupsUsingPOST1(body, taskId)
+> addCandidateGroupsUsingPOST1(taskId, body)
 
 addCandidateGroups
 
@@ -22,10 +22,10 @@ addCandidateGroups
 
 
 CandidateGroupControllerImplApi apiInstance = new CandidateGroupControllerImplApi();
-CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
 String taskId = "taskId_example"; // String | taskId
+CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | 
 try {
-    apiInstance.addCandidateGroupsUsingPOST1(body, taskId);
+    apiInstance.addCandidateGroupsUsingPOST1(taskId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupControllerImplApi#addCandidateGroupsUsingPOST1");
     e.printStackTrace();
@@ -36,8 +36,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
  **taskId** | **String**| taskId |
+ **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)|  | [optional]
 
 ### Return type
 
@@ -54,7 +54,7 @@ No authorization required
 
 <a name="deleteCandidateGroupsUsingDELETE1"></a>
 # **deleteCandidateGroupsUsingDELETE1**
-> deleteCandidateGroupsUsingDELETE1(body, taskId)
+> deleteCandidateGroupsUsingDELETE1(taskId, body)
 
 deleteCandidateGroups
 
@@ -66,10 +66,10 @@ deleteCandidateGroups
 
 
 CandidateGroupControllerImplApi apiInstance = new CandidateGroupControllerImplApi();
-CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
 String taskId = "taskId_example"; // String | taskId
+CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | 
 try {
-    apiInstance.deleteCandidateGroupsUsingDELETE1(body, taskId);
+    apiInstance.deleteCandidateGroupsUsingDELETE1(taskId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupControllerImplApi#deleteCandidateGroupsUsingDELETE1");
     e.printStackTrace();
@@ -80,8 +80,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
  **taskId** | **String**| taskId |
+ **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)|  | [optional]
 
 ### Return type
 
@@ -93,12 +93,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 <a name="getGroupCandidatesUsingGET1"></a>
 # **getGroupCandidatesUsingGET1**
-> ListResponseContentCandidateGroup getGroupCandidatesUsingGET1(taskId)
+> ListResponseContentOfCandidateGroup getGroupCandidatesUsingGET1(taskId)
 
 getGroupCandidates
 
@@ -112,7 +112,7 @@ getGroupCandidates
 CandidateGroupControllerImplApi apiInstance = new CandidateGroupControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
 try {
-    ListResponseContentCandidateGroup result = apiInstance.getGroupCandidatesUsingGET1(taskId);
+    ListResponseContentOfCandidateGroup result = apiInstance.getGroupCandidatesUsingGET1(taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupControllerImplApi#getGroupCandidatesUsingGET1");
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCandidateGroup**](ListResponseContentCandidateGroup.md)
+[**ListResponseContentOfCandidateGroup**](ListResponseContentOfCandidateGroup.md)
 
 ### Authorization
 
@@ -137,5 +137,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

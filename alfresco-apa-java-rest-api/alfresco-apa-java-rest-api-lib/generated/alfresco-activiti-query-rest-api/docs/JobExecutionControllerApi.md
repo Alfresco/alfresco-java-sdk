@@ -54,7 +54,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getUsingGET1"></a>
 # **getUsingGET1**
@@ -97,7 +97,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="logUsingGET"></a>
 # **logUsingGET**
@@ -156,7 +156,7 @@ post
 
 
 JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
-JobConfig body = new JobConfig(); // JobConfig | jobConfig
+JobConfig body = new JobConfig(); // JobConfig | 
 try {
     EntryResponseContentOfJobExecution result = apiInstance.postUsingPOST(body);
     System.out.println(result);
@@ -170,7 +170,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**JobConfig**](JobConfig.md)| jobConfig |
+ **body** | [**JobConfig**](JobConfig.md)|  | [optional]
 
 ### Return type
 
@@ -183,5 +183,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

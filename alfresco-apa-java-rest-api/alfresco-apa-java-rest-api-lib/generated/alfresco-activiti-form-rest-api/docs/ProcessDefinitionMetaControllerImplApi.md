@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="getProcessDefinitionMetadataUsingGET"></a>
 # **getProcessDefinitionMetadataUsingGET**
-> EntryResponseContentProcessDefinitionMeta getProcessDefinitionMetadataUsingGET(id)
+> EntryResponseContentOfProcessDefinitionMeta getProcessDefinitionMetadataUsingGET(id)
 
 getProcessDefinitionMetadata
 
@@ -22,7 +22,7 @@ getProcessDefinitionMetadata
 ProcessDefinitionMetaControllerImplApi apiInstance = new ProcessDefinitionMetaControllerImplApi();
 String id = "id_example"; // String | id
 try {
-    EntryResponseContentProcessDefinitionMeta result = apiInstance.getProcessDefinitionMetadataUsingGET(id);
+    EntryResponseContentOfProcessDefinitionMeta result = apiInstance.getProcessDefinitionMetadataUsingGET(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessDefinitionMetaControllerImplApi#getProcessDefinitionMetadataUsingGET");
@@ -38,7 +38,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentProcessDefinitionMeta**](EntryResponseContentProcessDefinitionMeta.md)
+[**EntryResponseContentOfProcessDefinitionMeta**](EntryResponseContentOfProcessDefinitionMeta.md)
 
 ### Authorization
 
@@ -47,5 +47,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

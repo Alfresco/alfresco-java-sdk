@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="createModelUsingPOST"></a>
 # **createModelUsingPOST**
-> EntryResponseContentModel createModelUsingPOST(body, projectId)
+> EntryResponseContentOfModel createModelUsingPOST(projectId, body)
 
 Create new model belonging to an project
 
@@ -38,10 +38,10 @@ Create a new model related to an existing project
 
 
 ModelsApi apiInstance = new ModelsApi();
-ModelReq body = new ModelReq(); // ModelReq | The details of the model to create
 String projectId = "projectId_example"; // String | The id of the project to associate the new model with
+ModelReq body = new ModelReq(); // ModelReq | 
 try {
-    EntryResponseContentModel result = apiInstance.createModelUsingPOST(body, projectId);
+    EntryResponseContentOfModel result = apiInstance.createModelUsingPOST(projectId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#createModelUsingPOST");
@@ -53,12 +53,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ModelReq**](ModelReq.md)| The details of the model to create |
  **projectId** | **String**| The id of the project to associate the new model with |
+ **body** | [**ModelReq**](ModelReq.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentModel**](EntryResponseContentModel.md)
+[**EntryResponseContentOfModel**](EntryResponseContentOfModel.md)
 
 ### Authorization
 
@@ -67,11 +67,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="createModelWithoutProjectUsingPOST"></a>
 # **createModelWithoutProjectUsingPOST**
-> EntryResponseContentModel createModelWithoutProjectUsingPOST(body)
+> EntryResponseContentOfModel createModelWithoutProjectUsingPOST(body)
 
 Create new model that does note belong to a project
 
@@ -85,9 +85,9 @@ Create a new model with no relationship to other projects
 
 
 ModelsApi apiInstance = new ModelsApi();
-ModelReq body = new ModelReq(); // ModelReq | The details of the model to create
+ModelReq body = new ModelReq(); // ModelReq | 
 try {
-    EntryResponseContentModel result = apiInstance.createModelWithoutProjectUsingPOST(body);
+    EntryResponseContentOfModel result = apiInstance.createModelWithoutProjectUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#createModelWithoutProjectUsingPOST");
@@ -99,11 +99,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ModelReq**](ModelReq.md)| The details of the model to create |
+ **body** | [**ModelReq**](ModelReq.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentModel**](EntryResponseContentModel.md)
+[**EntryResponseContentOfModel**](EntryResponseContentOfModel.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="deleteModelUsingDELETE"></a>
 # **deleteModelUsingDELETE**
@@ -158,7 +158,7 @@ No authorization required
 
 <a name="deleteProjectModelRelationshipUsingDELETE"></a>
 # **deleteProjectModelRelationshipUsingDELETE**
-> EntryResponseContentModel deleteProjectModelRelationshipUsingDELETE(modelId, projectId)
+> EntryResponseContentOfModel deleteProjectModelRelationshipUsingDELETE(projectId, modelId)
 
 Delete the relationship between an existing model, and the project
 
@@ -172,10 +172,10 @@ Get the model associated with the project updated. Minimal information for the m
 
 
 ModelsApi apiInstance = new ModelsApi();
-String modelId = "modelId_example"; // String | The id of the model of the relationship to delete
 String projectId = "projectId_example"; // String | The id of the project of the relationship to delete
+String modelId = "modelId_example"; // String | The id of the model of the relationship to delete
 try {
-    EntryResponseContentModel result = apiInstance.deleteProjectModelRelationshipUsingDELETE(modelId, projectId);
+    EntryResponseContentOfModel result = apiInstance.deleteProjectModelRelationshipUsingDELETE(projectId, modelId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#deleteProjectModelRelationshipUsingDELETE");
@@ -187,12 +187,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelId** | **String**| The id of the model of the relationship to delete |
  **projectId** | **String**| The id of the project of the relationship to delete |
+ **modelId** | **String**| The id of the model of the relationship to delete |
 
 ### Return type
 
-[**EntryResponseContentModel**](EntryResponseContentModel.md)
+[**EntryResponseContentOfModel**](EntryResponseContentOfModel.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="exportModelUsingGET"></a>
 # **exportModelUsingGET**
@@ -234,7 +234,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **String**| The id of the model to export |
- **attachment** | **Boolean**| &lt;b&gt;true&lt;/b&gt; value enables a web browser to download the file as an attachment.&lt;br&gt; &lt;b&gt;false&lt;/b&gt; means that a web browser may preview the file in a new tab or window, but not download the file. | [optional] [default to true]
+ **attachment** | **Boolean**| &lt;b&gt;true&lt;/b&gt; value enables a web browser to download the file as an attachment.&lt;br&gt; &lt;b&gt;false&lt;/b&gt; means that a web browser may preview the file in a new tab or window, but not download the file. | [optional]
 
 ### Return type
 
@@ -251,7 +251,7 @@ No authorization required
 
 <a name="getGlobalModelsUsingGET"></a>
 # **getGlobalModelsUsingGET**
-> ListResponseContentModel getGlobalModelsUsingGET(type, includeOrphans, maxItems, skipCount, sort)
+> ListResponseContentOfModel getGlobalModelsUsingGET(type, maxItems, skipCount, sort, includeOrphans)
 
 List all the models that are not coupled to a project
 
@@ -266,12 +266,12 @@ Get the models that has GLOBAL as scope. Minimal information for each model is r
 
 ModelsApi apiInstance = new ModelsApi();
 String type = "type_example"; // String | The type of the model to filter
-Boolean includeOrphans = false; // Boolean | If true, then models with no relationship to any project are retrieved regardless of their scope
 Integer maxItems = 56; // Integer | 
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
+Boolean includeOrphans = true; // Boolean | If true, then models with no relationship to any project are retrieved regardless of their scope
 try {
-    ListResponseContentModel result = apiInstance.getGlobalModelsUsingGET(type, includeOrphans, maxItems, skipCount, sort);
+    ListResponseContentOfModel result = apiInstance.getGlobalModelsUsingGET(type, maxItems, skipCount, sort, includeOrphans);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#getGlobalModelsUsingGET");
@@ -284,14 +284,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| The type of the model to filter |
- **includeOrphans** | **Boolean**| If true, then models with no relationship to any project are retrieved regardless of their scope | [optional] [default to false]
  **maxItems** | **Integer**|  | [optional]
  **skipCount** | **Integer**|  | [optional]
  **sort** | **String**|  | [optional]
+ **includeOrphans** | **Boolean**| If true, then models with no relationship to any project are retrieved regardless of their scope | [optional]
 
 ### Return type
 
-[**ListResponseContentModel**](ListResponseContentModel.md)
+[**ListResponseContentOfModel**](ListResponseContentOfModel.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getModelContentUsingGET"></a>
 # **getModelContentUsingGET**
@@ -348,7 +348,7 @@ No authorization required
 
 <a name="getModelTypesUsingGET"></a>
 # **getModelTypesUsingGET**
-> ListResponseContentModelType getModelTypesUsingGET(maxItems, skipCount, sort)
+> ListResponseContentOfModelType getModelTypesUsingGET(maxItems, skipCount, sort)
 
 List model types
 
@@ -366,7 +366,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentModelType result = apiInstance.getModelTypesUsingGET(maxItems, skipCount, sort);
+    ListResponseContentOfModelType result = apiInstance.getModelTypesUsingGET(maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#getModelTypesUsingGET");
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentModelType**](ListResponseContentModelType.md)
+[**ListResponseContentOfModelType**](ListResponseContentOfModelType.md)
 
 ### Authorization
 
@@ -393,11 +393,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getModelUsingGET"></a>
 # **getModelUsingGET**
-> EntryResponseContentModel getModelUsingGET(modelId)
+> EntryResponseContentOfModel getModelUsingGET(modelId)
 
 Get metadata information for a model
 
@@ -411,7 +411,7 @@ Get metadata information for a model
 ModelsApi apiInstance = new ModelsApi();
 String modelId = "modelId_example"; // String | The id of the model to retrieve
 try {
-    EntryResponseContentModel result = apiInstance.getModelUsingGET(modelId);
+    EntryResponseContentOfModel result = apiInstance.getModelUsingGET(modelId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#getModelUsingGET");
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentModel**](EntryResponseContentModel.md)
+[**EntryResponseContentOfModel**](EntryResponseContentOfModel.md)
 
 ### Authorization
 
@@ -436,11 +436,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getModelsUsingGET"></a>
 # **getModelsUsingGET**
-> ListResponseContentModel getModelsUsingGET(projectId, type, maxItems, skipCount, sort)
+> ListResponseContentOfModel getModelsUsingGET(projectId, type, maxItems, skipCount, sort)
 
 List models for an project
 
@@ -460,7 +460,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentModel result = apiInstance.getModelsUsingGET(projectId, type, maxItems, skipCount, sort);
+    ListResponseContentOfModel result = apiInstance.getModelsUsingGET(projectId, type, maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#getModelsUsingGET");
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentModel**](ListResponseContentModel.md)
+[**ListResponseContentOfModel**](ListResponseContentOfModel.md)
 
 ### Authorization
 
@@ -489,7 +489,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getSchemaUsingGET"></a>
 # **getSchemaUsingGET**
@@ -538,7 +538,7 @@ No authorization required
 
 <a name="importModelUsingPOST"></a>
 # **importModelUsingPOST**
-> EntryResponseContentModel importModelUsingPOST(projectId, file, type)
+> EntryResponseContentOfModel importModelUsingPOST(projectId, file, type)
 
 Import a model from file
 
@@ -556,7 +556,7 @@ String projectId = "projectId_example"; // String | The id of the project to ass
 File file = new File("file_example"); // File | 
 String type = "type_example"; // String | 
 try {
-    EntryResponseContentModel result = apiInstance.importModelUsingPOST(projectId, file, type);
+    EntryResponseContentOfModel result = apiInstance.importModelUsingPOST(projectId, file, type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#importModelUsingPOST");
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentModel**](EntryResponseContentModel.md)
+[**EntryResponseContentOfModel**](EntryResponseContentOfModel.md)
 
 ### Authorization
 
@@ -583,11 +583,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="putProjectModelRelationshipUsingPUT"></a>
 # **putProjectModelRelationshipUsingPUT**
-> EntryResponseContentModel putProjectModelRelationshipUsingPUT(modelId, projectId, force, scope)
+> EntryResponseContentOfModel putProjectModelRelationshipUsingPUT(projectId, modelId, scope, force)
 
 Add or update the relationship between an existing model, and the project
 
@@ -601,12 +601,12 @@ Get the model associated with the project updated. Minimal information for the m
 
 
 ModelsApi apiInstance = new ModelsApi();
-String modelId = "modelId_example"; // String | The id of the model to associate the project with
 String projectId = "projectId_example"; // String | The id of the project to associate the model with
-Boolean force = false; // Boolean | If the scope of the model has restrictions on the number of projects that a model can belong to, remove the other relationships of the model with other projects
+String modelId = "modelId_example"; // String | The id of the model to associate the project with
 String scope = "scope_example"; // String | Scope to update the model if needed (optional)
+Boolean force = true; // Boolean | If the scope of the model has restrictions on the number of projects that a model can belong to, remove the other relationships of the model with other projects
 try {
-    EntryResponseContentModel result = apiInstance.putProjectModelRelationshipUsingPUT(modelId, projectId, force, scope);
+    EntryResponseContentOfModel result = apiInstance.putProjectModelRelationshipUsingPUT(projectId, modelId, scope, force);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#putProjectModelRelationshipUsingPUT");
@@ -618,14 +618,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelId** | **String**| The id of the model to associate the project with |
  **projectId** | **String**| The id of the project to associate the model with |
- **force** | **Boolean**| If the scope of the model has restrictions on the number of projects that a model can belong to, remove the other relationships of the model with other projects | [optional] [default to false]
+ **modelId** | **String**| The id of the model to associate the project with |
  **scope** | **String**| Scope to update the model if needed (optional) | [optional]
+ **force** | **Boolean**| If the scope of the model has restrictions on the number of projects that a model can belong to, remove the other relationships of the model with other projects | [optional]
 
 ### Return type
 
-[**EntryResponseContentModel**](EntryResponseContentModel.md)
+[**EntryResponseContentOfModel**](EntryResponseContentOfModel.md)
 
 ### Authorization
 
@@ -634,7 +634,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="updateModelContentUsingPUT"></a>
 # **updateModelContentUsingPUT**
@@ -684,7 +684,7 @@ No authorization required
 
 <a name="updateModelUsingPUT"></a>
 # **updateModelUsingPUT**
-> EntryResponseContentModel updateModelUsingPUT(body, modelId)
+> EntryResponseContentOfModel updateModelUsingPUT(modelId, body)
 
 Update model metadata
 
@@ -698,10 +698,10 @@ Update the details of a model.
 
 
 ModelsApi apiInstance = new ModelsApi();
-ModelReq body = new ModelReq(); // ModelReq | The new values to update
 String modelId = "modelId_example"; // String | The id of the model to update
+ModelReq body = new ModelReq(); // ModelReq | 
 try {
-    EntryResponseContentModel result = apiInstance.updateModelUsingPUT(body, modelId);
+    EntryResponseContentOfModel result = apiInstance.updateModelUsingPUT(modelId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#updateModelUsingPUT");
@@ -713,12 +713,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ModelReq**](ModelReq.md)| The new values to update |
  **modelId** | **String**| The id of the model to update |
+ **body** | [**ModelReq**](ModelReq.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentModel**](EntryResponseContentModel.md)
+[**EntryResponseContentOfModel**](EntryResponseContentOfModel.md)
 
 ### Authorization
 
@@ -727,11 +727,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="validateModelExtensionsUsingPOST"></a>
 # **validateModelExtensionsUsingPOST**
-> validateModelExtensionsUsingPOST(modelId, projectId)
+> validateModelExtensionsUsingPOST(modelId, body, projectId)
 
 Validate model extensions
 
@@ -746,9 +746,10 @@ Allows to validate the model extensions without save them.
 
 ModelsApi apiInstance = new ModelsApi();
 String modelId = "modelId_example"; // String | The id of the model to validate the content for
+Object body = null; // Object | 
 String projectId = "projectId_example"; // String | The id of the project in whose context the model is going to be validated
 try {
-    apiInstance.validateModelExtensionsUsingPOST(modelId, projectId);
+    apiInstance.validateModelExtensionsUsingPOST(modelId, body, projectId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#validateModelExtensionsUsingPOST");
     e.printStackTrace();
@@ -760,6 +761,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **String**| The id of the model to validate the content for |
+ **body** | **Object**|  | [optional]
  **projectId** | **String**| The id of the project in whose context the model is going to be validated | [optional]
 
 ### Return type
@@ -772,12 +774,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: application/json, application/octet-stream
  - **Accept**: Not defined
 
 <a name="validateModelUsingPOST"></a>
 # **validateModelUsingPOST**
-> validateModelUsingPOST(modelId, projectId, validateUsage)
+> validateModelUsingPOST(modelId, body, projectId, validateUsage)
 
 Validate a model content
 
@@ -792,10 +794,11 @@ Allows to validate the model content without save it.
 
 ModelsApi apiInstance = new ModelsApi();
 String modelId = "modelId_example"; // String | The id of the model to validate the content for
+Object body = null; // Object | 
 String projectId = "projectId_example"; // String | The id of the project in whose context the model is going to be validated
 Boolean validateUsage = true; // Boolean | The model is going to be validated and checked used in other model
 try {
-    apiInstance.validateModelUsingPOST(modelId, projectId, validateUsage);
+    apiInstance.validateModelUsingPOST(modelId, body, projectId, validateUsage);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelsApi#validateModelUsingPOST");
     e.printStackTrace();
@@ -807,6 +810,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **String**| The id of the model to validate the content for |
+ **body** | **Object**|  | [optional]
  **projectId** | **String**| The id of the project in whose context the model is going to be validated | [optional]
  **validateUsage** | **Boolean**| The model is going to be validated and checked used in other model | [optional]
 
@@ -820,6 +824,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: application/json, application/octet-stream
  - **Accept**: Not defined
 

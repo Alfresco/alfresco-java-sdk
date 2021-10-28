@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="addCandidateUsersUsingPOST1"></a>
 # **addCandidateUsersUsingPOST1**
-> addCandidateUsersUsingPOST1(body, taskId)
+> addCandidateUsersUsingPOST1(taskId, body)
 
 addCandidateUsers
 
@@ -22,10 +22,10 @@ addCandidateUsers
 
 
 CandidateUserControllerImplApi apiInstance = new CandidateUserControllerImplApi();
-CandidateUsersPayload body = new CandidateUsersPayload(); // CandidateUsersPayload | candidateUsersPayload
 String taskId = "taskId_example"; // String | taskId
+CandidateUsersPayload body = new CandidateUsersPayload(); // CandidateUsersPayload | 
 try {
-    apiInstance.addCandidateUsersUsingPOST1(body, taskId);
+    apiInstance.addCandidateUsersUsingPOST1(taskId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateUserControllerImplApi#addCandidateUsersUsingPOST1");
     e.printStackTrace();
@@ -36,8 +36,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CandidateUsersPayload**](CandidateUsersPayload.md)| candidateUsersPayload |
  **taskId** | **String**| taskId |
+ **body** | [**CandidateUsersPayload**](CandidateUsersPayload.md)|  | [optional]
 
 ### Return type
 
@@ -54,7 +54,7 @@ No authorization required
 
 <a name="deleteCandidateUsersUsingDELETE1"></a>
 # **deleteCandidateUsersUsingDELETE1**
-> deleteCandidateUsersUsingDELETE1(body, taskId)
+> deleteCandidateUsersUsingDELETE1(taskId, body)
 
 deleteCandidateUsers
 
@@ -66,10 +66,10 @@ deleteCandidateUsers
 
 
 CandidateUserControllerImplApi apiInstance = new CandidateUserControllerImplApi();
-CandidateUsersPayload body = new CandidateUsersPayload(); // CandidateUsersPayload | candidateUsersPayload
 String taskId = "taskId_example"; // String | taskId
+CandidateUsersPayload body = new CandidateUsersPayload(); // CandidateUsersPayload | 
 try {
-    apiInstance.deleteCandidateUsersUsingDELETE1(body, taskId);
+    apiInstance.deleteCandidateUsersUsingDELETE1(taskId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateUserControllerImplApi#deleteCandidateUsersUsingDELETE1");
     e.printStackTrace();
@@ -80,8 +80,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CandidateUsersPayload**](CandidateUsersPayload.md)| candidateUsersPayload |
  **taskId** | **String**| taskId |
+ **body** | [**CandidateUsersPayload**](CandidateUsersPayload.md)|  | [optional]
 
 ### Return type
 
@@ -93,12 +93,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 <a name="getUserCandidatesUsingGET1"></a>
 # **getUserCandidatesUsingGET1**
-> ListResponseContentCandidateUser getUserCandidatesUsingGET1(taskId)
+> ListResponseContentOfCandidateUser getUserCandidatesUsingGET1(taskId)
 
 getUserCandidates
 
@@ -112,7 +112,7 @@ getUserCandidates
 CandidateUserControllerImplApi apiInstance = new CandidateUserControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
 try {
-    ListResponseContentCandidateUser result = apiInstance.getUserCandidatesUsingGET1(taskId);
+    ListResponseContentOfCandidateUser result = apiInstance.getUserCandidatesUsingGET1(taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateUserControllerImplApi#getUserCandidatesUsingGET1");
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCandidateUser**](ListResponseContentCandidateUser.md)
+[**ListResponseContentOfCandidateUser**](ListResponseContentOfCandidateUser.md)
 
 ### Authorization
 
@@ -137,5 +137,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

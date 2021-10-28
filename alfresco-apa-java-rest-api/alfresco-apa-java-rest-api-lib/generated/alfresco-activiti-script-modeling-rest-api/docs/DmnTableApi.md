@@ -22,7 +22,7 @@ Execute a DMN table
 
 
 DmnTableApi apiInstance = new DmnTableApi();
-DMNTable body = new DMNTable(); // DMNTable | decisionTable
+DMNTable body = new DMNTable(); // DMNTable | 
 try {
     Object result = apiInstance.executeDMNUsingPOST(body);
     System.out.println(result);
@@ -36,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DMNTable**](DMNTable.md)| decisionTable |
+ **body** | [**DMNTable**](DMNTable.md)|  | [optional]
 
 ### Return type
 

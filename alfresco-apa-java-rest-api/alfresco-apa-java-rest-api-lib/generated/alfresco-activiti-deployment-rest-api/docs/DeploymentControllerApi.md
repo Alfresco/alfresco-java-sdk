@@ -4,22 +4,24 @@ All URIs are relative to the environment set via -Denvironment.host and -Denviro
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createApplicationUsingPOST**](DeploymentControllerApi.md#createApplicationUsingPOST) | **POST** /v1/applications | Add a new application.
-[**deleteApplicationUsingDELETE**](DeploymentControllerApi.md#deleteApplicationUsingDELETE) | **DELETE** /v1/applications/{id} | Delete an existing application by id.
-[**getApplicationRuntimeVersionUsingGET**](DeploymentControllerApi.md#getApplicationRuntimeVersionUsingGET) | **GET** /v1/applications/{id}/runtime-version | Retrieve the application runtime version by id.
-[**getApplicationUsingGET**](DeploymentControllerApi.md#getApplicationUsingGET) | **GET** /v1/applications/{id} | Find application by id.
-[**getApplicationsUsingGET**](DeploymentControllerApi.md#getApplicationsUsingGET) | **GET** /v1/applications | Find applications. It allows filtering. This service will return all applications if the user has ACTIVITI_DEVOPS role otherwise it returns only applications belonging to the user.
-[**getGroupsUsingGET**](DeploymentControllerApi.md#getGroupsUsingGET) | **GET** /v1/applications/{id}/groups | Fetch all groups belonging to an application.
-[**getLatestRuntimeVersionUsingGET**](DeploymentControllerApi.md#getLatestRuntimeVersionUsingGET) | **GET** /v1/applications/runtime-versions/latest | Retrieve the latest runtime version available in the deployment service.
-[**getRuntimeVersionsUsingGET**](DeploymentControllerApi.md#getRuntimeVersionsUsingGET) | **GET** /v1/applications/runtime-versions | Retrieve a list of runtime versions available in the deployment service.
-[**getUsersUsingGET**](DeploymentControllerApi.md#getUsersUsingGET) | **GET** /v1/applications/{id}/users | Fetch all users belonging to an application.
+[**createApplicationUsingPOST**](DeploymentControllerApi.md#createApplicationUsingPOST) | **POST** /v1/applications | createApplication
+[**deleteApplicationUsingDELETE**](DeploymentControllerApi.md#deleteApplicationUsingDELETE) | **DELETE** /v1/applications/{id} | deleteApplication
+[**getApplicationRuntimeVersionUsingGET**](DeploymentControllerApi.md#getApplicationRuntimeVersionUsingGET) | **GET** /v1/applications/{id}/runtime-version | getApplicationRuntimeVersion
+[**getApplicationUsingGET**](DeploymentControllerApi.md#getApplicationUsingGET) | **GET** /v1/applications/{id} | getApplication
+[**getApplicationsUsingGET**](DeploymentControllerApi.md#getApplicationsUsingGET) | **GET** /v1/applications | getApplications
+[**getGroupsUsingGET**](DeploymentControllerApi.md#getGroupsUsingGET) | **GET** /v1/applications/{id}/groups | getGroups
+[**getLatestRuntimeVersionUsingGET**](DeploymentControllerApi.md#getLatestRuntimeVersionUsingGET) | **GET** /v1/applications/runtime-versions/latest | getLatestRuntimeVersion
+[**getRuntimeVersionsUsingGET**](DeploymentControllerApi.md#getRuntimeVersionsUsingGET) | **GET** /v1/applications/runtime-versions | getRuntimeVersions
+[**getUsersUsingGET**](DeploymentControllerApi.md#getUsersUsingGET) | **GET** /v1/applications/{id}/users | getUsers
 [**retrieveServiceLogsUsingGET**](DeploymentControllerApi.md#retrieveServiceLogsUsingGET) | **GET** /v1/applications/{id}/logs/{serviceName} | retrieveServiceLogs
-[**updateApplicationRuntimeVersionUsingPOST**](DeploymentControllerApi.md#updateApplicationRuntimeVersionUsingPOST) | **POST** /v1/applications/{id}/update | Updates the application runtime version to the selected one.
-[**upgradeApplicationUsingPUT**](DeploymentControllerApi.md#upgradeApplicationUsingPUT) | **PUT** /v1/applications/{id} | Update an existing application by id.
+[**updateApplicationRuntimeVersionUsingPOST**](DeploymentControllerApi.md#updateApplicationRuntimeVersionUsingPOST) | **POST** /v1/applications/{id}/update | updateApplicationRuntimeVersion
+[**upgradeApplicationUsingPUT**](DeploymentControllerApi.md#upgradeApplicationUsingPUT) | **PUT** /v1/applications/{id} | upgradeApplication
 
 <a name="createApplicationUsingPOST"></a>
 # **createApplicationUsingPOST**
 > createApplicationUsingPOST(body)
+
+createApplication
 
 Add a new application.
 
@@ -31,7 +33,7 @@ Add a new application.
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
-ApplicationRepresentation body = new ApplicationRepresentation(); // ApplicationRepresentation | applicationRepresentation
+ApplicationRepresentation body = new ApplicationRepresentation(); // ApplicationRepresentation | 
 try {
     apiInstance.createApplicationUsingPOST(body);
 } catch (ApiException e) {
@@ -44,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApplicationRepresentation**](ApplicationRepresentation.md)| applicationRepresentation |
+ **body** | [**ApplicationRepresentation**](ApplicationRepresentation.md)|  | [optional]
 
 ### Return type
 
@@ -62,6 +64,8 @@ No authorization required
 <a name="deleteApplicationUsingDELETE"></a>
 # **deleteApplicationUsingDELETE**
 > deleteApplicationUsingDELETE(id)
+
+deleteApplication
 
 Delete an existing application by id.
 
@@ -104,6 +108,8 @@ No authorization required
 <a name="getApplicationRuntimeVersionUsingGET"></a>
 # **getApplicationRuntimeVersionUsingGET**
 > RuntimeVersionRepresentation getApplicationRuntimeVersionUsingGET(id)
+
+getApplicationRuntimeVersion
 
 Retrieve the application runtime version by id.
 
@@ -148,6 +154,8 @@ No authorization required
 # **getApplicationUsingGET**
 > ApplicationResponseRepresentation getApplicationUsingGET(id)
 
+getApplication
+
 Find application by id.
 
 ### Example
@@ -189,7 +197,9 @@ No authorization required
 
 <a name="getApplicationsUsingGET"></a>
 # **getApplicationsUsingGET**
-> ListResponseContentApplicationResponseRepresentation getApplicationsUsingGET(createdDateFrom, createdDateTo, maxItems, name, roles, skipCount, sort, status)
+> ListResponseContentOfApplicationResponseRepresentation getApplicationsUsingGET(authorization, createdDateFrom, createdDateTo, maxItems, name, roles, skipCount, sort, status)
+
+getApplications
 
 Find applications. It allows filtering. This service will return all applications if the user has ACTIVITI_DEVOPS role otherwise it returns only applications belonging to the user.
 
@@ -201,16 +211,17 @@ Find applications. It allows filtering. This service will return all application
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
-LocalDate createdDateFrom = new LocalDate(); // LocalDate | Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
-LocalDate createdDateTo = new LocalDate(); // LocalDate | Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
+String authorization = "authorization_example"; // String | Authorization
+LocalDate createdDateFrom = new LocalDate(); // LocalDate | 
+LocalDate createdDateTo = new LocalDate(); // LocalDate | 
 Integer maxItems = 56; // Integer | 
-String name = "name_example"; // String | Filter on application name, showing all applications that contains the search key.
-List<String> roles = Arrays.asList("roles_example"); // List<String> | Roles that user must have on the application.
+String name = "name_example"; // String | 
+List<String> roles = Arrays.asList("roles_example"); // List<String> | 
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
-String status = "status_example"; // String | Application status
+String status = "status_example"; // String | 
 try {
-    ListResponseContentApplicationResponseRepresentation result = apiInstance.getApplicationsUsingGET(createdDateFrom, createdDateTo, maxItems, name, roles, skipCount, sort, status);
+    ListResponseContentOfApplicationResponseRepresentation result = apiInstance.getApplicationsUsingGET(authorization, createdDateFrom, createdDateTo, maxItems, name, roles, skipCount, sort, status);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#getApplicationsUsingGET");
@@ -222,18 +233,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createdDateFrom** | **LocalDate**| Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS. | [optional]
- **createdDateTo** | **LocalDate**| Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS. | [optional]
+ **authorization** | **String**| Authorization |
+ **createdDateFrom** | **LocalDate**|  | [optional]
+ **createdDateTo** | **LocalDate**|  | [optional]
  **maxItems** | **Integer**|  | [optional]
- **name** | **String**| Filter on application name, showing all applications that contains the search key. | [optional]
- **roles** | [**List&lt;String&gt;**](String.md)| Roles that user must have on the application. | [optional]
+ **name** | **String**|  | [optional]
+ **roles** | [**List&lt;String&gt;**](String.md)|  | [optional]
  **skipCount** | **Integer**|  | [optional]
  **sort** | **String**|  | [optional]
- **status** | **String**| Application status | [optional] [enum: CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR]
+ **status** | **String**|  | [optional] [enum: CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR]
 
 ### Return type
 
-[**ListResponseContentApplicationResponseRepresentation**](ListResponseContentApplicationResponseRepresentation.md)
+[**ListResponseContentOfApplicationResponseRepresentation**](ListResponseContentOfApplicationResponseRepresentation.md)
 
 ### Authorization
 
@@ -248,6 +260,8 @@ No authorization required
 # **getGroupsUsingGET**
 > List&lt;String&gt; getGroupsUsingGET(id, name, roles)
 
+getGroups
+
 Fetch all groups belonging to an application.
 
 ### Example
@@ -260,7 +274,7 @@ Fetch all groups belonging to an application.
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
 String id = "id_example"; // String | ID of application
 String name = "name_example"; // String | Filter on group name, showing all groups that contains the search key
-List<String> roles = Arrays.asList("roles_example"); // List<String> | Roles that user must have on the application.
+String roles = "roles_example"; // String | Roles that user must have on the application.
 try {
     List<String> result = apiInstance.getGroupsUsingGET(id, name, roles);
     System.out.println(result);
@@ -276,7 +290,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of application |
  **name** | **String**| Filter on group name, showing all groups that contains the search key | [optional]
- **roles** | [**List&lt;String&gt;**](String.md)| Roles that user must have on the application. | [optional]
+ **roles** | **String**| Roles that user must have on the application. | [optional]
 
 ### Return type
 
@@ -294,6 +308,8 @@ No authorization required
 <a name="getLatestRuntimeVersionUsingGET"></a>
 # **getLatestRuntimeVersionUsingGET**
 > RuntimeVersionRepresentation getLatestRuntimeVersionUsingGET()
+
+getLatestRuntimeVersion
 
 Retrieve the latest runtime version available in the deployment service.
 
@@ -333,6 +349,8 @@ No authorization required
 <a name="getRuntimeVersionsUsingGET"></a>
 # **getRuntimeVersionsUsingGET**
 > List&lt;RuntimeVersionRepresentation&gt; getRuntimeVersionsUsingGET(versionEqualOrLater)
+
+getRuntimeVersions
 
 Retrieve a list of runtime versions available in the deployment service.
 
@@ -375,7 +393,9 @@ No authorization required
 
 <a name="getUsersUsingGET"></a>
 # **getUsersUsingGET**
-> List&lt;String&gt; getUsersUsingGET(id, excludeServiceClients, group, name, roles)
+> List&lt;String&gt; getUsersUsingGET(id, name, group, roles, excludeServiceClients)
+
+getUsers
 
 Fetch all users belonging to an application.
 
@@ -388,12 +408,12 @@ Fetch all users belonging to an application.
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
 String id = "id_example"; // String | ID of application
-Boolean excludeServiceClients = false; // Boolean | If the value is 'true' the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned.
-Boolean group = false; // Boolean | If the value is 'true' the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned.
 String name = "name_example"; // String | Filter on username, showing all users that contains the search key
-List<String> roles = Arrays.asList("roles_example"); // List<String> | Roles that user must have on the application.
+Boolean group = true; // Boolean | If the value is 'true' the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned.
+String roles = "roles_example"; // String | Roles that user must have on the application.
+Boolean excludeServiceClients = true; // Boolean | If the value is 'true' the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned.
 try {
-    List<String> result = apiInstance.getUsersUsingGET(id, excludeServiceClients, group, name, roles);
+    List<String> result = apiInstance.getUsersUsingGET(id, name, group, roles, excludeServiceClients);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#getUsersUsingGET");
@@ -406,10 +426,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of application |
- **excludeServiceClients** | **Boolean**| If the value is &#x27;true&#x27; the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned. | [optional] [default to false]
- **group** | **Boolean**| If the value is &#x27;true&#x27; the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned. | [optional] [default to false]
  **name** | **String**| Filter on username, showing all users that contains the search key | [optional]
- **roles** | [**List&lt;String&gt;**](String.md)| Roles that user must have on the application. | [optional]
+ **group** | **Boolean**| If the value is &#x27;true&#x27; the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned. | [optional]
+ **roles** | **String**| Roles that user must have on the application. | [optional]
+ **excludeServiceClients** | **Boolean**| If the value is &#x27;true&#x27; the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned. | [optional]
 
 ### Return type
 
@@ -473,6 +493,8 @@ No authorization required
 # **updateApplicationRuntimeVersionUsingPOST**
 > ApplicationResponseRepresentation updateApplicationRuntimeVersionUsingPOST(id, runtimeVersion)
 
+updateApplicationRuntimeVersion
+
 Updates the application runtime version to the selected one.
 
 ### Example
@@ -516,7 +538,9 @@ No authorization required
 
 <a name="upgradeApplicationUsingPUT"></a>
 # **upgradeApplicationUsingPUT**
-> upgradeApplicationUsingPUT(body, id)
+> upgradeApplicationUsingPUT(id, body)
+
+upgradeApplication
 
 Update an existing application by id.
 
@@ -528,10 +552,10 @@ Update an existing application by id.
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
-ApplicationPutRequestRepresentation body = new ApplicationPutRequestRepresentation(); // ApplicationPutRequestRepresentation | applicationPutRequestRepresentation
 String id = "id_example"; // String | ID of application to update
+ApplicationPutRequestRepresentation body = new ApplicationPutRequestRepresentation(); // ApplicationPutRequestRepresentation | 
 try {
-    apiInstance.upgradeApplicationUsingPUT(body, id);
+    apiInstance.upgradeApplicationUsingPUT(id, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling DeploymentControllerApi#upgradeApplicationUsingPUT");
     e.printStackTrace();
@@ -542,8 +566,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApplicationPutRequestRepresentation**](ApplicationPutRequestRepresentation.md)| applicationPutRequestRepresentation |
  **id** | **String**| ID of application to update |
+ **body** | [**ApplicationPutRequestRepresentation**](ApplicationPutRequestRepresentation.md)|  | [optional]
 
 ### Return type
 

@@ -54,7 +54,7 @@ No authorization required
 
 <a name="descriptorDataDescriptorUsingGET"></a>
 # **descriptorDataDescriptorUsingGET**
-> EntryResponseContentDescriptor descriptorDataDescriptorUsingGET(id)
+> EntryResponseContentOfDescriptor descriptorDataDescriptorUsingGET(id)
 
 descriptorDataDescriptor
 
@@ -68,7 +68,7 @@ descriptorDataDescriptor
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
 String id = "id_example"; // String | id
 try {
-    EntryResponseContentDescriptor result = apiInstance.descriptorDataDescriptorUsingGET(id);
+    EntryResponseContentOfDescriptor result = apiInstance.descriptorDataDescriptorUsingGET(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DescriptorDataEntityApi#descriptorDataDescriptorUsingGET");
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ No authorization required
 
 <a name="descriptorDataDescriptorUsingPATCH"></a>
 # **descriptorDataDescriptorUsingPATCH**
-> EntryResponseContentDescriptor descriptorDataDescriptorUsingPATCH(body, id)
+> EntryResponseContentOfDescriptor descriptorDataDescriptorUsingPATCH(id, body)
 
 descriptorDataDescriptor
 
@@ -109,10 +109,10 @@ descriptorDataDescriptor
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
-String body = "body_example"; // String | body
 String id = "id_example"; // String | id
+String body = "body_example"; // String | 
 try {
-    EntryResponseContentDescriptor result = apiInstance.descriptorDataDescriptorUsingPATCH(body, id);
+    EntryResponseContentOfDescriptor result = apiInstance.descriptorDataDescriptorUsingPATCH(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DescriptorDataEntityApi#descriptorDataDescriptorUsingPATCH");
@@ -124,12 +124,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**String**](String.md)| body |
  **id** | **String**| id |
+ **body** | [**String**](String.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -137,12 +137,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
+ - **Content-Type**: application/json, application/x-spring-data-compact+json, text/uri-list
  - **Accept**: */*
 
 <a name="descriptorDataDescriptorUsingPOST"></a>
 # **descriptorDataDescriptorUsingPOST**
-> EntryResponseContentDescriptor descriptorDataDescriptorUsingPOST(body, id)
+> EntryResponseContentOfDescriptor descriptorDataDescriptorUsingPOST(id, body)
 
 descriptorDataDescriptor
 
@@ -154,10 +154,10 @@ descriptorDataDescriptor
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
-String body = "body_example"; // String | body
 String id = "id_example"; // String | id
+String body = "body_example"; // String | 
 try {
-    EntryResponseContentDescriptor result = apiInstance.descriptorDataDescriptorUsingPOST(body, id);
+    EntryResponseContentOfDescriptor result = apiInstance.descriptorDataDescriptorUsingPOST(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DescriptorDataEntityApi#descriptorDataDescriptorUsingPOST");
@@ -169,12 +169,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**String**](String.md)| body |
  **id** | **String**| id |
+ **body** | [**String**](String.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -182,12 +182,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
+ - **Content-Type**: application/json, application/x-spring-data-compact+json, text/uri-list
  - **Accept**: */*
 
 <a name="descriptorDataDescriptorUsingPUT"></a>
 # **descriptorDataDescriptorUsingPUT**
-> EntryResponseContentDescriptor descriptorDataDescriptorUsingPUT(body, id)
+> EntryResponseContentOfDescriptor descriptorDataDescriptorUsingPUT(id, body)
 
 descriptorDataDescriptor
 
@@ -199,10 +199,10 @@ descriptorDataDescriptor
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
-String body = "body_example"; // String | body
 String id = "id_example"; // String | id
+String body = "body_example"; // String | 
 try {
-    EntryResponseContentDescriptor result = apiInstance.descriptorDataDescriptorUsingPUT(body, id);
+    EntryResponseContentOfDescriptor result = apiInstance.descriptorDataDescriptorUsingPUT(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DescriptorDataEntityApi#descriptorDataDescriptorUsingPUT");
@@ -214,12 +214,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**String**](String.md)| body |
  **id** | **String**| id |
+ **body** | [**String**](String.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -227,6 +227,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
+ - **Content-Type**: application/json, application/x-spring-data-compact+json, text/uri-list
  - **Accept**: */*
 

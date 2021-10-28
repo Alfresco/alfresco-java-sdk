@@ -49,11 +49,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, image/svg+xml
+ - **Accept**: application/xml, application/json, image/svg+xml
 
 <a name="getProcessDefinitionUsingGET"></a>
 # **getProcessDefinitionUsingGET**
-> EntryResponseContentCloudProcessDefinition getProcessDefinitionUsingGET(id)
+> EntryResponseContentOfCloudProcessDefinition getProcessDefinitionUsingGET(id)
 
 getProcessDefinition
 
@@ -67,7 +67,7 @@ getProcessDefinition
 ProcessDefinitionControllerImplApi apiInstance = new ProcessDefinitionControllerImplApi();
 String id = "id_example"; // String | id
 try {
-    EntryResponseContentCloudProcessDefinition result = apiInstance.getProcessDefinitionUsingGET(id);
+    EntryResponseContentOfCloudProcessDefinition result = apiInstance.getProcessDefinitionUsingGET(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessDefinitionControllerImplApi#getProcessDefinitionUsingGET");
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentCloudProcessDefinition**](EntryResponseContentCloudProcessDefinition.md)
+[**EntryResponseContentOfCloudProcessDefinition**](EntryResponseContentOfCloudProcessDefinition.md)
 
 ### Authorization
 
@@ -92,11 +92,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getProcessDefinitionsUsingGET"></a>
 # **getProcessDefinitionsUsingGET**
-> ListResponseContentCloudProcessDefinition getProcessDefinitionsUsingGET(maxItems, skipCount, sort)
+> ListResponseContentOfCloudProcessDefinition getProcessDefinitionsUsingGET(maxItems, skipCount, sort)
 
 getProcessDefinitions
 
@@ -112,7 +112,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentCloudProcessDefinition result = apiInstance.getProcessDefinitionsUsingGET(maxItems, skipCount, sort);
+    ListResponseContentOfCloudProcessDefinition result = apiInstance.getProcessDefinitionsUsingGET(maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessDefinitionControllerImplApi#getProcessDefinitionsUsingGET");
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCloudProcessDefinition**](ListResponseContentCloudProcessDefinition.md)
+[**ListResponseContentOfCloudProcessDefinition**](ListResponseContentOfCloudProcessDefinition.md)
 
 ### Authorization
 
@@ -139,5 +139,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="getAllProcessDefinitionsUsingGET"></a>
 # **getAllProcessDefinitionsUsingGET**
-> ListResponseContentCloudProcessDefinition getAllProcessDefinitionsUsingGET(maxItems, skipCount, sort)
+> ListResponseContentOfCloudProcessDefinition getAllProcessDefinitionsUsingGET(maxItems, skipCount, sort)
 
 getAllProcessDefinitions
 
@@ -24,7 +24,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentCloudProcessDefinition result = apiInstance.getAllProcessDefinitionsUsingGET(maxItems, skipCount, sort);
+    ListResponseContentOfCloudProcessDefinition result = apiInstance.getAllProcessDefinitionsUsingGET(maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessDefinitionAdminControllerImplApi#getAllProcessDefinitionsUsingGET");
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCloudProcessDefinition**](ListResponseContentCloudProcessDefinition.md)
+[**ListResponseContentOfCloudProcessDefinition**](ListResponseContentOfCloudProcessDefinition.md)
 
 ### Authorization
 
@@ -51,5 +51,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

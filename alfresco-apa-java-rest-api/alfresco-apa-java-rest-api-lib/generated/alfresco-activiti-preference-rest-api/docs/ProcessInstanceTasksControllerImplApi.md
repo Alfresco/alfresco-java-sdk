@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="getTasksUsingGET"></a>
 # **getTasksUsingGET**
-> ListResponseContentCloudTask getTasksUsingGET(processInstanceId, maxItems, skipCount, sort)
+> ListResponseContentOfCloudTask getTasksUsingGET(processInstanceId, maxItems, skipCount, sort)
 
 getTasks
 
@@ -25,7 +25,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentCloudTask result = apiInstance.getTasksUsingGET(processInstanceId, maxItems, skipCount, sort);
+    ListResponseContentOfCloudTask result = apiInstance.getTasksUsingGET(processInstanceId, maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceTasksControllerImplApi#getTasksUsingGET");
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCloudTask**](ListResponseContentCloudTask.md)
+[**ListResponseContentOfCloudTask**](ListResponseContentOfCloudTask.md)
 
 ### Authorization
 
@@ -53,5 +53,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

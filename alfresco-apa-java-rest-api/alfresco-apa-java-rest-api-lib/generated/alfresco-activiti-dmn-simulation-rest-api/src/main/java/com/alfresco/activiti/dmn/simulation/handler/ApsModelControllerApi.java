@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.dmn.simulation.handler;
 
-import com.alfresco.activiti.dmn.simulation.model.EntryResponseContentImportResult;
+import com.alfresco.activiti.dmn.simulation.model.EntryResponseContentOfImportResult;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -43,17 +43,17 @@ import java.util.Map;
 @Api(value = "ApsModelController", description = "the ApsModelController API")
 public interface ApsModelControllerApi {
 
-    @ApiOperation(value = "Import an APS Process Model", nickname = "importProcessModelUsingPOST", notes = "", response = EntryResponseContentImportResult.class, tags={ "aps-model-controller", })
+    @ApiOperation(value = "Import an APS Process Model", nickname = "importProcessModelUsingPOST", notes = "", response = EntryResponseContentOfImportResult.class, tags={ "aps-model-controller", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentImportResult.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfImportResult.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/aps/models/import/{projectId}/process",
         produces = "*/*", 
-        consumes = "multipart/form-data",
+        consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentImportResult> importProcessModelUsingPOST(@ApiParam(value = "projectId", required=true) @PathVariable("projectId") String projectId);
+    ResponseEntity<EntryResponseContentOfImportResult> importProcessModelUsingPOST(@ApiParam(value = "projectId", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

@@ -20,7 +20,7 @@ launch
 
 
 CleanupQueryProcessInstancesJobExecutionControllerApi apiInstance = new CleanupQueryProcessInstancesJobExecutionControllerApi();
-CleanupQueryProcessInstancesJobRequest body = new CleanupQueryProcessInstancesJobRequest(); // CleanupQueryProcessInstancesJobRequest | launchRequest
+CleanupQueryProcessInstancesJobRequest body = new CleanupQueryProcessInstancesJobRequest(); // CleanupQueryProcessInstancesJobRequest | 
 try {
     EntryResponseContentOfJobExecution result = apiInstance.launchUsingPOST(body);
     System.out.println(result);
@@ -34,7 +34,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CleanupQueryProcessInstancesJobRequest**](CleanupQueryProcessInstancesJobRequest.md)| launchRequest |
+ **body** | [**CleanupQueryProcessInstancesJobRequest**](CleanupQueryProcessInstancesJobRequest.md)|  | [optional]
 
 ### Return type
 
@@ -47,5 +47,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

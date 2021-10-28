@@ -36,11 +36,11 @@ import javax.validation.constraints.*;
 public class VariablesPutRepresentation   {
   @JsonProperty("bridges")
   @Valid
-  private Map<String, Map<String, String>> bridges = null;
+  private Map<String, Object> bridges = null;
 
   @JsonProperty("connectors")
   @Valid
-  private Map<String, Map<String, String>> connectors = null;
+  private Map<String, Object> connectors = null;
 
   @JsonProperty("form-runtime-service")
   @Valid
@@ -50,12 +50,12 @@ public class VariablesPutRepresentation   {
   @Valid
   private Map<String, String> processRuntimeService = null;
 
-  public VariablesPutRepresentation bridges(Map<String, Map<String, String>> bridges) {
+  public VariablesPutRepresentation bridges(Map<String, Object> bridges) {
     this.bridges = bridges;
     return this;
   }
 
-  public VariablesPutRepresentation putBridgesItem(String key, Map<String, String> bridgesItem) {
+  public VariablesPutRepresentation putBridgesItem(String key, Object bridgesItem) {
     if (this.bridges == null) {
       this.bridges = new HashMap<>();
     }
@@ -68,21 +68,21 @@ public class VariablesPutRepresentation   {
    * @return bridges
    **/
   @ApiModelProperty(value = "")
-      @Valid
-    public Map<String, Map<String, String>> getBridges() {
+  
+    public Map<String, Object> getBridges() {
     return bridges;
   }
 
-  public void setBridges(Map<String, Map<String, String>> bridges) {
+  public void setBridges(Map<String, Object> bridges) {
     this.bridges = bridges;
   }
 
-  public VariablesPutRepresentation connectors(Map<String, Map<String, String>> connectors) {
+  public VariablesPutRepresentation connectors(Map<String, Object> connectors) {
     this.connectors = connectors;
     return this;
   }
 
-  public VariablesPutRepresentation putConnectorsItem(String key, Map<String, String> connectorsItem) {
+  public VariablesPutRepresentation putConnectorsItem(String key, Object connectorsItem) {
     if (this.connectors == null) {
       this.connectors = new HashMap<>();
     }
@@ -95,12 +95,12 @@ public class VariablesPutRepresentation   {
    * @return connectors
    **/
   @ApiModelProperty(value = "")
-      @Valid
-    public Map<String, Map<String, String>> getConnectors() {
+  
+    public Map<String, Object> getConnectors() {
     return connectors;
   }
 
-  public void setConnectors(Map<String, Map<String, String>> connectors) {
+  public void setConnectors(Map<String, Object> connectors) {
     this.connectors = connectors;
   }
 

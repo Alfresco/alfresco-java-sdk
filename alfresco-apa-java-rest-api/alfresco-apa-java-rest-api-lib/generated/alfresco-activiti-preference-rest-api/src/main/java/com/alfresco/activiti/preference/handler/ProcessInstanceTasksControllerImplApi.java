@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.preference.handler;
 
-import com.alfresco.activiti.preference.model.ListResponseContentCloudTask;
+import com.alfresco.activiti.preference.model.ListResponseContentOfCloudTask;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -43,15 +43,15 @@ import java.util.Map;
 @Api(value = "ProcessInstanceTasksControllerImpl", description = "the ProcessInstanceTasksControllerImpl API")
 public interface ProcessInstanceTasksControllerImplApi {
 
-    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET", notes = "", response = ListResponseContentCloudTask.class, tags={ "process-instance-tasks-controller-impl", })
+    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET", notes = "", response = ListResponseContentOfCloudTask.class, tags={ "process-instance-tasks-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/tasks",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudTask> getTasksUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudTask> getTasksUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 }

@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.deployment.handler;
 
-import com.alfresco.activiti.deployment.model.EntryResponseContentDescriptor;
+import com.alfresco.activiti.deployment.model.EntryResponseContentOfDescriptor;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -54,56 +54,56 @@ public interface ApplicationEntityApi {
     ResponseEntity<Void> applicationDescriptorUsingDELETE(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingGET", notes = "", response = EntryResponseContentDescriptor.class, tags={ "Application Entity", })
+    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingGET", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "Application Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/applications/{id}/descriptor",
         produces = "application/hal+json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentDescriptor> applicationDescriptorUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
+    ResponseEntity<EntryResponseContentOfDescriptor> applicationDescriptorUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingPATCH", notes = "", response = EntryResponseContentDescriptor.class, tags={ "Application Entity", })
+    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingPATCH", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "Application Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/applications/{id}/descriptor",
         produces = "*/*", 
-        consumes = "text/uri-list",
+        consumes = "application/json",
         method = RequestMethod.PATCH)
-    ResponseEntity<EntryResponseContentDescriptor> applicationDescriptorUsingPATCH(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "body", required=true ) @Valid @RequestBody String body);
+    ResponseEntity<EntryResponseContentOfDescriptor> applicationDescriptorUsingPATCH(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 
-    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingPOST", notes = "", response = EntryResponseContentDescriptor.class, tags={ "Application Entity", })
+    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingPOST", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "Application Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/applications/{id}/descriptor",
         produces = "*/*", 
-        consumes = "text/uri-list",
+        consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentDescriptor> applicationDescriptorUsingPOST(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "body", required=true ) @Valid @RequestBody String body);
+    ResponseEntity<EntryResponseContentOfDescriptor> applicationDescriptorUsingPOST(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 
-    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingPUT", notes = "", response = EntryResponseContentDescriptor.class, tags={ "Application Entity", })
+    @ApiOperation(value = "applicationDescriptor", nickname = "applicationDescriptorUsingPUT", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "Application Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/applications/{id}/descriptor",
         produces = "*/*", 
-        consumes = "text/uri-list",
+        consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentDescriptor> applicationDescriptorUsingPUT(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "body", required=true ) @Valid @RequestBody String body);
+    ResponseEntity<EntryResponseContentOfDescriptor> applicationDescriptorUsingPUT(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 }

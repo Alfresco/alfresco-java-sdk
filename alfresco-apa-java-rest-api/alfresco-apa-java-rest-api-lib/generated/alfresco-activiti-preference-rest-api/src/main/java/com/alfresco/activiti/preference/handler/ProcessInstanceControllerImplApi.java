@@ -21,8 +21,8 @@
 package com.alfresco.activiti.preference.handler;
 
 import com.alfresco.activiti.preference.model.CreateProcessInstancePayload;
-import com.alfresco.activiti.preference.model.EntryResponseContentCloudProcessInstance;
-import com.alfresco.activiti.preference.model.ListResponseContentCloudProcessInstance;
+import com.alfresco.activiti.preference.model.EntryResponseContentOfCloudProcessInstance;
+import com.alfresco.activiti.preference.model.ListResponseContentOfCloudProcessInstance;
 import com.alfresco.activiti.preference.model.ReceiveMessagePayload;
 import com.alfresco.activiti.preference.model.SignalPayload;
 import com.alfresco.activiti.preference.model.StartMessagePayload;
@@ -50,9 +50,9 @@ import java.util.Map;
 @Api(value = "ProcessInstanceControllerImpl", description = "the ProcessInstanceControllerImpl API")
 public interface ProcessInstanceControllerImplApi {
 
-    @ApiOperation(value = "createProcessInstance", nickname = "createProcessInstanceUsingPOST", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "createProcessInstance", nickname = "createProcessInstanceUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -61,19 +61,19 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> createProcessInstanceUsingPOST(@ApiParam(value = "createProcessInstancePayload", required=true ) @Valid @RequestBody CreateProcessInstancePayload body);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> createProcessInstanceUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateProcessInstancePayload body);
 
 
-    @ApiOperation(value = "deleteProcessInstance", nickname = "deleteProcessInstanceUsingDELETE1", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "deleteProcessInstance", nickname = "deleteProcessInstanceUsingDELETE1", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}",
         produces = "application/json", 
         method = RequestMethod.DELETE)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> deleteProcessInstanceUsingDELETE1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> deleteProcessInstanceUsingDELETE1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "getProcessDiagram", nickname = "getProcessDiagramUsingGET", notes = "", response = String.class, tags={ "process-instance-controller-impl", })
@@ -88,28 +88,28 @@ public interface ProcessInstanceControllerImplApi {
     ResponseEntity<String> getProcessDiagramUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "getProcessInstanceById", nickname = "getProcessInstanceByIdUsingGET1", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "getProcessInstanceById", nickname = "getProcessInstanceByIdUsingGET1", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> getProcessInstanceByIdUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> getProcessInstanceByIdUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "getProcessInstances", nickname = "getProcessInstancesUsingGET1", notes = "", response = ListResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "getProcessInstances", nickname = "getProcessInstancesUsingGET1", notes = "", response = ListResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-instances",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudProcessInstance> getProcessInstancesUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudProcessInstance> getProcessInstancesUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
     @ApiOperation(value = "receive", nickname = "receiveUsingPUT1", notes = "", tags={ "process-instance-controller-impl", })
@@ -122,12 +122,12 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/message",
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void> receiveUsingPUT1(@ApiParam(value = "receiveMessagePayload", required=true ) @Valid @RequestBody ReceiveMessagePayload body);
+    ResponseEntity<Void> receiveUsingPUT1(@ApiParam(value = "" ) @Valid @RequestBody ReceiveMessagePayload body);
 
 
-    @ApiOperation(value = "resume", nickname = "resumeUsingPOST1", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "resume", nickname = "resumeUsingPOST1", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -135,7 +135,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/resume",
         produces = "application/json", 
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> resumeUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> resumeUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "sendSignal", nickname = "sendSignalUsingPOST", notes = "", tags={ "process-instance-controller-impl", })
@@ -148,12 +148,12 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/signal",
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> sendSignalUsingPOST(@ApiParam(value = "cmd", required=true ) @Valid @RequestBody SignalPayload body);
+    ResponseEntity<Void> sendSignalUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody SignalPayload body);
 
 
-    @ApiOperation(value = "sendStartMessage", nickname = "sendStartMessageUsingPOST", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "sendStartMessage", nickname = "sendStartMessageUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -162,12 +162,12 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> sendStartMessageUsingPOST(@ApiParam(value = "startMessagePayload", required=true ) @Valid @RequestBody StartMessagePayload body);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> sendStartMessageUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody StartMessagePayload body);
 
 
-    @ApiOperation(value = "startCreatedProcess", nickname = "startCreatedProcessUsingPOST", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "startCreatedProcess", nickname = "startCreatedProcessUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -176,12 +176,12 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> startCreatedProcessUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "startProcessPayload" ) @Valid @RequestBody StartProcessPayload body);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> startCreatedProcessUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody StartProcessPayload body);
 
 
-    @ApiOperation(value = "startProcess", nickname = "startProcessUsingPOST1", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "startProcess", nickname = "startProcessUsingPOST1", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -190,24 +190,24 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> startProcessUsingPOST1(@ApiParam(value = "startProcessPayload", required=true ) @Valid @RequestBody StartProcessPayload body);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> startProcessUsingPOST1(@ApiParam(value = "" ) @Valid @RequestBody StartProcessPayload body);
 
 
-    @ApiOperation(value = "subprocesses", nickname = "subprocessesUsingGET1", notes = "", response = ListResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "subprocesses", nickname = "subprocessesUsingGET1", notes = "", response = ListResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/subprocesses",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudProcessInstance> subprocessesUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudProcessInstance> subprocessesUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "suspend", nickname = "suspendUsingPOST1", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "suspend", nickname = "suspendUsingPOST1", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -215,12 +215,12 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/suspend",
         produces = "application/json", 
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> suspendUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> suspendUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "updateProcess", nickname = "updateProcessUsingPUT1", notes = "", response = EntryResponseContentCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
+    @ApiOperation(value = "updateProcess", nickname = "updateProcessUsingPUT1", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -229,6 +229,6 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentCloudProcessInstance> updateProcessUsingPUT1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "payload", required=true ) @Valid @RequestBody UpdateProcessPayload body);
+    ResponseEntity<EntryResponseContentOfCloudProcessInstance> updateProcessUsingPUT1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody UpdateProcessPayload body);
 
 }

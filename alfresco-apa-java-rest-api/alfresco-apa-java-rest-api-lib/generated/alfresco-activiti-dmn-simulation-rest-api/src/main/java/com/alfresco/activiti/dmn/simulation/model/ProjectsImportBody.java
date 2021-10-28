@@ -40,10 +40,10 @@ public class ProjectsImportBody   {
   }
 
   /**
-   * Get name
+   * The name of the project that will override the current name of the project in the zip file
    * @return name
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The name of the project that will override the current name of the project in the zip file")
   
     public String getName() {
     return name;

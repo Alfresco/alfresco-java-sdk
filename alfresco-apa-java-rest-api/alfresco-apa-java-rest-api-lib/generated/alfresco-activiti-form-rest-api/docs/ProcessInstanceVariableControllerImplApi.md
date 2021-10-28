@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getVariablesUsingGET"></a>
 # **getVariablesUsingGET**
-> ListResponseContentCloudVariableInstance getVariablesUsingGET(processInstanceId)
+> ListResponseContentOfCloudVariableInstance getVariablesUsingGET(processInstanceId)
 
 getVariables
 
@@ -23,7 +23,7 @@ getVariables
 ProcessInstanceVariableControllerImplApi apiInstance = new ProcessInstanceVariableControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
 try {
-    ListResponseContentCloudVariableInstance result = apiInstance.getVariablesUsingGET(processInstanceId);
+    ListResponseContentOfCloudVariableInstance result = apiInstance.getVariablesUsingGET(processInstanceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceVariableControllerImplApi#getVariablesUsingGET");
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCloudVariableInstance**](ListResponseContentCloudVariableInstance.md)
+[**ListResponseContentOfCloudVariableInstance**](ListResponseContentOfCloudVariableInstance.md)
 
 ### Authorization
 
@@ -48,11 +48,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="setVariablesUsingPOST"></a>
 # **setVariablesUsingPOST**
-> setVariablesUsingPOST(body, processInstanceId)
+> setVariablesUsingPOST(processInstanceId, body)
 
 setVariables
 
@@ -64,10 +64,10 @@ setVariables
 
 
 ProcessInstanceVariableControllerImplApi apiInstance = new ProcessInstanceVariableControllerImplApi();
-SetProcessVariablesPayload body = new SetProcessVariablesPayload(); // SetProcessVariablesPayload | setProcessVariablesPayload
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
+SetProcessVariablesPayload body = new SetProcessVariablesPayload(); // SetProcessVariablesPayload | 
 try {
-    apiInstance.setVariablesUsingPOST(body, processInstanceId);
+    apiInstance.setVariablesUsingPOST(processInstanceId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProcessInstanceVariableControllerImplApi#setVariablesUsingPOST");
     e.printStackTrace();
@@ -78,8 +78,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SetProcessVariablesPayload**](SetProcessVariablesPayload.md)| setProcessVariablesPayload |
  **processInstanceId** | **String**| processInstanceId |
+ **body** | [**SetProcessVariablesPayload**](SetProcessVariablesPayload.md)|  | [optional]
 
 ### Return type
 

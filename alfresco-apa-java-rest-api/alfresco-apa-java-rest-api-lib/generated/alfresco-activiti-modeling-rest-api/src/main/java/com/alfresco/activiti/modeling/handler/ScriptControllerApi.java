@@ -53,6 +53,6 @@ public interface ScriptControllerApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Object> runScriptUsingPOST(@ApiParam(value = "inputVariables", required=true ) @Valid @RequestBody Object body);
+    ResponseEntity<Object> runScriptUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

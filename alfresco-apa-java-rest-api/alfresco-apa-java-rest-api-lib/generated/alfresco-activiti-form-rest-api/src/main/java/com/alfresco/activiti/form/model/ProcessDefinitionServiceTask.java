@@ -16,7 +16,7 @@
 package com.alfresco.activiti.form.model;
 
 import java.util.Objects;
-import com.alfresco.activiti.form.model.JsonDeserializerobject;
+import com.alfresco.activiti.form.model.JsonDeserializerOfobject;
 import com.alfresco.activiti.form.model.ObjectIdReader;
 import com.alfresco.activiti.form.model.ProcessDefinitionServiceTask;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -41,7 +41,7 @@ public class ProcessDefinitionServiceTask   {
   private Boolean cachable = null;
 
   @JsonProperty("delegatee")
-  private JsonDeserializerobject delegatee = null;
+  private JsonDeserializerOfobject delegatee = null;
 
   /**
    * Gets or Sets emptyAccessPattern
@@ -152,7 +152,7 @@ public class ProcessDefinitionServiceTask   {
     this.cachable = cachable;
   }
 
-  public ProcessDefinitionServiceTask delegatee(JsonDeserializerobject delegatee) {
+  public ProcessDefinitionServiceTask delegatee(JsonDeserializerOfobject delegatee) {
     this.delegatee = delegatee;
     return this;
   }
@@ -164,11 +164,11 @@ public class ProcessDefinitionServiceTask   {
   @ApiModelProperty(value = "")
   
     @Valid
-    public JsonDeserializerobject getDelegatee() {
+    public JsonDeserializerOfobject getDelegatee() {
     return delegatee;
   }
 
-  public void setDelegatee(JsonDeserializerobject delegatee) {
+  public void setDelegatee(JsonDeserializerOfobject delegatee) {
     this.delegatee = delegatee;
   }
 

@@ -20,7 +20,7 @@ runScript
 
 
 ScriptControllerApi apiInstance = new ScriptControllerApi();
-Object body = null; // Object | inputVariables
+Object body = null; // Object | 
 try {
     Object result = apiInstance.runScriptUsingPOST(body);
     System.out.println(result);
@@ -34,7 +34,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| inputVariables |
+ **body** | [**Object**](Object.md)|  | [optional]
 
 ### Return type
 

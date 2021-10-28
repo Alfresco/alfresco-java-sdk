@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="addCollaboratorUsingPUT"></a>
 # **addCollaboratorUsingPUT**
-> EntryResponseContentCollaborator addCollaboratorUsingPUT(projectId, username)
+> EntryResponseContentOfCollaborator addCollaboratorUsingPUT(projectId, username)
 
 Add a collaborator
 
@@ -25,7 +25,7 @@ CollaborationApi apiInstance = new CollaborationApi();
 String projectId = "projectId_example"; // String | The Id of the project
 String username = "username_example"; // String | The unique username of the collaborator
 try {
-    EntryResponseContentCollaborator result = apiInstance.addCollaboratorUsingPUT(projectId, username);
+    EntryResponseContentOfCollaborator result = apiInstance.addCollaboratorUsingPUT(projectId, username);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollaborationApi#addCollaboratorUsingPUT");
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentCollaborator**](EntryResponseContentCollaborator.md)
+[**EntryResponseContentOfCollaborator**](EntryResponseContentOfCollaborator.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ No authorization required
 
 <a name="getCollaboratorsUsingGET"></a>
 # **getCollaboratorsUsingGET**
-> ListResponseContentCollaborator getCollaboratorsUsingGET(projectId, maxItems, skipCount, sort)
+> ListResponseContentOfCollaborator getCollaboratorsUsingGET(projectId, maxItems, skipCount, sort)
 
 List collaborators
 
@@ -74,7 +74,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentCollaborator result = apiInstance.getCollaboratorsUsingGET(projectId, maxItems, skipCount, sort);
+    ListResponseContentOfCollaborator result = apiInstance.getCollaboratorsUsingGET(projectId, maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollaborationApi#getCollaboratorsUsingGET");
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCollaborator**](ListResponseContentCollaborator.md)
+[**ListResponseContentOfCollaborator**](ListResponseContentOfCollaborator.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*, application/json
+ - **Accept**: */*
 
 <a name="removeCollaboratorUsingDELETE"></a>
 # **removeCollaboratorUsingDELETE**

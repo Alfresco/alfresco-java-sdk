@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="copyProjectUsingPOST"></a>
 # **copyProjectUsingPOST**
-> EntryResponseContentProject copyProjectUsingPOST(name, projectId)
+> EntryResponseContentOfProject copyProjectUsingPOST(projectId, name)
 
 Copy an project as a new project with chosen name
 
@@ -33,10 +33,10 @@ This will create a new project with chosen name containing the project folder an
 
 
 ProjectsApi apiInstance = new ProjectsApi();
-String name = "name_example"; // String | The name of the project that will replace the original name of the project
 String projectId = "projectId_example"; // String | The id of the project to copy
+String name = "name_example"; // String | The name of the project that will replace the original name of the project
 try {
-    EntryResponseContentProject result = apiInstance.copyProjectUsingPOST(name, projectId);
+    EntryResponseContentOfProject result = apiInstance.copyProjectUsingPOST(projectId, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#copyProjectUsingPOST");
@@ -48,12 +48,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **String**| The name of the project that will replace the original name of the project |
  **projectId** | **String**| The id of the project to copy |
+ **name** | **String**| The name of the project that will replace the original name of the project |
 
 ### Return type
 
-[**EntryResponseContentProject**](EntryResponseContentProject.md)
+[**EntryResponseContentOfProject**](EntryResponseContentOfProject.md)
 
 ### Authorization
 
@@ -62,11 +62,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="createProjectFromExampleUsingPOST"></a>
 # **createProjectFromExampleUsingPOST**
-> EntryResponseContentProject createProjectFromExampleUsingPOST(exampleProjectId, name)
+> EntryResponseContentOfProject createProjectFromExampleUsingPOST(exampleProjectId, name)
 
 Create an project from example
 
@@ -83,7 +83,7 @@ ProjectsApi apiInstance = new ProjectsApi();
 String exampleProjectId = "exampleProjectId_example"; // String | The example project id of the source example project
 String name = "name_example"; // String | The name for the new project created from an example project
 try {
-    EntryResponseContentProject result = apiInstance.createProjectFromExampleUsingPOST(exampleProjectId, name);
+    EntryResponseContentOfProject result = apiInstance.createProjectFromExampleUsingPOST(exampleProjectId, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#createProjectFromExampleUsingPOST");
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentProject**](EntryResponseContentProject.md)
+[**EntryResponseContentOfProject**](EntryResponseContentOfProject.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ No authorization required
 
 <a name="createProjectUsingPOST"></a>
 # **createProjectUsingPOST**
-> EntryResponseContentProject createProjectUsingPOST(body)
+> EntryResponseContentOfProject createProjectUsingPOST(body)
 
 Create new project
 
@@ -125,9 +125,9 @@ Create new project
 
 
 ProjectsApi apiInstance = new ProjectsApi();
-Project body = new Project(); // Project | The details of the project to create
+Project body = new Project(); // Project | 
 try {
-    EntryResponseContentProject result = apiInstance.createProjectUsingPOST(body);
+    EntryResponseContentOfProject result = apiInstance.createProjectUsingPOST(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#createProjectUsingPOST");
@@ -139,11 +139,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Project**](Project.md)| The details of the project to create |
+ **body** | [**Project**](Project.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentProject**](EntryResponseContentProject.md)
+[**EntryResponseContentOfProject**](EntryResponseContentOfProject.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="deleteProjectUsingDELETE"></a>
 # **deleteProjectUsingDELETE**
@@ -227,7 +227,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| The id of the project to export |
- **attachment** | **Boolean**| &lt;b&gt;true&lt;/b&gt; value enables a web browser to download the file as an attachment.&lt;br&gt; &lt;b&gt;false&lt;/b&gt; means that a web browser may preview the file in a new tab or window, but not download the file. | [optional] [default to true]
+ **attachment** | **Boolean**| &lt;b&gt;true&lt;/b&gt; value enables a web browser to download the file as an attachment.&lt;br&gt; &lt;b&gt;false&lt;/b&gt; means that a web browser may preview the file in a new tab or window, but not download the file. | [optional]
 
 ### Return type
 
@@ -244,7 +244,7 @@ No authorization required
 
 <a name="getProjectReleaseUsingGET"></a>
 # **getProjectReleaseUsingGET**
-> ListResponseContentRelease getProjectReleaseUsingGET(projectId, maxItems, showAllVersions, skipCount, sort, version)
+> ListResponseContentOfRelease getProjectReleaseUsingGET(projectId, maxItems, skipCount, sort, version, showAllVersions)
 
 Get releases of a project
 
@@ -260,12 +260,12 @@ Get metadata information for a specific version of a project.
 ProjectsApi apiInstance = new ProjectsApi();
 String projectId = "projectId_example"; // String | The id of the project to get the releases
 Integer maxItems = 56; // Integer | 
-Boolean showAllVersions = true; // Boolean | Default value is false, and it returns only the latest versions. If it is true, it forces the service to return all versions.
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 String version = "version_example"; // String | The version of the project to get the releases
+Boolean showAllVersions = true; // Boolean | Default value is false, and it returns only the latest versions. If it is true, it forces the service to return all versions.
 try {
-    ListResponseContentRelease result = apiInstance.getProjectReleaseUsingGET(projectId, maxItems, showAllVersions, skipCount, sort, version);
+    ListResponseContentOfRelease result = apiInstance.getProjectReleaseUsingGET(projectId, maxItems, skipCount, sort, version, showAllVersions);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#getProjectReleaseUsingGET");
@@ -279,14 +279,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| The id of the project to get the releases |
  **maxItems** | **Integer**|  | [optional]
- **showAllVersions** | **Boolean**| Default value is false, and it returns only the latest versions. If it is true, it forces the service to return all versions. | [optional]
  **skipCount** | **Integer**|  | [optional]
  **sort** | **String**|  | [optional]
  **version** | **String**| The version of the project to get the releases | [optional]
+ **showAllVersions** | **Boolean**| Default value is false, and it returns only the latest versions. If it is true, it forces the service to return all versions. | [optional]
 
 ### Return type
 
-[**ListResponseContentRelease**](ListResponseContentRelease.md)
+[**ListResponseContentOfRelease**](ListResponseContentOfRelease.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ No authorization required
 
 <a name="getProjectUsingGET"></a>
 # **getProjectUsingGET**
-> EntryResponseContentProject getProjectUsingGET(projectId)
+> EntryResponseContentOfProject getProjectUsingGET(projectId)
 
 Get project
 
@@ -313,7 +313,7 @@ Get project
 ProjectsApi apiInstance = new ProjectsApi();
 String projectId = "projectId_example"; // String | The id of the project to retrieve
 try {
-    EntryResponseContentProject result = apiInstance.getProjectUsingGET(projectId);
+    EntryResponseContentOfProject result = apiInstance.getProjectUsingGET(projectId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#getProjectUsingGET");
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentProject**](EntryResponseContentProject.md)
+[**EntryResponseContentOfProject**](EntryResponseContentOfProject.md)
 
 ### Authorization
 
@@ -338,11 +338,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getProjectsUsingGET"></a>
 # **getProjectsUsingGET**
-> ListResponseContentProject getProjectsUsingGET(maxItems, name, skipCount, sort)
+> ListResponseContentOfProject getProjectsUsingGET(maxItems, skipCount, sort, name)
 
 List projects
 
@@ -357,11 +357,11 @@ Get the list of available projects. Minimal information for each project is retu
 
 ProjectsApi apiInstance = new ProjectsApi();
 Integer maxItems = 56; // Integer | 
-String name = "name_example"; // String | The name or part of the name to filter projects
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
+String name = "name_example"; // String | The name or part of the name to filter projects
 try {
-    ListResponseContentProject result = apiInstance.getProjectsUsingGET(maxItems, name, skipCount, sort);
+    ListResponseContentOfProject result = apiInstance.getProjectsUsingGET(maxItems, skipCount, sort, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#getProjectsUsingGET");
@@ -374,13 +374,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **maxItems** | **Integer**|  | [optional]
- **name** | **String**| The name or part of the name to filter projects | [optional]
  **skipCount** | **Integer**|  | [optional]
  **sort** | **String**|  | [optional]
+ **name** | **String**| The name or part of the name to filter projects | [optional]
 
 ### Return type
 
-[**ListResponseContentProject**](ListResponseContentProject.md)
+[**ListResponseContentOfProject**](ListResponseContentOfProject.md)
 
 ### Authorization
 
@@ -389,11 +389,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="importProjectUsingPOST"></a>
 # **importProjectUsingPOST**
-> EntryResponseContentProject importProjectUsingPOST(name)
+> EntryResponseContentOfProject importProjectUsingPOST(name)
 
 Import an project as zip file
 
@@ -409,7 +409,7 @@ Allows a zip file to be uploaded containing an project definition and any number
 ProjectsApi apiInstance = new ProjectsApi();
 String name = "name_example"; // String | 
 try {
-    EntryResponseContentProject result = apiInstance.importProjectUsingPOST(name);
+    EntryResponseContentOfProject result = apiInstance.importProjectUsingPOST(name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#importProjectUsingPOST");
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentProject**](EntryResponseContentProject.md)
+[**EntryResponseContentOfProject**](EntryResponseContentOfProject.md)
 
 ### Authorization
 
@@ -434,11 +434,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="releaseProjectUsingPOST"></a>
 # **releaseProjectUsingPOST**
-> EntryResponseContentRelease releaseProjectUsingPOST(projectId)
+> EntryResponseContentOfRelease releaseProjectUsingPOST(projectId)
 
 Create a new release of a project
 
@@ -454,7 +454,7 @@ This will release the project.The new version is based on the version strategy
 ProjectsApi apiInstance = new ProjectsApi();
 String projectId = "projectId_example"; // String | The id of the project to release
 try {
-    EntryResponseContentRelease result = apiInstance.releaseProjectUsingPOST(projectId);
+    EntryResponseContentOfRelease result = apiInstance.releaseProjectUsingPOST(projectId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#releaseProjectUsingPOST");
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentRelease**](EntryResponseContentRelease.md)
+[**EntryResponseContentOfRelease**](EntryResponseContentOfRelease.md)
 
 ### Authorization
 
@@ -483,7 +483,7 @@ No authorization required
 
 <a name="updateProjectUsingPUT"></a>
 # **updateProjectUsingPUT**
-> EntryResponseContentProject updateProjectUsingPUT(body, projectId)
+> EntryResponseContentOfProject updateProjectUsingPUT(projectId, body)
 
 Update project details
 
@@ -495,10 +495,10 @@ Update project details
 
 
 ProjectsApi apiInstance = new ProjectsApi();
-Project body = new Project(); // Project | The new values to update
 String projectId = "projectId_example"; // String | The id of the project to update
+Project body = new Project(); // Project | 
 try {
-    EntryResponseContentProject result = apiInstance.updateProjectUsingPUT(body, projectId);
+    EntryResponseContentOfProject result = apiInstance.updateProjectUsingPUT(projectId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#updateProjectUsingPUT");
@@ -510,12 +510,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Project**](Project.md)| The new values to update |
  **projectId** | **String**| The id of the project to update |
+ **body** | [**Project**](Project.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentProject**](EntryResponseContentProject.md)
+[**EntryResponseContentOfProject**](EntryResponseContentOfProject.md)
 
 ### Authorization
 
@@ -524,7 +524,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="validateProjectUsingGET"></a>
 # **validateProjectUsingGET**

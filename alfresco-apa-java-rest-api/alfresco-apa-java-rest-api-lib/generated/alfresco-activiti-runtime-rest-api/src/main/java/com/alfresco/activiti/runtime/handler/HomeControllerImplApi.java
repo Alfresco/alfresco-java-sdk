@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.runtime.handler;
 
-import com.alfresco.activiti.runtime.model.EntryResponseContentHomeResource;
+import com.alfresco.activiti.runtime.model.EntryResponseContentOfHomeResource;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -43,15 +43,15 @@ import java.util.Map;
 @Api(value = "HomeControllerImpl", description = "the HomeControllerImpl API")
 public interface HomeControllerImplApi {
 
-    @ApiOperation(value = "getHomeInfo", nickname = "getHomeInfoUsingGET", notes = "", response = EntryResponseContentHomeResource.class, tags={ "home-controller-impl", })
+    @ApiOperation(value = "getHomeInfo", nickname = "getHomeInfoUsingGET", notes = "", response = EntryResponseContentOfHomeResource.class, tags={ "home-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentHomeResource.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfHomeResource.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1",
         produces = "*/*", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentHomeResource> getHomeInfoUsingGET();
+    ResponseEntity<EntryResponseContentOfHomeResource> getHomeInfoUsingGET();
 
 }

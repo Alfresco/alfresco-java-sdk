@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createVariableUsingPOST1"></a>
 # **createVariableUsingPOST1**
-> createVariableUsingPOST1(body, taskId)
+> createVariableUsingPOST1(taskId, body)
 
 createVariable
 
@@ -22,10 +22,10 @@ createVariable
 
 
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
-CreateTaskVariablePayload body = new CreateTaskVariablePayload(); // CreateTaskVariablePayload | createTaskVariablePayload
 String taskId = "taskId_example"; // String | taskId
+CreateTaskVariablePayload body = new CreateTaskVariablePayload(); // CreateTaskVariablePayload | 
 try {
-    apiInstance.createVariableUsingPOST1(body, taskId);
+    apiInstance.createVariableUsingPOST1(taskId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskVariableControllerImplApi#createVariableUsingPOST1");
     e.printStackTrace();
@@ -36,8 +36,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateTaskVariablePayload**](CreateTaskVariablePayload.md)| createTaskVariablePayload |
  **taskId** | **String**| taskId |
+ **body** | [**CreateTaskVariablePayload**](CreateTaskVariablePayload.md)|  | [optional]
 
 ### Return type
 
@@ -54,7 +54,7 @@ No authorization required
 
 <a name="getVariablesUsingGET2"></a>
 # **getVariablesUsingGET2**
-> ListResponseContentCloudVariableInstance getVariablesUsingGET2(taskId)
+> ListResponseContentOfCloudVariableInstance getVariablesUsingGET2(taskId)
 
 getVariables
 
@@ -68,7 +68,7 @@ getVariables
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
 try {
-    ListResponseContentCloudVariableInstance result = apiInstance.getVariablesUsingGET2(taskId);
+    ListResponseContentOfCloudVariableInstance result = apiInstance.getVariablesUsingGET2(taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskVariableControllerImplApi#getVariablesUsingGET2");
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCloudVariableInstance**](ListResponseContentCloudVariableInstance.md)
+[**ListResponseContentOfCloudVariableInstance**](ListResponseContentOfCloudVariableInstance.md)
 
 ### Authorization
 
@@ -93,11 +93,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="updateVariableUsingPUT1"></a>
 # **updateVariableUsingPUT1**
-> updateVariableUsingPUT1(body, taskId, variableName)
+> updateVariableUsingPUT1(taskId, variableName, body)
 
 updateVariable
 
@@ -109,11 +109,11 @@ updateVariable
 
 
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
-UpdateTaskVariablePayload body = new UpdateTaskVariablePayload(); // UpdateTaskVariablePayload | updateTaskVariablePayload
 String taskId = "taskId_example"; // String | taskId
 String variableName = "variableName_example"; // String | variableName
+UpdateTaskVariablePayload body = new UpdateTaskVariablePayload(); // UpdateTaskVariablePayload | 
 try {
-    apiInstance.updateVariableUsingPUT1(body, taskId, variableName);
+    apiInstance.updateVariableUsingPUT1(taskId, variableName, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskVariableControllerImplApi#updateVariableUsingPUT1");
     e.printStackTrace();
@@ -124,9 +124,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTaskVariablePayload**](UpdateTaskVariablePayload.md)| updateTaskVariablePayload |
  **taskId** | **String**| taskId |
  **variableName** | **String**| variableName |
+ **body** | [**UpdateTaskVariablePayload**](UpdateTaskVariablePayload.md)|  | [optional]
 
 ### Return type
 

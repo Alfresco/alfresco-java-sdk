@@ -20,8 +20,8 @@
  */
 package com.alfresco.activiti.form.handler;
 
-import com.alfresco.activiti.form.model.EntryResponseContentConnectorDefinition;
-import com.alfresco.activiti.form.model.ListResponseContentConnectorDefinition;
+import com.alfresco.activiti.form.model.EntryResponseContentOfConnectorDefinition;
+import com.alfresco.activiti.form.model.ListResponseContentOfConnectorDefinition;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -44,27 +44,27 @@ import java.util.Map;
 @Api(value = "ConnectorDefinitionControllerImpl", description = "the ConnectorDefinitionControllerImpl API")
 public interface ConnectorDefinitionControllerImplApi {
 
-    @ApiOperation(value = "getConnectorDefinition", nickname = "getConnectorDefinitionUsingGET", notes = "", response = EntryResponseContentConnectorDefinition.class, tags={ "connector-definition-controller-impl", })
+    @ApiOperation(value = "getConnectorDefinition", nickname = "getConnectorDefinitionUsingGET", notes = "", response = EntryResponseContentOfConnectorDefinition.class, tags={ "connector-definition-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentConnectorDefinition.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfConnectorDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/connector-definitions/{id}",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentConnectorDefinition> getConnectorDefinitionUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
+    ResponseEntity<EntryResponseContentOfConnectorDefinition> getConnectorDefinitionUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "getConnectorDefinitions", nickname = "getConnectorDefinitionsUsingGET", notes = "", response = ListResponseContentConnectorDefinition.class, tags={ "connector-definition-controller-impl", })
+    @ApiOperation(value = "getConnectorDefinitions", nickname = "getConnectorDefinitionsUsingGET", notes = "", response = ListResponseContentOfConnectorDefinition.class, tags={ "connector-definition-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentConnectorDefinition.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfConnectorDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/connector-definitions",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentConnectorDefinition> getConnectorDefinitionsUsingGET();
+    ResponseEntity<ListResponseContentOfConnectorDefinition> getConnectorDefinitionsUsingGET();
 
 }

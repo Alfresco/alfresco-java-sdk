@@ -55,6 +55,6 @@ public interface CleanupQueryProcessInstancesJobExecutionControllerApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentOfJobExecution> launchUsingPOST(@ApiParam(value = "launchRequest", required=true ) @Valid @RequestBody CleanupQueryProcessInstancesJobRequest body);
+    ResponseEntity<EntryResponseContentOfJobExecution> launchUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CleanupQueryProcessInstancesJobRequest body);
 
 }

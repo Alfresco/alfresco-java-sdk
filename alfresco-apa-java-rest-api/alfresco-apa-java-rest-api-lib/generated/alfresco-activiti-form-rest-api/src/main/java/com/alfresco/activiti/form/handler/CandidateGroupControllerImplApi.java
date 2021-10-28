@@ -21,7 +21,7 @@
 package com.alfresco.activiti.form.handler;
 
 import com.alfresco.activiti.form.model.CandidateGroupsPayload;
-import com.alfresco.activiti.form.model.ListResponseContentCandidateGroup;
+import com.alfresco.activiti.form.model.ListResponseContentOfCandidateGroup;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -54,7 +54,7 @@ public interface CandidateGroupControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-groups",
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> addCandidateGroupsUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "candidateGroupsPayload", required=true ) @Valid @RequestBody CandidateGroupsPayload body);
+    ResponseEntity<Void> addCandidateGroupsUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateGroupsPayload body);
 
 
     @ApiOperation(value = "deleteCandidateGroups", nickname = "deleteCandidateGroupsUsingDELETE1", notes = "", tags={ "candidate-group-controller-impl", })
@@ -64,20 +64,20 @@ public interface CandidateGroupControllerImplApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-groups",
-        consumes = "*/*",
+        consumes = "application/json",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> deleteCandidateGroupsUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "candidateGroupsPayload", required=true ) @Valid @RequestBody CandidateGroupsPayload body);
+    ResponseEntity<Void> deleteCandidateGroupsUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateGroupsPayload body);
 
 
-    @ApiOperation(value = "getGroupCandidates", nickname = "getGroupCandidatesUsingGET1", notes = "", response = ListResponseContentCandidateGroup.class, tags={ "candidate-group-controller-impl", })
+    @ApiOperation(value = "getGroupCandidates", nickname = "getGroupCandidatesUsingGET1", notes = "", response = ListResponseContentOfCandidateGroup.class, tags={ "candidate-group-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCandidateGroup.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCandidateGroup.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-groups",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCandidateGroup> getGroupCandidatesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
+    ResponseEntity<ListResponseContentOfCandidateGroup> getGroupCandidatesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 }

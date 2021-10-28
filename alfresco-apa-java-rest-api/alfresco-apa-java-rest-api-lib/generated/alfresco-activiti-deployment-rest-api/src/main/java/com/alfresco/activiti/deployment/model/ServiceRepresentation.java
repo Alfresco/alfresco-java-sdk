@@ -31,8 +31,30 @@ import javax.validation.constraints.*;
 
 
 public class ServiceRepresentation   {
+  @JsonProperty("configurationChanged")
+  private Boolean configurationChanged = null;
+
   @JsonProperty("image")
   private String image = null;
+
+  public ServiceRepresentation configurationChanged(Boolean configurationChanged) {
+    this.configurationChanged = configurationChanged;
+    return this;
+  }
+
+  /**
+   * Get configurationChanged
+   * @return configurationChanged
+   **/
+  @ApiModelProperty(value = "")
+  
+    public Boolean isConfigurationChanged() {
+    return configurationChanged;
+  }
+
+  public void setConfigurationChanged(Boolean configurationChanged) {
+    this.configurationChanged = configurationChanged;
+  }
 
   public ServiceRepresentation image(String image) {
     this.image = image;
@@ -63,12 +85,13 @@ public class ServiceRepresentation   {
       return false;
     }
     ServiceRepresentation serviceRepresentation = (ServiceRepresentation) o;
-    return Objects.equals(this.image, serviceRepresentation.image);
+    return Objects.equals(this.configurationChanged, serviceRepresentation.configurationChanged) &&
+        Objects.equals(this.image, serviceRepresentation.image);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(configurationChanged, image);
   }
 
   @Override
@@ -76,6 +99,7 @@ public class ServiceRepresentation   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServiceRepresentation {\n");
     
+    sb.append("    configurationChanged: ").append(toIndentedString(configurationChanged)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();

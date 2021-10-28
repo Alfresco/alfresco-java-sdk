@@ -23,7 +23,7 @@ package com.alfresco.activiti.deployment.handler;
 import com.alfresco.activiti.deployment.model.ConnectorModel;
 import com.alfresco.activiti.deployment.model.DeployDescriptorRequestRepresentation;
 import com.alfresco.activiti.deployment.model.DescriptorResponseRepresentation;
-import com.alfresco.activiti.deployment.model.ListResponseContentDescriptorResponseRepresentation;
+import com.alfresco.activiti.deployment.model.ListResponseContentOfDescriptorResponseRepresentation;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
@@ -48,7 +48,7 @@ import java.util.Map;
 @Api(value = "DescriptorController", description = "the DescriptorController API")
 public interface DescriptorControllerApi {
 
-    @ApiOperation(value = "Delete an existing descriptor by id.", nickname = "deleteDescriptorUsingDELETE", notes = "", tags={ "descriptor-controller", })
+    @ApiOperation(value = "deleteDescriptor", nickname = "deleteDescriptorUsingDELETE", notes = "Delete an existing descriptor by id.", tags={ "descriptor-controller", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 204, message = "No Content"),
@@ -59,7 +59,7 @@ public interface DescriptorControllerApi {
     ResponseEntity<Void> deleteDescriptorUsingDELETE(@ApiParam(value = "ID of application to delete", required=true) @PathVariable("descriptorId") String descriptorId);
 
 
-    @ApiOperation(value = "Deploy an existing descriptor by id.", nickname = "deployDescriptorUsingPOST", notes = "", tags={ "descriptor-controller", })
+    @ApiOperation(value = "deployDescriptor", nickname = "deployDescriptorUsingPOST", notes = "Deploy an existing descriptor by id.", tags={ "descriptor-controller", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -69,10 +69,10 @@ public interface DescriptorControllerApi {
     @RequestMapping(value = "/v1/deploy/{descriptorId}",
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> deployDescriptorUsingPOST(@ApiParam(value = "ID of application to deploy", required=true) @PathVariable("descriptorId") String descriptorId, @ApiParam(value = "deployDescriptorContent" ) @Valid @RequestBody DeployDescriptorRequestRepresentation body);
+    ResponseEntity<Void> deployDescriptorUsingPOST(@ApiParam(value = "ID of application to deploy", required=true) @PathVariable("descriptorId") String descriptorId, @ApiParam(value = "" ) @Valid @RequestBody DeployDescriptorRequestRepresentation body);
 
 
-    @ApiOperation(value = "Export a descriptor by id.", nickname = "exportDescriptorUsingGET", notes = "", tags={ "descriptor-controller", })
+    @ApiOperation(value = "exportDescriptor", nickname = "exportDescriptorUsingGET", notes = "Export a descriptor by id.", tags={ "descriptor-controller", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -81,10 +81,10 @@ public interface DescriptorControllerApi {
     @RequestMapping(value = "/v1/descriptors/{descriptorId}/export",
         method = RequestMethod.GET)
     byte[] exportDescriptorUsingGET(@ApiParam(value = "descriptorId", required=true) @PathVariable("descriptorId") String descriptorId, @NotNull @ApiParam(value = "type", required = true, allowableValues="JSON"
-) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "attachment", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment);
+) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "attachment") @Valid @RequestParam(value = "attachment", required = false) Boolean attachment);
 
 
-    @ApiOperation(value = "Find descriptor by id.", nickname = "getDescriptorUsingGET", notes = "", response = DescriptorResponseRepresentation.class, tags={ "descriptor-controller", })
+    @ApiOperation(value = "getDescriptor", nickname = "getDescriptorUsingGET", notes = "Find descriptor by id.", response = DescriptorResponseRepresentation.class, tags={ "descriptor-controller", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = DescriptorResponseRepresentation.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -96,16 +96,16 @@ public interface DescriptorControllerApi {
     ResponseEntity<DescriptorResponseRepresentation> getDescriptorUsingGET(@ApiParam(value = "ID of descriptor to return", required=true) @PathVariable("descriptorId") String descriptorId);
 
 
-    @ApiOperation(value = "Find descriptors. It allows filtering.", nickname = "getDescriptorsUsingGET", notes = "", response = ListResponseContentDescriptorResponseRepresentation.class, tags={ "descriptor-controller", })
+    @ApiOperation(value = "getDescriptors", nickname = "getDescriptorsUsingGET", notes = "Find descriptors. It allows filtering.", response = ListResponseContentOfDescriptorResponseRepresentation.class, tags={ "descriptor-controller", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentDescriptorResponseRepresentation.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfDescriptorResponseRepresentation.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/descriptors",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentDescriptorResponseRepresentation> getDescriptorsUsingGET(@ApiParam(value = "Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.") @Valid @RequestParam(value = "createdDateFrom", required = false) LocalDate createdDateFrom, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateFromStartOfDay", required = false) OffsetDateTime createdDateFromStartOfDay, @ApiParam(value = "Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.") @Valid @RequestParam(value = "createdDateTo", required = false) LocalDate createdDateTo, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateToEndOfDay", required = false) OffsetDateTime createdDateToEndOfDay, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "Filter on descriptor name, showing all descriptors that contains the search key.") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "Application status", allowableValues="CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR"
+    ResponseEntity<ListResponseContentOfDescriptorResponseRepresentation> getDescriptorsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "createdDateFrom", required = false) LocalDate createdDateFrom, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateFromStartOfDay", required = false) OffsetDateTime createdDateFromStartOfDay, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateTo", required = false) LocalDate createdDateTo, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateToEndOfDay", required = false) OffsetDateTime createdDateToEndOfDay, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "", allowableValues="CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR"
 ) @Valid @RequestParam(value = "status", required = false) String status);
 
 
@@ -121,7 +121,7 @@ public interface DescriptorControllerApi {
     ResponseEntity<List<ConnectorModel>> getReleasedModelContentsUsingGET(@ApiParam(value = "The id of the descriptor to get the models of the release", required=true) @PathVariable("descriptorId") String descriptorId, @NotNull @ApiParam(value = "The type of the models of the descriptor. Only CONNECTOR type available", required = true) @Valid @RequestParam(value = "type", required = true) String type);
 
 
-    @ApiOperation(value = "Import descriptor. Format: zip file, containing at root a descriptor.json and the released project", nickname = "importDescriptorUsingPOST", notes = "", tags={ "descriptor-controller", })
+    @ApiOperation(value = "importDescriptor", nickname = "importDescriptorUsingPOST", notes = "Import descriptor. Format: zip file, containing at root a descriptor.json and the released project", tags={ "descriptor-controller", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -129,8 +129,8 @@ public interface DescriptorControllerApi {
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/descriptors/import",
-        consumes = "multipart/form-data",
+        consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> importDescriptorUsingPOST();
+    ResponseEntity<Void> importDescriptorUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

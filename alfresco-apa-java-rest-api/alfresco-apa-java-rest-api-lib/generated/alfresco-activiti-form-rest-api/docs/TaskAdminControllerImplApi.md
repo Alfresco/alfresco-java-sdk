@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="assignUsingPOST"></a>
 # **assignUsingPOST**
-> EntryResponseContentCloudTask assignUsingPOST(body, taskId)
+> EntryResponseContentOfCloudTask assignUsingPOST(taskId, body)
 
 assign
 
@@ -25,10 +25,10 @@ assign
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
-AssignTaskPayload body = new AssignTaskPayload(); // AssignTaskPayload | assignTaskPayload
 String taskId = "taskId_example"; // String | taskId
+AssignTaskPayload body = new AssignTaskPayload(); // AssignTaskPayload | 
 try {
-    EntryResponseContentCloudTask result = apiInstance.assignUsingPOST(body, taskId);
+    EntryResponseContentOfCloudTask result = apiInstance.assignUsingPOST(taskId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#assignUsingPOST");
@@ -40,12 +40,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssignTaskPayload**](AssignTaskPayload.md)| assignTaskPayload |
  **taskId** | **String**| taskId |
+ **body** | [**AssignTaskPayload**](AssignTaskPayload.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentCloudTask**](EntryResponseContentCloudTask.md)
+[**EntryResponseContentOfCloudTask**](EntryResponseContentOfCloudTask.md)
 
 ### Authorization
 
@@ -54,11 +54,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="completeTaskUsingPOST"></a>
 # **completeTaskUsingPOST**
-> EntryResponseContentCloudTask completeTaskUsingPOST(taskId, body)
+> EntryResponseContentOfCloudTask completeTaskUsingPOST(taskId, body)
 
 completeTask
 
@@ -71,9 +71,9 @@ completeTask
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
-CompleteTaskPayload body = new CompleteTaskPayload(); // CompleteTaskPayload | completeTaskPayload
+CompleteTaskPayload body = new CompleteTaskPayload(); // CompleteTaskPayload | 
 try {
-    EntryResponseContentCloudTask result = apiInstance.completeTaskUsingPOST(taskId, body);
+    EntryResponseContentOfCloudTask result = apiInstance.completeTaskUsingPOST(taskId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#completeTaskUsingPOST");
@@ -86,11 +86,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taskId** | **String**| taskId |
- **body** | [**CompleteTaskPayload**](CompleteTaskPayload.md)| completeTaskPayload | [optional]
+ **body** | [**CompleteTaskPayload**](CompleteTaskPayload.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentCloudTask**](EntryResponseContentCloudTask.md)
+[**EntryResponseContentOfCloudTask**](EntryResponseContentOfCloudTask.md)
 
 ### Authorization
 
@@ -99,11 +99,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="deleteTaskUsingDELETE"></a>
 # **deleteTaskUsingDELETE**
-> EntryResponseContentCloudTask deleteTaskUsingDELETE(taskId)
+> EntryResponseContentOfCloudTask deleteTaskUsingDELETE(taskId)
 
 deleteTask
 
@@ -117,7 +117,7 @@ deleteTask
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
 try {
-    EntryResponseContentCloudTask result = apiInstance.deleteTaskUsingDELETE(taskId);
+    EntryResponseContentOfCloudTask result = apiInstance.deleteTaskUsingDELETE(taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#deleteTaskUsingDELETE");
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentCloudTask**](EntryResponseContentCloudTask.md)
+[**EntryResponseContentOfCloudTask**](EntryResponseContentOfCloudTask.md)
 
 ### Authorization
 
@@ -142,11 +142,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getTaskByIdUsingGET"></a>
 # **getTaskByIdUsingGET**
-> EntryResponseContentCloudTask getTaskByIdUsingGET(taskId)
+> EntryResponseContentOfCloudTask getTaskByIdUsingGET(taskId)
 
 getTaskById
 
@@ -160,7 +160,7 @@ getTaskById
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
 try {
-    EntryResponseContentCloudTask result = apiInstance.getTaskByIdUsingGET(taskId);
+    EntryResponseContentOfCloudTask result = apiInstance.getTaskByIdUsingGET(taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#getTaskByIdUsingGET");
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentCloudTask**](EntryResponseContentCloudTask.md)
+[**EntryResponseContentOfCloudTask**](EntryResponseContentOfCloudTask.md)
 
 ### Authorization
 
@@ -185,11 +185,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getTasksUsingGET1"></a>
 # **getTasksUsingGET1**
-> ListResponseContentCloudTask getTasksUsingGET1(maxItems, skipCount, sort)
+> ListResponseContentOfCloudTask getTasksUsingGET1(maxItems, skipCount, sort)
 
 getTasks
 
@@ -205,7 +205,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentCloudTask result = apiInstance.getTasksUsingGET1(maxItems, skipCount, sort);
+    ListResponseContentOfCloudTask result = apiInstance.getTasksUsingGET1(maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#getTasksUsingGET1");
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCloudTask**](ListResponseContentCloudTask.md)
+[**ListResponseContentOfCloudTask**](ListResponseContentOfCloudTask.md)
 
 ### Authorization
 
@@ -232,11 +232,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="updateTaskUsingPUT"></a>
 # **updateTaskUsingPUT**
-> EntryResponseContentCloudTask updateTaskUsingPUT(body, taskId)
+> EntryResponseContentOfCloudTask updateTaskUsingPUT(taskId, body)
 
 updateTask
 
@@ -248,10 +248,10 @@ updateTask
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
-UpdateTaskPayload body = new UpdateTaskPayload(); // UpdateTaskPayload | updateTaskPayload
 String taskId = "taskId_example"; // String | taskId
+UpdateTaskPayload body = new UpdateTaskPayload(); // UpdateTaskPayload | 
 try {
-    EntryResponseContentCloudTask result = apiInstance.updateTaskUsingPUT(body, taskId);
+    EntryResponseContentOfCloudTask result = apiInstance.updateTaskUsingPUT(taskId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerImplApi#updateTaskUsingPUT");
@@ -263,12 +263,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTaskPayload**](UpdateTaskPayload.md)| updateTaskPayload |
  **taskId** | **String**| taskId |
+ **body** | [**UpdateTaskPayload**](UpdateTaskPayload.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentCloudTask**](EntryResponseContentCloudTask.md)
+[**EntryResponseContentOfCloudTask**](EntryResponseContentOfCloudTask.md)
 
 ### Authorization
 
@@ -277,5 +277,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

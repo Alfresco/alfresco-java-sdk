@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cachable** | **Boolean** |  |  [optional]
-**delegatee** | [**JsonDeserializerobject**](JsonDeserializerobject.md) |  |  [optional]
+**delegatee** | [**JsonDeserializerOfobject**](JsonDeserializerOfobject.md) |  |  [optional]
 **emptyAccessPattern** | [**EmptyAccessPatternEnum**](#EmptyAccessPatternEnum) |  |  [optional]
 **emptyValue** | **Object** |  |  [optional]
 **knownPropertyNames** | **List&lt;Object&gt;** |  |  [optional]

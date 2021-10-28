@@ -4,17 +4,19 @@ All URIs are relative to the environment set via -Denvironment.host and -Denviro
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDescriptorUsingDELETE**](DescriptorControllerApi.md#deleteDescriptorUsingDELETE) | **DELETE** /v1/descriptors/{descriptorId} | Delete an existing descriptor by id.
-[**deployDescriptorUsingPOST**](DescriptorControllerApi.md#deployDescriptorUsingPOST) | **POST** /v1/deploy/{descriptorId} | Deploy an existing descriptor by id.
-[**exportDescriptorUsingGET**](DescriptorControllerApi.md#exportDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId}/export | Export a descriptor by id.
-[**getDescriptorUsingGET**](DescriptorControllerApi.md#getDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId} | Find descriptor by id.
-[**getDescriptorsUsingGET**](DescriptorControllerApi.md#getDescriptorsUsingGET) | **GET** /v1/descriptors | Find descriptors. It allows filtering.
+[**deleteDescriptorUsingDELETE**](DescriptorControllerApi.md#deleteDescriptorUsingDELETE) | **DELETE** /v1/descriptors/{descriptorId} | deleteDescriptor
+[**deployDescriptorUsingPOST**](DescriptorControllerApi.md#deployDescriptorUsingPOST) | **POST** /v1/deploy/{descriptorId} | deployDescriptor
+[**exportDescriptorUsingGET**](DescriptorControllerApi.md#exportDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId}/export | exportDescriptor
+[**getDescriptorUsingGET**](DescriptorControllerApi.md#getDescriptorUsingGET) | **GET** /v1/descriptors/{descriptorId} | getDescriptor
+[**getDescriptorsUsingGET**](DescriptorControllerApi.md#getDescriptorsUsingGET) | **GET** /v1/descriptors | getDescriptors
 [**getReleasedModelContentsUsingGET**](DescriptorControllerApi.md#getReleasedModelContentsUsingGET) | **GET** /v1/descriptors/{descriptorId}/models | getReleasedModelContents
-[**importDescriptorUsingPOST**](DescriptorControllerApi.md#importDescriptorUsingPOST) | **POST** /v1/descriptors/import | Import descriptor. Format: zip file, containing at root a descriptor.json and the released project
+[**importDescriptorUsingPOST**](DescriptorControllerApi.md#importDescriptorUsingPOST) | **POST** /v1/descriptors/import | importDescriptor
 
 <a name="deleteDescriptorUsingDELETE"></a>
 # **deleteDescriptorUsingDELETE**
 > deleteDescriptorUsingDELETE(descriptorId)
+
+deleteDescriptor
 
 Delete an existing descriptor by id.
 
@@ -58,6 +60,8 @@ No authorization required
 # **deployDescriptorUsingPOST**
 > deployDescriptorUsingPOST(descriptorId, body)
 
+deployDescriptor
+
 Deploy an existing descriptor by id.
 
 ### Example
@@ -69,7 +73,7 @@ Deploy an existing descriptor by id.
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
 String descriptorId = "descriptorId_example"; // String | ID of application to deploy
-DeployDescriptorRequestRepresentation body = new DeployDescriptorRequestRepresentation(); // DeployDescriptorRequestRepresentation | deployDescriptorContent
+DeployDescriptorRequestRepresentation body = new DeployDescriptorRequestRepresentation(); // DeployDescriptorRequestRepresentation | 
 try {
     apiInstance.deployDescriptorUsingPOST(descriptorId, body);
 } catch (ApiException e) {
@@ -83,7 +87,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **descriptorId** | **String**| ID of application to deploy |
- **body** | [**DeployDescriptorRequestRepresentation**](DeployDescriptorRequestRepresentation.md)| deployDescriptorContent | [optional]
+ **body** | [**DeployDescriptorRequestRepresentation**](DeployDescriptorRequestRepresentation.md)|  | [optional]
 
 ### Return type
 
@@ -101,6 +105,8 @@ No authorization required
 <a name="exportDescriptorUsingGET"></a>
 # **exportDescriptorUsingGET**
 > exportDescriptorUsingGET(descriptorId, type, attachment)
+
+exportDescriptor
 
 Export a descriptor by id.
 
@@ -129,7 +135,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **descriptorId** | **String**| descriptorId |
  **type** | **String**| type | [enum: JSON]
- **attachment** | **Boolean**| attachment | [optional] [default to true]
+ **attachment** | **Boolean**| attachment | [optional]
 
 ### Return type
 
@@ -147,6 +153,8 @@ No authorization required
 <a name="getDescriptorUsingGET"></a>
 # **getDescriptorUsingGET**
 > DescriptorResponseRepresentation getDescriptorUsingGET(descriptorId)
+
+getDescriptor
 
 Find descriptor by id.
 
@@ -189,7 +197,9 @@ No authorization required
 
 <a name="getDescriptorsUsingGET"></a>
 # **getDescriptorsUsingGET**
-> ListResponseContentDescriptorResponseRepresentation getDescriptorsUsingGET(createdDateFrom, createdDateFromStartOfDay, createdDateTo, createdDateToEndOfDay, maxItems, name, skipCount, sort, status)
+> ListResponseContentOfDescriptorResponseRepresentation getDescriptorsUsingGET(createdDateFrom, createdDateFromStartOfDay, createdDateTo, createdDateToEndOfDay, maxItems, name, skipCount, sort, status)
+
+getDescriptors
 
 Find descriptors. It allows filtering.
 
@@ -201,17 +211,17 @@ Find descriptors. It allows filtering.
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
-LocalDate createdDateFrom = new LocalDate(); // LocalDate | Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
+LocalDate createdDateFrom = new LocalDate(); // LocalDate | 
 OffsetDateTime createdDateFromStartOfDay = new OffsetDateTime(); // OffsetDateTime | 
-LocalDate createdDateTo = new LocalDate(); // LocalDate | Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS.
+LocalDate createdDateTo = new LocalDate(); // LocalDate | 
 OffsetDateTime createdDateToEndOfDay = new OffsetDateTime(); // OffsetDateTime | 
 Integer maxItems = 56; // Integer | 
-String name = "name_example"; // String | Filter on descriptor name, showing all descriptors that contains the search key.
+String name = "name_example"; // String | 
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
-String status = "status_example"; // String | Application status
+String status = "status_example"; // String | 
 try {
-    ListResponseContentDescriptorResponseRepresentation result = apiInstance.getDescriptorsUsingGET(createdDateFrom, createdDateFromStartOfDay, createdDateTo, createdDateToEndOfDay, maxItems, name, skipCount, sort, status);
+    ListResponseContentOfDescriptorResponseRepresentation result = apiInstance.getDescriptorsUsingGET(createdDateFrom, createdDateFromStartOfDay, createdDateTo, createdDateToEndOfDay, maxItems, name, skipCount, sort, status);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DescriptorControllerApi#getDescriptorsUsingGET");
@@ -223,19 +233,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createdDateFrom** | **LocalDate**| Date used as start interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS. | [optional]
+ **createdDateFrom** | **LocalDate**|  | [optional]
  **createdDateFromStartOfDay** | **OffsetDateTime**|  | [optional]
- **createdDateTo** | **LocalDate**| Date used as end interval in search by creation date. Allowed formats: yyyy-MM-dd or yyyy-MM-ddTHH:mm:ss or yyyy-MM-ddTHH:mm:ss.SSS. | [optional]
+ **createdDateTo** | **LocalDate**|  | [optional]
  **createdDateToEndOfDay** | **OffsetDateTime**|  | [optional]
  **maxItems** | **Integer**|  | [optional]
- **name** | **String**| Filter on descriptor name, showing all descriptors that contains the search key. | [optional]
+ **name** | **String**|  | [optional]
  **skipCount** | **Integer**|  | [optional]
  **sort** | **String**|  | [optional]
- **status** | **String**| Application status | [optional] [enum: CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR]
+ **status** | **String**|  | [optional] [enum: CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR]
 
 ### Return type
 
-[**ListResponseContentDescriptorResponseRepresentation**](ListResponseContentDescriptorResponseRepresentation.md)
+[**ListResponseContentOfDescriptorResponseRepresentation**](ListResponseContentOfDescriptorResponseRepresentation.md)
 
 ### Authorization
 
@@ -293,7 +303,9 @@ No authorization required
 
 <a name="importDescriptorUsingPOST"></a>
 # **importDescriptorUsingPOST**
-> importDescriptorUsingPOST()
+> importDescriptorUsingPOST(body)
+
+importDescriptor
 
 Import descriptor. Format: zip file, containing at root a descriptor.json and the released project
 
@@ -305,8 +317,9 @@ Import descriptor. Format: zip file, containing at root a descriptor.json and th
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
+Object body = null; // Object | 
 try {
-    apiInstance.importDescriptorUsingPOST();
+    apiInstance.importDescriptorUsingPOST(body);
 } catch (ApiException e) {
     System.err.println("Exception when calling DescriptorControllerApi#importDescriptorUsingPOST");
     e.printStackTrace();
@@ -314,7 +327,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **Object**|  | [optional]
 
 ### Return type
 
@@ -326,6 +342,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: application/json, application/octet-stream, multipart/form-data
  - **Accept**: Not defined
 

@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.runtime.handler;
 
-import com.alfresco.activiti.runtime.model.ListResponseContentCloudProcessDefinition;
+import com.alfresco.activiti.runtime.model.ListResponseContentOfCloudProcessDefinition;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -43,15 +43,15 @@ import java.util.Map;
 @Api(value = "ProcessDefinitionAdminControllerImpl", description = "the ProcessDefinitionAdminControllerImpl API")
 public interface ProcessDefinitionAdminControllerImplApi {
 
-    @ApiOperation(value = "getAllProcessDefinitions", nickname = "getAllProcessDefinitionsUsingGET", notes = "", response = ListResponseContentCloudProcessDefinition.class, tags={ "process-definition-admin-controller-impl", })
+    @ApiOperation(value = "getAllProcessDefinitions", nickname = "getAllProcessDefinitionsUsingGET", notes = "", response = ListResponseContentOfCloudProcessDefinition.class, tags={ "process-definition-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudProcessDefinition.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/admin/v1/process-definitions",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudProcessDefinition> getAllProcessDefinitionsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudProcessDefinition> getAllProcessDefinitionsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 }
