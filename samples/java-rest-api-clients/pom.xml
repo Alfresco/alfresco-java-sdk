@@ -15,9 +15,14 @@
   <description>Sample application to demonstrate Java ACS and APA REST APIs working together</description>
 
   <dependencies>
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-starter-web</artifactId>-->
+<!--    </dependency>-->
+
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-acs-java-rest-api-spring-boot</artifactId>
+      <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

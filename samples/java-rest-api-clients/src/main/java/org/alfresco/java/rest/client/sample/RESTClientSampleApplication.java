@@ -17,13 +17,15 @@ package org.alfresco.java.rest.client.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
 
 @SpringBootApplication
+@EnableScheduling
 public class RESTClientSampleApplication {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(RESTClientSampleApplication.class, args);
     }
-
 
 }
