@@ -40,10 +40,10 @@ public class RESTClientService {
 
         LOGGER.info("STARTING PROCESS");
 
-//        processInstanceControllerImplApiClient.startProcessUsingPOST1(buildStartProcessPayload(
-//            "SingleTaskProcess",
-//            null
-//        ));
+        processInstanceControllerImplApiClient.startProcessUsingPOST1(buildStartProcessPayload(
+            "SingleTaskProcess",
+            null
+        ));
 
         LOGGER.info("PROCESS STARTED");
     }
