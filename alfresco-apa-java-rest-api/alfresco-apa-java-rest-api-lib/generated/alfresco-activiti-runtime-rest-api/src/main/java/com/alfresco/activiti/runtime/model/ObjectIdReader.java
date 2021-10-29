@@ -17,8 +17,8 @@ package com.alfresco.activiti.runtime.model;
 
 import java.util.Objects;
 import com.alfresco.activiti.runtime.model.JavaType;
-import com.alfresco.activiti.runtime.model.JsonDeserializerobject;
-import com.alfresco.activiti.runtime.model.ObjectIdGeneratorobject;
+import com.alfresco.activiti.runtime.model.JsonDeserializerOfobject;
+import com.alfresco.activiti.runtime.model.ObjectIdGeneratorOfobject;
 import com.alfresco.activiti.runtime.model.ObjectIdResolver;
 import com.alfresco.activiti.runtime.model.PropertyName;
 import com.alfresco.activiti.runtime.model.SettableBeanProperty;
@@ -38,10 +38,10 @@ import javax.validation.constraints.*;
 
 public class ObjectIdReader   {
   @JsonProperty("deserializer")
-  private JsonDeserializerobject deserializer = null;
+  private JsonDeserializerOfobject deserializer = null;
 
   @JsonProperty("generator")
-  private ObjectIdGeneratorobject generator = null;
+  private ObjectIdGeneratorOfobject generator = null;
 
   @JsonProperty("idProperty")
   private SettableBeanProperty idProperty = null;
@@ -55,7 +55,7 @@ public class ObjectIdReader   {
   @JsonProperty("resolver")
   private ObjectIdResolver resolver = null;
 
-  public ObjectIdReader deserializer(JsonDeserializerobject deserializer) {
+  public ObjectIdReader deserializer(JsonDeserializerOfobject deserializer) {
     this.deserializer = deserializer;
     return this;
   }
@@ -67,15 +67,15 @@ public class ObjectIdReader   {
   @ApiModelProperty(value = "")
   
     @Valid
-    public JsonDeserializerobject getDeserializer() {
+    public JsonDeserializerOfobject getDeserializer() {
     return deserializer;
   }
 
-  public void setDeserializer(JsonDeserializerobject deserializer) {
+  public void setDeserializer(JsonDeserializerOfobject deserializer) {
     this.deserializer = deserializer;
   }
 
-  public ObjectIdReader generator(ObjectIdGeneratorobject generator) {
+  public ObjectIdReader generator(ObjectIdGeneratorOfobject generator) {
     this.generator = generator;
     return this;
   }
@@ -87,11 +87,11 @@ public class ObjectIdReader   {
   @ApiModelProperty(value = "")
   
     @Valid
-    public ObjectIdGeneratorobject getGenerator() {
+    public ObjectIdGeneratorOfobject getGenerator() {
     return generator;
   }
 
-  public void setGenerator(ObjectIdGeneratorobject generator) {
+  public void setGenerator(ObjectIdGeneratorOfobject generator) {
     this.generator = generator;
   }
 

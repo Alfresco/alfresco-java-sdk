@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.deployment.handler;
 
-import com.alfresco.activiti.deployment.model.EntryResponseContentDescriptor;
+import com.alfresco.activiti.deployment.model.EntryResponseContentOfDescriptor;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -54,56 +54,56 @@ public interface DescriptorDataEntityApi {
     ResponseEntity<Void> descriptorDataDescriptorUsingDELETE(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingGET", notes = "", response = EntryResponseContentDescriptor.class, tags={ "DescriptorData Entity", })
+    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingGET", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "DescriptorData Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "application/hal+json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentDescriptor> descriptorDataDescriptorUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
+    ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingPATCH", notes = "", response = EntryResponseContentDescriptor.class, tags={ "DescriptorData Entity", })
+    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingPATCH", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "DescriptorData Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "*/*", 
-        consumes = "text/uri-list",
+        consumes = "application/json",
         method = RequestMethod.PATCH)
-    ResponseEntity<EntryResponseContentDescriptor> descriptorDataDescriptorUsingPATCH(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "body", required=true ) @Valid @RequestBody String body);
+    ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingPATCH(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 
-    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingPOST", notes = "", response = EntryResponseContentDescriptor.class, tags={ "DescriptorData Entity", })
+    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingPOST", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "DescriptorData Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "*/*", 
-        consumes = "text/uri-list",
+        consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentDescriptor> descriptorDataDescriptorUsingPOST(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "body", required=true ) @Valid @RequestBody String body);
+    ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingPOST(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 
-    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingPUT", notes = "", response = EntryResponseContentDescriptor.class, tags={ "DescriptorData Entity", })
+    @ApiOperation(value = "descriptorDataDescriptor", nickname = "descriptorDataDescriptorUsingPUT", notes = "", response = EntryResponseContentOfDescriptor.class, tags={ "DescriptorData Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentDescriptor.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfDescriptor.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "*/*", 
-        consumes = "text/uri-list",
+        consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentDescriptor> descriptorDataDescriptorUsingPUT(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "body", required=true ) @Valid @RequestBody String body);
+    ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingPUT(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 }

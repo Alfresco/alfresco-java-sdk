@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.form.handler;
 
-import com.alfresco.activiti.form.model.EntryResponseContentProcessDefinitionMeta;
+import com.alfresco.activiti.form.model.EntryResponseContentOfProcessDefinitionMeta;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -43,15 +43,15 @@ import java.util.Map;
 @Api(value = "ProcessDefinitionMetaControllerImpl", description = "the ProcessDefinitionMetaControllerImpl API")
 public interface ProcessDefinitionMetaControllerImplApi {
 
-    @ApiOperation(value = "getProcessDefinitionMetadata", nickname = "getProcessDefinitionMetadataUsingGET", notes = "", response = EntryResponseContentProcessDefinitionMeta.class, tags={ "process-definition-meta-controller-impl", })
+    @ApiOperation(value = "getProcessDefinitionMetadata", nickname = "getProcessDefinitionMetadataUsingGET", notes = "", response = EntryResponseContentOfProcessDefinitionMeta.class, tags={ "process-definition-meta-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentProcessDefinitionMeta.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfProcessDefinitionMeta.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-definitions/{id}/meta",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentProcessDefinitionMeta> getProcessDefinitionMetadataUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
+    ResponseEntity<EntryResponseContentOfProcessDefinitionMeta> getProcessDefinitionMetadataUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 }

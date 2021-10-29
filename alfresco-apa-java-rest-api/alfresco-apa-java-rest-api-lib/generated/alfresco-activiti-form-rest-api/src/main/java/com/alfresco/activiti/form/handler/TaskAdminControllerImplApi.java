@@ -22,8 +22,8 @@ package com.alfresco.activiti.form.handler;
 
 import com.alfresco.activiti.form.model.AssignTaskPayload;
 import com.alfresco.activiti.form.model.CompleteTaskPayload;
-import com.alfresco.activiti.form.model.EntryResponseContentCloudTask;
-import com.alfresco.activiti.form.model.ListResponseContentCloudTask;
+import com.alfresco.activiti.form.model.EntryResponseContentOfCloudTask;
+import com.alfresco.activiti.form.model.ListResponseContentOfCloudTask;
 import com.alfresco.activiti.form.model.UpdateTaskPayload;
 
 import io.swagger.annotations.*;
@@ -47,9 +47,9 @@ import java.util.Map;
 @Api(value = "TaskAdminControllerImpl", description = "the TaskAdminControllerImpl API")
 public interface TaskAdminControllerImplApi {
 
-    @ApiOperation(value = "assign", nickname = "assignUsingPOST", notes = "", response = EntryResponseContentCloudTask.class, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "assign", nickname = "assignUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -58,12 +58,12 @@ public interface TaskAdminControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudTask> assignUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "assignTaskPayload", required=true ) @Valid @RequestBody AssignTaskPayload body);
+    ResponseEntity<EntryResponseContentOfCloudTask> assignUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody AssignTaskPayload body);
 
 
-    @ApiOperation(value = "completeTask", nickname = "completeTaskUsingPOST", notes = "", response = EntryResponseContentCloudTask.class, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "completeTask", nickname = "completeTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -72,48 +72,48 @@ public interface TaskAdminControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentCloudTask> completeTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "completeTaskPayload" ) @Valid @RequestBody CompleteTaskPayload body);
+    ResponseEntity<EntryResponseContentOfCloudTask> completeTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CompleteTaskPayload body);
 
 
-    @ApiOperation(value = "deleteTask", nickname = "deleteTaskUsingDELETE", notes = "", response = EntryResponseContentCloudTask.class, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "deleteTask", nickname = "deleteTaskUsingDELETE", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/admin/v1/tasks/{taskId}",
         produces = "application/json", 
         method = RequestMethod.DELETE)
-    ResponseEntity<EntryResponseContentCloudTask> deleteTaskUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
+    ResponseEntity<EntryResponseContentOfCloudTask> deleteTaskUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "getTaskById", nickname = "getTaskByIdUsingGET", notes = "", response = EntryResponseContentCloudTask.class, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "getTaskById", nickname = "getTaskByIdUsingGET", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/admin/v1/tasks/{taskId}",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentCloudTask> getTaskByIdUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
+    ResponseEntity<EntryResponseContentOfCloudTask> getTaskByIdUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET1", notes = "", response = ListResponseContentCloudTask.class, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET1", notes = "", response = ListResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/admin/v1/tasks",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudTask> getTasksUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudTask> getTasksUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "updateTask", nickname = "updateTaskUsingPUT", notes = "", response = EntryResponseContentCloudTask.class, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "updateTask", nickname = "updateTaskUsingPUT", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -122,6 +122,6 @@ public interface TaskAdminControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentCloudTask> updateTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "updateTaskPayload", required=true ) @Valid @RequestBody UpdateTaskPayload body);
+    ResponseEntity<EntryResponseContentOfCloudTask> updateTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UpdateTaskPayload body);
 
 }

@@ -44,11 +44,12 @@ public class ModelsImportBody   {
   }
 
   /**
-   * Get file
+   * The file containing the model definition
    * @return file
    **/
-  @ApiModelProperty(value = "")
-  
+  @ApiModelProperty(required = true, value = "The file containing the model definition")
+      @NotNull
+
     @Valid
     public Resource getFile() {
     return file;
@@ -64,11 +65,12 @@ public class ModelsImportBody   {
   }
 
   /**
-   * Get type
+   * The type of the model to be imported
    * @return type
    **/
-  @ApiModelProperty(value = "")
-  
+  @ApiModelProperty(required = true, value = "The type of the model to be imported")
+      @NotNull
+
     public String getType() {
     return type;
   }

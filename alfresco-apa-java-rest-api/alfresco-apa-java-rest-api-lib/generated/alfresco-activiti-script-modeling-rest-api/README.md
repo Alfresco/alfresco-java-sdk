@@ -70,8 +70,9 @@ Please follow the [installation](#installation) instruction and execute the foll
   
   ApsModelControllerApi apiInstance = new ApsModelControllerApi();
     String projectId = "projectId_example"; // String | projectId
+    Object body = null; // Object | 
   try {
-  EntryResponseContentImportResult result = apiInstance.importProcessModelUsingPOST(projectId);
+  EntryResponseContentOfImportResult result = apiInstance.importProcessModelUsingPOST(projectId, body);
     System.out.println(result);
   } catch (ApiException e) {
   System.err.println("Exception when calling ApsModelControllerApi#importProcessModelUsingPOST");
@@ -121,6 +122,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**releaseProjectUsingPOST**](docs/ProjectsApi.md#releaseProjectUsingPOST) | **POST** /v1/projects/{projectId}/releases | Create a new release of a project
 *ProjectsApi* | [**updateProjectUsingPUT**](docs/ProjectsApi.md#updateProjectUsingPUT) | **PUT** /v1/projects/{projectId} | Update project details
 *ProjectsApi* | [**validateProjectUsingGET**](docs/ProjectsApi.md#validateProjectUsingGET) | **GET** /v1/projects/{projectId}/validate | Validate an project by id
+*ReleaseControllerApi* | [**getReleaseUsingGET**](docs/ReleaseControllerApi.md#getReleaseUsingGET) | **GET** /v1/releases/{releaseId} | Get release by a release Id
 *ScriptControllerApi* | [**runScriptUsingPOST**](docs/ScriptControllerApi.md#runScriptUsingPOST) | **POST** /v1/scripts | runScript
 
 ## Documentation for Models
@@ -128,23 +130,23 @@ Class | Method | HTTP request | Description
  - [Collaborator](docs/Collaborator.md)
  - [ConversionInfo](docs/ConversionInfo.md)
  - [DMNTable](docs/DMNTable.md)
- - [EntriesResponseContentCollaborator](docs/EntriesResponseContentCollaborator.md)
- - [EntriesResponseContentModel](docs/EntriesResponseContentModel.md)
- - [EntriesResponseContentModelType](docs/EntriesResponseContentModelType.md)
- - [EntriesResponseContentProject](docs/EntriesResponseContentProject.md)
- - [EntriesResponseContentRelease](docs/EntriesResponseContentRelease.md)
- - [EntryResponseContentCollaborator](docs/EntryResponseContentCollaborator.md)
- - [EntryResponseContentImportResult](docs/EntryResponseContentImportResult.md)
- - [EntryResponseContentModel](docs/EntryResponseContentModel.md)
- - [EntryResponseContentModelType](docs/EntryResponseContentModelType.md)
- - [EntryResponseContentProject](docs/EntryResponseContentProject.md)
- - [EntryResponseContentRelease](docs/EntryResponseContentRelease.md)
+ - [EntriesResponseContentOfCollaborator](docs/EntriesResponseContentOfCollaborator.md)
+ - [EntriesResponseContentOfModel](docs/EntriesResponseContentOfModel.md)
+ - [EntriesResponseContentOfModelType](docs/EntriesResponseContentOfModelType.md)
+ - [EntriesResponseContentOfProject](docs/EntriesResponseContentOfProject.md)
+ - [EntriesResponseContentOfRelease](docs/EntriesResponseContentOfRelease.md)
+ - [EntryResponseContentOfCollaborator](docs/EntryResponseContentOfCollaborator.md)
+ - [EntryResponseContentOfImportResult](docs/EntryResponseContentOfImportResult.md)
+ - [EntryResponseContentOfModel](docs/EntryResponseContentOfModel.md)
+ - [EntryResponseContentOfModelType](docs/EntryResponseContentOfModelType.md)
+ - [EntryResponseContentOfProject](docs/EntryResponseContentOfProject.md)
+ - [EntryResponseContentOfRelease](docs/EntryResponseContentOfRelease.md)
  - [ImportResult](docs/ImportResult.md)
- - [ListResponseContentCollaborator](docs/ListResponseContentCollaborator.md)
- - [ListResponseContentModel](docs/ListResponseContentModel.md)
- - [ListResponseContentModelType](docs/ListResponseContentModelType.md)
- - [ListResponseContentProject](docs/ListResponseContentProject.md)
- - [ListResponseContentRelease](docs/ListResponseContentRelease.md)
+ - [ListResponseContentOfCollaborator](docs/ListResponseContentOfCollaborator.md)
+ - [ListResponseContentOfModel](docs/ListResponseContentOfModel.md)
+ - [ListResponseContentOfModelType](docs/ListResponseContentOfModelType.md)
+ - [ListResponseContentOfProject](docs/ListResponseContentOfProject.md)
+ - [ListResponseContentOfRelease](docs/ListResponseContentOfRelease.md)
  - [Model](docs/Model.md)
  - [ModelIdContentBody](docs/ModelIdContentBody.md)
  - [ModelReq](docs/ModelReq.md)

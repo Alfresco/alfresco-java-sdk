@@ -41,11 +41,12 @@ public class ModelIdContentBody   {
   }
 
   /**
-   * Get file
+   * The file containing the model content
    * @return file
    **/
-  @ApiModelProperty(value = "")
-  
+  @ApiModelProperty(required = true, value = "The file containing the model content")
+      @NotNull
+
     @Valid
     public Resource getFile() {
     return file;

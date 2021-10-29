@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **propertyIndex** | **Integer** |  |  [optional]
 **required** | **Boolean** |  |  [optional]
 **type** | [**JavaType**](JavaType.md) |  |  [optional]
-**valueDeserializer** | [**JsonDeserializerobject**](JsonDeserializerobject.md) |  |  [optional]
+**valueDeserializer** | [**JsonDeserializerOfobject**](JsonDeserializerOfobject.md) |  |  [optional]
 **valueTypeDeserializer** | [**TypeDeserializer**](TypeDeserializer.md) |  |  [optional]
 **virtual** | **Boolean** |  |  [optional]
 **wrapperName** | [**PropertyName**](PropertyName.md) |  |  [optional]

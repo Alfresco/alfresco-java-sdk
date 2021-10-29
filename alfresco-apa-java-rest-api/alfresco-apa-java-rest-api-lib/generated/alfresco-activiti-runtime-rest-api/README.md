@@ -69,10 +69,10 @@ Please follow the [installation](#installation) instruction and execute the foll
   public static void main(String[] args) {
   
   CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
-    CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
     String taskId = "taskId_example"; // String | taskId
+    CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | 
   try {
-  Void result = apiInstance.addCandidateGroupsUsingPOST(body, taskId);
+  Void result = apiInstance.addCandidateGroupsUsingPOST(taskId, body);
     System.out.println(result);
   } catch (ApiException e) {
   System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#addCandidateGroupsUsingPOST");
@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 *FormsApi* | [**getFormDefinitionUsingGET**](docs/FormsApi.md#getFormDefinitionUsingGET) | **GET** /v1/forms/{formId}/versions/{version} | Get form definition by version
 *FormsApi* | [**getFormDefinitionUsingGET1**](docs/FormsApi.md#getFormDefinitionUsingGET1) | **GET** /v1/forms/{formId} | Get form definition latest version
 *FormsApi* | [**getFormDefinitionsUsingGET**](docs/FormsApi.md#getFormDefinitionsUsingGET) | **GET** /v1/forms | Get form definitions summary
+*FormsApi* | [**getFormFieldValueUsingPOST**](docs/FormsApi.md#getFormFieldValueUsingPOST) | **POST** /v1/forms/{formId}/values/{formFieldId} | Get form definition by version
 *FormsApi* | [**saveFormUsingPOST**](docs/FormsApi.md#saveFormUsingPOST) | **POST** /v1/forms/{formId}/save | Save runtime forms
 *FormsApi* | [**submitFormUsingPOST**](docs/FormsApi.md#submitFormUsingPOST) | **POST** /v1/forms/{formId}/submit/versions/{version} | Submit forms specific version
 *FormsApi* | [**submitFormUsingPOST1**](docs/FormsApi.md#submitFormUsingPOST1) | **POST** /v1/forms/{formId}/submit | Submit forms latest version
@@ -194,40 +195,41 @@ Class | Method | HTTP request | Description
  - [CreateProcessInstancePayload](docs/CreateProcessInstancePayload.md)
  - [CreateTaskPayload](docs/CreateTaskPayload.md)
  - [CreateTaskVariablePayload](docs/CreateTaskVariablePayload.md)
- - [EntriesResponseContentCandidateGroup](docs/EntriesResponseContentCandidateGroup.md)
- - [EntriesResponseContentCandidateUser](docs/EntriesResponseContentCandidateUser.md)
- - [EntriesResponseContentCloudProcessDefinition](docs/EntriesResponseContentCloudProcessDefinition.md)
- - [EntriesResponseContentCloudProcessInstance](docs/EntriesResponseContentCloudProcessInstance.md)
- - [EntriesResponseContentCloudTask](docs/EntriesResponseContentCloudTask.md)
- - [EntriesResponseContentCloudVariableInstance](docs/EntriesResponseContentCloudVariableInstance.md)
- - [EntriesResponseContentConnectorDefinition](docs/EntriesResponseContentConnectorDefinition.md)
- - [EntriesResponseContentPreference](docs/EntriesResponseContentPreference.md)
- - [EntryResponseContentCandidateGroup](docs/EntryResponseContentCandidateGroup.md)
- - [EntryResponseContentCandidateUser](docs/EntryResponseContentCandidateUser.md)
- - [EntryResponseContentCloudProcessDefinition](docs/EntryResponseContentCloudProcessDefinition.md)
- - [EntryResponseContentCloudProcessInstance](docs/EntryResponseContentCloudProcessInstance.md)
- - [EntryResponseContentCloudTask](docs/EntryResponseContentCloudTask.md)
- - [EntryResponseContentCloudVariableInstance](docs/EntryResponseContentCloudVariableInstance.md)
- - [EntryResponseContentConnectorDefinition](docs/EntryResponseContentConnectorDefinition.md)
- - [EntryResponseContentHomeResource](docs/EntryResponseContentHomeResource.md)
- - [EntryResponseContentPreference](docs/EntryResponseContentPreference.md)
- - [EntryResponseContentProcessDefinitionMeta](docs/EntryResponseContentProcessDefinitionMeta.md)
+ - [EntriesResponseContentOfCandidateGroup](docs/EntriesResponseContentOfCandidateGroup.md)
+ - [EntriesResponseContentOfCandidateUser](docs/EntriesResponseContentOfCandidateUser.md)
+ - [EntriesResponseContentOfCloudProcessDefinition](docs/EntriesResponseContentOfCloudProcessDefinition.md)
+ - [EntriesResponseContentOfCloudProcessInstance](docs/EntriesResponseContentOfCloudProcessInstance.md)
+ - [EntriesResponseContentOfCloudTask](docs/EntriesResponseContentOfCloudTask.md)
+ - [EntriesResponseContentOfCloudVariableInstance](docs/EntriesResponseContentOfCloudVariableInstance.md)
+ - [EntriesResponseContentOfConnectorDefinition](docs/EntriesResponseContentOfConnectorDefinition.md)
+ - [EntriesResponseContentOfPreference](docs/EntriesResponseContentOfPreference.md)
+ - [EntryResponseContentOfCandidateGroup](docs/EntryResponseContentOfCandidateGroup.md)
+ - [EntryResponseContentOfCandidateUser](docs/EntryResponseContentOfCandidateUser.md)
+ - [EntryResponseContentOfCloudProcessDefinition](docs/EntryResponseContentOfCloudProcessDefinition.md)
+ - [EntryResponseContentOfCloudProcessInstance](docs/EntryResponseContentOfCloudProcessInstance.md)
+ - [EntryResponseContentOfCloudTask](docs/EntryResponseContentOfCloudTask.md)
+ - [EntryResponseContentOfCloudVariableInstance](docs/EntryResponseContentOfCloudVariableInstance.md)
+ - [EntryResponseContentOfConnectorDefinition](docs/EntryResponseContentOfConnectorDefinition.md)
+ - [EntryResponseContentOfHomeResource](docs/EntryResponseContentOfHomeResource.md)
+ - [EntryResponseContentOfPreference](docs/EntryResponseContentOfPreference.md)
+ - [EntryResponseContentOfProcessDefinitionMeta](docs/EntryResponseContentOfProcessDefinitionMeta.md)
  - [HomeResource](docs/HomeResource.md)
  - [JavaType](docs/JavaType.md)
- - [JsonDeserializerobject](docs/JsonDeserializerobject.md)
- - [ListResponseContentCandidateGroup](docs/ListResponseContentCandidateGroup.md)
- - [ListResponseContentCandidateUser](docs/ListResponseContentCandidateUser.md)
- - [ListResponseContentCloudProcessDefinition](docs/ListResponseContentCloudProcessDefinition.md)
- - [ListResponseContentCloudProcessInstance](docs/ListResponseContentCloudProcessInstance.md)
- - [ListResponseContentCloudTask](docs/ListResponseContentCloudTask.md)
- - [ListResponseContentCloudVariableInstance](docs/ListResponseContentCloudVariableInstance.md)
- - [ListResponseContentConnectorDefinition](docs/ListResponseContentConnectorDefinition.md)
- - [ListResponseContentPreference](docs/ListResponseContentPreference.md)
+ - [JsonDeserializerOfobject](docs/JsonDeserializerOfobject.md)
+ - [ListResponseContentOfCandidateGroup](docs/ListResponseContentOfCandidateGroup.md)
+ - [ListResponseContentOfCandidateUser](docs/ListResponseContentOfCandidateUser.md)
+ - [ListResponseContentOfCloudProcessDefinition](docs/ListResponseContentOfCloudProcessDefinition.md)
+ - [ListResponseContentOfCloudProcessInstance](docs/ListResponseContentOfCloudProcessInstance.md)
+ - [ListResponseContentOfCloudTask](docs/ListResponseContentOfCloudTask.md)
+ - [ListResponseContentOfCloudVariableInstance](docs/ListResponseContentOfCloudVariableInstance.md)
+ - [ListResponseContentOfConnectorDefinition](docs/ListResponseContentOfConnectorDefinition.md)
+ - [ListResponseContentOfPreference](docs/ListResponseContentOfPreference.md)
  - [Member](docs/Member.md)
  - [MergeInfo](docs/MergeInfo.md)
  - [NamedEventBody](docs/NamedEventBody.md)
+ - [NamedObject](docs/NamedObject.md)
  - [NullValueProvider](docs/NullValueProvider.md)
- - [ObjectIdGeneratorobject](docs/ObjectIdGeneratorobject.md)
+ - [ObjectIdGeneratorOfobject](docs/ObjectIdGeneratorOfobject.md)
  - [ObjectIdInfo](docs/ObjectIdInfo.md)
  - [ObjectIdReader](docs/ObjectIdReader.md)
  - [ObjectIdResolver](docs/ObjectIdResolver.md)

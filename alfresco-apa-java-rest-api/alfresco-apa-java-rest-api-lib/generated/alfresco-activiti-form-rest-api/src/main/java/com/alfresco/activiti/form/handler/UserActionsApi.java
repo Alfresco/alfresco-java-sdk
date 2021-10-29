@@ -56,7 +56,7 @@ public interface UserActionsApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResponseEntity> sendNamedEventUsingPOST(@ApiParam(value = "The name of the event to send", required=true) @PathVariable("eventName") String eventName, @ApiParam(value = "The name of the UI producing the event", required=true) @PathVariable("uiName") String uiName, @ApiParam(value = "The object containing the nodes associated to the event" ) @Valid @RequestBody NamedEventBody body);
+    ResponseEntity<ResponseEntity> sendNamedEventUsingPOST(@ApiParam(value = "The name of the UI producing the event", required=true) @PathVariable("uiName") String uiName, @ApiParam(value = "The name of the event to send", required=true) @PathVariable("eventName") String eventName, @ApiParam(value = "" ) @Valid @RequestBody NamedEventBody body);
 
 
     @ApiOperation(value = "Submit forms latest version", nickname = "submitFormUsingPOST2", notes = "", response = ResponseEntity.class, tags={ "USER_ACTIONS", })
@@ -70,6 +70,6 @@ public interface UserActionsApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResponseEntity> submitFormUsingPOST2(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "submitFormRepresentation", required=true ) @Valid @RequestBody SubmitFormRepresentation body);
+    ResponseEntity<ResponseEntity> submitFormUsingPOST2(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 }

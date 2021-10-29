@@ -54,7 +54,7 @@ No authorization required
 
 <a name="applicationDescriptorUsingGET"></a>
 # **applicationDescriptorUsingGET**
-> EntryResponseContentDescriptor applicationDescriptorUsingGET(id)
+> EntryResponseContentOfDescriptor applicationDescriptorUsingGET(id)
 
 applicationDescriptor
 
@@ -68,7 +68,7 @@ applicationDescriptor
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
 String id = "id_example"; // String | id
 try {
-    EntryResponseContentDescriptor result = apiInstance.applicationDescriptorUsingGET(id);
+    EntryResponseContentOfDescriptor result = apiInstance.applicationDescriptorUsingGET(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApplicationEntityApi#applicationDescriptorUsingGET");
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ No authorization required
 
 <a name="applicationDescriptorUsingPATCH"></a>
 # **applicationDescriptorUsingPATCH**
-> EntryResponseContentDescriptor applicationDescriptorUsingPATCH(body, id)
+> EntryResponseContentOfDescriptor applicationDescriptorUsingPATCH(id, body)
 
 applicationDescriptor
 
@@ -109,10 +109,10 @@ applicationDescriptor
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
-String body = "body_example"; // String | body
 String id = "id_example"; // String | id
+String body = "body_example"; // String | 
 try {
-    EntryResponseContentDescriptor result = apiInstance.applicationDescriptorUsingPATCH(body, id);
+    EntryResponseContentOfDescriptor result = apiInstance.applicationDescriptorUsingPATCH(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApplicationEntityApi#applicationDescriptorUsingPATCH");
@@ -124,12 +124,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**String**](String.md)| body |
  **id** | **String**| id |
+ **body** | [**String**](String.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -137,12 +137,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
+ - **Content-Type**: application/json, application/x-spring-data-compact+json, text/uri-list
  - **Accept**: */*
 
 <a name="applicationDescriptorUsingPOST"></a>
 # **applicationDescriptorUsingPOST**
-> EntryResponseContentDescriptor applicationDescriptorUsingPOST(body, id)
+> EntryResponseContentOfDescriptor applicationDescriptorUsingPOST(id, body)
 
 applicationDescriptor
 
@@ -154,10 +154,10 @@ applicationDescriptor
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
-String body = "body_example"; // String | body
 String id = "id_example"; // String | id
+String body = "body_example"; // String | 
 try {
-    EntryResponseContentDescriptor result = apiInstance.applicationDescriptorUsingPOST(body, id);
+    EntryResponseContentOfDescriptor result = apiInstance.applicationDescriptorUsingPOST(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApplicationEntityApi#applicationDescriptorUsingPOST");
@@ -169,12 +169,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**String**](String.md)| body |
  **id** | **String**| id |
+ **body** | [**String**](String.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -182,12 +182,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
+ - **Content-Type**: application/json, application/x-spring-data-compact+json, text/uri-list
  - **Accept**: */*
 
 <a name="applicationDescriptorUsingPUT"></a>
 # **applicationDescriptorUsingPUT**
-> EntryResponseContentDescriptor applicationDescriptorUsingPUT(body, id)
+> EntryResponseContentOfDescriptor applicationDescriptorUsingPUT(id, body)
 
 applicationDescriptor
 
@@ -199,10 +199,10 @@ applicationDescriptor
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
-String body = "body_example"; // String | body
 String id = "id_example"; // String | id
+String body = "body_example"; // String | 
 try {
-    EntryResponseContentDescriptor result = apiInstance.applicationDescriptorUsingPUT(body, id);
+    EntryResponseContentOfDescriptor result = apiInstance.applicationDescriptorUsingPUT(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApplicationEntityApi#applicationDescriptorUsingPUT");
@@ -214,12 +214,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**String**](String.md)| body |
  **id** | **String**| id |
+ **body** | [**String**](String.md)|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentDescriptor**](EntryResponseContentDescriptor.md)
+[**EntryResponseContentOfDescriptor**](EntryResponseContentOfDescriptor.md)
 
 ### Authorization
 
@@ -227,6 +227,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: text/uri-list, application/x-spring-data-compact+json
+ - **Content-Type**: application/json, application/x-spring-data-compact+json, text/uri-list
  - **Accept**: */*
 

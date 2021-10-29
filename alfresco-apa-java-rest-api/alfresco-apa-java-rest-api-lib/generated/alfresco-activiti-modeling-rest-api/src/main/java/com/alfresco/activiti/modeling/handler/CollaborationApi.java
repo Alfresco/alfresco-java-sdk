@@ -20,8 +20,8 @@
  */
 package com.alfresco.activiti.modeling.handler;
 
-import com.alfresco.activiti.modeling.model.EntryResponseContentCollaborator;
-import com.alfresco.activiti.modeling.model.ListResponseContentCollaborator;
+import com.alfresco.activiti.modeling.model.EntryResponseContentOfCollaborator;
+import com.alfresco.activiti.modeling.model.ListResponseContentOfCollaborator;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -44,28 +44,28 @@ import java.util.Map;
 @Api(value = "Collaboration", description = "the Collaboration API")
 public interface CollaborationApi {
 
-    @ApiOperation(value = "Add a collaborator", nickname = "addCollaboratorUsingPUT", notes = "", response = EntryResponseContentCollaborator.class, tags={ "Collaboration", })
+    @ApiOperation(value = "Add a collaborator", nickname = "addCollaboratorUsingPUT", notes = "", response = EntryResponseContentOfCollaborator.class, tags={ "Collaboration", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentCollaborator.class),
+        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentOfCollaborator.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}/collaborators/{username}",
         produces = "*/*", 
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentCollaborator> addCollaboratorUsingPUT(@ApiParam(value = "The Id of the project", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The unique username of the collaborator", required=true) @PathVariable("username") String username);
+    ResponseEntity<EntryResponseContentOfCollaborator> addCollaboratorUsingPUT(@ApiParam(value = "The Id of the project", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The unique username of the collaborator", required=true) @PathVariable("username") String username);
 
 
-    @ApiOperation(value = "List collaborators", nickname = "getCollaboratorsUsingGET", notes = "Get the list of collaborators on a project.", response = ListResponseContentCollaborator.class, tags={ "Collaboration", })
+    @ApiOperation(value = "List collaborators", nickname = "getCollaboratorsUsingGET", notes = "Get the list of collaborators on a project.", response = ListResponseContentOfCollaborator.class, tags={ "Collaboration", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCollaborator.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCollaborator.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}/collaborators",
-        produces = "application/json", 
+        produces = "*/*", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCollaborator> getCollaboratorsUsingGET(@ApiParam(value = "The Id of the project", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCollaborator> getCollaboratorsUsingGET(@ApiParam(value = "The Id of the project", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
     @ApiOperation(value = "Remove a collaborator", nickname = "removeCollaboratorUsingDELETE", notes = "", tags={ "Collaboration", })

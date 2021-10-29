@@ -20,8 +20,8 @@
  */
 package com.alfresco.activiti.runtime.handler;
 
-import com.alfresco.activiti.runtime.model.EntryResponseContentCloudProcessDefinition;
-import com.alfresco.activiti.runtime.model.ListResponseContentCloudProcessDefinition;
+import com.alfresco.activiti.runtime.model.EntryResponseContentOfCloudProcessDefinition;
+import com.alfresco.activiti.runtime.model.ListResponseContentOfCloudProcessDefinition;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -56,27 +56,27 @@ public interface ProcessDefinitionControllerImplApi {
     ResponseEntity<String> getBpmnModelUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "getProcessDefinition", nickname = "getProcessDefinitionUsingGET", notes = "", response = EntryResponseContentCloudProcessDefinition.class, tags={ "process-definition-controller-impl", })
+    @ApiOperation(value = "getProcessDefinition", nickname = "getProcessDefinitionUsingGET", notes = "", response = EntryResponseContentOfCloudProcessDefinition.class, tags={ "process-definition-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentCloudProcessDefinition.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-definitions/{id}",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentCloudProcessDefinition> getProcessDefinitionUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
+    ResponseEntity<EntryResponseContentOfCloudProcessDefinition> getProcessDefinitionUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "getProcessDefinitions", nickname = "getProcessDefinitionsUsingGET", notes = "", response = ListResponseContentCloudProcessDefinition.class, tags={ "process-definition-controller-impl", })
+    @ApiOperation(value = "getProcessDefinitions", nickname = "getProcessDefinitionsUsingGET", notes = "", response = ListResponseContentOfCloudProcessDefinition.class, tags={ "process-definition-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudProcessDefinition.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-definitions",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudProcessDefinition> getProcessDefinitionsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudProcessDefinition> getProcessDefinitionsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 }

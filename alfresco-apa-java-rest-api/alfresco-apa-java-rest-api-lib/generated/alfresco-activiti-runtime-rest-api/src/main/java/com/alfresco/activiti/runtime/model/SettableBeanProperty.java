@@ -18,7 +18,7 @@ package com.alfresco.activiti.runtime.model;
 import java.util.Objects;
 import com.alfresco.activiti.runtime.model.AnnotatedMember;
 import com.alfresco.activiti.runtime.model.JavaType;
-import com.alfresco.activiti.runtime.model.JsonDeserializerobject;
+import com.alfresco.activiti.runtime.model.JsonDeserializerOfobject;
 import com.alfresco.activiti.runtime.model.NullValueProvider;
 import com.alfresco.activiti.runtime.model.ObjectIdInfo;
 import com.alfresco.activiti.runtime.model.PropertyMetadata;
@@ -82,7 +82,7 @@ public class SettableBeanProperty   {
   private JavaType type = null;
 
   @JsonProperty("valueDeserializer")
-  private JsonDeserializerobject valueDeserializer = null;
+  private JsonDeserializerOfobject valueDeserializer = null;
 
   @JsonProperty("valueTypeDeserializer")
   private TypeDeserializer valueTypeDeserializer = null;
@@ -365,7 +365,7 @@ public class SettableBeanProperty   {
     this.type = type;
   }
 
-  public SettableBeanProperty valueDeserializer(JsonDeserializerobject valueDeserializer) {
+  public SettableBeanProperty valueDeserializer(JsonDeserializerOfobject valueDeserializer) {
     this.valueDeserializer = valueDeserializer;
     return this;
   }
@@ -377,11 +377,11 @@ public class SettableBeanProperty   {
   @ApiModelProperty(value = "")
   
     @Valid
-    public JsonDeserializerobject getValueDeserializer() {
+    public JsonDeserializerOfobject getValueDeserializer() {
     return valueDeserializer;
   }
 
-  public void setValueDeserializer(JsonDeserializerobject valueDeserializer) {
+  public void setValueDeserializer(JsonDeserializerOfobject valueDeserializer) {
     this.valueDeserializer = valueDeserializer;
   }
 

@@ -34,6 +34,9 @@ public class UiInfrastructureRepresentation   {
   @JsonProperty("adf-template")
   private String adfTemplate = null;
 
+  @JsonProperty("configurationChanged")
+  private Boolean configurationChanged = null;
+
   @JsonProperty("image")
   private String image = null;
 
@@ -57,6 +60,25 @@ public class UiInfrastructureRepresentation   {
 
   public void setAdfTemplate(String adfTemplate) {
     this.adfTemplate = adfTemplate;
+  }
+
+  public UiInfrastructureRepresentation configurationChanged(Boolean configurationChanged) {
+    this.configurationChanged = configurationChanged;
+    return this;
+  }
+
+  /**
+   * Get configurationChanged
+   * @return configurationChanged
+   **/
+  @ApiModelProperty(value = "")
+  
+    public Boolean isConfigurationChanged() {
+    return configurationChanged;
+  }
+
+  public void setConfigurationChanged(Boolean configurationChanged) {
+    this.configurationChanged = configurationChanged;
   }
 
   public UiInfrastructureRepresentation image(String image) {
@@ -108,13 +130,14 @@ public class UiInfrastructureRepresentation   {
     }
     UiInfrastructureRepresentation uiInfrastructureRepresentation = (UiInfrastructureRepresentation) o;
     return Objects.equals(this.adfTemplate, uiInfrastructureRepresentation.adfTemplate) &&
+        Objects.equals(this.configurationChanged, uiInfrastructureRepresentation.configurationChanged) &&
         Objects.equals(this.image, uiInfrastructureRepresentation.image) &&
         Objects.equals(this.name, uiInfrastructureRepresentation.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adfTemplate, image, name);
+    return Objects.hash(adfTemplate, configurationChanged, image, name);
   }
 
   @Override
@@ -123,6 +146,7 @@ public class UiInfrastructureRepresentation   {
     sb.append("class UiInfrastructureRepresentation {\n");
     
     sb.append("    adfTemplate: ").append(toIndentedString(adfTemplate)).append("\n");
+    sb.append("    configurationChanged: ").append(toIndentedString(configurationChanged)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");

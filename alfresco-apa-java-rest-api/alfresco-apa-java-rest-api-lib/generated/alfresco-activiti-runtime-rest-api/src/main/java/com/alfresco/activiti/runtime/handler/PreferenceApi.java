@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.runtime.handler;
 
-import com.alfresco.activiti.runtime.model.ListResponseContentPreference;
+import com.alfresco.activiti.runtime.model.ListResponseContentOfPreference;
 
 
 import io.swagger.annotations.*;
@@ -56,16 +56,16 @@ public interface PreferenceApi {
     ResponseEntity<ResponseEntity> deletePreferenceUsingDELETE(@ApiParam(value = "The Key of the preference to be deleted", required=true) @PathVariable("preferenceKey") String preferenceKey);
 
 
-    @ApiOperation(value = "Return all preferences", nickname = "getAllUsingGET", notes = "", response = ListResponseContentPreference.class, tags={ "PREFERENCE", })
+    @ApiOperation(value = "Return all preferences", nickname = "getAllUsingGET", notes = "", response = ListResponseContentOfPreference.class, tags={ "PREFERENCE", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentPreference.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfPreference.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/preferences",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentPreference> getAllUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfPreference> getAllUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
     @ApiOperation(value = "Get preference", nickname = "getPreferenceUsingGET", notes = "", response = ResponseEntity.class, tags={ "PREFERENCE", })
@@ -91,6 +91,6 @@ public interface PreferenceApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<ResponseEntity> savePreferenceUsingPUT(@ApiParam(value = "The Key of the preference to be created", required=true) @PathVariable("preferenceKey") String preferenceKey, @ApiParam(value = "preferenceValue", required=true ) @Valid @RequestBody String body);
+    ResponseEntity<ResponseEntity> savePreferenceUsingPUT(@ApiParam(value = "The Key of the preference to be created", required=true) @PathVariable("preferenceKey") String preferenceKey, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 }

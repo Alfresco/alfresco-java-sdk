@@ -20,9 +20,9 @@
  */
 package com.alfresco.activiti.modeling.handler;
 
-import com.alfresco.activiti.modeling.model.EntryResponseContentModel;
-import com.alfresco.activiti.modeling.model.ListResponseContentModel;
-import com.alfresco.activiti.modeling.model.ListResponseContentModelType;
+import com.alfresco.activiti.modeling.model.EntryResponseContentOfModel;
+import com.alfresco.activiti.modeling.model.ListResponseContentOfModel;
+import com.alfresco.activiti.modeling.model.ListResponseContentOfModelType;
 import com.alfresco.activiti.modeling.model.ModelReq;
 import org.springframework.core.io.Resource;
 
@@ -47,9 +47,9 @@ import java.util.Map;
 @Api(value = "Models", description = "the Models API")
 public interface ModelsApi {
 
-    @ApiOperation(value = "Create new model belonging to an project", nickname = "createModelUsingPOST", notes = "Create a new model related to an existing project", response = EntryResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "Create new model belonging to an project", nickname = "createModelUsingPOST", notes = "Create a new model related to an existing project", response = EntryResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentModel.class),
+        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentOfModel.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
@@ -57,12 +57,12 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentModel> createModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The details of the model to create", required=true ) @Valid @RequestBody ModelReq body);
+    ResponseEntity<EntryResponseContentOfModel> createModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "" ) @Valid @RequestBody ModelReq body);
 
 
-    @ApiOperation(value = "Create new model that does note belong to a project", nickname = "createModelWithoutProjectUsingPOST", notes = "Create a new model with no relationship to other projects", response = EntryResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "Create new model that does note belong to a project", nickname = "createModelWithoutProjectUsingPOST", notes = "Create a new model with no relationship to other projects", response = EntryResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentModel.class),
+        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentOfModel.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
@@ -70,7 +70,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentModel> createModelWithoutProjectUsingPOST(@ApiParam(value = "The details of the model to create", required=true ) @Valid @RequestBody ModelReq body);
+    ResponseEntity<EntryResponseContentOfModel> createModelWithoutProjectUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ModelReq body);
 
 
     @ApiOperation(value = "Delete model", nickname = "deleteModelUsingDELETE", notes = "", tags={ "models", })
@@ -83,16 +83,16 @@ public interface ModelsApi {
     ResponseEntity<Void> deleteModelUsingDELETE(@ApiParam(value = "The id of the model to delete", required=true) @PathVariable("modelId") String modelId);
 
 
-    @ApiOperation(value = "Delete the relationship between an existing model, and the project", nickname = "deleteProjectModelRelationshipUsingDELETE", notes = "Get the model associated with the project updated. Minimal information for the model is returned.", response = EntryResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "Delete the relationship between an existing model, and the project", nickname = "deleteProjectModelRelationshipUsingDELETE", notes = "Get the model associated with the project updated. Minimal information for the model is returned.", response = EntryResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentModel.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfModel.class),
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/projects/{projectId}/models/{modelId}",
         produces = "application/json", 
         method = RequestMethod.DELETE)
-    ResponseEntity<EntryResponseContentModel> deleteProjectModelRelationshipUsingDELETE(@ApiParam(value = "The id of the model of the relationship to delete", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project of the relationship to delete", required=true) @PathVariable("projectId") String projectId);
+    ResponseEntity<EntryResponseContentOfModel> deleteProjectModelRelationshipUsingDELETE(@ApiParam(value = "The id of the project of the relationship to delete", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The id of the model of the relationship to delete", required=true) @PathVariable("modelId") String modelId);
 
 
     @ApiOperation(value = "Export a model definition as file", nickname = "exportModelUsingGET", notes = "Allows to download a file containing a model metadata along with the model content.", tags={ "models", })
@@ -103,19 +103,19 @@ public interface ModelsApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models/{modelId}/export",
         method = RequestMethod.GET)
-    byte[] exportModelUsingGET(@ApiParam(value = "The id of the model to export", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "<b>true</b> value enables a web browser to download the file as an attachment.<br> <b>false</b> means that a web browser may preview the file in a new tab or window, but not download the file.", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment);
+    byte[] exportModelUsingGET(@ApiParam(value = "The id of the model to export", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "<b>true</b> value enables a web browser to download the file as an attachment.<br> <b>false</b> means that a web browser may preview the file in a new tab or window, but not download the file.") @Valid @RequestParam(value = "attachment", required = false) Boolean attachment);
 
 
-    @ApiOperation(value = "List all the models that are not coupled to a project", nickname = "getGlobalModelsUsingGET", notes = "Get the models that has GLOBAL as scope. Minimal information for each model is returned.", response = ListResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "List all the models that are not coupled to a project", nickname = "getGlobalModelsUsingGET", notes = "Get the models that has GLOBAL as scope. Minimal information for each model is returned.", response = ListResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentModel.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfModel.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentModel> getGlobalModelsUsingGET(@NotNull @ApiParam(value = "The type of the model to filter", required = true) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "If true, then models with no relationship to any project are retrieved regardless of their scope", defaultValue = "false") @Valid @RequestParam(value = "includeOrphans", required = false, defaultValue="false") Boolean includeOrphans, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfModel> getGlobalModelsUsingGET(@NotNull @ApiParam(value = "The type of the model to filter", required = true) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "If true, then models with no relationship to any project are retrieved regardless of their scope") @Valid @RequestParam(value = "includeOrphans", required = false) Boolean includeOrphans);
 
 
     @ApiOperation(value = "Get the model content", nickname = "getModelContentUsingGET", notes = "Retrieve the content of the model for the identifier <b>modelId</b> with the content type corresponding to the model type (xml for process models and json for the others).<br>For <b>Accept: image/svg+xml</b> request header, the svg image corresponding to the model content will be retrieved.", tags={ "models", })
@@ -129,40 +129,40 @@ public interface ModelsApi {
     byte[] getModelContentUsingGET(@ApiParam(value = "The id of the model to get the content", required=true) @PathVariable("modelId") String modelId);
 
 
-    @ApiOperation(value = "List model types", nickname = "getModelTypesUsingGET", notes = "Get the list of available model types.", response = ListResponseContentModelType.class, tags={ "models", })
+    @ApiOperation(value = "List model types", nickname = "getModelTypesUsingGET", notes = "Get the list of available model types.", response = ListResponseContentOfModelType.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentModelType.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfModelType.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/model-types",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentModelType> getModelTypesUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfModelType> getModelTypesUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "Get metadata information for a model", nickname = "getModelUsingGET", notes = "", response = EntryResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "Get metadata information for a model", nickname = "getModelUsingGET", notes = "", response = EntryResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentModel.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfModel.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models/{modelId}",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentModel> getModelUsingGET(@ApiParam(value = "The id of the model to retrieve", required=true) @PathVariable("modelId") String modelId);
+    ResponseEntity<EntryResponseContentOfModel> getModelUsingGET(@ApiParam(value = "The id of the model to retrieve", required=true) @PathVariable("modelId") String modelId);
 
 
-    @ApiOperation(value = "List models for an project", nickname = "getModelsUsingGET", notes = "Get the models associated with an project. Minimal information for each model is returned.", response = ListResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "List models for an project", nickname = "getModelsUsingGET", notes = "Get the models associated with an project. Minimal information for each model is returned.", response = ListResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentModel.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfModel.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}/models",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentModel> getModelsUsingGET(@ApiParam(value = "The id of the project to get the models for", required=true) @PathVariable("projectId") String projectId, @NotNull @ApiParam(value = "The type of the model to filter", required = true) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfModel> getModelsUsingGET(@ApiParam(value = "The id of the project to get the models for", required=true) @PathVariable("projectId") String projectId, @NotNull @ApiParam(value = "The type of the model to filter", required = true) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
     @ApiOperation(value = "Get validation schema for model type", nickname = "getSchemaUsingGET", notes = "Get the content of the schema used to validate the given model type.", response = String.class, tags={ "models", })
@@ -177,9 +177,9 @@ public interface ModelsApi {
     byte[] getSchemaUsingGET(@ApiParam(value = "modelType", required=true) @PathVariable("modelType") String modelType);
 
 
-    @ApiOperation(value = "Import a model from file", nickname = "importModelUsingPOST", notes = "Allows a file to be uploaded containing a model definition.", response = EntryResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "Import a model from file", nickname = "importModelUsingPOST", notes = "Allows a file to be uploaded containing a model definition.", response = EntryResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentModel.class),
+        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentOfModel.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
@@ -187,12 +187,12 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentModel> importModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="type", required=false)  String type);
+    ResponseEntity<EntryResponseContentOfModel> importModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="type", required=false)  String type);
 
 
-    @ApiOperation(value = "Add or update the relationship between an existing model, and the project", nickname = "putProjectModelRelationshipUsingPUT", notes = "Get the model associated with the project updated. Minimal information for the model is returned.", response = EntryResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "Add or update the relationship between an existing model, and the project", nickname = "putProjectModelRelationshipUsingPUT", notes = "Get the model associated with the project updated. Minimal information for the model is returned.", response = EntryResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentModel.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfModel.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -200,7 +200,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/models/{modelId}",
         produces = "application/json", 
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentModel> putProjectModelRelationshipUsingPUT(@ApiParam(value = "The id of the model to associate the project with", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project to associate the model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "If the scope of the model has restrictions on the number of projects that a model can belong to, remove the other relationships of the model with other projects", defaultValue = "false") @Valid @RequestParam(value = "force", required = false, defaultValue="false") Boolean force, @ApiParam(value = "Scope to update the model if needed (optional)") @Valid @RequestParam(value = "scope", required = false) String scope);
+    ResponseEntity<EntryResponseContentOfModel> putProjectModelRelationshipUsingPUT(@ApiParam(value = "The id of the project to associate the model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The id of the model to associate the project with", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "Scope to update the model if needed (optional)") @Valid @RequestParam(value = "scope", required = false) String scope, @ApiParam(value = "If the scope of the model has restrictions on the number of projects that a model can belong to, remove the other relationships of the model with other projects") @Valid @RequestParam(value = "force", required = false) Boolean force);
 
 
     @ApiOperation(value = "Update model content", nickname = "updateModelContentUsingPUT", notes = "Update the content of the model from file.", tags={ "models", })
@@ -216,9 +216,9 @@ public interface ModelsApi {
     ResponseEntity<Void> updateModelContentUsingPUT(@ApiParam(value = "The id of the model to update", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
 
 
-    @ApiOperation(value = "Update model metadata", nickname = "updateModelUsingPUT", notes = "Update the details of a model.", response = EntryResponseContentModel.class, tags={ "models", })
+    @ApiOperation(value = "Update model metadata", nickname = "updateModelUsingPUT", notes = "Update the details of a model.", response = EntryResponseContentOfModel.class, tags={ "models", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentModel.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfModel.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -227,7 +227,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentModel> updateModelUsingPUT(@ApiParam(value = "The id of the model to update", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The new values to update", required=true ) @Valid @RequestBody ModelReq body);
+    ResponseEntity<EntryResponseContentOfModel> updateModelUsingPUT(@ApiParam(value = "The id of the model to update", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "" ) @Valid @RequestBody ModelReq body);
 
 
     @ApiOperation(value = "Validate model extensions", nickname = "validateModelExtensionsUsingPOST", notes = "Allows to validate the model extensions without save them.", tags={ "models", })
@@ -238,9 +238,9 @@ public interface ModelsApi {
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models/{modelId}/validate/extensions",
-        consumes = "multipart/form-data",
+        consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> validateModelExtensionsUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId);
+    ResponseEntity<Void> validateModelExtensionsUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
     @ApiOperation(value = "Validate a model content", nickname = "validateModelUsingPOST", notes = "Allows to validate the model content without save it.", tags={ "models", })
@@ -251,8 +251,8 @@ public interface ModelsApi {
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models/{modelId}/validate",
-        consumes = "multipart/form-data",
+        consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> validateModelUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "The model is going to be validated and checked used in other model") @Valid @RequestParam(value = "validateUsage", required = false) Boolean validateUsage);
+    ResponseEntity<Void> validateModelUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "The model is going to be validated and checked used in other model") @Valid @RequestParam(value = "validateUsage", required = false) Boolean validateUsage, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getConnectorDefinitionUsingGET"></a>
 # **getConnectorDefinitionUsingGET**
-> EntryResponseContentConnectorDefinition getConnectorDefinitionUsingGET(id)
+> EntryResponseContentOfConnectorDefinition getConnectorDefinitionUsingGET(id)
 
 getConnectorDefinition
 
@@ -23,7 +23,7 @@ getConnectorDefinition
 ConnectorDefinitionControllerImplApi apiInstance = new ConnectorDefinitionControllerImplApi();
 String id = "id_example"; // String | id
 try {
-    EntryResponseContentConnectorDefinition result = apiInstance.getConnectorDefinitionUsingGET(id);
+    EntryResponseContentOfConnectorDefinition result = apiInstance.getConnectorDefinitionUsingGET(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConnectorDefinitionControllerImplApi#getConnectorDefinitionUsingGET");
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntryResponseContentConnectorDefinition**](EntryResponseContentConnectorDefinition.md)
+[**EntryResponseContentOfConnectorDefinition**](EntryResponseContentOfConnectorDefinition.md)
 
 ### Authorization
 
@@ -48,11 +48,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getConnectorDefinitionsUsingGET"></a>
 # **getConnectorDefinitionsUsingGET**
-> ListResponseContentConnectorDefinition getConnectorDefinitionsUsingGET()
+> ListResponseContentOfConnectorDefinition getConnectorDefinitionsUsingGET()
 
 getConnectorDefinitions
 
@@ -65,7 +65,7 @@ getConnectorDefinitions
 
 ConnectorDefinitionControllerImplApi apiInstance = new ConnectorDefinitionControllerImplApi();
 try {
-    ListResponseContentConnectorDefinition result = apiInstance.getConnectorDefinitionsUsingGET();
+    ListResponseContentOfConnectorDefinition result = apiInstance.getConnectorDefinitionsUsingGET();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConnectorDefinitionControllerImplApi#getConnectorDefinitionsUsingGET");
@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ListResponseContentConnectorDefinition**](ListResponseContentConnectorDefinition.md)
+[**ListResponseContentOfConnectorDefinition**](ListResponseContentOfConnectorDefinition.md)
 
 ### Authorization
 
@@ -87,5 +87,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="getHomeInfoUsingGET"></a>
 # **getHomeInfoUsingGET**
-> EntryResponseContentHomeResource getHomeInfoUsingGET()
+> EntryResponseContentOfHomeResource getHomeInfoUsingGET()
 
 getHomeInfo
 
@@ -21,7 +21,7 @@ getHomeInfo
 
 HomeControllerImplApi apiInstance = new HomeControllerImplApi();
 try {
-    EntryResponseContentHomeResource result = apiInstance.getHomeInfoUsingGET();
+    EntryResponseContentOfHomeResource result = apiInstance.getHomeInfoUsingGET();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HomeControllerImplApi#getHomeInfoUsingGET");
@@ -34,7 +34,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**EntryResponseContentHomeResource**](EntryResponseContentHomeResource.md)
+[**EntryResponseContentOfHomeResource**](EntryResponseContentOfHomeResource.md)
 
 ### Authorization
 

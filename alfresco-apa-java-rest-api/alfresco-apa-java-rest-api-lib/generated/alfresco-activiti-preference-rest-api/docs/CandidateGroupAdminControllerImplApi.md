@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="addCandidateGroupsUsingPOST"></a>
 # **addCandidateGroupsUsingPOST**
-> addCandidateGroupsUsingPOST(body, taskId)
+> addCandidateGroupsUsingPOST(taskId, body)
 
 addCandidateGroups
 
@@ -22,10 +22,10 @@ addCandidateGroups
 
 
 CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
-CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
 String taskId = "taskId_example"; // String | taskId
+CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | 
 try {
-    apiInstance.addCandidateGroupsUsingPOST(body, taskId);
+    apiInstance.addCandidateGroupsUsingPOST(taskId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#addCandidateGroupsUsingPOST");
     e.printStackTrace();
@@ -36,8 +36,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
  **taskId** | **String**| taskId |
+ **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)|  | [optional]
 
 ### Return type
 
@@ -54,7 +54,7 @@ No authorization required
 
 <a name="deleteCandidateGroupsUsingDELETE"></a>
 # **deleteCandidateGroupsUsingDELETE**
-> deleteCandidateGroupsUsingDELETE(body, taskId)
+> deleteCandidateGroupsUsingDELETE(taskId, body)
 
 deleteCandidateGroups
 
@@ -66,10 +66,10 @@ deleteCandidateGroups
 
 
 CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
-CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | candidateGroupsPayload
 String taskId = "taskId_example"; // String | taskId
+CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | 
 try {
-    apiInstance.deleteCandidateGroupsUsingDELETE(body, taskId);
+    apiInstance.deleteCandidateGroupsUsingDELETE(taskId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#deleteCandidateGroupsUsingDELETE");
     e.printStackTrace();
@@ -80,8 +80,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)| candidateGroupsPayload |
  **taskId** | **String**| taskId |
+ **body** | [**CandidateGroupsPayload**](CandidateGroupsPayload.md)|  | [optional]
 
 ### Return type
 
@@ -93,12 +93,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 <a name="getGroupCandidatesUsingGET"></a>
 # **getGroupCandidatesUsingGET**
-> ListResponseContentCandidateGroup getGroupCandidatesUsingGET(taskId)
+> ListResponseContentOfCandidateGroup getGroupCandidatesUsingGET(taskId)
 
 getGroupCandidates
 
@@ -112,7 +112,7 @@ getGroupCandidates
 CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
 try {
-    ListResponseContentCandidateGroup result = apiInstance.getGroupCandidatesUsingGET(taskId);
+    ListResponseContentOfCandidateGroup result = apiInstance.getGroupCandidatesUsingGET(taskId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#getGroupCandidatesUsingGET");
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentCandidateGroup**](ListResponseContentCandidateGroup.md)
+[**ListResponseContentOfCandidateGroup**](ListResponseContentOfCandidateGroup.md)
 
 ### Authorization
 
@@ -137,5 +137,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

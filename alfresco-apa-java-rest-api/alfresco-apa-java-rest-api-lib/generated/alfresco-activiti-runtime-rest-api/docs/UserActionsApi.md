@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="sendNamedEventUsingPOST"></a>
 # **sendNamedEventUsingPOST**
-> ResponseEntity sendNamedEventUsingPOST(eventName, uiName, body)
+> ResponseEntity sendNamedEventUsingPOST(uiName, eventName, body)
 
 Send a named event
 
@@ -21,11 +21,11 @@ Send a named event
 
 
 UserActionsApi apiInstance = new UserActionsApi();
-String eventName = "eventName_example"; // String | The name of the event to send
 String uiName = "uiName_example"; // String | The name of the UI producing the event
-NamedEventBody body = new NamedEventBody(); // NamedEventBody | The object containing the nodes associated to the event
+String eventName = "eventName_example"; // String | The name of the event to send
+NamedEventBody body = new NamedEventBody(); // NamedEventBody | 
 try {
-    ResponseEntity result = apiInstance.sendNamedEventUsingPOST(eventName, uiName, body);
+    ResponseEntity result = apiInstance.sendNamedEventUsingPOST(uiName, eventName, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserActionsApi#sendNamedEventUsingPOST");
@@ -37,9 +37,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventName** | **String**| The name of the event to send |
  **uiName** | **String**| The name of the UI producing the event |
- **body** | [**NamedEventBody**](NamedEventBody.md)| The object containing the nodes associated to the event | [optional]
+ **eventName** | **String**| The name of the event to send |
+ **body** | [**NamedEventBody**](NamedEventBody.md)|  | [optional]
 
 ### Return type
 
@@ -56,7 +56,7 @@ No authorization required
 
 <a name="submitFormUsingPOST2"></a>
 # **submitFormUsingPOST2**
-> ResponseEntity submitFormUsingPOST2(body, formId)
+> ResponseEntity submitFormUsingPOST2(formId, body)
 
 Submit forms latest version
 
@@ -68,10 +68,10 @@ Submit forms latest version
 
 
 UserActionsApi apiInstance = new UserActionsApi();
-SubmitFormRepresentation body = new SubmitFormRepresentation(); // SubmitFormRepresentation | submitFormRepresentation
 String formId = "formId_example"; // String | The id of the form to be submitted
+SubmitFormRepresentation body = new SubmitFormRepresentation(); // SubmitFormRepresentation | 
 try {
-    ResponseEntity result = apiInstance.submitFormUsingPOST2(body, formId);
+    ResponseEntity result = apiInstance.submitFormUsingPOST2(formId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserActionsApi#submitFormUsingPOST2");
@@ -83,8 +83,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SubmitFormRepresentation**](SubmitFormRepresentation.md)| submitFormRepresentation |
  **formId** | **String**| The id of the form to be submitted |
+ **body** | [**SubmitFormRepresentation**](SubmitFormRepresentation.md)|  | [optional]
 
 ### Return type
 

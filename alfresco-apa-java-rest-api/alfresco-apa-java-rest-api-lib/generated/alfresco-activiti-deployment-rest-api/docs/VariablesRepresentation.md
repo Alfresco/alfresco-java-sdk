@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bridges** | [**Map&lt;String, Map&lt;String, String&gt;&gt;**](Map.md) |  |  [optional]
-**connectors** | [**Map&lt;String, Map&lt;String, String&gt;&gt;**](Map.md) |  |  [optional]
+**bridges** | **Map&lt;String, Object&gt;** |  |  [optional]
+**connectors** | **Map&lt;String, Object&gt;** |  |  [optional]
 **contentService** | [**ContentVariablesRepresentation**](ContentVariablesRepresentation.md) |  |  [optional]
 **identityService** | [**IdentityVariablesRepresentation**](IdentityVariablesRepresentation.md) |  |  [optional]
 **messagingService** | [**MessagingVariablesRepresentation**](MessagingVariablesRepresentation.md) |  |  [optional]
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **processRuntimeService** | **Map&lt;String, String&gt;** |  |  [optional]
 **processStorageService** | **Map&lt;String, String&gt;** |  |  [optional]
 **queryService** | **Map&lt;String, String&gt;** |  |  [optional]
-**uis** | [**Map&lt;String, Map&lt;String, String&gt;&gt;**](Map.md) |  |  [optional]
+**uis** | **Map&lt;String, Object&gt;** |  |  [optional]

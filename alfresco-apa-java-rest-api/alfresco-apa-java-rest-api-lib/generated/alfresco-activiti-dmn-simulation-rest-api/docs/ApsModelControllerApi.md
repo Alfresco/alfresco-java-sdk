@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="importProcessModelUsingPOST"></a>
 # **importProcessModelUsingPOST**
-> EntryResponseContentImportResult importProcessModelUsingPOST(projectId)
+> EntryResponseContentOfImportResult importProcessModelUsingPOST(projectId, body)
 
 Import an APS Process Model
 
@@ -21,8 +21,9 @@ Import an APS Process Model
 
 ApsModelControllerApi apiInstance = new ApsModelControllerApi();
 String projectId = "projectId_example"; // String | projectId
+Object body = null; // Object | 
 try {
-    EntryResponseContentImportResult result = apiInstance.importProcessModelUsingPOST(projectId);
+    EntryResponseContentOfImportResult result = apiInstance.importProcessModelUsingPOST(projectId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApsModelControllerApi#importProcessModelUsingPOST");
@@ -35,10 +36,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| projectId |
+ **body** | **Object**|  | [optional]
 
 ### Return type
 
-[**EntryResponseContentImportResult**](EntryResponseContentImportResult.md)
+[**EntryResponseContentOfImportResult**](EntryResponseContentOfImportResult.md)
 
 ### Authorization
 
@@ -46,6 +48,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: application/json, application/octet-stream, multipart/form-data
  - **Accept**: */*
 

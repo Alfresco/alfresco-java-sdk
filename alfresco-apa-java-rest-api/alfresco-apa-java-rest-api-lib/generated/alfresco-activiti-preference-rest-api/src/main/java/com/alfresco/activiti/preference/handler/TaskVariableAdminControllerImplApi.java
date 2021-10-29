@@ -21,7 +21,7 @@
 package com.alfresco.activiti.preference.handler;
 
 import com.alfresco.activiti.preference.model.CreateTaskVariablePayload;
-import com.alfresco.activiti.preference.model.ListResponseContentCloudVariableInstance;
+import com.alfresco.activiti.preference.model.ListResponseContentOfCloudVariableInstance;
 import com.alfresco.activiti.preference.model.UpdateTaskVariablePayload;
 
 import io.swagger.annotations.*;
@@ -55,19 +55,19 @@ public interface TaskVariableAdminControllerImplApi {
     @RequestMapping(value = "/admin/v1/tasks/{taskId}/variables",
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> createVariableUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "createTaskVariablePayload", required=true ) @Valid @RequestBody CreateTaskVariablePayload body);
+    ResponseEntity<Void> createVariableUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CreateTaskVariablePayload body);
 
 
-    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET1", notes = "", response = ListResponseContentCloudVariableInstance.class, tags={ "task-variable-admin-controller-impl", })
+    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET1", notes = "", response = ListResponseContentOfCloudVariableInstance.class, tags={ "task-variable-admin-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudVariableInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudVariableInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/admin/v1/tasks/{taskId}/variables",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudVariableInstance> getVariablesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
+    ResponseEntity<ListResponseContentOfCloudVariableInstance> getVariablesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
     @ApiOperation(value = "updateVariable", nickname = "updateVariableUsingPUT", notes = "", tags={ "task-variable-admin-controller-impl", })
@@ -80,6 +80,6 @@ public interface TaskVariableAdminControllerImplApi {
     @RequestMapping(value = "/admin/v1/tasks/{taskId}/variables/{variableName}",
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void> updateVariableUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "updateTaskVariablePayload", required=true ) @Valid @RequestBody UpdateTaskVariablePayload body);
+    ResponseEntity<Void> updateVariableUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "" ) @Valid @RequestBody UpdateTaskVariablePayload body);
 
 }

@@ -20,7 +20,7 @@
  */
 package com.alfresco.activiti.preference.handler;
 
-import com.alfresco.activiti.preference.model.ListResponseContentCloudVariableInstance;
+import com.alfresco.activiti.preference.model.ListResponseContentOfCloudVariableInstance;
 import com.alfresco.activiti.preference.model.SetProcessVariablesPayload;
 
 import io.swagger.annotations.*;
@@ -44,16 +44,16 @@ import java.util.Map;
 @Api(value = "ProcessInstanceVariableControllerImpl", description = "the ProcessInstanceVariableControllerImpl API")
 public interface ProcessInstanceVariableControllerImplApi {
 
-    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET", notes = "", response = ListResponseContentCloudVariableInstance.class, tags={ "process-instance-variable-controller-impl", })
+    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET", notes = "", response = ListResponseContentOfCloudVariableInstance.class, tags={ "process-instance-variable-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCloudVariableInstance.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudVariableInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/variables",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCloudVariableInstance> getVariablesUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
+    ResponseEntity<ListResponseContentOfCloudVariableInstance> getVariablesUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
     @ApiOperation(value = "setVariables", nickname = "setVariablesUsingPOST", notes = "", tags={ "process-instance-variable-controller-impl", })
@@ -66,6 +66,6 @@ public interface ProcessInstanceVariableControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/variables",
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> setVariablesUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "setProcessVariablesPayload", required=true ) @Valid @RequestBody SetProcessVariablesPayload body);
+    ResponseEntity<Void> setVariablesUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody SetProcessVariablesPayload body);
 
 }

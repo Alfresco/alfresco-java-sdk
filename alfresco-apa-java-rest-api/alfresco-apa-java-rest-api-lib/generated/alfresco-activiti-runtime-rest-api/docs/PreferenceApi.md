@@ -54,7 +54,7 @@ No authorization required
 
 <a name="getAllUsingGET"></a>
 # **getAllUsingGET**
-> ListResponseContentPreference getAllUsingGET(maxItems, skipCount, sort)
+> ListResponseContentOfPreference getAllUsingGET(maxItems, skipCount, sort)
 
 Return all preferences
 
@@ -70,7 +70,7 @@ Integer maxItems = 56; // Integer |
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
 try {
-    ListResponseContentPreference result = apiInstance.getAllUsingGET(maxItems, skipCount, sort);
+    ListResponseContentOfPreference result = apiInstance.getAllUsingGET(maxItems, skipCount, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PreferenceApi#getAllUsingGET");
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListResponseContentPreference**](ListResponseContentPreference.md)
+[**ListResponseContentOfPreference**](ListResponseContentOfPreference.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ No authorization required
 
 <a name="savePreferenceUsingPUT"></a>
 # **savePreferenceUsingPUT**
-> ResponseEntity savePreferenceUsingPUT(body, preferenceKey)
+> ResponseEntity savePreferenceUsingPUT(preferenceKey, body)
 
 Create/Save preference
 
@@ -156,10 +156,10 @@ Create/Save preference
 
 
 PreferenceApi apiInstance = new PreferenceApi();
-String body = "body_example"; // String | preferenceValue
 String preferenceKey = "preferenceKey_example"; // String | The Key of the preference to be created
+String body = "body_example"; // String | 
 try {
-    ResponseEntity result = apiInstance.savePreferenceUsingPUT(body, preferenceKey);
+    ResponseEntity result = apiInstance.savePreferenceUsingPUT(preferenceKey, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PreferenceApi#savePreferenceUsingPUT");
@@ -171,8 +171,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**String**](String.md)| preferenceValue |
  **preferenceKey** | **String**| The Key of the preference to be created |
+ **body** | [**String**](String.md)|  | [optional]
 
 ### Return type
 

@@ -51,9 +51,9 @@ public interface ProcessInstanceVariableAdminControllerImplApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/admin/v1/process-instances/{processInstanceId}/variables",
-        consumes = "*/*",
+        consumes = "application/json",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> removeVariablesUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "removeProcessVariablesPayload", required=true ) @Valid @RequestBody RemoveProcessVariablesPayload body);
+    ResponseEntity<Void> removeVariablesUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody RemoveProcessVariablesPayload body);
 
 
     @ApiOperation(value = "updateVariables", nickname = "updateVariablesUsingPUT", notes = "", tags={ "process-instance-variable-admin-controller-impl", })
@@ -66,6 +66,6 @@ public interface ProcessInstanceVariableAdminControllerImplApi {
     @RequestMapping(value = "/admin/v1/process-instances/{processInstanceId}/variables",
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<Void> updateVariablesUsingPUT(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "setProcessVariablesPayload", required=true ) @Valid @RequestBody SetProcessVariablesPayload body);
+    ResponseEntity<Void> updateVariablesUsingPUT(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody SetProcessVariablesPayload body);
 
 }

@@ -94,6 +94,6 @@ public interface JobExecutionControllerApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentOfJobExecution> postUsingPOST(@ApiParam(value = "jobConfig", required=true ) @Valid @RequestBody JobConfig body);
+    ResponseEntity<EntryResponseContentOfJobExecution> postUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody JobConfig body);
 
 }

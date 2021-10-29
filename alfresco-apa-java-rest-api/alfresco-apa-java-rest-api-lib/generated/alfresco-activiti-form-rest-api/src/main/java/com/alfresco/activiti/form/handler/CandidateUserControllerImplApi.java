@@ -21,7 +21,7 @@
 package com.alfresco.activiti.form.handler;
 
 import com.alfresco.activiti.form.model.CandidateUsersPayload;
-import com.alfresco.activiti.form.model.ListResponseContentCandidateUser;
+import com.alfresco.activiti.form.model.ListResponseContentOfCandidateUser;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -54,7 +54,7 @@ public interface CandidateUserControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-users",
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> addCandidateUsersUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "candidateUsersPayload", required=true ) @Valid @RequestBody CandidateUsersPayload body);
+    ResponseEntity<Void> addCandidateUsersUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
     @ApiOperation(value = "deleteCandidateUsers", nickname = "deleteCandidateUsersUsingDELETE1", notes = "", tags={ "candidate-user-controller-impl", })
@@ -64,20 +64,20 @@ public interface CandidateUserControllerImplApi {
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-users",
-        consumes = "*/*",
+        consumes = "application/json",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> deleteCandidateUsersUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "candidateUsersPayload", required=true ) @Valid @RequestBody CandidateUsersPayload body);
+    ResponseEntity<Void> deleteCandidateUsersUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
-    @ApiOperation(value = "getUserCandidates", nickname = "getUserCandidatesUsingGET1", notes = "", response = ListResponseContentCandidateUser.class, tags={ "candidate-user-controller-impl", })
+    @ApiOperation(value = "getUserCandidates", nickname = "getUserCandidatesUsingGET1", notes = "", response = ListResponseContentOfCandidateUser.class, tags={ "candidate-user-controller-impl", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentCandidateUser.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCandidateUser.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-users",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentCandidateUser> getUserCandidatesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
+    ResponseEntity<ListResponseContentOfCandidateUser> getUserCandidatesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 }

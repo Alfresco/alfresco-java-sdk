@@ -20,6 +20,7 @@
  */
 package com.alfresco.activiti.form.handler;
 
+import com.alfresco.activiti.form.model.NamedObject;
 
 import com.alfresco.activiti.form.model.SaveFormRepresentation;
 import com.alfresco.activiti.form.model.SubmitFormRepresentation;
@@ -81,6 +82,20 @@ public interface FormsApi {
     ResponseEntity<ResponseEntity> getFormDefinitionsUsingGET();
 
 
+    @ApiOperation(value = "Get form definition by version", nickname = "getFormFieldValueUsingPOST", notes = "", response = NamedObject.class, responseContainer = "List", tags={ "FORMS", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "OK", response = NamedObject.class, responseContainer = "List"),
+        @ApiResponse(code = 201, message = "Created"),
+        @ApiResponse(code = 401, message = "Unauthorized"),
+        @ApiResponse(code = 403, message = "Forbidden"),
+        @ApiResponse(code = 404, message = "Not Found") })
+    @RequestMapping(value = "/v1/forms/{formId}/values/{formFieldId}",
+        produces = "application/json", 
+        consumes = "application/json",
+        method = RequestMethod.POST)
+    ResponseEntity<List<NamedObject>> getFormFieldValueUsingPOST(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId, @ApiParam(value = "The id of the form field", required=true) @PathVariable("formFieldId") String formFieldId, @ApiParam(value = "" ) @Valid @RequestBody Map<String, String> body);
+
+
     @ApiOperation(value = "Save runtime forms", nickname = "saveFormUsingPOST", notes = "", tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
@@ -91,7 +106,7 @@ public interface FormsApi {
     @RequestMapping(value = "/v1/forms/{formId}/save",
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Void> saveFormUsingPOST(@ApiParam(value = "The id of the form instance to be saved", required=true) @PathVariable("formId") String formId, @ApiParam(value = "saveFormRepresentation", required=true ) @Valid @RequestBody SaveFormRepresentation body);
+    ResponseEntity<Void> saveFormUsingPOST(@ApiParam(value = "The id of the form instance to be saved", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SaveFormRepresentation body);
 
 
     @ApiOperation(value = "Submit forms specific version", nickname = "submitFormUsingPOST", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
@@ -105,7 +120,7 @@ public interface FormsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResponseEntity> submitFormUsingPOST(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version, @ApiParam(value = "submitFormRepresentation", required=true ) @Valid @RequestBody SubmitFormRepresentation body);
+    ResponseEntity<ResponseEntity> submitFormUsingPOST(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 
     @ApiOperation(value = "Submit forms latest version", nickname = "submitFormUsingPOST1", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
@@ -119,6 +134,6 @@ public interface FormsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<ResponseEntity> submitFormUsingPOST1(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "submitFormRepresentation", required=true ) @Valid @RequestBody SubmitFormRepresentation body);
+    ResponseEntity<ResponseEntity> submitFormUsingPOST1(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 }

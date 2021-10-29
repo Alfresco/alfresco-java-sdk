@@ -54,6 +54,6 @@ public interface DmnTableApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<Object> executeDMNUsingPOST(@ApiParam(value = "decisionTable", required=true ) @Valid @RequestBody DMNTable body);
+    ResponseEntity<Object> executeDMNUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody DMNTable body);
 
 }

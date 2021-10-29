@@ -20,10 +20,10 @@
  */
 package com.alfresco.activiti.modeling.handler;
 
-import com.alfresco.activiti.modeling.model.EntryResponseContentProject;
-import com.alfresco.activiti.modeling.model.EntryResponseContentRelease;
-import com.alfresco.activiti.modeling.model.ListResponseContentProject;
-import com.alfresco.activiti.modeling.model.ListResponseContentRelease;
+import com.alfresco.activiti.modeling.model.EntryResponseContentOfProject;
+import com.alfresco.activiti.modeling.model.EntryResponseContentOfRelease;
+import com.alfresco.activiti.modeling.model.ListResponseContentOfProject;
+import com.alfresco.activiti.modeling.model.ListResponseContentOfRelease;
 import com.alfresco.activiti.modeling.model.Project;
 
 import io.swagger.annotations.*;
@@ -47,9 +47,9 @@ import java.util.Map;
 @Api(value = "Projects", description = "the Projects API")
 public interface ProjectsApi {
 
-    @ApiOperation(value = "Copy an project as a new project with chosen name", nickname = "copyProjectUsingPOST", notes = "This will create a new project with chosen name containing the project folder and all related models.<br>", response = EntryResponseContentProject.class, tags={ "projects", })
+    @ApiOperation(value = "Copy an project as a new project with chosen name", nickname = "copyProjectUsingPOST", notes = "This will create a new project with chosen name containing the project folder and all related models.<br>", response = EntryResponseContentOfProject.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentProject.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfProject.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -57,24 +57,24 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/copy",
         produces = "application/json", 
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentProject> copyProjectUsingPOST(@NotNull @ApiParam(value = "The name of the project that will replace the original name of the project", required = true) @Valid @RequestParam(value = "name", required = true) String name, @ApiParam(value = "The id of the project to copy", required=true) @PathVariable("projectId") String projectId);
+    ResponseEntity<EntryResponseContentOfProject> copyProjectUsingPOST(@ApiParam(value = "The id of the project to copy", required=true) @PathVariable("projectId") String projectId, @NotNull @ApiParam(value = "The name of the project that will replace the original name of the project", required = true) @Valid @RequestParam(value = "name", required = true) String name);
 
 
-    @ApiOperation(value = "Create an project from example", nickname = "createProjectFromExampleUsingPOST", notes = "This will download an example project (zip) and create a new project with chosen name", response = EntryResponseContentProject.class, tags={ "projects", })
+    @ApiOperation(value = "Create an project from example", nickname = "createProjectFromExampleUsingPOST", notes = "This will download an example project (zip) and create a new project with chosen name", response = EntryResponseContentOfProject.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentProject.class),
+        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentOfProject.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/example",
         produces = "*/*", 
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentProject> createProjectFromExampleUsingPOST(@NotNull @ApiParam(value = "The example project id of the source example project", required = true) @Valid @RequestParam(value = "exampleProjectId", required = true) String exampleProjectId, @NotNull @ApiParam(value = "The name for the new project created from an example project", required = true) @Valid @RequestParam(value = "name", required = true) String name);
+    ResponseEntity<EntryResponseContentOfProject> createProjectFromExampleUsingPOST(@NotNull @ApiParam(value = "The example project id of the source example project", required = true) @Valid @RequestParam(value = "exampleProjectId", required = true) String exampleProjectId, @NotNull @ApiParam(value = "The name for the new project created from an example project", required = true) @Valid @RequestParam(value = "name", required = true) String name);
 
 
-    @ApiOperation(value = "Create new project", nickname = "createProjectUsingPOST", notes = "", response = EntryResponseContentProject.class, tags={ "projects", })
+    @ApiOperation(value = "Create new project", nickname = "createProjectUsingPOST", notes = "", response = EntryResponseContentOfProject.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentProject.class),
+        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentOfProject.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
@@ -82,7 +82,7 @@ public interface ProjectsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentProject> createProjectUsingPOST(@ApiParam(value = "The details of the project to create", required=true ) @Valid @RequestBody Project body);
+    ResponseEntity<EntryResponseContentOfProject> createProjectUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Project body);
 
 
     @ApiOperation(value = "Delete project", nickname = "deleteProjectUsingDELETE", notes = "", tags={ "projects", })
@@ -103,48 +103,48 @@ public interface ProjectsApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}/export",
         method = RequestMethod.GET)
-    byte[] exportProjectUsingGET(@ApiParam(value = "The id of the project to export", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "<b>true</b> value enables a web browser to download the file as an attachment.<br> <b>false</b> means that a web browser may preview the file in a new tab or window, but not download the file.", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment);
+    byte[] exportProjectUsingGET(@ApiParam(value = "The id of the project to export", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "<b>true</b> value enables a web browser to download the file as an attachment.<br> <b>false</b> means that a web browser may preview the file in a new tab or window, but not download the file.") @Valid @RequestParam(value = "attachment", required = false) Boolean attachment);
 
 
-    @ApiOperation(value = "Get releases of a project", nickname = "getProjectReleaseUsingGET", notes = "Get metadata information for a specific version of a project.", response = ListResponseContentRelease.class, tags={ "projects","releases", })
+    @ApiOperation(value = "Get releases of a project", nickname = "getProjectReleaseUsingGET", notes = "Get metadata information for a specific version of a project.", response = ListResponseContentOfRelease.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentRelease.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfRelease.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}/releases",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentRelease> getProjectReleaseUsingGET(@ApiParam(value = "The id of the project to get the releases", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "Default value is false, and it returns only the latest versions. If it is true, it forces the service to return all versions.") @Valid @RequestParam(value = "showAllVersions", required = false) Boolean showAllVersions, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "The version of the project to get the releases") @Valid @RequestParam(value = "version", required = false) String version);
+    ResponseEntity<ListResponseContentOfRelease> getProjectReleaseUsingGET(@ApiParam(value = "The id of the project to get the releases", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "The version of the project to get the releases") @Valid @RequestParam(value = "version", required = false) String version, @ApiParam(value = "Default value is false, and it returns only the latest versions. If it is true, it forces the service to return all versions.") @Valid @RequestParam(value = "showAllVersions", required = false) Boolean showAllVersions);
 
 
-    @ApiOperation(value = "Get project", nickname = "getProjectUsingGET", notes = "", response = EntryResponseContentProject.class, tags={ "projects", })
+    @ApiOperation(value = "Get project", nickname = "getProjectUsingGET", notes = "", response = EntryResponseContentOfProject.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentProject.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfProject.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<EntryResponseContentProject> getProjectUsingGET(@ApiParam(value = "The id of the project to retrieve", required=true) @PathVariable("projectId") String projectId);
+    ResponseEntity<EntryResponseContentOfProject> getProjectUsingGET(@ApiParam(value = "The id of the project to retrieve", required=true) @PathVariable("projectId") String projectId);
 
 
-    @ApiOperation(value = "List projects", nickname = "getProjectsUsingGET", notes = "Get the list of available projects. Minimal information for each project is returned.", response = ListResponseContentProject.class, tags={ "projects", })
+    @ApiOperation(value = "List projects", nickname = "getProjectsUsingGET", notes = "Get the list of available projects. Minimal information for each project is returned.", response = ListResponseContentOfProject.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentProject.class),
+        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfProject.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects",
         produces = "application/json", 
         method = RequestMethod.GET)
-    ResponseEntity<ListResponseContentProject> getProjectsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "The name or part of the name to filter projects") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfProject> getProjectsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "The name or part of the name to filter projects") @Valid @RequestParam(value = "name", required = false) String name);
 
 
-    @ApiOperation(value = "Import an project as zip file", nickname = "importProjectUsingPOST", notes = "Allows a zip file to be uploaded containing an project definition and any number of included models.", response = EntryResponseContentProject.class, tags={ "projects", })
+    @ApiOperation(value = "Import an project as zip file", nickname = "importProjectUsingPOST", notes = "Allows a zip file to be uploaded containing an project definition and any number of included models.", response = EntryResponseContentOfProject.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentProject.class),
+        @ApiResponse(code = 201, message = "Created", response = EntryResponseContentOfProject.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
@@ -152,12 +152,12 @@ public interface ProjectsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentProject> importProjectUsingPOST(@ApiParam(value = "") @RequestParam(value="name", required=false)  String name);
+    ResponseEntity<EntryResponseContentOfProject> importProjectUsingPOST(@ApiParam(value = "") @RequestParam(value="name", required=false)  String name);
 
 
-    @ApiOperation(value = "Create a new release of a project", nickname = "releaseProjectUsingPOST", notes = "This will release the project.The new version is based on the version strategy", response = EntryResponseContentRelease.class, tags={ "projects","releases", })
+    @ApiOperation(value = "Create a new release of a project", nickname = "releaseProjectUsingPOST", notes = "This will release the project.The new version is based on the version strategy", response = EntryResponseContentOfRelease.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentRelease.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfRelease.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -165,12 +165,12 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/releases",
         produces = "application/json", 
         method = RequestMethod.POST)
-    ResponseEntity<EntryResponseContentRelease> releaseProjectUsingPOST(@ApiParam(value = "The id of the project to release", required=true) @PathVariable("projectId") String projectId);
+    ResponseEntity<EntryResponseContentOfRelease> releaseProjectUsingPOST(@ApiParam(value = "The id of the project to release", required=true) @PathVariable("projectId") String projectId);
 
 
-    @ApiOperation(value = "Update project details", nickname = "updateProjectUsingPUT", notes = "", response = EntryResponseContentProject.class, tags={ "projects", })
+    @ApiOperation(value = "Update project details", nickname = "updateProjectUsingPUT", notes = "", response = EntryResponseContentOfProject.class, tags={ "projects", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentProject.class),
+        @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfProject.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -179,7 +179,7 @@ public interface ProjectsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
-    ResponseEntity<EntryResponseContentProject> updateProjectUsingPUT(@ApiParam(value = "The id of the project to update", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The new values to update", required=true ) @Valid @RequestBody Project body);
+    ResponseEntity<EntryResponseContentOfProject> updateProjectUsingPUT(@ApiParam(value = "The id of the project to update", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "" ) @Valid @RequestBody Project body);
 
 
     @ApiOperation(value = "Validate an project by id", nickname = "validateProjectUsingGET", notes = "", tags={ "projects", })

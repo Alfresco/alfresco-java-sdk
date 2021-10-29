@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="findAllUsingGET9"></a>
 # **findAllUsingGET9**
-> ListResponseContentOfQueryCloudTask findAllUsingGET9(maxItems, rootTasksOnly, skipCount, sort, standalone, variablesName, variablesType, variablesValue)
+> ListResponseContentOfQueryCloudTask findAllUsingGET9(maxItems, rootTasksOnly, skipCount, sort, variablesName, variablesType, variablesValue, standalone)
 
 findAll
 
@@ -24,15 +24,15 @@ findAll
 
 TaskAdminControllerApi apiInstance = new TaskAdminControllerApi();
 Integer maxItems = 56; // Integer | 
-Boolean rootTasksOnly = false; // Boolean | rootTasksOnly
+Boolean rootTasksOnly = true; // Boolean | rootTasksOnly
 Integer skipCount = 56; // Integer | 
 String sort = "sort_example"; // String | 
-Boolean standalone = false; // Boolean | standalone
 String variablesName = "variablesName_example"; // String | 
 String variablesType = "variablesType_example"; // String | 
 String variablesValue = "variablesValue_example"; // String | 
+Boolean standalone = true; // Boolean | standalone
 try {
-    ListResponseContentOfQueryCloudTask result = apiInstance.findAllUsingGET9(maxItems, rootTasksOnly, skipCount, sort, standalone, variablesName, variablesType, variablesValue);
+    ListResponseContentOfQueryCloudTask result = apiInstance.findAllUsingGET9(maxItems, rootTasksOnly, skipCount, sort, variablesName, variablesType, variablesValue, standalone);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskAdminControllerApi#findAllUsingGET9");
@@ -45,13 +45,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **maxItems** | **Integer**|  | [optional]
- **rootTasksOnly** | **Boolean**| rootTasksOnly | [optional] [default to false]
+ **rootTasksOnly** | **Boolean**| rootTasksOnly | [optional]
  **skipCount** | **Integer**|  | [optional]
  **sort** | **String**|  | [optional]
- **standalone** | **Boolean**| standalone | [optional] [default to false]
  **variablesName** | **String**|  | [optional]
  **variablesType** | **String**|  | [optional]
  **variablesValue** | **String**|  | [optional]
+ **standalone** | **Boolean**| standalone | [optional]
 
 ### Return type
 
@@ -64,7 +64,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="findByIdUsingGET5"></a>
 # **findByIdUsingGET5**
@@ -107,7 +107,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getTaskCandidateGroupsUsingGET"></a>
 # **getTaskCandidateGroupsUsingGET**
@@ -150,7 +150,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 
 <a name="getTaskCandidateUsersUsingGET"></a>
 # **getTaskCandidateUsersUsingGET**
@@ -193,5 +193,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/json
+ - **Accept**: application/json, application/hal+json
 

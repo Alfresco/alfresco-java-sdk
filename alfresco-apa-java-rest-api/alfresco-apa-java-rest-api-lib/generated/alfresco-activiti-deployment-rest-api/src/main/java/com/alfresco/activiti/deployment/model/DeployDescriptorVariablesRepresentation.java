@@ -36,14 +36,14 @@ import javax.validation.constraints.*;
 public class DeployDescriptorVariablesRepresentation   {
   @JsonProperty("connectors")
   @Valid
-  private Map<String, Map<String, String>> connectors = null;
+  private Map<String, Object> connectors = null;
 
-  public DeployDescriptorVariablesRepresentation connectors(Map<String, Map<String, String>> connectors) {
+  public DeployDescriptorVariablesRepresentation connectors(Map<String, Object> connectors) {
     this.connectors = connectors;
     return this;
   }
 
-  public DeployDescriptorVariablesRepresentation putConnectorsItem(String key, Map<String, String> connectorsItem) {
+  public DeployDescriptorVariablesRepresentation putConnectorsItem(String key, Object connectorsItem) {
     if (this.connectors == null) {
       this.connectors = new HashMap<>();
     }
@@ -56,12 +56,12 @@ public class DeployDescriptorVariablesRepresentation   {
    * @return connectors
    **/
   @ApiModelProperty(value = "")
-      @Valid
-    public Map<String, Map<String, String>> getConnectors() {
+  
+    public Map<String, Object> getConnectors() {
     return connectors;
   }
 
-  public void setConnectors(Map<String, Map<String, String>> connectors) {
+  public void setConnectors(Map<String, Object> connectors) {
     this.connectors = connectors;
   }
 
