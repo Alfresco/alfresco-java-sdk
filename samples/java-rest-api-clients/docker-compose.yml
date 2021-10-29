@@ -2,6 +2,14 @@ version: '2'
 
 services:
 
+  java-rest-api-clients:
+    image: java-rest-api-clients:development
+    build:
+      context: .
+    environment:
+      DOCKER_IP: "192.168.1.106"
+      SPRING_ACTIVEMQ_BROKER_URL: "tcp://activemq:61616"
+
   activiti-postgres:
     image: postgres:11
     ports:
