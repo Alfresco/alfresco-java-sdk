@@ -15,6 +15,11 @@
  */
 package org.alfresco.java.rest.client.sample.service;
 
+import com.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
+import com.alfresco.activiti.query.model.CloudRuntimeEventModel;
+import com.alfresco.activiti.query.model.CloudRuntimeEventModel.EventTypeEnum;
+import com.alfresco.activiti.query.model.EntryResponseContentOfCloudRuntimeEventOfobjectAndstring;
+import com.alfresco.activiti.query.model.ListResponseContentOfCloudRuntimeEventOfobjectAndstring;
 import com.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApiClient;
 import com.alfresco.activiti.runtime.handler.ProcessInstanceTasksControllerImplApi;
 import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
@@ -23,11 +28,12 @@ import com.alfresco.activiti.runtime.model.EntryResponseContentOfCloudProcessIns
 import com.alfresco.activiti.runtime.model.EntryResponseContentOfCloudTask;
 import com.alfresco.activiti.runtime.model.ListResponseContentOfCloudTask;
 import com.alfresco.activiti.runtime.model.StartProcessPayload;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -44,15 +50,20 @@ public class RESTClientService {
 
     private final TaskControllerImplApi taskControllerImplApi;
 
+    private final AuditEventsControllerImplApi auditEventsControllerImplApi;
+
     public RESTClientService(ProcessInstanceControllerImplApiClient processInstanceControllerImplApiClient,
-        ProcessInstanceTasksControllerImplApi processInstanceTasksControllerImplApi, TaskControllerImplApi taskControllerImplApi) {
+        ProcessInstanceTasksControllerImplApi processInstanceTasksControllerImplApi,
+        TaskControllerImplApi taskControllerImplApi,
+        AuditEventsControllerImplApi auditEventsControllerImplApi) {
         this.processInstanceControllerImplApiClient = processInstanceControllerImplApiClient;
         this.processInstanceTasksControllerImplApi = processInstanceTasksControllerImplApi;
         this.taskControllerImplApi = taskControllerImplApi;
+        this.auditEventsControllerImplApi = auditEventsControllerImplApi;
     }
 
     @Scheduled(fixedRate = 10000)
-    public void startProcessInstance(){
+    public void triggerAPAInteractions(){
 
         LOGGER.info(String.format("Starting new process instance with %s definition key", PROCESS_DEFINITION_KEY));
 
@@ -90,9 +101,23 @@ public class RESTClientService {
 
         LOGGER.info("Task completed and process finished!!");
 
+        ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> ListOfAuditRawEvents = auditEventsControllerImplApi
+            .findAllUsingGET3(null,
+            "processInstanceId:" + processId,
+            null,
+            null);
 
+        List<EventTypeEnum> listOfEventTypes = ListOfAuditRawEvents
+            .getBody()
+            .getList()
+            .getEntries()
+            .stream()
+            .map(EntryResponseContentOfCloudRuntimeEventOfobjectAndstring::getEntry)
+            .map(CloudRuntimeEventModel::getEventType)
+            .filter(eventTypeEnum -> eventTypeEnum.toString().contains("PROCESS") || eventTypeEnum.toString().contains("TASK"))
+            .collect(Collectors.toList());
 
-
+        LOGGER.info("This a list of the Audit events in chronological order:" + listOfEventTypes.toString());
 
 
     }
