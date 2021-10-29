@@ -159,4 +159,4 @@ volumes:
   rabbitmq-data:
   pgdata:
 
-    
+
