@@ -18,6 +18,7 @@ package org.alfresco.java.rest.client.sample.service;
 import com.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApiClient;
 import com.alfresco.activiti.runtime.handler.ProcessInstanceTasksControllerImplApi;
 import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+import com.alfresco.activiti.runtime.model.CompleteTaskPayload;
 import com.alfresco.activiti.runtime.model.EntryResponseContentOfCloudProcessInstance;
 import com.alfresco.activiti.runtime.model.EntryResponseContentOfCloudTask;
 import com.alfresco.activiti.runtime.model.ListResponseContentOfCloudTask;
@@ -41,13 +42,16 @@ public class RESTClientService {
 
     private final ProcessInstanceTasksControllerImplApi processInstanceTasksControllerImplApi;
 
+    private final TaskControllerImplApi taskControllerImplApi;
+
     public RESTClientService(ProcessInstanceControllerImplApiClient processInstanceControllerImplApiClient,
-        ProcessInstanceTasksControllerImplApi processInstanceTasksControllerImplApi) {
+        ProcessInstanceTasksControllerImplApi processInstanceTasksControllerImplApi, TaskControllerImplApi taskControllerImplApi) {
         this.processInstanceControllerImplApiClient = processInstanceControllerImplApiClient;
         this.processInstanceTasksControllerImplApi = processInstanceTasksControllerImplApi;
+        this.taskControllerImplApi = taskControllerImplApi;
     }
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 10000)
     public void startProcessInstance(){
 
         LOGGER.info(String.format("Starting new process instance with %s definition key", PROCESS_DEFINITION_KEY));
@@ -77,6 +81,17 @@ public class RESTClientService {
             .getId();
 
         LOGGER.info(String.format("Task of process instance with id: %s fetched!", taskId));
+
+        CompleteTaskPayload completeTaskPayload = new CompleteTaskPayload();
+        completeTaskPayload.setPayloadType(CompleteTaskPayload.PayloadTypeEnum.COMPLETETASKPAYLOAD);
+        completeTaskPayload.setId(UUID.randomUUID().toString());
+
+        taskControllerImplApi.completeTaskUsingPOST1(taskId, completeTaskPayload);
+
+        LOGGER.info("Task completed and process finished!!");
+
+
+
 
 
 
