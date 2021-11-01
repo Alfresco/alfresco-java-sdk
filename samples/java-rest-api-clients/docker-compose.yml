@@ -3,6 +3,7 @@ version: '2'
 services:
 
   java-rest-api-clients:
+    container_name: sample-apa-rest-clients
     image: java-rest-api-clients:development
     build:
       context: .
@@ -12,6 +13,7 @@ services:
 
   activiti-postgres:
     image: postgres:11
+    container_name: activiti-postgres
     ports:
       - "5432:5432"
     environment:
@@ -40,7 +42,6 @@ services:
       - 15672:15672
       - 61613:61613
     volumes:
-      - ./enabled_plugins:/etc/rabbitmq/enabled_plugins
       - rabbitmq-data
     restart: unless-stopped
 
