@@ -15,11 +15,8 @@
  */
 package io.swagger.configuration;
 
-import org.alfresco.rest.sdk.feign.config.BasicAuthConfiguration;
-import org.alfresco.rest.sdk.feign.config.DelegatedAuthenticationConfiguration;
-import org.alfresco.rest.sdk.feign.config.OAuth2Configuration;
+import org.alfresco.rest.sdk.feign.config.EnableAuthConfiguration;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
 /**
 * Feign client Spring configuration that provides support for different authentication methods. Currently, supported methods are:
@@ -31,7 +28,7 @@ import org.springframework.context.annotation.Import;
   * </ul>
 */
 @Configuration
-@Import({BasicAuthConfiguration.class, OAuth2Configuration.class, DelegatedAuthenticationConfiguration.class})
+@EnableAuthConfiguration
 public class ClientConfiguration {
 
 }

@@ -13,22 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.swagger.configuration;
+package org.alfresco.rest.sdk.feign.config;
 
-import org.alfresco.rest.sdk.feign.config.EnableAuthConfiguration;
-import org.springframework.context.annotation.Configuration;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import org.springframework.context.annotation.Import;
 
-/**
-* Feign client Spring configuration that provides support for different authentication methods. Currently, supported methods are:
-* <ul>
-  *     <li>Basic Authentication</li>
-  *     <li>OAuth2 - Client credentials flow</li>
-  *     <li>OAuth2 - Password flow</li>
-  *     <li>Delegated (external) authentication</li>
-  * </ul>
-*/
-@Configuration
-@EnableAuthConfiguration
-public class ClientConfiguration {
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE})
+@Import({BasicAuthConfiguration.class, OAuth2Configuration.class, DelegatedAuthenticationConfiguration.class})
+public @interface EnableAuthConfiguration {
 
 }
+

@@ -47,57 +47,57 @@ import java.util.Map;
 public interface FormsApi {
 
     @ApiOperation(value = "Get form definition by version", nickname = "getFormDefinitionUsingGET", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/forms/{formId}/versions/{version}",
-        produces = "application/json",
+        produces = "application/json", 
         method = RequestMethod.GET)
     ResponseEntity<ResponseEntity> getFormDefinitionUsingGET(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version);
 
 
     @ApiOperation(value = "Get form definition latest version", nickname = "getFormDefinitionUsingGET1", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/forms/{formId}",
-        produces = "application/json",
+        produces = "application/json", 
         method = RequestMethod.GET)
     ResponseEntity<ResponseEntity> getFormDefinitionUsingGET1(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId);
 
 
     @ApiOperation(value = "Get form definitions summary", nickname = "getFormDefinitionsUsingGET", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/forms",
-        produces = "application/json",
+        produces = "application/json", 
         method = RequestMethod.GET)
     ResponseEntity<ResponseEntity> getFormDefinitionsUsingGET();
 
 
     @ApiOperation(value = "Get form definition by version", nickname = "getFormFieldValueUsingPOST", notes = "", response = NamedObject.class, responseContainer = "List", tags={ "FORMS", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = NamedObject.class, responseContainer = "List"),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/forms/{formId}/values/{formFieldId}",
-        produces = "application/json",
+        produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
     ResponseEntity<List<NamedObject>> getFormFieldValueUsingPOST(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId, @ApiParam(value = "The id of the form field", required=true) @PathVariable("formFieldId") String formFieldId, @ApiParam(value = "" ) @Valid @RequestBody Map<String, String> body);
 
 
     @ApiOperation(value = "Save runtime forms", nickname = "saveFormUsingPOST", notes = "", tags={ "FORMS", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -110,28 +110,28 @@ public interface FormsApi {
 
 
     @ApiOperation(value = "Submit forms specific version", nickname = "submitFormUsingPOST", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/forms/{formId}/submit/versions/{version}",
-        produces = "application/json",
+        produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
     ResponseEntity<ResponseEntity> submitFormUsingPOST(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 
     @ApiOperation(value = "Submit forms latest version", nickname = "submitFormUsingPOST1", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/forms/{formId}/submit",
-        produces = "application/json",
+        produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
     ResponseEntity<ResponseEntity> submitFormUsingPOST1(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
