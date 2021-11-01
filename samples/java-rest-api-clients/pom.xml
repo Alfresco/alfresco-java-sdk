@@ -11,15 +11,10 @@
 
   <artifactId>java-rest-api-clients</artifactId>
 
-  <name>Alfresco Java REST APIs :: Sample App</name>
+  <name>Alfresco Process Java REST APIs :: Sample App</name>
   <description>Sample application to demonstrate Java ACS and APA REST APIs working together</description>
 
   <dependencies>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
-      <version>${project.version}</version>
-    </dependency>
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-apa-java-rest-api-spring-boot</artifactId>
