@@ -75,7 +75,7 @@ $ ./run.sh build_start
 Only start the environment (without building it):
 
 ```bash
-$ ./run.sh build_start
+$ ./run.sh start
 ```
 
 #### How To Stop

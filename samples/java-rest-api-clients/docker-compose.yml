@@ -8,8 +8,7 @@ services:
     build:
       context: .
     environment:
-      DOCKER_IP: "192.168.1.106"
-      SPRING_ACTIVEMQ_BROKER_URL: "tcp://activemq:61616"
+      DOCKER_IP: "${DOCKER_IP}"
     restart: unless-stopped
     depends_on:
       - example-runtime-bundle
