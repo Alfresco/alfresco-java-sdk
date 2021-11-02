@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 
 services:
 
@@ -11,8 +11,8 @@ services:
       DOCKER_IP: "${DOCKER_IP}"
     restart: unless-stopped
     depends_on:
-      - example-runtime-bundle
-      - activiti-cloud-query
+      example-runtime-bundle:
+        condition: service_healthy
 
   activiti-postgres:
     image: postgres:11
@@ -72,6 +72,11 @@ services:
       SPRING_JPA_GENERATE_DDL: "true"
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://${DOCKER_IP}/rb/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     depends_on:
       - nginx
       - keycloak
