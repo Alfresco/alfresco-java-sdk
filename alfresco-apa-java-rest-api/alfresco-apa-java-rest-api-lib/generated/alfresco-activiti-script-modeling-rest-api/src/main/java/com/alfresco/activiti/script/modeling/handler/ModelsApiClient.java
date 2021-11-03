@@ -18,6 +18,6 @@ package com.alfresco.activiti.script.modeling.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoModelsApi", url = "${modeling.url}", path = "${modeling.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(value = "alfrescoModelsApi", url = "${modeling.url}", path = "${modeling.path}", configuration = ClientConfiguration.class)
 public interface ModelsApiClient extends ModelsApi {
 }

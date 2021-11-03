@@ -18,6 +18,6 @@ package com.alfresco.activiti.query.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoProcessInstanceVariableControllerApi", url = "${activiti.service.query.url}", path = "${activiti.service.query.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(value = "alfrescoProcessInstanceVariableControllerApi", url = "${activiti.service.query.url}", path = "${activiti.service.query.path}", configuration = ClientConfiguration.class)
 public interface ProcessInstanceVariableControllerApiClient extends ProcessInstanceVariableControllerApi {
 }

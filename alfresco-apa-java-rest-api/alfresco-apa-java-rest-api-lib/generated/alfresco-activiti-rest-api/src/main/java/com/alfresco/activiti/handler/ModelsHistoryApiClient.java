@@ -18,6 +18,6 @@ package com.alfresco.activiti.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoModelsHistoryApi", url = "${process.service.url}", path = "${process.service.path}", configuration = ClientConfiguration.class, decode404 = true)
+@FeignClient(value = "alfrescoModelsHistoryApi", url = "${process.service.url}", path = "${process.service.path}", configuration = ClientConfiguration.class)
 public interface ModelsHistoryApiClient extends ModelsHistoryApi {
 }
