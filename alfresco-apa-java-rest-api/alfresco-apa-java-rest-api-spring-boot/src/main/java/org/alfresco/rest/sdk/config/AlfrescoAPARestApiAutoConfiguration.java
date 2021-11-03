@@ -22,6 +22,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableFeignClients(basePackages = {
     "com.alfresco.activiti.deployment.handler",
     "com.alfresco.activiti.modeling.handler",
+    "com.alfresco.activiti.process.storage.handler",
     "com.alfresco.activiti.query.handler",
     "com.alfresco.activiti.runtime.handler"
 })
