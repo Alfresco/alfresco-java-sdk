@@ -68,6 +68,15 @@ See [```run.sh```](run.sh)  if you would like to know how each function exactly 
 
 Build all and run:
 
+Before running the sample make sure that you build the whole project from the root level 
+to make sure the sample app has the latest code from its dependencies above in the project
+
+```bash
+$ mvn clean install
+```
+
+Then you are ready to spin up the docker compose environment:
+
 ```bash
 $ ./run.sh build_start
 ```
