@@ -21,7 +21,7 @@
     <environment.application.name>your-deployed-APA-application-name</environment.application.name>
     <spring-boot.version>${project.parent.version}</spring-boot.version>
     <project.build.generatedSourceDirectory>generated</project.build.generatedSourceDirectory>
-    <swagger-core.version>1.5.20</swagger-core.version>
+    <swagger-core.version>1.6.3</swagger-core.version>
     <swagger-core-v3-version>2.1.11</swagger-core-v3-version>
     <swagger-codegen-maven-plugin.groupId>io.swagger.codegen.v3</swagger-codegen-maven-plugin.groupId>
     <swagger-codegen-maven-plugin.version>3.0.29</swagger-codegen-maven-plugin.version>
