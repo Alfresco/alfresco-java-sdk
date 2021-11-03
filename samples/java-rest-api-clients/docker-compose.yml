@@ -1,0 +1,154 @@
+version: '2.1'
+
+services:
+
+  java-rest-api-clients:
+    container_name: sample-apa-rest-clients
+    image: java-rest-api-clients:development
+    build:
+      context: .
+    environment:
+      DOCKER_IP: "${DOCKER_IP}"
+    restart: unless-stopped
+    depends_on:
+      example-runtime-bundle:
+        condition: service_healthy
+
+  activiti-postgres:
+    image: postgres:11
+    container_name: activiti-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_USER=activiti
+      - POSTGRES_DB=activitidb
+    volumes:
+      - "pgdata:/var/lib/postgresql/data"
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+    restart: unless-stopped
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 61613:61613
+    volumes:
+      - rabbitmq-data
+    restart: unless-stopped
+
+  keycloak:
+    container_name: keycloak
+    image: activiti/activiti-keycloak
+    volumes:
+      - ./activiti-realm.json:/opt/jboss/keycloak/activiti-realm.json
+    restart: unless-stopped
+    depends_on:
+      - nginx
+
+  example-runtime-bundle:
+    container_name: example-runtime-bundle
+    image: activiti/example-runtime-bundle:${VERSION}
+    environment:
+      SPRING_JMX_ENABLED: "false"
+      ACT_KEYCLOAK_URL: "http://${DOCKER_IP}/auth"
+      SPRING_RABBITMQ_HOST: "rabbitmq"
+      SERVER_SERVLET_CONTEXT_PATH: /rb
+      SPRING_DATASOURCE_URL: jdbc:postgresql://activiti-postgres:5432/activitidb
+      SPRING_DATASOURCE_USERNAME: activiti
+      SPRING_DATASOURCE_PASSWORD: mypassword
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_JPA_GENERATE_DDL: "true"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://${DOCKER_IP}/rb/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - nginx
+      - keycloak
+      - rabbitmq
+      - activiti-postgres
+
+  example-cloud-connector:
+    container_name: example-cloud-connector
+    image: activiti/example-cloud-connector:${VERSION}
+    environment:
+      SPRING_JMX_ENABLED: "false"
+      SPRING_RABBITMQ_HOST: "rabbitmq"
+      ACT_KEYCLOAK_URL: "http://${DOCKER_IP}/auth"
+    restart: unless-stopped
+    depends_on:
+      - nginx
+      - keycloak
+      - rabbitmq
+
+  activiti-cloud-query:
+    container_name: activiti-cloud-query
+    image: activiti/activiti-cloud-query:${VERSION}
+    environment:
+      SPRING_JMX_ENABLED: "false"
+      SPRING_RABBITMQ_HOST: "rabbitmq"
+      ACT_KEYCLOAK_URL: "http://${DOCKER_IP}/auth"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://activiti-postgres:5432/activitidb
+      SPRING_DATASOURCE_USERNAME: activiti
+      SPRING_DATASOURCE_PASSWORD: mypassword
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_JPA_GENERATE_DDL: "true"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING.GRAPHQL_JPA_QUERY_PATH: /notifications/graphql
+      GRAPHIQL_GRAPHQL_WEB_PATH: /notifications/graphql
+      GRAPHIQL_GRAPHQL_WS_PATH: /notifications/ws/graphql
+    restart: unless-stopped
+    depends_on:
+      - nginx
+      - keycloak
+      - rabbitmq
+      - activiti-postgres
+
+  activiti-cloud-modeling:
+    container_name: activiti-cloud-modeling
+    image: activiti/activiti-modeling-app:${VERSION}
+    environment:
+      APP_CONFIG_OAUTH2_HOST: "http://${DOCKER_IP}/auth/realms/${KEYCLOAK_REALM}"
+      APP_CONFIG_OAUTH2_CLIENTID: "${KEYCLOAK_REALM}"
+      API_URL: "http://${DOCKER_IP}"
+      BASE_PATH: /modeling
+      SERVER_PORT: 8080
+      APP_CONFIG_BPM_HOST: "http://${DOCKER_IP}"
+      APP_CONFIG_OAUTH2_REDIRECT_SILENT_IFRAME_URI: /modeling/assets/silent-refresh.html
+      APP_CONFIG_OAUTH2_REDIRECT_LOGIN: /modeling
+      APP_CONFIG_OAUTH2_REDIRECT_LOGOUT: /modeling
+    restart: unless-stopped
+
+  activiti-cloud-modeling-backend:
+    container_name: activiti-cloud-modeling-backend
+    image: activiti/activiti-cloud-modeling:${VERSION}
+    environment:
+      JAVA_OPTS:                    -Xmx1024m -Xms512m -XX:+UnlockExperimentalVMOptions   -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90
+      SPRING_APPLICATION_NAME:      modeling-service
+      SERVER_PORT:                  8080
+      ACT_KEYCLOAK_URL:             http://${DOCKER_IP}/auth
+      ACT_KEYCLOAK_REALM:           ${KEYCLOAK_REALM}
+      ACT_KEYCLOAK_RESOURCE:        ${KEYCLOAK_RESOURCE}
+      ACTIVITI_CLOUD_MODELING_URL:  localhost:8080
+      SERVER_SERVLET_CONTEXT_PATH:  /modeling-service
+
+volumes:
+  rabbitmq-data:
+  pgdata:
+
+
