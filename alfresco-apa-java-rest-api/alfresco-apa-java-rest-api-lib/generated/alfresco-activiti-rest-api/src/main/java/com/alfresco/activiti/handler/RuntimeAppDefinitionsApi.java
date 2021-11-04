@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -52,6 +53,7 @@ public interface RuntimeAppDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-definitions",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deployAppDefinitionsUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody RuntimeAppDefinitionSaveRepresentation body);
 
 
@@ -62,6 +64,7 @@ public interface RuntimeAppDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-definitions/{appDefinitionId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionRepresentation> getAppDefinitionUsingGET1(@ApiParam(value = "appDefinitionId", required=true) @PathVariable("appDefinitionId") Long appDefinitionId);
 
 
@@ -72,6 +75,7 @@ public interface RuntimeAppDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-definitions",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAppDefinitionRepresentation> getAppDefinitionsUsingGET();
 
 }

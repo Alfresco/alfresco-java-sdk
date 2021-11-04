@@ -40,6 +40,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -59,6 +60,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> createApplicationUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ApplicationRepresentation body);
 
 
@@ -70,6 +72,7 @@ public interface DeploymentControllerApi {
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/applications/{id}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteApplicationUsingDELETE(@ApiParam(value = "ID of application to delete", required=true) @PathVariable("id") String id);
 
 
@@ -82,6 +85,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/{id}/runtime-version",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RuntimeVersionRepresentation> getApplicationRuntimeVersionUsingGET(@ApiParam(value = "ID of application which runtime version is queried", required=true) @PathVariable("id") String id);
 
 
@@ -94,6 +98,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/{id}",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ApplicationResponseRepresentation> getApplicationUsingGET(@ApiParam(value = "ID of application to return", required=true) @PathVariable("id") String id);
 
 
@@ -106,6 +111,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfApplicationResponseRepresentation> getApplicationsUsingGET(@ApiParam(value = "Authorization" ,required=true) @RequestHeader(value="Authorization", required=true) String authorization, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateFrom", required = false) LocalDate createdDateFrom, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateTo", required = false) LocalDate createdDateTo, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "") @Valid @RequestParam(value = "roles", required = false) List<String> roles, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "", allowableValues="CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR"
 ) @Valid @RequestParam(value = "status", required = false) String status);
 
@@ -119,6 +125,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/{id}/groups",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<String>> getGroupsUsingGET(@ApiParam(value = "ID of application", required=true) @PathVariable("id") String id, @ApiParam(value = "Filter on group name, showing all groups that contains the search key") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "Roles that user must have on the application.") @Valid @RequestParam(value = "roles", required = false) String roles);
 
 
@@ -131,6 +138,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/runtime-versions/latest",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RuntimeVersionRepresentation> getLatestRuntimeVersionUsingGET();
 
 
@@ -143,6 +151,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/runtime-versions",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<RuntimeVersionRepresentation>> getRuntimeVersionsUsingGET(@ApiParam(value = "versionEqualOrLater") @Valid @RequestParam(value = "versionEqualOrLater", required = false) String versionEqualOrLater);
 
 
@@ -155,6 +164,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/{id}/users",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<String>> getUsersUsingGET(@ApiParam(value = "ID of application", required=true) @PathVariable("id") String id, @ApiParam(value = "Filter on username, showing all users that contains the search key") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "If the value is 'true' the service will return users belonging to the application, directly or via groups. Otherwise only users directly belonging to the application will be returned.") @Valid @RequestParam(value = "group", required = false) Boolean group, @ApiParam(value = "Roles that user must have on the application.") @Valid @RequestParam(value = "roles", required = false) String roles, @ApiParam(value = "If the value is 'true' the service will return only users belonging to the application. Otherwise user and service clients belonging to the application will be returned.") @Valid @RequestParam(value = "excludeServiceClients", required = false) Boolean excludeServiceClients);
 
 
@@ -167,6 +177,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/{id}/logs/{serviceName}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ApplicationLog> retrieveServiceLogsUsingGET(@ApiParam(value = "ID of application to get logs from", required=true) @PathVariable("id") String id, @ApiParam(value = "Name of the service to get logs from", required=true) @PathVariable("serviceName") String serviceName);
 
 
@@ -180,6 +191,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/{id}/update",
         produces = "*/*", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ApplicationResponseRepresentation> updateApplicationRuntimeVersionUsingPOST(@ApiParam(value = "ID of application which runtime version is updated", required=true) @PathVariable("id") String id, @ApiParam(value = "runtimeVersion") @Valid @RequestParam(value = "runtimeVersion", required = false) String runtimeVersion);
 
 
@@ -193,6 +205,7 @@ public interface DeploymentControllerApi {
     @RequestMapping(value = "/v1/applications/{id}",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> upgradeApplicationUsingPUT(@ApiParam(value = "ID of application to update", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody ApplicationPutRequestRepresentation body);
 
 }

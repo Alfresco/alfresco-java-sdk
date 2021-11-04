@@ -79,6 +79,9 @@ public class NodeChildAssociation   {
   @JsonProperty("isFavorite")
   private Boolean isFavorite = null;
 
+  @JsonProperty("isDirectLinkEnabled")
+  private Boolean isDirectLinkEnabled = null;
+
   @JsonProperty("content")
   private ContentInfo content = null;
 
@@ -378,6 +381,26 @@ public class NodeChildAssociation   {
     this.isFavorite = isFavorite;
   }
 
+  public NodeChildAssociation isDirectLinkEnabled(Boolean isDirectLinkEnabled) {
+    this.isDirectLinkEnabled = isDirectLinkEnabled;
+    return this;
+  }
+
+  /**
+   * Get isDirectLinkEnabled
+   * @return isDirectLinkEnabled
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Boolean isIsDirectLinkEnabled() {
+    return isDirectLinkEnabled;
+  }
+
+  public void setIsDirectLinkEnabled(Boolean isDirectLinkEnabled) {
+    this.isDirectLinkEnabled = isDirectLinkEnabled;
+  }
+
   public NodeChildAssociation content(ContentInfo content) {
     this.content = content;
     return this;
@@ -582,6 +605,7 @@ public class NodeChildAssociation   {
         Objects.equals(this.parentId, nodeChildAssociation.parentId) &&
         Objects.equals(this.isLink, nodeChildAssociation.isLink) &&
         Objects.equals(this.isFavorite, nodeChildAssociation.isFavorite) &&
+        Objects.equals(this.isDirectLinkEnabled, nodeChildAssociation.isDirectLinkEnabled) &&
         Objects.equals(this.content, nodeChildAssociation.content) &&
         Objects.equals(this.aspectNames, nodeChildAssociation.aspectNames) &&
         Objects.equals(this.properties, nodeChildAssociation.properties) &&
@@ -594,7 +618,7 @@ public class NodeChildAssociation   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, definition, association);
+    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, isDirectLinkEnabled, content, aspectNames, properties, allowableOperations, path, permissions, definition, association);
   }
 
   @Override
@@ -615,6 +639,7 @@ public class NodeChildAssociation   {
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    isLink: ").append(toIndentedString(isLink)).append("\n");
     sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
+    sb.append("    isDirectLinkEnabled: ").append(toIndentedString(isDirectLinkEnabled)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    aspectNames: ").append(toIndentedString(aspectNames)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");

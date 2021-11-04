@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -60,6 +61,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteAuditEntriesForAuditApp(@ApiParam(value = "The identifier of an audit application.",required=true) @PathVariable("auditApplicationId") String auditApplicationId,@NotNull @ApiParam(value = "Audit entries to permanently delete for an audit application, given an inclusive time period or range of ids. For example:  *   ```where=(createdAt BETWEEN ('2017-06-02T12:13:51.593+01:00' , '2017-06-04T10:05:16.536+01:00')``` *   ```where=(id BETWEEN ('1234', '4321')``` ", required = true) @Valid @RequestParam(value = "where", required = true) String where);
 
 
@@ -78,6 +80,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteAuditEntry(@ApiParam(value = "The identifier of an audit application.",required=true) @PathVariable("auditApplicationId") String auditApplicationId,@ApiParam(value = "The identifier of an audit entry.",required=true) @PathVariable("auditEntryId") String auditEntryId);
 
 
@@ -96,6 +99,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AuditApp> getAuditApp(@ApiParam(value = "The identifier of an audit application.",required=true) @PathVariable("auditApplicationId") String auditApplicationId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields,@ApiParam(value = "Also include the current minimum and/or maximum audit entry ids for the application. The following optional fields can be requested: * max * min ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
@@ -114,6 +118,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AuditEntryEntry> getAuditEntry(@ApiParam(value = "The identifier of an audit application.",required=true) @PathVariable("auditApplicationId") String auditApplicationId,@ApiParam(value = "The identifier of an audit entry.",required=true) @PathVariable("auditEntryId") String auditEntryId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -131,6 +136,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AuditAppPaging> listAuditApps(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list. If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -149,6 +155,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AuditEntryPaging> listAuditEntriesForAuditApp(@ApiParam(value = "The identifier of an audit application.",required=true) @PathVariable("auditApplicationId") String auditApplicationId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@ApiParam(value = "A boolean to control if the response provides the total numbers of items in the collection. If not supplied then the default value is false. ", defaultValue = "false") @Valid @RequestParam(value = "omitTotalItems", required = false, defaultValue="false") Boolean omitTotalItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@Min(1)@ApiParam(value = "The maximum number of items to return in the list. If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "Optionally filter the list. Here are some examples:  *   ```where=(createdByUser='jbloggs')```  *   ```where=(id BETWEEN ('1234', '4321')```  *   ```where=(createdAt BETWEEN ('2017-06-02T12:13:51.593+01:00' , '2017-06-04T10:05:16.536+01:00')```  *   ```where=(createdByUser='jbloggs' and createdAt BETWEEN ('2017-06-02T12:13:51.593+01:00' , '2017-06-04T10:05:16.536+01:00')```  *   ```where=(valuesKey='/alfresco-access/login/user')```  *   ```where=(valuesKey='/alfresco-access/transaction/action' and valuesValue='DELETE')``` ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Returns additional information about the audit entry. The following optional fields can be requested: * values ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -167,6 +174,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AuditEntryPaging> listAuditEntriesForNode(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@Min(1)@ApiParam(value = "The maximum number of items to return in the list. If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "Optionally filter the list. Here are some examples:  *   ```where=(createdByUser='-me-')```  *   ```where=(createdAt BETWEEN ('2017-06-02T12:13:51.593+01:00' , '2017-06-04T10:05:16.536+01:00')```  *   ```where=(createdByUser='jbloggs' and createdAt BETWEEN ('2017-06-02T12:13:51.593+01:00' , '2017-06-04T10:05:16.536+01:00')``` ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Returns additional information about the audit entry. The following optional fields can be requested: * values ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -185,6 +193,7 @@ public interface AuditApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AuditApp> updateAuditApp(@ApiParam(value = "The identifier of an audit application.",required=true) @PathVariable("auditApplicationId") String auditApplicationId,@ApiParam(value = "The audit application to update." ,required=true )  @Valid @RequestBody AuditBodyUpdate auditAppBodyUpdate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

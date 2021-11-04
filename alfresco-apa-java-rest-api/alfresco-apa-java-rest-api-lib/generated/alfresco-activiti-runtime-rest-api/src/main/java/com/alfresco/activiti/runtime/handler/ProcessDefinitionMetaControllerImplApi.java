@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -52,6 +53,7 @@ public interface ProcessDefinitionMetaControllerImplApi {
     @RequestMapping(value = "/v1/process-definitions/{id}/meta",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfProcessDefinitionMeta> getProcessDefinitionMetadataUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 }

@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -54,6 +55,7 @@ public interface CandidateGroupControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-groups",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> addCandidateGroupsUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateGroupsPayload body);
 
 
@@ -66,6 +68,7 @@ public interface CandidateGroupControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-groups",
         consumes = "application/json",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteCandidateGroupsUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateGroupsPayload body);
 
 
@@ -78,6 +81,7 @@ public interface CandidateGroupControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-groups",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCandidateGroup> getGroupCandidatesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 }

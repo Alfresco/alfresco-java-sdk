@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface ProcessDefinitionControllerImplApi {
     @RequestMapping(value = "/v1/process-definitions/{id}/model",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> getBpmnModelUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
@@ -65,6 +67,7 @@ public interface ProcessDefinitionControllerImplApi {
     @RequestMapping(value = "/v1/process-definitions/{id}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessDefinition> getProcessDefinitionUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
@@ -77,6 +80,7 @@ public interface ProcessDefinitionControllerImplApi {
     @RequestMapping(value = "/v1/process-definitions",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCloudProcessDefinition> getProcessDefinitionsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 }

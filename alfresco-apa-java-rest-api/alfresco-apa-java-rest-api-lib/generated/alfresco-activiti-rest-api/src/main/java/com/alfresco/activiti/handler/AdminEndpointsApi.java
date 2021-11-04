@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EndpointBasicAuthRepresentation> createBasicAuthConfigurationUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateEndpointBasicAuthRepresentation body);
 
 
@@ -64,6 +66,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EndpointConfigurationRepresentation> createEndpointConfigurationUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody EndpointConfigurationRepresentation body);
 
 
@@ -74,6 +77,7 @@ public interface AdminEndpointsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths/{basicAuthId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EndpointBasicAuthRepresentation> getBasicAuthConfigurationUsingGET(@ApiParam(value = "basicAuthId", required=true) @PathVariable("basicAuthId") Long basicAuthId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
@@ -84,6 +88,7 @@ public interface AdminEndpointsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<EndpointBasicAuthRepresentation>> getBasicAuthConfigurationsUsingGET(@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
@@ -94,6 +99,7 @@ public interface AdminEndpointsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints/{endpointConfigurationId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EndpointConfigurationRepresentation> getEndpointConfigurationUsingGET1(@ApiParam(value = "endpointConfigurationId", required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
@@ -104,6 +110,7 @@ public interface AdminEndpointsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<EndpointConfigurationRepresentation>> getEndpointConfigurationsUsingGET1(@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
@@ -113,6 +120,7 @@ public interface AdminEndpointsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths/{basicAuthId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> removeBasicAuthonfigurationUsingDELETE(@ApiParam(value = "basicAuthId", required=true) @PathVariable("basicAuthId") Long basicAuthId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
@@ -122,6 +130,7 @@ public interface AdminEndpointsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints/{endpointConfigurationId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> removeEndpointConfigurationUsingDELETE(@ApiParam(value = "endpointConfigurationId", required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
@@ -133,6 +142,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EndpointBasicAuthRepresentation> updateBasicAuthConfigurationUsingPUT(@ApiParam(value = "basicAuthId", required=true) @PathVariable("basicAuthId") Long basicAuthId, @ApiParam(value = "" ) @Valid @RequestBody CreateEndpointBasicAuthRepresentation body);
 
 
@@ -144,6 +154,7 @@ public interface AdminEndpointsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EndpointConfigurationRepresentation> updateEndpointConfigurationUsingPUT(@ApiParam(value = "endpointConfigurationId", required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId, @ApiParam(value = "" ) @Valid @RequestBody EndpointConfigurationRepresentation body);
 
 }

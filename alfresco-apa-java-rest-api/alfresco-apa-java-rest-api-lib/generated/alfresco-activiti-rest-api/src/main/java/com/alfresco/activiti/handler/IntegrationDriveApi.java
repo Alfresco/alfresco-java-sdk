@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -49,6 +50,7 @@ public interface IntegrationDriveApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/google-drive/confirm-auth-request",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> confirmAuthorisationUsingGET1();
 
 
@@ -59,6 +61,7 @@ public interface IntegrationDriveApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/google-drive/files",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationGoogleDriveContent> getFilesUsingGET1(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "parent") @Valid @RequestParam(value = "parent", required = false) String parent, @ApiParam(value = "currentFolderOnly") @Valid @RequestParam(value = "currentFolderOnly", required = false) Boolean currentFolderOnly);
 
 }

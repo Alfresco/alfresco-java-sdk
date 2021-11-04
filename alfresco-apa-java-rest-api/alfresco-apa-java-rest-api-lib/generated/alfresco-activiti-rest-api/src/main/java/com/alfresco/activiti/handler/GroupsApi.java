@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface GroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/groups",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationLightGroupRepresentation> getGroupsUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId, @ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String externalId, @ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String externalIdCaseInsensitive, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId);
 
 
@@ -61,6 +63,7 @@ public interface GroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/groups/{groupId}/users",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getUsersForGroupUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 }

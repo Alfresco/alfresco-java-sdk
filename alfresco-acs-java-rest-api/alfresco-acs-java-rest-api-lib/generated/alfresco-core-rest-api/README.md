@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.alfresco:alfresco-core-rest-api:5.1.1"
+compile "org.alfresco:alfresco-core-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-core-rest-api-5.1.1.jar
+* target/alfresco-core-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
 ## Documentation for API Endpoints
@@ -113,6 +113,7 @@ Class | Method | HTTP request | Description
 *NodesApi* | [**listTargetAssociations**](docs/NodesApi.md#listTargetAssociations) | **GET** /nodes/{nodeId}/targets | List target associations
 *NodesApi* | [**lockNode**](docs/NodesApi.md#lockNode) | **POST** /nodes/{nodeId}/lock | Lock a node
 *NodesApi* | [**moveNode**](docs/NodesApi.md#moveNode) | **POST** /nodes/{nodeId}/move | Move a node
+*NodesApi* | [**requestNodeDirectAccessUrl**](docs/NodesApi.md#requestNodeDirectAccessUrl) | **POST** /nodes/{nodeId}/request-direct-access-url | Generate a direct access content URL
 *NodesApi* | [**unlockNode**](docs/NodesApi.md#unlockNode) | **POST** /nodes/{nodeId}/unlock | Unlock a node
 *NodesApi* | [**updateNode**](docs/NodesApi.md#updateNode) | **PUT** /nodes/{nodeId} | Update a node
 *NodesApi* | [**updateNodeContent**](docs/NodesApi.md#updateNodeContent) | **PUT** /nodes/{nodeId}/content | Update node content
@@ -139,6 +140,7 @@ Class | Method | HTTP request | Description
 *RenditionsApi* | [**getRendition**](docs/RenditionsApi.md#getRendition) | **GET** /nodes/{nodeId}/renditions/{renditionId} | Get rendition information
 *RenditionsApi* | [**getRenditionContent**](docs/RenditionsApi.md#getRenditionContent) | **GET** /nodes/{nodeId}/renditions/{renditionId}/content | Get rendition content
 *RenditionsApi* | [**listRenditions**](docs/RenditionsApi.md#listRenditions) | **GET** /nodes/{nodeId}/renditions | List renditions
+*RenditionsApi* | [**requestRenditionDirectAccessUrl**](docs/RenditionsApi.md#requestRenditionDirectAccessUrl) | **POST** /nodes/{nodeId}/renditions/{renditionId}/request-direct-access-url | Generate a direct access content URL
 *SharedLinksApi* | [**createSharedLink**](docs/SharedLinksApi.md#createSharedLink) | **POST** /shared-links | Create a shared link to a file
 *SharedLinksApi* | [**deleteSharedLink**](docs/SharedLinksApi.md#deleteSharedLink) | **DELETE** /shared-links/{sharedId} | Deletes a shared link
 *SharedLinksApi* | [**emailSharedLink**](docs/SharedLinksApi.md#emailSharedLink) | **POST** /shared-links/{sharedId}/email | Email shared link
@@ -189,6 +191,8 @@ Class | Method | HTTP request | Description
 *TrashcanApi* | [**getDeletedNodeContent**](docs/TrashcanApi.md#getDeletedNodeContent) | **GET** /deleted-nodes/{nodeId}/content | Get deleted node content
 *TrashcanApi* | [**listDeletedNodeRenditions**](docs/TrashcanApi.md#listDeletedNodeRenditions) | **GET** /deleted-nodes/{nodeId}/renditions | List renditions for a deleted node
 *TrashcanApi* | [**listDeletedNodes**](docs/TrashcanApi.md#listDeletedNodes) | **GET** /deleted-nodes | List deleted nodes
+*TrashcanApi* | [**requestArchivedNodeRenditionDirectAccessUrl**](docs/TrashcanApi.md#requestArchivedNodeRenditionDirectAccessUrl) | **POST** /deleted-nodes/{nodeId}/renditions/{renditionId}/request-direct-access-url | Generate a direct access content URL
+*TrashcanApi* | [**requestDeletedNodeDirectAccessUrl**](docs/TrashcanApi.md#requestDeletedNodeDirectAccessUrl) | **POST** /deleted-nodes/{nodeId}/request-direct-access-url | Generate a direct access content URL
 *TrashcanApi* | [**restoreDeletedNode**](docs/TrashcanApi.md#restoreDeletedNode) | **POST** /deleted-nodes/{nodeId}/restore | Restore a deleted node
 *VersionsApi* | [**createVersionRendition**](docs/VersionsApi.md#createVersionRendition) | **POST** /nodes/{nodeId}/versions/{versionId}/renditions | Create rendition for a file version
 *VersionsApi* | [**deleteVersion**](docs/VersionsApi.md#deleteVersion) | **DELETE** /nodes/{nodeId}/versions/{versionId} | Delete a version
@@ -198,6 +202,7 @@ Class | Method | HTTP request | Description
 *VersionsApi* | [**getVersionRenditionContent**](docs/VersionsApi.md#getVersionRenditionContent) | **GET** /nodes/{nodeId}/versions/{versionId}/renditions/{renditionId}/content | Get rendition content for a file version
 *VersionsApi* | [**listVersionHistory**](docs/VersionsApi.md#listVersionHistory) | **GET** /nodes/{nodeId}/versions | List version history
 *VersionsApi* | [**listVersionRenditions**](docs/VersionsApi.md#listVersionRenditions) | **GET** /nodes/{nodeId}/versions/{versionId}/renditions | List renditions for a file version
+*VersionsApi* | [**requestVersionDirectAccessUrl**](docs/VersionsApi.md#requestVersionDirectAccessUrl) | **POST** /nodes/{nodeId}/versions/{versionId}/request-direct-access-url | Generate a direct access content URL
 *VersionsApi* | [**revertVersion**](docs/VersionsApi.md#revertVersion) | **POST** /nodes/{nodeId}/versions/{versionId}/revert | Revert a version
 
 
@@ -247,7 +252,9 @@ Class | Method | HTTP request | Description
  - [DeletedNodeEntry](docs/DeletedNodeEntry.md)
  - [DeletedNodesPaging](docs/DeletedNodesPaging.md)
  - [DeletedNodesPagingList](docs/DeletedNodesPagingList.md)
+ - [DirectAccessUrl](docs/DirectAccessUrl.md)
  - [DirectAccessUrlBodyCreate](docs/DirectAccessUrlBodyCreate.md)
+ - [DirectAccessUrlEntry](docs/DirectAccessUrlEntry.md)
  - [Download](docs/Download.md)
  - [DownloadBodyCreate](docs/DownloadBodyCreate.md)
  - [DownloadEntry](docs/DownloadEntry.md)

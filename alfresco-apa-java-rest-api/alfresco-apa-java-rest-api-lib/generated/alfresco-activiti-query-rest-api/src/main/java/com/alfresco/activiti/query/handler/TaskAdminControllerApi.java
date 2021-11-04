@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface TaskAdminControllerApi {
     @RequestMapping(value = "/admin/v1/tasks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfQueryCloudTask> findAllUsingGET9(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "rootTasksOnly") @Valid @RequestParam(value = "rootTasksOnly", required = false) Boolean rootTasksOnly, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "") @Valid @RequestParam(value = "variables.name", required = false) String variablesName, @ApiParam(value = "") @Valid @RequestParam(value = "variables.type", required = false) String variablesType, @ApiParam(value = "") @Valid @RequestParam(value = "variables.value", required = false) String variablesValue, @ApiParam(value = "standalone") @Valid @RequestParam(value = "standalone", required = false) Boolean standalone);
 
 
@@ -65,6 +67,7 @@ public interface TaskAdminControllerApi {
     @RequestMapping(value = "/admin/v1/tasks/{taskId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfQueryCloudTask> findByIdUsingGET5(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -77,6 +80,7 @@ public interface TaskAdminControllerApi {
     @RequestMapping(value = "/admin/v1/tasks/{taskId}/candidate-groups",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<String>> getTaskCandidateGroupsUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -89,6 +93,7 @@ public interface TaskAdminControllerApi {
     @RequestMapping(value = "/admin/v1/tasks/{taskId}/candidate-users",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<String>> getTaskCandidateUsersUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 }

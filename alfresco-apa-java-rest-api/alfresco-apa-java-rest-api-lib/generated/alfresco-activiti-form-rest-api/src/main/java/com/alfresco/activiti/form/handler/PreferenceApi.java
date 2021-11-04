@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface PreferenceApi {
     @RequestMapping(value = "/v1/preferences/{preferenceKey}",
         produces = "application/json", 
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> deletePreferenceUsingDELETE(@ApiParam(value = "The Key of the preference to be deleted", required=true) @PathVariable("preferenceKey") String preferenceKey);
 
 
@@ -65,6 +67,7 @@ public interface PreferenceApi {
     @RequestMapping(value = "/v1/preferences",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfPreference> getAllUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -77,6 +80,7 @@ public interface PreferenceApi {
     @RequestMapping(value = "/v1/preferences/{preferenceKey}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> getPreferenceUsingGET(@ApiParam(value = "The Key of the preference to be returned", required=true) @PathVariable("preferenceKey") String preferenceKey);
 
 
@@ -91,6 +95,7 @@ public interface PreferenceApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> savePreferenceUsingPUT(@ApiParam(value = "The Key of the preference to be created", required=true) @PathVariable("preferenceKey") String preferenceKey, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 }

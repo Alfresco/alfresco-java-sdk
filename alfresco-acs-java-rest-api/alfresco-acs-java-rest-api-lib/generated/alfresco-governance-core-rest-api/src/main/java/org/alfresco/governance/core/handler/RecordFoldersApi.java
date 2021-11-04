@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -59,6 +60,7 @@ public interface RecordFoldersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordEntry> createRecordFolderChild(@ApiParam(value = "The identifier of a record folder.",required=true) @PathVariable("recordFolderId") String recordFolderId,@ApiParam(value = "The record information to create.  This field is ignored for multipart/form-data content uploads. " ,required=true )  @Valid @RequestBody RMNodeBodyCreate recordBodyCreate,@ApiParam(value = "Returns additional information about the record. Any optional field from the response model can be requested. For example: * allowableOperations * content * isCompleted * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -77,6 +79,7 @@ public interface RecordFoldersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteRecordFolder(@ApiParam(value = "The identifier of a record folder.",required=true) @PathVariable("recordFolderId") String recordFolderId);
 
 
@@ -94,6 +97,7 @@ public interface RecordFoldersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordFolderEntry> getRecordFolder(@ApiParam(value = "The identifier of a record folder.",required=true) @PathVariable("recordFolderId") String recordFolderId,@ApiParam(value = "Returns additional information about the record folders. Any optional field from the response model can be requested. For example: * allowableOperations * isClosed * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -110,6 +114,7 @@ public interface RecordFoldersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordFolderAssociationPaging> listRecordFolderChildren(@ApiParam(value = "The identifier of a record folder.",required=true) @PathVariable("recordFolderId") String recordFolderId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "Optionally filter the list. Here are some examples:  *   ```where=(nodeType='my:specialNodeType')```  *   ```where=(nodeType='my:specialNodeType INCLUDESUBTYPES')```  *   ```where=(isPrimary=true)``` ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Returns additional information about the records. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * association * content * isCompleted * path * properties ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Also include **source** (in addition to **entries**) with record information on the parent folder – the specified parent **recordFolderId**") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -129,6 +134,7 @@ public interface RecordFoldersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordFolderEntry> updateRecordFolder(@ApiParam(value = "The identifier of a record folder.",required=true) @PathVariable("recordFolderId") String recordFolderId,@ApiParam(value = "The record folder information to update." ,required=true )  @Valid @RequestBody FilePlanComponentBodyUpdate recordFolderBodyUpdate,@ApiParam(value = "Returns additional information about the record folders. Any optional field from the response model can be requested. For example: * allowableOperations * isClosed * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

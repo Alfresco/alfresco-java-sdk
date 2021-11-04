@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -55,6 +56,7 @@ public interface TaskVariableControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/variables",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> createVariableUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CreateTaskVariablePayload body);
 
 
@@ -67,6 +69,7 @@ public interface TaskVariableControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/variables",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCloudVariableInstance> getVariablesUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -80,6 +83,7 @@ public interface TaskVariableControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/variables/{variableName}",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> updateVariableUsingPUT1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "" ) @Valid @RequestBody UpdateTaskVariablePayload body);
 
 }

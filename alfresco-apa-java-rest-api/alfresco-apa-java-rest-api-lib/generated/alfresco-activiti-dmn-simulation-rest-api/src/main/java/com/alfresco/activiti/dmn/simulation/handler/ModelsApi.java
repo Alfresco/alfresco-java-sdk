@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -57,6 +58,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfModel> createModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "" ) @Valid @RequestBody ModelReq body);
 
 
@@ -70,6 +72,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfModel> createModelWithoutProjectUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ModelReq body);
 
 
@@ -80,6 +83,7 @@ public interface ModelsApi {
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/models/{modelId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteModelUsingDELETE(@ApiParam(value = "The id of the model to delete", required=true) @PathVariable("modelId") String modelId);
 
 
@@ -92,6 +96,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/models/{modelId}",
         produces = "application/json", 
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfModel> deleteProjectModelRelationshipUsingDELETE(@ApiParam(value = "The id of the project of the relationship to delete", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The id of the model of the relationship to delete", required=true) @PathVariable("modelId") String modelId);
 
 
@@ -103,6 +108,7 @@ public interface ModelsApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models/{modelId}/export",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     byte[] exportModelUsingGET(@ApiParam(value = "The id of the model to export", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "<b>true</b> value enables a web browser to download the file as an attachment.<br> <b>false</b> means that a web browser may preview the file in a new tab or window, but not download the file.") @Valid @RequestParam(value = "attachment", required = false) Boolean attachment);
 
 
@@ -115,6 +121,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/models",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfModel> getGlobalModelsUsingGET(@NotNull @ApiParam(value = "The type of the model to filter", required = true) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "If true, then models with no relationship to any project are retrieved regardless of their scope") @Valid @RequestParam(value = "includeOrphans", required = false) Boolean includeOrphans);
 
 
@@ -126,6 +133,7 @@ public interface ModelsApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models/{modelId}/content",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     byte[] getModelContentUsingGET(@ApiParam(value = "The id of the model to get the content", required=true) @PathVariable("modelId") String modelId);
 
 
@@ -138,6 +146,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/model-types",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfModelType> getModelTypesUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -150,6 +159,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/models/{modelId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfModel> getModelUsingGET(@ApiParam(value = "The id of the model to retrieve", required=true) @PathVariable("modelId") String modelId);
 
 
@@ -162,6 +172,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/models",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfModel> getModelsUsingGET(@ApiParam(value = "The id of the project to get the models for", required=true) @PathVariable("projectId") String projectId, @NotNull @ApiParam(value = "The type of the model to filter", required = true) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -174,6 +185,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/schemas/{modelType}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     byte[] getSchemaUsingGET(@ApiParam(value = "modelType", required=true) @PathVariable("modelType") String modelType);
 
 
@@ -187,6 +199,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfModel> importModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="type", required=false)  String type);
 
 
@@ -200,6 +213,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/models/{modelId}",
         produces = "application/json", 
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfModel> putProjectModelRelationshipUsingPUT(@ApiParam(value = "The id of the project to associate the model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "The id of the model to associate the project with", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "Scope to update the model if needed (optional)") @Valid @RequestParam(value = "scope", required = false) String scope, @ApiParam(value = "If the scope of the model has restrictions on the number of projects that a model can belong to, remove the other relationships of the model with other projects") @Valid @RequestParam(value = "force", required = false) Boolean force);
 
 
@@ -213,6 +227,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/models/{modelId}/content",
         consumes = "multipart/form-data",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> updateModelContentUsingPUT(@ApiParam(value = "The id of the model to update", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
 
 
@@ -227,6 +242,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfModel> updateModelUsingPUT(@ApiParam(value = "The id of the model to update", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "" ) @Valid @RequestBody ModelReq body);
 
 
@@ -240,6 +256,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/models/{modelId}/validate/extensions",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> validateModelExtensionsUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -253,6 +270,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/v1/models/{modelId}/validate",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> validateModelUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "The model is going to be validated and checked used in other model") @Valid @RequestParam(value = "validateUsage", required = false) Boolean validateUsage, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

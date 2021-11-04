@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**listTargetAssociations**](NodesApi.md#listTargetAssociations) | **GET** /nodes/{nodeId}/targets | List target associations
 [**lockNode**](NodesApi.md#lockNode) | **POST** /nodes/{nodeId}/lock | Lock a node
 [**moveNode**](NodesApi.md#moveNode) | **POST** /nodes/{nodeId}/move | Move a node
+[**requestNodeDirectAccessUrl**](NodesApi.md#requestNodeDirectAccessUrl) | **POST** /nodes/{nodeId}/request-direct-access-url | Generate a direct access content URL
 [**unlockNode**](NodesApi.md#unlockNode) | **POST** /nodes/{nodeId}/unlock | Unlock a node
 [**updateNode**](NodesApi.md#updateNode) | **PUT** /nodes/{nodeId} | Update a node
 [**updateNodeContent**](NodesApi.md#updateNodeContent) | **PUT** /nodes/{nodeId}/content | Update node content
@@ -39,7 +40,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
  **nodeBodyCopy** | [**NodeBodyCopy**](NodeBodyCopy.md)| The targetParentId and, optionally, a new name which should include the file extension. |
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -101,7 +102,7 @@ Name | Type | Description  | Notes
  **autoRename** | **Boolean**| If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. | [optional]
  **majorVersion** | **Boolean**| If true, then created node will be version *1.0 MAJOR*. If false, then created node will be version *0.1 MINOR*. | [optional]
  **versioningEnabled** | **Boolean**| If true, then created node will be versioned. If false, then created node will be unversioned and auto-versioning disabled. | [optional]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -245,7 +246,7 @@ Get a node
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. You can also use one of these well-known aliases: * -my- * -shared- * -root-  |
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **relativePath** | **String**| A path relative to the **nodeId**. If you set this, information is returned on the node resolved by this path.  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
@@ -309,7 +310,7 @@ Name | Type | Description  | Notes
  **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **orderBy** | [**List&lt;String&gt;**](String.md)| A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field.  | [optional]
  **where** | **String**| Optionally filter the list. Here are some examples:  *   &#x60;&#x60;&#x60;where&#x3D;(isFolder&#x3D;true)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(isFile&#x3D;true)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(nodeType&#x3D;&#39;my:specialNodeType&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(nodeType&#x3D;&#39;my:specialNodeType INCLUDESUBTYPES&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(isPrimary&#x3D;true)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(isPrimary&#x3D;false and assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60;  | [optional]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isLocked * path * properties * permissions  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * properties * permissions  | [optional]
  **relativePath** | **String**| Return information on children in the folder resolved by this path. The path is relative to **nodeId**. | [optional]
  **includeSource** | **Boolean**| Also include **source** in addition to **entries** with folder information on the parent node – either the specified parent **nodeId**, or as resolved by **relativePath**. | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
@@ -341,7 +342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a child node. You can also use one of these well-known aliases: * -my- * -shared- * -root-  |
  **where** | **String**| Optionally filter the list by **assocType** and/or **isPrimary**. Here are some example filters:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(isPrimary&#x3D;true)&#x60;&#x60;&#x60;  *   &#x60;&#x60;&#x60;where&#x3D;(isPrimary&#x3D;false and assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60;  | [optional]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isLocked * path * properties  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * properties  | [optional]
  **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
  **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **includeSource** | **Boolean**| Also include **source** (in addition to **entries**) with folder information on **nodeId** | [optional]
@@ -374,7 +375,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a parent node. You can also use one of these well-known aliases: * -my- * -shared- * -root-  |
  **where** | **String**| Optionally filter the list by assocType. Here&#39;s an example:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60;  | [optional]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isLocked * path * properties  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * properties  | [optional]
  **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
  **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
  **includeSource** | **Boolean**| Also include **source** (in addition to **entries**) with folder information on **nodeId** | [optional]
@@ -407,7 +408,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a target node. |
  **where** | **String**| Optionally filter the list by **assocType**. Here&#39;s an example:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60;  | [optional]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isLocked * path * properties  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * properties  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -437,7 +438,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a source node. |
  **where** | **String**| Optionally filter the list by **assocType**. Here&#39;s an example:  *   &#x60;&#x60;&#x60;where&#x3D;(assocType&#x3D;&#39;my:specialAssocType&#39;)&#x60;&#x60;&#x60;  | [optional]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isLocked * path * properties  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * properties  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -467,7 +468,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
  **nodeBodyLock** | [**NodeBodyLock**](NodeBodyLock.md)| Lock details. |
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -497,12 +498,40 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
  **nodeBodyMove** | [**NodeBodyMove**](NodeBodyMove.md)| The targetParentId and, optionally, a new name which should include the file extension. |
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
 
 [**NodeEntry**](NodeEntry.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="requestNodeDirectAccessUrl"></a>
+# **requestNodeDirectAccessUrl**
+> DirectAccessUrlEntry requestNodeDirectAccessUrl(nodeId, requestContentUrlBodyCreate)
+
+Generate a direct access content URL
+
+**Note:** this endpoint is available in Alfresco 7.1 and newer versions. Generate a direct access content url for the given **nodeId**. 
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nodeId** | **String**| The identifier of a node. |
+ **requestContentUrlBodyCreate** | [**DirectAccessUrlBodyCreate**](DirectAccessUrlBodyCreate.md)| Direct Access URL options and flags.  It can be used to set the **attachment** flag, which controls the download method of the generated URL (attachment DAU vs embedded DAU). It defaults to **true**, meaning the value for the Content Disposition response header will be **attachment**.  Note: It is up to the actual ContentStore implementation if it can fulfil this request or not.  | [optional]
+
+### Return type
+
+[**DirectAccessUrlEntry**](DirectAccessUrlEntry.md)
 
 ### Authorization
 
@@ -526,7 +555,7 @@ Unlock a node
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -556,7 +585,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
  **nodeBodyUpdate** | [**NodeBodyUpdate**](NodeBodyUpdate.md)| The node information to update. |
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type
@@ -589,7 +618,7 @@ Name | Type | Description  | Notes
  **majorVersion** | **Boolean**| If **true**, create a major version. Setting this parameter also enables versioning of this node, if it is not already versioned.  | [optional] [default to false]
  **comment** | **String**| Add a version comment which will appear in version history. Setting this parameter also enables versioning of this node, if it is not already versioned.  | [optional]
  **name** | **String**| Optional new name. This should include the file extension. The name must not contain spaces or the following special characters: * \&quot; &lt; &gt; \\ / ? : and |. The character &#x60;.&#x60; must not be used at the end of the name.  | [optional]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
  **fields** | [**List&lt;String&gt;**](String.md)| A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter.  | [optional]
 
 ### Return type

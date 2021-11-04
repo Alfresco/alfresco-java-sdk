@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface ServiceTaskAdminControllerApi {
     @RequestMapping(value = "/admin/v1/service-tasks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCloudServiceTask> findAllUsingGET8(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -65,6 +67,7 @@ public interface ServiceTaskAdminControllerApi {
     @RequestMapping(value = "/admin/v1/service-tasks/{serviceTaskId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudServiceTask> findByIdUsingGET3(@ApiParam(value = "serviceTaskId", required=true) @PathVariable("serviceTaskId") String serviceTaskId);
 
 }

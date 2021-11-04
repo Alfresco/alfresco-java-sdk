@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -55,6 +56,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> createModelUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ModelRepresentation body);
 
 
@@ -64,6 +66,7 @@ public interface ModelsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteModelUsingDELETE(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "cascade") @Valid @RequestParam(value = "cascade", required = false) Boolean cascade, @ApiParam(value = "deleteRuntimeApp") @Valid @RequestParam(value = "deleteRuntimeApp", required = false) Boolean deleteRuntimeApp);
 
 
@@ -75,6 +78,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> duplicateModelUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody ModelRepresentation body);
 
 
@@ -85,6 +89,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/editor/json",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ObjectNode> getModelJSONUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId);
 
 
@@ -95,6 +100,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/thumbnail",
         produces = "image/png", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<byte[]> getModelThumbnailUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId);
 
 
@@ -105,6 +111,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> getModelUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "includePermissions") @Valid @RequestParam(value = "includePermissions", required = false) Boolean includePermissions);
 
 
@@ -115,6 +122,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/models-for-app-definition",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelsToIncludeInAppDefinitionUsingGET();
 
 
@@ -125,6 +133,7 @@ public interface ModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/models",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelsUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "modelType") @Valid @RequestParam(value = "modelType", required = false) Integer modelType, @ApiParam(value = "referenceId") @Valid @RequestParam(value = "referenceId", required = false) Long referenceId);
 
 
@@ -136,6 +145,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> importNewVersionUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -147,6 +157,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> importProcessModelUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -158,6 +169,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> saveModelUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Map<String, List<String>> body);
 
 
@@ -169,6 +181,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> updateModelUsingPUT(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody ModelRepresentation body);
 
 
@@ -180,6 +193,7 @@ public interface ModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<ValidationErrorRepresentation>> validateModelUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Map<String, List<String>> body);
 
 }

@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -59,6 +60,7 @@ public interface UnfiledContainersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UnfiledContainerAssociationPaging> createUnfiledContainerChildren(@ApiParam(value = "The identifier of an unfiled records container. You can use the **-unfiled-** alias.",required=true) @PathVariable("unfiledContainerId") String unfiledContainerId,@ApiParam(value = "The node information to create." ,required=true )  @Valid @RequestBody RMNodeBodyCreate nodeBodyCreate,@ApiParam(value = "If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. ") @Valid @RequestParam(value = "autoRename", required = false) Boolean autoRename,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -76,6 +78,7 @@ public interface UnfiledContainersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UnfiledContainerEntry> getUnfiledContainer(@ApiParam(value = "The identifier of an unfiled records container. You can use the **-unfiled-** alias.",required=true) @PathVariable("unfiledContainerId") String unfiledContainerId,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -92,6 +95,7 @@ public interface UnfiledContainersApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UnfiledContainerAssociationPaging> listUnfiledContainerChildren(@ApiParam(value = "The identifier of an unfiled records container. You can use the **-unfiled-** alias.",required=true) @PathVariable("unfiledContainerId") String unfiledContainerId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "Optionally filter the list. Here are some examples:  *   ```where=(isRecord=true)```  *   ```where=(isUnfiledRecordFolder=false)```  *   ```where=(nodeType='cm:content INCLUDESUBTYPES')``` ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * association  * path * properties ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the parent node – the specified parent **unfiledContainerId**") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -111,6 +115,7 @@ public interface UnfiledContainersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UnfiledContainerEntry> updateUnfiledContainer(@ApiParam(value = "The identifier of an unfiled records container. You can use the **-unfiled-** alias.",required=true) @PathVariable("unfiledContainerId") String unfiledContainerId,@ApiParam(value = "The unfiled record container information to update." ,required=true )  @Valid @RequestBody UnfiledRecordContainerBodyUpdate unfiledContainerBodyUpdate,@ApiParam(value = "Returns additional information about the unfiled records container's children. Any optional field from the response model can be requested. For example: * allowableOperations * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

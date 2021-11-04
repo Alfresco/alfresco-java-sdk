@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -52,6 +53,7 @@ public interface SystemPropertiesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties/global-date-format/{tenantId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<GlobalDateFormatRepresentation> getGlobalDateFormatUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
@@ -62,6 +64,7 @@ public interface SystemPropertiesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties/password-validation-constraints/{tenantId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<PasswordValidationConstraints> getPasswordValidationConstraintsUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
@@ -72,6 +75,7 @@ public interface SystemPropertiesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SystemPropertiesRepresentation> getPropertiesUsingGET();
 
 
@@ -82,6 +86,7 @@ public interface SystemPropertiesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties/involved-users-can-edit-forms/{tenantId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Boolean> involvedUsersCanEditFormsUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 }

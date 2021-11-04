@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 Request password reset
 
-**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Initiates the reset password workflow to send an email with reset password instruction to the user&#39;s registered email.  The client is mandatory in the request body. For example: &#x60;&#x60;&#x60;JSON {   \&quot;client\&quot;: \&quot;myClient\&quot; } &#x60;&#x60;&#x60; **Note:** The client must be registered before this API can send an email. See [server documentation]. However, out-of-the-box share is registered as a default client, so you could pass **share** as the client name: &#x60;&#x60;&#x60;JSON {   \&quot;client\&quot;: \&quot;share\&quot; } &#x60;&#x60;&#x60; **Note:** No authentication is required to call this endpoint. 
+**Note:** this endpoint is deprecated as of Alfresco 7.1, and will be removed in the future.  Initiates the reset password workflow to send an email with reset password instruction to the user&#39;s registered email.  The client is mandatory in the request body. For example: &#x60;&#x60;&#x60;JSON {   \&quot;client\&quot;: \&quot;myClient\&quot; } &#x60;&#x60;&#x60; **Note:** The client must be registered before this API can send an email. See [server documentation]. However, out-of-the-box share is registered as a default client, so you could pass **share** as the client name: &#x60;&#x60;&#x60;JSON {   \&quot;client\&quot;: \&quot;share\&quot; } &#x60;&#x60;&#x60; **Note:** No authentication is required to call this endpoint. 
 
 ### Parameters
 
@@ -193,7 +193,7 @@ null (empty response body)
 
 Reset password
 
-**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Resets user&#39;s password  The password, id and key properties are mandatory in the request body. For example: &#x60;&#x60;&#x60;JSON {   \&quot;password\&quot;:\&quot;newPassword\&quot;,   \&quot;id\&quot;:\&quot;activiti$10\&quot;,   \&quot;key\&quot;:\&quot;4dad6d00-0daf-413a-b200-f64af4e12345\&quot; } &#x60;&#x60;&#x60; **Note:** No authentication is required to call this endpoint. 
+**Note:** this endpoint is deprecated as of Alfresco 7.1, and will be removed in the future. Resets user&#39;s password  The password, id and key properties are mandatory in the request body. For example: &#x60;&#x60;&#x60;JSON {   \&quot;password\&quot;:\&quot;newPassword\&quot;,   \&quot;id\&quot;:\&quot;activiti$10\&quot;,   \&quot;key\&quot;:\&quot;4dad6d00-0daf-413a-b200-f64af4e12345\&quot; } &#x60;&#x60;&#x60; **Note:** No authentication is required to call this endpoint. 
 
 ### Parameters
 

@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface DecisionTableModelsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/decision-table-models/{decisionTableId}/export",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> exportDecisionTableUsingGET(@ApiParam(value = "Decision table id.", required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
@@ -62,6 +64,7 @@ public interface DecisionTableModelsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/decision-table-models/history/{historyModelId}/export",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> exportHistoricDecisionTableUsingGET(@ApiParam(value = "Id of another version of same decision table model.", required=true) @PathVariable("historyModelId") Long historyModelId);
 
 
@@ -72,6 +75,7 @@ public interface DecisionTableModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/decision-table-models/{decisionTableId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DecisionTableRepresentation> getDecisionTableUsingGET1(@ApiParam(value = "Decision table id.", required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
@@ -82,6 +86,7 @@ public interface DecisionTableModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/decision-table-models",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationDecisionTableRepresentation> getDecisionTablesUsingGET1(@ApiParam(value = "A reference to another model (ie. a process) associated with one or more decision table models.") @Valid @RequestParam(value = "referenceId", required = false) Long referenceId, @ApiParam(value = "Filter (search for a specified pattern) the decision tables associated with another model (i.e. a process) by name or description.") @Valid @RequestParam(value = "filter", required = false) String filter);
 
 
@@ -92,6 +97,7 @@ public interface DecisionTableModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/decision-table-models/values",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<DecisionTableRepresentation>> getDecisionTablesUsingGET2(@NotNull @ApiParam(value = "The id of the decision table. This id can be specified multiple times in the request for each decision table model id wanted to be returned.", required = true) @Valid @RequestParam(value = "decisionTableId", required = true) String decisionTableId);
 
 
@@ -102,6 +108,7 @@ public interface DecisionTableModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/decision-table-models/history/{historyModelId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DecisionTableRepresentation> getHistoricDecisionTableUsingGET(@ApiParam(value = "Id of another version of same decision table model.", required=true) @PathVariable("historyModelId") Long historyModelId);
 
 
@@ -113,6 +120,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> importDecisionTableTextUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -124,6 +132,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> importDecisionTableUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -135,6 +144,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DecisionTableRepresentation> saveDecisionTableUsingPUT(@ApiParam(value = "Decision table id.", required=true) @PathVariable("decisionTableId") Long decisionTableId, @ApiParam(value = "" ) @Valid @RequestBody DecisionTableSaveRepresentation body);
 
 
@@ -146,6 +156,7 @@ public interface DecisionTableModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<ValidationErrorRepresentation>> validateModelUsingPUT(@ApiParam(value = "Decision table id.", required=true) @PathVariable("decisionTableId") Long decisionTableId, @ApiParam(value = "" ) @Valid @RequestBody DecisionTableSaveRepresentation body);
 
 }

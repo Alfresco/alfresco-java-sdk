@@ -39,6 +39,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -56,6 +57,7 @@ public interface DescriptorControllerApi {
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/descriptors/{descriptorId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteDescriptorUsingDELETE(@ApiParam(value = "ID of application to delete", required=true) @PathVariable("descriptorId") String descriptorId);
 
 
@@ -69,6 +71,7 @@ public interface DescriptorControllerApi {
     @RequestMapping(value = "/v1/deploy/{descriptorId}",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deployDescriptorUsingPOST(@ApiParam(value = "ID of application to deploy", required=true) @PathVariable("descriptorId") String descriptorId, @ApiParam(value = "" ) @Valid @RequestBody DeployDescriptorRequestRepresentation body);
 
 
@@ -80,6 +83,7 @@ public interface DescriptorControllerApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/descriptors/{descriptorId}/export",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     byte[] exportDescriptorUsingGET(@ApiParam(value = "descriptorId", required=true) @PathVariable("descriptorId") String descriptorId, @NotNull @ApiParam(value = "type", required = true, allowableValues="JSON"
 ) @Valid @RequestParam(value = "type", required = true) String type, @ApiParam(value = "attachment") @Valid @RequestParam(value = "attachment", required = false) Boolean attachment);
 
@@ -93,6 +97,7 @@ public interface DescriptorControllerApi {
     @RequestMapping(value = "/v1/descriptors/{descriptorId}",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DescriptorResponseRepresentation> getDescriptorUsingGET(@ApiParam(value = "ID of descriptor to return", required=true) @PathVariable("descriptorId") String descriptorId);
 
 
@@ -105,6 +110,7 @@ public interface DescriptorControllerApi {
     @RequestMapping(value = "/v1/descriptors",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfDescriptorResponseRepresentation> getDescriptorsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "createdDateFrom", required = false) LocalDate createdDateFrom, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateFromStartOfDay", required = false) OffsetDateTime createdDateFromStartOfDay, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateTo", required = false) LocalDate createdDateTo, @ApiParam(value = "") @Valid @RequestParam(value = "createdDateToEndOfDay", required = false) OffsetDateTime createdDateToEndOfDay, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "name", required = false) String name, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "", allowableValues="CREATE_APP, CREATE_DESCRIPTOR, DEPLOY_STARTED, DEPLOY_STARTED_FAILED, DESCRIPTOR_CREATED, IMAGE_BUILD, IMAGE_BUILD_FAILED, IMAGE_PUSH, IMAGE_PUSH_FAILED, NOT_DEPLOYED, PENDING, RUNNING, UNKNOWN, UPDATE_APP, WAITING_FOR_DESCRIPTOR"
 ) @Valid @RequestParam(value = "status", required = false) String status);
 
@@ -118,6 +124,7 @@ public interface DescriptorControllerApi {
     @RequestMapping(value = "/v1/descriptors/{descriptorId}/models",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<ConnectorModel>> getReleasedModelContentsUsingGET(@ApiParam(value = "The id of the descriptor to get the models of the release", required=true) @PathVariable("descriptorId") String descriptorId, @NotNull @ApiParam(value = "The type of the models of the descriptor. Only CONNECTOR type available", required = true) @Valid @RequestParam(value = "type", required = true) String type);
 
 
@@ -131,6 +138,7 @@ public interface DescriptorControllerApi {
     @RequestMapping(value = "/v1/descriptors/import",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> importDescriptorUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

@@ -39,6 +39,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -56,6 +57,7 @@ public interface ProcessDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<IdentityLinkRepresentation> createIdentityLinkUsingPOST(@ApiParam(value = "processDefinitionId", required=true) @PathVariable("processDefinitionId") String processDefinitionId, @ApiParam(value = "" ) @Valid @RequestBody IdentityLinkRepresentation body);
 
 
@@ -65,6 +67,7 @@ public interface ProcessDefinitionsApi {
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/identitylinks/{family}/{identityId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteIdentityLinkUsingDELETE(@ApiParam(value = "Process definition ID", required=true) @PathVariable("processDefinitionId") String processDefinitionId, @ApiParam(value = "Identity type", required=true) @PathVariable("family") String family, @ApiParam(value = "User or group ID", required=true) @PathVariable("identityId") String identityId);
 
 
@@ -75,6 +78,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/identitylinks/{family}/{identityId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<IdentityLinkRepresentation> getIdentityLinkTypeUsingGET(@ApiParam(value = "Process definition ID", required=true) @PathVariable("processDefinitionId") String processDefinitionId, @ApiParam(value = "Identity type", required=true) @PathVariable("family") String family, @ApiParam(value = "User or group ID", required=true) @PathVariable("identityId") String identityId);
 
 
@@ -85,6 +89,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/identitylinks/{family}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksForFamilyUsingGET(@ApiParam(value = "processDefinitionId", required=true) @PathVariable("processDefinitionId") String processDefinitionId, @ApiParam(value = "Identity type", required=true) @PathVariable("family") String family);
 
 
@@ -95,6 +100,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/identitylinks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksUsingGET(@ApiParam(value = "processDefinitionId", required=true) @PathVariable("processDefinitionId") String processDefinitionId);
 
 
@@ -105,6 +111,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/decision-tables",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationRuntimeDecisionTableRepresentation> getProcessDefinitionDecisionTablesUsingGET(@ApiParam(value = "processDefinitionId", required=true) @PathVariable("processDefinitionId") String processDefinitionId);
 
 
@@ -115,6 +122,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/forms",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationRuntimeFormRepresentation> getProcessDefinitionFormsUsingGET(@ApiParam(value = "processDefinitionId", required=true) @PathVariable("processDefinitionId") String processDefinitionId);
 
 
@@ -125,6 +133,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/start-form",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<FormDefinitionRepresentation> getProcessDefinitionStartFormUsingGET();
 
 
@@ -135,6 +144,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationProcessDefinitionRepresentation> getProcessDefinitionsUsingGET(@ApiParam(value = "latest") @Valid @RequestParam(value = "latest", required = false) Boolean latest, @ApiParam(value = "appDefinitionId") @Valid @RequestParam(value = "appDefinitionId", required = false) Long appDefinitionId, @ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) String deploymentId);
 
 
@@ -145,6 +155,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/start-form-values/{field}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET();
 
 
@@ -155,6 +166,7 @@ public interface ProcessDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-definitions/{processDefinitionId}/start-form-values/{field}/{column}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<FormValueRepresentation>> getRestTableFieldValuesUsingGET();
 
 }

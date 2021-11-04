@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<RestVariable>> createOrUpdateProcessInstanceVariablesUsingPUT(@ApiParam(value = "Process instance ID", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody List<RestVariable> body);
 
 
@@ -62,6 +64,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<RestVariable>> createProcessInstanceVariablesUsingPOST(@ApiParam(value = "Process instance ID", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody List<RestVariable> body);
 
 
@@ -71,6 +74,7 @@ public interface ProcessInstanceVariablesApi {
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables/{variableName}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteProcessInstanceVariableUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName);
 
 
@@ -81,6 +85,7 @@ public interface ProcessInstanceVariablesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables/{variableName}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RestVariable> getProcessInstanceVariableUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName);
 
 
@@ -91,6 +96,7 @@ public interface ProcessInstanceVariablesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<RestVariable>> getProcessInstanceVariablesUsingGET(@ApiParam(value = "Process instance ID", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -102,6 +108,7 @@ public interface ProcessInstanceVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RestVariable> updateProcessInstanceVariableUsingPUT(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "" ) @Valid @RequestBody RestVariable body);
 
 }

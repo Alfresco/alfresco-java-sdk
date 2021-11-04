@@ -78,6 +78,9 @@ public class DeletedNode   {
   @JsonProperty("isFavorite")
   private Boolean isFavorite = null;
 
+  @JsonProperty("isDirectLinkEnabled")
+  private Boolean isDirectLinkEnabled = null;
+
   @JsonProperty("content")
   private ContentInfo content = null;
 
@@ -380,6 +383,26 @@ public class DeletedNode   {
     this.isFavorite = isFavorite;
   }
 
+  public DeletedNode isDirectLinkEnabled(Boolean isDirectLinkEnabled) {
+    this.isDirectLinkEnabled = isDirectLinkEnabled;
+    return this;
+  }
+
+  /**
+   * Get isDirectLinkEnabled
+   * @return isDirectLinkEnabled
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Boolean isIsDirectLinkEnabled() {
+    return isDirectLinkEnabled;
+  }
+
+  public void setIsDirectLinkEnabled(Boolean isDirectLinkEnabled) {
+    this.isDirectLinkEnabled = isDirectLinkEnabled;
+  }
+
   public DeletedNode content(ContentInfo content) {
     this.content = content;
     return this;
@@ -607,6 +630,7 @@ public class DeletedNode   {
         Objects.equals(this.parentId, deletedNode.parentId) &&
         Objects.equals(this.isLink, deletedNode.isLink) &&
         Objects.equals(this.isFavorite, deletedNode.isFavorite) &&
+        Objects.equals(this.isDirectLinkEnabled, deletedNode.isDirectLinkEnabled) &&
         Objects.equals(this.content, deletedNode.content) &&
         Objects.equals(this.aspectNames, deletedNode.aspectNames) &&
         Objects.equals(this.properties, deletedNode.properties) &&
@@ -620,7 +644,7 @@ public class DeletedNode   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, definition, archivedByUser, archivedAt);
+    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, isDirectLinkEnabled, content, aspectNames, properties, allowableOperations, path, permissions, definition, archivedByUser, archivedAt);
   }
 
   @Override
@@ -641,6 +665,7 @@ public class DeletedNode   {
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    isLink: ").append(toIndentedString(isLink)).append("\n");
     sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
+    sb.append("    isDirectLinkEnabled: ").append(toIndentedString(isDirectLinkEnabled)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    aspectNames: ").append(toIndentedString(aspectNames)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");

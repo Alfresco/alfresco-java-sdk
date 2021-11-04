@@ -11,6 +11,8 @@ Method | HTTP request | Description
 [**getDeletedNodeContent**](TrashcanApi.md#getDeletedNodeContent) | **GET** /deleted-nodes/{nodeId}/content | Get deleted node content
 [**listDeletedNodeRenditions**](TrashcanApi.md#listDeletedNodeRenditions) | **GET** /deleted-nodes/{nodeId}/renditions | List renditions for a deleted node
 [**listDeletedNodes**](TrashcanApi.md#listDeletedNodes) | **GET** /deleted-nodes | List deleted nodes
+[**requestArchivedNodeRenditionDirectAccessUrl**](TrashcanApi.md#requestArchivedNodeRenditionDirectAccessUrl) | **POST** /deleted-nodes/{nodeId}/renditions/{renditionId}/request-direct-access-url | Generate a direct access content URL
+[**requestDeletedNodeDirectAccessUrl**](TrashcanApi.md#requestDeletedNodeDirectAccessUrl) | **POST** /deleted-nodes/{nodeId}/request-direct-access-url | Generate a direct access content URL
 [**restoreDeletedNode**](TrashcanApi.md#restoreDeletedNode) | **POST** /deleted-nodes/{nodeId}/restore | Restore a deleted node
 
 
@@ -114,7 +116,7 @@ Get a deleted node
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nodeId** | **String**| The identifier of a node. |
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isLocked * path * permissions * definition  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * permissions * definition  | [optional]
 
 ### Return type
 
@@ -201,11 +203,68 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **skipCount** | **Integer**| The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0.  | [optional] [default to 0]
  **maxItems** | **Integer**| The maximum number of items to return in the list. If not supplied then the default value is 100.  | [optional] [default to 100]
- **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isLocked * path * properties * permissions  | [optional]
+ **include** | [**List&lt;String&gt;**](String.md)| Returns additional information about the node. The following optional fields can be requested: * allowableOperations * aspectNames * association * isLink * isFavorite * isDirectLinkEnabled * isLocked * path * properties * permissions  | [optional]
 
 ### Return type
 
 [**DeletedNodesPaging**](DeletedNodesPaging.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="requestArchivedNodeRenditionDirectAccessUrl"></a>
+# **requestArchivedNodeRenditionDirectAccessUrl**
+> DirectAccessUrlEntry requestArchivedNodeRenditionDirectAccessUrl(nodeId, renditionId, requestContentUrlBodyCreate)
+
+Generate a direct access content URL
+
+**Note:** this endpoint is available in Alfresco 7.1 and newer versions. Generate a direct access content url for the given **nodeId**. 
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nodeId** | **String**| The identifier of a node. |
+ **renditionId** | **String**| The name of a thumbnail rendition, for example *doclib*, or *pdf*. |
+ **requestContentUrlBodyCreate** | [**DirectAccessUrlBodyCreate**](DirectAccessUrlBodyCreate.md)| Direct Access URL options and flags.  It can be used to set the **attachment** flag, which controls the download method of the generated URL (attachment DAU vs embedded DAU). It defaults to **true**, meaning the value for the Content Disposition response header will be **attachment**.  Note: It is up to the actual ContentStore implementation if it can fulfil this request or not.  | [optional]
+
+### Return type
+
+[**DirectAccessUrlEntry**](DirectAccessUrlEntry.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="requestDeletedNodeDirectAccessUrl"></a>
+# **requestDeletedNodeDirectAccessUrl**
+> DirectAccessUrlEntry requestDeletedNodeDirectAccessUrl(nodeId, requestContentUrlBodyCreate)
+
+Generate a direct access content URL
+
+**Note:** this endpoint is available in Alfresco 7.1 and newer versions. Generate a direct access content url for the given **nodeId**. 
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nodeId** | **String**| The identifier of a node. |
+ **requestContentUrlBodyCreate** | [**DirectAccessUrlBodyCreate**](DirectAccessUrlBodyCreate.md)| Direct Access URL options and flags.  It can be used to set the **attachment** flag, which controls the download method of the generated URL (attachment DAU vs embedded DAU). It defaults to **true**, meaning the value for the Content Disposition response header will be **attachment**.  Note: It is up to the actual ContentStore implementation if it can fulfil this request or not.  | [optional]
+
+### Return type
+
+[**DirectAccessUrlEntry**](DirectAccessUrlEntry.md)
 
 ### Authorization
 

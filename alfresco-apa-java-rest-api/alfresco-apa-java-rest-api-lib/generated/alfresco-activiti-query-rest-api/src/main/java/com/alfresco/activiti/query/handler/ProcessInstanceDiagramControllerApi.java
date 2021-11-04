@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface ProcessInstanceDiagramControllerApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/diagram",
         produces = "image/svg+xml", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> getProcessDiagramUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 }

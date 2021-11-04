@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -54,6 +55,7 @@ public interface IntegrationBoxApi {
         @ApiResponse(code = 409, message = "No credentials stored to access box or credentials are invalid or expired") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/confirm-auth-request",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> confirmAuthorisationUsingGET();
 
 
@@ -65,6 +67,7 @@ public interface IntegrationBoxApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/{userId}/account",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> createRepositoryAccountUsingPOST(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "" ) @Valid @RequestBody UserAccountCredentialsRepresentation body);
 
 
@@ -76,6 +79,7 @@ public interface IntegrationBoxApi {
         @ApiResponse(code = 404, message = "No Box account exists") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/{userId}/account",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteRepositoryAccountUsingDELETE(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
@@ -86,6 +90,7 @@ public interface IntegrationBoxApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/status",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Boolean> getBoxPluginStatusUsingGET();
 
 
@@ -99,6 +104,7 @@ public interface IntegrationBoxApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/files",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationBoxContent> getFilesUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "parent") @Valid @RequestParam(value = "parent", required = false) String parent);
 
 
@@ -110,6 +116,7 @@ public interface IntegrationBoxApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/{userId}/account",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getRepositoryAccountUsingGET(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
@@ -122,6 +129,7 @@ public interface IntegrationBoxApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/{userId}/account",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> updateRepositoryAccountUsingPUT(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "" ) @Valid @RequestBody UserAccountCredentialsRepresentation body);
 
 }

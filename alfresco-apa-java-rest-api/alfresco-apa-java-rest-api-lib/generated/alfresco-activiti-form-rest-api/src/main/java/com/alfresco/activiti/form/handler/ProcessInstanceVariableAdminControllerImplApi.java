@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface ProcessInstanceVariableAdminControllerImplApi {
     @RequestMapping(value = "/admin/v1/process-instances/{processInstanceId}/variables",
         consumes = "application/json",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> removeVariablesUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody RemoveProcessVariablesPayload body);
 
 
@@ -66,6 +68,7 @@ public interface ProcessInstanceVariableAdminControllerImplApi {
     @RequestMapping(value = "/admin/v1/process-instances/{processInstanceId}/variables",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> updateVariablesUsingPUT(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody SetProcessVariablesPayload body);
 
 }

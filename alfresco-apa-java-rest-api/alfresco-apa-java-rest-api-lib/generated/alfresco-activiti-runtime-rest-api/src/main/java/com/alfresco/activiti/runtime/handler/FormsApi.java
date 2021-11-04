@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -55,6 +56,7 @@ public interface FormsApi {
     @RequestMapping(value = "/v1/forms/{formId}/versions/{version}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> getFormDefinitionUsingGET(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version);
 
 
@@ -67,6 +69,7 @@ public interface FormsApi {
     @RequestMapping(value = "/v1/forms/{formId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> getFormDefinitionUsingGET1(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId);
 
 
@@ -79,6 +82,7 @@ public interface FormsApi {
     @RequestMapping(value = "/v1/forms",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> getFormDefinitionsUsingGET();
 
 
@@ -93,6 +97,7 @@ public interface FormsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<NamedObject>> getFormFieldValueUsingPOST(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId, @ApiParam(value = "The id of the form field", required=true) @PathVariable("formFieldId") String formFieldId, @ApiParam(value = "" ) @Valid @RequestBody Map<String, String> body);
 
 
@@ -106,6 +111,7 @@ public interface FormsApi {
     @RequestMapping(value = "/v1/forms/{formId}/save",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> saveFormUsingPOST(@ApiParam(value = "The id of the form instance to be saved", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SaveFormRepresentation body);
 
 
@@ -120,6 +126,7 @@ public interface FormsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> submitFormUsingPOST(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 
@@ -134,6 +141,7 @@ public interface FormsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> submitFormUsingPOST1(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 }

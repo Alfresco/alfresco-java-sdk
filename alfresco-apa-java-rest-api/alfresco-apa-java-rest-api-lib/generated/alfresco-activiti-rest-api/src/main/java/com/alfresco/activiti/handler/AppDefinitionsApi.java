@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -52,6 +53,7 @@ public interface AppDefinitionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{appDefinitionId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteAppDefinitionUsingDELETE(@ApiParam(value = "appDefinitionId", required=true) @PathVariable("appDefinitionId") Long appDefinitionId);
 
 
@@ -64,6 +66,7 @@ public interface AppDefinitionsApi {
         @ApiResponse(code = 500, message = "Could not deserialize app definition <div><b>or</b></div> Model contains validation errors, please fix the issues in the editor <div><b>or</b></div> Could not generate app definition zip archive") })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{modelId}/export",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> exportAppDefinitionUsingGET(@ApiParam(value = "modelId from a runtime app or the id of an app definition model", required=true) @PathVariable("modelId") Long modelId);
 
 
@@ -74,6 +77,7 @@ public interface AppDefinitionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{modelId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionRepresentation> getAppDefinitionUsingGET(@ApiParam(value = "Application definition ID", required=true) @PathVariable("modelId") Long modelId);
 
 
@@ -85,6 +89,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionUpdateResultRepresentation> importAndPublishAppUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -96,6 +101,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionUpdateResultRepresentation> importAndPublishAppUsingPOST1(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -107,6 +113,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionRepresentation> importAppDefinitionUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -118,6 +125,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionRepresentation> importAppDefinitionUsingPOST1(@ApiParam(value = "Whether to renew user and group identifiers") @Valid @RequestParam(value = "renewIdmEntries", required = false) String renewIdmEntries, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -129,6 +137,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionUpdateResultRepresentation> publishAppDefinitionUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody AppDefinitionPublishRepresentation body);
 
 
@@ -140,6 +149,7 @@ public interface AppDefinitionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDefinitionUpdateResultRepresentation> updateAppDefinitionUsingPUT(@ApiParam(value = "Application definition ID", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody AppDefinitionSaveRepresentation body);
 
 }

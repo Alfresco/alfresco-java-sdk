@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -54,6 +55,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AlfrescoEndpointRepresentation> createRepositoryUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody AlfrescoEndpointRepresentation body);
 
 
@@ -63,6 +65,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteRepositoryUsingDELETE(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") Long repositoryId);
 
 
@@ -73,6 +76,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}/sites",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAlfrescoSiteRepresenation> getAllSitesUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId);
 
 
@@ -83,6 +87,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/rest/integration/alfresco/{repositoryId}/sites/{siteId}/folderpath/{folderPath}/content",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInFolderPathUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId, @ApiParam(value = "siteId", required=true) @PathVariable("siteId") String siteId, @ApiParam(value = "folderPath", required=true) @PathVariable("folderPath") String folderPath);
 
 
@@ -93,6 +98,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}/folders/{folderId}/content",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInFolderUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId, @ApiParam(value = "folderId", required=true) @PathVariable("folderId") String folderId);
 
 
@@ -103,6 +109,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}/sites/{siteId}/content",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInSiteUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId, @ApiParam(value = "siteId", required=true) @PathVariable("siteId") String siteId);
 
 
@@ -113,6 +120,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/profile/accounts/alfresco",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAlfrescoEndpointRepresentation> getRepositoriesUsingGET(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "includeAccounts") @Valid @RequestParam(value = "includeAccounts", required = false) Boolean includeAccounts);
 
 
@@ -124,6 +132,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AlfrescoEndpointRepresentation> updateRepositoryUsingPUT(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") Long repositoryId, @ApiParam(value = "" ) @Valid @RequestBody AlfrescoEndpointRepresentation body);
 
 }

@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface UserProfileApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/profile-password",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> changePasswordUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ChangePasswordRepresentation body);
 
 
@@ -62,6 +64,7 @@ public interface UserProfileApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/profile-picture",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getProfilePictureUsingGET();
 
 
@@ -72,6 +75,7 @@ public interface UserProfileApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/profile",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserRepresentation> getProfileUsingGET();
 
 
@@ -83,6 +87,7 @@ public interface UserProfileApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserRepresentation> updateUserUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserRepresentation body);
 
 
@@ -94,6 +99,7 @@ public interface UserProfileApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ImageUploadRepresentation> uploadProfilePictureUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

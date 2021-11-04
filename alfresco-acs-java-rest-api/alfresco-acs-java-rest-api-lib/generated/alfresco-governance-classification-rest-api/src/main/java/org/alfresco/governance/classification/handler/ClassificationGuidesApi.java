@@ -41,6 +41,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -62,6 +63,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<InstructionEntry> combinedInstructions(@ApiParam(value = "Instructions"  )  @Valid @RequestBody CombinedInstructionBody instructions);
 
 
@@ -80,6 +82,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ClassificationGuideEntry> createClassificationGuide(@ApiParam(value = "Classification guide" ,required=true )  @Valid @RequestBody ClassificationGuideBody classificationGuide);
 
 
@@ -99,6 +102,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TopicEntry> createSubtopic(@ApiParam(value = "The identifier for the topic",required=true) @PathVariable("topicId") String topicId,@ApiParam(value = "Subtopic" ,required=true )  @Valid @RequestBody TopicBody topic,@ApiParam(value = "Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
@@ -118,6 +122,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TopicEntry> createTopic(@ApiParam(value = "The identifier for the classification guide",required=true) @PathVariable("classificationGuideId") String classificationGuideId,@ApiParam(value = "Topic" ,required=true )  @Valid @RequestBody TopicBody topic,@ApiParam(value = "Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
@@ -135,6 +140,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteClassificationGuide(@ApiParam(value = "The identifier for the classification guide",required=true) @PathVariable("classificationGuideId") String classificationGuideId);
 
 
@@ -152,6 +158,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteTopic(@ApiParam(value = "The identifier for the topic",required=true) @PathVariable("topicId") String topicId);
 
 
@@ -166,6 +173,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ClassificationGuidePaging> listClassificationGuides(@ApiParam(value = "Returns additional information about the guide. The following optional fields can be requested: * hasTopics - A flag indicating whether the guide already contains any topics. ") @Valid @RequestParam(value = "include", required = false) List<String> include,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally acending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@ApiParam(value = "A string to restrict the returned objects by using a predicate. Supported operations are AND, NOT, and OR. Fields to filter on: * enabled - e.g. (enabled = true OR enabled = false) ") @Valid @RequestParam(value = "where", required = false) String where);
 
 
@@ -181,6 +189,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SubtopicPaging> listSubtopics(@ApiParam(value = "The identifier for the topic",required=true) @PathVariable("topicId") String topicId,@ApiParam(value = "Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. ") @Valid @RequestParam(value = "include", required = false) List<String> include,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally acending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@ApiParam(value = "A string to restrict the returned objects by using a predicate. Supported operations are AND, NOT, and OR. Fields to filter on: * hasInstruction * hasSubtopics ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Also include **source** in addition to **entries** with folder information on the parent guide/topic") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource);
 
 
@@ -197,6 +206,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TopicPaging> listTopics(@ApiParam(value = "The identifier for the classification guide",required=true) @PathVariable("classificationGuideId") String classificationGuideId,@ApiParam(value = "Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. ") @Valid @RequestParam(value = "include", required = false) List<String> include,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally acending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@ApiParam(value = "A string to restrict the returned objects by using a predicate. Supported operations are AND, NOT, and OR e.g. (instruction=true and hasSubtopics=false). Fields to filter on: * hasInstruction * hasSubtopics ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Also include **source** in addition to **entries** with folder information on the parent guide/topic") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource);
 
 
@@ -213,6 +223,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ClassificationGuideEntry> showClassificationGuideById(@ApiParam(value = "The identifier for the classification guide",required=true) @PathVariable("classificationGuideId") String classificationGuideId);
 
 
@@ -229,6 +240,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TopicEntry> showTopicById(@ApiParam(value = "The identifier for the topic",required=true) @PathVariable("topicId") String topicId,@ApiParam(value = "Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 
@@ -248,6 +260,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ClassificationGuideEntry> updateClassificationGuide(@ApiParam(value = "The identifier for the classification guide",required=true) @PathVariable("classificationGuideId") String classificationGuideId,@ApiParam(value = "Classification guide" ,required=true )  @Valid @RequestBody ClassificationGuideBody classificationGuide);
 
 
@@ -267,6 +280,7 @@ public interface ClassificationGuidesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TopicEntry> updateTopic(@ApiParam(value = "The identifier for the topic",required=true) @PathVariable("topicId") String topicId,@ApiParam(value = "Topic" ,required=true )  @Valid @RequestBody TopicBody topic,@ApiParam(value = "Returns additional information about the topic. The following optional fields can be requested: * hasSubtopics - A flag indicating whether the topic already contains any subtopics. * instruction - Contains details of any instruction in the topic. * path - An ordered list of id-name pairs of all ancestor topics and the classification guide. * classificationGuide - The classification guide this topic is in. ") @Valid @RequestParam(value = "include", required = false) List<String> include);
 
 }

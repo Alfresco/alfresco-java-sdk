@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -54,6 +55,7 @@ public interface TaskActionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TaskRepresentation> assignTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody AssigneeIdentifierRepresentation body);
 
 
@@ -64,6 +66,7 @@ public interface TaskActionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/attach-form",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> attachFormUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody FormIdentifierRepresentation body);
 
 
@@ -73,6 +76,7 @@ public interface TaskActionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/claim",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> claimTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -82,6 +86,7 @@ public interface TaskActionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/complete",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> completeTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -92,6 +97,7 @@ public interface TaskActionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/delegate",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> delegateTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UserIdentifierRepresentation body);
 
 
@@ -101,6 +107,7 @@ public interface TaskActionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/groups/{groupId}",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> involveGroupUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "groupId", required=true) @PathVariable("groupId") String groupId);
 
 
@@ -111,6 +118,7 @@ public interface TaskActionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/involve",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> involveUserUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UserIdentifierRepresentation body);
 
 
@@ -120,6 +128,7 @@ public interface TaskActionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/remove-form",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> removeFormUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -129,6 +138,7 @@ public interface TaskActionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/groups/{groupId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> removeInvolvedUserUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "groupId", required=true) @PathVariable("groupId") String groupId);
 
 
@@ -139,6 +149,7 @@ public interface TaskActionsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/remove-involved",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> removeInvolvedUserUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UserIdentifierRepresentation body);
 
 
@@ -148,6 +159,7 @@ public interface TaskActionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/resolve",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> resolveTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -157,6 +169,7 @@ public interface TaskActionsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/unclaim",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> unclaimTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 }

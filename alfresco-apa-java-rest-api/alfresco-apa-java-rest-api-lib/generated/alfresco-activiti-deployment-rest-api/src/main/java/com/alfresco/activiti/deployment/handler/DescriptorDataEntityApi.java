@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface DescriptorDataEntityApi {
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> descriptorDataDescriptorUsingDELETE(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
@@ -63,6 +65,7 @@ public interface DescriptorDataEntityApi {
     @RequestMapping(value = "/descriptorDatas/{id}/descriptor",
         produces = "application/hal+json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
@@ -76,6 +79,7 @@ public interface DescriptorDataEntityApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.PATCH)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingPATCH(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 
@@ -90,6 +94,7 @@ public interface DescriptorDataEntityApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingPOST(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 
@@ -104,6 +109,7 @@ public interface DescriptorDataEntityApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfDescriptor> descriptorDataDescriptorUsingPUT(@ApiParam(value = "id", required=true) @PathVariable("id") String id, @ApiParam(value = "" ) @Valid @RequestBody String body);
 
 }

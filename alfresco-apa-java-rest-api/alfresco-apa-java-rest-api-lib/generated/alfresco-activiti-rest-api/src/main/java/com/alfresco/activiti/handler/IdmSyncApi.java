@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -49,6 +50,7 @@ public interface IdmSyncApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/idm-sync-log-entries/{syncLogEntryId}/logfile",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getLogFileUsingGET(@ApiParam(value = "syncLogEntryId", required=true) @PathVariable("syncLogEntryId") Long syncLogEntryId);
 
 
@@ -59,6 +61,7 @@ public interface IdmSyncApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/idm-sync-log-entries",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<SyncLogEntryRepresentation>> getSyncLogEntriesUsingGET(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 }

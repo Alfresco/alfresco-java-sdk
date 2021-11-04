@@ -41,6 +41,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -58,6 +59,7 @@ public interface TasksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<IdentityLinkRepresentation> createIdentityLinkUsingPOST2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody IdentityLinkRepresentation body);
 
 
@@ -70,6 +72,7 @@ public interface TasksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TaskRepresentation> createNewTaskUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody TaskRepresentation body);
 
 
@@ -79,6 +82,7 @@ public interface TasksApi {
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks/{family}/{identityId}/{type}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteIdentityLinkUsingDELETE2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
@@ -88,6 +92,7 @@ public interface TasksApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteTaskUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -99,6 +104,7 @@ public interface TasksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationTaskRepresentation> filterTasksUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody TaskFilterRequestRepresentation body);
 
 
@@ -109,6 +115,7 @@ public interface TasksApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks/{family}/{identityId}/{type}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<IdentityLinkRepresentation> getIdentityLinkTypeUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
@@ -119,6 +126,7 @@ public interface TasksApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks/{family}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksForFamilyUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "family", required=true) @PathVariable("family") String family);
 
 
@@ -129,6 +137,7 @@ public interface TasksApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -139,6 +148,7 @@ public interface TasksApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/audit",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TaskAuditInfoRepresentation> getTaskAuditLogUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -149,6 +159,7 @@ public interface TasksApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TaskRepresentation> getTaskUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -160,6 +171,7 @@ public interface TasksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationTaskRepresentation> listHistoricTasksUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody HistoricTaskInstanceQueryRepresentation body);
 
 
@@ -171,6 +183,7 @@ public interface TasksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationTaskRepresentation> listTasksUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody TaskQueryRepresentation body);
 
 
@@ -182,6 +195,7 @@ public interface TasksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TaskRepresentation> updateTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody TaskUpdateRepresentation body);
 
 }

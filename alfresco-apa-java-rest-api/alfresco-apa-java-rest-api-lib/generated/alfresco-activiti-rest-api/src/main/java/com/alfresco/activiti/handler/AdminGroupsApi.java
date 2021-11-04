@@ -39,6 +39,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -54,6 +55,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/action/activate",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> activateUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
@@ -63,6 +65,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/add-all-users",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> addAllUsersToGroupUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
@@ -73,6 +76,7 @@ public interface AdminGroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/capabilities",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> addGroupCapabilitiesUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "" ) @Valid @RequestBody AddGroupCapabilitiesRepresentation body);
 
 
@@ -82,6 +86,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/members/{userId}",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> addGroupMemberUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
@@ -91,6 +96,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/related-groups/{relatedGroupId}",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> addRelatedGroupUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "relatedGroupId", required=true) @PathVariable("relatedGroupId") Long relatedGroupId, @NotNull @ApiParam(value = "type", required = true) @Valid @RequestParam(value = "type", required = true) String type);
 
 
@@ -102,6 +108,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<LightGroupRepresentation> createNewGroupUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody GroupRepresentation body);
 
 
@@ -111,6 +118,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/capabilities/{groupCapabilityId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteGroupCapabilityUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "groupCapabilityId", required=true) @PathVariable("groupCapabilityId") Long groupCapabilityId);
 
 
@@ -120,6 +128,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/members/{userId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteGroupMemberUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
@@ -129,6 +138,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteGroupUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
@@ -138,6 +148,7 @@ public interface AdminGroupsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/related-groups/{relatedGroupId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteRelatedGroupUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "relatedGroupId", required=true) @PathVariable("relatedGroupId") Long relatedGroupId);
 
 
@@ -148,6 +159,7 @@ public interface AdminGroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/potential-capabilities",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<String>> getCapabilitiesUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
@@ -158,6 +170,7 @@ public interface AdminGroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/users",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getGroupUsersUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page, @ApiParam(value = "pageSize") @Valid @RequestParam(value = "pageSize", required = false) Integer pageSize);
 
 
@@ -168,6 +181,7 @@ public interface AdminGroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AbstractGroupRepresentation> getGroupUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "includeAllUsers") @Valid @RequestParam(value = "includeAllUsers", required = false) Boolean includeAllUsers, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
@@ -178,6 +192,7 @@ public interface AdminGroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<LightGroupRepresentation>> getGroupsUsingGET1(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "functional") @Valid @RequestParam(value = "functional", required = false) Boolean functional, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
@@ -188,6 +203,7 @@ public interface AdminGroupsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/related-groups",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<LightGroupRepresentation>> getRelatedGroupsUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
@@ -199,6 +215,7 @@ public interface AdminGroupsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<LightGroupRepresentation> updateGroupUsingPUT(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "" ) @Valid @RequestBody UpdateGroupRepresentation body);
 
 }

@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.OffsetDateTime;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -31,52 +30,27 @@ import javax.validation.constraints.*;
 @Validated
 
 public class DirectAccessUrlBodyCreate   {
-  @JsonProperty("expiresAt")
-  private OffsetDateTime expiresAt = null;
+  @JsonProperty("attachment")
+  private Boolean attachment = null;
 
-  @JsonProperty("validFor")
-  private Integer validFor = null;
-
-  public DirectAccessUrlBodyCreate expiresAt(OffsetDateTime expiresAt) {
-    this.expiresAt = expiresAt;
+  public DirectAccessUrlBodyCreate attachment(Boolean attachment) {
+    this.attachment = attachment;
     return this;
   }
 
   /**
-   * Get expiresAt
-   * @return expiresAt
+   * URL type (embedded/attachment).
+   * @return attachment
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL type (embedded/attachment).")
 
-  @Valid
 
-  public OffsetDateTime getExpiresAt() {
-    return expiresAt;
+  public Boolean isAttachment() {
+    return attachment;
   }
 
-  public void setExpiresAt(OffsetDateTime expiresAt) {
-    this.expiresAt = expiresAt;
-  }
-
-  public DirectAccessUrlBodyCreate validFor(Integer validFor) {
-    this.validFor = validFor;
-    return this;
-  }
-
-  /**
-   * The length of time in seconds that the url is valid for. 
-   * minimum: 1
-   * @return validFor
-  **/
-  @ApiModelProperty(value = "The length of time in seconds that the url is valid for. ")
-
-@Min(1)
-  public Integer getValidFor() {
-    return validFor;
-  }
-
-  public void setValidFor(Integer validFor) {
-    this.validFor = validFor;
+  public void setAttachment(Boolean attachment) {
+    this.attachment = attachment;
   }
 
 
@@ -89,13 +63,12 @@ public class DirectAccessUrlBodyCreate   {
       return false;
     }
     DirectAccessUrlBodyCreate directAccessUrlBodyCreate = (DirectAccessUrlBodyCreate) o;
-    return Objects.equals(this.expiresAt, directAccessUrlBodyCreate.expiresAt) &&
-        Objects.equals(this.validFor, directAccessUrlBodyCreate.validFor);
+    return Objects.equals(this.attachment, directAccessUrlBodyCreate.attachment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expiresAt, validFor);
+    return Objects.hash(attachment);
   }
 
   @Override
@@ -103,8 +76,7 @@ public class DirectAccessUrlBodyCreate   {
     StringBuilder sb = new StringBuilder();
     sb.append("class DirectAccessUrlBodyCreate {\n");
     
-    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
-    sb.append("    validFor: ").append(toIndentedString(validFor)).append("\n");
+    sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface ModelsHistoryApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/history",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelHistoryCollectionUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "includeLatestVersion") @Valid @RequestParam(value = "includeLatestVersion", required = false) Boolean includeLatestVersion);
 
 
@@ -61,6 +63,7 @@ public interface ModelsHistoryApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/history/{modelHistoryId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ModelRepresentation> getProcessModelHistoryUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "modelHistoryId", required=true) @PathVariable("modelHistoryId") Long modelHistoryId);
 
 }

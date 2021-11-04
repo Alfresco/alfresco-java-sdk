@@ -42,6 +42,9 @@ public class StatusInfo   {
   @JsonProperty("isThumbnailGenerationEnabled")
   private Boolean isThumbnailGenerationEnabled = null;
 
+  @JsonProperty("isDirectAccessUrlEnabled")
+  private Boolean isDirectAccessUrlEnabled = null;
+
   public StatusInfo isReadOnly(Boolean isReadOnly) {
     this.isReadOnly = isReadOnly;
     return this;
@@ -126,6 +129,27 @@ public class StatusInfo   {
     this.isThumbnailGenerationEnabled = isThumbnailGenerationEnabled;
   }
 
+  public StatusInfo isDirectAccessUrlEnabled(Boolean isDirectAccessUrlEnabled) {
+    this.isDirectAccessUrlEnabled = isDirectAccessUrlEnabled;
+    return this;
+  }
+
+  /**
+   * Get isDirectAccessUrlEnabled
+   * @return isDirectAccessUrlEnabled
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+
+  public Boolean isIsDirectAccessUrlEnabled() {
+    return isDirectAccessUrlEnabled;
+  }
+
+  public void setIsDirectAccessUrlEnabled(Boolean isDirectAccessUrlEnabled) {
+    this.isDirectAccessUrlEnabled = isDirectAccessUrlEnabled;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -139,12 +163,13 @@ public class StatusInfo   {
     return Objects.equals(this.isReadOnly, statusInfo.isReadOnly) &&
         Objects.equals(this.isAuditEnabled, statusInfo.isAuditEnabled) &&
         Objects.equals(this.isQuickShareEnabled, statusInfo.isQuickShareEnabled) &&
-        Objects.equals(this.isThumbnailGenerationEnabled, statusInfo.isThumbnailGenerationEnabled);
+        Objects.equals(this.isThumbnailGenerationEnabled, statusInfo.isThumbnailGenerationEnabled) &&
+        Objects.equals(this.isDirectAccessUrlEnabled, statusInfo.isDirectAccessUrlEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isReadOnly, isAuditEnabled, isQuickShareEnabled, isThumbnailGenerationEnabled);
+    return Objects.hash(isReadOnly, isAuditEnabled, isQuickShareEnabled, isThumbnailGenerationEnabled, isDirectAccessUrlEnabled);
   }
 
   @Override
@@ -156,6 +181,7 @@ public class StatusInfo   {
     sb.append("    isAuditEnabled: ").append(toIndentedString(isAuditEnabled)).append("\n");
     sb.append("    isQuickShareEnabled: ").append(toIndentedString(isQuickShareEnabled)).append("\n");
     sb.append("    isThumbnailGenerationEnabled: ").append(toIndentedString(isThumbnailGenerationEnabled)).append("\n");
+    sb.append("    isDirectAccessUrlEnabled: ").append(toIndentedString(isDirectAccessUrlEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
