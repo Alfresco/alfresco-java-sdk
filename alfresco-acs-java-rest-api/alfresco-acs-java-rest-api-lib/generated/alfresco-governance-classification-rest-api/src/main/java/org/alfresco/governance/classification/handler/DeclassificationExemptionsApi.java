@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -57,6 +58,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DeclassificationExemptionEntry> createDeclassificationExemption(@ApiParam(value = "Declassification exemption" ,required=true )  @Valid @RequestBody DeclassificationExemptionBody declassificationExemption);
 
 
@@ -75,6 +77,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteDeclassificationExemption(@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String declassificationExemptionId);
 
 
@@ -89,6 +92,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DeclassificationExemptionsPaging> listDeclassificationExemptions(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems);
 
 
@@ -105,6 +109,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DeclassificationExemptionEntry> showDeclassificationExemptionById(@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String declassificationExemptionId);
 
 
@@ -123,6 +128,7 @@ public interface DeclassificationExemptionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DeclassificationExemptionEntry> updateDeclassificationExemption(@ApiParam(value = "The identifier for the declassification exemption",required=true) @PathVariable("declassificationExemptionId") String declassificationExemptionId,@ApiParam(value = "Declassification exemption" ,required=true )  @Valid @RequestBody DeclassificationExemptionBody declassificationExemption);
 
 }

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **parentId** | **String** |  |  [optional]
 **isLink** | **Boolean** |  |  [optional]
 **isFavorite** | **Boolean** |  |  [optional]
+**isDirectLinkEnabled** | **Boolean** |  |  [optional]
 **content** | [**ContentInfo**](ContentInfo.md) |  |  [optional]
 **aspectNames** | **List&lt;String&gt;** |  |  [optional]
 **properties** | **Object** |  |  [optional]

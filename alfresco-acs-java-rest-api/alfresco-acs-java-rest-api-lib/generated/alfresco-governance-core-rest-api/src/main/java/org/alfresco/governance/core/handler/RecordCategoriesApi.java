@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -60,6 +61,7 @@ public interface RecordCategoriesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordCategoryChildEntry> createRecordCategoryChild(@ApiParam(value = "The identifier of a record category.",required=true) @PathVariable("recordCategoryId") String recordCategoryId,@ApiParam(value = "The node information to create. " ,required=true )  @Valid @RequestBody RMNodeBodyCreateWithRelativePath nodeBodyCreate,@ApiParam(value = "If true, then  a name clash will cause an attempt to auto rename by finding a unique name using an integer suffix. ") @Valid @RequestParam(value = "autoRename", required = false) Boolean autoRename,@ApiParam(value = "Returns additional information about the record category. Any optional field from the response model can be requested. For example: * allowableOperations * hasRetentionSchedule * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -78,6 +80,7 @@ public interface RecordCategoriesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteRecordCategory(@ApiParam(value = "The identifier of a record category.",required=true) @PathVariable("recordCategoryId") String recordCategoryId);
 
 
@@ -95,6 +98,7 @@ public interface RecordCategoriesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordCategoryEntry> getRecordCategory(@ApiParam(value = "The identifier of a record category.",required=true) @PathVariable("recordCategoryId") String recordCategoryId,@ApiParam(value = "Returns additional information about the record category. Any optional field from the response model can be requested. For example: * allowableOperations * hasRetentionSchedule * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Return information on children in the record category resolved by this path. The path is relative to **recordCategoryId**. ") @Valid @RequestParam(value = "relativePath", required = false) String relativePath,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -111,6 +115,7 @@ public interface RecordCategoriesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordCategoryChildPaging> listRecordCategoryChildren(@ApiParam(value = "The identifier of a record category.",required=true) @PathVariable("recordCategoryId") String recordCategoryId,@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list.") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list.") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems,@ApiParam(value = "Optionally filter the list. Here are some examples:  *   ```where=(nodeType='rma:recordFolder')```  *   ```where=(nodeType='rma:recordCategory')```  *   ```where=(isRecordFolder=true AND isClosed=false)``` ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Returns additional information about the record category child. Any optional field from the response model can be requested. For example: * allowableOperations * aspectNames * hasRetentionSchedule * isClosed * isRecordCategory * isRecordFolder * path * properties ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "Return information on children in the record category resolved by this path. The path is relative to **recordCategoryId**. ") @Valid @RequestParam(value = "relativePath", required = false) String relativePath,@ApiParam(value = "Also include **source** (in addition to **entries**) with folder information on the parent node – either the specified parent **recordCategoryId**, or as resolved by **relativePath**.") @Valid @RequestParam(value = "includeSource", required = false) Boolean includeSource,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -130,6 +135,7 @@ public interface RecordCategoriesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordCategoryEntry> updateRecordCategory(@ApiParam(value = "The identifier of a record category.",required=true) @PathVariable("recordCategoryId") String recordCategoryId,@ApiParam(value = "The record category information to update." ,required=true )  @Valid @RequestBody FilePlanComponentBodyUpdate recordCategoryBodyUpdate,@ApiParam(value = "Returns additional information about the record category. Any optional field from the response model can be requested. For example: * allowableOperations * hasRetentionSchedule * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getRendition**](RenditionsApi.md#getRendition) | **GET** /nodes/{nodeId}/renditions/{renditionId} | Get rendition information
 [**getRenditionContent**](RenditionsApi.md#getRenditionContent) | **GET** /nodes/{nodeId}/renditions/{renditionId}/content | Get rendition content
 [**listRenditions**](RenditionsApi.md#listRenditions) | **GET** /nodes/{nodeId}/renditions | List renditions
+[**requestRenditionDirectAccessUrl**](RenditionsApi.md#requestRenditionDirectAccessUrl) | **POST** /nodes/{nodeId}/renditions/{renditionId}/request-direct-access-url | Generate a direct access content URL
 
 
 <a name="createRendition"></a>
@@ -116,6 +117,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenditionPaging**](RenditionPaging.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="requestRenditionDirectAccessUrl"></a>
+# **requestRenditionDirectAccessUrl**
+> DirectAccessUrlEntry requestRenditionDirectAccessUrl(nodeId, renditionId, requestContentUrlBodyCreate)
+
+Generate a direct access content URL
+
+**Note:** this endpoint is available in Alfresco 7.1 and newer versions. Generate a direct access content url for the given **nodeId**. 
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nodeId** | **String**| The identifier of a node. |
+ **renditionId** | **String**| The name of a thumbnail rendition, for example *doclib*, or *pdf*. |
+ **requestContentUrlBodyCreate** | [**DirectAccessUrlBodyCreate**](DirectAccessUrlBodyCreate.md)| Direct Access URL options and flags.  It can be used to set the **attachment** flag, which controls the download method of the generated URL (attachment DAU vs embedded DAU). It defaults to **true**, meaning the value for the Content Disposition response header will be **attachment**.  Note: It is up to the actual ContentStore implementation if it can fulfil this request or not.  | [optional]
+
+### Return type
+
+[**DirectAccessUrlEntry**](DirectAccessUrlEntry.md)
 
 ### Authorization
 

@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -59,6 +60,7 @@ public interface RecordsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordEntry> completeRecord(@ApiParam(value = "The identifier of a record.",required=true) @PathVariable("recordId") String recordId,@ApiParam(value = "Returns additional information about the record. Any optional field from the response model can be requested. For example: * allowableOperations * content * isCompleted * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -77,6 +79,7 @@ public interface RecordsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteRecord(@ApiParam(value = "The identifier of a record.",required=true) @PathVariable("recordId") String recordId);
 
 
@@ -95,6 +98,7 @@ public interface RecordsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordEntry> fileRecord(@ApiParam(value = "The identifier of a record.",required=true) @PathVariable("recordId") String recordId,@ApiParam(value = "The target record folder id" ,required=true )  @Valid @RequestBody RequestBodyFile nodeBodyFile,@ApiParam(value = "Returns additional information about the record. Any optional field from the response model can be requested. For example: * allowableOperations * content * isCompleted * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -112,6 +116,7 @@ public interface RecordsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordEntry> getRecord(@ApiParam(value = "The identifier of a record.",required=true) @PathVariable("recordId") String recordId,@ApiParam(value = "Returns additional information about the record. Any optional field from the response model can be requested. For example: * allowableOperations * content * isCompleted * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -129,6 +134,7 @@ public interface RecordsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getRecordContent(@ApiParam(value = "The identifier of a record.",required=true) @PathVariable("recordId") String recordId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince);
 
 
@@ -148,6 +154,7 @@ public interface RecordsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RecordEntry> updateRecord(@ApiParam(value = "The identifier of a record.",required=true) @PathVariable("recordId") String recordId,@ApiParam(value = "The record information to update." ,required=true )  @Valid @RequestBody FilePlanComponentBodyUpdate recordBodyUpdate,@ApiParam(value = "Returns additional information about the record. Any optional field from the response model can be requested. For example: * allowableOperations * content * isCompleted * path ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

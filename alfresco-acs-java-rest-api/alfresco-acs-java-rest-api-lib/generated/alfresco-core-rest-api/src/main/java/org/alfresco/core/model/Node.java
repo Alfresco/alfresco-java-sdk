@@ -77,6 +77,9 @@ public class Node   {
   @JsonProperty("isFavorite")
   private Boolean isFavorite = null;
 
+  @JsonProperty("isDirectLinkEnabled")
+  private Boolean isDirectLinkEnabled = null;
+
   @JsonProperty("content")
   private ContentInfo content = null;
 
@@ -373,6 +376,26 @@ public class Node   {
     this.isFavorite = isFavorite;
   }
 
+  public Node isDirectLinkEnabled(Boolean isDirectLinkEnabled) {
+    this.isDirectLinkEnabled = isDirectLinkEnabled;
+    return this;
+  }
+
+  /**
+   * Get isDirectLinkEnabled
+   * @return isDirectLinkEnabled
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Boolean isIsDirectLinkEnabled() {
+    return isDirectLinkEnabled;
+  }
+
+  public void setIsDirectLinkEnabled(Boolean isDirectLinkEnabled) {
+    this.isDirectLinkEnabled = isDirectLinkEnabled;
+  }
+
   public Node content(ContentInfo content) {
     this.content = content;
     return this;
@@ -556,6 +579,7 @@ public class Node   {
         Objects.equals(this.parentId, node.parentId) &&
         Objects.equals(this.isLink, node.isLink) &&
         Objects.equals(this.isFavorite, node.isFavorite) &&
+        Objects.equals(this.isDirectLinkEnabled, node.isDirectLinkEnabled) &&
         Objects.equals(this.content, node.content) &&
         Objects.equals(this.aspectNames, node.aspectNames) &&
         Objects.equals(this.properties, node.properties) &&
@@ -567,7 +591,7 @@ public class Node   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, content, aspectNames, properties, allowableOperations, path, permissions, definition);
+    return Objects.hash(id, name, nodeType, isFolder, isFile, isLocked, modifiedAt, modifiedByUser, createdAt, createdByUser, parentId, isLink, isFavorite, isDirectLinkEnabled, content, aspectNames, properties, allowableOperations, path, permissions, definition);
   }
 
   @Override
@@ -588,6 +612,7 @@ public class Node   {
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    isLink: ").append(toIndentedString(isLink)).append("\n");
     sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
+    sb.append("    isDirectLinkEnabled: ").append(toIndentedString(isDirectLinkEnabled)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    aspectNames: ").append(toIndentedString(aspectNames)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");

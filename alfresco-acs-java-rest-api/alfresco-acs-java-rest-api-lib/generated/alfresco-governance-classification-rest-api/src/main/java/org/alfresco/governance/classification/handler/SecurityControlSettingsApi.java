@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -55,6 +56,7 @@ public interface SecurityControlSettingsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityControlSettingEntry> getSecurityControlSetting(@ApiParam(value = "The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file ",required=true) @PathVariable("securityControlSettingKey") String securityControlSettingKey);
 
 
@@ -73,6 +75,7 @@ public interface SecurityControlSettingsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityControlSettingEntry> updateSecurityControlSetting(@ApiParam(value = "The key for the security control setting. You can use one of the following settings: * -declassificationTimeFrame- for the declassification time frame value set in alfresco-global.properties file ",required=true) @PathVariable("securityControlSettingKey") String securityControlSettingKey,@ApiParam(value = "The new value for the security control setting. This can be a string or number, depending on the setting key." ,required=true )  @Valid @RequestBody SecurityControlSettingBody securityControlSettingValue);
 
 }

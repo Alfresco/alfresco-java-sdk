@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -58,6 +59,7 @@ public interface SecurityMarksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityMarkModel> createSecurityMark(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "Security Mark" ,required=true )  @Valid @RequestBody SecurityMarkModel securityMark);
 
 
@@ -76,6 +78,7 @@ public interface SecurityMarksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteSecurityMark(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "The identifier for the security mark",required=true) @PathVariable("securityMarkId") String securityMarkId);
 
 
@@ -92,6 +95,7 @@ public interface SecurityMarksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityMarkModel> getSecurityGroupMark(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "The identifier for the security mark",required=true) @PathVariable("securityMarkId") String securityMarkId);
 
 
@@ -108,6 +112,7 @@ public interface SecurityMarksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityMarksPaging> getSecurityGroupMarks(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId);
 
 
@@ -126,6 +131,7 @@ public interface SecurityMarksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityMarkModel> updateSecurityMark(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "The identifier for the security mark",required=true) @PathVariable("securityMarkId") String securityMarkId,@ApiParam(value = "Security Mark" ,required=true )  @Valid @RequestBody SecurityMarkModel securityMark);
 
 }

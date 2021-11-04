@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -56,6 +57,7 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> calculateDefaultDeclassificationDate(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId);
 
 
@@ -71,6 +73,7 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DeclassificationDateRecalculationProcessPaging> declassificationDateRecalculationProcessesGet();
 
 
@@ -88,6 +91,7 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DeclassificationDateRecalculationProcessEntry> declassificationDateRecalculationProcessesPost(@ApiParam(value = "The entity containing the identifier for the declassification date recalculation process. The id should be set to \"-declassificationDateRecalculationProcess-\"." ,required=true )  @Valid @RequestBody DeclassificationDateRecalculationProcessBody declassificationDateRecalculationProcess);
 
 
@@ -104,6 +108,7 @@ public interface DefaultClassificationValuesApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DeclassificationDateRecalculationProcessEntry> declassificationDateRecalculationProcessesProcessIdGet(@ApiParam(value = "The identifier for the declassification date recalculation process. This should be set to \"-declassificationDateRecalculationProcess-\".",required=true) @PathVariable("processId") String processId);
 
 }

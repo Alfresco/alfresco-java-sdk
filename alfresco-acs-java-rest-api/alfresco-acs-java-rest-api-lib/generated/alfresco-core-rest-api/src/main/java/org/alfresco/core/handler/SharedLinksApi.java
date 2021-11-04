@@ -40,6 +40,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -64,6 +65,7 @@ public interface SharedLinksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SharedLinkEntry> createSharedLink(@ApiParam(value = "The nodeId to create a shared link for." ,required=true )  @Valid @RequestBody SharedLinkBodyCreate sharedLinkBodyCreate,@ApiParam(value = "Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path * properties * isFavorite * aspectNames ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -82,6 +84,7 @@ public interface SharedLinksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteSharedLink(@ApiParam(value = "The identifier of a shared link to a file.",required=true) @PathVariable("sharedId") String sharedId);
 
 
@@ -99,6 +102,7 @@ public interface SharedLinksApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> emailSharedLink(@ApiParam(value = "The identifier of a shared link to a file.",required=true) @PathVariable("sharedId") String sharedId,@ApiParam(value = "The shared link email to send." ,required=true )  @Valid @RequestBody SharedLinkBodyEmail sharedLinkBodyEmail);
 
 
@@ -115,6 +119,7 @@ public interface SharedLinksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SharedLinkEntry> getSharedLink(@ApiParam(value = "The identifier of a shared link to a file.",required=true) @PathVariable("sharedId") String sharedId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -134,6 +139,7 @@ public interface SharedLinksApi {
         produces = "application/octet-stream", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Resource> getSharedLinkContent(@ApiParam(value = "The identifier of a shared link to a file.",required=true) @PathVariable("sharedId") String sharedId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince,@ApiParam(value = "The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. " ) @RequestHeader(value="Range", required=false) String range);
 
 
@@ -150,6 +156,7 @@ public interface SharedLinksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RenditionEntry> getSharedLinkRendition(@ApiParam(value = "The identifier of a shared link to a file.",required=true) @PathVariable("sharedId") String sharedId,@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String renditionId);
 
 
@@ -169,6 +176,7 @@ public interface SharedLinksApi {
         produces = "application/octet-stream", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Resource> getSharedLinkRenditionContent(@ApiParam(value = "The identifier of a shared link to a file.",required=true) @PathVariable("sharedId") String sharedId,@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String renditionId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince,@ApiParam(value = "The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. " ) @RequestHeader(value="Range", required=false) String range);
 
 
@@ -185,6 +193,7 @@ public interface SharedLinksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RenditionPaging> listSharedLinkRenditions(@ApiParam(value = "The identifier of a shared link to a file.",required=true) @PathVariable("sharedId") String sharedId);
 
 
@@ -201,6 +210,7 @@ public interface SharedLinksApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SharedLinkPaging> listSharedLinks(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list. If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "Optionally filter the list by \"sharedByUser\" userid of person who shared the link (can also use -me-)  *   ```where=(sharedByUser='jbloggs')```  *   ```where=(sharedByUser='-me-')``` ") @Valid @RequestParam(value = "where", required = false) String where,@ApiParam(value = "Returns additional information about the shared link, the following optional fields can be requested: * allowableOperations * path * properties * isFavorite * aspectNames ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

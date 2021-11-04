@@ -40,6 +40,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -63,6 +64,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<PersonEntry> createPerson(@ApiParam(value = "The person details." ,required=true )  @Valid @RequestBody PersonBodyCreate personBodyCreate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -79,6 +81,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteAvatarImage(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId);
 
 
@@ -96,6 +99,7 @@ public interface PeopleApi {
         produces = "application/octet-stream", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Resource> getAvatarImage(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince,@ApiParam(value = "If **true** and there is no avatar for this **personId** then the placeholder image is returned, rather than a 404 response. ", defaultValue = "true") @Valid @RequestParam(value = "placeholder", required = false, defaultValue="true") Boolean placeholder);
 
 
@@ -111,6 +115,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<PersonEntry> getPerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
@@ -126,10 +131,11 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<PersonPaging> listPeople(@Min(0)@ApiParam(value = "The number of entities that exist in the collection before those included in this list. If not supplied then the default value is 0. ", defaultValue = "0") @Valid @RequestParam(value = "skipCount", required = false, defaultValue="0") Integer skipCount,@Min(1)@ApiParam(value = "The maximum number of items to return in the list. If not supplied then the default value is 100. ", defaultValue = "100") @Valid @RequestParam(value = "maxItems", required = false, defaultValue="100") Integer maxItems,@ApiParam(value = "A string to control the order of the entities returned in a list. You can use the **orderBy** parameter to sort the list by one or more fields.  Each field has a default sort order, which is normally ascending order. Read the API method implementation notes above to check if any fields used in this method have a descending default search order.  To sort the entities in a specific order, you can use the **ASC** and **DESC** keywords for any field. ") @Valid @RequestParam(value = "orderBy", required = false) List<String> orderBy,@ApiParam(value = "Returns additional information about the person. The following optional fields can be requested: * properties * aspectNames * capabilities ") @Valid @RequestParam(value = "include", required = false) List<String> include,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 
-    @ApiOperation(value = "Request password reset", nickname = "requestPasswordReset", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Initiates the reset password workflow to send an email with reset password instruction to the user's registered email.  The client is mandatory in the request body. For example: ```JSON {   \"client\": \"myClient\" } ``` **Note:** The client must be registered before this API can send an email. See [server documentation]. However, out-of-the-box share is registered as a default client, so you could pass **share** as the client name: ```JSON {   \"client\": \"share\" } ``` **Note:** No authentication is required to call this endpoint. ", authorizations = {
+    @ApiOperation(value = "Request password reset", nickname = "requestPasswordReset", notes = "**Note:** this endpoint is deprecated as of Alfresco 7.1, and will be removed in the future.  Initiates the reset password workflow to send an email with reset password instruction to the user's registered email.  The client is mandatory in the request body. For example: ```JSON {   \"client\": \"myClient\" } ``` **Note:** The client must be registered before this API can send an email. See [server documentation]. However, out-of-the-box share is registered as a default client, so you could pass **share** as the client name: ```JSON {   \"client\": \"share\" } ``` **Note:** No authentication is required to call this endpoint. ", authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "people", })
     @ApiResponses(value = { 
@@ -139,10 +145,11 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> requestPasswordReset(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The client name to send email with app-specific url." ,required=true )  @Valid @RequestBody ClientBody clientBody);
 
 
-    @ApiOperation(value = "Reset password", nickname = "resetPassword", notes = "**Note:** this endpoint is available in Alfresco 5.2.1 and newer versions.  Resets user's password  The password, id and key properties are mandatory in the request body. For example: ```JSON {   \"password\":\"newPassword\",   \"id\":\"activiti$10\",   \"key\":\"4dad6d00-0daf-413a-b200-f64af4e12345\" } ``` **Note:** No authentication is required to call this endpoint. ", authorizations = {
+    @ApiOperation(value = "Reset password", nickname = "resetPassword", notes = "**Note:** this endpoint is deprecated as of Alfresco 7.1, and will be removed in the future. Resets user's password  The password, id and key properties are mandatory in the request body. For example: ```JSON {   \"password\":\"newPassword\",   \"id\":\"activiti$10\",   \"key\":\"4dad6d00-0daf-413a-b200-f64af4e12345\" } ``` **Note:** No authentication is required to call this endpoint. ", authorizations = {
         @Authorization(value = "basicAuth")
     }, tags={ "people", })
     @ApiResponses(value = { 
@@ -152,6 +159,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> resetPassword(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The reset password details" ,required=true )  @Valid @RequestBody PasswordResetBody passwordResetBody);
 
 
@@ -172,6 +180,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/octet-stream",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> updateAvatarImage(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The binary content" ,required=true )  @Valid @RequestBody byte[] contentBodyUpdate);
 
 
@@ -190,6 +199,7 @@ public interface PeopleApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<PersonEntry> updatePerson(@ApiParam(value = "The identifier of a person.",required=true) @PathVariable("personId") String personId,@ApiParam(value = "The person details." ,required=true )  @Valid @RequestBody PersonBodyUpdate personBodyUpdate,@ApiParam(value = "A list of field names.  You can use this parameter to restrict the fields returned within a response if, for example, you want to save on overall bandwidth.  The list applies to a returned individual entity or entries within a collection.  If the API method also supports the **include** parameter, then the fields specified in the **include** parameter are returned in addition to those specified in the **fields** parameter. ") @Valid @RequestParam(value = "fields", required = false) List<String> fields);
 
 }

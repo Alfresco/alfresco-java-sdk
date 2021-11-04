@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **isAuditEnabled** | **Boolean** |  | 
 **isQuickShareEnabled** | **Boolean** |  | 
 **isThumbnailGenerationEnabled** | **Boolean** |  | 
+**isDirectAccessUrlEnabled** | **Boolean** |  | 
 
 
 

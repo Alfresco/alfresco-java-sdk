@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -56,6 +57,7 @@ public interface SecurityGroupsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityGroupModel> createSecurityGroup(@ApiParam(value = "Security Group" ,required=true )  @Valid @RequestBody SecurityGroupModel securityGroup);
 
 
@@ -74,6 +76,7 @@ public interface SecurityGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteSecurityGroup(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId);
 
 
@@ -90,6 +93,7 @@ public interface SecurityGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityGroupModel> getSecurityGroup(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "The extra fields that should be added in the response.") @Valid @RequestParam(value = "include", required = false) String include);
 
 
@@ -104,6 +108,7 @@ public interface SecurityGroupsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityGroupPaging> listSecurityGroups(@ApiParam(value = "The extra fields that should be added in the response.") @Valid @RequestParam(value = "include", required = false) String include);
 
 
@@ -122,6 +127,7 @@ public interface SecurityGroupsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SecurityGroupModel> updateSecurityGroup(@ApiParam(value = "The identifier for the security group",required=true) @PathVariable("securityGroupId") String securityGroupId,@ApiParam(value = "Security Group" ,required=true )  @Valid @RequestBody SecurityGroupModel securityGroup);
 
 }

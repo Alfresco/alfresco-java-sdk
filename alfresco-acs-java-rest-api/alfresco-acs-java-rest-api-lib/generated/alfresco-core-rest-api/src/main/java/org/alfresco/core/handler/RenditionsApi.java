@@ -20,6 +20,8 @@
  */
 package org.alfresco.core.handler;
 
+import org.alfresco.core.model.DirectAccessUrlBodyCreate;
+import org.alfresco.core.model.DirectAccessUrlEntry;
 import org.alfresco.core.model.Error;
 import java.time.OffsetDateTime;
 import org.alfresco.core.model.RenditionBodyCreate;
@@ -37,6 +39,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -61,6 +64,7 @@ public interface RenditionsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> createRendition(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The rendition \"id\"." ,required=true )  @Valid @RequestBody RenditionBodyCreate renditionBodyCreate);
 
 
@@ -78,6 +82,7 @@ public interface RenditionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RenditionEntry> getRendition(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String renditionId);
 
 
@@ -98,6 +103,7 @@ public interface RenditionsApi {
         produces = "application/octet-stream", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Resource> getRenditionContent(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String renditionId,@ApiParam(value = "**true** enables a web browser to download the file as an attachment. **false** means a web browser may preview the file in a new tab or window, but not download the file.  You can only set this parameter to **false** if the content type of the file is in the supported list; for example, certain image files and PDF files.  If the content type is not supported for preview, then a value of **false**  is ignored, and the attachment will be returned in the response. ", defaultValue = "true") @Valid @RequestParam(value = "attachment", required = false, defaultValue="true") Boolean attachment,@ApiParam(value = "Only returns the content if it has been modified since the date provided. Use the date format defined by HTTP. For example, `Wed, 09 Mar 2016 16:56:34 GMT`. " ) @RequestHeader(value="If-Modified-Since", required=false) OffsetDateTime ifModifiedSince,@ApiParam(value = "The Range header indicates the part of a document that the server should return. Single part request supported, for example: bytes=1-10. " ) @RequestHeader(value="Range", required=false) String range,@ApiParam(value = "If **true** and there is no rendition for this **nodeId** and **renditionId**, then the placeholder image for the mime type of this rendition is returned, rather than a 404 response. ", defaultValue = "false") @Valid @RequestParam(value = "placeholder", required = false, defaultValue="false") Boolean placeholder);
 
 
@@ -115,6 +121,26 @@ public interface RenditionsApi {
         produces = "application/json", 
         consumes = "",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RenditionPaging> listRenditions(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "A string to restrict the returned objects by using a predicate.") @Valid @RequestParam(value = "where", required = false) String where);
+
+
+    @ApiOperation(value = "Generate a direct access content URL", nickname = "requestRenditionDirectAccessUrl", notes = "**Note:** this endpoint is available in Alfresco 7.1 and newer versions. Generate a direct access content url for the given **nodeId**. ", response = DirectAccessUrlEntry.class, authorizations = {
+        @Authorization(value = "basicAuth")
+    }, tags={ "renditions", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = DirectAccessUrlEntry.class),
+        @ApiResponse(code = 400, message = "Invalid parameter: **nodeId** is not a valid format, or is not a file "),
+        @ApiResponse(code = 401, message = "Authentication failed"),
+        @ApiResponse(code = 403, message = "Current user does not have permission for **nodeId**"),
+        @ApiResponse(code = 404, message = "**nodeId** does not exist "),
+        @ApiResponse(code = 501, message = "The actual ContentStore implementation can't fulfil this request"),
+        @ApiResponse(code = 200, message = "Unexpected error", response = Error.class) })
+    @RequestMapping(value = "/nodes/{nodeId}/renditions/{renditionId}/request-direct-access-url",
+        produces = "application/json", 
+        consumes = "application/json",
+        method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
+    ResponseEntity<DirectAccessUrlEntry> requestRenditionDirectAccessUrl(@ApiParam(value = "The identifier of a node.",required=true) @PathVariable("nodeId") String nodeId,@ApiParam(value = "The name of a thumbnail rendition, for example *doclib*, or *pdf*.",required=true) @PathVariable("renditionId") String renditionId,@ApiParam(value = "Direct Access URL options and flags.  It can be used to set the **attachment** flag, which controls the download method of the generated URL (attachment DAU vs embedded DAU). It defaults to **true**, meaning the value for the Content Disposition response header will be **attachment**.  Note: It is up to the actual ContentStore implementation if it can fulfil this request or not. "  )  @Valid @RequestBody DirectAccessUrlBodyCreate requestContentUrlBodyCreate);
 
 }
