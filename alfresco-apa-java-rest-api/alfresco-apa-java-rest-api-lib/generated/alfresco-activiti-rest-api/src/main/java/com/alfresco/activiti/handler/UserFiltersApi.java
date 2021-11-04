@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -55,6 +56,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserProcessInstanceFilterRepresentation> createUserProcessInstanceFilterUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserProcessInstanceFilterRepresentation body);
 
 
@@ -66,6 +68,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserTaskFilterRepresentation> createUserTaskFilterUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserTaskFilterRepresentation body);
 
 
@@ -75,6 +78,7 @@ public interface UserFiltersApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes/{userFilterId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteUserProcessInstanceFilterUsingDELETE(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
@@ -84,6 +88,7 @@ public interface UserFiltersApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks/{userFilterId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteUserTaskFilterUsingDELETE(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
@@ -94,6 +99,7 @@ public interface UserFiltersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes/{userFilterId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserProcessInstanceFilterRepresentation> getUserProcessInstanceFilterUsingGET(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
@@ -104,6 +110,7 @@ public interface UserFiltersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationUserProcessInstanceFilterRepresentation> getUserProcessInstanceFiltersUsingGET(@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId);
 
 
@@ -114,6 +121,7 @@ public interface UserFiltersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks/{userFilterId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserTaskFilterRepresentation> getUserTaskFilterUsingGET(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
@@ -124,6 +132,7 @@ public interface UserFiltersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationUserTaskFilterRepresentation> getUserTaskFiltersUsingGET(@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId);
 
 
@@ -134,6 +143,7 @@ public interface UserFiltersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> orderUserProcessInstanceFiltersUsingPUT(@ApiParam(value = "" ) @Valid @RequestBody UserFilterOrderRepresentation body);
 
 
@@ -144,6 +154,7 @@ public interface UserFiltersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> orderUserTaskFiltersUsingPUT(@ApiParam(value = "" ) @Valid @RequestBody UserFilterOrderRepresentation body);
 
 
@@ -155,6 +166,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserProcessInstanceFilterRepresentation> updateUserProcessInstanceFilterUsingPUT(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId, @ApiParam(value = "" ) @Valid @RequestBody UserProcessInstanceFilterRepresentation body);
 
 
@@ -166,6 +178,7 @@ public interface UserFiltersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserTaskFilterRepresentation> updateUserTaskFilterUsingPUT(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId, @ApiParam(value = "" ) @Valid @RequestBody UserTaskFilterRepresentation body);
 
 }

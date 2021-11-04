@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -56,6 +57,7 @@ public interface JobExecutionControllerApi {
     @RequestMapping(value = "/admin/v1/batch/jobs/executions",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfJobExecution> allUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -68,6 +70,7 @@ public interface JobExecutionControllerApi {
     @RequestMapping(value = "/admin/v1/batch/jobs/executions/{id}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfJobExecution> getUsingGET1(@ApiParam(value = "id", required=true) @PathVariable("id") Long id);
 
 
@@ -80,6 +83,7 @@ public interface JobExecutionControllerApi {
     @RequestMapping(value = "/admin/v1/batch/jobs/executions/{executionId}/log",
         produces = "text/plain", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<InputStreamResource> logUsingGET(@ApiParam(value = "executionId", required=true) @PathVariable("executionId") Long executionId);
 
 
@@ -94,6 +98,7 @@ public interface JobExecutionControllerApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfJobExecution> postUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody JobConfig body);
 
 }

@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -57,6 +58,7 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/copy",
         produces = "application/json", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfProject> copyProjectUsingPOST(@ApiParam(value = "The id of the project to copy", required=true) @PathVariable("projectId") String projectId, @NotNull @ApiParam(value = "The name of the project that will replace the original name of the project", required = true) @Valid @RequestParam(value = "name", required = true) String name);
 
 
@@ -69,6 +71,7 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects/example",
         produces = "*/*", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfProject> createProjectFromExampleUsingPOST(@NotNull @ApiParam(value = "The example project id of the source example project", required = true) @Valid @RequestParam(value = "exampleProjectId", required = true) String exampleProjectId, @NotNull @ApiParam(value = "The name for the new project created from an example project", required = true) @Valid @RequestParam(value = "name", required = true) String name);
 
 
@@ -82,6 +85,7 @@ public interface ProjectsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfProject> createProjectUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Project body);
 
 
@@ -92,6 +96,7 @@ public interface ProjectsApi {
         @ApiResponse(code = 403, message = "Forbidden") })
     @RequestMapping(value = "/v1/projects/{projectId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteProjectUsingDELETE(@ApiParam(value = "The id of the project to delete", required=true) @PathVariable("projectId") String projectId);
 
 
@@ -103,6 +108,7 @@ public interface ProjectsApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}/export",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     byte[] exportProjectUsingGET(@ApiParam(value = "The id of the project to export", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "<b>true</b> value enables a web browser to download the file as an attachment.<br> <b>false</b> means that a web browser may preview the file in a new tab or window, but not download the file.") @Valid @RequestParam(value = "attachment", required = false) Boolean attachment);
 
 
@@ -115,6 +121,7 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/releases",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfRelease> getProjectReleaseUsingGET(@ApiParam(value = "The id of the project to get the releases", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "The version of the project to get the releases") @Valid @RequestParam(value = "version", required = false) String version, @ApiParam(value = "Default value is false, and it returns only the latest versions. If it is true, it forces the service to return all versions.") @Valid @RequestParam(value = "showAllVersions", required = false) Boolean showAllVersions);
 
 
@@ -127,6 +134,7 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects/{projectId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfProject> getProjectUsingGET(@ApiParam(value = "The id of the project to retrieve", required=true) @PathVariable("projectId") String projectId);
 
 
@@ -139,6 +147,7 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfProject> getProjectsUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "The name or part of the name to filter projects") @Valid @RequestParam(value = "name", required = false) String name);
 
 
@@ -152,6 +161,7 @@ public interface ProjectsApi {
         produces = "application/json", 
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfProject> importProjectUsingPOST(@ApiParam(value = "") @RequestParam(value="name", required=false)  String name);
 
 
@@ -165,6 +175,7 @@ public interface ProjectsApi {
     @RequestMapping(value = "/v1/projects/{projectId}/releases",
         produces = "application/json", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfRelease> releaseProjectUsingPOST(@ApiParam(value = "The id of the project to release", required=true) @PathVariable("projectId") String projectId);
 
 
@@ -179,6 +190,7 @@ public interface ProjectsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfProject> updateProjectUsingPUT(@ApiParam(value = "The id of the project to update", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "" ) @Valid @RequestBody Project body);
 
 
@@ -190,6 +202,7 @@ public interface ProjectsApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/projects/{projectId}/validate",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> validateProjectUsingGET(@ApiParam(value = "The id of the project to validate", required=true) @PathVariable("projectId") String projectId);
 
 }

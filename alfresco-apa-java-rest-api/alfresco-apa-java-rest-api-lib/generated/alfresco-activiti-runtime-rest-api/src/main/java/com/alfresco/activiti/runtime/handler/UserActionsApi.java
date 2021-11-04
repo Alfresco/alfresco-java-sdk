@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -56,6 +57,7 @@ public interface UserActionsApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> sendNamedEventUsingPOST(@ApiParam(value = "The name of the UI producing the event", required=true) @PathVariable("uiName") String uiName, @ApiParam(value = "The name of the event to send", required=true) @PathVariable("eventName") String eventName, @ApiParam(value = "" ) @Valid @RequestBody NamedEventBody body);
 
 
@@ -70,6 +72,7 @@ public interface UserActionsApi {
         produces = "*/*", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResponseEntity> submitFormUsingPOST2(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 }

@@ -41,6 +41,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -61,6 +62,7 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> createProcessInstanceUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateProcessInstancePayload body);
 
 
@@ -73,6 +75,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}",
         produces = "application/json", 
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> deleteProcessInstanceUsingDELETE1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -85,6 +88,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/model",
         produces = "image/svg+xml", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> getProcessDiagramUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -97,6 +101,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> getProcessInstanceByIdUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -109,6 +114,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCloudProcessInstance> getProcessInstancesUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -122,6 +128,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/message",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> receiveUsingPUT1(@ApiParam(value = "" ) @Valid @RequestBody ReceiveMessagePayload body);
 
 
@@ -135,6 +142,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/resume",
         produces = "application/json", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> resumeUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -148,6 +156,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/signal",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> sendSignalUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody SignalPayload body);
 
 
@@ -162,6 +171,7 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> sendStartMessageUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody StartMessagePayload body);
 
 
@@ -176,6 +186,7 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> startCreatedProcessUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody StartProcessPayload body);
 
 
@@ -190,6 +201,7 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> startProcessUsingPOST1(@ApiParam(value = "" ) @Valid @RequestBody StartProcessPayload body);
 
 
@@ -202,6 +214,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/subprocesses",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCloudProcessInstance> subprocessesUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -215,6 +228,7 @@ public interface ProcessInstanceControllerImplApi {
     @RequestMapping(value = "/v1/process-instances/{processInstanceId}/suspend",
         produces = "application/json", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> suspendUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -229,6 +243,7 @@ public interface ProcessInstanceControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> updateProcessUsingPUT1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody UpdateProcessPayload body);
 
 }

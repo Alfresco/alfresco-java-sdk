@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -52,6 +53,7 @@ public interface IntegrationSsoApi {
         @ApiResponse(code = 409, message = "No credentials stored to access sso or credentials are invalid or expired") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/sso/confirm-auth-request",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> confirmAuthorisationUsingGET2(@NotNull @ApiParam(value = "serviceId", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId, @NotNull @ApiParam(value = "session_state", required = true) @Valid @RequestParam(value = "session_state", required = true) String sessionState, @NotNull @ApiParam(value = "code", required = true) @Valid @RequestParam(value = "code", required = true) String code);
 
 
@@ -63,6 +65,7 @@ public interface IntegrationSsoApi {
         @ApiResponse(code = 404, message = "No SSO account exists") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/sso/{repositoryId}/account",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteRepositoryAccountUsingDELETE1(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") Long repositoryId);
 
 
@@ -74,6 +77,7 @@ public interface IntegrationSsoApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/sso/{repositoryId}/account",
         produces = "*/*", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getRepositoryAccountUsingGET1(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") Long repositoryId);
 
 }

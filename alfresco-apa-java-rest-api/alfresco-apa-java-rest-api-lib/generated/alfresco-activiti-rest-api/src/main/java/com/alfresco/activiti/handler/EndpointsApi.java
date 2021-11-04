@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -50,6 +51,7 @@ public interface EndpointsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/endpoints/{endpointConfigurationId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EndpointConfigurationRepresentation> getEndpointConfigurationUsingGET(@ApiParam(value = "endpointConfigurationId", required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId);
 
 
@@ -60,6 +62,7 @@ public interface EndpointsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/endpoints",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<EndpointConfigurationRepresentation>> getEndpointConfigurationsUsingGET();
 
 }

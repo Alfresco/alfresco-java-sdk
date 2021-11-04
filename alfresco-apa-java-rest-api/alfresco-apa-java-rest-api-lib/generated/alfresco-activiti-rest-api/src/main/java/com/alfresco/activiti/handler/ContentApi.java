@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -52,6 +53,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnProcessInstanceUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody RelatedContentRepresentation body);
 
 
@@ -63,6 +65,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnProcessInstanceUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -74,6 +77,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody RelatedContentRepresentation body);
 
 
@@ -85,6 +89,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnTaskUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -96,6 +101,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RelatedContentRepresentation> createTemporaryRawRelatedContentUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
@@ -107,6 +113,7 @@ public interface ContentApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RelatedContentRepresentation> createTemporaryRelatedContentUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody RelatedContentRepresentation body);
 
 
@@ -116,6 +123,7 @@ public interface ContentApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteContentUsingDELETE(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId);
 
 
@@ -126,6 +134,7 @@ public interface ContentApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RelatedContentRepresentation> getContentUsingGET(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId);
 
 
@@ -135,6 +144,7 @@ public interface ContentApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}/rendition/{renditionType}",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getRawContentUsingGET(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId, @ApiParam(value = "renditionType", required=true) @PathVariable("renditionType") String renditionType);
 
 
@@ -144,6 +154,7 @@ public interface ContentApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}/raw",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getRawContentUsingGET1(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId);
 
 
@@ -154,6 +165,7 @@ public interface ContentApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/content",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationRelatedContentRepresentation> getRelatedContentForProcessInstanceUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 
@@ -164,6 +176,7 @@ public interface ContentApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/content",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationRelatedContentRepresentation> getRelatedContentForTaskUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 }

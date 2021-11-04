@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface AdminUsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> bulkUpdateUsersUsingPUT(@ApiParam(value = "" ) @Valid @RequestBody BulkUserUpdateRepresentation body);
 
 
@@ -64,6 +66,7 @@ public interface AdminUsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserRepresentation> createNewUserUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserRepresentation body);
 
 
@@ -74,6 +77,7 @@ public interface AdminUsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users/{userId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AbstractUserRepresentation> getUserUsingGET(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
@@ -84,6 +88,7 @@ public interface AdminUsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAbstractUserRepresentation> getUsersUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "status") @Valid @RequestParam(value = "status", required = false) String status, @ApiParam(value = "accountType") @Valid @RequestParam(value = "accountType", required = false) String accountType, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "company") @Valid @RequestParam(value = "company", required = false) String company, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size, @ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
@@ -94,6 +99,7 @@ public interface AdminUsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users/{userId}",
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> updateUserDetailsUsingPUT(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "" ) @Valid @RequestBody UserRepresentation body);
 
 }

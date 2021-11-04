@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -50,6 +51,7 @@ public interface RuntimeAppDeploymentsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployments/{appDeploymentId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteAppDeploymentUsingDELETE(@ApiParam(value = "appDeploymentId", required=true) @PathVariable("appDeploymentId") Long appDeploymentId);
 
 
@@ -59,6 +61,7 @@ public interface RuntimeAppDeploymentsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/export-app-deployment/{deploymentId}",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> exportAppDefinitionUsingGET1(@ApiParam(value = "deploymentId", required=true) @PathVariable("deploymentId") String deploymentId);
 
 
@@ -69,6 +72,7 @@ public interface RuntimeAppDeploymentsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployments",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationAppDeploymentRepresentation> getAppDefinitionsUsingGET1(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "latest") @Valid @RequestParam(value = "latest", required = false) Boolean latest, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
@@ -79,6 +83,7 @@ public interface RuntimeAppDeploymentsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployments/{appDeploymentId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDeploymentRepresentation> getAppDeploymentUsingGET(@ApiParam(value = "appDeploymentId", required=true) @PathVariable("appDeploymentId") Long appDeploymentId);
 
 
@@ -89,6 +94,7 @@ public interface RuntimeAppDeploymentsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployment",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<AppDeploymentRepresentation> getRuntimeAppDeploymentByDeploymentUsingGET(@ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) String deploymentId, @ApiParam(value = "dmnDeploymentId") @Valid @RequestParam(value = "dmnDeploymentId", required = false) Long dmnDeploymentId);
 
 }

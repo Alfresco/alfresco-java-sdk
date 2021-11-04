@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -48,6 +49,7 @@ public interface ModelsBpmnApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{processModelId}/history/{processModelHistoryId}/bpmn20",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getHistoricProcessModelBpmn20XmlUsingGET(@ApiParam(value = "processModelId", required=true) @PathVariable("processModelId") Long processModelId, @ApiParam(value = "processModelHistoryId", required=true) @PathVariable("processModelHistoryId") Long processModelHistoryId);
 
 
@@ -57,6 +59,7 @@ public interface ModelsBpmnApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{processModelId}/bpmn20",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getProcessModelBpmn20XmlUsingGET(@ApiParam(value = "processModelId", required=true) @PathVariable("processModelId") Long processModelId);
 
 }

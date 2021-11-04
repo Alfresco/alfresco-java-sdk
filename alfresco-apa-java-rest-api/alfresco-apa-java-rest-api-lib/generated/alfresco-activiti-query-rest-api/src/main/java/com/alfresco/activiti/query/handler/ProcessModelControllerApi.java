@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface ProcessModelControllerApi {
     @RequestMapping(value = "/v1/process-definitions/{processDefinitionId}/model",
         produces = "application/xml", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> getProcessModelUsingGET1(@ApiParam(value = "processDefinitionId", required=true) @PathVariable("processDefinitionId") String processDefinitionId);
 
 }

@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface SubmittedFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/form-submitted-forms/{formId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation> getFormSubmittedFromsUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId, @ApiParam(value = "submittedBy") @Valid @RequestParam(value = "submittedBy", required = false) Long submittedBy, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
@@ -61,6 +63,7 @@ public interface SubmittedFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-submitted-forms/{processId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation> getProcessSubmittedFromsUsingGET(@ApiParam(value = "processId", required=true) @PathVariable("processId") String processId);
 
 
@@ -71,6 +74,7 @@ public interface SubmittedFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/submitted-forms/{submittedFormId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SubmittedFormRepresentation> getSubmittedFromUsingGET(@ApiParam(value = "submittedFormId", required=true) @PathVariable("submittedFormId") Long submittedFormId);
 
 
@@ -81,6 +85,7 @@ public interface SubmittedFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/task-submitted-form/{taskId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<SubmittedFormRepresentation> getTaskSubmittedFromsUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 }

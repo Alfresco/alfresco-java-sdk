@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface JobControllerApi {
     @RequestMapping(value = "/admin/v1/batch/jobs",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfJob> allUsingGET();
 
 
@@ -65,6 +67,7 @@ public interface JobControllerApi {
     @RequestMapping(value = "/admin/v1/batch/jobs/{jobName}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfJob> getUsingGET(@ApiParam(value = "jobName", required=true) @PathVariable("jobName") String jobName);
 
 }

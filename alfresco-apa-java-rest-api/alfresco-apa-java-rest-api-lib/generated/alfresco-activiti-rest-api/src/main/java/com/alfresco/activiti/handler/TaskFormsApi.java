@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -54,6 +55,7 @@ public interface TaskFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> completeTaskFormUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CompleteFormRepresentation body);
 
 
@@ -64,6 +66,7 @@ public interface TaskFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/variables",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<ProcessInstanceVariableRepresentation>> getProcessInstanceVariablesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -74,6 +77,7 @@ public interface TaskFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/form-values/{field}/{column}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "field", required=true) @PathVariable("field") String field, @ApiParam(value = "column", required=true) @PathVariable("column") String column);
 
 
@@ -84,6 +88,7 @@ public interface TaskFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/form-values/{field}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "field", required=true) @PathVariable("field") String field);
 
 
@@ -94,6 +99,7 @@ public interface TaskFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<FormDefinitionRepresentation> getTaskFormUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -104,6 +110,7 @@ public interface TaskFormsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/save-form",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> saveTaskFormUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody SaveFormRepresentation body);
 
 }

@@ -41,6 +41,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -57,6 +58,7 @@ public interface FormModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/forms/{formId}/editorJson",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<FormDefinitionRepresentation> getFormEditorJsonUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId);
 
 
@@ -67,6 +69,7 @@ public interface FormModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/{formId}/history/{formHistoryId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<FormRepresentationRes> getFormHistoryUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId, @ApiParam(value = "formHistoryId", required=true) @PathVariable("formHistoryId") Long formHistoryId);
 
 
@@ -77,6 +80,7 @@ public interface FormModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/{formId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<FormRepresentation> getFormUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId);
 
 
@@ -87,6 +91,7 @@ public interface FormModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/forms/{formId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RuntimeFormRepresentation> getFormUsingGET1(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId);
 
 
@@ -97,6 +102,7 @@ public interface FormModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/values",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<FormRepresentationRes>> getFormsUsingGET(@NotNull @ApiParam(value = "formId", required = true) @Valid @RequestParam(value = "formId", required = true) String formId);
 
 
@@ -107,6 +113,7 @@ public interface FormModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationFormRepresentation> getFormsUsingGET1();
 
 
@@ -117,6 +124,7 @@ public interface FormModelsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/forms",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationRuntimeFormRepresentation> getFormsUsingGET2(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike, @ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
@@ -128,6 +136,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<FormRepresentationRes> saveFormUsingPUT(@ApiParam(value = "formId", required=true) @PathVariable("ID of the form to update") Long idOfTheFormToUpdate, @ApiParam(value = "" ) @Valid @RequestBody FormSaveRepresentation body);
 
 
@@ -139,6 +148,7 @@ public interface FormModelsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<ValidationErrorRepresentation>> validateModelUsingPUT1(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId, @ApiParam(value = "" ) @Valid @RequestBody FormSaveRepresentation body);
 
 }

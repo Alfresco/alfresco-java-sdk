@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -52,6 +53,7 @@ public interface DecisionTablesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/decision-tables/{decisionTableId}/editorJson",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<JsonNode> getDecisionTableEditorJsonUsingGET(@ApiParam(value = "decisionTableId", required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
@@ -62,6 +64,7 @@ public interface DecisionTablesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/decision-tables/{decisionTableId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RuntimeDecisionTableRepresentation> getDecisionTableUsingGET(@ApiParam(value = "decisionTableId", required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
@@ -72,6 +75,7 @@ public interface DecisionTablesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/decision-tables",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationRuntimeDecisionTableRepresentation> getDecisionTablesUsingGET(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike, @ApiParam(value = "keyLike") @Valid @RequestParam(value = "keyLike", required = false) String keyLike, @ApiParam(value = "tenantIdLike") @Valid @RequestParam(value = "tenantIdLike", required = false) String tenantIdLike, @ApiParam(value = "deploymentId") @Valid @RequestParam(value = "deploymentId", required = false) Long deploymentId, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 }

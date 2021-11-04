@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -49,6 +50,7 @@ public interface ScriptFilesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/script-files/controllers",
         produces = "text/html", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> getControllersUsingGET();
 
 
@@ -59,6 +61,7 @@ public interface ScriptFilesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/script-files/libraries",
         produces = "text/html", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<String> getLibrariesUsingGET();
 
 }

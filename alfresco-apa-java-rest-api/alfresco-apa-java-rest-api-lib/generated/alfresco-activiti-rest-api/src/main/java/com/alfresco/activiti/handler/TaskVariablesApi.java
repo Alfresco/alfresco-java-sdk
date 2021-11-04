@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<RestVariable>> createTaskVariableUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody List<RestVariable> body);
 
 
@@ -60,6 +62,7 @@ public interface TaskVariablesApi {
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteAllLocalTaskVariablesUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -69,6 +72,7 @@ public interface TaskVariablesApi {
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables/{variableName}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteVariableUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
@@ -79,6 +83,7 @@ public interface TaskVariablesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables/{variableName}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RestVariable> getVariableUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
@@ -89,6 +94,7 @@ public interface TaskVariablesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<RestVariable>> getVariablesUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
@@ -100,6 +106,7 @@ public interface TaskVariablesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<RestVariable> updateVariableUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "" ) @Valid @RequestBody RestVariable body);
 
 }

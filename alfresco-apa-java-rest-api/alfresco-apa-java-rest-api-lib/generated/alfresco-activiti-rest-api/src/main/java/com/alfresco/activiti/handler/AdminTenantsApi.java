@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -55,6 +56,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<LightTenantRepresentation> createTenantUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateTenantRepresentation body);
 
 
@@ -64,6 +66,7 @@ public interface AdminTenantsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteTenantUsingDELETE(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
@@ -74,6 +77,7 @@ public interface AdminTenantsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}/events",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<TenantEvent>> getTenantEventsUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
@@ -83,6 +87,7 @@ public interface AdminTenantsApi {
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}/logo",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getTenantLogoUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
@@ -93,6 +98,7 @@ public interface AdminTenantsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TenantRepresentation> getTenantUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
@@ -103,6 +109,7 @@ public interface AdminTenantsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<LightTenantRepresentation>> getTenantsUsingGET();
 
 
@@ -114,6 +121,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<TenantRepresentation> updateUsingPUT(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId, @ApiParam(value = "" ) @Valid @RequestBody CreateTenantRepresentation body);
 
 
@@ -125,6 +133,7 @@ public interface AdminTenantsApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ImageUploadRepresentation> uploadTenantLogoUsingPOST(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 }

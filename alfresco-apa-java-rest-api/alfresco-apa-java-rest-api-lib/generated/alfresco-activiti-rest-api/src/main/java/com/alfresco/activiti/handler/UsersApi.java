@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -53,6 +54,7 @@ public interface UsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/users/{userId}",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> executeActionUsingPOST(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "" ) @Valid @RequestBody UserActionRepresentation body);
 
 
@@ -63,6 +65,7 @@ public interface UsersApi {
         @ApiResponse(code = 403, message = "User is not in the same tenant as current user") })
     @RequestMapping(value = "/activiti-app/api/enterprise/users/{userId}/picture",
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> getProfilePictureUsingGET1(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
@@ -73,6 +76,7 @@ public interface UsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/users/{userId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserRepresentation> getUserUsingGET1(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
@@ -83,6 +87,7 @@ public interface UsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/users",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getUsersUsingGET1(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "email") @Valid @RequestParam(value = "email", required = false) String email, @ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String externalId, @ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String externalIdCaseInsensitive, @ApiParam(value = "excludeTaskId") @Valid @RequestParam(value = "excludeTaskId", required = false) String excludeTaskId, @ApiParam(value = "excludeProcessId") @Valid @RequestParam(value = "excludeProcessId", required = false) String excludeProcessId, @ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId);
 
 
@@ -94,6 +99,7 @@ public interface UsersApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/idm/passwords",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> requestPasswordResetUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ResetPasswordRepresentation body);
 
 
@@ -105,6 +111,7 @@ public interface UsersApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<UserRepresentation> updateUserUsingPUT(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "" ) @Valid @RequestBody UserRepresentation body);
 
 }

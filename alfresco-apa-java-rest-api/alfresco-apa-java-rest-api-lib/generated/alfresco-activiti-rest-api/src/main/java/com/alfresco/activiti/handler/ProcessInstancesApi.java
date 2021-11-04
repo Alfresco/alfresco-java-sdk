@@ -45,6 +45,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -62,6 +63,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/activate",
         produces = "application/json", 
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ProcessInstanceRepresentation> activateProcessInstanceUsingPUT(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -73,6 +75,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<IdentityLinkRepresentation> createIdentityLinkUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody IdentityLinkRepresentation body);
 
 
@@ -83,6 +86,7 @@ public interface ProcessInstancesApi {
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/identitylinks/{family}/{identityId}/{type}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteIdentityLinkUsingDELETE1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
@@ -94,6 +98,7 @@ public interface ProcessInstancesApi {
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteProcessInstanceUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -105,6 +110,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> filterProcessInstancesUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ProcessInstanceFilterRequestRepresentation body);
 
 
@@ -116,6 +122,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/decision-tasks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationDecisionTaskRepresentation> getHistoricProcessInstanceDecisionTasksUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -127,6 +134,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/historic-variables",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<ProcessInstanceVariableRepresentation>> getHistoricProcessInstanceVariablesUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -138,6 +146,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> getHistoricProcessInstancesUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody HistoricProcessInstanceQueryRepresentation body);
 
 
@@ -149,6 +158,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/identitylinks/{family}/{identityId}/{type}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<IdentityLinkRepresentation> getIdentityLinkTypeUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
@@ -160,6 +170,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/identitylinks/{family}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksForFamilyUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "family", required=true) @PathVariable("family") String family);
 
 
@@ -171,6 +182,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/identitylinks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -181,6 +193,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/field-content",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationProcessContentRepresentation> getProcessInstanceContentUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -192,6 +205,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/diagram",
         produces = "image/png", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<byte[]> getProcessInstanceDiagramUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -203,6 +217,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/start-form",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<FormDefinitionRepresentation> getProcessInstanceStartFormUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -214,6 +229,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ProcessInstanceRepresentation> getProcessInstanceUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -225,6 +241,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> getProcessInstancesUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ProcessInstanceQueryRepresentation body);
 
 
@@ -236,6 +253,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/audit-log",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ProcessInstanceAuditInfoRepresentation> getTaskAuditLogUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
@@ -247,6 +265,7 @@ public interface ProcessInstancesApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ProcessInstanceRepresentation> startNewProcessInstanceUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateProcessInstanceRepresentation body);
 
 
@@ -258,6 +277,7 @@ public interface ProcessInstancesApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/suspend",
         produces = "application/json", 
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ProcessInstanceRepresentation> suspendProcessInstanceUsingPUT(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 }

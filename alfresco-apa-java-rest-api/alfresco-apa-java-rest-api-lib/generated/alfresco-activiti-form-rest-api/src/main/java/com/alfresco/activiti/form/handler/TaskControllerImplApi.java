@@ -40,6 +40,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -60,6 +61,7 @@ public interface TaskControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> assignUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody AssignTaskPayload body);
 
 
@@ -73,6 +75,7 @@ public interface TaskControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/claim",
         produces = "application/json", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> claimTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -87,6 +90,7 @@ public interface TaskControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> completeTaskUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CompleteTaskPayload body);
 
 
@@ -101,6 +105,7 @@ public interface TaskControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> createNewTaskUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateTaskPayload body);
 
 
@@ -113,6 +118,7 @@ public interface TaskControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}",
         produces = "application/json", 
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> deleteTaskUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -125,6 +131,7 @@ public interface TaskControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/subtasks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCloudTask> getSubtasksUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -137,6 +144,7 @@ public interface TaskControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> getTaskByIdUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -149,6 +157,7 @@ public interface TaskControllerImplApi {
     @RequestMapping(value = "/v1/tasks",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCloudTask> getTasksUsingGET2(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
@@ -162,6 +171,7 @@ public interface TaskControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/release",
         produces = "application/json", 
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> releaseTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
@@ -175,6 +185,7 @@ public interface TaskControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/save",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> saveTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody SaveTaskPayload body);
 
 
@@ -189,6 +200,7 @@ public interface TaskControllerImplApi {
         produces = "application/json", 
         consumes = "application/json",
         method = RequestMethod.PUT)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<EntryResponseContentOfCloudTask> updateTaskUsingPUT1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UpdateTaskPayload body);
 
 }

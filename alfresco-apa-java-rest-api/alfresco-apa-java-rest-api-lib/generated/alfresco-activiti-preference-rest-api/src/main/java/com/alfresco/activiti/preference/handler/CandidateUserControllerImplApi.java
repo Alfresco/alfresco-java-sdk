@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -54,6 +55,7 @@ public interface CandidateUserControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-users",
         consumes = "application/json",
         method = RequestMethod.POST)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> addCandidateUsersUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
@@ -66,6 +68,7 @@ public interface CandidateUserControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-users",
         consumes = "application/json",
         method = RequestMethod.DELETE)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<Void> deleteCandidateUsersUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
@@ -78,6 +81,7 @@ public interface CandidateUserControllerImplApi {
     @RequestMapping(value = "/v1/tasks/{taskId}/candidate-users",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ListResponseContentOfCandidateUser> getUserCandidatesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 }

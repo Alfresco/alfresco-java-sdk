@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.cloud.openfeign.CollectionFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -51,6 +52,7 @@ public interface DecisionAuditsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/audits/{auditTrailId}",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<DecisionAuditRepresentation> getAuditTrailUsingGET(@ApiParam(value = "auditTrailId", required=true) @PathVariable("auditTrailId") Long auditTrailId);
 
 
@@ -61,6 +63,7 @@ public interface DecisionAuditsApi {
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/audits",
         produces = "application/json", 
         method = RequestMethod.GET)
+    @CollectionFormat(feign.CollectionFormat.CSV)
     ResponseEntity<ResultListDataRepresentationDecisionAuditRepresentation> getAuditTrailsUsingGET(@NotNull @ApiParam(value = "decisionKey", required = true) @Valid @RequestParam(value = "decisionKey", required = true) String decisionKey, @NotNull @ApiParam(value = "dmnDeploymentId", required = true) @Valid @RequestParam(value = "dmnDeploymentId", required = true) Long dmnDeploymentId);
 
 }
