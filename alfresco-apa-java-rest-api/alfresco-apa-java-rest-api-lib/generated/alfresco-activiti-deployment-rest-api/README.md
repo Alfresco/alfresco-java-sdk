@@ -51,35 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-activiti-deployment-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-  import org.alfresco.activiti.deployment.*;
-  import org.alfresco.activiti.deployment.auth.*;
-  import org.alfresco.activiti.deployment.model.*;
-  import org.alfresco.activiti.deployment.handler.ApplicationEntityApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class ApplicationEntityApiExample {
-
-  public static void main(String[] args) {
-  
-  ApplicationEntityApi apiInstance = new ApplicationEntityApi();
-    String id = "id_example"; // String | id
-  try {
-  Void result = apiInstance.applicationDescriptorUsingDELETE(id);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling ApplicationEntityApi#applicationDescriptorUsingDELETE");
-  e.printStackTrace();
-  }
-  }
-  }
-```
 
 ## Documentation for API Endpoints
 
@@ -154,11 +125,3 @@ Class | Method | HTTP request | Description
 
 All endpoints do not require authorization.
 Authentication schemes defined for the API:
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
-

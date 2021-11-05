@@ -51,36 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-activiti-form-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-  import org.alfresco.activiti.form.*;
-  import org.alfresco.activiti.form.auth.*;
-  import org.alfresco.activiti.form.model.*;
-  import org.alfresco.activiti.form.handler.CandidateGroupAdminControllerImplApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class CandidateGroupAdminControllerImplApiExample {
-
-  public static void main(String[] args) {
-  
-  CandidateGroupAdminControllerImplApi apiInstance = new CandidateGroupAdminControllerImplApi();
-    String taskId = "taskId_example"; // String | taskId
-    CandidateGroupsPayload body = new CandidateGroupsPayload(); // CandidateGroupsPayload | 
-  try {
-  Void result = apiInstance.addCandidateGroupsUsingPOST(taskId, body);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling CandidateGroupAdminControllerImplApi#addCandidateGroupsUsingPOST");
-  e.printStackTrace();
-  }
-  }
-  }
-```
 
 ## Documentation for API Endpoints
 
@@ -266,11 +236,3 @@ Class | Method | HTTP request | Description
 
 All endpoints do not require authorization.
 Authentication schemes defined for the API:
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
-

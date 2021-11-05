@@ -51,37 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-activiti-query-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-  import org.alfresco.activiti.query.*;
-  import org.alfresco.activiti.query.auth.*;
-  import org.alfresco.activiti.query.model.*;
-  import org.alfresco.activiti.query.handler.ApplicationAdminControllerApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class ApplicationAdminControllerApiExample {
-
-  public static void main(String[] args) {
-  
-  ApplicationAdminControllerApi apiInstance = new ApplicationAdminControllerApi();
-    Integer maxItems = 56; // Integer | 
-    Integer skipCount = 56; // Integer | 
-    String sort = "sort_example"; // String | 
-  try {
-  ListResponseContentOfCloudApplication result = apiInstance.findAllUsingGET(maxItems, skipCount, sort);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling ApplicationAdminControllerApi#findAllUsingGET");
-  e.printStackTrace();
-  }
-  }
-  }
-```
 
 ## Documentation for API Endpoints
 
@@ -185,11 +154,3 @@ Class | Method | HTTP request | Description
 
 All endpoints do not require authorization.
 Authentication schemes defined for the API:
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
-
