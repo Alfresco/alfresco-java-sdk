@@ -15,8 +15,8 @@ findAll
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.ProcessDefinitionAdminControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.ProcessDefinitionAdminControllerApi;
 
 
 ProcessDefinitionAdminControllerApi apiInstance = new ProcessDefinitionAdminControllerApi();

@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.alfresco</groupId>
+    <groupId>org.alfresco</groupId>
     <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
     <version>5.1.2-SNAPSHOT</version>
 </dependency>
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.alfresco:alfresco-activiti-script-modeling-rest-api:5.1.2-SNAPSHOT"
+compile "org.alfresco:alfresco-activiti-script-modeling-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -56,10 +56,10 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-  import com.alfresco.activiti.script.modeling.*;
-  import com.alfresco.activiti.script.modeling.auth.*;
-  import com.alfresco.activiti.script.modeling.model.*;
-  import com.alfresco.activiti.script.modeling.handler.ApsModelControllerApi;
+  import org.alfresco.activiti.script.modeling.*;
+  import org.alfresco.activiti.script.modeling.auth.*;
+  import org.alfresco.activiti.script.modeling.model.*;
+  import org.alfresco.activiti.script.modeling.handler.ApsModelControllerApi;
 
   import java.io.File;
   import java.util.*;

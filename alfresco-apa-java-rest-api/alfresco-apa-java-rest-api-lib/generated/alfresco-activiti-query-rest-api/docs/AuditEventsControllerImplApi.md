@@ -16,8 +16,8 @@ findAll
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
 
 
 AuditEventsControllerImplApi apiInstance = new AuditEventsControllerImplApi();
@@ -65,8 +65,8 @@ findById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
 
 
 AuditEventsControllerImplApi apiInstance = new AuditEventsControllerImplApi();

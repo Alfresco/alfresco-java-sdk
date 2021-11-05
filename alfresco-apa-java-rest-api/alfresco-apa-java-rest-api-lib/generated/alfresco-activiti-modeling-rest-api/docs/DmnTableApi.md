@@ -17,8 +17,8 @@ Execute a DMN table
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.DmnTableApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.DmnTableApi;
 
 
 DmnTableApi apiInstance = new DmnTableApi();

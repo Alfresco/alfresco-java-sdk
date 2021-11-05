@@ -17,8 +17,8 @@ addCandidateUsers
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.CandidateUserControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.CandidateUserControllerImplApi;
 
 
 CandidateUserControllerImplApi apiInstance = new CandidateUserControllerImplApi();
@@ -61,8 +61,8 @@ deleteCandidateUsers
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.CandidateUserControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.CandidateUserControllerImplApi;
 
 
 CandidateUserControllerImplApi apiInstance = new CandidateUserControllerImplApi();
@@ -105,8 +105,8 @@ getUserCandidates
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.CandidateUserControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.CandidateUserControllerImplApi;
 
 
 CandidateUserControllerImplApi apiInstance = new CandidateUserControllerImplApi();

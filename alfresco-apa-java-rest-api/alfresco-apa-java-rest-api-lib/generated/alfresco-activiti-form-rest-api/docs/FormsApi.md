@@ -21,8 +21,8 @@ Get form definition by version
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.FormsApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.FormsApi;
 
 
 FormsApi apiInstance = new FormsApi();
@@ -66,8 +66,8 @@ Get form definition latest version
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.FormsApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.FormsApi;
 
 
 FormsApi apiInstance = new FormsApi();
@@ -109,8 +109,8 @@ Get form definitions summary
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.FormsApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.FormsApi;
 
 
 FormsApi apiInstance = new FormsApi();
@@ -148,8 +148,8 @@ Get form definition by version
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.FormsApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.FormsApi;
 
 
 FormsApi apiInstance = new FormsApi();
@@ -195,8 +195,8 @@ Save runtime forms
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.FormsApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.FormsApi;
 
 
 FormsApi apiInstance = new FormsApi();
@@ -239,8 +239,8 @@ Submit forms specific version
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.FormsApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.FormsApi;
 
 
 FormsApi apiInstance = new FormsApi();
@@ -286,8 +286,8 @@ Submit forms latest version
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.FormsApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.FormsApi;
 
 
 FormsApi apiInstance = new FormsApi();

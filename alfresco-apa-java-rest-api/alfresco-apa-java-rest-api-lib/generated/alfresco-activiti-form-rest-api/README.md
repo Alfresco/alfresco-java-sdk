@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.alfresco</groupId>
+    <groupId>org.alfresco</groupId>
     <artifactId>alfresco-activiti-form-rest-api</artifactId>
     <version>5.1.2-SNAPSHOT</version>
 </dependency>
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.alfresco:alfresco-activiti-form-rest-api:5.1.2-SNAPSHOT"
+compile "org.alfresco:alfresco-activiti-form-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -56,10 +56,10 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-  import com.alfresco.activiti.form.*;
-  import com.alfresco.activiti.form.auth.*;
-  import com.alfresco.activiti.form.model.*;
-  import com.alfresco.activiti.form.handler.CandidateGroupAdminControllerImplApi;
+  import org.alfresco.activiti.form.*;
+  import org.alfresco.activiti.form.auth.*;
+  import org.alfresco.activiti.form.model.*;
+  import org.alfresco.activiti.form.handler.CandidateGroupAdminControllerImplApi;
 
   import java.io.File;
   import java.util.*;

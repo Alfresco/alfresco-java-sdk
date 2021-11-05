@@ -17,8 +17,8 @@ Add a collaborator
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.CollaborationApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.CollaborationApi;
 
 
 CollaborationApi apiInstance = new CollaborationApi();
@@ -64,8 +64,8 @@ Get the list of collaborators on a project.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.CollaborationApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.CollaborationApi;
 
 
 CollaborationApi apiInstance = new CollaborationApi();
@@ -113,8 +113,8 @@ Remove a collaborator
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.CollaborationApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.CollaborationApi;
 
 
 CollaborationApi apiInstance = new CollaborationApi();

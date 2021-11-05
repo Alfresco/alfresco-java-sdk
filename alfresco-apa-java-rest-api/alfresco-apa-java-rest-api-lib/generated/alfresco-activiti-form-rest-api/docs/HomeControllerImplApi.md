@@ -15,8 +15,8 @@ getHomeInfo
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.HomeControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.HomeControllerImplApi;
 
 
 HomeControllerImplApi apiInstance = new HomeControllerImplApi();

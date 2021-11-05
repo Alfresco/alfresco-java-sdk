@@ -16,8 +16,8 @@ findAll
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.ServiceTaskAdminControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.ServiceTaskAdminControllerApi;
 
 
 ServiceTaskAdminControllerApi apiInstance = new ServiceTaskAdminControllerApi();
@@ -63,8 +63,8 @@ findById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.ServiceTaskAdminControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.ServiceTaskAdminControllerApi;
 
 
 ServiceTaskAdminControllerApi apiInstance = new ServiceTaskAdminControllerApi();

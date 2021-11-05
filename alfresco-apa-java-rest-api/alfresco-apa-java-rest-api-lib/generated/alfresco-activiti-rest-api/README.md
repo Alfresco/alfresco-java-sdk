@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.alfresco</groupId>
+    <groupId>org.alfresco</groupId>
     <artifactId>alfresco-activiti-rest-api</artifactId>
     <version>5.1.2-SNAPSHOT</version>
 </dependency>
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.alfresco:alfresco-activiti-rest-api:5.1.2-SNAPSHOT"
+compile "org.alfresco:alfresco-activiti-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -56,10 +56,10 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-  import com.alfresco.activiti.*;
-  import com.alfresco.activiti.auth.*;
-  import com.alfresco.activiti.model.*;
-  import com.alfresco.activiti.handler.AboutApi;
+  import org.alfresco.activiti.*;
+  import org.alfresco.activiti.auth.*;
+  import org.alfresco.activiti.model.*;
+  import org.alfresco.activiti.handler.AboutApi;
 
   import java.io.File;
   import java.util.*;

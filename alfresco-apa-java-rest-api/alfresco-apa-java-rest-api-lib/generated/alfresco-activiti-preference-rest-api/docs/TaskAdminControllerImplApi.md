@@ -20,8 +20,8 @@ assign
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
@@ -65,8 +65,8 @@ completeTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
@@ -110,8 +110,8 @@ deleteTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
@@ -153,8 +153,8 @@ getTaskById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
@@ -196,8 +196,8 @@ getTasks
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();
@@ -243,8 +243,8 @@ updateTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.TaskAdminControllerImplApi;
 
 
 TaskAdminControllerImplApi apiInstance = new TaskAdminControllerImplApi();

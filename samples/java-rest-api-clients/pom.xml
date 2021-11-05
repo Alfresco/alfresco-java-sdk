@@ -17,7 +17,7 @@
   <dependencies>
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-apa-java-rest-api-spring-boot</artifactId>
+      <artifactId>alfresco-apa-java-rest-api-spring-boot-starter</artifactId>
       <version>${project.version}</version>
     </dependency>
 

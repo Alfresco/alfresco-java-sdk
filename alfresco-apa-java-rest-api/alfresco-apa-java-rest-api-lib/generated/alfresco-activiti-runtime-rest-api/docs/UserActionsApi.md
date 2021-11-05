@@ -16,8 +16,8 @@ Send a named event
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.UserActionsApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.UserActionsApi;
 
 
 UserActionsApi apiInstance = new UserActionsApi();
@@ -63,8 +63,8 @@ Submit forms latest version
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.UserActionsApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.UserActionsApi;
 
 
 UserActionsApi apiInstance = new UserActionsApi();

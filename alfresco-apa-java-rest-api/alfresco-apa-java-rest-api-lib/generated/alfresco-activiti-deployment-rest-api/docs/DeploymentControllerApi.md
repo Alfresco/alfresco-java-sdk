@@ -28,8 +28,8 @@ Add a new application.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -72,8 +72,8 @@ Delete an existing application by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -116,8 +116,8 @@ Retrieve the application runtime version by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -161,8 +161,8 @@ Find application by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -206,8 +206,8 @@ Find applications. It allows filtering. This service will return all application
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -267,8 +267,8 @@ Fetch all groups belonging to an application.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -316,8 +316,8 @@ Retrieve the latest runtime version available in the deployment service.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -357,8 +357,8 @@ Retrieve a list of runtime versions available in the deployment service.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -402,8 +402,8 @@ Fetch all users belonging to an application.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -453,8 +453,8 @@ retrieveServiceLogs
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -500,8 +500,8 @@ Updates the application runtime version to the selected one.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();
@@ -547,8 +547,8 @@ Update an existing application by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DeploymentControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DeploymentControllerApi;
 
 
 DeploymentControllerApi apiInstance = new DeploymentControllerApi();

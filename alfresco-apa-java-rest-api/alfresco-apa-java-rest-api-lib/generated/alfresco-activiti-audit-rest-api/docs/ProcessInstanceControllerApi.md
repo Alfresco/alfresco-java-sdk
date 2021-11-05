@@ -17,8 +17,8 @@ findAll
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.ProcessInstanceControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.ProcessInstanceControllerApi;
 
 
 ProcessInstanceControllerApi apiInstance = new ProcessInstanceControllerApi();
@@ -64,8 +64,8 @@ findById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.ProcessInstanceControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.ProcessInstanceControllerApi;
 
 
 ProcessInstanceControllerApi apiInstance = new ProcessInstanceControllerApi();
@@ -107,8 +107,8 @@ subprocesses
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.ProcessInstanceControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.ProcessInstanceControllerApi;
 
 
 ProcessInstanceControllerApi apiInstance = new ProcessInstanceControllerApi();

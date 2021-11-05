@@ -15,8 +15,8 @@ getAllProcessDefinitions
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessDefinitionAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessDefinitionAdminControllerImplApi;
 
 
 ProcessDefinitionAdminControllerImplApi apiInstance = new ProcessDefinitionAdminControllerImplApi();

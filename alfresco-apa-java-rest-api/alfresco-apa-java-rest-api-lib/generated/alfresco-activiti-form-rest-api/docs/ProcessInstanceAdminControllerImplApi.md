@@ -24,8 +24,8 @@ deleteProcessInstance
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -67,8 +67,8 @@ getProcessInstanceById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -110,8 +110,8 @@ getProcessInstances
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -157,8 +157,8 @@ receive
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -199,8 +199,8 @@ resume
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -242,8 +242,8 @@ startProcess
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -285,8 +285,8 @@ start
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -328,8 +328,8 @@ subprocesses
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -377,8 +377,8 @@ suspend
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();
@@ -420,8 +420,8 @@ updateProcess
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceAdminControllerImplApi;
 
 
 ProcessInstanceAdminControllerImplApi apiInstance = new ProcessInstanceAdminControllerImplApi();

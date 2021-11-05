@@ -15,8 +15,8 @@ Get release by a release Id
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ReleaseControllerApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ReleaseControllerApi;
 
 
 ReleaseControllerApi apiInstance = new ReleaseControllerApi();

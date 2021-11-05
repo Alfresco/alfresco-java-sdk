@@ -25,8 +25,8 @@ assign
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -70,8 +70,8 @@ claimTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -113,8 +113,8 @@ completeTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -158,8 +158,8 @@ createNewTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -201,8 +201,8 @@ deleteTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -244,8 +244,8 @@ getSubtasks
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -293,8 +293,8 @@ getTaskById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -336,8 +336,8 @@ getTasks
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -383,8 +383,8 @@ releaseTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -426,8 +426,8 @@ saveTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
@@ -470,8 +470,8 @@ updateTask
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();

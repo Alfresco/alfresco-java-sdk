@@ -15,8 +15,8 @@ deleteEvents
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.AuditEventsDeleteControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.AuditEventsDeleteControllerApi;
 
 
 AuditEventsDeleteControllerApi apiInstance = new AuditEventsDeleteControllerApi();

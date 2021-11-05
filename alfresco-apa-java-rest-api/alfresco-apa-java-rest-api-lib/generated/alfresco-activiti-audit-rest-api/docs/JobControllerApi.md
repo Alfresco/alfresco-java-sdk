@@ -16,8 +16,8 @@ all
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.JobControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.JobControllerApi;
 
 
 JobControllerApi apiInstance = new JobControllerApi();
@@ -55,8 +55,8 @@ get
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.JobControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.JobControllerApi;
 
 
 JobControllerApi apiInstance = new JobControllerApi();

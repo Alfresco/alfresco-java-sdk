@@ -19,8 +19,8 @@ descriptorDataDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
@@ -61,8 +61,8 @@ descriptorDataDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
@@ -104,8 +104,8 @@ descriptorDataDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
@@ -149,8 +149,8 @@ descriptorDataDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();
@@ -194,8 +194,8 @@ descriptorDataDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorDataEntityApi;
 
 
 DescriptorDataEntityApi apiInstance = new DescriptorDataEntityApi();

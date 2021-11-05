@@ -17,8 +17,8 @@ getProcessModel
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.ProcessDefinitionControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.ProcessDefinitionControllerImplApi;
 
 
 ProcessDefinitionControllerImplApi apiInstance = new ProcessDefinitionControllerImplApi();
@@ -60,8 +60,8 @@ getProcessDefinition
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.ProcessDefinitionControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.ProcessDefinitionControllerImplApi;
 
 
 ProcessDefinitionControllerImplApi apiInstance = new ProcessDefinitionControllerImplApi();
@@ -103,8 +103,8 @@ getProcessDefinitions
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.ProcessDefinitionControllerImplApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.ProcessDefinitionControllerImplApi;
 
 
 ProcessDefinitionControllerImplApi apiInstance = new ProcessDefinitionControllerImplApi();

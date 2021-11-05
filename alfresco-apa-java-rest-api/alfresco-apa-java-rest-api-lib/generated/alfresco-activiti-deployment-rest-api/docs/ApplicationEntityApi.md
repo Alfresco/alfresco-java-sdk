@@ -19,8 +19,8 @@ applicationDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.ApplicationEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.ApplicationEntityApi;
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
@@ -61,8 +61,8 @@ applicationDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.ApplicationEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.ApplicationEntityApi;
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
@@ -104,8 +104,8 @@ applicationDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.ApplicationEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.ApplicationEntityApi;
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
@@ -149,8 +149,8 @@ applicationDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.ApplicationEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.ApplicationEntityApi;
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();
@@ -194,8 +194,8 @@ applicationDescriptor
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.ApplicationEntityApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.ApplicationEntityApi;
 
 
 ApplicationEntityApi apiInstance = new ApplicationEntityApi();

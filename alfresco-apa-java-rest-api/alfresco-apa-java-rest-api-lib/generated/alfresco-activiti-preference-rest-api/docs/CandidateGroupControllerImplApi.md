@@ -17,8 +17,8 @@ addCandidateGroups
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.CandidateGroupControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.CandidateGroupControllerImplApi;
 
 
 CandidateGroupControllerImplApi apiInstance = new CandidateGroupControllerImplApi();
@@ -61,8 +61,8 @@ deleteCandidateGroups
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.CandidateGroupControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.CandidateGroupControllerImplApi;
 
 
 CandidateGroupControllerImplApi apiInstance = new CandidateGroupControllerImplApi();
@@ -105,8 +105,8 @@ getGroupCandidates
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.CandidateGroupControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.CandidateGroupControllerImplApi;
 
 
 CandidateGroupControllerImplApi apiInstance = new CandidateGroupControllerImplApi();

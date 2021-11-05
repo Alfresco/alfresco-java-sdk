@@ -15,8 +15,8 @@ getProcessDiagram
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.ProcessInstanceDiagramControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.ProcessInstanceDiagramControllerApi;
 
 
 ProcessInstanceDiagramControllerApi apiInstance = new ProcessInstanceDiagramControllerApi();
