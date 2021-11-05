@@ -15,8 +15,8 @@ runScript
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ScriptControllerApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ScriptControllerApi;
 
 
 ScriptControllerApi apiInstance = new ScriptControllerApi();

@@ -18,8 +18,8 @@ all
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.JobExecutionControllerApi;
 
 
 JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
@@ -65,8 +65,8 @@ get
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.JobExecutionControllerApi;
 
 
 JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
@@ -108,8 +108,8 @@ log
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.JobExecutionControllerApi;
 
 
 JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();
@@ -151,8 +151,8 @@ post
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.JobExecutionControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.JobExecutionControllerApi;
 
 
 JobExecutionControllerApi apiInstance = new JobExecutionControllerApi();

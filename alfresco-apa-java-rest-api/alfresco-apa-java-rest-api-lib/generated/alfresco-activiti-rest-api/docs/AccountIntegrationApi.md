@@ -17,11 +17,11 @@ Accounts are used to integrate with third party apps and clients
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AccountIntegrationApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AccountIntegrationApi;
 
 
 

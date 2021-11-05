@@ -15,8 +15,8 @@ getProcessDefinitionMetadata
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessDefinitionMetaControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessDefinitionMetaControllerImplApi;
 
 
 ProcessDefinitionMetaControllerImplApi apiInstance = new ProcessDefinitionMetaControllerImplApi();

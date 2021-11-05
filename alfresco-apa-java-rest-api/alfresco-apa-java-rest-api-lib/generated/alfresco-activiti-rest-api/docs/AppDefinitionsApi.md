@@ -23,11 +23,11 @@ deleteAppDefinition
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -75,11 +75,11 @@ This will return a zip file containing the app definition model and all related 
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -125,11 +125,11 @@ Get an app definition
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -176,11 +176,11 @@ importAndPublishApp
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -229,11 +229,11 @@ importAndPublishApp
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -282,11 +282,11 @@ Imports an app inside an existing app definition and creates a new version&lt;p&
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -337,11 +337,11 @@ Allows a zip file to be uploaded containing an app definition and any number of 
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -392,11 +392,11 @@ Publishing an app definition makes it available for use. The application must no
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 
@@ -445,11 +445,11 @@ Update an app definition
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AppDefinitionsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AppDefinitionsApi;
 
 
 

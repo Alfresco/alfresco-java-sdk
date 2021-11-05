@@ -28,8 +28,8 @@ This will create a new project with chosen name containing the project folder an
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -75,8 +75,8 @@ This will download an example project (zip) and create a new project with chosen
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -120,8 +120,8 @@ Create new project
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -163,8 +163,8 @@ Delete project
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -207,8 +207,8 @@ This will create and download the zip containing the project folder and all rela
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -253,8 +253,8 @@ Get metadata information for a specific version of a project.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -306,8 +306,8 @@ Get project
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -351,8 +351,8 @@ Get the list of available projects. Minimal information for each project is retu
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -402,8 +402,8 @@ Allows a zip file to be uploaded containing an project definition and any number
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -447,8 +447,8 @@ This will release the project.The new version is based on the version strategy
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -490,8 +490,8 @@ Update project details
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();
@@ -535,8 +535,8 @@ Validate an project by id
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.dmn.simulation.ApiException;
-//import com.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
+//import org.alfresco.activiti.dmn.simulation.ApiException;
+//import org.alfresco.activiti.dmn.simulation.handler.ProjectsApi;
 
 
 ProjectsApi apiInstance = new ProjectsApi();

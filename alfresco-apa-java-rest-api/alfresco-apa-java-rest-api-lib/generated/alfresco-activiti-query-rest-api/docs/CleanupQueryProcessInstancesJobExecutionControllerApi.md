@@ -15,8 +15,8 @@ launch
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.CleanupQueryProcessInstancesJobExecutionControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.CleanupQueryProcessInstancesJobExecutionControllerApi;
 
 
 CleanupQueryProcessInstancesJobExecutionControllerApi apiInstance = new CleanupQueryProcessInstancesJobExecutionControllerApi();

@@ -33,8 +33,8 @@ Create a new model related to an existing project
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -80,8 +80,8 @@ Create a new model with no relationship to other projects
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -123,8 +123,8 @@ Delete model
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -167,8 +167,8 @@ Get the model associated with the project updated. Minimal information for the m
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -214,8 +214,8 @@ Allows to download a file containing a model metadata along with the model conte
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -260,8 +260,8 @@ Get the models that has GLOBAL as scope. Minimal information for each model is r
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -313,8 +313,8 @@ Retrieve the content of the model for the identifier &lt;b&gt;modelId&lt;/b&gt; 
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -357,8 +357,8 @@ Get the list of available model types.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -404,8 +404,8 @@ Get metadata information for a model
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -449,8 +449,8 @@ Get the models associated with an project. Minimal information for each model is
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -502,8 +502,8 @@ Get the content of the schema used to validate the given model type.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -547,8 +547,8 @@ Allows a file to be uploaded containing a model definition.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -596,8 +596,8 @@ Get the model associated with the project updated. Minimal information for the m
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -647,8 +647,8 @@ Update the content of the model from file.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -693,8 +693,8 @@ Update the details of a model.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -740,8 +740,8 @@ Allows to validate the model extensions without save them.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();
@@ -788,8 +788,8 @@ Allows to validate the model content without save it.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ModelsApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ModelsApi;
 
 
 ModelsApi apiInstance = new ModelsApi();

@@ -15,8 +15,8 @@ findById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.ServiceTaskIntegrationContextAdminControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.ServiceTaskIntegrationContextAdminControllerApi;
 
 
 ServiceTaskIntegrationContextAdminControllerApi apiInstance = new ServiceTaskIntegrationContextAdminControllerApi();

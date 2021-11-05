@@ -17,8 +17,8 @@ createVariable
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.TaskVariableAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.TaskVariableAdminControllerImplApi;
 
 
 TaskVariableAdminControllerImplApi apiInstance = new TaskVariableAdminControllerImplApi();
@@ -61,8 +61,8 @@ getVariables
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.TaskVariableAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.TaskVariableAdminControllerImplApi;
 
 
 TaskVariableAdminControllerImplApi apiInstance = new TaskVariableAdminControllerImplApi();
@@ -104,8 +104,8 @@ updateVariable
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.TaskVariableAdminControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.TaskVariableAdminControllerImplApi;
 
 
 TaskVariableAdminControllerImplApi apiInstance = new TaskVariableAdminControllerImplApi();

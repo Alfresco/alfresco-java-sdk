@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.alfresco</groupId>
+    <groupId>org.alfresco</groupId>
     <artifactId>alfresco-activiti-modeling-rest-api</artifactId>
     <version>5.1.2-SNAPSHOT</version>
 </dependency>
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.alfresco:alfresco-activiti-modeling-rest-api:5.1.2-SNAPSHOT"
+compile "org.alfresco:alfresco-activiti-modeling-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -51,36 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-activiti-modeling-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-  import com.alfresco.activiti.modeling.*;
-  import com.alfresco.activiti.modeling.auth.*;
-  import com.alfresco.activiti.modeling.model.*;
-  import com.alfresco.activiti.modeling.handler.ApsModelControllerApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class ApsModelControllerApiExample {
-
-  public static void main(String[] args) {
-  
-  ApsModelControllerApi apiInstance = new ApsModelControllerApi();
-    String projectId = "projectId_example"; // String | projectId
-    Object body = null; // Object | 
-  try {
-  EntryResponseContentOfImportResult result = apiInstance.importProcessModelUsingPOST(projectId, body);
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling ApsModelControllerApi#importProcessModelUsingPOST");
-  e.printStackTrace();
-  }
-  }
-  }
-```
 
 ## Documentation for API Endpoints
 
@@ -162,11 +132,3 @@ Class | Method | HTTP request | Description
 
 All endpoints do not require authorization.
 Authentication schemes defined for the API:
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
-

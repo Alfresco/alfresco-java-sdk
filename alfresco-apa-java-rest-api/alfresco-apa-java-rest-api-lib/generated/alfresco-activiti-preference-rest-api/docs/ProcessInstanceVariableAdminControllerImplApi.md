@@ -16,8 +16,8 @@ removeVariables
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceVariableAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceVariableAdminControllerImplApi;
 
 
 ProcessInstanceVariableAdminControllerImplApi apiInstance = new ProcessInstanceVariableAdminControllerImplApi();
@@ -60,8 +60,8 @@ updateVariables
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceVariableAdminControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceVariableAdminControllerImplApi;
 
 
 ProcessInstanceVariableAdminControllerImplApi apiInstance = new ProcessInstanceVariableAdminControllerImplApi();

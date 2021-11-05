@@ -18,8 +18,8 @@ Delete preference
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.PreferenceApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.PreferenceApi;
 
 
 PreferenceApi apiInstance = new PreferenceApi();
@@ -61,8 +61,8 @@ Return all preferences
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.PreferenceApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.PreferenceApi;
 
 
 PreferenceApi apiInstance = new PreferenceApi();
@@ -108,8 +108,8 @@ Get preference
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.PreferenceApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.PreferenceApi;
 
 
 PreferenceApi apiInstance = new PreferenceApi();
@@ -151,8 +151,8 @@ Create/Save preference
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.runtime.ApiException;
-//import com.alfresco.activiti.runtime.handler.PreferenceApi;
+//import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.handler.PreferenceApi;
 
 
 PreferenceApi apiInstance = new PreferenceApi();

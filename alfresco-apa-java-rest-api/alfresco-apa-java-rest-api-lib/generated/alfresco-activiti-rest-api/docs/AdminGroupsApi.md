@@ -30,11 +30,11 @@ Activate a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -80,11 +80,11 @@ Add users to a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -130,11 +130,11 @@ Add capabilities to a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -182,11 +182,11 @@ Add a user to a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -234,11 +234,11 @@ Get a related group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -288,11 +288,11 @@ Create a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -339,11 +339,11 @@ Remove a capability from a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -391,11 +391,11 @@ Delete a member from a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -443,11 +443,11 @@ Delete a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -493,11 +493,11 @@ Delete a related group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -545,11 +545,11 @@ List group capabilities
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -596,11 +596,11 @@ Get group members
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -653,11 +653,11 @@ Get a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -708,11 +708,11 @@ Query groups
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -763,11 +763,11 @@ Get related groups
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 
@@ -814,11 +814,11 @@ Update a group
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.AdminGroupsApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.AdminGroupsApi;
 
 
 

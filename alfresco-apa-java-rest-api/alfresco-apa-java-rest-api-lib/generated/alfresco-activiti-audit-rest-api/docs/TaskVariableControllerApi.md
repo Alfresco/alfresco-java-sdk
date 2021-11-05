@@ -15,8 +15,8 @@ getVariables
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.TaskVariableControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.TaskVariableControllerApi;
 
 
 TaskVariableControllerApi apiInstance = new TaskVariableControllerApi();

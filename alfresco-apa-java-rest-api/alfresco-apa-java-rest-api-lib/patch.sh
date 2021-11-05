@@ -11,7 +11,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;url = "${alfrescoProcessQueryServiceReST_.url:}";url = "${activiti.service.query.url}", path = "${activiti.service.query.path}";g' \
   -e 's;url = "${alfrescoProcessStorageServiceReST_.url:}";url = "${alfresco.service.process.storage.url}", path = "${alfresco.service.process.storage.path}";g' \
   -e 's;ErrorModelNamenamespaceorgSpringframeworkHateoasNameEntityModelOfJobExecution;EntryResponseContentOfJobExecution;g' \
-  -e 's@import com\.alfresco\..*\.ResponseEntity;@@g' \
+  -e 's@import org\.alfresco\..*\.ResponseEntity;@@g' \
   -i '' {} +
 
 find "${GENERATED_SOURCE_DIR}" -type f -name "*.md" -exec sed \

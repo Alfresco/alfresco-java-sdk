@@ -15,8 +15,8 @@ Import an APS Process Model
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.modeling.ApiException;
-//import com.alfresco.activiti.modeling.handler.ApsModelControllerApi;
+//import org.alfresco.activiti.modeling.ApiException;
+//import org.alfresco.activiti.modeling.handler.ApsModelControllerApi;
 
 
 ApsModelControllerApi apiInstance = new ApsModelControllerApi();

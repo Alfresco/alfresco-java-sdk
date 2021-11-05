@@ -16,8 +16,8 @@ getVariables
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceVariableControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceVariableControllerImplApi;
 
 
 ProcessInstanceVariableControllerImplApi apiInstance = new ProcessInstanceVariableControllerImplApi();
@@ -59,8 +59,8 @@ setVariables
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.form.ApiException;
-//import com.alfresco.activiti.form.handler.ProcessInstanceVariableControllerImplApi;
+//import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.handler.ProcessInstanceVariableControllerImplApi;
 
 
 ProcessInstanceVariableControllerImplApi apiInstance = new ProcessInstanceVariableControllerImplApi();

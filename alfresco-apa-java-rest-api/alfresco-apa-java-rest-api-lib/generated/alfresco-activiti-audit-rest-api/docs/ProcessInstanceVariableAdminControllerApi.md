@@ -15,8 +15,8 @@ getVariables
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.ProcessInstanceVariableAdminControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.ProcessInstanceVariableAdminControllerApi;
 
 
 ProcessInstanceVariableAdminControllerApi apiInstance = new ProcessInstanceVariableAdminControllerApi();

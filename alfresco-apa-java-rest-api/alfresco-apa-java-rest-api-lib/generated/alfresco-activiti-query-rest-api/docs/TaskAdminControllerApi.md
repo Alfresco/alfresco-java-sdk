@@ -18,8 +18,8 @@ findAll
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.TaskAdminControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.TaskAdminControllerApi;
 
 
 TaskAdminControllerApi apiInstance = new TaskAdminControllerApi();
@@ -75,8 +75,8 @@ findById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.TaskAdminControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.TaskAdminControllerApi;
 
 
 TaskAdminControllerApi apiInstance = new TaskAdminControllerApi();
@@ -118,8 +118,8 @@ getTaskCandidateGroups
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.TaskAdminControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.TaskAdminControllerApi;
 
 
 TaskAdminControllerApi apiInstance = new TaskAdminControllerApi();
@@ -161,8 +161,8 @@ getTaskCandidateUsers
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.TaskAdminControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.TaskAdminControllerApi;
 
 
 TaskAdminControllerApi apiInstance = new TaskAdminControllerApi();

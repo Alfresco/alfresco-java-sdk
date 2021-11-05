@@ -15,8 +15,8 @@ findAll
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.audit.ApiException;
-//import com.alfresco.activiti.audit.handler.ApplicationAdminControllerApi;
+//import org.alfresco.activiti.audit.ApiException;
+//import org.alfresco.activiti.audit.handler.ApplicationAdminControllerApi;
 
 
 ApplicationAdminControllerApi apiInstance = new ApplicationAdminControllerApi();

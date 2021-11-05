@@ -23,8 +23,8 @@ Delete an existing descriptor by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorControllerApi;
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
@@ -67,8 +67,8 @@ Deploy an existing descriptor by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorControllerApi;
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
@@ -113,8 +113,8 @@ Export a descriptor by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorControllerApi;
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
@@ -161,8 +161,8 @@ Find descriptor by id.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorControllerApi;
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
@@ -206,8 +206,8 @@ Find descriptors. It allows filtering.
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorControllerApi;
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
@@ -265,8 +265,8 @@ getReleasedModelContents
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorControllerApi;
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
@@ -312,8 +312,8 @@ Import descriptor. Format: zip file, containing at root a descriptor.json and th
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.deployment.ApiException;
-//import com.alfresco.activiti.deployment.handler.DescriptorControllerApi;
+//import org.alfresco.activiti.deployment.ApiException;
+//import org.alfresco.activiti.deployment.handler.DescriptorControllerApi;
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();

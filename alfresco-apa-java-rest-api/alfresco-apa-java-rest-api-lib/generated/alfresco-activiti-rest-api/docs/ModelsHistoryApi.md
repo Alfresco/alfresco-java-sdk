@@ -16,11 +16,11 @@ List a model&#x27;s historic versions
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.ModelsHistoryApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.ModelsHistoryApi;
 
 
 
@@ -69,11 +69,11 @@ Get a historic version of a model
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.ModelsHistoryApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.ModelsHistoryApi;
 
 
 

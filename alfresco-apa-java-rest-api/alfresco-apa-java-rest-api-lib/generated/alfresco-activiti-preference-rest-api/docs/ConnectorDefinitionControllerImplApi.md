@@ -16,8 +16,8 @@ getConnectorDefinition
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ConnectorDefinitionControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ConnectorDefinitionControllerImplApi;
 
 
 ConnectorDefinitionControllerImplApi apiInstance = new ConnectorDefinitionControllerImplApi();
@@ -59,8 +59,8 @@ getConnectorDefinitions
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ConnectorDefinitionControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ConnectorDefinitionControllerImplApi;
 
 
 ConnectorDefinitionControllerImplApi apiInstance = new ConnectorDefinitionControllerImplApi();

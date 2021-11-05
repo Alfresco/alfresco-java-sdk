@@ -22,11 +22,11 @@ Typical action is updating/reset password
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.UsersApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.UsersApi;
 
 
 
@@ -74,11 +74,11 @@ Stream user profile picture
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.UsersApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.UsersApi;
 
 
 
@@ -124,11 +124,11 @@ Get a user
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.UsersApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.UsersApi;
 
 
 
@@ -177,11 +177,11 @@ A common use case is that a user wants to select another user (eg. when assignin
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.UsersApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.UsersApi;
 
 
 
@@ -242,11 +242,11 @@ Request a password reset
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.UsersApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.UsersApi;
 
 
 
@@ -292,11 +292,11 @@ Update a user
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.ApiClient;
-//import com.alfresco.activiti.ApiException;
-//import com.alfresco.activiti.Configuration;
-//import com.alfresco.activiti.auth.*;
-//import com.alfresco.activiti.handler.UsersApi;
+//import org.alfresco.activiti.ApiClient;
+//import org.alfresco.activiti.ApiException;
+//import org.alfresco.activiti.Configuration;
+//import org.alfresco.activiti.auth.*;
+//import org.alfresco.activiti.handler.UsersApi;
 
 
 

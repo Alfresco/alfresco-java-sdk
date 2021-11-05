@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.alfresco</groupId>
+    <groupId>org.alfresco</groupId>
     <artifactId>alfresco-activiti-rest-api</artifactId>
     <version>5.1.2-SNAPSHOT</version>
 </dependency>
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.alfresco:alfresco-activiti-rest-api:5.1.2-SNAPSHOT"
+compile "org.alfresco:alfresco-activiti-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -51,39 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-activiti-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-  import com.alfresco.activiti.*;
-  import com.alfresco.activiti.auth.*;
-  import com.alfresco.activiti.model.*;
-  import com.alfresco.activiti.handler.AboutApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class AboutApiExample {
-
-  public static void main(String[] args) {
-
-
-
-
-
-
-  AboutApi apiInstance = new AboutApi();
-  try {
-  String result = apiInstance.getAppVersionUsingGET();
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling AboutApi#getAppVersionUsingGET");
-  e.printStackTrace();
-  }
-  }
-  }
-```
 
 ## Documentation for API Endpoints
 
@@ -515,12 +482,4 @@ Authentication schemes defined for the API:
 ### basicAuth
 
 - **Type**: HTTP basic authentication
-
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
 

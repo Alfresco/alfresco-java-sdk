@@ -15,8 +15,8 @@ getApplicationStoreFolder
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.process.storage.ApiException;
-//import com.alfresco.activiti.process.storage.handler.FolderControllerApi;
+//import org.alfresco.activiti.process.storage.ApiException;
+//import org.alfresco.activiti.process.storage.handler.FolderControllerApi;
 
 
 FolderControllerApi apiInstance = new FolderControllerApi();

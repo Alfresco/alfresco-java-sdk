@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.alfresco</groupId>
+    <groupId>org.alfresco</groupId>
     <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
     <version>5.1.2-SNAPSHOT</version>
 </dependency>
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.alfresco:alfresco-activiti-process-storage-rest-api:5.1.2-SNAPSHOT"
+compile "org.alfresco:alfresco-activiti-process-storage-rest-api:5.1.2-SNAPSHOT"
 ```
 
 ### Others
@@ -51,34 +51,6 @@ Then manually install the following JARs:
 * target/alfresco-activiti-process-storage-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
 
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
-
-```java
-  import com.alfresco.activiti.process.storage.*;
-  import com.alfresco.activiti.process.storage.auth.*;
-  import com.alfresco.activiti.process.storage.model.*;
-  import com.alfresco.activiti.process.storage.handler.FolderControllerApi;
-
-  import java.io.File;
-  import java.util.*;
-
-  public class FolderControllerApiExample {
-
-  public static void main(String[] args) {
-  
-  FolderControllerApi apiInstance = new FolderControllerApi();
-  try {
-  Folder result = apiInstance.getApplicationStoreFolderUsingGET();
-    System.out.println(result);
-  } catch (ApiException e) {
-  System.err.println("Exception when calling FolderControllerApi#getApplicationStoreFolderUsingGET");
-  e.printStackTrace();
-  }
-  }
-  }
-```
 
 ## Documentation for API Endpoints
 
@@ -96,11 +68,3 @@ Class | Method | HTTP request | Description
 
 All endpoints do not require authorization.
 Authentication schemes defined for the API:
-
-## Recommendation
-
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
-

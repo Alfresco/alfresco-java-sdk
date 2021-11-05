@@ -15,8 +15,8 @@ getTasks
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.query.ApiException;
-//import com.alfresco.activiti.query.handler.ProcessInstanceTasksControllerApi;
+//import org.alfresco.activiti.query.ApiException;
+//import org.alfresco.activiti.query.handler.ProcessInstanceTasksControllerApi;
 
 
 ProcessInstanceTasksControllerApi apiInstance = new ProcessInstanceTasksControllerApi();

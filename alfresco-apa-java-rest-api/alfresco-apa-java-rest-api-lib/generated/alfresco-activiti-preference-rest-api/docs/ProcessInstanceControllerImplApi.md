@@ -28,8 +28,8 @@ createProcessInstance
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -71,8 +71,8 @@ deleteProcessInstance
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -114,8 +114,8 @@ getProcessDiagram
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -157,8 +157,8 @@ getProcessInstanceById
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -200,8 +200,8 @@ getProcessInstances
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -247,8 +247,8 @@ receive
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -289,8 +289,8 @@ resume
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -332,8 +332,8 @@ sendSignal
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -374,8 +374,8 @@ sendStartMessage
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -417,8 +417,8 @@ startCreatedProcess
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -462,8 +462,8 @@ startProcess
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -505,8 +505,8 @@ subprocesses
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -554,8 +554,8 @@ suspend
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
@@ -597,8 +597,8 @@ updateProcess
 ### Example
 ```java
 // Import classes:
-//import com.alfresco.activiti.preference.ApiException;
-//import com.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
+//import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.handler.ProcessInstanceControllerImplApi;
 
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
