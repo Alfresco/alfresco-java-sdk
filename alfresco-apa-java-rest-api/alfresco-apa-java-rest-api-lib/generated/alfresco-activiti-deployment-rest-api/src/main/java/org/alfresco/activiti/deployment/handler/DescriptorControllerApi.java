@@ -26,6 +26,7 @@ import org.alfresco.activiti.deployment.model.DescriptorResponseRepresentation;
 import org.alfresco.activiti.deployment.model.ListResponseContentOfDescriptorResponseRepresentation;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import org.springframework.core.io.Resource;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -136,9 +137,9 @@ public interface DescriptorControllerApi {
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/descriptors/import",
-        consumes = "application/json",
+        consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<Void> importDescriptorUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
+    ResponseEntity<Void> importDescriptorUsingPOST(@ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
 
 }

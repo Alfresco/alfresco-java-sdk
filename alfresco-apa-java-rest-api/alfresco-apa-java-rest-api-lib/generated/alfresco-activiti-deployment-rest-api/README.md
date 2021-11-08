@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
  - [DeployDescriptorVariablesRepresentation](docs/DeployDescriptorVariablesRepresentation.md)
  - [Descriptor](docs/Descriptor.md)
  - [DescriptorResponseRepresentation](docs/DescriptorResponseRepresentation.md)
+ - [DescriptorsImportBody](docs/DescriptorsImportBody.md)
  - [EntriesResponseContentOfApplicationResponseRepresentation](docs/EntriesResponseContentOfApplicationResponseRepresentation.md)
  - [EntriesResponseContentOfDescriptorResponseRepresentation](docs/EntriesResponseContentOfDescriptorResponseRepresentation.md)
  - [EntryResponseContentOfApplicationResponseRepresentation](docs/EntryResponseContentOfApplicationResponseRepresentation.md)

@@ -21,6 +21,7 @@
 package org.alfresco.activiti.modeling.handler;
 
 import org.alfresco.activiti.modeling.model.EntryResponseContentOfImportResult;
+import org.springframework.core.io.Resource;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -53,9 +54,9 @@ public interface ApsModelControllerApi {
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/aps/models/import/{projectId}/process",
         produces = "*/*", 
-        consumes = "application/json",
+        consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<EntryResponseContentOfImportResult> importProcessModelUsingPOST(@ApiParam(value = "projectId", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
+    ResponseEntity<EntryResponseContentOfImportResult> importProcessModelUsingPOST(@ApiParam(value = "projectId", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
 
 }
