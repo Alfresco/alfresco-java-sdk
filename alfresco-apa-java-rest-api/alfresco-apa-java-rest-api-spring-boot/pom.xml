@@ -26,53 +26,58 @@
     </dependency>
 
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-audit-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-deployment-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-dmn-simulation-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-form-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-modeling-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-preference-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-query-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-runtime-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.alfresco</groupId>
+      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.alfresco</groupId>
+      <artifactId>alfresco-activiti-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
 

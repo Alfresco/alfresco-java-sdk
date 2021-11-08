@@ -20,11 +20,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableFeignClients(basePackages = {
-    "com.alfresco.activiti.deployment.handler",
-    "com.alfresco.activiti.modeling.handler",
-    "com.alfresco.activiti.process.storage.handler",
-    "com.alfresco.activiti.query.handler",
-    "com.alfresco.activiti.runtime.handler"
+    "org.alfresco.activiti.deployment.handler",
+    "org.alfresco.activiti.modeling.handler",
+    "org.alfresco.activiti.process.storage.handler",
+    "org.alfresco.activiti.query.handler",
+    "org.alfresco.activiti.runtime.handler"
 })
 public class AlfrescoAPARestApiAutoConfiguration {
 
