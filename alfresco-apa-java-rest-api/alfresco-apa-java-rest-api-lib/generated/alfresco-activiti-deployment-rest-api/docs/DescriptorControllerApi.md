@@ -303,7 +303,7 @@ No authorization required
 
 <a name="importDescriptorUsingPOST"></a>
 # **importDescriptorUsingPOST**
-> importDescriptorUsingPOST(body)
+> importDescriptorUsingPOST(file)
 
 importDescriptor
 
@@ -317,9 +317,9 @@ Import descriptor. Format: zip file, containing at root a descriptor.json and th
 
 
 DescriptorControllerApi apiInstance = new DescriptorControllerApi();
-Object body = null; // Object | 
+File file = new File("file_example"); // File | 
 try {
-    apiInstance.importDescriptorUsingPOST(body);
+    apiInstance.importDescriptorUsingPOST(file);
 } catch (ApiException e) {
     System.err.println("Exception when calling DescriptorControllerApi#importDescriptorUsingPOST");
     e.printStackTrace();
@@ -330,7 +330,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional]
+ **file** | **File**|  | [optional]
 
 ### Return type
 
@@ -342,6 +342,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/octet-stream, multipart/form-data
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 

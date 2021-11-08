@@ -13,66 +13,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.alfresco.activiti.preference.model;
+package org.alfresco.activiti.modeling.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.core.io.Resource;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * ProcessDefinitionUserTask
+ * ProjectIdProcessBody
  */
 @Validated
 
 
-public class ProcessDefinitionUserTask   {
-  @JsonProperty("taskDocumentation")
-  private String taskDocumentation = null;
+public class ProjectIdProcessBody   {
+  @JsonProperty("file")
+  private Resource file = null;
 
-  @JsonProperty("taskName")
-  private String taskName = null;
-
-  public ProcessDefinitionUserTask taskDocumentation(String taskDocumentation) {
-    this.taskDocumentation = taskDocumentation;
+  public ProjectIdProcessBody file(Resource file) {
+    this.file = file;
     return this;
   }
 
   /**
-   * Get taskDocumentation
-   * @return taskDocumentation
+   * file
+   * @return file
    **/
-  @ApiModelProperty(value = "")
-  
-    public String getTaskDocumentation() {
-    return taskDocumentation;
+  @ApiModelProperty(required = true, value = "file")
+      @NotNull
+
+    @Valid
+    public Resource getFile() {
+    return file;
   }
 
-  public void setTaskDocumentation(String taskDocumentation) {
-    this.taskDocumentation = taskDocumentation;
-  }
-
-  public ProcessDefinitionUserTask taskName(String taskName) {
-    this.taskName = taskName;
-    return this;
-  }
-
-  /**
-   * Get taskName
-   * @return taskName
-   **/
-  @ApiModelProperty(value = "")
-  
-    public String getTaskName() {
-    return taskName;
-  }
-
-  public void setTaskName(String taskName) {
-    this.taskName = taskName;
+  public void setFile(Resource file) {
+    this.file = file;
   }
 
 
@@ -84,23 +65,21 @@ public class ProcessDefinitionUserTask   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProcessDefinitionUserTask processDefinitionUserTask = (ProcessDefinitionUserTask) o;
-    return Objects.equals(this.taskDocumentation, processDefinitionUserTask.taskDocumentation) &&
-        Objects.equals(this.taskName, processDefinitionUserTask.taskName);
+    ProjectIdProcessBody projectIdProcessBody = (ProjectIdProcessBody) o;
+    return Objects.equals(this.file, projectIdProcessBody.file);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskDocumentation, taskName);
+    return Objects.hash(file);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProcessDefinitionUserTask {\n");
+    sb.append("class ProjectIdProcessBody {\n");
     
-    sb.append("    taskDocumentation: ").append(toIndentedString(taskDocumentation)).append("\n");
-    sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
+    sb.append("    file: ").append(toIndentedString(file)).append("\n");
     sb.append("}");
     return sb.toString();
   }
