@@ -15,19 +15,19 @@
  */
 package org.alfresco.java.rest.client.sample.service;
 
-import com.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
-import com.alfresco.activiti.query.model.CloudRuntimeEventModel;
-import com.alfresco.activiti.query.model.CloudRuntimeEventModel.EventTypeEnum;
-import com.alfresco.activiti.query.model.EntryResponseContentOfCloudRuntimeEventOfobjectAndstring;
-import com.alfresco.activiti.query.model.ListResponseContentOfCloudRuntimeEventOfobjectAndstring;
-import com.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApiClient;
-import com.alfresco.activiti.runtime.handler.ProcessInstanceTasksControllerImplApi;
-import com.alfresco.activiti.runtime.handler.TaskControllerImplApi;
-import com.alfresco.activiti.runtime.model.CompleteTaskPayload;
-import com.alfresco.activiti.runtime.model.EntryResponseContentOfCloudProcessInstance;
-import com.alfresco.activiti.runtime.model.EntryResponseContentOfCloudTask;
-import com.alfresco.activiti.runtime.model.ListResponseContentOfCloudTask;
-import com.alfresco.activiti.runtime.model.StartProcessPayload;
+import org.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
+import org.alfresco.activiti.query.model.CloudRuntimeEventModel;
+import org.alfresco.activiti.query.model.CloudRuntimeEventModel.EventTypeEnum;
+import org.alfresco.activiti.query.model.EntryResponseContentOfCloudRuntimeEventOfobjectAndstring;
+import org.alfresco.activiti.query.model.ListResponseContentOfCloudRuntimeEventOfobjectAndstring;
+import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApiClient;
+import org.alfresco.activiti.runtime.handler.ProcessInstanceTasksControllerImplApi;
+import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
+import org.alfresco.activiti.runtime.model.CompleteTaskPayload;
+import org.alfresco.activiti.runtime.model.EntryResponseContentOfCloudProcessInstance;
+import org.alfresco.activiti.runtime.model.EntryResponseContentOfCloudTask;
+import org.alfresco.activiti.runtime.model.ListResponseContentOfCloudTask;
+import org.alfresco.activiti.runtime.model.StartProcessPayload;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
