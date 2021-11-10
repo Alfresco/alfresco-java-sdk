@@ -38,8 +38,7 @@
     <aae.query.api>https://${environment.host}/${environment.application.name}/query/v3/api-docs</aae.query.api>
     <aae.runtime.api>https://${environment.host}/${environment.application.name}/rb/v3/api-docs?group=Runtime%20Bundle</aae.runtime.api>
     <aae.audit.api>https://${environment.host}/${environment.application.name}/audit/v3/api-docs</aae.audit.api>
-    <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v3/api-docs
-    </aae.process-storage.api>
+    <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v3/api-docs</aae.process-storage.api>
     <aae.preference.api>https://${environment.host}/${environment.application.name}/preference/v3/api-docs?group=Preference</aae.preference.api>
   </properties>
   <distributionManagement>
@@ -151,24 +150,6 @@
             </configuration>
             <executions>
               <execution>
-                <id>generate-activiti-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aps.api}</inputSpec>
-                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</output>
-                  <artifactId>alfresco-activiti-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
                 <id>generate-activiti-api</id>
                 <goals>
                   <goal>generate</goal>
@@ -181,24 +162,6 @@
                     <apiPackage>${project.groupId}.activiti.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>alfresco-activiti-deployment-rest-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.deployment.api}</inputSpec>
-                  <output>generated/alfresco-activiti-deployment-rest-api</output>
-                  <artifactId>alfresco-activiti-deployment-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.deployment.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.deployment.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.deployment</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
@@ -219,24 +182,6 @@
                 </configuration>
               </execution>
               <execution>
-                <id>alfresco-activiti-modeling-rest-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.modeling.api}</inputSpec>
-                  <output>generated/alfresco-activiti-modeling-rest-api</output>
-                  <artifactId>alfresco-activiti-modeling-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.modeling.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.modeling.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.modeling</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
                 <id>alfresco-activiti-modeling-rest-api</id>
                 <goals>
                   <goal>generate</goal>
@@ -249,24 +194,6 @@
                     <apiPackage>${project.groupId}.activiti.modeling.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.modeling.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti.modeling</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-preference-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.preference.api}</inputSpec>
-                  <output>generated/alfresco-activiti-preference-rest-api</output>
-                  <artifactId>alfresco-activiti-preference-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.preference.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.preference.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.preference</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
@@ -287,24 +214,6 @@
                 </configuration>
               </execution>
               <execution>
-                <id>generate-activiti-dmn-simulation-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.dmn-simulation.api}</inputSpec>
-                  <output>generated/alfresco-activiti-dmn-simulation-rest-api</output>
-                  <artifactId>alfresco-activiti-dmn-simulation-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.dmn.simulation.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.dmn.simulation.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.dmn.simulation</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
                 <id>generate-activiti-dmn-simulation-api</id>
                 <goals>
                   <goal>generate</goal>
@@ -317,24 +226,6 @@
                     <apiPackage>${project.groupId}.activiti.dmn.simulation.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.dmn.simulation.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti.dmn.simulation</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-script-modeling-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.script-modeling.api}</inputSpec>
-                  <output>generated/alfresco-activiti-script-modeling-rest-api</output>
-                  <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.script.modeling.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.script.modeling.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.script.modeling</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
@@ -355,24 +246,6 @@
                 </configuration>
               </execution>
               <execution>
-                <id>generate-activiti-form-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.form.api}</inputSpec>
-                  <output>generated/alfresco-activiti-form-rest-api</output>
-                  <artifactId>alfresco-activiti-form-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.form.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.form.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.form</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
                 <id>generate-activiti-form-api</id>
                 <goals>
                   <goal>generate</goal>
@@ -385,24 +258,6 @@
                     <apiPackage>${project.groupId}.activiti.form.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.form.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti.form</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-query-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.query.api}</inputSpec>
-                  <output>generated/alfresco-activiti-query-rest-api</output>
-                  <artifactId>alfresco-activiti-query-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.query.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.query.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.query</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
@@ -423,24 +278,6 @@
                 </configuration>
               </execution>
               <execution>
-                <id>generate-activiti-audit-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.audit.api}</inputSpec>
-                  <output>generated/alfresco-activiti-audit-rest-api</output>
-                  <artifactId>alfresco-activiti-audit-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.audit.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.audit.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.audit</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
                 <id>generate-activiti-audit-api</id>
                 <goals>
                   <goal>generate</goal>
@@ -457,24 +294,6 @@
                 </configuration>
               </execution>
               <execution>
-                <id>generate-activiti-process-storage-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.process-storage.api}</inputSpec>
-                  <output>generated/alfresco-activiti-process-storage-rest-api</output>
-                  <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.process.storage.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.process.storage.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.process.storage</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
                 <id>generate-activiti-process-storage-api</id>
                 <goals>
                   <goal>generate</goal>
@@ -487,24 +306,6 @@
                     <apiPackage>${project.groupId}.activiti.process.storage.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.process.storage.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti.process.storage</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-runtime-api-documentation</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <language>java</language>
-                  <library>resttemplate</library>
-                  <inputSpec>${aae.runtime.api}</inputSpec>
-                  <output>generated/alfresco-activiti-runtime-rest-api</output>
-                  <artifactId>alfresco-activiti-runtime-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.runtime.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.runtime.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.runtime</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
