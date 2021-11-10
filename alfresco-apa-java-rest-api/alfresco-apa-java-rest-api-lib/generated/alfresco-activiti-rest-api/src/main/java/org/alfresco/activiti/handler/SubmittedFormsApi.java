@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "SubmittedForms", description = "the SubmittedForms API")
 public interface SubmittedFormsApi {
 
-    @ApiOperation(value = "List submissions for a form", nickname = "getFormSubmittedFromsUsingGET", notes = "", response = ResultListDataRepresentationSubmittedFormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "submitted-forms", })
+    @ApiOperation(value = "List submissions for a form", nickname = "getFormSubmittedFromsUsingGET", notes = "", response = ResultListDataRepresentationSubmittedFormRepresentation.class, tags={ "submitted-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationSubmittedFormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/form-submitted-forms/{formId}",
@@ -56,8 +55,7 @@ public interface SubmittedFormsApi {
     ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation> getFormSubmittedFromsUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId, @ApiParam(value = "submittedBy") @Valid @RequestParam(value = "submittedBy", required = false) Long submittedBy, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
-    @ApiOperation(value = "List submissions for a process instance", nickname = "getProcessSubmittedFromsUsingGET", notes = "", response = ResultListDataRepresentationSubmittedFormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "submitted-forms", })
+    @ApiOperation(value = "List submissions for a process instance", nickname = "getProcessSubmittedFromsUsingGET", notes = "", response = ResultListDataRepresentationSubmittedFormRepresentation.class, tags={ "submitted-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationSubmittedFormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-submitted-forms/{processId}",
@@ -67,8 +65,7 @@ public interface SubmittedFormsApi {
     ResponseEntity<ResultListDataRepresentationSubmittedFormRepresentation> getProcessSubmittedFromsUsingGET(@ApiParam(value = "processId", required=true) @PathVariable("processId") String processId);
 
 
-    @ApiOperation(value = "Get a form submission", nickname = "getSubmittedFromUsingGET", notes = "", response = SubmittedFormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "submitted-forms", })
+    @ApiOperation(value = "Get a form submission", nickname = "getSubmittedFromUsingGET", notes = "", response = SubmittedFormRepresentation.class, tags={ "submitted-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = SubmittedFormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/submitted-forms/{submittedFormId}",
@@ -78,8 +75,7 @@ public interface SubmittedFormsApi {
     ResponseEntity<SubmittedFormRepresentation> getSubmittedFromUsingGET(@ApiParam(value = "submittedFormId", required=true) @PathVariable("submittedFormId") Long submittedFormId);
 
 
-    @ApiOperation(value = "Get the submitted form for a task", nickname = "getTaskSubmittedFromsUsingGET", notes = "", response = SubmittedFormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "submitted-forms", })
+    @ApiOperation(value = "Get the submitted form for a task", nickname = "getTaskSubmittedFromsUsingGET", notes = "", response = SubmittedFormRepresentation.class, tags={ "submitted-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = SubmittedFormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/task-submitted-form/{taskId}",

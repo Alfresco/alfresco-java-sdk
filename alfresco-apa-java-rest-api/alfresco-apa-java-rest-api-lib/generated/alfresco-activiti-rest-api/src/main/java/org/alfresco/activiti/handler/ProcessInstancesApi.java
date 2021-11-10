@@ -55,8 +55,7 @@ import java.util.Map;
 @Api(value = "ProcessInstances", description = "the ProcessInstances API")
 public interface ProcessInstancesApi {
 
-    @ApiOperation(value = "Activate a process instance", nickname = "activateProcessInstanceUsingPUT", notes = "", response = ProcessInstanceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Activate a process instance", nickname = "activateProcessInstanceUsingPUT", notes = "", response = ProcessInstanceRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessInstanceRepresentation.class),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -67,8 +66,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ProcessInstanceRepresentation> activateProcessInstanceUsingPUT(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Add a user or group involvement to a process instance", nickname = "createIdentityLinkUsingPOST1", notes = "", response = IdentityLinkRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Add a user or group involvement to a process instance", nickname = "createIdentityLinkUsingPOST1", notes = "", response = IdentityLinkRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "Created", response = IdentityLinkRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/identitylinks",
@@ -79,8 +77,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<IdentityLinkRepresentation> createIdentityLinkUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody IdentityLinkRepresentation body);
 
 
-    @ApiOperation(value = "Remove a user or group involvement from a process instance", nickname = "deleteIdentityLinkUsingDELETE1", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Remove a user or group involvement from a process instance", nickname = "deleteIdentityLinkUsingDELETE1", notes = "", tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -90,8 +87,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<Void> deleteIdentityLinkUsingDELETE1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
-    @ApiOperation(value = "Cancel or remove a process instance", nickname = "deleteProcessInstanceUsingDELETE", notes = "If the process instance has not yet been completed, it will be cancelled. If it has already finished or been cancelled then the process instance will be removed and will no longer appear in queries.", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Cancel or remove a process instance", nickname = "deleteProcessInstanceUsingDELETE", notes = "If the process instance has not yet been completed, it will be cancelled. If it has already finished or been cancelled then the process instance will be removed and will no longer appear in queries.", tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 403, message = "If the user does not have permission to cancel or remove the process instance"),
@@ -102,8 +98,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<Void> deleteProcessInstanceUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "List process instances using a filter", nickname = "filterProcessInstancesUsingPOST", notes = "The request body provided must define either a valid filterId value or filter object", response = ResultListDataRepresentationProcessInstanceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "List process instances using a filter", nickname = "filterProcessInstancesUsingPOST", notes = "The request body provided must define either a valid filterId value or filter object", response = ResultListDataRepresentationProcessInstanceRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationProcessInstanceRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/filter",
@@ -114,8 +109,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> filterProcessInstancesUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ProcessInstanceFilterRequestRepresentation body);
 
 
-    @ApiOperation(value = "Get decision tasks in a process instance", nickname = "getHistoricProcessInstanceDecisionTasksUsingGET", notes = "", response = ResultListDataRepresentationDecisionTaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Get decision tasks in a process instance", nickname = "getHistoricProcessInstanceDecisionTasksUsingGET", notes = "", response = ResultListDataRepresentationDecisionTaskRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationDecisionTaskRepresentation.class),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -126,8 +120,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ResultListDataRepresentationDecisionTaskRepresentation> getHistoricProcessInstanceDecisionTasksUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Get historic variables for a process instance", nickname = "getHistoricProcessInstanceVariablesUsingGET", notes = "", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Get historic variables for a process instance", nickname = "getHistoricProcessInstanceVariablesUsingGET", notes = "", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List", tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List"),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -138,8 +131,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<List<ProcessInstanceVariableRepresentation>> getHistoricProcessInstanceVariablesUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Query historic process instances", nickname = "getHistoricProcessInstancesUsingPOST", notes = "", response = ResultListDataRepresentationProcessInstanceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Query historic process instances", nickname = "getHistoricProcessInstancesUsingPOST", notes = "", response = ResultListDataRepresentationProcessInstanceRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationProcessInstanceRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/historic-process-instances/query",
@@ -150,8 +142,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> getHistoricProcessInstancesUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody HistoricProcessInstanceQueryRepresentation body);
 
 
-    @ApiOperation(value = "Get a user or group involvement with a process instance", nickname = "getIdentityLinkTypeUsingGET1", notes = "", response = IdentityLinkRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Get a user or group involvement with a process instance", nickname = "getIdentityLinkTypeUsingGET1", notes = "", response = IdentityLinkRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = IdentityLinkRepresentation.class),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -162,8 +153,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<IdentityLinkRepresentation> getIdentityLinkTypeUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
-    @ApiOperation(value = "List either the users or groups involved with a process instance", nickname = "getIdentityLinksForFamilyUsingGET1", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "List either the users or groups involved with a process instance", nickname = "getIdentityLinksForFamilyUsingGET1", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = IdentityLinkRepresentation.class, responseContainer = "List"),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -174,8 +164,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksForFamilyUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "family", required=true) @PathVariable("family") String family);
 
 
-    @ApiOperation(value = "List the users and groups involved with a process instance", nickname = "getIdentityLinksUsingGET1", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "List the users and groups involved with a process instance", nickname = "getIdentityLinksUsingGET1", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = IdentityLinkRepresentation.class, responseContainer = "List"),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -186,8 +175,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksUsingGET1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "List content attached to process instance fields", nickname = "getProcessInstanceContentUsingGET", notes = "", response = ResultListDataRepresentationProcessContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "List content attached to process instance fields", nickname = "getProcessInstanceContentUsingGET", notes = "", response = ResultListDataRepresentationProcessContentRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationProcessContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/field-content",
@@ -197,8 +185,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ResultListDataRepresentationProcessContentRepresentation> getProcessInstanceContentUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Get the process diagram for the process instance", nickname = "getProcessInstanceDiagramUsingGET", notes = "", response = byte[].class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Get the process diagram for the process instance", nickname = "getProcessInstanceDiagramUsingGET", notes = "", response = byte[].class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = byte[].class),
         @ApiResponse(code = 404, message = "If the process instance does not exist or is not available for the current user") })
@@ -209,8 +196,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<byte[]> getProcessInstanceDiagramUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Get a process instance start form", nickname = "getProcessInstanceStartFormUsingGET", notes = "The start form for a process instance can be retrieved when the process definition has a start form defined (hasStartForm = true on the process instance)", response = FormDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Get a process instance start form", nickname = "getProcessInstanceStartFormUsingGET", notes = "The start form for a process instance can be retrieved when the process definition has a start form defined (hasStartForm = true on the process instance)", response = FormDefinitionRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormDefinitionRepresentation.class),
         @ApiResponse(code = 404, message = "If the process instance does not exist or the process definition does not have a start form") })
@@ -221,8 +207,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<FormDefinitionRepresentation> getProcessInstanceStartFormUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Get a process instance", nickname = "getProcessInstanceUsingGET", notes = "", response = ProcessInstanceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Get a process instance", nickname = "getProcessInstanceUsingGET", notes = "", response = ProcessInstanceRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessInstanceRepresentation.class),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -233,8 +218,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ProcessInstanceRepresentation> getProcessInstanceUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Query process instances", nickname = "getProcessInstancesUsingPOST", notes = "", response = ResultListDataRepresentationProcessInstanceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Query process instances", nickname = "getProcessInstancesUsingPOST", notes = "", response = ResultListDataRepresentationProcessInstanceRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationProcessInstanceRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/query",
@@ -245,8 +229,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ResultListDataRepresentationProcessInstanceRepresentation> getProcessInstancesUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ProcessInstanceQueryRepresentation body);
 
 
-    @ApiOperation(value = "Get the audit log for a process instance", nickname = "getTaskAuditLogUsingGET", notes = "", response = ProcessInstanceAuditInfoRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Get the audit log for a process instance", nickname = "getTaskAuditLogUsingGET", notes = "", response = ProcessInstanceAuditInfoRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessInstanceAuditInfoRepresentation.class),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })
@@ -257,8 +240,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ProcessInstanceAuditInfoRepresentation> getTaskAuditLogUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Start a process instance", nickname = "startNewProcessInstanceUsingPOST", notes = "", response = ProcessInstanceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Start a process instance", nickname = "startNewProcessInstanceUsingPOST", notes = "", response = ProcessInstanceRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessInstanceRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances",
@@ -269,8 +251,7 @@ public interface ProcessInstancesApi {
     ResponseEntity<ProcessInstanceRepresentation> startNewProcessInstanceUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateProcessInstanceRepresentation body);
 
 
-    @ApiOperation(value = "Suspend a process instance", nickname = "suspendProcessInstanceUsingPUT", notes = "", response = ProcessInstanceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instances", })
+    @ApiOperation(value = "Suspend a process instance", nickname = "suspendProcessInstanceUsingPUT", notes = "", response = ProcessInstanceRepresentation.class, tags={ "process-instances", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessInstanceRepresentation.class),
         @ApiResponse(code = 404, message = "If the process instance does not exist") })

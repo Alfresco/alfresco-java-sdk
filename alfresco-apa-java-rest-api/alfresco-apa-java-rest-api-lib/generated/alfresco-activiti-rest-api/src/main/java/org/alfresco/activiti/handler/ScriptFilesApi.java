@@ -43,8 +43,7 @@ import java.util.Map;
 @Api(value = "ScriptFiles", description = "the ScriptFiles API")
 public interface ScriptFilesApi {
 
-    @ApiOperation(value = "getControllers", nickname = "getControllersUsingGET", notes = "", response = String.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "script-files", })
+    @ApiOperation(value = "getControllers", nickname = "getControllersUsingGET", notes = "", response = String.class, tags={ "script-files", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = String.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/script-files/controllers",
@@ -54,8 +53,7 @@ public interface ScriptFilesApi {
     ResponseEntity<String> getControllersUsingGET();
 
 
-    @ApiOperation(value = "getLibraries", nickname = "getLibrariesUsingGET", notes = "", response = String.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "script-files", })
+    @ApiOperation(value = "getLibraries", nickname = "getLibrariesUsingGET", notes = "", response = String.class, tags={ "script-files", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = String.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/script-files/libraries",

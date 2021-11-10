@@ -46,8 +46,7 @@ import java.util.Map;
 @Api(value = "RuntimeAppDefinitions", description = "the RuntimeAppDefinitions API")
 public interface RuntimeAppDefinitionsApi {
 
-    @ApiOperation(value = "Deploy a published app", nickname = "deployAppDefinitionsUsingPOST", notes = "Deploying an app allows the user to see it on his/her landing page. Apps must be published before they can be deployed.", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-definitions", })
+    @ApiOperation(value = "Deploy a published app", nickname = "deployAppDefinitionsUsingPOST", notes = "Deploying an app allows the user to see it on his/her landing page. Apps must be published before they can be deployed.", tags={ "runtime-app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-definitions",
@@ -57,8 +56,7 @@ public interface RuntimeAppDefinitionsApi {
     ResponseEntity<Void> deployAppDefinitionsUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody RuntimeAppDefinitionSaveRepresentation body);
 
 
-    @ApiOperation(value = "Get a runtime app", nickname = "getAppDefinitionUsingGET1", notes = "", response = AppDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-definitions", })
+    @ApiOperation(value = "Get a runtime app", nickname = "getAppDefinitionUsingGET1", notes = "", response = AppDefinitionRepresentation.class, tags={ "runtime-app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-definitions/{appDefinitionId}",
@@ -68,8 +66,7 @@ public interface RuntimeAppDefinitionsApi {
     ResponseEntity<AppDefinitionRepresentation> getAppDefinitionUsingGET1(@ApiParam(value = "appDefinitionId", required=true) @PathVariable("appDefinitionId") Long appDefinitionId);
 
 
-    @ApiOperation(value = "List runtime apps", nickname = "getAppDefinitionsUsingGET", notes = "When a user logs in into Alfresco Process Services Suite, a landing page is displayed containing all the apps that the user is allowed to see and use. These are referred to as runtime apps.", response = ResultListDataRepresentationAppDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-definitions", })
+    @ApiOperation(value = "List runtime apps", nickname = "getAppDefinitionsUsingGET", notes = "When a user logs in into Alfresco Process Services Suite, a landing page is displayed containing all the apps that the user is allowed to see and use. These are referred to as runtime apps.", response = ResultListDataRepresentationAppDefinitionRepresentation.class, tags={ "runtime-app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAppDefinitionRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-definitions",

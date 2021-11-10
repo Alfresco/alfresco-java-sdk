@@ -18,7 +18,7 @@
  * https://github.com/swagger-api/swagger-codegen
  * Do not edit the class manually.
  */
-package org.alfresco.activiti.handler;
+package org.alfresco.activiti.runtime.handler;
 
 
 import io.swagger.annotations.*;
@@ -40,24 +40,19 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 
-@Api(value = "ModelsBpmn", description = "the ModelsBpmn API")
-public interface ModelsBpmnApi {
+@Api(value = "Rb", description = "the Rb API")
+public interface RbApi {
 
-    @ApiOperation(value = "Export a historic version of a process definition as BPMN 2.0 XML", nickname = "getHistoricProcessModelBpmn20XmlUsingGET", notes = "", tags={ "models-bpmn", })
+    @ApiOperation(value = "Expose public files", nickname = "getFileUsingGET", notes = "Expose public files using HTTP", response = byte[].class, tags={ "RB", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK") })
-    @RequestMapping(value = "/activiti-app/api/enterprise/models/{processModelId}/history/{processModelHistoryId}/bpmn20",
+        @ApiResponse(code = 200, message = "OK", response = byte[].class),
+        @ApiResponse(code = 401, message = "Unauthorized"),
+        @ApiResponse(code = 403, message = "Forbidden"),
+        @ApiResponse(code = 404, message = "Not Found") })
+    @RequestMapping(value = "/v1/files/{filename}",
+        produces = "application/json", 
         method = RequestMethod.GET)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<Void> getHistoricProcessModelBpmn20XmlUsingGET(@ApiParam(value = "processModelId", required=true) @PathVariable("processModelId") Long processModelId, @ApiParam(value = "processModelHistoryId", required=true) @PathVariable("processModelHistoryId") Long processModelHistoryId);
-
-
-    @ApiOperation(value = "Export a process definition as BPMN 2.0 XML", nickname = "getProcessModelBpmn20XmlUsingGET", notes = "", tags={ "models-bpmn", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK") })
-    @RequestMapping(value = "/activiti-app/api/enterprise/models/{processModelId}/bpmn20",
-        method = RequestMethod.GET)
-    @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<Void> getProcessModelBpmn20XmlUsingGET(@ApiParam(value = "processModelId", required=true) @PathVariable("processModelId") Long processModelId);
+    ResponseEntity<byte[]> getFileUsingGET(@ApiParam(value = "filename", required=true) @PathVariable("filename") String filename);
 
 }

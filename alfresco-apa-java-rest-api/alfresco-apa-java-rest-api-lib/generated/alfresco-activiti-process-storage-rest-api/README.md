@@ -29,6 +29,7 @@ Add this dependency to your project's POM:
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
     <version>5.1.2-SNAPSHOT</version>
+    <scope>compile</scope>
 </dependency>
 ```
 
@@ -50,21 +51,3 @@ Then manually install the following JARs:
 
 * target/alfresco-activiti-process-storage-rest-api-5.1.2-SNAPSHOT.jar
 * target/lib/*.jar
-
-
-## Documentation for API Endpoints
-
-All URIs are relative to the environment set via -Denvironment.host and -Denvironment.application.name
-
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*FolderControllerApi* | [**getApplicationStoreFolderUsingGET**](docs/FolderControllerApi.md#getApplicationStoreFolderUsingGET) | **GET** /v1/folders/ | getApplicationStoreFolder
-
-## Documentation for Models
-
- - [Folder](docs/Folder.md)
-
-## Documentation for Authorization
-
-All endpoints do not require authorization.
-Authentication schemes defined for the API:

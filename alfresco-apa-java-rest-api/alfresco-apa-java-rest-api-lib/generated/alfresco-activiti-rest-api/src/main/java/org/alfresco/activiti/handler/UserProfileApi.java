@@ -46,8 +46,7 @@ import java.util.Map;
 @Api(value = "UserProfile", description = "the UserProfile API")
 public interface UserProfileApi {
 
-    @ApiOperation(value = "Change user password", nickname = "changePasswordUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-profile", })
+    @ApiOperation(value = "Change user password", nickname = "changePasswordUsingPOST", notes = "", tags={ "user-profile", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 400, message = "Password was empty or old password did not match") })
@@ -58,8 +57,7 @@ public interface UserProfileApi {
     ResponseEntity<Void> changePasswordUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ChangePasswordRepresentation body);
 
 
-    @ApiOperation(value = "Retrieve user profile picture", nickname = "getProfilePictureUsingGET", notes = "Generally returns an image file", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-profile", })
+    @ApiOperation(value = "Retrieve user profile picture", nickname = "getProfilePictureUsingGET", notes = "Generally returns an image file", tags={ "user-profile", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/profile-picture",
@@ -68,8 +66,7 @@ public interface UserProfileApi {
     ResponseEntity<Void> getProfilePictureUsingGET();
 
 
-    @ApiOperation(value = "Get user profile", nickname = "getProfileUsingGET", notes = "This operation returns account information for the current user. This is useful to get the name, email, the groups that the user is part of, the user picture, etc.", response = UserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-profile", })
+    @ApiOperation(value = "Get user profile", nickname = "getProfileUsingGET", notes = "This operation returns account information for the current user. This is useful to get the name, email, the groups that the user is part of, the user picture, etc.", response = UserRepresentation.class, tags={ "user-profile", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/profile",
@@ -79,8 +76,7 @@ public interface UserProfileApi {
     ResponseEntity<UserRepresentation> getProfileUsingGET();
 
 
-    @ApiOperation(value = "Update user profile", nickname = "updateUserUsingPOST", notes = "Only a first name, last name, email and company can be updated", response = UserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-profile", })
+    @ApiOperation(value = "Update user profile", nickname = "updateUserUsingPOST", notes = "Only a first name, last name, email and company can be updated", response = UserRepresentation.class, tags={ "user-profile", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/profile",
@@ -91,8 +87,7 @@ public interface UserProfileApi {
     ResponseEntity<UserRepresentation> updateUserUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserRepresentation body);
 
 
-    @ApiOperation(value = "Change user profile picture", nickname = "uploadProfilePictureUsingPOST", notes = "", response = ImageUploadRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-profile", })
+    @ApiOperation(value = "Change user profile picture", nickname = "uploadProfilePictureUsingPOST", notes = "", response = ImageUploadRepresentation.class, tags={ "user-profile", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ImageUploadRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/profile-picture",

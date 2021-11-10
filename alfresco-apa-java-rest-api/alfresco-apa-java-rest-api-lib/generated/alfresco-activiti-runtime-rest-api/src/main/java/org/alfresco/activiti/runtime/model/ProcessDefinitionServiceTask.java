@@ -18,14 +18,8 @@ package org.alfresco.activiti.runtime.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.alfresco.activiti.runtime.model.JsonDeserializerOfobject;
-import org.alfresco.activiti.runtime.model.ObjectIdReader;
-import org.alfresco.activiti.runtime.model.ProcessDefinitionServiceTask;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -37,271 +31,11 @@ import javax.validation.constraints.*;
 
 
 public class ProcessDefinitionServiceTask   {
-  @JsonProperty("cachable")
-  private Boolean cachable = null;
-
-  @JsonProperty("delegatee")
-  private JsonDeserializerOfobject delegatee = null;
-
-  /**
-   * Gets or Sets emptyAccessPattern
-   */
-  public enum EmptyAccessPatternEnum {
-    ALWAYS_NULL("ALWAYS_NULL"),
-    
-    CONSTANT("CONSTANT"),
-    
-    DYNAMIC("DYNAMIC");
-
-    private String value;
-
-    EmptyAccessPatternEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static EmptyAccessPatternEnum fromValue(String text) {
-      for (EmptyAccessPatternEnum b : EmptyAccessPatternEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-  @JsonProperty("emptyAccessPattern")
-  private EmptyAccessPatternEnum emptyAccessPattern = null;
-
-  @JsonProperty("emptyValue")
-  private Object emptyValue = null;
-
-  @JsonProperty("knownPropertyNames")
-  @Valid
-  private List<Object> knownPropertyNames = null;
-
-  /**
-   * Gets or Sets nullAccessPattern
-   */
-  public enum NullAccessPatternEnum {
-    ALWAYS_NULL("ALWAYS_NULL"),
-    
-    CONSTANT("CONSTANT"),
-    
-    DYNAMIC("DYNAMIC");
-
-    private String value;
-
-    NullAccessPatternEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static NullAccessPatternEnum fromValue(String text) {
-      for (NullAccessPatternEnum b : NullAccessPatternEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-  @JsonProperty("nullAccessPattern")
-  private NullAccessPatternEnum nullAccessPattern = null;
-
-  @JsonProperty("nullValue")
-  @Valid
-  private List<ProcessDefinitionServiceTask> nullValue = null;
-
-  @JsonProperty("objectIdReader")
-  private ObjectIdReader objectIdReader = null;
-
   @JsonProperty("taskImplementation")
   private String taskImplementation = null;
 
   @JsonProperty("taskName")
   private String taskName = null;
-
-  public ProcessDefinitionServiceTask cachable(Boolean cachable) {
-    this.cachable = cachable;
-    return this;
-  }
-
-  /**
-   * Get cachable
-   * @return cachable
-   **/
-  @ApiModelProperty(value = "")
-  
-    public Boolean isCachable() {
-    return cachable;
-  }
-
-  public void setCachable(Boolean cachable) {
-    this.cachable = cachable;
-  }
-
-  public ProcessDefinitionServiceTask delegatee(JsonDeserializerOfobject delegatee) {
-    this.delegatee = delegatee;
-    return this;
-  }
-
-  /**
-   * Get delegatee
-   * @return delegatee
-   **/
-  @ApiModelProperty(value = "")
-  
-    @Valid
-    public JsonDeserializerOfobject getDelegatee() {
-    return delegatee;
-  }
-
-  public void setDelegatee(JsonDeserializerOfobject delegatee) {
-    this.delegatee = delegatee;
-  }
-
-  public ProcessDefinitionServiceTask emptyAccessPattern(EmptyAccessPatternEnum emptyAccessPattern) {
-    this.emptyAccessPattern = emptyAccessPattern;
-    return this;
-  }
-
-  /**
-   * Get emptyAccessPattern
-   * @return emptyAccessPattern
-   **/
-  @ApiModelProperty(value = "")
-  
-    public EmptyAccessPatternEnum getEmptyAccessPattern() {
-    return emptyAccessPattern;
-  }
-
-  public void setEmptyAccessPattern(EmptyAccessPatternEnum emptyAccessPattern) {
-    this.emptyAccessPattern = emptyAccessPattern;
-  }
-
-  public ProcessDefinitionServiceTask emptyValue(Object emptyValue) {
-    this.emptyValue = emptyValue;
-    return this;
-  }
-
-  /**
-   * Get emptyValue
-   * @return emptyValue
-   **/
-  @ApiModelProperty(value = "")
-  
-    public Object getEmptyValue() {
-    return emptyValue;
-  }
-
-  public void setEmptyValue(Object emptyValue) {
-    this.emptyValue = emptyValue;
-  }
-
-  public ProcessDefinitionServiceTask knownPropertyNames(List<Object> knownPropertyNames) {
-    this.knownPropertyNames = knownPropertyNames;
-    return this;
-  }
-
-  public ProcessDefinitionServiceTask addKnownPropertyNamesItem(Object knownPropertyNamesItem) {
-    if (this.knownPropertyNames == null) {
-      this.knownPropertyNames = new ArrayList<>();
-    }
-    this.knownPropertyNames.add(knownPropertyNamesItem);
-    return this;
-  }
-
-  /**
-   * Get knownPropertyNames
-   * @return knownPropertyNames
-   **/
-  @ApiModelProperty(value = "")
-  
-    public List<Object> getKnownPropertyNames() {
-    return knownPropertyNames;
-  }
-
-  public void setKnownPropertyNames(List<Object> knownPropertyNames) {
-    this.knownPropertyNames = knownPropertyNames;
-  }
-
-  public ProcessDefinitionServiceTask nullAccessPattern(NullAccessPatternEnum nullAccessPattern) {
-    this.nullAccessPattern = nullAccessPattern;
-    return this;
-  }
-
-  /**
-   * Get nullAccessPattern
-   * @return nullAccessPattern
-   **/
-  @ApiModelProperty(value = "")
-  
-    public NullAccessPatternEnum getNullAccessPattern() {
-    return nullAccessPattern;
-  }
-
-  public void setNullAccessPattern(NullAccessPatternEnum nullAccessPattern) {
-    this.nullAccessPattern = nullAccessPattern;
-  }
-
-  public ProcessDefinitionServiceTask nullValue(List<ProcessDefinitionServiceTask> nullValue) {
-    this.nullValue = nullValue;
-    return this;
-  }
-
-  public ProcessDefinitionServiceTask addNullValueItem(ProcessDefinitionServiceTask nullValueItem) {
-    if (this.nullValue == null) {
-      this.nullValue = new ArrayList<>();
-    }
-    this.nullValue.add(nullValueItem);
-    return this;
-  }
-
-  /**
-   * Get nullValue
-   * @return nullValue
-   **/
-  @ApiModelProperty(value = "")
-      @Valid
-    public List<ProcessDefinitionServiceTask> getNullValue() {
-    return nullValue;
-  }
-
-  public void setNullValue(List<ProcessDefinitionServiceTask> nullValue) {
-    this.nullValue = nullValue;
-  }
-
-  public ProcessDefinitionServiceTask objectIdReader(ObjectIdReader objectIdReader) {
-    this.objectIdReader = objectIdReader;
-    return this;
-  }
-
-  /**
-   * Get objectIdReader
-   * @return objectIdReader
-   **/
-  @ApiModelProperty(value = "")
-  
-    @Valid
-    public ObjectIdReader getObjectIdReader() {
-    return objectIdReader;
-  }
-
-  public void setObjectIdReader(ObjectIdReader objectIdReader) {
-    this.objectIdReader = objectIdReader;
-  }
 
   public ProcessDefinitionServiceTask taskImplementation(String taskImplementation) {
     this.taskImplementation = taskImplementation;
@@ -351,21 +85,13 @@ public class ProcessDefinitionServiceTask   {
       return false;
     }
     ProcessDefinitionServiceTask processDefinitionServiceTask = (ProcessDefinitionServiceTask) o;
-    return Objects.equals(this.cachable, processDefinitionServiceTask.cachable) &&
-        Objects.equals(this.delegatee, processDefinitionServiceTask.delegatee) &&
-        Objects.equals(this.emptyAccessPattern, processDefinitionServiceTask.emptyAccessPattern) &&
-        Objects.equals(this.emptyValue, processDefinitionServiceTask.emptyValue) &&
-        Objects.equals(this.knownPropertyNames, processDefinitionServiceTask.knownPropertyNames) &&
-        Objects.equals(this.nullAccessPattern, processDefinitionServiceTask.nullAccessPattern) &&
-        Objects.equals(this.nullValue, processDefinitionServiceTask.nullValue) &&
-        Objects.equals(this.objectIdReader, processDefinitionServiceTask.objectIdReader) &&
-        Objects.equals(this.taskImplementation, processDefinitionServiceTask.taskImplementation) &&
+    return Objects.equals(this.taskImplementation, processDefinitionServiceTask.taskImplementation) &&
         Objects.equals(this.taskName, processDefinitionServiceTask.taskName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cachable, delegatee, emptyAccessPattern, emptyValue, knownPropertyNames, nullAccessPattern, nullValue, objectIdReader, taskImplementation, taskName);
+    return Objects.hash(taskImplementation, taskName);
   }
 
   @Override
@@ -373,14 +99,6 @@ public class ProcessDefinitionServiceTask   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessDefinitionServiceTask {\n");
     
-    sb.append("    cachable: ").append(toIndentedString(cachable)).append("\n");
-    sb.append("    delegatee: ").append(toIndentedString(delegatee)).append("\n");
-    sb.append("    emptyAccessPattern: ").append(toIndentedString(emptyAccessPattern)).append("\n");
-    sb.append("    emptyValue: ").append(toIndentedString(emptyValue)).append("\n");
-    sb.append("    knownPropertyNames: ").append(toIndentedString(knownPropertyNames)).append("\n");
-    sb.append("    nullAccessPattern: ").append(toIndentedString(nullAccessPattern)).append("\n");
-    sb.append("    nullValue: ").append(toIndentedString(nullValue)).append("\n");
-    sb.append("    objectIdReader: ").append(toIndentedString(objectIdReader)).append("\n");
     sb.append("    taskImplementation: ").append(toIndentedString(taskImplementation)).append("\n");
     sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
     sb.append("}");

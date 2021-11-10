@@ -48,8 +48,7 @@ import java.util.Map;
 @Api(value = "UserFilters", description = "the UserFilters API")
 public interface UserFiltersApi {
 
-    @ApiOperation(value = "Create a process instance filter", nickname = "createUserProcessInstanceFilterUsingPOST", notes = "", response = UserProcessInstanceFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Create a process instance filter", nickname = "createUserProcessInstanceFilterUsingPOST", notes = "", response = UserProcessInstanceFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserProcessInstanceFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes",
@@ -60,8 +59,7 @@ public interface UserFiltersApi {
     ResponseEntity<UserProcessInstanceFilterRepresentation> createUserProcessInstanceFilterUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserProcessInstanceFilterRepresentation body);
 
 
-    @ApiOperation(value = "Create a task filter", nickname = "createUserTaskFilterUsingPOST", notes = "", response = UserTaskFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Create a task filter", nickname = "createUserTaskFilterUsingPOST", notes = "", response = UserTaskFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserTaskFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks",
@@ -72,8 +70,7 @@ public interface UserFiltersApi {
     ResponseEntity<UserTaskFilterRepresentation> createUserTaskFilterUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserTaskFilterRepresentation body);
 
 
-    @ApiOperation(value = "Delete a process instance filter", nickname = "deleteUserProcessInstanceFilterUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Delete a process instance filter", nickname = "deleteUserProcessInstanceFilterUsingDELETE", notes = "", tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes/{userFilterId}",
@@ -82,8 +79,7 @@ public interface UserFiltersApi {
     ResponseEntity<Void> deleteUserProcessInstanceFilterUsingDELETE(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
-    @ApiOperation(value = "Delete a task filter", nickname = "deleteUserTaskFilterUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Delete a task filter", nickname = "deleteUserTaskFilterUsingDELETE", notes = "", tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks/{userFilterId}",
@@ -92,8 +88,7 @@ public interface UserFiltersApi {
     ResponseEntity<Void> deleteUserTaskFilterUsingDELETE(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
-    @ApiOperation(value = "Get a process instance filter", nickname = "getUserProcessInstanceFilterUsingGET", notes = "", response = UserProcessInstanceFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Get a process instance filter", nickname = "getUserProcessInstanceFilterUsingGET", notes = "", response = UserProcessInstanceFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserProcessInstanceFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes/{userFilterId}",
@@ -103,8 +98,7 @@ public interface UserFiltersApi {
     ResponseEntity<UserProcessInstanceFilterRepresentation> getUserProcessInstanceFilterUsingGET(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
-    @ApiOperation(value = "List process instance filters", nickname = "getUserProcessInstanceFiltersUsingGET", notes = "Returns filters for the current user, optionally filtered by *appId*.", response = ResultListDataRepresentationUserProcessInstanceFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "List process instance filters", nickname = "getUserProcessInstanceFiltersUsingGET", notes = "Returns filters for the current user, optionally filtered by *appId*.", response = ResultListDataRepresentationUserProcessInstanceFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationUserProcessInstanceFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes",
@@ -114,8 +108,7 @@ public interface UserFiltersApi {
     ResponseEntity<ResultListDataRepresentationUserProcessInstanceFilterRepresentation> getUserProcessInstanceFiltersUsingGET(@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId);
 
 
-    @ApiOperation(value = "Get a task filter", nickname = "getUserTaskFilterUsingGET", notes = "", response = UserTaskFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Get a task filter", nickname = "getUserTaskFilterUsingGET", notes = "", response = UserTaskFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserTaskFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks/{userFilterId}",
@@ -125,8 +118,7 @@ public interface UserFiltersApi {
     ResponseEntity<UserTaskFilterRepresentation> getUserTaskFilterUsingGET(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId);
 
 
-    @ApiOperation(value = "List task filters", nickname = "getUserTaskFiltersUsingGET", notes = "Returns filters for the current user, optionally filtered by *appId*.", response = ResultListDataRepresentationUserTaskFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "List task filters", nickname = "getUserTaskFiltersUsingGET", notes = "Returns filters for the current user, optionally filtered by *appId*.", response = ResultListDataRepresentationUserTaskFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationUserTaskFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks",
@@ -136,8 +128,7 @@ public interface UserFiltersApi {
     ResponseEntity<ResultListDataRepresentationUserTaskFilterRepresentation> getUserTaskFiltersUsingGET(@ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId);
 
 
-    @ApiOperation(value = "Re-order the list of user process instance filters", nickname = "orderUserProcessInstanceFiltersUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Re-order the list of user process instance filters", nickname = "orderUserProcessInstanceFiltersUsingPUT", notes = "", tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes",
@@ -147,8 +138,7 @@ public interface UserFiltersApi {
     ResponseEntity<Void> orderUserProcessInstanceFiltersUsingPUT(@ApiParam(value = "" ) @Valid @RequestBody UserFilterOrderRepresentation body);
 
 
-    @ApiOperation(value = "Re-order the list of user task filters", nickname = "orderUserTaskFiltersUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Re-order the list of user task filters", nickname = "orderUserTaskFiltersUsingPUT", notes = "", tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks",
@@ -158,8 +148,7 @@ public interface UserFiltersApi {
     ResponseEntity<Void> orderUserTaskFiltersUsingPUT(@ApiParam(value = "" ) @Valid @RequestBody UserFilterOrderRepresentation body);
 
 
-    @ApiOperation(value = "Update a process instance filter", nickname = "updateUserProcessInstanceFilterUsingPUT", notes = "", response = UserProcessInstanceFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Update a process instance filter", nickname = "updateUserProcessInstanceFilterUsingPUT", notes = "", response = UserProcessInstanceFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserProcessInstanceFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/processes/{userFilterId}",
@@ -170,8 +159,7 @@ public interface UserFiltersApi {
     ResponseEntity<UserProcessInstanceFilterRepresentation> updateUserProcessInstanceFilterUsingPUT(@ApiParam(value = "userFilterId", required=true) @PathVariable("userFilterId") Long userFilterId, @ApiParam(value = "" ) @Valid @RequestBody UserProcessInstanceFilterRepresentation body);
 
 
-    @ApiOperation(value = "Update a task filter", nickname = "updateUserTaskFilterUsingPUT", notes = "", response = UserTaskFilterRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "user-filters", })
+    @ApiOperation(value = "Update a task filter", nickname = "updateUserTaskFilterUsingPUT", notes = "", response = UserTaskFilterRepresentation.class, tags={ "user-filters", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserTaskFilterRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/filters/tasks/{userFilterId}",

@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "Comments", description = "the Comments API")
 public interface CommentsApi {
 
-    @ApiOperation(value = "Add a comment to a process instance", nickname = "addProcessInstanceCommentUsingPOST", notes = "", response = CommentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "comments", })
+    @ApiOperation(value = "Add a comment to a process instance", nickname = "addProcessInstanceCommentUsingPOST", notes = "", response = CommentRepresentation.class, tags={ "comments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = CommentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/comments",
@@ -57,8 +56,7 @@ public interface CommentsApi {
     ResponseEntity<CommentRepresentation> addProcessInstanceCommentUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody CommentRepresentation body);
 
 
-    @ApiOperation(value = "Add a comment to a task", nickname = "addTaskCommentUsingPOST", notes = "", response = CommentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "comments", })
+    @ApiOperation(value = "Add a comment to a task", nickname = "addTaskCommentUsingPOST", notes = "", response = CommentRepresentation.class, tags={ "comments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = CommentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/comments",
@@ -69,8 +67,7 @@ public interface CommentsApi {
     ResponseEntity<CommentRepresentation> addTaskCommentUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CommentRepresentation body);
 
 
-    @ApiOperation(value = "Get comments for a process", nickname = "getProcessInstanceCommentsUsingGET", notes = "", response = ResultListDataRepresentationCommentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "comments", })
+    @ApiOperation(value = "Get comments for a process", nickname = "getProcessInstanceCommentsUsingGET", notes = "", response = ResultListDataRepresentationCommentRepresentation.class, tags={ "comments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationCommentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/comments",
@@ -80,8 +77,7 @@ public interface CommentsApi {
     ResponseEntity<ResultListDataRepresentationCommentRepresentation> getProcessInstanceCommentsUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "latestFirst") @Valid @RequestParam(value = "latestFirst", required = false) Boolean latestFirst);
 
 
-    @ApiOperation(value = "Get comments for a task", nickname = "getTaskCommentsUsingGET", notes = "", response = ResultListDataRepresentationCommentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "comments", })
+    @ApiOperation(value = "Get comments for a task", nickname = "getTaskCommentsUsingGET", notes = "", response = ResultListDataRepresentationCommentRepresentation.class, tags={ "comments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationCommentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/comments",

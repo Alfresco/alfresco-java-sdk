@@ -46,8 +46,7 @@ import java.util.Map;
 @Api(value = "AdminEndpoints", description = "the AdminEndpoints API")
 public interface AdminEndpointsApi {
 
-    @ApiOperation(value = "Add an endpoint authorization", nickname = "createBasicAuthConfigurationUsingPOST", notes = "", response = EndpointBasicAuthRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Add an endpoint authorization", nickname = "createBasicAuthConfigurationUsingPOST", notes = "", response = EndpointBasicAuthRepresentation.class, tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointBasicAuthRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths",
@@ -58,8 +57,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<EndpointBasicAuthRepresentation> createBasicAuthConfigurationUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateEndpointBasicAuthRepresentation body);
 
 
-    @ApiOperation(value = "Create an endpoint", nickname = "createEndpointConfigurationUsingPOST", notes = "", response = EndpointConfigurationRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Create an endpoint", nickname = "createEndpointConfigurationUsingPOST", notes = "", response = EndpointConfigurationRepresentation.class, tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointConfigurationRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints",
@@ -70,8 +68,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<EndpointConfigurationRepresentation> createEndpointConfigurationUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody EndpointConfigurationRepresentation body);
 
 
-    @ApiOperation(value = "Get an endpoint authorization", nickname = "getBasicAuthConfigurationUsingGET", notes = "", response = EndpointBasicAuthRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Get an endpoint authorization", nickname = "getBasicAuthConfigurationUsingGET", notes = "", response = EndpointBasicAuthRepresentation.class, tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointBasicAuthRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths/{basicAuthId}",
@@ -81,8 +78,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<EndpointBasicAuthRepresentation> getBasicAuthConfigurationUsingGET(@ApiParam(value = "basicAuthId", required=true) @PathVariable("basicAuthId") Long basicAuthId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
-    @ApiOperation(value = "List endpoint authorizations", nickname = "getBasicAuthConfigurationsUsingGET", notes = "", response = EndpointBasicAuthRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "List endpoint authorizations", nickname = "getBasicAuthConfigurationsUsingGET", notes = "", response = EndpointBasicAuthRepresentation.class, responseContainer = "List", tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointBasicAuthRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths",
@@ -92,8 +88,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<List<EndpointBasicAuthRepresentation>> getBasicAuthConfigurationsUsingGET(@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
-    @ApiOperation(value = "Get an endpoint", nickname = "getEndpointConfigurationUsingGET1", notes = "", response = EndpointConfigurationRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Get an endpoint", nickname = "getEndpointConfigurationUsingGET1", notes = "", response = EndpointConfigurationRepresentation.class, tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointConfigurationRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints/{endpointConfigurationId}",
@@ -103,8 +98,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<EndpointConfigurationRepresentation> getEndpointConfigurationUsingGET1(@ApiParam(value = "endpointConfigurationId", required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
-    @ApiOperation(value = "List endpoints", nickname = "getEndpointConfigurationsUsingGET1", notes = "", response = EndpointConfigurationRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "List endpoints", nickname = "getEndpointConfigurationsUsingGET1", notes = "", response = EndpointConfigurationRepresentation.class, responseContainer = "List", tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointConfigurationRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints",
@@ -114,8 +108,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<List<EndpointConfigurationRepresentation>> getEndpointConfigurationsUsingGET1(@NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
-    @ApiOperation(value = "Delete an endpoint authorization", nickname = "removeBasicAuthonfigurationUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Delete an endpoint authorization", nickname = "removeBasicAuthonfigurationUsingDELETE", notes = "", tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths/{basicAuthId}",
@@ -124,8 +117,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<Void> removeBasicAuthonfigurationUsingDELETE(@ApiParam(value = "basicAuthId", required=true) @PathVariable("basicAuthId") Long basicAuthId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
-    @ApiOperation(value = "Delete an endpoint", nickname = "removeEndpointConfigurationUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Delete an endpoint", nickname = "removeEndpointConfigurationUsingDELETE", notes = "", tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints/{endpointConfigurationId}",
@@ -134,8 +126,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<Void> removeEndpointConfigurationUsingDELETE(@ApiParam(value = "endpointConfigurationId", required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId, @NotNull @ApiParam(value = "tenantId", required = true) @Valid @RequestParam(value = "tenantId", required = true) Long tenantId);
 
 
-    @ApiOperation(value = "Update an endpoint authorization", nickname = "updateBasicAuthConfigurationUsingPUT", notes = "", response = EndpointBasicAuthRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Update an endpoint authorization", nickname = "updateBasicAuthConfigurationUsingPUT", notes = "", response = EndpointBasicAuthRepresentation.class, tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointBasicAuthRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/basic-auths/{basicAuthId}",
@@ -146,8 +137,7 @@ public interface AdminEndpointsApi {
     ResponseEntity<EndpointBasicAuthRepresentation> updateBasicAuthConfigurationUsingPUT(@ApiParam(value = "basicAuthId", required=true) @PathVariable("basicAuthId") Long basicAuthId, @ApiParam(value = "" ) @Valid @RequestBody CreateEndpointBasicAuthRepresentation body);
 
 
-    @ApiOperation(value = "Update an endpoint", nickname = "updateEndpointConfigurationUsingPUT", notes = "", response = EndpointConfigurationRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-endpoints", })
+    @ApiOperation(value = "Update an endpoint", nickname = "updateEndpointConfigurationUsingPUT", notes = "", response = EndpointConfigurationRepresentation.class, tags={ "admin-endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointConfigurationRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/endpoints/{endpointConfigurationId}",

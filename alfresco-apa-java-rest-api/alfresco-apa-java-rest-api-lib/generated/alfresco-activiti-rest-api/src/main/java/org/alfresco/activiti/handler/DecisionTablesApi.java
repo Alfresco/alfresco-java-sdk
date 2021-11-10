@@ -46,8 +46,7 @@ import java.util.Map;
 @Api(value = "DecisionTables", description = "the DecisionTables API")
 public interface DecisionTablesApi {
 
-    @ApiOperation(value = "Get definition for a decision table", nickname = "getDecisionTableEditorJsonUsingGET", notes = "", response = JsonNode.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "decision-tables", })
+    @ApiOperation(value = "Get definition for a decision table", nickname = "getDecisionTableEditorJsonUsingGET", notes = "", response = JsonNode.class, tags={ "decision-tables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = JsonNode.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/decision-tables/{decisionTableId}/editorJson",
@@ -57,8 +56,7 @@ public interface DecisionTablesApi {
     ResponseEntity<JsonNode> getDecisionTableEditorJsonUsingGET(@ApiParam(value = "decisionTableId", required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
-    @ApiOperation(value = "Get a decision table", nickname = "getDecisionTableUsingGET", notes = "", response = RuntimeDecisionTableRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "decision-tables", })
+    @ApiOperation(value = "Get a decision table", nickname = "getDecisionTableUsingGET", notes = "", response = RuntimeDecisionTableRepresentation.class, tags={ "decision-tables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RuntimeDecisionTableRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/decision-tables/{decisionTableId}",
@@ -68,8 +66,7 @@ public interface DecisionTablesApi {
     ResponseEntity<RuntimeDecisionTableRepresentation> getDecisionTableUsingGET(@ApiParam(value = "decisionTableId", required=true) @PathVariable("decisionTableId") Long decisionTableId);
 
 
-    @ApiOperation(value = "Query decision tables", nickname = "getDecisionTablesUsingGET", notes = "", response = ResultListDataRepresentationRuntimeDecisionTableRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "decision-tables", })
+    @ApiOperation(value = "Query decision tables", nickname = "getDecisionTablesUsingGET", notes = "", response = ResultListDataRepresentationRuntimeDecisionTableRepresentation.class, tags={ "decision-tables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationRuntimeDecisionTableRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/decision-tables",

@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "ModelsHistory", description = "the ModelsHistory API")
 public interface ModelsHistoryApi {
 
-    @ApiOperation(value = "List a model's historic versions", nickname = "getModelHistoryCollectionUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models-history", })
+    @ApiOperation(value = "List a model's historic versions", nickname = "getModelHistoryCollectionUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, tags={ "models-history", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/history",
@@ -56,8 +55,7 @@ public interface ModelsHistoryApi {
     ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelHistoryCollectionUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "includeLatestVersion") @Valid @RequestParam(value = "includeLatestVersion", required = false) Boolean includeLatestVersion);
 
 
-    @ApiOperation(value = "Get a historic version of a model", nickname = "getProcessModelHistoryUsingGET", notes = "", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models-history", })
+    @ApiOperation(value = "Get a historic version of a model", nickname = "getProcessModelHistoryUsingGET", notes = "", response = ModelRepresentation.class, tags={ "models-history", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/history/{modelHistoryId}",

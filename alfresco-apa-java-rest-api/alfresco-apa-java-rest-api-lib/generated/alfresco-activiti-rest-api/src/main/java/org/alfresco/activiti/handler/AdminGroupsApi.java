@@ -49,8 +49,7 @@ import java.util.Map;
 @Api(value = "AdminGroups", description = "the AdminGroups API")
 public interface AdminGroupsApi {
 
-    @ApiOperation(value = "Activate a group", nickname = "activateUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Activate a group", nickname = "activateUsingPOST", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/action/activate",
@@ -59,8 +58,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> activateUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
-    @ApiOperation(value = "Add users to a group", nickname = "addAllUsersToGroupUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Add users to a group", nickname = "addAllUsersToGroupUsingPOST", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/add-all-users",
@@ -69,8 +67,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> addAllUsersToGroupUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
-    @ApiOperation(value = "Add capabilities to a group", nickname = "addGroupCapabilitiesUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Add capabilities to a group", nickname = "addGroupCapabilitiesUsingPOST", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/capabilities",
@@ -80,8 +77,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> addGroupCapabilitiesUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "" ) @Valid @RequestBody AddGroupCapabilitiesRepresentation body);
 
 
-    @ApiOperation(value = "Add a user to a group", nickname = "addGroupMemberUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Add a user to a group", nickname = "addGroupMemberUsingPOST", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/members/{userId}",
@@ -90,8 +86,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> addGroupMemberUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
-    @ApiOperation(value = "Get a related group", nickname = "addRelatedGroupUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Get a related group", nickname = "addRelatedGroupUsingPOST", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/related-groups/{relatedGroupId}",
@@ -100,8 +95,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> addRelatedGroupUsingPOST(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "relatedGroupId", required=true) @PathVariable("relatedGroupId") Long relatedGroupId, @NotNull @ApiParam(value = "type", required = true) @Valid @RequestParam(value = "type", required = true) String type);
 
 
-    @ApiOperation(value = "Create a group", nickname = "createNewGroupUsingPOST", notes = "", response = LightGroupRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Create a group", nickname = "createNewGroupUsingPOST", notes = "", response = LightGroupRepresentation.class, tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = LightGroupRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups",
@@ -112,8 +106,7 @@ public interface AdminGroupsApi {
     ResponseEntity<LightGroupRepresentation> createNewGroupUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody GroupRepresentation body);
 
 
-    @ApiOperation(value = "Remove a capability from a group", nickname = "deleteGroupCapabilityUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Remove a capability from a group", nickname = "deleteGroupCapabilityUsingDELETE", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/capabilities/{groupCapabilityId}",
@@ -122,8 +115,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> deleteGroupCapabilityUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "groupCapabilityId", required=true) @PathVariable("groupCapabilityId") Long groupCapabilityId);
 
 
-    @ApiOperation(value = "Delete a member from a group", nickname = "deleteGroupMemberUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Delete a member from a group", nickname = "deleteGroupMemberUsingDELETE", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/members/{userId}",
@@ -132,8 +124,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> deleteGroupMemberUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
-    @ApiOperation(value = "Delete a group", nickname = "deleteGroupUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Delete a group", nickname = "deleteGroupUsingDELETE", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}",
@@ -142,8 +133,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> deleteGroupUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
-    @ApiOperation(value = "Delete a related group", nickname = "deleteRelatedGroupUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Delete a related group", nickname = "deleteRelatedGroupUsingDELETE", notes = "", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/related-groups/{relatedGroupId}",
@@ -152,8 +142,7 @@ public interface AdminGroupsApi {
     ResponseEntity<Void> deleteRelatedGroupUsingDELETE(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "relatedGroupId", required=true) @PathVariable("relatedGroupId") Long relatedGroupId);
 
 
-    @ApiOperation(value = "List group capabilities", nickname = "getCapabilitiesUsingGET", notes = "", response = String.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "List group capabilities", nickname = "getCapabilitiesUsingGET", notes = "", response = String.class, responseContainer = "List", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = String.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/potential-capabilities",
@@ -163,8 +152,7 @@ public interface AdminGroupsApi {
     ResponseEntity<List<String>> getCapabilitiesUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
-    @ApiOperation(value = "Get group members", nickname = "getGroupUsersUsingGET", notes = "", response = ResultListDataRepresentationLightUserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Get group members", nickname = "getGroupUsersUsingGET", notes = "", response = ResultListDataRepresentationLightUserRepresentation.class, tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationLightUserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/users",
@@ -174,8 +162,7 @@ public interface AdminGroupsApi {
     ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getGroupUsersUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page, @ApiParam(value = "pageSize") @Valid @RequestParam(value = "pageSize", required = false) Integer pageSize);
 
 
-    @ApiOperation(value = "Get a group", nickname = "getGroupUsingGET", notes = "", response = AbstractGroupRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Get a group", nickname = "getGroupUsingGET", notes = "", response = AbstractGroupRepresentation.class, tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AbstractGroupRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}",
@@ -185,8 +172,7 @@ public interface AdminGroupsApi {
     ResponseEntity<AbstractGroupRepresentation> getGroupUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId, @ApiParam(value = "includeAllUsers") @Valid @RequestParam(value = "includeAllUsers", required = false) Boolean includeAllUsers, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
-    @ApiOperation(value = "Query groups", nickname = "getGroupsUsingGET1", notes = "", response = LightGroupRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Query groups", nickname = "getGroupsUsingGET1", notes = "", response = LightGroupRepresentation.class, responseContainer = "List", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = LightGroupRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups",
@@ -196,8 +182,7 @@ public interface AdminGroupsApi {
     ResponseEntity<List<LightGroupRepresentation>> getGroupsUsingGET1(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "functional") @Valid @RequestParam(value = "functional", required = false) Boolean functional, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
-    @ApiOperation(value = "Get related groups", nickname = "getRelatedGroupsUsingGET", notes = "", response = LightGroupRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Get related groups", nickname = "getRelatedGroupsUsingGET", notes = "", response = LightGroupRepresentation.class, responseContainer = "List", tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = LightGroupRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}/related-groups",
@@ -207,8 +192,7 @@ public interface AdminGroupsApi {
     ResponseEntity<List<LightGroupRepresentation>> getRelatedGroupsUsingGET(@ApiParam(value = "groupId", required=true) @PathVariable("groupId") Long groupId);
 
 
-    @ApiOperation(value = "Update a group", nickname = "updateGroupUsingPUT", notes = "", response = LightGroupRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-groups", })
+    @ApiOperation(value = "Update a group", nickname = "updateGroupUsingPUT", notes = "", response = LightGroupRepresentation.class, tags={ "admin-groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = LightGroupRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/groups/{groupId}",

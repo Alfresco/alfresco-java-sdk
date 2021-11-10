@@ -48,8 +48,7 @@ import java.util.Map;
 @Api(value = "TaskForms", description = "the TaskForms API")
 public interface TaskFormsApi {
 
-    @ApiOperation(value = "Complete a task form", nickname = "completeTaskFormUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-forms", })
+    @ApiOperation(value = "Complete a task form", nickname = "completeTaskFormUsingPOST", notes = "", tags={ "task-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}",
@@ -59,8 +58,7 @@ public interface TaskFormsApi {
     ResponseEntity<Void> completeTaskFormUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CompleteFormRepresentation body);
 
 
-    @ApiOperation(value = "Get task variables", nickname = "getProcessInstanceVariablesUsingGET1", notes = "", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-forms", })
+    @ApiOperation(value = "Get task variables", nickname = "getProcessInstanceVariablesUsingGET1", notes = "", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List", tags={ "task-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessInstanceVariableRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/variables",
@@ -70,8 +68,7 @@ public interface TaskFormsApi {
     ResponseEntity<List<ProcessInstanceVariableRepresentation>> getProcessInstanceVariablesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Retrieve column field values", nickname = "getRestFieldValuesUsingGET1", notes = "Specific case to retrieve information on a specific column", response = FormValueRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-forms", })
+    @ApiOperation(value = "Retrieve column field values", nickname = "getRestFieldValuesUsingGET1", notes = "Specific case to retrieve information on a specific column", response = FormValueRepresentation.class, responseContainer = "List", tags={ "task-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormValueRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/form-values/{field}/{column}",
@@ -81,8 +78,7 @@ public interface TaskFormsApi {
     ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "field", required=true) @PathVariable("field") String field, @ApiParam(value = "column", required=true) @PathVariable("column") String column);
 
 
-    @ApiOperation(value = "Retrieve populated field values", nickname = "getRestFieldValuesUsingGET2", notes = "Form field values that are populated through a REST backend, can be retrieved via this service", response = FormValueRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-forms", })
+    @ApiOperation(value = "Retrieve populated field values", nickname = "getRestFieldValuesUsingGET2", notes = "Form field values that are populated through a REST backend, can be retrieved via this service", response = FormValueRepresentation.class, responseContainer = "List", tags={ "task-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormValueRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/form-values/{field}",
@@ -92,8 +88,7 @@ public interface TaskFormsApi {
     ResponseEntity<List<FormValueRepresentation>> getRestFieldValuesUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "field", required=true) @PathVariable("field") String field);
 
 
-    @ApiOperation(value = "Get a task form", nickname = "getTaskFormUsingGET", notes = "", response = FormDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-forms", })
+    @ApiOperation(value = "Get a task form", nickname = "getTaskFormUsingGET", notes = "", response = FormDefinitionRepresentation.class, tags={ "task-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormDefinitionRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}",
@@ -103,8 +98,7 @@ public interface TaskFormsApi {
     ResponseEntity<FormDefinitionRepresentation> getTaskFormUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Save a task form", nickname = "saveTaskFormUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-forms", })
+    @ApiOperation(value = "Save a task form", nickname = "saveTaskFormUsingPOST", notes = "", tags={ "task-forms", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/task-forms/{taskId}/save-form",

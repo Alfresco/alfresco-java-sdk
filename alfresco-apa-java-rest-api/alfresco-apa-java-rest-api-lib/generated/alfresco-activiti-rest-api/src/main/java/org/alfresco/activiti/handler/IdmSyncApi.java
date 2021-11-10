@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "IdmSync", description = "the IdmSync API")
 public interface IdmSyncApi {
 
-    @ApiOperation(value = "Get log file for a sync log entry", nickname = "getLogFileUsingGET", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "idm-sync", })
+    @ApiOperation(value = "Get log file for a sync log entry", nickname = "getLogFileUsingGET", notes = "", tags={ "idm-sync", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/idm-sync-log-entries/{syncLogEntryId}/logfile",
@@ -54,8 +53,7 @@ public interface IdmSyncApi {
     ResponseEntity<Void> getLogFileUsingGET(@ApiParam(value = "syncLogEntryId", required=true) @PathVariable("syncLogEntryId") Long syncLogEntryId);
 
 
-    @ApiOperation(value = "List sync log entries", nickname = "getSyncLogEntriesUsingGET", notes = "", response = SyncLogEntryRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "idm-sync", })
+    @ApiOperation(value = "List sync log entries", nickname = "getSyncLogEntriesUsingGET", notes = "", response = SyncLogEntryRepresentation.class, responseContainer = "List", tags={ "idm-sync", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = SyncLogEntryRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/idm-sync-log-entries",

@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "About", description = "the About API")
 public interface AboutApi {
 
-    @ApiOperation(value = "Get server type and version", nickname = "getAppVersionUsingGET", notes = "Provides information about the running Alfresco Process Services Suite. The response payload object has the properties `type`, `majorVersion`, `minorVersion`, `revisionVersion` and `edition`.", response = String.class, responseContainer = "Map", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "about", })
+    @ApiOperation(value = "Get server type and version", nickname = "getAppVersionUsingGET", notes = "Provides information about the running Alfresco Process Services Suite. The response payload object has the properties `type`, `majorVersion`, `minorVersion`, `revisionVersion` and `edition`.", response = String.class, responseContainer = "Map", tags={ "about", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = Map.class, responseContainer = "Map") })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-version",

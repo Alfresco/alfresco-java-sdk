@@ -18,6 +18,6 @@ package org.alfresco.activiti.preference.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoPreferenceApi", url = "${activiti.service.runtime.url}", path = "${activiti.service.runtime.path}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoPreferenceApi", url = "${activiti.service.preference.url}", path = "${activiti.service.preference.path}", configuration = ClientConfiguration.class)
 public interface PreferenceApiClient extends PreferenceApi {
 }

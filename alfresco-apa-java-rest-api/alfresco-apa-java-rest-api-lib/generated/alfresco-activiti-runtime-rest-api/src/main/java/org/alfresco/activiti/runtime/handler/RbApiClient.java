@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.alfresco.activiti.form.handler;
+package org.alfresco.activiti.runtime.handler;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoFormsApi", url = "${activiti.service.form.url}", path = "${activiti.service.form.path}", configuration = ClientConfiguration.class)
-public interface FormsApiClient extends FormsApi {
+@FeignClient(value = "alfrescoRbApi", url = "${activiti.service.runtime.url}", path = "${activiti.service.runtime.path}", configuration = ClientConfiguration.class)
+public interface RbApiClient extends RbApi {
 }

@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "ProcessScopes", description = "the ProcessScopes API")
 public interface ProcessScopesApi {
 
-    @ApiOperation(value = "List runtime process scopes", nickname = "getRuntimeProcessScopesUsingPOST", notes = "", response = ProcessScopeRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-scopes", })
+    @ApiOperation(value = "List runtime process scopes", nickname = "getRuntimeProcessScopesUsingPOST", notes = "", response = ProcessScopeRepresentation.class, responseContainer = "List", tags={ "process-scopes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ProcessScopeRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-scopes",
