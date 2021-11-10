@@ -18,6 +18,6 @@ package org.alfresco.activiti.runtime.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoProcessInstanceControllerImplApi", url = "${runtimeBundleReST_.url:}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoProcessInstanceControllerImplApi", url = "${activiti.service.runtime.url}", path = "${activiti.service.runtime.path}", configuration = ClientConfiguration.class)
 public interface ProcessInstanceControllerImplApiClient extends ProcessInstanceControllerImplApi {
 }
