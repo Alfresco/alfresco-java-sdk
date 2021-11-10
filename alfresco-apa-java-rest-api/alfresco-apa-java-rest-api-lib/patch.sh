@@ -63,10 +63,6 @@ find "${GENERATED_SOURCE_DIR}" -type d \( \
   -o -name 'test' \
   \) -exec rm -rf {} +
 
-find "${GENERATED_SOURCE_DIR}" -type f -iname 'README.md' -exec sed \
-  -e '/ReleasesApi/d' \
-  -i '' {} +
-
 find "${GENERATED_SOURCE_DIR}" -type f \( \
   -name 'ResponseEntity*.java' \
   -o -name 'WebMvcLinksHandlerApi*.java' \

@@ -4,16 +4,6 @@
 
 This API has been generated using [Swagger Codegen](https://swagger.io/tools/swagger-codegen) from the public definitions:
 
-## Documentation
-- [APS](/generated/alfresco-activiti-rest-api/README.md)
-- [Auth](/generated/alfresco-auth-rest-api/README.md)
-- [Deployment](/README.md)
-- [Modeling](/README.md)
-- [Form](/README.md)
-- [Audit](/README.md)
-- [Query](/README.md)
-- [RuntimeBundle](/generated/alfresco-activiti-rb-rest-api/README.md)
-
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
