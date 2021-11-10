@@ -45,9 +45,7 @@ import java.util.Map;
 @Api(value = "CandidateUserAdminControllerImpl", description = "the CandidateUserAdminControllerImpl API")
 public interface CandidateUserAdminControllerImplApi {
 
-    @ApiOperation(value = "addCandidateUsers", nickname = "addCandidateUsersUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "candidate-user-admin-controller-impl", })
+    @ApiOperation(value = "addCandidateUsers", nickname = "addCandidateUsersUsingPOST", notes = "", tags={ "candidate-user-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -61,9 +59,7 @@ public interface CandidateUserAdminControllerImplApi {
     ResponseEntity<Void> addCandidateUsersUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
-    @ApiOperation(value = "deleteCandidateUsers", nickname = "deleteCandidateUsersUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "candidate-user-admin-controller-impl", })
+    @ApiOperation(value = "deleteCandidateUsers", nickname = "deleteCandidateUsersUsingDELETE", notes = "", tags={ "candidate-user-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 204, message = "No Content"),
@@ -76,9 +72,7 @@ public interface CandidateUserAdminControllerImplApi {
     ResponseEntity<Void> deleteCandidateUsersUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
-    @ApiOperation(value = "getUserCandidates", nickname = "getUserCandidatesUsingGET", notes = "", response = ListResponseContentOfCandidateUser.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "candidate-user-admin-controller-impl", })
+    @ApiOperation(value = "getUserCandidates", nickname = "getUserCandidatesUsingGET", notes = "", response = ListResponseContentOfCandidateUser.class, tags={ "candidate-user-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCandidateUser.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

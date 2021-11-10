@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "DataSources", description = "the DataSources API")
 public interface DataSourcesApi {
 
-    @ApiOperation(value = "Get data sources", nickname = "getDataSourcesUsingGET", notes = "", response = ResultListDataRepresentationBasicDataSourceRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "data-sources", })
+    @ApiOperation(value = "Get data sources", nickname = "getDataSourcesUsingGET", notes = "", response = ResultListDataRepresentationBasicDataSourceRepresentation.class, tags={ "data-sources", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationBasicDataSourceRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/data-sources",

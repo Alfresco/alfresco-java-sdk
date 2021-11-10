@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "RuntimeAppDeployments", description = "the RuntimeAppDeployments API")
 public interface RuntimeAppDeploymentsApi {
 
-    @ApiOperation(value = "Remove an app deployment", nickname = "deleteAppDeploymentUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-deployments", })
+    @ApiOperation(value = "Remove an app deployment", nickname = "deleteAppDeploymentUsingDELETE", notes = "", tags={ "runtime-app-deployments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployments/{appDeploymentId}",
@@ -55,8 +54,7 @@ public interface RuntimeAppDeploymentsApi {
     ResponseEntity<Void> deleteAppDeploymentUsingDELETE(@ApiParam(value = "appDeploymentId", required=true) @PathVariable("appDeploymentId") Long appDeploymentId);
 
 
-    @ApiOperation(value = "Export the app archive for a deployment", nickname = "exportAppDefinitionUsingGET1", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-deployments", })
+    @ApiOperation(value = "Export the app archive for a deployment", nickname = "exportAppDefinitionUsingGET1", notes = "", tags={ "runtime-app-deployments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/export-app-deployment/{deploymentId}",
@@ -65,8 +63,7 @@ public interface RuntimeAppDeploymentsApi {
     ResponseEntity<Void> exportAppDefinitionUsingGET1(@ApiParam(value = "deploymentId", required=true) @PathVariable("deploymentId") String deploymentId);
 
 
-    @ApiOperation(value = "Query app deployments", nickname = "getAppDefinitionsUsingGET1", notes = "", response = ResultListDataRepresentationAppDeploymentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-deployments", })
+    @ApiOperation(value = "Query app deployments", nickname = "getAppDefinitionsUsingGET1", notes = "", response = ResultListDataRepresentationAppDeploymentRepresentation.class, tags={ "runtime-app-deployments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAppDeploymentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployments",
@@ -76,8 +73,7 @@ public interface RuntimeAppDeploymentsApi {
     ResponseEntity<ResultListDataRepresentationAppDeploymentRepresentation> getAppDefinitionsUsingGET1(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "latest") @Valid @RequestParam(value = "latest", required = false) Boolean latest, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
-    @ApiOperation(value = "Get an app deployment", nickname = "getAppDeploymentUsingGET", notes = "", response = AppDeploymentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-deployments", })
+    @ApiOperation(value = "Get an app deployment", nickname = "getAppDeploymentUsingGET", notes = "", response = AppDeploymentRepresentation.class, tags={ "runtime-app-deployments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDeploymentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployments/{appDeploymentId}",
@@ -87,8 +83,7 @@ public interface RuntimeAppDeploymentsApi {
     ResponseEntity<AppDeploymentRepresentation> getAppDeploymentUsingGET(@ApiParam(value = "appDeploymentId", required=true) @PathVariable("appDeploymentId") Long appDeploymentId);
 
 
-    @ApiOperation(value = "Get an app by deployment ID or DMN deployment ID", nickname = "getRuntimeAppDeploymentByDeploymentUsingGET", notes = "Either a deploymentId or a dmnDeploymentId must be provided", response = AppDeploymentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "runtime-app-deployments", })
+    @ApiOperation(value = "Get an app by deployment ID or DMN deployment ID", nickname = "getRuntimeAppDeploymentByDeploymentUsingGET", notes = "Either a deploymentId or a dmnDeploymentId must be provided", response = AppDeploymentRepresentation.class, tags={ "runtime-app-deployments", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDeploymentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/runtime-app-deployment",

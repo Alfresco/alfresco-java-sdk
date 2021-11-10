@@ -48,9 +48,7 @@ import java.util.Map;
 @Api(value = "TaskAdminControllerImpl", description = "the TaskAdminControllerImpl API")
 public interface TaskAdminControllerImplApi {
 
-    @ApiOperation(value = "assign", nickname = "assignUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "assign", nickname = "assignUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -65,9 +63,7 @@ public interface TaskAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> assignUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody AssignTaskPayload body);
 
 
-    @ApiOperation(value = "completeTask", nickname = "completeTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "completeTask", nickname = "completeTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -82,9 +78,7 @@ public interface TaskAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> completeTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CompleteTaskPayload body);
 
 
-    @ApiOperation(value = "deleteTask", nickname = "deleteTaskUsingDELETE", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "deleteTask", nickname = "deleteTaskUsingDELETE", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 204, message = "No Content"),
@@ -97,9 +91,7 @@ public interface TaskAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> deleteTaskUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "getTaskById", nickname = "getTaskByIdUsingGET", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "getTaskById", nickname = "getTaskByIdUsingGET", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -112,9 +104,7 @@ public interface TaskAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> getTaskByIdUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET1", notes = "", response = ListResponseContentOfCloudTask.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET1", notes = "", response = ListResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -127,9 +117,7 @@ public interface TaskAdminControllerImplApi {
     ResponseEntity<ListResponseContentOfCloudTask> getTasksUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "updateTask", nickname = "updateTaskUsingPUT", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "task-admin-controller-impl", })
+    @ApiOperation(value = "updateTask", nickname = "updateTaskUsingPUT", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),

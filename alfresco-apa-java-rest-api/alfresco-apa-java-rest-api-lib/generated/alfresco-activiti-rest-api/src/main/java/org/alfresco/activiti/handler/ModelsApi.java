@@ -48,8 +48,7 @@ import java.util.Map;
 @Api(value = "Models", description = "the Models API")
 public interface ModelsApi {
 
-    @ApiOperation(value = "Create a new model", nickname = "createModelUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Create a new model", nickname = "createModelUsingPOST", notes = "", response = ModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models",
@@ -60,8 +59,7 @@ public interface ModelsApi {
     ResponseEntity<ModelRepresentation> createModelUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ModelRepresentation body);
 
 
-    @ApiOperation(value = "Delete a model", nickname = "deleteModelUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Delete a model", nickname = "deleteModelUsingDELETE", notes = "", tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}",
@@ -70,8 +68,7 @@ public interface ModelsApi {
     ResponseEntity<Void> deleteModelUsingDELETE(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "cascade") @Valid @RequestParam(value = "cascade", required = false) Boolean cascade, @ApiParam(value = "deleteRuntimeApp") @Valid @RequestParam(value = "deleteRuntimeApp", required = false) Boolean deleteRuntimeApp);
 
 
-    @ApiOperation(value = "Duplicate an existing model", nickname = "duplicateModelUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Duplicate an existing model", nickname = "duplicateModelUsingPOST", notes = "", response = ModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/clone",
@@ -82,8 +79,7 @@ public interface ModelsApi {
     ResponseEntity<ModelRepresentation> duplicateModelUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody ModelRepresentation body);
 
 
-    @ApiOperation(value = "Get model content", nickname = "getModelJSONUsingGET", notes = "", response = ObjectNode.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Get model content", nickname = "getModelJSONUsingGET", notes = "", response = ObjectNode.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ObjectNode.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/editor/json",
@@ -93,8 +89,7 @@ public interface ModelsApi {
     ResponseEntity<ObjectNode> getModelJSONUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId);
 
 
-    @ApiOperation(value = "Get a model's thumbnail image", nickname = "getModelThumbnailUsingGET", notes = "", response = byte[].class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Get a model's thumbnail image", nickname = "getModelThumbnailUsingGET", notes = "", response = byte[].class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = byte[].class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/thumbnail",
@@ -104,8 +99,7 @@ public interface ModelsApi {
     ResponseEntity<byte[]> getModelThumbnailUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId);
 
 
-    @ApiOperation(value = "Get a model", nickname = "getModelUsingGET", notes = "Models act as containers for process, form, decision table and app definitions", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Get a model", nickname = "getModelUsingGET", notes = "Models act as containers for process, form, decision table and app definitions", response = ModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}",
@@ -115,8 +109,7 @@ public interface ModelsApi {
     ResponseEntity<ModelRepresentation> getModelUsingGET(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "includePermissions") @Valid @RequestParam(value = "includePermissions", required = false) Boolean includePermissions);
 
 
-    @ApiOperation(value = "List process definition models shared with the current user", nickname = "getModelsToIncludeInAppDefinitionUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "List process definition models shared with the current user", nickname = "getModelsToIncludeInAppDefinitionUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models-for-app-definition",
@@ -126,8 +119,7 @@ public interface ModelsApi {
     ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelsToIncludeInAppDefinitionUsingGET();
 
 
-    @ApiOperation(value = "List models (process, form, decision rule or app)", nickname = "getModelsUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "List models (process, form, decision rule or app)", nickname = "getModelsUsingGET", notes = "", response = ResultListDataRepresentationModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models",
@@ -137,8 +129,7 @@ public interface ModelsApi {
     ResponseEntity<ResultListDataRepresentationModelRepresentation> getModelsUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "modelType") @Valid @RequestParam(value = "modelType", required = false) Integer modelType, @ApiParam(value = "referenceId") @Valid @RequestParam(value = "referenceId", required = false) Long referenceId);
 
 
-    @ApiOperation(value = "Create a new version of a model", nickname = "importNewVersionUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Create a new version of a model", nickname = "importNewVersionUsingPOST", notes = "", response = ModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/newversion",
@@ -149,8 +140,7 @@ public interface ModelsApi {
     ResponseEntity<ModelRepresentation> importNewVersionUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Import a BPMN 2.0 XML file", nickname = "importProcessModelUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Import a BPMN 2.0 XML file", nickname = "importProcessModelUsingPOST", notes = "", response = ModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-models/import",
@@ -161,8 +151,7 @@ public interface ModelsApi {
     ResponseEntity<ModelRepresentation> importProcessModelUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Update model content", nickname = "saveModelUsingPOST", notes = "", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Update model content", nickname = "saveModelUsingPOST", notes = "", response = ModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/editor/json",
@@ -173,8 +162,7 @@ public interface ModelsApi {
     ResponseEntity<ModelRepresentation> saveModelUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Map<String, List<String>> body);
 
 
-    @ApiOperation(value = "Update a model", nickname = "updateModelUsingPUT", notes = "This method allows you to update the metadata of a model. In order to update the content of the model you will need to call the specific endpoint for that model type.", response = ModelRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Update a model", nickname = "updateModelUsingPUT", notes = "This method allows you to update the metadata of a model. In order to update the content of the model you will need to call the specific endpoint for that model type.", response = ModelRepresentation.class, tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ModelRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}",
@@ -185,8 +173,7 @@ public interface ModelsApi {
     ResponseEntity<ModelRepresentation> updateModelUsingPUT(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody ModelRepresentation body);
 
 
-    @ApiOperation(value = "Validate model content", nickname = "validateModelUsingPOST", notes = "", response = ValidationErrorRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models", })
+    @ApiOperation(value = "Validate model content", nickname = "validateModelUsingPOST", notes = "", response = ValidationErrorRepresentation.class, responseContainer = "List", tags={ "models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ValidationErrorRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{modelId}/editor/validate",

@@ -51,8 +51,7 @@ import java.util.Map;
 @Api(value = "Tasks", description = "the Tasks API")
 public interface TasksApi {
 
-    @ApiOperation(value = "List the users and groups involved with a task", nickname = "createIdentityLinkUsingPOST2", notes = "", response = IdentityLinkRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "List the users and groups involved with a task", nickname = "createIdentityLinkUsingPOST2", notes = "", response = IdentityLinkRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "Created", response = IdentityLinkRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks",
@@ -63,8 +62,7 @@ public interface TasksApi {
     ResponseEntity<IdentityLinkRepresentation> createIdentityLinkUsingPOST2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody IdentityLinkRepresentation body);
 
 
-    @ApiOperation(value = "Create a standalone task", nickname = "createNewTaskUsingPOST", notes = "A standalone task is one which is not associated with any process instance.", response = TaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Create a standalone task", nickname = "createNewTaskUsingPOST", notes = "A standalone task is one which is not associated with any process instance.", response = TaskRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TaskRepresentation.class),
         @ApiResponse(code = 400, message = "If the task ID is not empty") })
@@ -76,8 +74,7 @@ public interface TasksApi {
     ResponseEntity<TaskRepresentation> createNewTaskUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody TaskRepresentation body);
 
 
-    @ApiOperation(value = "Remove a user or group involvement from a task", nickname = "deleteIdentityLinkUsingDELETE2", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Remove a user or group involvement from a task", nickname = "deleteIdentityLinkUsingDELETE2", notes = "", tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks/{family}/{identityId}/{type}",
@@ -86,8 +83,7 @@ public interface TasksApi {
     ResponseEntity<Void> deleteIdentityLinkUsingDELETE2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
-    @ApiOperation(value = "Delete a task", nickname = "deleteTaskUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Delete a task", nickname = "deleteTaskUsingDELETE", notes = "", tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}",
@@ -96,8 +92,7 @@ public interface TasksApi {
     ResponseEntity<Void> deleteTaskUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Filter a list of tasks", nickname = "filterTasksUsingPOST", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Filter a list of tasks", nickname = "filterTasksUsingPOST", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationTaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/filter",
@@ -108,8 +103,7 @@ public interface TasksApi {
     ResponseEntity<ResultListDataRepresentationTaskRepresentation> filterTasksUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody TaskFilterRequestRepresentation body);
 
 
-    @ApiOperation(value = "Get a user or group involvement with a task", nickname = "getIdentityLinkTypeUsingGET2", notes = "", response = IdentityLinkRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Get a user or group involvement with a task", nickname = "getIdentityLinkTypeUsingGET2", notes = "", response = IdentityLinkRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = IdentityLinkRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks/{family}/{identityId}/{type}",
@@ -119,8 +113,7 @@ public interface TasksApi {
     ResponseEntity<IdentityLinkRepresentation> getIdentityLinkTypeUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "family", required=true) @PathVariable("family") String family, @ApiParam(value = "identityId", required=true) @PathVariable("identityId") String identityId, @ApiParam(value = "type", required=true) @PathVariable("type") String type);
 
 
-    @ApiOperation(value = "List either the users or groups involved with a process instance", nickname = "getIdentityLinksForFamilyUsingGET2", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "List either the users or groups involved with a process instance", nickname = "getIdentityLinksForFamilyUsingGET2", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = IdentityLinkRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks/{family}",
@@ -130,8 +123,7 @@ public interface TasksApi {
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksForFamilyUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "family", required=true) @PathVariable("family") String family);
 
 
-    @ApiOperation(value = "getIdentityLinks", nickname = "getIdentityLinksUsingGET2", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "getIdentityLinks", nickname = "getIdentityLinksUsingGET2", notes = "", response = IdentityLinkRepresentation.class, responseContainer = "List", tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = IdentityLinkRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/identitylinks",
@@ -141,8 +133,7 @@ public interface TasksApi {
     ResponseEntity<List<IdentityLinkRepresentation>> getIdentityLinksUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Get the audit log for a task", nickname = "getTaskAuditLogUsingGET1", notes = "", response = TaskAuditInfoRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Get the audit log for a task", nickname = "getTaskAuditLogUsingGET1", notes = "", response = TaskAuditInfoRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TaskAuditInfoRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/audit",
@@ -152,8 +143,7 @@ public interface TasksApi {
     ResponseEntity<TaskAuditInfoRepresentation> getTaskAuditLogUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Get a task", nickname = "getTaskUsingGET", notes = "", response = TaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Get a task", nickname = "getTaskUsingGET", notes = "", response = TaskRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}",
@@ -163,8 +153,7 @@ public interface TasksApi {
     ResponseEntity<TaskRepresentation> getTaskUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Query historic tasks", nickname = "listHistoricTasksUsingPOST", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Query historic tasks", nickname = "listHistoricTasksUsingPOST", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationTaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/historic-tasks/query",
@@ -175,8 +164,7 @@ public interface TasksApi {
     ResponseEntity<ResultListDataRepresentationTaskRepresentation> listHistoricTasksUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody HistoricTaskInstanceQueryRepresentation body);
 
 
-    @ApiOperation(value = "List tasks", nickname = "listTasksUsingPOST", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "List tasks", nickname = "listTasksUsingPOST", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationTaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/query",
@@ -187,8 +175,7 @@ public interface TasksApi {
     ResponseEntity<ResultListDataRepresentationTaskRepresentation> listTasksUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody TaskQueryRepresentation body);
 
 
-    @ApiOperation(value = "Update a task", nickname = "updateTaskUsingPUT", notes = "You can edit only name, description and dueDate (ISO 8601 string).", response = TaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "tasks", })
+    @ApiOperation(value = "Update a task", nickname = "updateTaskUsingPUT", notes = "You can edit only name, description and dueDate (ISO 8601 string).", response = TaskRepresentation.class, tags={ "tasks", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}",

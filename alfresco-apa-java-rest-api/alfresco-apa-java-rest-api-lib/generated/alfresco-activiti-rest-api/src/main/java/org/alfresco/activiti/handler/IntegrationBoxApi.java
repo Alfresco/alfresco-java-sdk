@@ -46,8 +46,7 @@ import java.util.Map;
 @Api(value = "IntegrationBox", description = "the IntegrationBox API")
 public interface IntegrationBoxApi {
 
-    @ApiOperation(value = "Box Authorization", nickname = "confirmAuthorisationUsingGET", notes = "Returns Box OAuth HTML Page", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-box", })
+    @ApiOperation(value = "Box Authorization", nickname = "confirmAuthorisationUsingGET", notes = "Returns Box OAuth HTML Page", tags={ "integration-box", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 400, message = "Error while calling Box"),
@@ -59,8 +58,7 @@ public interface IntegrationBoxApi {
     ResponseEntity<Void> confirmAuthorisationUsingGET();
 
 
-    @ApiOperation(value = "Add Box account", nickname = "createRepositoryAccountUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-box", })
+    @ApiOperation(value = "Add Box account", nickname = "createRepositoryAccountUsingPOST", notes = "", tags={ "integration-box", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 403, message = "Box module is not enabled") })
@@ -71,8 +69,7 @@ public interface IntegrationBoxApi {
     ResponseEntity<Void> createRepositoryAccountUsingPOST(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "" ) @Valid @RequestBody UserAccountCredentialsRepresentation body);
 
 
-    @ApiOperation(value = "Delete account information", nickname = "deleteRepositoryAccountUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-box", })
+    @ApiOperation(value = "Delete account information", nickname = "deleteRepositoryAccountUsingDELETE", notes = "", tags={ "integration-box", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 403, message = "Box module is not enabled"),
@@ -83,8 +80,7 @@ public interface IntegrationBoxApi {
     ResponseEntity<Void> deleteRepositoryAccountUsingDELETE(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
-    @ApiOperation(value = "Get status information", nickname = "getBoxPluginStatusUsingGET", notes = "", response = Boolean.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-box", })
+    @ApiOperation(value = "Get status information", nickname = "getBoxPluginStatusUsingGET", notes = "", response = Boolean.class, tags={ "integration-box", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = Boolean.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/box/status",
@@ -94,8 +90,7 @@ public interface IntegrationBoxApi {
     ResponseEntity<Boolean> getBoxPluginStatusUsingGET();
 
 
-    @ApiOperation(value = "List file and folders", nickname = "getFilesUsingGET", notes = "", response = ResultListDataRepresentationBoxContent.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-box", })
+    @ApiOperation(value = "List file and folders", nickname = "getFilesUsingGET", notes = "", response = ResultListDataRepresentationBoxContent.class, tags={ "integration-box", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationBoxContent.class),
         @ApiResponse(code = 400, message = "Error while calling Box"),
@@ -108,8 +103,7 @@ public interface IntegrationBoxApi {
     ResponseEntity<ResultListDataRepresentationBoxContent> getFilesUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "parent") @Valid @RequestParam(value = "parent", required = false) String parent);
 
 
-    @ApiOperation(value = "Get account information", nickname = "getRepositoryAccountUsingGET", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-box", })
+    @ApiOperation(value = "Get account information", nickname = "getRepositoryAccountUsingGET", notes = "", tags={ "integration-box", })
     @ApiResponses(value = { 
         @ApiResponse(code = 401, message = "User does not have sufficient permission or an error occurred", response = BoxUserAccountCredentialsRepresentation.class),
         @ApiResponse(code = 403, message = "Box module is not enabled") })
@@ -120,8 +114,7 @@ public interface IntegrationBoxApi {
     ResponseEntity<Void> getRepositoryAccountUsingGET(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
-    @ApiOperation(value = "Update account information", nickname = "updateRepositoryAccountUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-box", })
+    @ApiOperation(value = "Update account information", nickname = "updateRepositoryAccountUsingPUT", notes = "", tags={ "integration-box", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 403, message = "Box module is not enabled"),

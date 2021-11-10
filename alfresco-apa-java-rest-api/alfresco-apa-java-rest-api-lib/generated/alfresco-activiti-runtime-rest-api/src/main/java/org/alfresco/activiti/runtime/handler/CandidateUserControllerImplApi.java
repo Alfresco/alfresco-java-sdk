@@ -45,9 +45,7 @@ import java.util.Map;
 @Api(value = "CandidateUserControllerImpl", description = "the CandidateUserControllerImpl API")
 public interface CandidateUserControllerImplApi {
 
-    @ApiOperation(value = "addCandidateUsers", nickname = "addCandidateUsersUsingPOST1", notes = "", authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "candidate-user-controller-impl", })
+    @ApiOperation(value = "addCandidateUsers", nickname = "addCandidateUsersUsingPOST1", notes = "", tags={ "candidate-user-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -61,9 +59,7 @@ public interface CandidateUserControllerImplApi {
     ResponseEntity<Void> addCandidateUsersUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
-    @ApiOperation(value = "deleteCandidateUsers", nickname = "deleteCandidateUsersUsingDELETE1", notes = "", authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "candidate-user-controller-impl", })
+    @ApiOperation(value = "deleteCandidateUsers", nickname = "deleteCandidateUsersUsingDELETE1", notes = "", tags={ "candidate-user-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 204, message = "No Content"),
@@ -76,9 +72,7 @@ public interface CandidateUserControllerImplApi {
     ResponseEntity<Void> deleteCandidateUsersUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateUsersPayload body);
 
 
-    @ApiOperation(value = "getUserCandidates", nickname = "getUserCandidatesUsingGET1", notes = "", response = ListResponseContentOfCandidateUser.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "candidate-user-controller-impl", })
+    @ApiOperation(value = "getUserCandidates", nickname = "getUserCandidatesUsingGET1", notes = "", response = ListResponseContentOfCandidateUser.class, tags={ "candidate-user-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCandidateUser.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

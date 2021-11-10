@@ -47,8 +47,7 @@ import java.util.Map;
 @Api(value = "IntegrationAlfrescoOnpremise", description = "the IntegrationAlfrescoOnpremise API")
 public interface IntegrationAlfrescoOnpremiseApi {
 
-    @ApiOperation(value = "Create Alfresco repository", nickname = "createRepositoryUsingPOST", notes = "", response = AlfrescoEndpointRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "Create Alfresco repository", nickname = "createRepositoryUsingPOST", notes = "", response = AlfrescoEndpointRepresentation.class, tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AlfrescoEndpointRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco",
@@ -59,8 +58,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     ResponseEntity<AlfrescoEndpointRepresentation> createRepositoryUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody AlfrescoEndpointRepresentation body);
 
 
-    @ApiOperation(value = "Delete Alfresco repository", nickname = "deleteRepositoryUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "Delete Alfresco repository", nickname = "deleteRepositoryUsingDELETE", notes = "", tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}",
@@ -69,8 +67,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     ResponseEntity<Void> deleteRepositoryUsingDELETE(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") Long repositoryId);
 
 
-    @ApiOperation(value = "List Alfresco sites", nickname = "getAllSitesUsingGET", notes = "Returns ALL Sites", response = ResultListDataRepresentationAlfrescoSiteRepresenation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "List Alfresco sites", nickname = "getAllSitesUsingGET", notes = "Returns ALL Sites", response = ResultListDataRepresentationAlfrescoSiteRepresenation.class, tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAlfrescoSiteRepresenation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}/sites",
@@ -80,8 +77,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     ResponseEntity<ResultListDataRepresentationAlfrescoSiteRepresenation> getAllSitesUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId);
 
 
-    @ApiOperation(value = "List files and folders inside a specific folder identified by folder path", nickname = "getContentInFolderPathUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "List files and folders inside a specific folder identified by folder path", nickname = "getContentInFolderPathUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAlfrescoContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/rest/integration/alfresco/{repositoryId}/sites/{siteId}/folderpath/{folderPath}/content",
@@ -91,8 +87,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInFolderPathUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId, @ApiParam(value = "siteId", required=true) @PathVariable("siteId") String siteId, @ApiParam(value = "folderPath", required=true) @PathVariable("folderPath") String folderPath);
 
 
-    @ApiOperation(value = "List files and folders inside a specific folder", nickname = "getContentInFolderUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "List files and folders inside a specific folder", nickname = "getContentInFolderUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAlfrescoContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}/folders/{folderId}/content",
@@ -102,8 +97,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInFolderUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId, @ApiParam(value = "folderId", required=true) @PathVariable("folderId") String folderId);
 
 
-    @ApiOperation(value = "List files and folders inside a specific site", nickname = "getContentInSiteUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "List files and folders inside a specific site", nickname = "getContentInSiteUsingGET", notes = "", response = ResultListDataRepresentationAlfrescoContentRepresentation.class, tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAlfrescoContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}/sites/{siteId}/content",
@@ -113,8 +107,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     ResponseEntity<ResultListDataRepresentationAlfrescoContentRepresentation> getContentInSiteUsingGET(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") String repositoryId, @ApiParam(value = "siteId", required=true) @PathVariable("siteId") String siteId);
 
 
-    @ApiOperation(value = "List Alfresco repositories", nickname = "getRepositoriesUsingGET", notes = "A tenant administrator can configure one or more Alfresco repositories to use when working with content.", response = ResultListDataRepresentationAlfrescoEndpointRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "List Alfresco repositories", nickname = "getRepositoriesUsingGET", notes = "A tenant administrator can configure one or more Alfresco repositories to use when working with content.", response = ResultListDataRepresentationAlfrescoEndpointRepresentation.class, tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAlfrescoEndpointRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/profile/accounts/alfresco",
@@ -124,8 +117,7 @@ public interface IntegrationAlfrescoOnpremiseApi {
     ResponseEntity<ResultListDataRepresentationAlfrescoEndpointRepresentation> getRepositoriesUsingGET(@ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "includeAccounts") @Valid @RequestParam(value = "includeAccounts", required = false) Boolean includeAccounts);
 
 
-    @ApiOperation(value = "Update Alfresco repository", nickname = "updateRepositoryUsingPUT", notes = "", response = AlfrescoEndpointRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-alfresco-onpremise", })
+    @ApiOperation(value = "Update Alfresco repository", nickname = "updateRepositoryUsingPUT", notes = "", response = AlfrescoEndpointRepresentation.class, tags={ "integration-alfresco-onpremise", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AlfrescoEndpointRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/alfresco/{repositoryId}",

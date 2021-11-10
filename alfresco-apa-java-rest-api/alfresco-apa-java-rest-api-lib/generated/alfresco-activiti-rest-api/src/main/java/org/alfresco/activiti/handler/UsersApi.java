@@ -47,8 +47,7 @@ import java.util.Map;
 @Api(value = "Users", description = "the Users API")
 public interface UsersApi {
 
-    @ApiOperation(value = "Execute an action for a specific user", nickname = "executeActionUsingPOST", notes = "Typical action is updating/reset password", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "users", })
+    @ApiOperation(value = "Execute an action for a specific user", nickname = "executeActionUsingPOST", notes = "Typical action is updating/reset password", tags={ "users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/users/{userId}",
@@ -58,8 +57,7 @@ public interface UsersApi {
     ResponseEntity<Void> executeActionUsingPOST(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "" ) @Valid @RequestBody UserActionRepresentation body);
 
 
-    @ApiOperation(value = "Stream user profile picture", nickname = "getProfilePictureUsingGET1", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "users", })
+    @ApiOperation(value = "Stream user profile picture", nickname = "getProfilePictureUsingGET1", notes = "", tags={ "users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 403, message = "User is not in the same tenant as current user") })
@@ -69,8 +67,7 @@ public interface UsersApi {
     ResponseEntity<Void> getProfilePictureUsingGET1(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
-    @ApiOperation(value = "Get a user", nickname = "getUserUsingGET1", notes = "", response = UserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "users", })
+    @ApiOperation(value = "Get a user", nickname = "getUserUsingGET1", notes = "", response = UserRepresentation.class, tags={ "users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/users/{userId}",
@@ -80,8 +77,7 @@ public interface UsersApi {
     ResponseEntity<UserRepresentation> getUserUsingGET1(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId);
 
 
-    @ApiOperation(value = "Query users", nickname = "getUsersUsingGET1", notes = "A common use case is that a user wants to select another user (eg. when assigning a task) or group.", response = ResultListDataRepresentationLightUserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "users", })
+    @ApiOperation(value = "Query users", nickname = "getUsersUsingGET1", notes = "A common use case is that a user wants to select another user (eg. when assigning a task) or group.", response = ResultListDataRepresentationLightUserRepresentation.class, tags={ "users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationLightUserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/users",
@@ -91,8 +87,7 @@ public interface UsersApi {
     ResponseEntity<ResultListDataRepresentationLightUserRepresentation> getUsersUsingGET1(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "email") @Valid @RequestParam(value = "email", required = false) String email, @ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String externalId, @ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String externalIdCaseInsensitive, @ApiParam(value = "excludeTaskId") @Valid @RequestParam(value = "excludeTaskId", required = false) String excludeTaskId, @ApiParam(value = "excludeProcessId") @Valid @RequestParam(value = "excludeProcessId", required = false) String excludeProcessId, @ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId);
 
 
-    @ApiOperation(value = "Request a password reset", nickname = "requestPasswordResetUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "users", })
+    @ApiOperation(value = "Request a password reset", nickname = "requestPasswordResetUsingPOST", notes = "", tags={ "users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 400, message = "User with given email does not exist or is not active") })
@@ -103,8 +98,7 @@ public interface UsersApi {
     ResponseEntity<Void> requestPasswordResetUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody ResetPasswordRepresentation body);
 
 
-    @ApiOperation(value = "Update a user", nickname = "updateUserUsingPUT", notes = "", response = UserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "users", })
+    @ApiOperation(value = "Update a user", nickname = "updateUserUsingPUT", notes = "", response = UserRepresentation.class, tags={ "users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/users/{userId}",

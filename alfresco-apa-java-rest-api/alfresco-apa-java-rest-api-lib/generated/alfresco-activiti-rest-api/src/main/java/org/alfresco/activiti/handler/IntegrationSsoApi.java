@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "IntegrationSso", description = "the IntegrationSso API")
 public interface IntegrationSsoApi {
 
-    @ApiOperation(value = "SSO Authorization", nickname = "confirmAuthorisationUsingGET2", notes = "Returns SSO OAuth HTML Page", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-sso", })
+    @ApiOperation(value = "SSO Authorization", nickname = "confirmAuthorisationUsingGET2", notes = "Returns SSO OAuth HTML Page", tags={ "integration-sso", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 400, message = "Error while calling SSO"),
@@ -57,8 +56,7 @@ public interface IntegrationSsoApi {
     ResponseEntity<Void> confirmAuthorisationUsingGET2(@NotNull @ApiParam(value = "serviceId", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId, @NotNull @ApiParam(value = "session_state", required = true) @Valid @RequestParam(value = "session_state", required = true) String sessionState, @NotNull @ApiParam(value = "code", required = true) @Valid @RequestParam(value = "code", required = true) String code);
 
 
-    @ApiOperation(value = "Delete account information", nickname = "deleteRepositoryAccountUsingDELETE1", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-sso", })
+    @ApiOperation(value = "Delete account information", nickname = "deleteRepositoryAccountUsingDELETE1", notes = "", tags={ "integration-sso", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 403, message = "SSO module is not enabled"),
@@ -69,8 +67,7 @@ public interface IntegrationSsoApi {
     ResponseEntity<Void> deleteRepositoryAccountUsingDELETE1(@ApiParam(value = "repositoryId", required=true) @PathVariable("repositoryId") Long repositoryId);
 
 
-    @ApiOperation(value = "Get account information", nickname = "getRepositoryAccountUsingGET1", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-sso", })
+    @ApiOperation(value = "Get account information", nickname = "getRepositoryAccountUsingGET1", notes = "", tags={ "integration-sso", })
     @ApiResponses(value = { 
         @ApiResponse(code = 401, message = "User does not have sufficient permission or an error occurred", response = SSOUserAccountCredentialsRepresentation.class),
         @ApiResponse(code = 403, message = "SSO module is not enabled") })

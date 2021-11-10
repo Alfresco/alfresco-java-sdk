@@ -48,8 +48,7 @@ import java.util.Map;
 @Api(value = "AdminTenants", description = "the AdminTenants API")
 public interface AdminTenantsApi {
 
-    @ApiOperation(value = "Create a tenant", nickname = "createTenantUsingPOST", notes = "Only a tenant manager may access this endpoint", response = LightTenantRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "Create a tenant", nickname = "createTenantUsingPOST", notes = "Only a tenant manager may access this endpoint", response = LightTenantRepresentation.class, tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = LightTenantRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants",
@@ -60,8 +59,7 @@ public interface AdminTenantsApi {
     ResponseEntity<LightTenantRepresentation> createTenantUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateTenantRepresentation body);
 
 
-    @ApiOperation(value = "Delete a tenant", nickname = "deleteTenantUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "Delete a tenant", nickname = "deleteTenantUsingDELETE", notes = "", tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}",
@@ -70,8 +68,7 @@ public interface AdminTenantsApi {
     ResponseEntity<Void> deleteTenantUsingDELETE(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
-    @ApiOperation(value = "Get tenant events", nickname = "getTenantEventsUsingGET", notes = "", response = TenantEvent.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "Get tenant events", nickname = "getTenantEventsUsingGET", notes = "", response = TenantEvent.class, responseContainer = "List", tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TenantEvent.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}/events",
@@ -81,8 +78,7 @@ public interface AdminTenantsApi {
     ResponseEntity<List<TenantEvent>> getTenantEventsUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
-    @ApiOperation(value = "Get a tenant's logo", nickname = "getTenantLogoUsingGET", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "Get a tenant's logo", nickname = "getTenantLogoUsingGET", notes = "", tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}/logo",
@@ -91,8 +87,7 @@ public interface AdminTenantsApi {
     ResponseEntity<Void> getTenantLogoUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
-    @ApiOperation(value = "Get a tenant", nickname = "getTenantUsingGET", notes = "", response = TenantRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "Get a tenant", nickname = "getTenantUsingGET", notes = "", response = TenantRepresentation.class, tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TenantRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}",
@@ -102,8 +97,7 @@ public interface AdminTenantsApi {
     ResponseEntity<TenantRepresentation> getTenantUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
-    @ApiOperation(value = "List tenants", nickname = "getTenantsUsingGET", notes = "Only a tenant manager may access this endpoint", response = LightTenantRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "List tenants", nickname = "getTenantsUsingGET", notes = "Only a tenant manager may access this endpoint", response = LightTenantRepresentation.class, responseContainer = "List", tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = LightTenantRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants",
@@ -113,8 +107,7 @@ public interface AdminTenantsApi {
     ResponseEntity<List<LightTenantRepresentation>> getTenantsUsingGET();
 
 
-    @ApiOperation(value = "Update a tenant", nickname = "updateUsingPUT", notes = "", response = TenantRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "Update a tenant", nickname = "updateUsingPUT", notes = "", response = TenantRepresentation.class, tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TenantRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}",
@@ -125,8 +118,7 @@ public interface AdminTenantsApi {
     ResponseEntity<TenantRepresentation> updateUsingPUT(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId, @ApiParam(value = "" ) @Valid @RequestBody CreateTenantRepresentation body);
 
 
-    @ApiOperation(value = "Update a tenant's logo", nickname = "uploadTenantLogoUsingPOST", notes = "", response = ImageUploadRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-tenants", })
+    @ApiOperation(value = "Update a tenant's logo", nickname = "uploadTenantLogoUsingPOST", notes = "", response = ImageUploadRepresentation.class, tags={ "admin-tenants", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ImageUploadRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/tenants/{tenantId}/logo",

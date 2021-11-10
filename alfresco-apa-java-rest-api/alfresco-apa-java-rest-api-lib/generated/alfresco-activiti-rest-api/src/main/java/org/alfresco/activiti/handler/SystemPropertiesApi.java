@@ -46,8 +46,7 @@ import java.util.Map;
 @Api(value = "SystemProperties", description = "the SystemProperties API")
 public interface SystemPropertiesApi {
 
-    @ApiOperation(value = "Get global date format", nickname = "getGlobalDateFormatUsingGET", notes = "", response = GlobalDateFormatRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "system-properties", })
+    @ApiOperation(value = "Get global date format", nickname = "getGlobalDateFormatUsingGET", notes = "", response = GlobalDateFormatRepresentation.class, tags={ "system-properties", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = GlobalDateFormatRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties/global-date-format/{tenantId}",
@@ -57,8 +56,7 @@ public interface SystemPropertiesApi {
     ResponseEntity<GlobalDateFormatRepresentation> getGlobalDateFormatUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
-    @ApiOperation(value = "Get password validation constraints", nickname = "getPasswordValidationConstraintsUsingGET", notes = "", response = PasswordValidationConstraints.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "system-properties", })
+    @ApiOperation(value = "Get password validation constraints", nickname = "getPasswordValidationConstraintsUsingGET", notes = "", response = PasswordValidationConstraints.class, tags={ "system-properties", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = PasswordValidationConstraints.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties/password-validation-constraints/{tenantId}",
@@ -68,8 +66,7 @@ public interface SystemPropertiesApi {
     ResponseEntity<PasswordValidationConstraints> getPasswordValidationConstraintsUsingGET(@ApiParam(value = "tenantId", required=true) @PathVariable("tenantId") Long tenantId);
 
 
-    @ApiOperation(value = "Retrieve system properties", nickname = "getPropertiesUsingGET", notes = "Typical value is AllowInvolveByEmail", response = SystemPropertiesRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "system-properties", })
+    @ApiOperation(value = "Retrieve system properties", nickname = "getPropertiesUsingGET", notes = "Typical value is AllowInvolveByEmail", response = SystemPropertiesRepresentation.class, tags={ "system-properties", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = SystemPropertiesRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties",
@@ -79,8 +76,7 @@ public interface SystemPropertiesApi {
     ResponseEntity<SystemPropertiesRepresentation> getPropertiesUsingGET();
 
 
-    @ApiOperation(value = "Get involved users who can edit forms", nickname = "involvedUsersCanEditFormsUsingGET", notes = "", response = Boolean.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "system-properties", })
+    @ApiOperation(value = "Get involved users who can edit forms", nickname = "involvedUsersCanEditFormsUsingGET", notes = "", response = Boolean.class, tags={ "system-properties", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = Boolean.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/system/properties/involved-users-can-edit-forms/{tenantId}",

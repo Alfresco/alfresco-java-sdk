@@ -47,8 +47,7 @@ import java.util.Map;
 @Api(value = "AppDefinitions", description = "the AppDefinitions API")
 public interface AppDefinitionsApi {
 
-    @ApiOperation(value = "deleteAppDefinition", nickname = "deleteAppDefinitionUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "deleteAppDefinition", nickname = "deleteAppDefinitionUsingDELETE", notes = "", tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{appDefinitionId}",
@@ -57,8 +56,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<Void> deleteAppDefinitionUsingDELETE(@ApiParam(value = "appDefinitionId", required=true) @PathVariable("appDefinitionId") Long appDefinitionId);
 
 
-    @ApiOperation(value = "Export an app definition", nickname = "exportAppDefinitionUsingGET", notes = "This will return a zip file containing the app definition model and all related models (process definitions and forms).", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "Export an app definition", nickname = "exportAppDefinitionUsingGET", notes = "This will return a zip file containing the app definition model and all related models (process definitions and forms).", tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 400, message = "No application definition id provided"),
@@ -70,8 +68,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<Void> exportAppDefinitionUsingGET(@ApiParam(value = "modelId from a runtime app or the id of an app definition model", required=true) @PathVariable("modelId") Long modelId);
 
 
-    @ApiOperation(value = "Get an app definition", nickname = "getAppDefinitionUsingGET", notes = "", response = AppDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "Get an app definition", nickname = "getAppDefinitionUsingGET", notes = "", response = AppDefinitionRepresentation.class, tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{modelId}",
@@ -81,8 +78,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<AppDefinitionRepresentation> getAppDefinitionUsingGET(@ApiParam(value = "Application definition ID", required=true) @PathVariable("modelId") Long modelId);
 
 
-    @ApiOperation(value = "importAndPublishApp", nickname = "importAndPublishAppUsingPOST", notes = "", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "importAndPublishApp", nickname = "importAndPublishAppUsingPOST", notes = "", response = AppDefinitionUpdateResultRepresentation.class, tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionUpdateResultRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{modelId}/publish-app",
@@ -93,8 +89,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<AppDefinitionUpdateResultRepresentation> importAndPublishAppUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "importAndPublishApp", nickname = "importAndPublishAppUsingPOST1", notes = "", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "importAndPublishApp", nickname = "importAndPublishAppUsingPOST1", notes = "", response = AppDefinitionUpdateResultRepresentation.class, tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionUpdateResultRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/publish-app",
@@ -105,8 +100,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<AppDefinitionUpdateResultRepresentation> importAndPublishAppUsingPOST1(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Update the content of an existing app", nickname = "importAppDefinitionUsingPOST", notes = "Imports an app inside an existing app definition and creates a new version<p>Before using any new or updated processes included in the import the app must be (re-)published and deployed.", response = AppDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "Update the content of an existing app", nickname = "importAppDefinitionUsingPOST", notes = "Imports an app inside an existing app definition and creates a new version<p>Before using any new or updated processes included in the import the app must be (re-)published and deployed.", response = AppDefinitionRepresentation.class, tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{modelId}/import",
@@ -117,8 +111,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<AppDefinitionRepresentation> importAppDefinitionUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Import a new app definition", nickname = "importAppDefinitionUsingPOST1", notes = "Allows a zip file to be uploaded containing an app definition and any number of included models.<p>This is useful to bootstrap an environment (for users or continuous integration).<p>Before using any processes included in the import the app must be published and deployed.", response = AppDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "Import a new app definition", nickname = "importAppDefinitionUsingPOST1", notes = "Allows a zip file to be uploaded containing an app definition and any number of included models.<p>This is useful to bootstrap an environment (for users or continuous integration).<p>Before using any processes included in the import the app must be published and deployed.", response = AppDefinitionRepresentation.class, tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/import",
@@ -129,8 +122,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<AppDefinitionRepresentation> importAppDefinitionUsingPOST1(@ApiParam(value = "Whether to renew user and group identifiers") @Valid @RequestParam(value = "renewIdmEntries", required = false) String renewIdmEntries, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Publish an app definition", nickname = "publishAppDefinitionUsingPOST", notes = "Publishing an app definition makes it available for use. The application must not have any validation errors or an error will be returned.<p>Before an app definition can be used by other users, it must also be deployed for their use", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "Publish an app definition", nickname = "publishAppDefinitionUsingPOST", notes = "Publishing an app definition makes it available for use. The application must not have any validation errors or an error will be returned.<p>Before an app definition can be used by other users, it must also be deployed for their use", response = AppDefinitionUpdateResultRepresentation.class, tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionUpdateResultRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{modelId}/publish",
@@ -141,8 +133,7 @@ public interface AppDefinitionsApi {
     ResponseEntity<AppDefinitionUpdateResultRepresentation> publishAppDefinitionUsingPOST(@ApiParam(value = "modelId", required=true) @PathVariable("modelId") Long modelId, @ApiParam(value = "" ) @Valid @RequestBody AppDefinitionPublishRepresentation body);
 
 
-    @ApiOperation(value = "Update an app definition", nickname = "updateAppDefinitionUsingPUT", notes = "", response = AppDefinitionUpdateResultRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "app-definitions", })
+    @ApiOperation(value = "Update an app definition", nickname = "updateAppDefinitionUsingPUT", notes = "", response = AppDefinitionUpdateResultRepresentation.class, tags={ "app-definitions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AppDefinitionUpdateResultRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/app-definitions/{modelId}",

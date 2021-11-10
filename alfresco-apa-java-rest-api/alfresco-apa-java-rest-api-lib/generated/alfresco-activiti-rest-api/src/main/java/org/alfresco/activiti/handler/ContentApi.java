@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "Content", description = "the Content API")
 public interface ContentApi {
 
-    @ApiOperation(value = "Attach existing content to a process instance", nickname = "createRelatedContentOnProcessInstanceUsingPOST", notes = "", response = RelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Attach existing content to a process instance", nickname = "createRelatedContentOnProcessInstanceUsingPOST", notes = "", response = RelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/content",
@@ -57,8 +56,7 @@ public interface ContentApi {
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnProcessInstanceUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody RelatedContentRepresentation body);
 
 
-    @ApiOperation(value = "Upload content and attach to a process instance", nickname = "createRelatedContentOnProcessInstanceUsingPOST1", notes = "", response = RelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Upload content and attach to a process instance", nickname = "createRelatedContentOnProcessInstanceUsingPOST1", notes = "", response = RelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/raw-content",
@@ -69,8 +67,7 @@ public interface ContentApi {
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnProcessInstanceUsingPOST1(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Attach existing content to a task", nickname = "createRelatedContentOnTaskUsingPOST", notes = "", response = RelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Attach existing content to a task", nickname = "createRelatedContentOnTaskUsingPOST", notes = "", response = RelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/content",
@@ -81,8 +78,7 @@ public interface ContentApi {
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody RelatedContentRepresentation body);
 
 
-    @ApiOperation(value = "Upload content and attach to a task", nickname = "createRelatedContentOnTaskUsingPOST1", notes = "", response = RelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Upload content and attach to a task", nickname = "createRelatedContentOnTaskUsingPOST1", notes = "", response = RelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/raw-content",
@@ -93,8 +89,7 @@ public interface ContentApi {
     ResponseEntity<RelatedContentRepresentation> createRelatedContentOnTaskUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent, @ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Upload content and create a local representation", nickname = "createTemporaryRawRelatedContentUsingPOST", notes = "", response = RelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Upload content and create a local representation", nickname = "createTemporaryRawRelatedContentUsingPOST", notes = "", response = RelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/raw",
@@ -105,8 +100,7 @@ public interface ContentApi {
     ResponseEntity<RelatedContentRepresentation> createTemporaryRawRelatedContentUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody Object body);
 
 
-    @ApiOperation(value = "Create a local representation of content from a remote repository", nickname = "createTemporaryRelatedContentUsingPOST", notes = "", response = RelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Create a local representation of content from a remote repository", nickname = "createTemporaryRelatedContentUsingPOST", notes = "", response = RelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/content",
@@ -117,8 +111,7 @@ public interface ContentApi {
     ResponseEntity<RelatedContentRepresentation> createTemporaryRelatedContentUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody RelatedContentRepresentation body);
 
 
-    @ApiOperation(value = "Remove a local content representation", nickname = "deleteContentUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Remove a local content representation", nickname = "deleteContentUsingDELETE", notes = "", tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}",
@@ -127,8 +120,7 @@ public interface ContentApi {
     ResponseEntity<Void> deleteContentUsingDELETE(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId);
 
 
-    @ApiOperation(value = "Get a local content representation", nickname = "getContentUsingGET", notes = "", response = RelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Get a local content representation", nickname = "getContentUsingGET", notes = "", response = RelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}",
@@ -138,8 +130,7 @@ public interface ContentApi {
     ResponseEntity<RelatedContentRepresentation> getContentUsingGET(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId);
 
 
-    @ApiOperation(value = "Stream content rendition", nickname = "getRawContentUsingGET", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Stream content rendition", nickname = "getRawContentUsingGET", notes = "", tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}/rendition/{renditionType}",
@@ -148,8 +139,7 @@ public interface ContentApi {
     ResponseEntity<Void> getRawContentUsingGET(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId, @ApiParam(value = "renditionType", required=true) @PathVariable("renditionType") String renditionType);
 
 
-    @ApiOperation(value = "Stream content from a local content representation", nickname = "getRawContentUsingGET1", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "Stream content from a local content representation", nickname = "getRawContentUsingGET1", notes = "", tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/content/{contentId}/raw",
@@ -158,8 +148,7 @@ public interface ContentApi {
     ResponseEntity<Void> getRawContentUsingGET1(@ApiParam(value = "contentId", required=true) @PathVariable("contentId") Long contentId);
 
 
-    @ApiOperation(value = "List content attached to a process instance", nickname = "getRelatedContentForProcessInstanceUsingGET", notes = "", response = ResultListDataRepresentationRelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "List content attached to a process instance", nickname = "getRelatedContentForProcessInstanceUsingGET", notes = "", response = ResultListDataRepresentationRelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationRelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/content",
@@ -169,8 +158,7 @@ public interface ContentApi {
     ResponseEntity<ResultListDataRepresentationRelatedContentRepresentation> getRelatedContentForProcessInstanceUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "isRelatedContent") @Valid @RequestParam(value = "isRelatedContent", required = false) Boolean isRelatedContent);
 
 
-    @ApiOperation(value = "List content attached to a task", nickname = "getRelatedContentForTaskUsingGET", notes = "", response = ResultListDataRepresentationRelatedContentRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "content", })
+    @ApiOperation(value = "List content attached to a task", nickname = "getRelatedContentForTaskUsingGET", notes = "", response = ResultListDataRepresentationRelatedContentRepresentation.class, tags={ "content", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationRelatedContentRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/content",

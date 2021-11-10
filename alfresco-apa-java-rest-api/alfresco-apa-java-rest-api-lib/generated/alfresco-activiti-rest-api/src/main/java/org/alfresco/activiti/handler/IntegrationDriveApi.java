@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "IntegrationDrive", description = "the IntegrationDrive API")
 public interface IntegrationDriveApi {
 
-    @ApiOperation(value = "Drive Authorization", nickname = "confirmAuthorisationUsingGET1", notes = "Returns Drive OAuth HTML Page", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-drive", })
+    @ApiOperation(value = "Drive Authorization", nickname = "confirmAuthorisationUsingGET1", notes = "Returns Drive OAuth HTML Page", tags={ "integration-drive", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/google-drive/confirm-auth-request",
@@ -54,8 +53,7 @@ public interface IntegrationDriveApi {
     ResponseEntity<Void> confirmAuthorisationUsingGET1();
 
 
-    @ApiOperation(value = "List files and folders", nickname = "getFilesUsingGET1", notes = "", response = ResultListDataRepresentationGoogleDriveContent.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "integration-drive", })
+    @ApiOperation(value = "List files and folders", nickname = "getFilesUsingGET1", notes = "", response = ResultListDataRepresentationGoogleDriveContent.class, tags={ "integration-drive", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationGoogleDriveContent.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/integration/google-drive/files",

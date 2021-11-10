@@ -51,8 +51,7 @@ import java.util.Map;
 @Api(value = "FormModels", description = "the FormModels API")
 public interface FormModelsApi {
 
-    @ApiOperation(value = "Get form content", nickname = "getFormEditorJsonUsingGET", notes = "", response = FormDefinitionRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Get form content", nickname = "getFormEditorJsonUsingGET", notes = "", response = FormDefinitionRepresentation.class, tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormDefinitionRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/forms/{formId}/editorJson",
@@ -62,8 +61,7 @@ public interface FormModelsApi {
     ResponseEntity<FormDefinitionRepresentation> getFormEditorJsonUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId);
 
 
-    @ApiOperation(value = "Get form history", nickname = "getFormHistoryUsingGET", notes = "", response = FormRepresentationRes.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Get form history", nickname = "getFormHistoryUsingGET", notes = "", response = FormRepresentationRes.class, tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormRepresentationRes.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/{formId}/history/{formHistoryId}",
@@ -73,8 +71,7 @@ public interface FormModelsApi {
     ResponseEntity<FormRepresentationRes> getFormHistoryUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId, @ApiParam(value = "formHistoryId", required=true) @PathVariable("formHistoryId") Long formHistoryId);
 
 
-    @ApiOperation(value = "Get a form model", nickname = "getFormUsingGET", notes = "", response = FormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Get a form model", nickname = "getFormUsingGET", notes = "", response = FormRepresentation.class, tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/{formId}",
@@ -84,8 +81,7 @@ public interface FormModelsApi {
     ResponseEntity<FormRepresentation> getFormUsingGET(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId);
 
 
-    @ApiOperation(value = "Get a form", nickname = "getFormUsingGET1", notes = "", response = RuntimeFormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Get a form", nickname = "getFormUsingGET1", notes = "", response = RuntimeFormRepresentation.class, tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RuntimeFormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/forms/{formId}",
@@ -95,8 +91,7 @@ public interface FormModelsApi {
     ResponseEntity<RuntimeFormRepresentation> getFormUsingGET1(@ApiParam(value = "formId", required=true) @PathVariable("formId") Long formId);
 
 
-    @ApiOperation(value = "Get forms", nickname = "getFormsUsingGET", notes = "", response = FormRepresentationRes.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Get forms", nickname = "getFormsUsingGET", notes = "", response = FormRepresentationRes.class, responseContainer = "List", tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormRepresentationRes.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/values",
@@ -106,8 +101,7 @@ public interface FormModelsApi {
     ResponseEntity<List<FormRepresentationRes>> getFormsUsingGET(@NotNull @ApiParam(value = "formId", required = true) @Valid @RequestParam(value = "formId", required = true) String formId);
 
 
-    @ApiOperation(value = "List form models", nickname = "getFormsUsingGET1", notes = "", response = ResultListDataRepresentationFormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "List form models", nickname = "getFormsUsingGET1", notes = "", response = ResultListDataRepresentationFormRepresentation.class, tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationFormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models",
@@ -117,8 +111,7 @@ public interface FormModelsApi {
     ResponseEntity<ResultListDataRepresentationFormRepresentation> getFormsUsingGET1();
 
 
-    @ApiOperation(value = "Query forms", nickname = "getFormsUsingGET2", notes = "", response = ResultListDataRepresentationRuntimeFormRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Query forms", nickname = "getFormsUsingGET2", notes = "", response = ResultListDataRepresentationRuntimeFormRepresentation.class, tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationRuntimeFormRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/forms",
@@ -128,8 +121,7 @@ public interface FormModelsApi {
     ResponseEntity<ResultListDataRepresentationRuntimeFormRepresentation> getFormsUsingGET2(@ApiParam(value = "nameLike") @Valid @RequestParam(value = "nameLike", required = false) String nameLike, @ApiParam(value = "appId") @Valid @RequestParam(value = "appId", required = false) Long appId, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "order") @Valid @RequestParam(value = "order", required = false) String order, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size);
 
 
-    @ApiOperation(value = "Update form model content", nickname = "saveFormUsingPUT", notes = "", response = FormRepresentationRes.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Update form model content", nickname = "saveFormUsingPUT", notes = "", response = FormRepresentationRes.class, tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = FormRepresentationRes.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/{formId}",
@@ -140,8 +132,7 @@ public interface FormModelsApi {
     ResponseEntity<FormRepresentationRes> saveFormUsingPUT(@ApiParam(value = "formId", required=true) @PathVariable("ID of the form to update") Long idOfTheFormToUpdate, @ApiParam(value = "" ) @Valid @RequestBody FormSaveRepresentation body);
 
 
-    @ApiOperation(value = "Validate form model content", nickname = "validateModelUsingPUT1", notes = "The model content to be validated must be specified in the POST body", response = ValidationErrorRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "form-models", })
+    @ApiOperation(value = "Validate form model content", nickname = "validateModelUsingPUT1", notes = "The model content to be validated must be specified in the POST body", response = ValidationErrorRepresentation.class, responseContainer = "List", tags={ "form-models", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ValidationErrorRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/form-models/{formId}/validate",

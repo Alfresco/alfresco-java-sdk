@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "Endpoints", description = "the Endpoints API")
 public interface EndpointsApi {
 
-    @ApiOperation(value = "Get an endpoint configuration", nickname = "getEndpointConfigurationUsingGET", notes = "", response = EndpointConfigurationRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "endpoints", })
+    @ApiOperation(value = "Get an endpoint configuration", nickname = "getEndpointConfigurationUsingGET", notes = "", response = EndpointConfigurationRepresentation.class, tags={ "endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointConfigurationRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/endpoints/{endpointConfigurationId}",
@@ -55,8 +54,7 @@ public interface EndpointsApi {
     ResponseEntity<EndpointConfigurationRepresentation> getEndpointConfigurationUsingGET(@ApiParam(value = "endpointConfigurationId", required=true) @PathVariable("endpointConfigurationId") Long endpointConfigurationId);
 
 
-    @ApiOperation(value = "List endpoint configurations", nickname = "getEndpointConfigurationsUsingGET", notes = "", response = EndpointConfigurationRepresentation.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "endpoints", })
+    @ApiOperation(value = "List endpoint configurations", nickname = "getEndpointConfigurationsUsingGET", notes = "", response = EndpointConfigurationRepresentation.class, responseContainer = "List", tags={ "endpoints", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EndpointConfigurationRepresentation.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/editor/endpoints",

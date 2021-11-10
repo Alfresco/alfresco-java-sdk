@@ -46,8 +46,7 @@ import java.util.Map;
 @Api(value = "Checklists", description = "the Checklists API")
 public interface ChecklistsApi {
 
-    @ApiOperation(value = "Create a task checklist", nickname = "addSubtaskUsingPOST", notes = "", response = TaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "checklists", })
+    @ApiOperation(value = "Create a task checklist", nickname = "addSubtaskUsingPOST", notes = "", response = TaskRepresentation.class, tags={ "checklists", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/checklist",
@@ -58,8 +57,7 @@ public interface ChecklistsApi {
     ResponseEntity<TaskRepresentation> addSubtaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody TaskRepresentation body);
 
 
-    @ApiOperation(value = "Get checklist for a task", nickname = "getChecklistUsingGET", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "checklists", })
+    @ApiOperation(value = "Get checklist for a task", nickname = "getChecklistUsingGET", notes = "", response = ResultListDataRepresentationTaskRepresentation.class, tags={ "checklists", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationTaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/checklist",
@@ -69,8 +67,7 @@ public interface ChecklistsApi {
     ResponseEntity<ResultListDataRepresentationTaskRepresentation> getChecklistUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Change the order of items on a checklist", nickname = "orderChecklistUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "checklists", })
+    @ApiOperation(value = "Change the order of items on a checklist", nickname = "orderChecklistUsingPUT", notes = "", tags={ "checklists", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/checklist",

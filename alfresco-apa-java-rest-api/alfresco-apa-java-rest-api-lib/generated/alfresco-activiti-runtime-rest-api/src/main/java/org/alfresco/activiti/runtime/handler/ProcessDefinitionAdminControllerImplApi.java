@@ -44,9 +44,7 @@ import java.util.Map;
 @Api(value = "ProcessDefinitionAdminControllerImpl", description = "the ProcessDefinitionAdminControllerImpl API")
 public interface ProcessDefinitionAdminControllerImplApi {
 
-    @ApiOperation(value = "getAllProcessDefinitions", nickname = "getAllProcessDefinitionsUsingGET", notes = "", response = ListResponseContentOfCloudProcessDefinition.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-definition-admin-controller-impl", })
+    @ApiOperation(value = "getAllProcessDefinitions", nickname = "getAllProcessDefinitionsUsingGET", notes = "", response = ListResponseContentOfCloudProcessDefinition.class, tags={ "process-definition-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

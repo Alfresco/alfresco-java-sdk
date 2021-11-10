@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "Groups", description = "the Groups API")
 public interface GroupsApi {
 
-    @ApiOperation(value = "Query groups", nickname = "getGroupsUsingGET", notes = "", response = ResultListDataRepresentationLightGroupRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "groups", })
+    @ApiOperation(value = "Query groups", nickname = "getGroupsUsingGET", notes = "", response = ResultListDataRepresentationLightGroupRepresentation.class, tags={ "groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationLightGroupRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/groups",
@@ -56,8 +55,7 @@ public interface GroupsApi {
     ResponseEntity<ResultListDataRepresentationLightGroupRepresentation> getGroupsUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId, @ApiParam(value = "externalId") @Valid @RequestParam(value = "externalId", required = false) String externalId, @ApiParam(value = "externalIdCaseInsensitive") @Valid @RequestParam(value = "externalIdCaseInsensitive", required = false) String externalIdCaseInsensitive, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId);
 
 
-    @ApiOperation(value = "List members of a group", nickname = "getUsersForGroupUsingGET", notes = "", response = ResultListDataRepresentationLightUserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "groups", })
+    @ApiOperation(value = "List members of a group", nickname = "getUsersForGroupUsingGET", notes = "", response = ResultListDataRepresentationLightUserRepresentation.class, tags={ "groups", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationLightUserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/groups/{groupId}/users",

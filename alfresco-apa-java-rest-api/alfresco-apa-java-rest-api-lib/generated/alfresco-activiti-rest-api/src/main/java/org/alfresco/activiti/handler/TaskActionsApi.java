@@ -47,8 +47,7 @@ import java.util.Map;
 @Api(value = "TaskActions", description = "the TaskActions API")
 public interface TaskActionsApi {
 
-    @ApiOperation(value = "Assign a task to a user", nickname = "assignTaskUsingPUT", notes = "", response = TaskRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Assign a task to a user", nickname = "assignTaskUsingPUT", notes = "", response = TaskRepresentation.class, tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = TaskRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/assign",
@@ -59,8 +58,7 @@ public interface TaskActionsApi {
     ResponseEntity<TaskRepresentation> assignTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody AssigneeIdentifierRepresentation body);
 
 
-    @ApiOperation(value = "Attach a form to a task", nickname = "attachFormUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Attach a form to a task", nickname = "attachFormUsingPUT", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/attach-form",
@@ -70,8 +68,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> attachFormUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody FormIdentifierRepresentation body);
 
 
-    @ApiOperation(value = "Claim a task", nickname = "claimTaskUsingPUT", notes = "To claim a task (in case the task is assigned to a group)", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Claim a task", nickname = "claimTaskUsingPUT", notes = "To claim a task (in case the task is assigned to a group)", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/claim",
@@ -80,8 +77,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> claimTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Complete a task", nickname = "completeTaskUsingPUT", notes = "Use this endpoint to complete a standalone task or task without a form", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Complete a task", nickname = "completeTaskUsingPUT", notes = "Use this endpoint to complete a standalone task or task without a form", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/complete",
@@ -90,8 +86,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> completeTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Delegate a task", nickname = "delegateTaskUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Delegate a task", nickname = "delegateTaskUsingPUT", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/delegate",
@@ -101,8 +96,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> delegateTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UserIdentifierRepresentation body);
 
 
-    @ApiOperation(value = "Involve a group with a task", nickname = "involveGroupUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Involve a group with a task", nickname = "involveGroupUsingPOST", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/groups/{groupId}",
@@ -111,8 +105,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> involveGroupUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "groupId", required=true) @PathVariable("groupId") String groupId);
 
 
-    @ApiOperation(value = "Involve a user with a task", nickname = "involveUserUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Involve a user with a task", nickname = "involveUserUsingPUT", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/involve",
@@ -122,8 +115,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> involveUserUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UserIdentifierRepresentation body);
 
 
-    @ApiOperation(value = "Remove a form from a task", nickname = "removeFormUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Remove a form from a task", nickname = "removeFormUsingDELETE", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/remove-form",
@@ -132,8 +124,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> removeFormUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Remove an involved group from a task", nickname = "removeInvolvedUserUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Remove an involved group from a task", nickname = "removeInvolvedUserUsingDELETE", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/groups/{groupId}",
@@ -142,8 +133,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> removeInvolvedUserUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "groupId", required=true) @PathVariable("groupId") String groupId);
 
 
-    @ApiOperation(value = "Remove an involved user from a task", nickname = "removeInvolvedUserUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Remove an involved user from a task", nickname = "removeInvolvedUserUsingPUT", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/remove-involved",
@@ -153,8 +143,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> removeInvolvedUserUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody UserIdentifierRepresentation body);
 
 
-    @ApiOperation(value = "Resolve a task", nickname = "resolveTaskUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Resolve a task", nickname = "resolveTaskUsingPUT", notes = "", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/resolve",
@@ -163,8 +152,7 @@ public interface TaskActionsApi {
     ResponseEntity<Void> resolveTaskUsingPUT(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Unclaim a task", nickname = "unclaimTaskUsingPUT", notes = "To unclaim a task (in case the task was assigned to a group)", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-actions", })
+    @ApiOperation(value = "Unclaim a task", nickname = "unclaimTaskUsingPUT", notes = "To unclaim a task (in case the task was assigned to a group)", tags={ "task-actions", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/action/unclaim",

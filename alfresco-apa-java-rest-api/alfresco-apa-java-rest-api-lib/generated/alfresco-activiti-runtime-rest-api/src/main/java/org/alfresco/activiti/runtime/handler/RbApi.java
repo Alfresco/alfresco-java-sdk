@@ -43,9 +43,7 @@ import java.util.Map;
 @Api(value = "Rb", description = "the Rb API")
 public interface RbApi {
 
-    @ApiOperation(value = "Expose public files", nickname = "getFileUsingGET", notes = "Expose public files using HTTP", response = byte[].class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "RB", })
+    @ApiOperation(value = "Expose public files", nickname = "getFileUsingGET", notes = "Expose public files using HTTP", response = byte[].class, tags={ "RB", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = byte[].class),
         @ApiResponse(code = 401, message = "Unauthorized"),

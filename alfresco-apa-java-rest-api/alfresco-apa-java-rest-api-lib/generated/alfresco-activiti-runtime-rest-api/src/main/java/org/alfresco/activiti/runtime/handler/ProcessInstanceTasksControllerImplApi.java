@@ -44,9 +44,7 @@ import java.util.Map;
 @Api(value = "ProcessInstanceTasksControllerImpl", description = "the ProcessInstanceTasksControllerImpl API")
 public interface ProcessInstanceTasksControllerImplApi {
 
-    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET", notes = "", response = ListResponseContentOfCloudTask.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-instance-tasks-controller-impl", })
+    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET", notes = "", response = ListResponseContentOfCloudTask.class, tags={ "process-instance-tasks-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

@@ -45,9 +45,7 @@ import java.util.Map;
 @Api(value = "ProcessDefinitionControllerImpl", description = "the ProcessDefinitionControllerImpl API")
 public interface ProcessDefinitionControllerImplApi {
 
-    @ApiOperation(value = "getProcessModel", nickname = "getBpmnModelUsingGET", notes = "", response = String.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-definition-controller-impl", })
+    @ApiOperation(value = "getProcessModel", nickname = "getBpmnModelUsingGET", notes = "", response = String.class, tags={ "process-definition-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = String.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -60,9 +58,7 @@ public interface ProcessDefinitionControllerImplApi {
     ResponseEntity<String> getBpmnModelUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "getProcessDefinition", nickname = "getProcessDefinitionUsingGET", notes = "", response = EntryResponseContentOfCloudProcessDefinition.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-definition-controller-impl", })
+    @ApiOperation(value = "getProcessDefinition", nickname = "getProcessDefinitionUsingGET", notes = "", response = EntryResponseContentOfCloudProcessDefinition.class, tags={ "process-definition-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -75,9 +71,7 @@ public interface ProcessDefinitionControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudProcessDefinition> getProcessDefinitionUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "getProcessDefinitions", nickname = "getProcessDefinitionsUsingGET", notes = "", response = ListResponseContentOfCloudProcessDefinition.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-definition-controller-impl", })
+    @ApiOperation(value = "getProcessDefinitions", nickname = "getProcessDefinitionsUsingGET", notes = "", response = ListResponseContentOfCloudProcessDefinition.class, tags={ "process-definition-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

@@ -47,8 +47,7 @@ import java.util.Map;
 @Api(value = "AdminUsers", description = "the AdminUsers API")
 public interface AdminUsersApi {
 
-    @ApiOperation(value = "Bulk update a list of users", nickname = "bulkUpdateUsersUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-users", })
+    @ApiOperation(value = "Bulk update a list of users", nickname = "bulkUpdateUsersUsingPUT", notes = "", tags={ "admin-users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users",
@@ -58,8 +57,7 @@ public interface AdminUsersApi {
     ResponseEntity<Void> bulkUpdateUsersUsingPUT(@ApiParam(value = "" ) @Valid @RequestBody BulkUserUpdateRepresentation body);
 
 
-    @ApiOperation(value = "Create a user", nickname = "createNewUserUsingPOST", notes = "", response = UserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-users", })
+    @ApiOperation(value = "Create a user", nickname = "createNewUserUsingPOST", notes = "", response = UserRepresentation.class, tags={ "admin-users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = UserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users",
@@ -70,8 +68,7 @@ public interface AdminUsersApi {
     ResponseEntity<UserRepresentation> createNewUserUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody UserRepresentation body);
 
 
-    @ApiOperation(value = "Get a user", nickname = "getUserUsingGET", notes = "", response = AbstractUserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-users", })
+    @ApiOperation(value = "Get a user", nickname = "getUserUsingGET", notes = "", response = AbstractUserRepresentation.class, tags={ "admin-users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = AbstractUserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users/{userId}",
@@ -81,8 +78,7 @@ public interface AdminUsersApi {
     ResponseEntity<AbstractUserRepresentation> getUserUsingGET(@ApiParam(value = "userId", required=true) @PathVariable("userId") Long userId, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
-    @ApiOperation(value = "Query users", nickname = "getUsersUsingGET", notes = "", response = ResultListDataRepresentationAbstractUserRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-users", })
+    @ApiOperation(value = "Query users", nickname = "getUsersUsingGET", notes = "", response = ResultListDataRepresentationAbstractUserRepresentation.class, tags={ "admin-users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAbstractUserRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users",
@@ -92,8 +88,7 @@ public interface AdminUsersApi {
     ResponseEntity<ResultListDataRepresentationAbstractUserRepresentation> getUsersUsingGET(@ApiParam(value = "filter") @Valid @RequestParam(value = "filter", required = false) String filter, @ApiParam(value = "status") @Valid @RequestParam(value = "status", required = false) String status, @ApiParam(value = "accountType") @Valid @RequestParam(value = "accountType", required = false) String accountType, @ApiParam(value = "sort") @Valid @RequestParam(value = "sort", required = false) String sort, @ApiParam(value = "company") @Valid @RequestParam(value = "company", required = false) String company, @ApiParam(value = "start") @Valid @RequestParam(value = "start", required = false) Integer start, @ApiParam(value = "page") @Valid @RequestParam(value = "page", required = false) Integer page, @ApiParam(value = "size") @Valid @RequestParam(value = "size", required = false) Integer size, @ApiParam(value = "groupId") @Valid @RequestParam(value = "groupId", required = false) Long groupId, @ApiParam(value = "tenantId") @Valid @RequestParam(value = "tenantId", required = false) Long tenantId, @ApiParam(value = "summary") @Valid @RequestParam(value = "summary", required = false) Boolean summary);
 
 
-    @ApiOperation(value = "Update a user", nickname = "updateUserDetailsUsingPUT", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "admin-users", })
+    @ApiOperation(value = "Update a user", nickname = "updateUserDetailsUsingPUT", notes = "", tags={ "admin-users", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/admin/users/{userId}",

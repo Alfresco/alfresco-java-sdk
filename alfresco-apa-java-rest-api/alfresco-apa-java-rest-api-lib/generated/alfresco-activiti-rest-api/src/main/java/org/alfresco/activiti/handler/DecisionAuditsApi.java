@@ -45,8 +45,7 @@ import java.util.Map;
 @Api(value = "DecisionAudits", description = "the DecisionAudits API")
 public interface DecisionAuditsApi {
 
-    @ApiOperation(value = "Get an audit trail", nickname = "getAuditTrailUsingGET", notes = "", response = DecisionAuditRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "decision-audits", })
+    @ApiOperation(value = "Get an audit trail", nickname = "getAuditTrailUsingGET", notes = "", response = DecisionAuditRepresentation.class, tags={ "decision-audits", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = DecisionAuditRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/audits/{auditTrailId}",
@@ -56,8 +55,7 @@ public interface DecisionAuditsApi {
     ResponseEntity<DecisionAuditRepresentation> getAuditTrailUsingGET(@ApiParam(value = "auditTrailId", required=true) @PathVariable("auditTrailId") Long auditTrailId);
 
 
-    @ApiOperation(value = "Query decision table audit trails", nickname = "getAuditTrailsUsingGET", notes = "", response = ResultListDataRepresentationDecisionAuditRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "decision-audits", })
+    @ApiOperation(value = "Query decision table audit trails", nickname = "getAuditTrailsUsingGET", notes = "", response = ResultListDataRepresentationDecisionAuditRepresentation.class, tags={ "decision-audits", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationDecisionAuditRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/decisions/audits",

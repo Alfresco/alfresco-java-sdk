@@ -45,9 +45,7 @@ import java.util.Map;
 @Api(value = "Preference", description = "the Preference API")
 public interface PreferenceApi {
 
-    @ApiOperation(value = "Delete preference", nickname = "deletePreferenceUsingDELETE", notes = "", response = ResponseEntity.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "PREFERENCE", })
+    @ApiOperation(value = "Delete preference", nickname = "deletePreferenceUsingDELETE", notes = "", response = ResponseEntity.class, tags={ "PREFERENCE", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 204, message = "No Content"),
@@ -60,9 +58,7 @@ public interface PreferenceApi {
     ResponseEntity<ResponseEntity> deletePreferenceUsingDELETE(@ApiParam(value = "The Key of the preference to be deleted", required=true) @PathVariable("preferenceKey") String preferenceKey);
 
 
-    @ApiOperation(value = "Return all preferences", nickname = "getAllUsingGET", notes = "", response = ListResponseContentOfPreference.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "PREFERENCE", })
+    @ApiOperation(value = "Return all preferences", nickname = "getAllUsingGET", notes = "", response = ListResponseContentOfPreference.class, tags={ "PREFERENCE", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfPreference.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -75,9 +71,7 @@ public interface PreferenceApi {
     ResponseEntity<ListResponseContentOfPreference> getAllUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "Get preference", nickname = "getPreferenceUsingGET", notes = "", response = ResponseEntity.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "PREFERENCE", })
+    @ApiOperation(value = "Get preference", nickname = "getPreferenceUsingGET", notes = "", response = ResponseEntity.class, tags={ "PREFERENCE", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -90,9 +84,7 @@ public interface PreferenceApi {
     ResponseEntity<ResponseEntity> getPreferenceUsingGET(@ApiParam(value = "The Key of the preference to be returned", required=true) @PathVariable("preferenceKey") String preferenceKey);
 
 
-    @ApiOperation(value = "Create/Save preference", nickname = "savePreferenceUsingPUT", notes = "", response = ResponseEntity.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "PREFERENCE", })
+    @ApiOperation(value = "Create/Save preference", nickname = "savePreferenceUsingPUT", notes = "", response = ResponseEntity.class, tags={ "PREFERENCE", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 201, message = "Created"),

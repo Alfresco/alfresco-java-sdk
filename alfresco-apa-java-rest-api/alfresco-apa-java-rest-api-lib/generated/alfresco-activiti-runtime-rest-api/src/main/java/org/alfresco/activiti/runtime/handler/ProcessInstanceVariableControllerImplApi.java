@@ -45,9 +45,7 @@ import java.util.Map;
 @Api(value = "ProcessInstanceVariableControllerImpl", description = "the ProcessInstanceVariableControllerImpl API")
 public interface ProcessInstanceVariableControllerImplApi {
 
-    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET", notes = "", response = ListResponseContentOfCloudVariableInstance.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-instance-variable-controller-impl", })
+    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET", notes = "", response = ListResponseContentOfCloudVariableInstance.class, tags={ "process-instance-variable-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudVariableInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -60,9 +58,7 @@ public interface ProcessInstanceVariableControllerImplApi {
     ResponseEntity<ListResponseContentOfCloudVariableInstance> getVariablesUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "setVariables", nickname = "setVariablesUsingPOST", notes = "", authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-instance-variable-controller-impl", })
+    @ApiOperation(value = "setVariables", nickname = "setVariablesUsingPOST", notes = "", tags={ "process-instance-variable-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),

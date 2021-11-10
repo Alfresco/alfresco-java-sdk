@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "ProcessInstanceVariables", description = "the ProcessInstanceVariables API")
 public interface ProcessInstanceVariablesApi {
 
-    @ApiOperation(value = "Create or update variables", nickname = "createOrUpdateProcessInstanceVariablesUsingPUT", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instance-variables", })
+    @ApiOperation(value = "Create or update variables", nickname = "createOrUpdateProcessInstanceVariablesUsingPUT", notes = "", response = RestVariable.class, responseContainer = "List", tags={ "process-instance-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables",
@@ -56,8 +55,7 @@ public interface ProcessInstanceVariablesApi {
     ResponseEntity<List<RestVariable>> createOrUpdateProcessInstanceVariablesUsingPUT(@ApiParam(value = "Process instance ID", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody List<RestVariable> body);
 
 
-    @ApiOperation(value = "Create variables", nickname = "createProcessInstanceVariablesUsingPOST", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instance-variables", })
+    @ApiOperation(value = "Create variables", nickname = "createProcessInstanceVariablesUsingPOST", notes = "", response = RestVariable.class, responseContainer = "List", tags={ "process-instance-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables",
@@ -68,8 +66,7 @@ public interface ProcessInstanceVariablesApi {
     ResponseEntity<List<RestVariable>> createProcessInstanceVariablesUsingPOST(@ApiParam(value = "Process instance ID", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody List<RestVariable> body);
 
 
-    @ApiOperation(value = "Delete a variable", nickname = "deleteProcessInstanceVariableUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instance-variables", })
+    @ApiOperation(value = "Delete a variable", nickname = "deleteProcessInstanceVariableUsingDELETE", notes = "", tags={ "process-instance-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables/{variableName}",
@@ -78,8 +75,7 @@ public interface ProcessInstanceVariablesApi {
     ResponseEntity<Void> deleteProcessInstanceVariableUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName);
 
 
-    @ApiOperation(value = "Get a variable", nickname = "getProcessInstanceVariableUsingGET", notes = "", response = RestVariable.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instance-variables", })
+    @ApiOperation(value = "Get a variable", nickname = "getProcessInstanceVariableUsingGET", notes = "", response = RestVariable.class, tags={ "process-instance-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables/{variableName}",
@@ -89,8 +85,7 @@ public interface ProcessInstanceVariablesApi {
     ResponseEntity<RestVariable> getProcessInstanceVariableUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName);
 
 
-    @ApiOperation(value = "List variables", nickname = "getProcessInstanceVariablesUsingGET", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instance-variables", })
+    @ApiOperation(value = "List variables", nickname = "getProcessInstanceVariablesUsingGET", notes = "", response = RestVariable.class, responseContainer = "List", tags={ "process-instance-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables",
@@ -100,8 +95,7 @@ public interface ProcessInstanceVariablesApi {
     ResponseEntity<List<RestVariable>> getProcessInstanceVariablesUsingGET(@ApiParam(value = "Process instance ID", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "Update a variable", nickname = "updateProcessInstanceVariableUsingPUT", notes = "", response = RestVariable.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "process-instance-variables", })
+    @ApiOperation(value = "Update a variable", nickname = "updateProcessInstanceVariableUsingPUT", notes = "", response = RestVariable.class, tags={ "process-instance-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/process-instances/{processInstanceId}/variables/{variableName}",

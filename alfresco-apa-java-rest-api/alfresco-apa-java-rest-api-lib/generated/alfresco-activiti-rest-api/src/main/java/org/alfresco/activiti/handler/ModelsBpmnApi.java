@@ -43,8 +43,7 @@ import java.util.Map;
 @Api(value = "ModelsBpmn", description = "the ModelsBpmn API")
 public interface ModelsBpmnApi {
 
-    @ApiOperation(value = "Export a historic version of a process definition as BPMN 2.0 XML", nickname = "getHistoricProcessModelBpmn20XmlUsingGET", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models-bpmn", })
+    @ApiOperation(value = "Export a historic version of a process definition as BPMN 2.0 XML", nickname = "getHistoricProcessModelBpmn20XmlUsingGET", notes = "", tags={ "models-bpmn", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{processModelId}/history/{processModelHistoryId}/bpmn20",
@@ -53,8 +52,7 @@ public interface ModelsBpmnApi {
     ResponseEntity<Void> getHistoricProcessModelBpmn20XmlUsingGET(@ApiParam(value = "processModelId", required=true) @PathVariable("processModelId") Long processModelId, @ApiParam(value = "processModelHistoryId", required=true) @PathVariable("processModelHistoryId") Long processModelHistoryId);
 
 
-    @ApiOperation(value = "Export a process definition as BPMN 2.0 XML", nickname = "getProcessModelBpmn20XmlUsingGET", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "models-bpmn", })
+    @ApiOperation(value = "Export a process definition as BPMN 2.0 XML", nickname = "getProcessModelBpmn20XmlUsingGET", notes = "", tags={ "models-bpmn", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK") })
     @RequestMapping(value = "/activiti-app/api/enterprise/models/{processModelId}/bpmn20",

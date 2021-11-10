@@ -44,9 +44,7 @@ import java.util.Map;
 @Api(value = "ProcessDefinitionMetaControllerImpl", description = "the ProcessDefinitionMetaControllerImpl API")
 public interface ProcessDefinitionMetaControllerImplApi {
 
-    @ApiOperation(value = "getProcessDefinitionMetadata", nickname = "getProcessDefinitionMetadataUsingGET", notes = "", response = EntryResponseContentOfProcessDefinitionMeta.class, authorizations = {
-        @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-definition-meta-controller-impl", })
+    @ApiOperation(value = "getProcessDefinitionMetadata", nickname = "getProcessDefinitionMetadataUsingGET", notes = "", response = EntryResponseContentOfProcessDefinitionMeta.class, tags={ "process-definition-meta-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfProcessDefinitionMeta.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

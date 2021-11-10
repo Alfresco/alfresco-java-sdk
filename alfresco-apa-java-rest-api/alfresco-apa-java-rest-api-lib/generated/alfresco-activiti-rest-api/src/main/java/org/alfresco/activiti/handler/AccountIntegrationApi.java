@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "AccountIntegration", description = "the AccountIntegration API")
 public interface AccountIntegrationApi {
 
-    @ApiOperation(value = "Retrieve external account information", nickname = "getAccountsUsingGET", notes = "Accounts are used to integrate with third party apps and clients", response = ResultListDataRepresentationAccountRepresentation.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "account-integration", })
+    @ApiOperation(value = "Retrieve external account information", nickname = "getAccountsUsingGET", notes = "Accounts are used to integrate with third party apps and clients", response = ResultListDataRepresentationAccountRepresentation.class, tags={ "account-integration", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResultListDataRepresentationAccountRepresentation.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/account/integration",

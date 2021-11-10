@@ -44,8 +44,7 @@ import java.util.Map;
 @Api(value = "TaskVariables", description = "the TaskVariables API")
 public interface TaskVariablesApi {
 
-    @ApiOperation(value = "Create variables", nickname = "createTaskVariableUsingPOST", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-variables", })
+    @ApiOperation(value = "Create variables", nickname = "createTaskVariableUsingPOST", notes = "", response = RestVariable.class, responseContainer = "List", tags={ "task-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables",
@@ -56,8 +55,7 @@ public interface TaskVariablesApi {
     ResponseEntity<List<RestVariable>> createTaskVariableUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody List<RestVariable> body);
 
 
-    @ApiOperation(value = "Create or update variables", nickname = "deleteAllLocalTaskVariablesUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-variables", })
+    @ApiOperation(value = "Create or update variables", nickname = "deleteAllLocalTaskVariablesUsingDELETE", notes = "", tags={ "task-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables",
@@ -66,8 +64,7 @@ public interface TaskVariablesApi {
     ResponseEntity<Void> deleteAllLocalTaskVariablesUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "Delete a variable", nickname = "deleteVariableUsingDELETE", notes = "", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-variables", })
+    @ApiOperation(value = "Delete a variable", nickname = "deleteVariableUsingDELETE", notes = "", tags={ "task-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 204, message = "No Content") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables/{variableName}",
@@ -76,8 +73,7 @@ public interface TaskVariablesApi {
     ResponseEntity<Void> deleteVariableUsingDELETE(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
-    @ApiOperation(value = "Get a variable", nickname = "getVariableUsingGET", notes = "", response = RestVariable.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-variables", })
+    @ApiOperation(value = "Get a variable", nickname = "getVariableUsingGET", notes = "", response = RestVariable.class, tags={ "task-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables/{variableName}",
@@ -87,8 +83,7 @@ public interface TaskVariablesApi {
     ResponseEntity<RestVariable> getVariableUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "variableName", required=true) @PathVariable("variableName") String variableName, @ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
-    @ApiOperation(value = "List variables", nickname = "getVariablesUsingGET", notes = "", response = RestVariable.class, responseContainer = "List", authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-variables", })
+    @ApiOperation(value = "List variables", nickname = "getVariablesUsingGET", notes = "", response = RestVariable.class, responseContainer = "List", tags={ "task-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class, responseContainer = "List") })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables",
@@ -98,8 +93,7 @@ public interface TaskVariablesApi {
     ResponseEntity<List<RestVariable>> getVariablesUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "scope") @Valid @RequestParam(value = "scope", required = false) String scope);
 
 
-    @ApiOperation(value = "Update a variable", nickname = "updateVariableUsingPUT", notes = "", response = RestVariable.class, authorizations = {
-        @Authorization(value = "basicAuth")    }, tags={ "task-variables", })
+    @ApiOperation(value = "Update a variable", nickname = "updateVariableUsingPUT", notes = "", response = RestVariable.class, tags={ "task-variables", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = RestVariable.class) })
     @RequestMapping(value = "/activiti-app/api/enterprise/tasks/{taskId}/variables/{variableName}",
