@@ -17,9 +17,17 @@ addCandidateUsers
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.CandidateUserAdminControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 CandidateUserAdminControllerImplApi apiInstance = new CandidateUserAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -45,7 +53,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -61,9 +69,17 @@ deleteCandidateUsers
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.CandidateUserAdminControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 CandidateUserAdminControllerImplApi apiInstance = new CandidateUserAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -89,7 +105,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -105,9 +121,17 @@ getUserCandidates
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.CandidateUserAdminControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 CandidateUserAdminControllerImplApi apiInstance = new CandidateUserAdminControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -132,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

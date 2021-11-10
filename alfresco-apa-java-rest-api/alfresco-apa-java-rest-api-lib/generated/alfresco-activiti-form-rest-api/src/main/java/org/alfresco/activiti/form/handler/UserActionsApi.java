@@ -46,7 +46,9 @@ import java.util.Map;
 @Api(value = "UserActions", description = "the UserActions API")
 public interface UserActionsApi {
 
-    @ApiOperation(value = "Send a named event", nickname = "sendNamedEventUsingPOST", notes = "", response = ResponseEntity.class, tags={ "USER_ACTIONS", })
+    @ApiOperation(value = "Send a named event", nickname = "sendNamedEventUsingPOST", notes = "", response = ResponseEntity.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "USER_ACTIONS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -61,7 +63,9 @@ public interface UserActionsApi {
     ResponseEntity<ResponseEntity> sendNamedEventUsingPOST(@ApiParam(value = "The name of the UI producing the event", required=true) @PathVariable("uiName") String uiName, @ApiParam(value = "The name of the event to send", required=true) @PathVariable("eventName") String eventName, @ApiParam(value = "" ) @Valid @RequestBody NamedEventBody body);
 
 
-    @ApiOperation(value = "Submit forms latest version", nickname = "submitFormUsingPOST2", notes = "", response = ResponseEntity.class, tags={ "USER_ACTIONS", })
+    @ApiOperation(value = "Submit forms latest version", nickname = "submitFormUsingPOST2", notes = "", response = ResponseEntity.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "USER_ACTIONS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 201, message = "Created"),

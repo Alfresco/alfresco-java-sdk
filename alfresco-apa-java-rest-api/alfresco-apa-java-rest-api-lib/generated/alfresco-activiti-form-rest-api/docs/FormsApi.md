@@ -21,9 +21,17 @@ Get form definition by version
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.FormsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 FormsApi apiInstance = new FormsApi();
 String formId = "formId_example"; // String | The id of the form definition
@@ -50,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -66,9 +74,17 @@ Get form definition latest version
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.FormsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 FormsApi apiInstance = new FormsApi();
 String formId = "formId_example"; // String | The id of the form definition
@@ -93,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -109,9 +125,17 @@ Get form definitions summary
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.FormsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 FormsApi apiInstance = new FormsApi();
 try {
@@ -132,7 +156,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -148,9 +172,17 @@ Get form definition by version
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.FormsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 FormsApi apiInstance = new FormsApi();
 String formId = "formId_example"; // String | The id of the form definition
@@ -179,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -195,9 +227,17 @@ Save runtime forms
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.FormsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 FormsApi apiInstance = new FormsApi();
 String formId = "formId_example"; // String | The id of the form instance to be saved
@@ -223,7 +263,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -239,9 +279,17 @@ Submit forms specific version
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.FormsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 FormsApi apiInstance = new FormsApi();
 String formId = "formId_example"; // String | The id of the form to be submitted
@@ -270,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -286,9 +334,17 @@ Submit forms latest version
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.FormsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 FormsApi apiInstance = new FormsApi();
 String formId = "formId_example"; // String | The id of the form to be submitted
@@ -315,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

@@ -28,9 +28,17 @@ createProcessInstance
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 CreateProcessInstancePayload body = new CreateProcessInstancePayload(); // CreateProcessInstancePayload | 
@@ -55,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -71,9 +79,17 @@ deleteProcessInstance
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -98,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -114,9 +130,17 @@ getProcessDiagram
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -141,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -157,9 +181,17 @@ getProcessInstanceById
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -184,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -200,9 +232,17 @@ getProcessInstances
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 Integer maxItems = 56; // Integer | 
@@ -231,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -247,9 +287,17 @@ receive
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 ReceiveMessagePayload body = new ReceiveMessagePayload(); // ReceiveMessagePayload | 
@@ -273,7 +321,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -289,9 +337,17 @@ resume
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -316,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -332,9 +388,17 @@ sendSignal
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 SignalPayload body = new SignalPayload(); // SignalPayload | 
@@ -358,7 +422,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -374,9 +438,17 @@ sendStartMessage
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 StartMessagePayload body = new StartMessagePayload(); // StartMessagePayload | 
@@ -401,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -417,9 +489,17 @@ startCreatedProcess
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -446,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -462,9 +542,17 @@ startProcess
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 StartProcessPayload body = new StartProcessPayload(); // StartProcessPayload | 
@@ -489,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -505,9 +593,17 @@ subprocesses
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -538,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -554,9 +650,17 @@ suspend
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -581,7 +685,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -597,9 +701,17 @@ updateProcess
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceControllerImplApi apiInstance = new ProcessInstanceControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -626,7 +738,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

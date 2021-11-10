@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.alfresco.activiti.preference.handler;
+package org.alfresco.activiti.runtime.handler;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoPreferenceApi", url = "${preferenceReST_.url:}", configuration = ClientConfiguration.class)
-public interface PreferenceApiClient extends PreferenceApi {
+@FeignClient(value = "alfrescoRbApi", url = "${runtimeBundleReST_.url:}", configuration = ClientConfiguration.class)
+public interface RbApiClient extends RbApi {
 }

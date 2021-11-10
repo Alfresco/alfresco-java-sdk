@@ -16,9 +16,17 @@ getVariables
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceVariableControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceVariableControllerImplApi apiInstance = new ProcessInstanceVariableControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -43,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -59,9 +67,17 @@ setVariables
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.ProcessInstanceVariableControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProcessInstanceVariableControllerImplApi apiInstance = new ProcessInstanceVariableControllerImplApi();
 String processInstanceId = "processInstanceId_example"; // String | processInstanceId
@@ -87,7 +103,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

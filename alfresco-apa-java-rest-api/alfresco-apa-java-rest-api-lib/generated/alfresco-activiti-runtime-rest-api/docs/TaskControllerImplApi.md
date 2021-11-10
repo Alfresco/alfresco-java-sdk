@@ -25,9 +25,17 @@ assign
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -54,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -70,9 +78,17 @@ claimTask
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -97,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -113,9 +129,17 @@ completeTask
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -142,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -158,9 +182,17 @@ createNewTask
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 CreateTaskPayload body = new CreateTaskPayload(); // CreateTaskPayload | 
@@ -185,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -201,9 +233,17 @@ deleteTask
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -228,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -244,9 +284,17 @@ getSubtasks
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -277,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -293,9 +341,17 @@ getTaskById
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -320,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -336,9 +392,17 @@ getTasks
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 Integer maxItems = 56; // Integer | 
@@ -367,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -383,9 +447,17 @@ releaseTask
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -410,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -426,9 +498,17 @@ saveTask
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -454,7 +534,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -470,9 +550,17 @@ updateTask
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskControllerImplApi apiInstance = new TaskControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -499,7 +587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

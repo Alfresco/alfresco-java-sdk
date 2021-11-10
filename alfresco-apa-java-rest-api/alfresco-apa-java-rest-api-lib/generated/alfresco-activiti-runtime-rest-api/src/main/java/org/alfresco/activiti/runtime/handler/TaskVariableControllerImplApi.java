@@ -46,7 +46,9 @@ import java.util.Map;
 @Api(value = "TaskVariableControllerImpl", description = "the TaskVariableControllerImpl API")
 public interface TaskVariableControllerImplApi {
 
-    @ApiOperation(value = "createVariable", nickname = "createVariableUsingPOST1", notes = "", tags={ "task-variable-controller-impl", })
+    @ApiOperation(value = "createVariable", nickname = "createVariableUsingPOST1", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-variable-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -60,7 +62,9 @@ public interface TaskVariableControllerImplApi {
     ResponseEntity<Void> createVariableUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CreateTaskVariablePayload body);
 
 
-    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET2", notes = "", response = ListResponseContentOfCloudVariableInstance.class, tags={ "task-variable-controller-impl", })
+    @ApiOperation(value = "getVariables", nickname = "getVariablesUsingGET2", notes = "", response = ListResponseContentOfCloudVariableInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-variable-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudVariableInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -73,7 +77,9 @@ public interface TaskVariableControllerImplApi {
     ResponseEntity<ListResponseContentOfCloudVariableInstance> getVariablesUsingGET2(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "updateVariable", nickname = "updateVariableUsingPUT1", notes = "", tags={ "task-variable-controller-impl", })
+    @ApiOperation(value = "updateVariable", nickname = "updateVariableUsingPUT1", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-variable-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),

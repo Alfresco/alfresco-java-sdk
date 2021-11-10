@@ -49,7 +49,9 @@ import java.util.Map;
 @Api(value = "ProcessInstanceAdminControllerImpl", description = "the ProcessInstanceAdminControllerImpl API")
 public interface ProcessInstanceAdminControllerImplApi {
 
-    @ApiOperation(value = "deleteProcessInstance", nickname = "deleteProcessInstanceUsingDELETE", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "deleteProcessInstance", nickname = "deleteProcessInstanceUsingDELETE", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 204, message = "No Content"),
@@ -62,7 +64,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> deleteProcessInstanceUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "getProcessInstanceById", nickname = "getProcessInstanceByIdUsingGET", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "getProcessInstanceById", nickname = "getProcessInstanceByIdUsingGET", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -75,7 +79,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> getProcessInstanceByIdUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "getProcessInstances", nickname = "getProcessInstancesUsingGET", notes = "", response = ListResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "getProcessInstances", nickname = "getProcessInstancesUsingGET", notes = "", response = ListResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -88,7 +94,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<ListResponseContentOfCloudProcessInstance> getProcessInstancesUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "receive", nickname = "receiveUsingPUT", notes = "", tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "receive", nickname = "receiveUsingPUT", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -102,7 +110,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<Void> receiveUsingPUT(@ApiParam(value = "" ) @Valid @RequestBody ReceiveMessagePayload body);
 
 
-    @ApiOperation(value = "resume", nickname = "resumeUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "resume", nickname = "resumeUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -116,7 +126,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> resumeUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "startProcess", nickname = "startProcessUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "startProcess", nickname = "startProcessUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -131,7 +143,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> startProcessUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody StartProcessPayload body);
 
 
-    @ApiOperation(value = "start", nickname = "startUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "start", nickname = "startUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -146,7 +160,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> startUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody StartMessagePayload body);
 
 
-    @ApiOperation(value = "subprocesses", nickname = "subprocessesUsingGET", notes = "", response = ListResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "subprocesses", nickname = "subprocessesUsingGET", notes = "", response = ListResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -159,7 +175,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<ListResponseContentOfCloudProcessInstance> subprocessesUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "suspend", nickname = "suspendUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "suspend", nickname = "suspendUsingPOST", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -173,7 +191,9 @@ public interface ProcessInstanceAdminControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudProcessInstance> suspendUsingPOST(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId);
 
 
-    @ApiOperation(value = "updateProcess", nickname = "updateProcessUsingPUT", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, tags={ "process-instance-admin-controller-impl", })
+    @ApiOperation(value = "updateProcess", nickname = "updateProcessUsingPUT", notes = "", response = EntryResponseContentOfCloudProcessInstance.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudProcessInstance.class),
         @ApiResponse(code = 201, message = "Created"),

@@ -18,6 +18,6 @@ package org.alfresco.activiti.form.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoFormsApi", url = "${activiti.service.runtime.url}", path = "${activiti.service.runtime.path}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoFormsApi", url = "${formReST_.url:}", configuration = ClientConfiguration.class)
 public interface FormsApiClient extends FormsApi {
 }

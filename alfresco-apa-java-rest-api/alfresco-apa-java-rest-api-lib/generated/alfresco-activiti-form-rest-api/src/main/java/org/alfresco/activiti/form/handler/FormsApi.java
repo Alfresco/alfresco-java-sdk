@@ -47,7 +47,9 @@ import java.util.Map;
 @Api(value = "Forms", description = "the Forms API")
 public interface FormsApi {
 
-    @ApiOperation(value = "Get form definition by version", nickname = "getFormDefinitionUsingGET", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
+    @ApiOperation(value = "Get form definition by version", nickname = "getFormDefinitionUsingGET", notes = "", response = ResponseEntity.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -60,7 +62,9 @@ public interface FormsApi {
     ResponseEntity<ResponseEntity> getFormDefinitionUsingGET(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version);
 
 
-    @ApiOperation(value = "Get form definition latest version", nickname = "getFormDefinitionUsingGET1", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
+    @ApiOperation(value = "Get form definition latest version", nickname = "getFormDefinitionUsingGET1", notes = "", response = ResponseEntity.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -73,7 +77,9 @@ public interface FormsApi {
     ResponseEntity<ResponseEntity> getFormDefinitionUsingGET1(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId);
 
 
-    @ApiOperation(value = "Get form definitions summary", nickname = "getFormDefinitionsUsingGET", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
+    @ApiOperation(value = "Get form definitions summary", nickname = "getFormDefinitionsUsingGET", notes = "", response = ResponseEntity.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -86,7 +92,9 @@ public interface FormsApi {
     ResponseEntity<ResponseEntity> getFormDefinitionsUsingGET();
 
 
-    @ApiOperation(value = "Get form definition by version", nickname = "getFormFieldValueUsingPOST", notes = "", response = NamedObject.class, responseContainer = "List", tags={ "FORMS", })
+    @ApiOperation(value = "Get form definition by version", nickname = "getFormFieldValueUsingPOST", notes = "", response = NamedObject.class, responseContainer = "List", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = NamedObject.class, responseContainer = "List"),
         @ApiResponse(code = 201, message = "Created"),
@@ -101,7 +109,9 @@ public interface FormsApi {
     ResponseEntity<List<NamedObject>> getFormFieldValueUsingPOST(@ApiParam(value = "The id of the form definition", required=true) @PathVariable("formId") String formId, @ApiParam(value = "The id of the form field", required=true) @PathVariable("formFieldId") String formFieldId, @ApiParam(value = "" ) @Valid @RequestBody Map<String, String> body);
 
 
-    @ApiOperation(value = "Save runtime forms", nickname = "saveFormUsingPOST", notes = "", tags={ "FORMS", })
+    @ApiOperation(value = "Save runtime forms", nickname = "saveFormUsingPOST", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -115,7 +125,9 @@ public interface FormsApi {
     ResponseEntity<Void> saveFormUsingPOST(@ApiParam(value = "The id of the form instance to be saved", required=true) @PathVariable("formId") String formId, @ApiParam(value = "" ) @Valid @RequestBody SaveFormRepresentation body);
 
 
-    @ApiOperation(value = "Submit forms specific version", nickname = "submitFormUsingPOST", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
+    @ApiOperation(value = "Submit forms specific version", nickname = "submitFormUsingPOST", notes = "", response = ResponseEntity.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -130,7 +142,9 @@ public interface FormsApi {
     ResponseEntity<ResponseEntity> submitFormUsingPOST(@ApiParam(value = "The id of the form to be submitted", required=true) @PathVariable("formId") String formId, @ApiParam(value = "version", required=true) @PathVariable("version") Integer version, @ApiParam(value = "" ) @Valid @RequestBody SubmitFormRepresentation body);
 
 
-    @ApiOperation(value = "Submit forms latest version", nickname = "submitFormUsingPOST1", notes = "", response = ResponseEntity.class, tags={ "FORMS", })
+    @ApiOperation(value = "Submit forms latest version", nickname = "submitFormUsingPOST1", notes = "", response = ResponseEntity.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "FORMS", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ResponseEntity.class),
         @ApiResponse(code = 201, message = "Created"),

@@ -16,9 +16,17 @@ Send a named event
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.UserActionsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 UserActionsApi apiInstance = new UserActionsApi();
 String uiName = "uiName_example"; // String | The name of the UI producing the event
@@ -47,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -63,9 +71,17 @@ Submit forms latest version
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.form.ApiClient;
 //import org.alfresco.activiti.form.ApiException;
+//import org.alfresco.activiti.form.Configuration;
+//import org.alfresco.activiti.form.auth.*;
 //import org.alfresco.activiti.form.handler.UserActionsApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 UserActionsApi apiInstance = new UserActionsApi();
 String formId = "formId_example"; // String | The id of the form to be submitted
@@ -92,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

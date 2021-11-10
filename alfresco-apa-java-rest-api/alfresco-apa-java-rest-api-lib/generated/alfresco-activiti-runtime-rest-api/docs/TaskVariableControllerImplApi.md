@@ -17,9 +17,17 @@ createVariable
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskVariableControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -45,7 +53,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -61,9 +69,17 @@ getVariables
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskVariableControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -88,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -104,9 +120,17 @@ updateVariable
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.runtime.ApiClient;
 //import org.alfresco.activiti.runtime.ApiException;
+//import org.alfresco.activiti.runtime.Configuration;
+//import org.alfresco.activiti.runtime.auth.*;
 //import org.alfresco.activiti.runtime.handler.TaskVariableControllerImplApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 TaskVariableControllerImplApi apiInstance = new TaskVariableControllerImplApi();
 String taskId = "taskId_example"; // String | taskId
@@ -134,7 +158,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

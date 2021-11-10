@@ -18,9 +18,17 @@ Delete preference
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.preference.ApiClient;
 //import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.Configuration;
+//import org.alfresco.activiti.preference.auth.*;
 //import org.alfresco.activiti.preference.handler.PreferenceApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 PreferenceApi apiInstance = new PreferenceApi();
 String preferenceKey = "preferenceKey_example"; // String | The Key of the preference to be deleted
@@ -45,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -61,9 +69,17 @@ Return all preferences
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.preference.ApiClient;
 //import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.Configuration;
+//import org.alfresco.activiti.preference.auth.*;
 //import org.alfresco.activiti.preference.handler.PreferenceApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 PreferenceApi apiInstance = new PreferenceApi();
 Integer maxItems = 56; // Integer | 
@@ -92,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -108,9 +124,17 @@ Get preference
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.preference.ApiClient;
 //import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.Configuration;
+//import org.alfresco.activiti.preference.auth.*;
 //import org.alfresco.activiti.preference.handler.PreferenceApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 PreferenceApi apiInstance = new PreferenceApi();
 String preferenceKey = "preferenceKey_example"; // String | The Key of the preference to be returned
@@ -135,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -151,9 +175,17 @@ Create/Save preference
 ### Example
 ```java
 // Import classes:
+//import org.alfresco.activiti.preference.ApiClient;
 //import org.alfresco.activiti.preference.ApiException;
+//import org.alfresco.activiti.preference.Configuration;
+//import org.alfresco.activiti.preference.auth.*;
 //import org.alfresco.activiti.preference.handler.PreferenceApi;
 
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 PreferenceApi apiInstance = new PreferenceApi();
 String preferenceKey = "preferenceKey_example"; // String | The Key of the preference to be created
@@ -180,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

@@ -45,7 +45,9 @@ import java.util.Map;
 @Api(value = "ProcessInstanceVariableAdminControllerImpl", description = "the ProcessInstanceVariableAdminControllerImpl API")
 public interface ProcessInstanceVariableAdminControllerImplApi {
 
-    @ApiOperation(value = "removeVariables", nickname = "removeVariablesUsingDELETE", notes = "", tags={ "process-instance-variable-admin-controller-impl", })
+    @ApiOperation(value = "removeVariables", nickname = "removeVariablesUsingDELETE", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-variable-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 204, message = "No Content"),
@@ -58,7 +60,9 @@ public interface ProcessInstanceVariableAdminControllerImplApi {
     ResponseEntity<Void> removeVariablesUsingDELETE(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "" ) @Valid @RequestBody RemoveProcessVariablesPayload body);
 
 
-    @ApiOperation(value = "updateVariables", nickname = "updateVariablesUsingPUT", notes = "", tags={ "process-instance-variable-admin-controller-impl", })
+    @ApiOperation(value = "updateVariables", nickname = "updateVariablesUsingPUT", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "process-instance-variable-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),

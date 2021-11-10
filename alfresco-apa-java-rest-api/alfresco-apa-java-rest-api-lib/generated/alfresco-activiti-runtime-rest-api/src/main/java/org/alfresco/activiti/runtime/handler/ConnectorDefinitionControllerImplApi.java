@@ -45,7 +45,9 @@ import java.util.Map;
 @Api(value = "ConnectorDefinitionControllerImpl", description = "the ConnectorDefinitionControllerImpl API")
 public interface ConnectorDefinitionControllerImplApi {
 
-    @ApiOperation(value = "getConnectorDefinition", nickname = "getConnectorDefinitionUsingGET", notes = "", response = EntryResponseContentOfConnectorDefinition.class, tags={ "connector-definition-controller-impl", })
+    @ApiOperation(value = "getConnectorDefinition", nickname = "getConnectorDefinitionUsingGET", notes = "", response = EntryResponseContentOfConnectorDefinition.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "connector-definition-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfConnectorDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -58,7 +60,9 @@ public interface ConnectorDefinitionControllerImplApi {
     ResponseEntity<EntryResponseContentOfConnectorDefinition> getConnectorDefinitionUsingGET(@ApiParam(value = "id", required=true) @PathVariable("id") String id);
 
 
-    @ApiOperation(value = "getConnectorDefinitions", nickname = "getConnectorDefinitionsUsingGET", notes = "", response = ListResponseContentOfConnectorDefinition.class, tags={ "connector-definition-controller-impl", })
+    @ApiOperation(value = "getConnectorDefinitions", nickname = "getConnectorDefinitionsUsingGET", notes = "", response = ListResponseContentOfConnectorDefinition.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "connector-definition-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfConnectorDefinition.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

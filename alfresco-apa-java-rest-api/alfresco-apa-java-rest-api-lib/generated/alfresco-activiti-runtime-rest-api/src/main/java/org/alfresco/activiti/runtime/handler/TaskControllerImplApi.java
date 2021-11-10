@@ -50,7 +50,9 @@ import java.util.Map;
 @Api(value = "TaskControllerImpl", description = "the TaskControllerImpl API")
 public interface TaskControllerImplApi {
 
-    @ApiOperation(value = "assign", nickname = "assignUsingPOST1", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "assign", nickname = "assignUsingPOST1", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -65,7 +67,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> assignUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody AssignTaskPayload body);
 
 
-    @ApiOperation(value = "claimTask", nickname = "claimTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "claimTask", nickname = "claimTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -79,7 +83,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> claimTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "completeTask", nickname = "completeTaskUsingPOST1", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "completeTask", nickname = "completeTaskUsingPOST1", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -94,7 +100,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> completeTaskUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CompleteTaskPayload body);
 
 
-    @ApiOperation(value = "createNewTask", nickname = "createNewTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "createNewTask", nickname = "createNewTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -109,7 +117,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> createNewTaskUsingPOST(@ApiParam(value = "" ) @Valid @RequestBody CreateTaskPayload body);
 
 
-    @ApiOperation(value = "deleteTask", nickname = "deleteTaskUsingDELETE1", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "deleteTask", nickname = "deleteTaskUsingDELETE1", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 204, message = "No Content"),
@@ -122,7 +132,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> deleteTaskUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "getSubtasks", nickname = "getSubtasksUsingGET", notes = "", response = ListResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "getSubtasks", nickname = "getSubtasksUsingGET", notes = "", response = ListResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -135,7 +147,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<ListResponseContentOfCloudTask> getSubtasksUsingGET(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "getTaskById", nickname = "getTaskByIdUsingGET1", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "getTaskById", nickname = "getTaskByIdUsingGET1", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -148,7 +162,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> getTaskByIdUsingGET1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET2", notes = "", response = ListResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET2", notes = "", response = ListResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudTask.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -161,7 +177,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<ListResponseContentOfCloudTask> getTasksUsingGET2(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
-    @ApiOperation(value = "releaseTask", nickname = "releaseTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "releaseTask", nickname = "releaseTaskUsingPOST", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),
@@ -175,7 +193,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<EntryResponseContentOfCloudTask> releaseTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId);
 
 
-    @ApiOperation(value = "saveTask", nickname = "saveTaskUsingPOST", notes = "", tags={ "task-controller-impl", })
+    @ApiOperation(value = "saveTask", nickname = "saveTaskUsingPOST", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -189,7 +209,9 @@ public interface TaskControllerImplApi {
     ResponseEntity<Void> saveTaskUsingPOST(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody SaveTaskPayload body);
 
 
-    @ApiOperation(value = "updateTask", nickname = "updateTaskUsingPUT1", notes = "", response = EntryResponseContentOfCloudTask.class, tags={ "task-controller-impl", })
+    @ApiOperation(value = "updateTask", nickname = "updateTaskUsingPUT1", notes = "", response = EntryResponseContentOfCloudTask.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "task-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = EntryResponseContentOfCloudTask.class),
         @ApiResponse(code = 201, message = "Created"),

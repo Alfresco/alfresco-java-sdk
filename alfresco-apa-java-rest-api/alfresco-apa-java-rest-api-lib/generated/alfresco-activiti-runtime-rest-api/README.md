@@ -72,18 +72,7 @@ Class | Method | HTTP request | Description
 *CandidateUserControllerImplApi* | [**getUserCandidatesUsingGET1**](docs/CandidateUserControllerImplApi.md#getUserCandidatesUsingGET1) | **GET** /v1/tasks/{taskId}/candidate-users | getUserCandidates
 *ConnectorDefinitionControllerImplApi* | [**getConnectorDefinitionUsingGET**](docs/ConnectorDefinitionControllerImplApi.md#getConnectorDefinitionUsingGET) | **GET** /v1/connector-definitions/{id} | getConnectorDefinition
 *ConnectorDefinitionControllerImplApi* | [**getConnectorDefinitionsUsingGET**](docs/ConnectorDefinitionControllerImplApi.md#getConnectorDefinitionsUsingGET) | **GET** /v1/connector-definitions | getConnectorDefinitions
-*FormsApi* | [**getFormDefinitionUsingGET**](docs/FormsApi.md#getFormDefinitionUsingGET) | **GET** /v1/forms/{formId}/versions/{version} | Get form definition by version
-*FormsApi* | [**getFormDefinitionUsingGET1**](docs/FormsApi.md#getFormDefinitionUsingGET1) | **GET** /v1/forms/{formId} | Get form definition latest version
-*FormsApi* | [**getFormDefinitionsUsingGET**](docs/FormsApi.md#getFormDefinitionsUsingGET) | **GET** /v1/forms | Get form definitions summary
-*FormsApi* | [**getFormFieldValueUsingPOST**](docs/FormsApi.md#getFormFieldValueUsingPOST) | **POST** /v1/forms/{formId}/values/{formFieldId} | Get form definition by version
-*FormsApi* | [**saveFormUsingPOST**](docs/FormsApi.md#saveFormUsingPOST) | **POST** /v1/forms/{formId}/save | Save runtime forms
-*FormsApi* | [**submitFormUsingPOST**](docs/FormsApi.md#submitFormUsingPOST) | **POST** /v1/forms/{formId}/submit/versions/{version} | Submit forms specific version
-*FormsApi* | [**submitFormUsingPOST1**](docs/FormsApi.md#submitFormUsingPOST1) | **POST** /v1/forms/{formId}/submit | Submit forms latest version
 *HomeControllerImplApi* | [**getHomeInfoUsingGET**](docs/HomeControllerImplApi.md#getHomeInfoUsingGET) | **GET** /v1 | getHomeInfo
-*PreferenceApi* | [**deletePreferenceUsingDELETE**](docs/PreferenceApi.md#deletePreferenceUsingDELETE) | **DELETE** /v1/preferences/{preferenceKey} | Delete preference
-*PreferenceApi* | [**getAllUsingGET**](docs/PreferenceApi.md#getAllUsingGET) | **GET** /v1/preferences | Return all preferences
-*PreferenceApi* | [**getPreferenceUsingGET**](docs/PreferenceApi.md#getPreferenceUsingGET) | **GET** /v1/preferences/{preferenceKey} | Get preference
-*PreferenceApi* | [**savePreferenceUsingPUT**](docs/PreferenceApi.md#savePreferenceUsingPUT) | **PUT** /v1/preferences/{preferenceKey} | Create/Save preference
 *ProcessDefinitionAdminControllerImplApi* | [**getAllProcessDefinitionsUsingGET**](docs/ProcessDefinitionAdminControllerImplApi.md#getAllProcessDefinitionsUsingGET) | **GET** /admin/v1/process-definitions | getAllProcessDefinitions
 *ProcessDefinitionControllerImplApi* | [**getBpmnModelUsingGET**](docs/ProcessDefinitionControllerImplApi.md#getBpmnModelUsingGET) | **GET** /v1/process-definitions/{id}/model | getProcessModel
 *ProcessDefinitionControllerImplApi* | [**getProcessDefinitionUsingGET**](docs/ProcessDefinitionControllerImplApi.md#getProcessDefinitionUsingGET) | **GET** /v1/process-definitions/{id} | getProcessDefinition
@@ -118,6 +107,7 @@ Class | Method | HTTP request | Description
 *ProcessInstanceVariableAdminControllerImplApi* | [**updateVariablesUsingPUT**](docs/ProcessInstanceVariableAdminControllerImplApi.md#updateVariablesUsingPUT) | **PUT** /admin/v1/process-instances/{processInstanceId}/variables | updateVariables
 *ProcessInstanceVariableControllerImplApi* | [**getVariablesUsingGET**](docs/ProcessInstanceVariableControllerImplApi.md#getVariablesUsingGET) | **GET** /v1/process-instances/{processInstanceId}/variables | getVariables
 *ProcessInstanceVariableControllerImplApi* | [**setVariablesUsingPOST**](docs/ProcessInstanceVariableControllerImplApi.md#setVariablesUsingPOST) | **POST** /v1/process-instances/{processInstanceId}/variables | setVariables
+*RbApi* | [**getFileUsingGET**](docs/RbApi.md#getFileUsingGET) | **GET** /v1/files/{filename} | Expose public files
 *TaskAdminControllerImplApi* | [**assignUsingPOST**](docs/TaskAdminControllerImplApi.md#assignUsingPOST) | **POST** /admin/v1/tasks/{taskId}/assign | assign
 *TaskAdminControllerImplApi* | [**completeTaskUsingPOST**](docs/TaskAdminControllerImplApi.md#completeTaskUsingPOST) | **POST** /admin/v1/tasks/{taskId}/complete | completeTask
 *TaskAdminControllerImplApi* | [**deleteTaskUsingDELETE**](docs/TaskAdminControllerImplApi.md#deleteTaskUsingDELETE) | **DELETE** /admin/v1/tasks/{taskId} | deleteTask
@@ -141,8 +131,6 @@ Class | Method | HTTP request | Description
 *TaskVariableControllerImplApi* | [**createVariableUsingPOST1**](docs/TaskVariableControllerImplApi.md#createVariableUsingPOST1) | **POST** /v1/tasks/{taskId}/variables | createVariable
 *TaskVariableControllerImplApi* | [**getVariablesUsingGET2**](docs/TaskVariableControllerImplApi.md#getVariablesUsingGET2) | **GET** /v1/tasks/{taskId}/variables | getVariables
 *TaskVariableControllerImplApi* | [**updateVariableUsingPUT1**](docs/TaskVariableControllerImplApi.md#updateVariableUsingPUT1) | **PUT** /v1/tasks/{taskId}/variables/{variableName} | updateVariable
-*UserActionsApi* | [**sendNamedEventUsingPOST**](docs/UserActionsApi.md#sendNamedEventUsingPOST) | **POST** /v1/user-action/event/{uiName}/{eventName}/send | Send a named event
-*UserActionsApi* | [**submitFormUsingPOST2**](docs/UserActionsApi.md#submitFormUsingPOST2) | **POST** /v1/user-action/form/{formId}/submit | Submit forms latest version
 
 ## Documentation for Models
 
@@ -172,7 +160,6 @@ Class | Method | HTTP request | Description
  - [EntriesResponseContentOfCloudTask](docs/EntriesResponseContentOfCloudTask.md)
  - [EntriesResponseContentOfCloudVariableInstance](docs/EntriesResponseContentOfCloudVariableInstance.md)
  - [EntriesResponseContentOfConnectorDefinition](docs/EntriesResponseContentOfConnectorDefinition.md)
- - [EntriesResponseContentOfPreference](docs/EntriesResponseContentOfPreference.md)
  - [EntryResponseContentOfCandidateGroup](docs/EntryResponseContentOfCandidateGroup.md)
  - [EntryResponseContentOfCandidateUser](docs/EntryResponseContentOfCandidateUser.md)
  - [EntryResponseContentOfCloudProcessDefinition](docs/EntryResponseContentOfCloudProcessDefinition.md)
@@ -181,7 +168,6 @@ Class | Method | HTTP request | Description
  - [EntryResponseContentOfCloudVariableInstance](docs/EntryResponseContentOfCloudVariableInstance.md)
  - [EntryResponseContentOfConnectorDefinition](docs/EntryResponseContentOfConnectorDefinition.md)
  - [EntryResponseContentOfHomeResource](docs/EntryResponseContentOfHomeResource.md)
- - [EntryResponseContentOfPreference](docs/EntryResponseContentOfPreference.md)
  - [EntryResponseContentOfProcessDefinitionMeta](docs/EntryResponseContentOfProcessDefinitionMeta.md)
  - [HomeResource](docs/HomeResource.md)
  - [JavaType](docs/JavaType.md)
@@ -193,18 +179,14 @@ Class | Method | HTTP request | Description
  - [ListResponseContentOfCloudTask](docs/ListResponseContentOfCloudTask.md)
  - [ListResponseContentOfCloudVariableInstance](docs/ListResponseContentOfCloudVariableInstance.md)
  - [ListResponseContentOfConnectorDefinition](docs/ListResponseContentOfConnectorDefinition.md)
- - [ListResponseContentOfPreference](docs/ListResponseContentOfPreference.md)
  - [Member](docs/Member.md)
  - [MergeInfo](docs/MergeInfo.md)
- - [NamedEventBody](docs/NamedEventBody.md)
- - [NamedObject](docs/NamedObject.md)
  - [NullValueProvider](docs/NullValueProvider.md)
  - [ObjectIdGeneratorOfobject](docs/ObjectIdGeneratorOfobject.md)
  - [ObjectIdInfo](docs/ObjectIdInfo.md)
  - [ObjectIdReader](docs/ObjectIdReader.md)
  - [ObjectIdResolver](docs/ObjectIdResolver.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
- - [Preference](docs/Preference.md)
  - [ProcessDefinitionMeta](docs/ProcessDefinitionMeta.md)
  - [ProcessDefinitionServiceTask](docs/ProcessDefinitionServiceTask.md)
  - [ProcessDefinitionUserTask](docs/ProcessDefinitionUserTask.md)
@@ -213,16 +195,12 @@ Class | Method | HTTP request | Description
  - [PropertyName](docs/PropertyName.md)
  - [ReceiveMessagePayload](docs/ReceiveMessagePayload.md)
  - [RemoveProcessVariablesPayload](docs/RemoveProcessVariablesPayload.md)
- - [ResponseEntity](docs/ResponseEntity.md)
- - [ResponseEntityFormSummaryView](docs/ResponseEntityFormSummaryView.md)
- - [SaveFormRepresentation](docs/SaveFormRepresentation.md)
  - [SaveTaskPayload](docs/SaveTaskPayload.md)
  - [SetProcessVariablesPayload](docs/SetProcessVariablesPayload.md)
  - [SettableBeanProperty](docs/SettableBeanProperty.md)
  - [SignalPayload](docs/SignalPayload.md)
  - [StartMessagePayload](docs/StartMessagePayload.md)
  - [StartProcessPayload](docs/StartProcessPayload.md)
- - [SubmitFormRepresentation](docs/SubmitFormRepresentation.md)
  - [TypeBindings](docs/TypeBindings.md)
  - [TypeDeserializer](docs/TypeDeserializer.md)
  - [TypeIdResolver](docs/TypeIdResolver.md)
@@ -234,5 +212,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
 Authentication schemes defined for the API:
+### oauth
+
+- **Type**: OAuth
+- **Flow**: implicit
+- **Authorization URL**: https://apadev.envalfresco.com/auth/realms/alfresco/protocol/openid-connect/auth
+- **Scopes**: 
+  - : 
+

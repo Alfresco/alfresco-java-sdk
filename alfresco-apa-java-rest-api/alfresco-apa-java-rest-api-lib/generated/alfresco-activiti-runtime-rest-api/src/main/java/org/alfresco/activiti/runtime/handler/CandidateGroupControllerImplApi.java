@@ -45,7 +45,9 @@ import java.util.Map;
 @Api(value = "CandidateGroupControllerImpl", description = "the CandidateGroupControllerImpl API")
 public interface CandidateGroupControllerImplApi {
 
-    @ApiOperation(value = "addCandidateGroups", nickname = "addCandidateGroupsUsingPOST1", notes = "", tags={ "candidate-group-controller-impl", })
+    @ApiOperation(value = "addCandidateGroups", nickname = "addCandidateGroupsUsingPOST1", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "candidate-group-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 201, message = "Created"),
@@ -59,7 +61,9 @@ public interface CandidateGroupControllerImplApi {
     ResponseEntity<Void> addCandidateGroupsUsingPOST1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateGroupsPayload body);
 
 
-    @ApiOperation(value = "deleteCandidateGroups", nickname = "deleteCandidateGroupsUsingDELETE1", notes = "", tags={ "candidate-group-controller-impl", })
+    @ApiOperation(value = "deleteCandidateGroups", nickname = "deleteCandidateGroupsUsingDELETE1", notes = "", authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "candidate-group-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK"),
         @ApiResponse(code = 204, message = "No Content"),
@@ -72,7 +76,9 @@ public interface CandidateGroupControllerImplApi {
     ResponseEntity<Void> deleteCandidateGroupsUsingDELETE1(@ApiParam(value = "taskId", required=true) @PathVariable("taskId") String taskId, @ApiParam(value = "" ) @Valid @RequestBody CandidateGroupsPayload body);
 
 
-    @ApiOperation(value = "getGroupCandidates", nickname = "getGroupCandidatesUsingGET1", notes = "", response = ListResponseContentOfCandidateGroup.class, tags={ "candidate-group-controller-impl", })
+    @ApiOperation(value = "getGroupCandidates", nickname = "getGroupCandidatesUsingGET1", notes = "", response = ListResponseContentOfCandidateGroup.class, authorizations = {
+        @Authorization(value = "oauth", scopes = { 
+            })    }, tags={ "candidate-group-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCandidateGroup.class),
         @ApiResponse(code = 401, message = "Unauthorized"),

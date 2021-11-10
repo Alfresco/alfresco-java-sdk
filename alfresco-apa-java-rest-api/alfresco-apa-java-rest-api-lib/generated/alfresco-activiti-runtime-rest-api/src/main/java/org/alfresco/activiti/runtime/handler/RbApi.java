@@ -20,7 +20,6 @@
  */
 package org.alfresco.activiti.runtime.handler;
 
-import org.alfresco.activiti.runtime.model.ListResponseContentOfCloudTask;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -41,21 +40,21 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 
-@Api(value = "ProcessInstanceTasksControllerImpl", description = "the ProcessInstanceTasksControllerImpl API")
-public interface ProcessInstanceTasksControllerImplApi {
+@Api(value = "Rb", description = "the Rb API")
+public interface RbApi {
 
-    @ApiOperation(value = "getTasks", nickname = "getTasksUsingGET", notes = "", response = ListResponseContentOfCloudTask.class, authorizations = {
+    @ApiOperation(value = "Expose public files", nickname = "getFileUsingGET", notes = "Expose public files using HTTP", response = byte[].class, authorizations = {
         @Authorization(value = "oauth", scopes = { 
-            })    }, tags={ "process-instance-tasks-controller-impl", })
+            })    }, tags={ "RB", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudTask.class),
+        @ApiResponse(code = 200, message = "OK", response = byte[].class),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
-    @RequestMapping(value = "/v1/process-instances/{processInstanceId}/tasks",
+    @RequestMapping(value = "/v1/files/{filename}",
         produces = "application/json", 
         method = RequestMethod.GET)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<ListResponseContentOfCloudTask> getTasksUsingGET(@ApiParam(value = "processInstanceId", required=true) @PathVariable("processInstanceId") String processInstanceId, @ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<byte[]> getFileUsingGET(@ApiParam(value = "filename", required=true) @PathVariable("filename") String filename);
 
 }

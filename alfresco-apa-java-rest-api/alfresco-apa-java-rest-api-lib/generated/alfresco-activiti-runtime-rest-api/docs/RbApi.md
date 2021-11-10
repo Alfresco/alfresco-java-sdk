@@ -1,16 +1,18 @@
-# HomeControllerImplApi
+# RbApi
 
 All URIs are relative to the environment set via -Denvironment.host and -Denvironment.application.name
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getHomeInfoUsingGET**](HomeControllerImplApi.md#getHomeInfoUsingGET) | **GET** /v1 | getHomeInfo
+[**getFileUsingGET**](RbApi.md#getFileUsingGET) | **GET** /v1/files/{filename} | Expose public files
 
-<a name="getHomeInfoUsingGET"></a>
-# **getHomeInfoUsingGET**
-> EntryResponseContentOfHomeResource getHomeInfoUsingGET()
+<a name="getFileUsingGET"></a>
+# **getFileUsingGET**
+> byte[] getFileUsingGET(filename)
 
-getHomeInfo
+Expose public files
+
+Expose public files using HTTP
 
 ### Example
 ```java
@@ -19,7 +21,7 @@ getHomeInfo
 //import org.alfresco.activiti.runtime.ApiException;
 //import org.alfresco.activiti.runtime.Configuration;
 //import org.alfresco.activiti.runtime.auth.*;
-//import org.alfresco.activiti.runtime.handler.HomeControllerImplApi;
+//import org.alfresco.activiti.runtime.handler.RbApi;
 
 
 
@@ -27,22 +29,26 @@ getHomeInfo
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 oauth.setAccessToken("YOUR ACCESS TOKEN");
 
-HomeControllerImplApi apiInstance = new HomeControllerImplApi();
+RbApi apiInstance = new RbApi();
+String filename = "filename_example"; // String | filename
 try {
-    EntryResponseContentOfHomeResource result = apiInstance.getHomeInfoUsingGET();
+    byte[] result = apiInstance.getFileUsingGET(filename);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HomeControllerImplApi#getHomeInfoUsingGET");
+    System.err.println("Exception when calling RbApi#getFileUsingGET");
     e.printStackTrace();
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filename** | **String**| filename |
 
 ### Return type
 
-[**EntryResponseContentOfHomeResource**](EntryResponseContentOfHomeResource.md)
+**byte[]**
 
 ### Authorization
 
@@ -51,5 +57,5 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
