@@ -8,6 +8,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;url = "${alfrescoProcessDeploymentReST_.url:}";url = "${alfresco.service.deployment.url}", path = "${alfresco.service.deployment.path}";g' \
   -e 's;url = "${alfrescoProcessModelingReST_.url.*}";url = "${modeling.url}", path = "${modeling.path}";g' \
   -e 's;url = "${runtimeBundleReST_.url.*}";url = "${activiti.service.runtime.url}", path = "${activiti.service.runtime.path}";g' \
+  -e 's;url = "${auditServiceReST_.url.*}";url = "${activiti.service.audit.url}", path = "${activiti.service.audit.path}";g' \
   -e 's;url = "${preferenceReST_.url.*}";url = "${activiti.service.preference.url}", path = "${activiti.service.preference.path}";g' \
   -e 's;url = "${formReST_.url.*}";url = "${activiti.service.form.url}", path = "${activiti.service.form.path}";g' \
   -e 's;url = "${alfrescoProcessQueryServiceReST_.url:}";url = "${activiti.service.query.url}", path = "${activiti.service.query.path}";g' \
