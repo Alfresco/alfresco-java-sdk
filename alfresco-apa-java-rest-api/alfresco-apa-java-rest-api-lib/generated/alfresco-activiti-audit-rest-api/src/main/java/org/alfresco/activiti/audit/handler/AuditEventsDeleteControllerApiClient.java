@@ -18,6 +18,6 @@ package org.alfresco.activiti.audit.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoAuditEventsDeleteControllerApi", url = "${activiti.service.query.url}", path = "${activiti.service.query.path}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoAuditEventsDeleteControllerApi", url = "${auditServiceReST_.url:}", configuration = ClientConfiguration.class)
 public interface AuditEventsDeleteControllerApiClient extends AuditEventsDeleteControllerApi {
 }

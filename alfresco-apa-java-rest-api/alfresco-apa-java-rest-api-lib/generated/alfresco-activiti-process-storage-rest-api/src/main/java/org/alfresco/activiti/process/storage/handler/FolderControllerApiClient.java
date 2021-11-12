@@ -18,6 +18,6 @@ package org.alfresco.activiti.process.storage.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoFolderControllerApi", url = "${alfresco.service.process.storage.url}", path = "${alfresco.service.process.storage.path}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoFolderControllerApi", url = "${processStorageReST_.url:}", configuration = ClientConfiguration.class)
 public interface FolderControllerApiClient extends FolderControllerApi {
 }

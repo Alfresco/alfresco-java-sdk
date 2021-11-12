@@ -18,6 +18,6 @@ package org.alfresco.activiti.query.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoJobControllerApi", url = "${activiti.service.query.url}", path = "${activiti.service.query.path}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoJobControllerApi", url = "${queryServiceReST_.url:}", configuration = ClientConfiguration.class)
 public interface JobControllerApiClient extends JobControllerApi {
 }
