@@ -37,11 +37,6 @@
     </dependency>
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-activiti-dmn-simulation-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-form-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
@@ -68,11 +63,6 @@
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-runtime-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
