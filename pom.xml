@@ -10,7 +10,7 @@
   </parent>
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
-  <version>5.1.2-SNAPSHOT</version>
+  <version>5.1.2</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Parent</name>
   <description>Parent for Alfresco Java SDK</description>
