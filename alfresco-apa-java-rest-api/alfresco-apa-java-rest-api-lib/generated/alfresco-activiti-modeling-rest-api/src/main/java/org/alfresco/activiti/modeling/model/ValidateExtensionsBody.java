@@ -13,44 +13,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.alfresco.activiti.script.modeling.model;
+package org.alfresco.activiti.modeling.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.core.io.Resource;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * ProjectsImportBody
+ * ValidateExtensionsBody
  */
 @Validated
 
 
-public class ProjectsImportBody   {
-  @JsonProperty("name")
-  private String name = null;
+public class ValidateExtensionsBody   {
+  @JsonProperty("file")
+  private Resource file = null;
 
-  public ProjectsImportBody name(String name) {
-    this.name = name;
+  public ValidateExtensionsBody file(Resource file) {
+    this.file = file;
     return this;
   }
 
   /**
-   * The name of the project that will override the current name of the project in the zip file
-   * @return name
+   * The file containing the model extensions to validate
+   * @return file
    **/
-  @ApiModelProperty(value = "The name of the project that will override the current name of the project in the zip file")
-  
-    public String getName() {
-    return name;
+  @ApiModelProperty(required = true, value = "The file containing the model extensions to validate")
+      @NotNull
+
+    @Valid
+    public Resource getFile() {
+    return file;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setFile(Resource file) {
+    this.file = file;
   }
 
 
@@ -62,21 +65,21 @@ public class ProjectsImportBody   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProjectsImportBody projectsImportBody = (ProjectsImportBody) o;
-    return Objects.equals(this.name, projectsImportBody.name);
+    ValidateExtensionsBody validateExtensionsBody = (ValidateExtensionsBody) o;
+    return Objects.equals(this.file, validateExtensionsBody.file);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(file);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProjectsImportBody {\n");
+    sb.append("class ValidateExtensionsBody {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    file: ").append(toIndentedString(file)).append("\n");
     sb.append("}");
     return sb.toString();
   }

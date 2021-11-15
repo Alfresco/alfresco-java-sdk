@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.core.io.Resource;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
@@ -31,8 +32,32 @@ import javax.validation.constraints.*;
 
 
 public class ProjectsImportBody   {
+  @JsonProperty("file")
+  private Resource file = null;
+
   @JsonProperty("name")
   private String name = null;
+
+  public ProjectsImportBody file(Resource file) {
+    this.file = file;
+    return this;
+  }
+
+  /**
+   * The file containing the zipped project
+   * @return file
+   **/
+  @ApiModelProperty(required = true, value = "The file containing the zipped project")
+      @NotNull
+
+    @Valid
+    public Resource getFile() {
+    return file;
+  }
+
+  public void setFile(Resource file) {
+    this.file = file;
+  }
 
   public ProjectsImportBody name(String name) {
     this.name = name;
@@ -63,12 +88,13 @@ public class ProjectsImportBody   {
       return false;
     }
     ProjectsImportBody projectsImportBody = (ProjectsImportBody) o;
-    return Objects.equals(this.name, projectsImportBody.name);
+    return Objects.equals(this.file, projectsImportBody.file) &&
+        Objects.equals(this.name, projectsImportBody.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(file, name);
   }
 
   @Override
@@ -76,6 +102,7 @@ public class ProjectsImportBody   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProjectsImportBody {\n");
     
+    sb.append("    file: ").append(toIndentedString(file)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();

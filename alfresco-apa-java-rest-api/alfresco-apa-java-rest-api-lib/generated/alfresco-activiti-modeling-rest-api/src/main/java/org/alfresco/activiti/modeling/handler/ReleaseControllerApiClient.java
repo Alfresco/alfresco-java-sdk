@@ -18,6 +18,6 @@ package org.alfresco.activiti.modeling.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoReleaseControllerApi", url = "${modeling.url}", path = "${modeling.path}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoReleaseControllerApi", url = "${modelingReST_.url:}", configuration = ClientConfiguration.class)
 public interface ReleaseControllerApiClient extends ReleaseControllerApi {
 }
