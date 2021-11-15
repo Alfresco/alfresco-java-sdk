@@ -18,6 +18,6 @@ package org.alfresco.activiti.query.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoTaskVariableAdminControllerApi", url = "${queryServiceReST_.url:}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoTaskVariableAdminControllerApi", url = "${activiti.service.query.url}", path = "${activiti.service.query.path}", configuration = ClientConfiguration.class)
 public interface TaskVariableAdminControllerApiClient extends TaskVariableAdminControllerApi {
 }

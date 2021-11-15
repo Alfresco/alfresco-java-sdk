@@ -18,6 +18,6 @@ package org.alfresco.activiti.deployment.handler;
 import org.springframework.cloud.openfeign.FeignClient;
 import io.swagger.configuration.ClientConfiguration;
 
-@FeignClient(value = "alfrescoDeploymentControllerApi", url = "${deploymentReST_.url:}", configuration = ClientConfiguration.class)
+@FeignClient(value = "alfrescoDeploymentControllerApi", url = "${alfresco.service.deployment.url}", path = "${alfresco.service.deployment.path}", configuration = ClientConfiguration.class)
 public interface DeploymentControllerApiClient extends DeploymentControllerApi {
 }
