@@ -254,10 +254,10 @@ public interface ModelsApi {
         @ApiResponse(code = 403, message = "Forbidden"),
         @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value = "/v1/models/{modelId}/validate/extensions",
-        consumes = "application/json",
+        consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<Void> validateModelExtensionsUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "" ) @Valid @RequestBody Object body);
+    ResponseEntity<Void> validateModelExtensionsUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
 
 
     @ApiOperation(value = "Validate a model content", nickname = "validateModelUsingPOST", notes = "Allows to validate the model content without save it.", tags={ "models", })

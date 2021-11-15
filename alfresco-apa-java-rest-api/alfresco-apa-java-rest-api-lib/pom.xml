@@ -29,16 +29,14 @@
     <!-- APS -->
     <aps.api>https://${environment.host}/activiti-app/v3/api-docs?group=enterprise</aps.api>
     <!-- AAE INFRASTRUCTURE -->
-    <aae.deployment.api>https://${environment.host}/deployment-service/v3/api-docs</aae.deployment.api>
-    <aae.modeling.api>https://${environment.host}/modeling-service/v3/api-docs</aae.modeling.api>
-    <aae.dmn-simulation.api>https://${environment.host}/dmn-service/v3/api-docs/</aae.dmn-simulation.api>
-    <aae.script-modeling.api>https://${environment.host}/script-service/v3/api-docs/</aae.script-modeling.api>
+    <aae.deployment.api>https://${environment.host}/deployment-service/v3/api-docs?group=Deployment%20Service</aae.deployment.api>
+    <aae.modeling.api>https://${environment.host}/modeling-service/v3/api-docs?group=Modeling</aae.modeling.api>
     <!-- AAE APPLICATION -->
     <aae.form.api>https://${environment.host}/${environment.application.name}/form/v3/api-docs?group=Form</aae.form.api>
-    <aae.query.api>https://${environment.host}/${environment.application.name}/query/v3/api-docs</aae.query.api>
+    <aae.query.api>https://${environment.host}/${environment.application.name}/query/v3/api-docs?group=Query</aae.query.api>
     <aae.runtime.api>https://${environment.host}/${environment.application.name}/rb/v3/api-docs?group=Runtime%20Bundle</aae.runtime.api>
-    <aae.audit.api>https://${environment.host}/${environment.application.name}/audit/v3/api-docs</aae.audit.api>
-    <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v3/api-docs</aae.process-storage.api>
+    <aae.audit.api>https://${environment.host}/${environment.application.name}/audit/v3/api-docs?group=Audit</aae.audit.api>
+    <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v3/api-docs?group=Process%20Storage</aae.process-storage.api>
     <aae.preference.api>https://${environment.host}/${environment.application.name}/preference/v3/api-docs?group=Preference</aae.preference.api>
   </properties>
   <distributionManagement>
@@ -61,8 +59,6 @@
     <module>generated/alfresco-activiti-runtime-rest-api</module>
     <module>generated/alfresco-activiti-audit-rest-api</module>
     <module>generated/alfresco-activiti-process-storage-rest-api</module>
-    <module>generated/alfresco-activiti-dmn-simulation-rest-api</module>
-    <module>generated/alfresco-activiti-script-modeling-rest-api</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -210,38 +206,6 @@
                     <apiPackage>${project.groupId}.activiti.preference.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.preference.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti.preference</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-dmn-simulation-api</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <inputSpec>${aae.dmn-simulation.api}</inputSpec>
-                  <output>generated/alfresco-activiti-dmn-simulation-rest-api</output>
-                  <artifactId>alfresco-activiti-dmn-simulation-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.dmn.simulation.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.dmn.simulation.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.dmn.simulation</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-script-modeling-api</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <inputSpec>${aae.script-modeling.api}</inputSpec>
-                  <output>generated/alfresco-activiti-script-modeling-rest-api</output>
-                  <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.script.modeling.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.script.modeling.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.script.modeling</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>

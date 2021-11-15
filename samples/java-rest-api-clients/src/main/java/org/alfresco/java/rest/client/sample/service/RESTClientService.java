@@ -15,11 +15,11 @@
  */
 package org.alfresco.java.rest.client.sample.service;
 
-import org.alfresco.activiti.query.handler.AuditEventsControllerImplApi;
-import org.alfresco.activiti.query.model.CloudRuntimeEventModel;
-import org.alfresco.activiti.query.model.CloudRuntimeEventModel.EventTypeEnum;
-import org.alfresco.activiti.query.model.EntryResponseContentOfCloudRuntimeEventOfobjectAndstring;
-import org.alfresco.activiti.query.model.ListResponseContentOfCloudRuntimeEventOfobjectAndstring;
+import org.alfresco.activiti.audit.handler.AuditEventsControllerImplApi;
+import org.alfresco.activiti.audit.model.CloudRuntimeEventModel;
+import org.alfresco.activiti.audit.model.CloudRuntimeEventModel.EventTypeEnum;
+import org.alfresco.activiti.audit.model.EntryResponseContentOfCloudRuntimeEventOfobjectAndstring;
+import org.alfresco.activiti.audit.model.ListResponseContentOfCloudRuntimeEventOfobjectAndstring;
 import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApiClient;
 import org.alfresco.activiti.runtime.handler.ProcessInstanceTasksControllerImplApi;
 import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
@@ -102,7 +102,7 @@ public class RESTClientService {
         LOGGER.info("Task completed and process finished!!");
 
         ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> ListOfAuditRawEvents = auditEventsControllerImplApi
-            .findAllUsingGET3(null,
+            .findAllUsingGET1(null,
             "processInstanceId:" + processId,
             null,
             null);

@@ -25,6 +25,7 @@ import org.alfresco.activiti.modeling.model.EntryResponseContentOfRelease;
 import org.alfresco.activiti.modeling.model.ListResponseContentOfProject;
 import org.alfresco.activiti.modeling.model.ListResponseContentOfRelease;
 import org.alfresco.activiti.modeling.model.Project;
+import org.springframework.core.io.Resource;
 
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -162,7 +163,7 @@ public interface ProjectsApi {
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<EntryResponseContentOfProject> importProjectUsingPOST(@ApiParam(value = "") @RequestParam(value="name", required=false)  String name);
+    ResponseEntity<EntryResponseContentOfProject> importProjectUsingPOST(@ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="name", required=false)  String name);
 
 
     @ApiOperation(value = "Create a new release of a project", nickname = "releaseProjectUsingPOST", notes = "This will release the project.The new version is based on the version strategy", response = EntryResponseContentOfRelease.class, tags={ "projects", })

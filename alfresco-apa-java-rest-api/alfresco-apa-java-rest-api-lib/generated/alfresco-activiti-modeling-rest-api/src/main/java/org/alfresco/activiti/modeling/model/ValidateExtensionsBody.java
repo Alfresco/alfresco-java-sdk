@@ -13,46 +13,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.alfresco.activiti.audit.model;
+package org.alfresco.activiti.modeling.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.alfresco.activiti.audit.model.Job;
+import org.springframework.core.io.Resource;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * EntryResponseContentOfJob
+ * ValidateExtensionsBody
  */
 @Validated
 
 
-public class EntryResponseContentOfJob   {
-  @JsonProperty("entry")
-  private Job entry = null;
+public class ValidateExtensionsBody   {
+  @JsonProperty("file")
+  private Resource file = null;
 
-  public EntryResponseContentOfJob entry(Job entry) {
-    this.entry = entry;
+  public ValidateExtensionsBody file(Resource file) {
+    this.file = file;
     return this;
   }
 
   /**
-   * Get entry
-   * @return entry
+   * The file containing the model extensions to validate
+   * @return file
    **/
-  @ApiModelProperty(value = "")
-  
+  @ApiModelProperty(required = true, value = "The file containing the model extensions to validate")
+      @NotNull
+
     @Valid
-    public Job getEntry() {
-    return entry;
+    public Resource getFile() {
+    return file;
   }
 
-  public void setEntry(Job entry) {
-    this.entry = entry;
+  public void setFile(Resource file) {
+    this.file = file;
   }
 
 
@@ -64,21 +65,21 @@ public class EntryResponseContentOfJob   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EntryResponseContentOfJob entryResponseContentOfJob = (EntryResponseContentOfJob) o;
-    return Objects.equals(this.entry, entryResponseContentOfJob.entry);
+    ValidateExtensionsBody validateExtensionsBody = (ValidateExtensionsBody) o;
+    return Objects.equals(this.file, validateExtensionsBody.file);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entry);
+    return Objects.hash(file);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EntryResponseContentOfJob {\n");
+    sb.append("class ValidateExtensionsBody {\n");
     
-    sb.append("    entry: ").append(toIndentedString(entry)).append("\n");
+    sb.append("    file: ").append(toIndentedString(file)).append("\n");
     sb.append("}");
     return sb.toString();
   }

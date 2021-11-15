@@ -44,7 +44,7 @@ import java.util.Map;
 @Api(value = "AuditEventsAdminControllerImpl", description = "the AuditEventsAdminControllerImpl API")
 public interface AuditEventsAdminControllerImplApi {
 
-    @ApiOperation(value = "findAll", nickname = "findAllUsingGET2", notes = "", response = ListResponseContentOfCloudRuntimeEventOfobjectAndstring.class, tags={ "audit-events-admin-controller-impl", })
+    @ApiOperation(value = "findAll", nickname = "findAllUsingGET", notes = "", response = ListResponseContentOfCloudRuntimeEventOfobjectAndstring.class, tags={ "audit-events-admin-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudRuntimeEventOfobjectAndstring.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -54,6 +54,6 @@ public interface AuditEventsAdminControllerImplApi {
         produces = "application/json", 
         method = RequestMethod.GET)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> findAllUsingGET2(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> findAllUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 }

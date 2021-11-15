@@ -45,7 +45,7 @@ import java.util.Map;
 @Api(value = "AuditEventsControllerImpl", description = "the AuditEventsControllerImpl API")
 public interface AuditEventsControllerImplApi {
 
-    @ApiOperation(value = "findAll", nickname = "findAllUsingGET3", notes = "", response = ListResponseContentOfCloudRuntimeEventOfobjectAndstring.class, tags={ "audit-events-controller-impl", })
+    @ApiOperation(value = "findAll", nickname = "findAllUsingGET1", notes = "", response = ListResponseContentOfCloudRuntimeEventOfobjectAndstring.class, tags={ "audit-events-controller-impl", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudRuntimeEventOfobjectAndstring.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -55,7 +55,7 @@ public interface AuditEventsControllerImplApi {
         produces = "application/json", 
         method = RequestMethod.GET)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> findAllUsingGET3(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "search") @Valid @RequestParam(value = "search", required = false) String search, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> findAllUsingGET1(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "search") @Valid @RequestParam(value = "search", required = false) String search, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 
     @ApiOperation(value = "findById", nickname = "findByIdUsingGET", notes = "", response = EntryResponseContentOfCloudRuntimeEventOfobjectAndstring.class, tags={ "audit-events-controller-impl", })

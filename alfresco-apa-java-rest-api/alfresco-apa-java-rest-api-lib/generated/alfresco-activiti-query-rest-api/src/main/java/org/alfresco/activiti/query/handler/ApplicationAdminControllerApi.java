@@ -44,7 +44,7 @@ import java.util.Map;
 @Api(value = "ApplicationAdminController", description = "the ApplicationAdminController API")
 public interface ApplicationAdminControllerApi {
 
-    @ApiOperation(value = "findAll", nickname = "findAllUsingGET", notes = "", response = ListResponseContentOfCloudApplication.class, tags={ "application-admin-controller", })
+    @ApiOperation(value = "findAll", nickname = "findAllUsingGET2", notes = "", response = ListResponseContentOfCloudApplication.class, tags={ "application-admin-controller", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = ListResponseContentOfCloudApplication.class),
         @ApiResponse(code = 401, message = "Unauthorized"),
@@ -54,6 +54,6 @@ public interface ApplicationAdminControllerApi {
         produces = "application/json", 
         method = RequestMethod.GET)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<ListResponseContentOfCloudApplication> findAllUsingGET(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
+    ResponseEntity<ListResponseContentOfCloudApplication> findAllUsingGET2(@ApiParam(value = "") @Valid @RequestParam(value = "maxItems", required = false) Integer maxItems, @ApiParam(value = "") @Valid @RequestParam(value = "skipCount", required = false) Integer skipCount, @ApiParam(value = "") @Valid @RequestParam(value = "sort", required = false) String sort);
 
 }
