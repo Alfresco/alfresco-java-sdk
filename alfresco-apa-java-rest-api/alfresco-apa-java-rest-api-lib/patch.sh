@@ -13,6 +13,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;url = "${formReST_.url.*}";url = "${activiti.service.form.url}", path = "${activiti.service.form.path}";g' \
   -e 's;url = "${queryServiceReST_.url:}";url = "${activiti.service.query.url}", path = "${activiti.service.query.path}";g' \
   -e 's;url = "${processStorageReST_.url:}";url = "${alfresco.service.process.storage.url}", path = "${alfresco.service.process.storage.path}";g' \
+  -e 's;@RequestPart("file") MultipartFile file;@PathVariable("file") MultipartFile file;g' \
   -e 's;ErrorModelNamenamespaceorgSpringframeworkHateoasNameEntityModelOfJobExecution;EntryResponseContentOfJobExecution;g' \
   -e 's@import org\.alfresco\..*\.ResponseEntity;@@g' \
   -i '' {} +

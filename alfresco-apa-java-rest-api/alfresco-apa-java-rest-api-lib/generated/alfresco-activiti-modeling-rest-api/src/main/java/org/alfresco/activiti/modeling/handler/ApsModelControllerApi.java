@@ -57,6 +57,6 @@ public interface ApsModelControllerApi {
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<EntryResponseContentOfImportResult> importProcessModelUsingPOST(@ApiParam(value = "projectId", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
+    ResponseEntity<EntryResponseContentOfImportResult> importProcessModelUsingPOST(@ApiParam(value = "projectId", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @PathVariable("file") MultipartFile file);
 
 }

@@ -140,6 +140,6 @@ public interface DescriptorControllerApi {
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<Void> importDescriptorUsingPOST(@ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
+    ResponseEntity<Void> importDescriptorUsingPOST(@ApiParam(value = "file detail") @Valid @PathVariable("file") MultipartFile file);
 
 }

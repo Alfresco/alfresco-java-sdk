@@ -200,7 +200,7 @@ public interface ModelsApi {
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<EntryResponseContentOfModel> importModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="type", required=false)  String type);
+    ResponseEntity<EntryResponseContentOfModel> importModelUsingPOST(@ApiParam(value = "The id of the project to associate the new model with", required=true) @PathVariable("projectId") String projectId, @ApiParam(value = "file detail") @Valid @PathVariable("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="type", required=false)  String type);
 
 
     @ApiOperation(value = "Add or update the relationship between an existing model, and the project", nickname = "putProjectModelRelationshipUsingPUT", notes = "Get the model associated with the project updated. Minimal information for the model is returned.", response = EntryResponseContentOfModel.class, tags={ "models", })
@@ -228,7 +228,7 @@ public interface ModelsApi {
         consumes = "multipart/form-data",
         method = RequestMethod.PUT)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<Void> updateModelContentUsingPUT(@ApiParam(value = "The id of the model to update", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
+    ResponseEntity<Void> updateModelContentUsingPUT(@ApiParam(value = "The id of the model to update", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "file detail") @Valid @PathVariable("file") MultipartFile file);
 
 
     @ApiOperation(value = "Update model metadata", nickname = "updateModelUsingPUT", notes = "Update the details of a model.", response = EntryResponseContentOfModel.class, tags={ "models", })
@@ -257,7 +257,7 @@ public interface ModelsApi {
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<Void> validateModelExtensionsUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file);
+    ResponseEntity<Void> validateModelExtensionsUsingPOST(@ApiParam(value = "The id of the model to validate the content for", required=true) @PathVariable("modelId") String modelId, @ApiParam(value = "The id of the project in whose context the model is going to be validated") @Valid @RequestParam(value = "projectId", required = false) String projectId, @ApiParam(value = "file detail") @Valid @PathVariable("file") MultipartFile file);
 
 
     @ApiOperation(value = "Validate a model content", nickname = "validateModelUsingPOST", notes = "Allows to validate the model content without save it.", tags={ "models", })
