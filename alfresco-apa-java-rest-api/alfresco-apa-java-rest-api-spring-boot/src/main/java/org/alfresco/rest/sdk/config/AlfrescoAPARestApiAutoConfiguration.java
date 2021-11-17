@@ -27,6 +27,8 @@ import org.springframework.context.annotation.Configuration;
     "org.alfresco.activiti.audit.handler",
     "org.alfresco.activiti.form.handler",
     "org.alfresco.activiti.preference.handler",
+    "org.alfresco.activiti.script.modeling.handler",
+    "org.alfresco.activiti.dmn.simulation.handler",
     "org.alfresco.activiti.runtime.handler"
 })
 public class AlfrescoAPARestApiAutoConfiguration {
