@@ -163,7 +163,7 @@ public interface ProjectsApi {
         consumes = "multipart/form-data",
         method = RequestMethod.POST)
     @CollectionFormat(feign.CollectionFormat.CSV)
-    ResponseEntity<EntryResponseContentOfProject> importProjectUsingPOST(@ApiParam(value = "file detail") @Valid @RequestPart("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="name", required=false)  String name);
+    ResponseEntity<EntryResponseContentOfProject> importProjectUsingPOST(@ApiParam(value = "file detail") @Valid @PathVariable("file") MultipartFile file, @ApiParam(value = "") @RequestParam(value="name", required=false)  String name);
 
 
     @ApiOperation(value = "Create a new release of a project", nickname = "releaseProjectUsingPOST", notes = "This will release the project.The new version is based on the version strategy", response = EntryResponseContentOfRelease.class, tags={ "projects", })
