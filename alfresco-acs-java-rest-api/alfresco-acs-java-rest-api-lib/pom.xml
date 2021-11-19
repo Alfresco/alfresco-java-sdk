@@ -17,7 +17,7 @@
   <properties>
     <project.build.generatedSourceDirectory>generated</project.build.generatedSourceDirectory>
     <swagger-codegen-maven-plugin.groupId>io.swagger</swagger-codegen-maven-plugin.groupId>
-    <swagger-codegen-maven-plugin.version>2.4.10</swagger-codegen-maven-plugin.version>
+    <swagger-codegen-maven-plugin.version>2.4.24</swagger-codegen-maven-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <!-- Base Paths -->
     <acs.version>7.1.0</acs.version>
