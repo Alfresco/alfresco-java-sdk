@@ -11,5 +11,5 @@ before_script:
       -Denvironment.application.name=${ENVIRONMENT_APP:simpleapp}
       -Dags.version=3.5.0-A4
       -Dacs.version=6.2.0"
-    - (cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib; sh generate.sh)
-    - (cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib; sh generate.sh)
+  - (cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib; sh generate.sh)
+  - (cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib; sh generate.sh)
