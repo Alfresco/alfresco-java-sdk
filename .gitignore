@@ -53,3 +53,7 @@ build/
 
 ### mac OS ###
 .DS_Store
+
+### generated sources ###
+/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/
+/alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/

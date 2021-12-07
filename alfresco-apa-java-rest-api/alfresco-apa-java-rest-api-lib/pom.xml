@@ -52,17 +52,17 @@
     </snapshotRepository>
   </distributionManagement>
   <modules>
-    <module>generated/alfresco-activiti-rest-api</module>
-    <module>generated/alfresco-activiti-deployment-rest-api</module>
-    <module>generated/alfresco-activiti-modeling-rest-api</module>
-    <module>generated/alfresco-activiti-form-rest-api</module>
-    <module>generated/alfresco-activiti-preference-rest-api</module>
-    <module>generated/alfresco-activiti-query-rest-api</module>
-    <module>generated/alfresco-activiti-runtime-rest-api</module>
-    <module>generated/alfresco-activiti-audit-rest-api</module>
-    <module>generated/alfresco-activiti-process-storage-rest-api</module>
-    <module>generated/alfresco-activiti-dmn-simulation-rest-api</module>
-    <module>generated/alfresco-activiti-script-modeling-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-deployment-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-modeling-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-form-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-preference-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-query-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-runtime-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-audit-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-process-storage-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-dmn-simulation-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-activiti-script-modeling-rest-api</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -172,7 +172,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.dmn-simulation.api}</inputSpec>
-                  <output>generated/alfresco-activiti-dmn-simulation-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-dmn-simulation-rest-api</output>
                   <artifactId>alfresco-activiti-dmn-simulation-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.dmn.simulation.handler</apiPackage>
@@ -188,7 +188,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.script-modeling.api}</inputSpec>
-                  <output>generated/alfresco-activiti-script-modeling-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-script-modeling-rest-api</output>
                   <artifactId>alfresco-activiti-script-modeling-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.script.modeling.handler</apiPackage>
@@ -204,7 +204,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.deployment.api}</inputSpec>
-                  <output>generated/alfresco-activiti-deployment-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-deployment-rest-api</output>
                   <artifactId>alfresco-activiti-deployment-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.deployment.handler</apiPackage>
@@ -220,7 +220,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.modeling.api}</inputSpec>
-                  <output>generated/alfresco-activiti-modeling-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-modeling-rest-api</output>
                   <artifactId>alfresco-activiti-modeling-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.modeling.handler</apiPackage>
@@ -236,7 +236,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.preference.api}</inputSpec>
-                  <output>generated/alfresco-activiti-preference-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-preference-rest-api</output>
                   <artifactId>alfresco-activiti-preference-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.preference.handler</apiPackage>
@@ -252,7 +252,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.form.api}</inputSpec>
-                  <output>generated/alfresco-activiti-form-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-form-rest-api</output>
                   <artifactId>alfresco-activiti-form-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.form.handler</apiPackage>
@@ -268,7 +268,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.query.api}</inputSpec>
-                  <output>generated/alfresco-activiti-query-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-query-rest-api</output>
                   <artifactId>alfresco-activiti-query-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.query.handler</apiPackage>
@@ -284,7 +284,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.audit.api}</inputSpec>
-                  <output>generated/alfresco-activiti-audit-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-audit-rest-api</output>
                   <artifactId>alfresco-activiti-audit-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.audit.handler</apiPackage>
@@ -300,7 +300,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.process-storage.api}</inputSpec>
-                  <output>generated/alfresco-activiti-process-storage-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-process-storage-rest-api</output>
                   <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.process.storage.handler</apiPackage>
@@ -316,7 +316,7 @@
                 </goals>
                 <configuration>
                   <inputSpec>${aae.runtime.api}</inputSpec>
-                  <output>generated/alfresco-activiti-runtime-rest-api</output>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-activiti-runtime-rest-api</output>
                   <artifactId>alfresco-activiti-runtime-rest-api</artifactId>
                   <configOptions>
                     <apiPackage>${project.groupId}.activiti.runtime.handler</apiPackage>

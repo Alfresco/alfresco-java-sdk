@@ -36,13 +36,13 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
   <modules>
-    <module>generated/alfresco-core-rest-api</module>
-    <module>generated/alfresco-auth-rest-api</module>
-    <module>generated/alfresco-discovery-rest-api</module>
-    <module>generated/alfresco-governance-core-rest-api</module>
-    <module>generated/alfresco-governance-classification-rest-api</module>
-    <module>generated/alfresco-search-rest-api</module>
-    <module>generated/alfresco-search-sql-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-core-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-auth-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-discovery-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-governance-core-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-governance-classification-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-search-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-search-sql-rest-api</module>
     <module>alfresco-event-gateway-api-client</module>
   </modules>
   <repositories>

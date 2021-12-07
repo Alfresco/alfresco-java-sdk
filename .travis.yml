@@ -6,4 +6,10 @@ before_script:
   - |-
     export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
       -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
-      -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots"
+      -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
+      -Denvironment.host=${ENVIRONMENT_HOST:apadev.envalfresco.com}
+      -Denvironment.application.name=${ENVIRONMENT_APP:simpleapp}
+      -Dags.version=3.5.0-A4
+      -Dacs.version=6.2.0"
+    - (cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib; sh generate.sh)
+    - (cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib; sh generate.sh)
