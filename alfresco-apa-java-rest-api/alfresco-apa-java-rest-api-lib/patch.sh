@@ -26,7 +26,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.md" -exec sed \
   -e 's, *HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");,,g' \
   -e 's, *basicAuth.setUsername("YOUR USERNAME");,,g' \
   -e 's, *basicAuth.setPassword("YOUR PASSWORD");,,g' \
-  -i  {} +
+  -i '' {} +
 
 find "${GENERATED_SOURCE_DIR}" -type f -name 'NodeBody*.java' -exec sed \
   -e 's;private Map<String, String> properties = null;private Map<String, Object> properties = null;g' \
