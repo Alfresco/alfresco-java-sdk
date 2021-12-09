@@ -3,8 +3,6 @@ set -e
 
 GENERATED_SOURCE_DIR=${GENERATED_SOURCE_DIR:-generated}
 
-echo "One"
-
 find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;url = "${processServicesEnterprise_.url:.*}";url = "${process.service.url}", path = "${process.service.path}";g' \
   -e 's;url = "${deploymentReST_.url:}";url = "${alfresco.service.deployment.url}", path = "${alfresco.service.deployment.path}";g' \
@@ -18,9 +16,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;@RequestPart("file") MultipartFile file;@PathVariable("file") MultipartFile file;g' \
   -e 's;ErrorModelNamenamespaceorgSpringframeworkHateoasNameEntityModelOfJobExecution;EntryResponseContentOfJobExecution;g' \
   -e 's@import org\.alfresco\..*\.ResponseEntity;@@g' \
-  -i '' "{}" +
-
-echo "two"
+  -i {} +
 
 find "${GENERATED_SOURCE_DIR}" -type f -name "*.md" -exec sed \
   -e 's, *ApiClient defaultClient = Configuration.getDefaultApiClient();,,g' \
@@ -30,9 +26,7 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.md" -exec sed \
   -e 's, *HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");,,g' \
   -e 's, *basicAuth.setUsername("YOUR USERNAME");,,g' \
   -e 's, *basicAuth.setPassword("YOUR PASSWORD");,,g' \
-  -i '' "{}" +
-
-echo "three"
+  -i  {} +
 
 find "${GENERATED_SOURCE_DIR}" -type f -name 'NodeBody*.java' -exec sed \
   -e 's;private Map<String, String> properties = null;private Map<String, Object> properties = null;g' \
@@ -41,47 +35,35 @@ find "${GENERATED_SOURCE_DIR}" -type f -name 'NodeBody*.java' -exec sed \
   -e 's;public void setProperties(Map<String, String> properties);public void setProperties(Map<String, Object> properties);g' \
   -e 's;this.properties = new HashMap<String, String>();this.properties = new HashMap<String, Object>();g' \
   -e 's;putPropertiesItem(String key, String propertiesItem);putPropertiesItem(String key, Object propertiesItem);g' \
-  -i '' "{}" +
-
-echo "four"
+  -i {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -iname 'ProjectsApi.java' -exec sed \
   -e 's/ResponseEntity<Void> export/byte[] export/' \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
-  -i '' "{}" +
-
-echo "five"
+  -i {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -iname 'ModelsApi.java' -exec sed \
   -e 's/ResponseEntity<Void> getModelContentUsingGET/byte[] getModelContentUsingGET/' \
   -e 's/ResponseEntity<Void> exportModelUsingGET/byte[] exportModelUsingGET/' \
   -e 's/ResponseEntity<String>/byte[]/' \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
-  -i '' "{}" +
-
-echo "six"
+  -i {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -iname 'DescriptorControllerApi.java' -exec sed \
   -e 's/ResponseEntity<Void> export/byte[] export/' \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
-  -i '' "{}" +
-
-echo "seven"
+  -i {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -iname 'FormsApi.java' -exec sed \
   -e '/model.ResponseEntityFormSummaryView/d' \
   -e 's/ResponseEntityFormSummaryView/ResponseEntity/' \
-  -i '' "{}" +
-
-echo "eight"
+  -i {} +
 
 find "${GENERATED_SOURCE_DIR}" -type d \( \
   -name 'gradle' \
   -o -name 'auth' \
   -o -name 'test' \
-  \) -exec rm -rf "{}" +
-
-echo "nine"
+  \) -exec rm -rf {} +
 
 find "${GENERATED_SOURCE_DIR}" -type f \( \
   -name 'ResponseEntity*.java' \
