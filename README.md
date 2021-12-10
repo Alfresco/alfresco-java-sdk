@@ -17,7 +17,7 @@ Alfresco Java SDK consist of the following groups of libraries:
 
 * [alfresco-acs-java-rest-api](alfresco-acs-java-rest-api): Allows applications to consume ACS public
   REST APIs.
-* [alfresco-acs-java-rest-api](alfresco-apa-java-rest-api): Allows applications to consume APA public
+* [alfresco-apa-java-rest-api](alfresco-apa-java-rest-api): Allows applications to consume APA public
   REST APIs.
 * [alfresco-java-event-api](alfresco-java-event-api): Allows applications to react to events
   produced by Alfresco Repository.
