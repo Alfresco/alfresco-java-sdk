@@ -9,7 +9,7 @@ before_script:
       -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
       -Denvironment.host=${ENVIRONMENT_HOST:-apadev.envalfresco.com}
       -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp}
-      -Dags.version=${AGS_VERSION:-3.5.0-A4}
-      -Dacs.version=${ACS_VERSION:-6.2.0}"
+      -Dags.version=${AGS_VERSION:-14.9}
+      -Dacs.version=${ACS_VERSION:-7.1.0.1}"
   - (cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib; sh generate.sh)
   - (cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib; sh generate.sh)
