@@ -54,6 +54,14 @@
       <id>alfresco-private</id>
       <url>https://artifacts.alfresco.com/nexus/content/groups/private</url>
     </repository>
+    <repository>
+      <id>alfresco-internal</id>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-enterprise-releases</url>
+    </repository>
+    <repository>
+      <id>alfresco-internal-snapshots</id>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-enterprise-snapshots</url>
+    </repository>
   </repositories>
   <profiles>
     <profile>
