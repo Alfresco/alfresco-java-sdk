@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-search-rest-api</artifactId>
-    <version>5.1.2</version>
+    <version>5.1.3-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.alfresco:alfresco-search-rest-api:5.1.2"
+compile "org.alfresco:alfresco-search-rest-api:5.1.3-SNAPSHOT"
 ```
 
 ### Others
@@ -48,7 +48,7 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/alfresco-search-rest-api-5.1.2.jar
+* target/alfresco-search-rest-api-5.1.3-SNAPSHOT.jar
 * target/lib/*.jar
 
 ## Documentation for API Endpoints
