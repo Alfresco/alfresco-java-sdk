@@ -3,6 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
     <artifactId>alfresco-apa-java-rest-api</artifactId>
     <groupId>org.alfresco</groupId>
@@ -38,7 +39,6 @@
     <aae.query.api>https://${environment.host}/${environment.application.name}/query/v3/api-docs?group=Query</aae.query.api>
     <aae.runtime.api>https://${environment.host}/${environment.application.name}/rb/v3/api-docs?group=Runtime%20Bundle</aae.runtime.api>
     <aae.audit.api>https://${environment.host}/${environment.application.name}/audit/v3/api-docs?group=Audit</aae.audit.api>
-    <aae.process-storage.api>https://${environment.host}/${environment.application.name}/process-storage/v3/api-docs?group=Process%20Storage</aae.process-storage.api>
     <aae.preference.api>https://${environment.host}/${environment.application.name}/preference/v3/api-docs?group=Preference</aae.preference.api>
   </properties>
   <distributionManagement>
@@ -60,7 +60,6 @@
     <module>generated/alfresco-activiti-query-rest-api</module>
     <module>generated/alfresco-activiti-runtime-rest-api</module>
     <module>generated/alfresco-activiti-audit-rest-api</module>
-    <module>generated/alfresco-activiti-process-storage-rest-api</module>
     <module>generated/alfresco-activiti-dmn-simulation-rest-api</module>
     <module>generated/alfresco-activiti-script-modeling-rest-api</module>
   </modules>
@@ -290,22 +289,6 @@
                     <apiPackage>${project.groupId}.activiti.audit.handler</apiPackage>
                     <modelPackage>${project.groupId}.activiti.audit.model</modelPackage>
                     <invokerPackage>${project.groupId}.activiti.audit</invokerPackage>
-                  </configOptions>
-                </configuration>
-              </execution>
-              <execution>
-                <id>generate-activiti-process-storage-api</id>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-                <configuration>
-                  <inputSpec>${aae.process-storage.api}</inputSpec>
-                  <output>generated/alfresco-activiti-process-storage-rest-api</output>
-                  <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
-                  <configOptions>
-                    <apiPackage>${project.groupId}.activiti.process.storage.handler</apiPackage>
-                    <modelPackage>${project.groupId}.activiti.process.storage.model</modelPackage>
-                    <invokerPackage>${project.groupId}.activiti.process.storage</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>
