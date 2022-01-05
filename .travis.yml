@@ -5,6 +5,7 @@ import:
 jobs:
   include:
     - stage: build
+      name: build application
       workspaces:
         create:
           name: generated-source
@@ -12,6 +13,7 @@ jobs:
             - alfresco-java-sdk/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated
             - alfresco-java-sdk/alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated
     - stage: publish
+      name: publish artifacts
       workspaces:
         use:
           name: generated-source
