@@ -19,8 +19,7 @@ jobs:
       name: publish artifacts
       script: travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS deploy -DskipTests
       workspaces:
-        use:
-          name: generated-source
+        use: generated-source
 before_install:
   - |-
     export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
