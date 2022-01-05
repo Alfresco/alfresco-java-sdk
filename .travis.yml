@@ -13,8 +13,8 @@ jobs:
         create:
           name: generated-source
           paths:
-            - alfresco-java-sdk/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated
-            - alfresco-java-sdk/alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated
+            - alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated
+            - alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated
     - stage: post-test
       name: publish artifacts
       script: travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS deploy -DskipTests
