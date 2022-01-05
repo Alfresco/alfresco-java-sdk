@@ -3,7 +3,7 @@ set -e
 
 GENERATED_SOURCE_DIR=${GENERATED_SOURCE_DIR:-generated}
 
-echo using MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS}"
+echo Genereating ACS Java rest API using MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS}"
 echo "***** GENERATING *****"
 
 mvn -N -P generate clean generate-sources ${MAVEN_CLI_OPTS}
