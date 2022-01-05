@@ -28,3 +28,4 @@ before_install:
   -  if [ "$TRAVIS_JOB_NAME" = "build application" ]; then (cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib; sh generate.sh); fi
 stages:
   - name: publish
+    if: type == pull_request
