@@ -120,7 +120,7 @@
     <maven.compiler.release>${java.release}</maven.compiler.release>
     <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
     <spring-cloud.version>2020.0.3</spring-cloud.version>
-    <swagger-core.version>1.5.20</swagger-core.version>
+    <swagger-core.version>1.6.4</swagger-core.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
   </properties>
   <repositories>
