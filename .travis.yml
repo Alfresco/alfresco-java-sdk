@@ -2,6 +2,21 @@ import:
   - source: Alfresco/alfresco-build-tools:.travis.library.yml@v1.1.2
   - source: Alfresco/alfresco-build-tools:.travis.pre-commit.yml@v1.1.2
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
+jobs:
+  include:
+    - name: build application
+      stage: build
+      workspaces:
+        create:
+          name: generated-source
+          paths:
+            - alfresco-java-sdk/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated
+            - alfresco-java-sdk/alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated
+    - name: publish artifacts
+      stage: publish
+      workspaces:
+        use:
+          name: generated-source
 before_install:
   - |-
     export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
