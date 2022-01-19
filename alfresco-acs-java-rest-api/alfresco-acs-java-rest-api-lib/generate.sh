@@ -12,8 +12,4 @@ echo "***** ADDING LICENSE HEADER *****"
 
 mvn license:format
 
-echo "***** BUILDING *****"
-
-mvn clean install ${MAVEN_CLI_OPTS}
-
 echo "***** all done! *****"
