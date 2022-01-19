@@ -52,11 +52,6 @@
     </dependency>
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-activiti-process-storage-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.alfresco</groupId>
       <artifactId>alfresco-activiti-query-rest-api</artifactId>
       <version>${project.version}</version>
     </dependency>
