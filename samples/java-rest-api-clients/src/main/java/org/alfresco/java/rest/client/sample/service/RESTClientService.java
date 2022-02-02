@@ -68,7 +68,7 @@ public class RESTClientService {
         LOGGER.info(String.format("Starting new process instance with %s definition key", PROCESS_DEFINITION_KEY));
 
         ResponseEntity<EntryResponseContentOfCloudProcessInstance> responseEntity = processInstanceControllerImplApiClient
-            .startProcessUsingPOST1(buildStartProcessPayload(PROCESS_DEFINITION_KEY));
+            .startProcess(buildStartProcessPayload(PROCESS_DEFINITION_KEY));
 
         String processId = responseEntity.getBody().getEntry().getId();
 
@@ -77,7 +77,7 @@ public class RESTClientService {
         LOGGER.info("Fetching task of the created process instance");
 
         ResponseEntity<ListResponseContentOfCloudTask> tasksOfProcessInstance = processInstanceTasksControllerImplApi
-            .getTasksUsingGET(processId, null, null, null);
+            .getTasks(processId, null, null, null);
 
         Optional<EntryResponseContentOfCloudTask> optionalTask = tasksOfProcessInstance
             .getBody()
@@ -97,12 +97,12 @@ public class RESTClientService {
         completeTaskPayload.setPayloadType(CompleteTaskPayload.PayloadTypeEnum.COMPLETETASKPAYLOAD);
         completeTaskPayload.setId(UUID.randomUUID().toString());
 
-        taskControllerImplApi.completeTaskUsingPOST1(taskId, completeTaskPayload);
+        taskControllerImplApi.completeTask(taskId, completeTaskPayload);
 
         LOGGER.info("Task completed and process finished!!");
 
         ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> ListOfAuditRawEvents = auditEventsControllerImplApi
-            .findAllUsingGET1(null,
+            .findAll(null,
             "processInstanceId:" + processId,
             null,
             null);
