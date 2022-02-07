@@ -51,8 +51,8 @@ find ${GENERATED_SOURCE_DIR} -type f -iname 'ProjectsApi.java' -exec sed \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -iname 'ModelsApi.java' -exec sed \
-  -e 's/ResponseEntity<Void> getModelContentUsingGET/byte[] getModelContentUsingGET/' \
-  -e 's/ResponseEntity<Void> exportModelUsingGET/byte[] exportModelUsingGET/' \
+  -e 's/ResponseEntity<Void> getModelContent/byte[] getModelContent/' \
+  -e 's/ResponseEntity<Void> exportModel/byte[] exportModel/' \
   -e 's/ResponseEntity<String>/byte[]/' \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
