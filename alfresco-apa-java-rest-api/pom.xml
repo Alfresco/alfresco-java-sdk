@@ -22,7 +22,7 @@
 
   <properties>
     <spring-cloud.version>2020.0.2</spring-cloud.version>
-    <swagger-core.version>1.5.20</swagger-core.version>
+    <swagger-core.version>1.6.5</swagger-core.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
   </properties>
 
