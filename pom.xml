@@ -122,6 +122,7 @@
     <spring-cloud.version>2020.0.3</spring-cloud.version>
     <swagger-core.version>1.5.20</swagger-core.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
+    <third-party-license-maven-plugin.version>2.0.1.alfresco-1</third-party-license-maven-plugin.version>
   </properties>
   <repositories>
     <repository>
@@ -162,6 +163,11 @@
         <updatePolicy>never</updatePolicy>
       </releases>
     </pluginRepository>
+    <pluginRepository>
+      <id>alfresco-internal-plugin</id>
+      <name>Alfresco Internal Repository</name>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+    </pluginRepository>    
   </pluginRepositories>
 
   <build>
@@ -195,6 +201,29 @@ limitations under the License.]]>
             </mapping>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>${third-party-license-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>third-party-licenses</id>
+              <goals>
+                <goal>add-third-party</goal>
+              </goals>
+              <phase>generate-resources</phase>
+              <configuration>
+                <failOnMissing>true</failOnMissing>
+                <excludedScopes>provided,test</excludedScopes>
+                <excludedGroups>^(org\.alfresco|com\.alfresco|org\.activiti|org\.gytheio).*</excludedGroups>
+                <failIfWarning>false</failIfWarning>
+                <includedLicenses>https://raw.githubusercontent.com/Alfresco/third-party-license-overrides/master/includedLicenses.txt</includedLicenses>
+                <licenseMergesUrl>https://raw.githubusercontent.com/Alfresco/third-party-license-overrides/master/licenseMerges.txt</licenseMergesUrl>
+                <overrideUrl>https://raw.githubusercontent.com/Alfresco/third-party-license-overrides/master/override-THIRD-PARTY.properties</overrideUrl>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>                     
       </plugins>
     </pluginManagement>
     <plugins>
@@ -211,6 +240,10 @@ limitations under the License.]]>
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+       </plugin>
     </plugins>
   </build>
 </project>
