@@ -10,7 +10,7 @@
   </parent>
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
-  <version>5.1.4-SNAPSHOT</version>
+  <version>5.1.4</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Parent</name>
   <description>Parent for Alfresco Java SDK</description>
@@ -167,7 +167,7 @@
       <id>alfresco-internal-plugin</id>
       <name>Alfresco Internal Repository</name>
       <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
-    </pluginRepository>    
+    </pluginRepository>
   </pluginRepositories>
 
   <build>
@@ -223,7 +223,7 @@ limitations under the License.]]>
               </configuration>
             </execution>
           </executions>
-        </plugin>                     
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
