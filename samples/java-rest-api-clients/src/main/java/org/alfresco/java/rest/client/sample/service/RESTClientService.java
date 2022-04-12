@@ -18,7 +18,7 @@ package org.alfresco.java.rest.client.sample.service;
 import org.alfresco.activiti.audit.handler.AuditEventsControllerImplApi;
 import org.alfresco.activiti.audit.model.CloudRuntimeEventModel;
 import org.alfresco.activiti.audit.model.CloudRuntimeEventModel.EventTypeEnum;
-import org.alfresco.activiti.audit.model.EntryResponseContentOfCloudRuntimeEventOfobjectAndstring;
+import org.alfresco.activiti.audit.model.EntryResponseContentCloudRuntimeEventObjectCloudRuntimeEventType;
 import org.alfresco.activiti.audit.model.ListResponseContentOfCloudRuntimeEventOfobjectAndstring;
 import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApiClient;
 import org.alfresco.activiti.runtime.handler.ProcessInstanceTasksControllerImplApi;
@@ -112,7 +112,7 @@ public class RESTClientService {
             .getList()
             .getEntries()
             .stream()
-            .map(EntryResponseContentOfCloudRuntimeEventOfobjectAndstring::getEntry)
+            .map(EntryResponseContentCloudRuntimeEventObjectCloudRuntimeEventType::getEntry)
             .map(CloudRuntimeEventModel::getEventType)
             .filter(eventTypeEnum -> eventTypeEnum.toString().contains("PROCESS") || eventTypeEnum.toString().contains("TASK"))
             .collect(Collectors.toList());
