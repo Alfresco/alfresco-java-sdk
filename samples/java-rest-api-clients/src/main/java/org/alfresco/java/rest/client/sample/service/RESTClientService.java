@@ -19,14 +19,14 @@ import org.alfresco.activiti.audit.handler.AuditEventsControllerImplApi;
 import org.alfresco.activiti.audit.model.CloudRuntimeEventModel;
 import org.alfresco.activiti.audit.model.CloudRuntimeEventModel.EventTypeEnum;
 import org.alfresco.activiti.audit.model.EntryResponseContentCloudRuntimeEventObjectCloudRuntimeEventType;
-import org.alfresco.activiti.audit.model.ListResponseContentOfCloudRuntimeEventOfobjectAndstring;
+import org.alfresco.activiti.audit.model.ListResponseContentCloudRuntimeEventObjectCloudRuntimeEventType;
 import org.alfresco.activiti.runtime.handler.ProcessInstanceControllerImplApiClient;
 import org.alfresco.activiti.runtime.handler.ProcessInstanceTasksControllerImplApi;
 import org.alfresco.activiti.runtime.handler.TaskControllerImplApi;
 import org.alfresco.activiti.runtime.model.CompleteTaskPayload;
-import org.alfresco.activiti.runtime.model.EntryResponseContentOfCloudProcessInstance;
-import org.alfresco.activiti.runtime.model.EntryResponseContentOfCloudTask;
-import org.alfresco.activiti.runtime.model.ListResponseContentOfCloudTask;
+import org.alfresco.activiti.runtime.model.EntryResponseContentCloudProcessInstance;
+import org.alfresco.activiti.runtime.model.EntryResponseContentCloudTask;
+import org.alfresco.activiti.runtime.model.ListResponseContentCloudTask;
 import org.alfresco.activiti.runtime.model.StartProcessPayload;
 import java.util.List;
 import java.util.Optional;
@@ -67,7 +67,7 @@ public class RESTClientService {
 
         LOGGER.info(String.format("Starting new process instance with %s definition key", PROCESS_DEFINITION_KEY));
 
-        ResponseEntity<EntryResponseContentOfCloudProcessInstance> responseEntity = processInstanceControllerImplApiClient
+        ResponseEntity<EntryResponseContentCloudProcessInstance> responseEntity = processInstanceControllerImplApiClient
             .startProcess(buildStartProcessPayload(PROCESS_DEFINITION_KEY));
 
         String processId = responseEntity.getBody().getEntry().getId();
@@ -76,10 +76,10 @@ public class RESTClientService {
 
         LOGGER.info("Fetching task of the created process instance");
 
-        ResponseEntity<ListResponseContentOfCloudTask> tasksOfProcessInstance = processInstanceTasksControllerImplApi
+        ResponseEntity<ListResponseContentCloudTask> tasksOfProcessInstance = processInstanceTasksControllerImplApi
             .getTasks(processId, null, null, null);
 
-        Optional<EntryResponseContentOfCloudTask> optionalTask = tasksOfProcessInstance
+        Optional<EntryResponseContentCloudTask> optionalTask = tasksOfProcessInstance
             .getBody()
             .getList()
             .getEntries()
@@ -101,7 +101,7 @@ public class RESTClientService {
 
         LOGGER.info("Task completed and process finished!!");
 
-        ResponseEntity<ListResponseContentOfCloudRuntimeEventOfobjectAndstring> ListOfAuditRawEvents = auditEventsControllerImplApi
+        ResponseEntity<ListResponseContentCloudRuntimeEventObjectCloudRuntimeEventType> ListOfAuditRawEvents = auditEventsControllerImplApi
             .findAll(null,
             "processInstanceId:" + processId,
             null,
