@@ -24,6 +24,8 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;@RequestPart("file") MultipartFile file;@PathVariable("file") MultipartFile file;g' \
   -e 's;ErrorModelNamenamespaceorgSpringframeworkHateoasNameEntityModelOfJobExecution;EntryResponseContentOfJobExecution;g' \
   -e 's@import org\.alfresco\..*\.ResponseEntity;@@g' \
+  -e 's;value = "FindAndManageDescriptors_";value = "FindAndManageDescriptors";g' \
+  -e 's;value = "alfrescoFindAndManageDescriptors_Api";value = "alfrescoFindAndManageDescriptorsApi";g' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
 find "${GENERATED_SOURCE_DIR}" -type f -name "*.md" -exec sed \
