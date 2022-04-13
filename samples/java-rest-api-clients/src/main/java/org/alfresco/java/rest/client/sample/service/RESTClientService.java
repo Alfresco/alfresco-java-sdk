@@ -32,6 +32,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import org.apache.http.entity.ContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -68,7 +70,7 @@ public class RESTClientService {
         LOGGER.info(String.format("Starting new process instance with %s definition key", PROCESS_DEFINITION_KEY));
 
         ResponseEntity<EntryResponseContentCloudProcessInstance> responseEntity = processInstanceControllerImplApiClient
-            .startProcess(buildStartProcessPayload(PROCESS_DEFINITION_KEY));
+            .startProcess(buildStartProcessPayload(PROCESS_DEFINITION_KEY), ContentType.APPLICATION_JSON.getMimeType());
 
         String processId = responseEntity.getBody().getEntry().getId();
 
@@ -77,7 +79,7 @@ public class RESTClientService {
         LOGGER.info("Fetching task of the created process instance");
 
         ResponseEntity<ListResponseContentCloudTask> tasksOfProcessInstance = processInstanceTasksControllerImplApi
-            .getTasks(processId, null, null, null);
+            .getTasks1(processId, null, null, null);
 
         Optional<EntryResponseContentCloudTask> optionalTask = tasksOfProcessInstance
             .getBody()
@@ -97,13 +99,13 @@ public class RESTClientService {
         completeTaskPayload.setPayloadType(CompleteTaskPayload.PayloadTypeEnum.COMPLETETASKPAYLOAD);
         completeTaskPayload.setId(UUID.randomUUID().toString());
 
-        taskControllerImplApi.completeTask(taskId, completeTaskPayload);
+        taskControllerImplApi.completeTask(taskId, ContentType.APPLICATION_JSON.getMimeType(), completeTaskPayload);
 
         LOGGER.info("Task completed and process finished!!");
 
         ResponseEntity<ListResponseContentCloudRuntimeEventObjectCloudRuntimeEventType> ListOfAuditRawEvents = auditEventsControllerImplApi
-            .findAll(null,
-            "processInstanceId:" + processId,
+            .findAll("processInstanceId:" + processId,
+            null,
             null,
             null);
 

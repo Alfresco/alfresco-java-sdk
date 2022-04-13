@@ -18,6 +18,7 @@
   <developers/>
   <properties>
     <environment.host>your-installed-environment-host</environment.host>
+    <environment.apa.host>your-installed-apa-environment-host</environment.apa.host>
     <environment.application.name>your-deployed-APA-application-name</environment.application.name>
     <spring-boot.version>${project.parent.version}</spring-boot.version>
     <project.build.generatedSourceDirectory>generated</project.build.generatedSourceDirectory>
