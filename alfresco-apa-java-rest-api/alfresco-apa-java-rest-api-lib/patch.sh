@@ -77,6 +77,10 @@ find ${GENERATED_SOURCE_DIR} -type f -iname 'FormsApi.java' -exec sed \
   -e 's/ResponseEntity<String>/ResponseEntity<ResponseEntity>/' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
+find ${GENERATED_SOURCE_DIR} -type f -iname 'PreferenceApi.java' -exec sed \
+  -e 's/ResponseEntity<String>/ResponseEntity<ResponseEntity>/' \
+  -i $EDIT_FILE_IN_PLACE_PARAM {} +
+
 find "${GENERATED_SOURCE_DIR}" -type d \( \
   -name 'gradle' \
   -o -name 'auth' \
