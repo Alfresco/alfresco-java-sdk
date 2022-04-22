@@ -70,7 +70,7 @@ public class RESTClientService {
         LOGGER.info(String.format("Starting new process instance with %s definition key", PROCESS_DEFINITION_KEY));
 
         ResponseEntity<EntryResponseContentCloudProcessInstance> responseEntity = processInstanceControllerImplApiClient
-            .startProcess(buildStartProcessPayload(PROCESS_DEFINITION_KEY), ContentType.APPLICATION_JSON.getMimeType());
+            .startProcess(buildStartProcessPayload(PROCESS_DEFINITION_KEY));
 
         String processId = responseEntity.getBody().getEntry().getId();
 
@@ -99,7 +99,7 @@ public class RESTClientService {
         completeTaskPayload.setPayloadType(CompleteTaskPayload.PayloadTypeEnum.COMPLETETASKPAYLOAD);
         completeTaskPayload.setId(UUID.randomUUID().toString());
 
-        taskControllerImplApi.completeTask(taskId, ContentType.APPLICATION_JSON.getMimeType(), completeTaskPayload);
+        taskControllerImplApi.completeTask(taskId, completeTaskPayload);
 
         LOGGER.info("Task completed and process finished!!");
 
