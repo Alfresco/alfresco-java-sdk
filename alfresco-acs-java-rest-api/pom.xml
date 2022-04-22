@@ -6,7 +6,7 @@
 
   <parent>
     <groupId>org.alfresco</groupId>
-    <version>5.2.0-SNAPSHOT</version>
+    <version>5.1.5-SNAPSHOT</version>
     <artifactId>alfresco-java-sdk</artifactId>
   </parent>
 
