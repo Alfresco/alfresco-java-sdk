@@ -14,6 +14,7 @@ Firstly, you have to set the environment from which to fetch the API definitions
 
 ```console
 MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Denvironment.host=your-installed-environment-host"
+MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Denvironment.apa.host=your-installed-apa-environment-host"
 MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Denvironment.application.name=your-deployed-APA-application-name"
 MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -U"
 export MAVEN_CLI_OPTS
