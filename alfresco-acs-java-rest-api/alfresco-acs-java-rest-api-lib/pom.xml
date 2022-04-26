@@ -28,6 +28,7 @@
     <acs.discovery.api>${project.build.directory}/definitions/alfresco-discovery.yaml</acs.discovery.api>
     <acs.governance-core.api>${project.build.directory}/definitions/gs-core-api.yaml</acs.governance-core.api>
     <acs.governance-classification.api>${project.build.directory}/definitions/gs-classification-api.yaml</acs.governance-classification.api>
+    <acs.model.api>${project.build.directory}/definitions/alfresco-model.yaml</acs.model.api>
     <acs.search.api>${project.build.directory}/definitions/alfresco-search.yaml</acs.search.api>
     <acs.search-sql.api>${project.build.directory}/definitions/alfresco-search-sql.yaml</acs.search-sql.api>
 
@@ -41,6 +42,7 @@
     <module>${project.build.generatedSourceDirectory}/alfresco-discovery-rest-api</module>
     <module>${project.build.generatedSourceDirectory}/alfresco-governance-core-rest-api</module>
     <module>${project.build.generatedSourceDirectory}/alfresco-governance-classification-rest-api</module>
+    <module>${project.build.generatedSourceDirectory}/alfresco-model-rest-api</module>
     <module>${project.build.generatedSourceDirectory}/alfresco-search-rest-api</module>
     <module>${project.build.generatedSourceDirectory}/alfresco-search-sql-rest-api</module>
     <module>alfresco-event-gateway-api-client</module>
@@ -292,6 +294,40 @@
                     <apiPackage>${project.groupId}.governance.classification.handler</apiPackage>
                     <modelPackage>${project.groupId}.governance.classification.model</modelPackage>
                     <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-model-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.model.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-model-rest-api</output>
+                  <artifactId>alfresco-model-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.model.handler</apiPackage>
+                    <modelPackage>${project.groupId}.model.model</modelPackage>
+                    <invokerPackage>${project.groupId}.model</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-model-api</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <inputSpec>${acs.model.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-model-rest-api</output>
+                  <artifactId>alfresco-model-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.model.handler</apiPackage>
+                    <modelPackage>${project.groupId}.model.model</modelPackage>
+                    <invokerPackage>${project.groupId}.model</invokerPackage>
                   </configOptions>
                 </configuration>
               </execution>

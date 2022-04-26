@@ -26,6 +26,7 @@ import org.springframework.context.annotation.PropertySource;
     "org.alfresco.discovery.handler",
     "org.alfresco.governance.core.handler",
     "org.alfresco.governance.classification.handler",
+    "org.alfresco.model.handler",
     "org.alfresco.search.handler",
     "org.alfresco.search.sql.handler"
 })
