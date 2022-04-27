@@ -66,6 +66,10 @@ find ${GENERATED_SOURCE_DIR} -type f -name 'Aspect.java' -exec sed \
   -e '14,49d' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
+find ${GENERATED_SOURCE_DIR} -type f -name 'AuthenticationApiClient.java' -exec sed \
+  -e 's/path = "${content.service.path}"/path = "${authentication.service.path}"/' \
+  -i $EDIT_FILE_IN_PLACE_PARAM {} +
+
 find ${GENERATED_SOURCE_DIR} -type f -name 'SearchApiClient.java' -exec sed \
   -e 's/path = "${content.service.path}"/path = "${search.service.path}"/' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
