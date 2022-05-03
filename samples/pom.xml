@@ -5,9 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.alfresco</groupId>
-    <artifactId>alfresco-java-sdk</artifactId>
-    <version>5.1.5-SNAPSHOT</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.4.2</version>
+    <relativePath/>
   </parent>
 
   <artifactId>alfresco-java-sdk-samples</artifactId>
