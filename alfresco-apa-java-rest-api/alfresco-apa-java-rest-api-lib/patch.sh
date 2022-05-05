@@ -4,7 +4,7 @@ set -e
 GENERATED_SOURCE_DIR=${GENERATED_SOURCE_DIR:-generated}
 case $(uname | tr '[:upper:]' '[:lower:]') in
   darwin*)
-    export EDIT_FILE_IN_PLACE_PARAM="''"
+    export EDIT_FILE_IN_PLACE_PARAM="\'\'"
     ;;
   *)
     export EDIT_FILE_IN_PLACE_PARAM=

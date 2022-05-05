@@ -4,7 +4,7 @@ set -e
 GENERATED_SOURCE_DIR=${GENERATED_SOURCE_DIR:-generated}
 case $(uname | tr '[:upper:]' '[:lower:]') in
   darwin*)
-    export EDIT_FILE_IN_PLACE_PARAM="''"
+    export EDIT_FILE_IN_PLACE_PARAM="\'\'"
     ;;
   *)
     export EDIT_FILE_IN_PLACE_PARAM=
@@ -49,12 +49,21 @@ find "${GENERATED_SOURCE_DIR}" -type f -name 'NodeBody*.java' -exec sed \
   -e 's;putPropertiesItem(String key, String propertiesItem);putPropertiesItem(String key, Object propertiesItem);g' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
-
 find ${GENERATED_SOURCE_DIR} -type f -iname 'ModelsApi.java' -exec sed \
   -e 's/ResponseEntity<Void> getModelContent/byte[] getModelContent/' \
   -e 's/ResponseEntity<Void> exportModel/byte[] exportModel/' \
   -e 's/ResponseEntity<String>/byte[]/' \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
+  -i $EDIT_FILE_IN_PLACE_PARAM {} +
+
+find ${GENERATED_SOURCE_DIR} -type f -name 'Type.java' -exec sed \
+  -e 's/public class Type/public class Type extends AbstractClass/' \
+  -e '14,49d' \
+  -i $EDIT_FILE_IN_PLACE_PARAM {} +
+
+find ${GENERATED_SOURCE_DIR} -type f -name 'Aspect.java' -exec sed \
+  -e 's/public class Aspect/public class Aspect extends AbstractClass/' \
+  -e '14,49d' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -name 'SearchApiClient.java' -exec sed \

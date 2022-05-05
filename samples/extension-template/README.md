@@ -5,8 +5,8 @@ Sample application to demonstrate both event handling and REST API usage within 
 It is a Spring Boot application that makes use of:
 * [Alfresco Java Event API Spring Boot Starter](../../alfresco-java-event-api/README.md#spring-boot-custom-starter)
 to define a sample [```EventHandler```](../../alfresco-java-event-api/alfresco-java-event-api-handling/src/main/java/org/alfresco/event/sdk/handling/handler/EventHandler.java)
-* [Alfresco Java REST API Spring Boot Starter](../../alfresco-java-rest-api)
-  to consume [Alfresco Respository Core API](../../alfresco-java-rest-api/alfresco-java-rest-api-lib/generated/alfresco-core-rest-api)
+* [Alfresco Java ACS REST API Spring Boot Starter](../../alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-spring-boot-starter)
+  to consume Alfresco Repository Core API and Alfresco Repository Model API.
 
 ## Usage
 
