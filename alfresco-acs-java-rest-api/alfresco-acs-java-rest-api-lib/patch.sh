@@ -104,3 +104,5 @@ find "${GENERATED_SOURCE_DIR}" -type f \( \
   -o -name 'build.sbt' \
   -o -name '*ReleasesApi*' \
   \) -delete
+
+cp -r "src/main/resources/sources/." "${GENERATED_SOURCE_DIR}"
