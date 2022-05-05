@@ -22,6 +22,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @EnableFeignClients(basePackages = {
+    "org.alfresco.authentication.handler",
     "org.alfresco.core.handler",
     "org.alfresco.discovery.handler",
     "org.alfresco.governance.core.handler",

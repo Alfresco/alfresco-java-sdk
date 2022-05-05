@@ -146,6 +146,24 @@
             </configuration>
             <executions>
               <execution>
+                <id>generate-auth-api-documentation</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <configuration>
+                  <language>java</language>
+                  <library>resttemplate</library>
+                  <inputSpec>${acs.auth.api}</inputSpec>
+                  <output>${project.build.generatedSourceDirectory}/alfresco-auth-rest-api</output>
+                  <artifactId>alfresco-core-rest-api</artifactId>
+                  <configOptions>
+                    <apiPackage>${project.groupId}.authentication.handler</apiPackage>
+                    <modelPackage>${project.groupId}.authentication.model</modelPackage>
+                    <invokerPackage>${project.groupId}</invokerPackage>
+                  </configOptions>
+                </configuration>
+              </execution>
+              <execution>
                 <id>generate-auth-api</id>
                 <goals>
                   <goal>generate</goal>
@@ -155,8 +173,8 @@
                   <output>${project.build.generatedSourceDirectory}/alfresco-auth-rest-api</output>
                   <artifactId>alfresco-auth-rest-api</artifactId>
                   <configOptions>
-                    <apiPackage>${project.groupId}.auth.handler</apiPackage>
-                    <modelPackage>${project.groupId}.auth.model</modelPackage>
+                    <apiPackage>${project.groupId}.authentication.handler</apiPackage>
+                    <modelPackage>${project.groupId}.authentication.model</modelPackage>
                     <invokerPackage>${project.groupId}</invokerPackage>
                   </configOptions>
                 </configuration>
