@@ -30,5 +30,3 @@ before_install:
       -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp}
       -Dags.version=${AGS_VERSION:-14.9}
       -Dacs.version=${ACS_VERSION:-7.1.0.1}"
-  -  if [ "$TRAVIS_JOB_NAME" = "build application" ]; then (cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib; sh generate.sh); fi
-  -  if [ "$TRAVIS_JOB_NAME" = "build application" ]; then (cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib; sh generate.sh); fi
