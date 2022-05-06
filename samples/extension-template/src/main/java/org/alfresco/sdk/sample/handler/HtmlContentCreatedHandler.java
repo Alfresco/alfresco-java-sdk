@@ -18,6 +18,7 @@ package org.alfresco.sdk.sample.handler;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import org.alfresco.core.handler.NodesApi;
 import org.alfresco.event.sdk.handling.filter.EventFilter;
 import org.alfresco.event.sdk.handling.filter.IsFileFilter;
@@ -72,7 +73,7 @@ public class HtmlContentCreatedHandler implements OnNodeCreatedEventHandler {
             LOGGER.info("Storing content to local folder {}", localStorageFolder);
 
             Path targetFile = Path.of(localStorageFolder, nodeResource.getName());
-            Files.copy(htmlFileInputStream, targetFile);
+            Files.copy(htmlFileInputStream, targetFile, StandardCopyOption.REPLACE_EXISTING);
             htmlFileInputStream.close();
 
         } catch (Exception ex) {
