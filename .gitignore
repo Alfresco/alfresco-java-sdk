@@ -54,6 +54,41 @@ build/
 ### mac OS ###
 .DS_Store
 
-### generated sources ###
-/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/
-/alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/
+### generated sources (keep just the pom files to avoid build issues) ###
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-auth-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-auth-rest-api/pom.xml
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-core-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-core-rest-api/pom.xml
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-discovery-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-discovery-rest-api/pom.xml
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-governance-classification-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-governance-classification-rest-api/pom.xml
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-governance-core-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-governance-core-rest-api/pom.xml
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-model-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-model-rest-api/pom.xml
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-search-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-search-rest-api/pom.xml
+alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-search-sql-rest-api/*
+!/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-search-sql-rest-api/pom.xml
+
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-audit-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-audit-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-deployment-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-deployment-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-dmn-simulation-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-dmn-simulation-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-form-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-form-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-modeling-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-modeling-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-preference-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-preference-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-query-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-query-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-runtime-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-runtime-rest-api/pom.xml
+alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-script-modeling-rest-api/*
+!alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated/alfresco-activiti-script-modeling-rest-api/pom.xml
