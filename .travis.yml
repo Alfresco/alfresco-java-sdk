@@ -1,8 +1,6 @@
 import:
-  - source: Alfresco/alfresco-build-tools:.travis.maven_config.yml@v1.1.2
-  - source: Alfresco/alfresco-build-tools:.travis.java_config.yml@v1.1.2
-  - source: Alfresco/alfresco-build-tools:.travis.common.yml@v1.1.2
-  - source: Alfresco/alfresco-build-tools:.travis.pre-commit.yml@v1.1.2
+  - source: Alfresco/alfresco-build-tools:.travis.java.yml@v1.1.5
+  - source: Alfresco/alfresco-build-tools:.travis.docker_hub_login.yml@v1.1.5
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
 before_install:
   - |-
