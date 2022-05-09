@@ -11,3 +11,4 @@ before_install:
       -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp}
       -Dags.version=${AGS_VERSION:-14.9}
       -Dacs.version=${ACS_VERSION:-7.1.0.1}"
+install: mvn $MAVEN_CLI_OPTS install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
