@@ -1,0 +1,19 @@
+package {{configPackage}};
+
+import org.alfresco.rest.sdk.feign.config.EnableAuthConfiguration;
+import org.springframework.context.annotation.Configuration;
+
+/**
+* Feign client Spring configuration that provides support for different authentication methods. Currently, supported methods are:
+* <ul>
+  *     <li>Basic Authentication</li>
+  *     <li>OAuth2 - Client credentials flow</li>
+  *     <li>OAuth2 - Password flow</li>
+  *     <li>Delegated (external) authentication</li>
+  * </ul>
+*/
+@Configuration
+@EnableAuthConfiguration
+public class ClientConfiguration {
+
+}

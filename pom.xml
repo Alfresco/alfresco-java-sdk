@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.4.2</version>
+    <version>2.5.12</version>
     <relativePath/>
   </parent>
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
-  <version>5.0.1-SNAPSHOT</version>
+  <version>5.1.5-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Parent</name>
   <description>Parent for Alfresco Java SDK</description>
@@ -50,7 +50,9 @@
   </developers>
   <modules>
     <module>alfresco-java-event-api</module>
-    <module>alfresco-java-rest-api</module>
+    <module>alfresco-acs-java-rest-api</module>
+    <module>alfresco-apa-java-rest-api</module>
+    <module>alfresco-java-rest-api-common</module>
     <module>samples</module>
     <module>integration-tests</module>
   </modules>
@@ -68,6 +70,33 @@
     <system>travis-ci</system>
     <url>https://travis-ci.com/${project.scm.organisation}/${project.scm.repository}</url>
   </ciManagement>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-openfeign-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.alfresco</groupId>
+        <artifactId>alfresco-java-rest-api-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <distributionManagement>
     <repository>
@@ -91,8 +120,10 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.release>${java.release}</maven.compiler.release>
     <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
-
+    <spring-cloud.version>2020.0.3</spring-cloud.version>
+    <swagger-core.version>1.5.20</swagger-core.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
+    <third-party-license-maven-plugin.version>2.0.1.alfresco-1</third-party-license-maven-plugin.version>
   </properties>
   <repositories>
     <repository>
@@ -133,6 +164,11 @@
         <updatePolicy>never</updatePolicy>
       </releases>
     </pluginRepository>
+    <pluginRepository>
+      <id>alfresco-internal-plugin</id>
+      <name>Alfresco Internal Repository</name>
+      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+    </pluginRepository>
   </pluginRepositories>
 
   <build>
@@ -166,6 +202,29 @@ limitations under the License.]]>
             </mapping>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>${third-party-license-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>third-party-licenses</id>
+              <goals>
+                <goal>add-third-party</goal>
+              </goals>
+              <phase>generate-resources</phase>
+              <configuration>
+                <failOnMissing>true</failOnMissing>
+                <excludedScopes>provided,test</excludedScopes>
+                <excludedGroups>^(org\.alfresco|com\.alfresco|org\.activiti|org\.gytheio).*</excludedGroups>
+                <failIfWarning>true</failIfWarning>
+                <includedLicenses>https://raw.githubusercontent.com/Alfresco/third-party-license-overrides/master/includedLicenses.txt</includedLicenses>
+                <licenseMergesUrl>https://raw.githubusercontent.com/Alfresco/third-party-license-overrides/master/licenseMerges.txt</licenseMergesUrl>
+                <overrideUrl>https://raw.githubusercontent.com/Alfresco/third-party-license-overrides/master/override-THIRD-PARTY.properties</overrideUrl>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -182,6 +241,10 @@ limitations under the License.]]>
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+       </plugin>
     </plugins>
   </build>
 </project>

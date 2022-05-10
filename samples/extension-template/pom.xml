@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-sdk-samples</artifactId>
-    <version>5.0.1-SNAPSHOT</version>
+    <version>5.1.5-SNAPSHOT</version>
   </parent>
 
   <artifactId>extension-template</artifactId>
@@ -22,7 +22,7 @@
     </dependency>
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-java-rest-api-spring-boot-starter</artifactId>
+      <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

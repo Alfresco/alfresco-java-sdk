@@ -40,7 +40,7 @@ public class RepoEvent<D extends DataAttributes<? extends Resource>> implements 
     private final String datacontenttype;
     private final D data;
 
-    private RepoEvent(final Builder<D> builder) {
+    protected RepoEvent(final Builder<D> builder) {
         this.specversion = builder.specversion;
         this.type = builder.type;
         this.id = builder.id;

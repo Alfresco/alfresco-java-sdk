@@ -18,6 +18,7 @@ package org.alfresco.sdk.sample.handler;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import org.alfresco.core.handler.NodesApi;
 import org.alfresco.event.sdk.handling.filter.EventFilter;
 import org.alfresco.event.sdk.handling.filter.IsFileFilter;
@@ -27,6 +28,8 @@ import org.alfresco.event.sdk.model.v1.model.DataAttributes;
 import org.alfresco.event.sdk.model.v1.model.NodeResource;
 import org.alfresco.event.sdk.model.v1.model.RepoEvent;
 import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.alfresco.model.handler.TypesApi;
+import org.alfresco.model.model.Type;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,10 +46,11 @@ public class HtmlContentCreatedHandler implements OnNodeCreatedEventHandler {
 
     @Autowired
     NodesApi nodesApi;
+    @Autowired
+    TypesApi typesApi;
 
     @Value("${local.storage.folder}")
     String localStorageFolder;
-
 
     @Override
     public void handleEvent(final RepoEvent<DataAttributes<Resource>> repoEvent) {
@@ -54,6 +58,8 @@ public class HtmlContentCreatedHandler implements OnNodeCreatedEventHandler {
         final NodeResource nodeResource = (NodeResource) repoEvent.getData().getResource();
 
         LOGGER.info("An HTML content named {} has been created!", nodeResource.getName());
+
+        logNodeTypeInformation(nodeResource);
 
         try {
 
@@ -67,7 +73,7 @@ public class HtmlContentCreatedHandler implements OnNodeCreatedEventHandler {
             LOGGER.info("Storing content to local folder {}", localStorageFolder);
 
             Path targetFile = Path.of(localStorageFolder, nodeResource.getName());
-            Files.copy(htmlFileInputStream, targetFile);
+            Files.copy(htmlFileInputStream, targetFile, StandardCopyOption.REPLACE_EXISTING);
             htmlFileInputStream.close();
 
         } catch (Exception ex) {
@@ -87,5 +93,18 @@ public class HtmlContentCreatedHandler implements OnNodeCreatedEventHandler {
     public EventFilter getEventFilter() {
         return IsFileFilter.get()
             .and(MimeTypeFilter.of("text/html"));
+    }
+
+    private void logNodeTypeInformation(final NodeResource nodeResource) {
+        String nodeType = nodesApi.getNode(nodeResource.getId(), null, null, null)
+            .getBody()
+            .getEntry()
+            .getNodeType();
+
+        Type type = typesApi.getType(nodeType)
+            .getBody()
+            .getEntry();
+
+        LOGGER.info("The type of the content is {} from the model {}", type.getDescription(), type.getModel().getDescription());
     }
 }
