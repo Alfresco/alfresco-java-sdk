@@ -94,6 +94,11 @@
   <profiles>
     <profile>
       <id>generate</id>
+      <activation>
+        <property>
+          <name>!skip.generation</name>
+        </property>
+      </activation>
       <build>
         <resources>
           <resource>
@@ -323,8 +328,34 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <executable>patch.sh</executable>
+                  <executable>${project.basedir}/patch.sh</executable>
                 </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.mycila</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>add-license-header</id>
+                <phase>generate-sources</phase>
+                <goals>
+                  <goal>format</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.mycila</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>validate-license</id>
+                <phase>process-sources</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
               </execution>
             </executions>
           </plugin>

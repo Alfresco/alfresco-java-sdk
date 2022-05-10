@@ -1,25 +1,6 @@
 import:
-  - source: Alfresco/alfresco-build-tools:.travis.maven_config.yml@v1.1.2
-  - source: Alfresco/alfresco-build-tools:.travis.java_config.yml@v1.1.2
-  - source: Alfresco/alfresco-build-tools:.travis.common.yml@v1.1.2
-  - source: Alfresco/alfresco-build-tools:.travis.pre-commit.yml@v1.1.2
+  - source: Alfresco/alfresco-build-tools:.travis.java.yml@v1.1.5
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
-jobs:
-  include:
-    - stage: build
-      name: build application
-      script: travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS verify -Dlogging.root.level=off -Dspring.main.banner-mode=off
-      workspaces:
-        create:
-          name: generated-source
-          paths:
-            - alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated
-            - alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generated
-    - stage: publish
-      name: publish artifacts
-      script: travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS deploy -DskipTests
-      workspaces:
-        use: generated-source
 before_install:
   - |-
     export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
@@ -30,5 +11,4 @@ before_install:
       -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp}
       -Dags.version=${AGS_VERSION:-14.9}
       -Dacs.version=${ACS_VERSION:-7.1.0.1}"
-  -  if [ "$TRAVIS_JOB_NAME" = "build application" ]; then (cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib; sh generate.sh); fi
-  -  if [ "$TRAVIS_JOB_NAME" = "build application" ]; then (cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib; sh generate.sh); fi
+install: mvn $MAVEN_CLI_OPTS install -DskipTests=true -Dmaven.javadoc.skip=true -B -V

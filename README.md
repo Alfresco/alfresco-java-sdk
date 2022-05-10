@@ -324,3 +324,31 @@ alfresco.event.gateway.publication.jms.broker.my-broker.username=admin
 alfresco.event.gateway.publication.jms.broker.my-broker.password=my-secret
 ```
 More Information: [Configuring Alfresco Event Gateway](https://www.github.com/Alfresco/alfresco-event-gateway)
+
+## How to build the SDK project
+
+### Pre-Requisites
+
+* Java version 11 or higher
+* Maven version 3.3 or higher
+* An APA environment with a deployed application from which to fetch the API definitions
+
+### Build command
+
+Simply run the next command:
+
+```console
+mvn clean install -Denvironment.host=your-installed-environment-host -Denvironment.apa.host=your-installed-apa-environment-host -Denvironment.application.name=your-deployed-APA-application-name
+```
+
+The previous command will generate the source code for the (ACS and APA) REST API clients first and then it will compile 
+all the modules and run the corresponding unit and integration tests.
+
+If you want to skip the generation of the REST API clients code, you can do it sending the maven property `skip.generation`:
+
+```console
+mvn clean install -Dskip.generation
+```
+
+Remember that you need to build the project at least once without skipping the generation step to be able to compile all the code properly. 
+From that point, you can skip the generation step if don't need it.

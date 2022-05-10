@@ -8,7 +8,7 @@ This API has been generated using [Swagger Codegen](https://swagger.io/tools/swa
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
-## Regenerate & Build
+## Build
 
 Firstly, you have to set the environment from which to fetch the API definitions via Maven properties in the following way:
 
@@ -20,10 +20,10 @@ MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -U"
 export MAVEN_CLI_OPTS
 ```
 
-Then run the following sh script:
+Then run the following command:
 
 ```console
-./generate.sh
+mvn clean install
 ```
 
 ### Build the main pom.xml before release the lib
