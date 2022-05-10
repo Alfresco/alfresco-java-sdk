@@ -343,3 +343,12 @@ mvn clean install -Denvironment.host=your-installed-environment-host -Denvironme
 
 The previous command will generate the source code for the (ACS and APA) REST API clients first and then it will compile 
 all the modules and run the corresponding unit and integration tests.
+
+If you want to skip the generation of the REST API clients code, you can do it sending the maven property `skip.generation`:
+
+```console
+mvn clean install -Dskip.generation
+```
+
+Remember that you need to build the project at least once without skipping the generation step to be able to compile all the code properly. 
+From that point, you can skip the generation step if don't need it.
