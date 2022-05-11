@@ -1,10 +1,7 @@
 import:
   - source: Alfresco/alfresco-build-tools:.travis.java.yml@v1.1.5
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
-  - source: Alfresco/alfresco-build-tools:.travis.docker_hub_login.yml@v1.1.1
-
 before_install:
-  - docker --version
   - |-
     export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
       -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
