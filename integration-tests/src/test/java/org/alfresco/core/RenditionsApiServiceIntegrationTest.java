@@ -16,45 +16,30 @@
 package org.alfresco.core;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.awaitility.Awaitility.await;
 
-import java.io.File;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+import org.alfresco.AbstractSiteBasedIntegrationTest;
 import org.alfresco.core.handler.NodesApiClient;
 import org.alfresco.core.handler.RenditionsApiClient;
+import org.alfresco.core.model.Node;
 import org.alfresco.core.model.NodeBodyCreate;
 import org.alfresco.core.model.NodeEntry;
 import org.alfresco.core.model.RenditionBodyCreate;
 import org.alfresco.core.model.RenditionEntry;
 import org.alfresco.core.model.RenditionPaging;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.testcontainers.containers.DockerComposeContainer;
-import org.testcontainers.containers.wait.strategy.Wait;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import util.Constants.NodeIds;
 import util.Constants.NodeTypes;
-import util.Constants.TestContainers;
-import util.Constants.Timeouts;
 import util.TestUtils;
 
-@Testcontainers
+/**
+ * Integration tests for {@link RenditionsApiClient}.
+ */
 @SpringBootTest
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class RenditionsApiServiceIntegrationTest {
+public class RenditionsApiServiceIntegrationTest extends AbstractSiteBasedIntegrationTest {
 
-    @Container
-    public static DockerComposeContainer compose = new DockerComposeContainer(new File("src/test/resources/docker-compose.yml"))
-        .withLocalCompose(true)
-        .withExposedService(TestContainers.SERVICE_NAME, TestContainers.SERVICE_PORT,
-            Wait.forListeningPort().withStartupTimeout(Duration.ofSeconds(TestContainers.TIMEOUT_DURATION)));
+    public static final String DOCLIB = "doclib";
 
     @Autowired
     private RenditionsApiClient renditionsApiClient;
@@ -62,47 +47,36 @@ public class RenditionsApiServiceIntegrationTest {
     @Autowired
     private NodesApiClient nodesApiClient;
 
-    @BeforeAll
-    public void setUp() {
-        await()
-            .atMost(Timeouts.TWO_MINUTES_IN_MILLIS, TimeUnit.MILLISECONDS)
-            .pollDelay(Timeouts.POLL_DELAY_IN_MILLIS, TimeUnit.MILLISECONDS)
-            .untilAsserted(() ->
-                assertThat(nodesApiClient
-                    .getNode(NodeIds.MY_NODE, null, null, null)
-                    .getStatusCode()).isEqualTo(HttpStatus.OK));
-    }
-
     @Test
     void should_createRenditionAndGetRendition() {
-        NodeBodyCreate nodeBody = new NodeBodyCreate();
-        String nodeName = TestUtils.getRandomNodeName();
-        nodeBody.setName(nodeName + ".txt");
-        nodeBody.setNodeType("cm:content");
-        RenditionBodyCreate renditionBodyCreate = new RenditionBodyCreate();
-        renditionBodyCreate.setId("doclib");
+        Node testNode = createTestNode();
 
-        ResponseEntity<NodeEntry> createNodeResponse = nodesApiClient.createNode(NodeIds.MY_NODE, nodeBody, null, null, null, null, null);
-        renditionsApiClient.createRendition(createNodeResponse.getBody().getEntry().getId(), renditionBodyCreate);
-        ResponseEntity<RenditionEntry> getRenditionResponse = renditionsApiClient
-            .getRendition(createNodeResponse.getBody().getEntry().getId(), "doclib");
+        RenditionBodyCreate renditionBodyCreate = new RenditionBodyCreate();
+        renditionBodyCreate.setId(DOCLIB);
+        renditionsApiClient.createRendition(testNode.getId(), renditionBodyCreate);
+        ResponseEntity<RenditionEntry> getRenditionResponse = renditionsApiClient.getRendition(testNode.getId(), "doclib");
 
         assertThat(getRenditionResponse.getBody().getEntry().getId()).isEqualTo("doclib");
     }
 
     @Test
     void should_listRenditions() {
+        Node testNode = createTestNode();
+
+        RenditionBodyCreate renditionBodyCreate = new RenditionBodyCreate();
+        renditionBodyCreate.setId(DOCLIB);
+        renditionsApiClient.createRendition(testNode.getId(), renditionBodyCreate);
+        ResponseEntity<RenditionPaging> listRenditionsResponse = renditionsApiClient.listRenditions(testNode.getId(), null);
+
+        assertThat(listRenditionsResponse.getBody().getList().getEntries()).isNotEmpty();
+    }
+
+    private Node createTestNode() {
         NodeBodyCreate nodeBody = new NodeBodyCreate();
         String nodeName = TestUtils.getRandomNodeName();
         nodeBody.setName(nodeName + ".txt");
         nodeBody.setNodeType(NodeTypes.FILE);
-        RenditionBodyCreate renditionBodyCreate = new RenditionBodyCreate();
-        renditionBodyCreate.setId("doclib");
-
-        ResponseEntity<NodeEntry> createNodeResponse = nodesApiClient.createNode(NodeIds.MY_NODE, nodeBody, null, null, null, null, null);
-        renditionsApiClient.createRendition(createNodeResponse.getBody().getEntry().getId(), renditionBodyCreate);
-        ResponseEntity<RenditionPaging> listRenditionsResponse = renditionsApiClient.listRenditions(createNodeResponse.getBody().getEntry().getId(), null);
-
-        assertThat(listRenditionsResponse.getBody().getList().getEntries()).isNotEmpty();
+        ResponseEntity<NodeEntry> createNodeResponse = nodesApiClient.createNode(testSiteDocumentLibraryId, nodeBody, null, null, null, null, null);
+        return createNodeResponse.getBody().getEntry();
     }
 }

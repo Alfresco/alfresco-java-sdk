@@ -16,61 +16,28 @@
 package org.alfresco.core;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.awaitility.Awaitility.await;
 
-import java.io.File;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-import org.alfresco.core.handler.NodesApiClient;
+import org.alfresco.AbstractSiteBasedIntegrationTest;
 import org.alfresco.core.handler.QueriesApiClient;
 import org.alfresco.core.handler.SitesApiClient;
 import org.alfresco.core.model.PersonPaging;
 import org.alfresco.core.model.SitePaging;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.testcontainers.containers.DockerComposeContainer;
-import org.testcontainers.containers.wait.strategy.Wait;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import util.Constants.NodeIds;
-import util.Constants.TestContainers;
-import util.Constants.Timeouts;
 
-@Testcontainers
+/**
+ * Integration tests for {@link QueriesApiClient}.
+ */
 @SpringBootTest
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class QueriesApiServiceIntegrationTest {
-
-    @Container
-    public static DockerComposeContainer compose = new DockerComposeContainer(new File("src/test/resources/docker-compose.yml"))
-        .withLocalCompose(true)
-        .withExposedService(TestContainers.SERVICE_NAME, TestContainers.SERVICE_PORT,
-            Wait.forListeningPort().withStartupTimeout(Duration.ofSeconds(TestContainers.TIMEOUT_DURATION)));
+public class QueriesApiServiceIntegrationTest extends AbstractSiteBasedIntegrationTest {
 
     @Autowired
     private QueriesApiClient queriesApiClient;
 
     @Autowired
-    private NodesApiClient nodesApiClient;
-
-    @Autowired
     private SitesApiClient sitesApiClient;
-
-    @BeforeAll
-    public void setUp() {
-        await()
-            .atMost(Timeouts.TWO_MINUTES_IN_MILLIS, TimeUnit.MILLISECONDS)
-            .pollDelay(Timeouts.POLL_DELAY_IN_MILLIS, TimeUnit.MILLISECONDS)
-            .untilAsserted(() ->
-                assertThat(nodesApiClient
-                    .getNode(NodeIds.MY_NODE, null, null, null)
-                    .getStatusCode()).isEqualTo(HttpStatus.OK));
-    }
 
     @Test
     void should_findPeople() {

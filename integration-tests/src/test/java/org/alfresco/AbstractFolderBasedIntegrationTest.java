@@ -13,21 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package util;
+package org.alfresco;
+
+import util.Constants.NodeTypes;
 
 /**
- * Test constants utility class.
+ * Test scenario that creates a folder node before the execution.
  */
-public class Constants {
+public abstract class AbstractFolderBasedIntegrationTest extends AbstractNodeBasedIntegrationTest {
 
-    public static class NodeTypes {
-
-        public static String FOLDER = "cm:folder";
-        public static String FILE = "cm:content";
-    }
-
-    public static class PersonIds {
-
-        public static String CURRENT_USER = "-me-";
+    protected String getTestNodeType() {
+        return NodeTypes.FOLDER;
     }
 }

@@ -15,15 +15,26 @@
  */
 package util;
 
-import org.testcontainers.shaded.org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 
+/**
+ * Utility class for testing.
+ */
 public class TestUtils {
 
     public static String getRandomSiteName() {
-        return "test-site-" + RandomStringUtils.randomNumeric(8);
+        return "java-sdk-test-site-" + RandomStringUtils.randomNumeric(8);
+    }
+
+    public static String getRandomGroupName() {
+        return "java-sdk-test-group-" + RandomStringUtils.randomNumeric(8);
+    }
+
+    public static String getRandomTagName() {
+        return "java-sdk-test-tag-" + RandomStringUtils.randomNumeric(8);
     }
 
     public static String getRandomNodeName() {
-        return "test-node-" + RandomStringUtils.randomNumeric(8);
+        return "java-sdk-test-node-" + RandomStringUtils.randomNumeric(8);
     }
 }
