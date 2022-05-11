@@ -29,6 +29,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
+import util.Constants.PersonIds;
 import util.TestUtils;
 
 /**
@@ -60,7 +61,7 @@ public class SitesApiServiceIntegrationTest {
         siteBodyCreate.setTitle(TestUtils.getRandomSiteName());
         SiteMembershipBodyCreate siteMembershipBodyCreate = new SiteMembershipBodyCreate();
         siteMembershipBodyCreate.setRole(RoleEnum.SITEMANAGER);
-        siteMembershipBodyCreate.setId("abeecher");
+        siteMembershipBodyCreate.setId(PersonIds.EXISTING_TEST_USER);
 
         ResponseEntity<SiteEntry> createSiteResponse = sitesApiClient.createSite(siteBodyCreate, null, null, null);
         ResponseEntity<SiteMemberEntry> createSiteMembershipResponse = sitesApiClient

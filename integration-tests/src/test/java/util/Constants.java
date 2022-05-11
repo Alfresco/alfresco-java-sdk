@@ -29,5 +29,6 @@ public class Constants {
     public static class PersonIds {
 
         public static String CURRENT_USER = "-me-";
+        public static String EXISTING_TEST_USER = "abeecher";
     }
 }

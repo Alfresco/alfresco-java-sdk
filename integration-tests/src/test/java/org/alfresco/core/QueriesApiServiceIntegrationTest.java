@@ -26,6 +26,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
+import util.Constants.PersonIds;
 
 /**
  * Integration tests for {@link QueriesApiClient}.
@@ -41,10 +42,10 @@ public class QueriesApiServiceIntegrationTest extends AbstractSiteBasedIntegrati
 
     @Test
     void should_findPeople() {
-        ResponseEntity<PersonPaging> findPeopleResponse = queriesApiClient.findPeople("admin", null, null, null, null);
+        ResponseEntity<PersonPaging> findPeopleResponse = queriesApiClient.findPeople(PersonIds.EXISTING_TEST_USER, null, null, null, null);
 
         assertThat(findPeopleResponse.getBody().getList().getEntries()).isNotEmpty();
-        assertThat(findPeopleResponse.getBody().getList().getEntries().get(0).getEntry().getId()).isEqualTo("admin");
+        assertThat(findPeopleResponse.getBody().getList().getEntries().get(0).getEntry().getId()).isEqualTo(PersonIds.EXISTING_TEST_USER);
     }
 
     @Test
