@@ -85,6 +85,7 @@ public class CommentsApiServiceIntegrationTest extends AbstractFolderBasedIntegr
 
     private void ensureCommentCreation() {
         await()
+            .atLeast(1_000, TimeUnit.MILLISECONDS)
             .atMost(10_000, TimeUnit.MILLISECONDS)
             .pollDelay(2_000, TimeUnit.MILLISECONDS)
             .untilAsserted(() ->
