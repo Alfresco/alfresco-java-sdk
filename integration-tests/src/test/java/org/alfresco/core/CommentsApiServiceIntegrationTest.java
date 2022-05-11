@@ -16,7 +16,9 @@
 package org.alfresco.core;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.awaitility.Awaitility.await;
 
+import java.util.concurrent.TimeUnit;
 import org.alfresco.AbstractFolderBasedIntegrationTest;
 import org.alfresco.core.handler.CommentsApiClient;
 import org.alfresco.core.model.CommentBody;
@@ -44,6 +46,7 @@ public class CommentsApiServiceIntegrationTest extends AbstractFolderBasedIntegr
         commentBody.setContent(TEST_COMMENT);
 
         ResponseEntity<CommentEntry> createCommentResponse = commentsApiClient.createComment(testNode.getId(), commentBody, null);
+        ensureCommentCreation();
         ResponseEntity<CommentPaging> listCommentsResponse = commentsApiClient.listComments(testNode.getId(), null, null, null);
 
         assertThat(createCommentResponse.getBody()).isNotNull();
@@ -60,6 +63,7 @@ public class CommentsApiServiceIntegrationTest extends AbstractFolderBasedIntegr
         updateCommentBody.setContent("Updated comment");
 
         ResponseEntity<CommentEntry> createCommentResponse = commentsApiClient.createComment(testNode.getId(), commentBody, null);
+        ensureCommentCreation();
         ResponseEntity<CommentEntry> updateCommentResponse = commentsApiClient
             .updateComment(testNode.getId(), createCommentResponse.getBody().getEntry().getId(), updateCommentBody, null);
 
@@ -72,9 +76,20 @@ public class CommentsApiServiceIntegrationTest extends AbstractFolderBasedIntegr
         commentBody.setContent(TEST_COMMENT);
 
         ResponseEntity<CommentEntry> createCommentResponse = commentsApiClient.createComment(testNode.getId(), commentBody, null);
+        ensureCommentCreation();
         commentsApiClient.deleteComment(testNode.getId(), createCommentResponse.getBody().getEntry().getId());
 
         assertThat(commentsApiClient.listComments(testNode.getId(), null, null, null).getBody().getList().getEntries().isEmpty())
             .isTrue();
+    }
+
+    private void ensureCommentCreation() {
+        await()
+            .atMost(10_000, TimeUnit.MILLISECONDS)
+            .pollDelay(2_000, TimeUnit.MILLISECONDS)
+            .untilAsserted(() ->
+                assertThat(commentsApiClient.listComments(testNode.getId(), null, null, null)
+                    .getBody().getList().getPagination().getTotalItems())
+                    .isEqualTo(1));
     }
 }
