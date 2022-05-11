@@ -31,4 +31,9 @@ public class Constants {
         public static String CURRENT_USER = "-me-";
         public static String EXISTING_TEST_USER = "abeecher";
     }
+
+    public static class SiteIds {
+
+        public static String EXISTING_TEST_SITE = "swsdp";
+    }
 }

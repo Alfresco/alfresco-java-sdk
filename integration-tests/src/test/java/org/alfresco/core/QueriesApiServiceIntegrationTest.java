@@ -27,6 +27,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import util.Constants.PersonIds;
+import util.Constants.SiteIds;
 
 /**
  * Integration tests for {@link QueriesApiClient}.
@@ -50,12 +51,9 @@ public class QueriesApiServiceIntegrationTest extends AbstractSiteBasedIntegrati
 
     @Test
     void should_findSites() {
-        ResponseEntity<SitePaging> listSitesResponse = sitesApiClient.listSites(null, null, null, null, null, null);
-        ResponseEntity<SitePaging> findSitesResponse = queriesApiClient
-            .findSites(listSitesResponse.getBody().getList().getEntries().get(0).getEntry().getTitle(), null, null, null, null);
+        ResponseEntity<SitePaging> findSitesResponse = queriesApiClient.findSites(SiteIds.EXISTING_TEST_SITE, null, null, null, null);
 
         assertThat(findSitesResponse.getBody().getList().getEntries()).isNotEmpty();
-        assertThat(findSitesResponse.getBody().getList().getEntries().get(0).getEntry().getTitle())
-            .isEqualTo(listSitesResponse.getBody().getList().getEntries().get(0).getEntry().getTitle());
+        assertThat(findSitesResponse.getBody().getList().getEntries().get(0).getEntry().getId()).isEqualTo(SiteIds.EXISTING_TEST_SITE);
     }
 }
