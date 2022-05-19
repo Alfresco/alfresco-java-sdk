@@ -79,7 +79,7 @@ public class RESTClientService {
         LOGGER.info("Fetching task of the created process instance");
 
         ResponseEntity<ListResponseContentCloudTask> tasksOfProcessInstance = processInstanceTasksControllerImplApi
-            .getTasks1(processId, null, null, null);
+            .getTasks(processId, null, null, null);
 
         Optional<EntryResponseContentCloudTask> optionalTask = tasksOfProcessInstance
             .getBody()
