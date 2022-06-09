@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-event-gateway-api-client</artifactId>
-    <version>5.2.0</version>
+    <version>5.2.1-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -94,12 +94,12 @@ All URIs are relative to */v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SubscriptionsApi* | [**createSubscription**](docs/SubscriptionsApi.md#createSubscription) | **POST** /subscriptions | 
-*SubscriptionsApi* | [**getSubscription**](docs/SubscriptionsApi.md#getSubscription) | **GET** /subscriptions/{id} | 
-*SubscriptionsApi* | [**partiallyUpdateSubscription**](docs/SubscriptionsApi.md#partiallyUpdateSubscription) | **PATCH** /subscriptions/{id} | 
+*SubscriptionsApi* | [**createSubscription**](docs/SubscriptionsApi.md#createSubscription) | **POST** /subscriptions |
+*SubscriptionsApi* | [**getSubscription**](docs/SubscriptionsApi.md#getSubscription) | **GET** /subscriptions/{id} |
+*SubscriptionsApi* | [**partiallyUpdateSubscription**](docs/SubscriptionsApi.md#partiallyUpdateSubscription) | **PATCH** /subscriptions/{id} |
 
 ## Documentation for Models
 
- - [Filter](docs/Filter.md)
- - [Subscription](docs/Subscription.md)
+- [Filter](docs/Filter.md)
+- [Subscription](docs/Subscription.md)
 
