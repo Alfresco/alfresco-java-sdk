@@ -63,21 +63,21 @@ Then, add the dependency on the desired starter(s)
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
-    <version>5.1.5-SNAPSHOT</version>
+    <version>5.1.5</version>
   </dependency>
 
   <!-- APA Java REST APIs -->
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-apa-java-rest-api-spring-boot-starter</artifactId>
-    <version>5.1.5-SNAPSHOT</version>
+    <version>5.1.5</version>
   </dependency>
   
   <!-- Java Event API -->
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-    <version>5.1.5-SNAPSHOT</version>
+    <version>5.1.5</version>
   </dependency>
 </dependencies>
 ```
@@ -97,9 +97,9 @@ repositories {
 Then, add the dependency on the desired starter(s)
 
 ```groovy
-compile "org.alfresco:alfresco-acs-java-rest-api-spring-boot-starter:5.1.5-SNAPSHOT"
-compile "org.alfresco:alfresco-apa-java-rest-api-spring-boot-starter:5.1.5-SNAPSHOT"
-compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.1.5-SNAPSHOT"
+compile "org.alfresco:alfresco-acs-java-rest-api-spring-boot-starter:5.1.5"
+compile "org.alfresco:alfresco-apa-java-rest-api-spring-boot-starter:5.1.5"
+compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.1.5"
 ```
 
 #### 3. Configure Event API
@@ -251,7 +251,8 @@ at [alfresco-java-rest-api](alfresco-java-rest-api).
 
 Alfresco Java SDK is now compatible with [Alfresco Event Gateway](https://www.github.com/Alfresco/alfresco-event-gateway).
 
-Using [Alfresco Event Gateway REST API](alfresco-java-rest-api/alfresco-java-rest-api-lib/alfresco-event-gateway-api), extensions can manage the lifecycle of an event subscription.
+Using [Alfresco Event Gateway REST API](alfresco-java-rest-api/alfresco-java-rest-api-lib/alfresco-event-gateway-api), extensions can manage the lifecycle of an
+event subscription.
 
 For example, an out-of-process extension may create a subscription to receive certain types of events in a specific topic of an ActiveMQ broker.
 
@@ -310,6 +311,7 @@ spring.jms.cache.enabled=false
 
 alfresco.events.topicName=topic:sample-topic
 ```
+
 More Information: [Configuring out-of-process extensions](alfresco-java-event-api)
 
 ##### Configuring a specific ActiveMQ broker for an out-of-process extension - (Alfresco Event Gateway):
@@ -323,4 +325,5 @@ alfresco.event.gateway.publication.jms.broker.my-broker.broker-url=tcp://my-brok
 alfresco.event.gateway.publication.jms.broker.my-broker.username=admin
 alfresco.event.gateway.publication.jms.broker.my-broker.password=my-secret
 ```
+
 More Information: [Configuring Alfresco Event Gateway](https://www.github.com/Alfresco/alfresco-event-gateway)
