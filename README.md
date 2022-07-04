@@ -18,7 +18,7 @@ servers of version 7.x and above are supported.
 modules that run in the same JVM as Alfresco Repository or Share. This is still the default
 extension approach for certain use cases (e.g. Content modelling).
 
-Alfresco Java SDK 5.0.0 is not a continuation of 4.x. Instead, it is an additional SDK that allows
+Alfresco Java SDK 5.0 is not a continuation of 4.x. Instead, it is an additional SDK that allows
 developers to create out-of-process extensions. These applications run separately, consuming public
 APIs exposed by Alfresco Repository.
 
@@ -82,14 +82,14 @@ Then, add the dependency on the desired starter(s)
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-rest-api-spring-boot-starter</artifactId>
-    <version>5.0.0</version>
+    <version>5.0.5-SNAPSHOT</version>
   </dependency>
 
   <!-- Java Event API -->
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-    <version>5.0.0</version>
+    <version>5.0.5-SNAPSHOT</version>
   </dependency>
 </dependencies>
 ```
@@ -109,8 +109,8 @@ repositories {
 Then, add the dependency on the desired starter(s)
 
 ```groovy
-compile "org.alfresco:alfresco-java-rest-api-spring-boot-starter:5.0.0"
-compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.0.0"
+compile "org.alfresco:alfresco-java-rest-api-spring-boot-starter:5.0.5-SNAPSHOT"
+compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.0.5-SNAPSHOT"
 ```
 
 #### 3. Configure Event API
