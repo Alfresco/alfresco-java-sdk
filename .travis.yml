@@ -1,6 +1,9 @@
 import:
   - source: Alfresco/alfresco-build-tools:.travis.java.yml@v1.1.5
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
+branches:
+  only:
+    - release/5.0.N
 before_script:
   - |-
     export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
