@@ -53,3 +53,5 @@ build/
 
 ### mac OS ###
 .DS_Store
+
+generated/
