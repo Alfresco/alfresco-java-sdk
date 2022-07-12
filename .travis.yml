@@ -4,6 +4,9 @@ import:
   - source: Alfresco/alfresco-build-tools:.travis.common.yml@v1.1.2
   - source: Alfresco/alfresco-build-tools:.travis.pre-commit.yml@v1.1.2
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
+branches:
+  only:
+    - release/5.1.N
 jobs:
   include:
     - stage: build
