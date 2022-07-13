@@ -33,7 +33,7 @@
     <!-- AAE INFRASTRUCTURE -->
     <aae.deployment.api>https://${environment.apa.host}/deployment-service/v3/api-docs?group=Deployment%20Service</aae.deployment.api>
     <aae.modeling.api>https://${environment.apa.host}/modeling-service/v3/api-docs?group=Modeling</aae.modeling.api>
-    <aae.dmn-simulation.api>https://apadev-apa.envalfresco.com/dmn-service/v3/api-docs?group=DMN%20Simulation</aae.dmn-simulation.api>
+    <aae.dmn-simulation.api>https://${environment.apa.host}/dmn-service/v3/api-docs?group=DMN%20Simulation</aae.dmn-simulation.api>
     <aae.script-modeling.api>https://${environment.apa.host}/script-service/v3/api-docs?group=Script%20Runtime</aae.script-modeling.api>
     <!-- AAE APPLICATION -->
     <aae.form.api>https://${environment.apa.host}/${environment.application.name}/form/v3/api-docs?group=Form</aae.form.api>
