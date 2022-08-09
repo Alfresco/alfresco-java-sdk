@@ -31,16 +31,16 @@
     <!-- APS -->
     <aps.api>https://${environment.host}/activiti-app/v3/api-docs?group=enterprise</aps.api>
     <!-- AAE INFRASTRUCTURE -->
-    <aae.deployment.api>https://${environment.apa.host}/deployment-service/v3/api-docs?group=Deployment%20Service</aae.deployment.api>
-    <aae.modeling.api>https://${environment.apa.host}/modeling-service/v3/api-docs?group=Modeling</aae.modeling.api>
-    <aae.dmn-simulation.api>https://${environment.apa.host}/dmn-service/v3/api-docs?group=DMN%20Simulation</aae.dmn-simulation.api>
-    <aae.script-modeling.api>https://${environment.apa.host}/script-service/v3/api-docs?group=Script%20Runtime</aae.script-modeling.api>
+    <aae.deployment.api>https://${environment.apa.host}/deployment-service/v3/api-docs/Deployment%20Service</aae.deployment.api>
+    <aae.modeling.api>https://${environment.apa.host}/modeling-service/v3/api-docs/Modeling</aae.modeling.api>
+    <aae.dmn-simulation.api>https://${environment.apa.host}/dmn-service/v3/api-docs/DMN%20Simulation</aae.dmn-simulation.api>
+    <aae.script-modeling.api>https://${environment.apa.host}/script-service/v3/api-docs/Script%20Runtime</aae.script-modeling.api>
     <!-- AAE APPLICATION -->
-    <aae.form.api>https://${environment.apa.host}/${environment.application.name}/form/v3/api-docs?group=Form</aae.form.api>
-    <aae.query.api>https://${environment.apa.host}/${environment.application.name}/query/v3/api-docs?group=Query</aae.query.api>
-    <aae.runtime.api>https://${environment.apa.host}/${environment.application.name}/rb/v3/api-docs?group=Runtime%20Bundle</aae.runtime.api>
-    <aae.audit.api>https://${environment.apa.host}/${environment.application.name}/audit/v3/api-docs?group=Audit</aae.audit.api>
-    <aae.preference.api>https://${environment.apa.host}/${environment.application.name}/preference/v3/api-docs?group=Preference</aae.preference.api>
+    <aae.form.api>https://${environment.apa.host}/${environment.application.name}/form/v3/api-docs/Form</aae.form.api>
+    <aae.query.api>https://${environment.apa.host}/${environment.application.name}/query/v3/api-docs/Query</aae.query.api>
+    <aae.runtime.api>https://${environment.apa.host}/${environment.application.name}/rb/v3/api-docs/Runtime%20Bundle</aae.runtime.api>
+    <aae.audit.api>https://${environment.apa.host}/${environment.application.name}/audit/v3/api-docs/Audit</aae.audit.api>
+    <aae.preference.api>https://${environment.apa.host}/${environment.application.name}/preference/v3/api-docs/Preference</aae.preference.api>
   </properties>
   <distributionManagement>
     <repository>
