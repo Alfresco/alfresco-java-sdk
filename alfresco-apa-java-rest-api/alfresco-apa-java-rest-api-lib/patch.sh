@@ -4,7 +4,7 @@ set -e
 GENERATED_SOURCE_DIR=${GENERATED_SOURCE_DIR:-generated}
 case $(uname | tr '[:upper:]' '[:lower:]') in
   darwin*)
-    export EDIT_FILE_IN_PLACE_PARAM="''"
+    export EDIT_FILE_IN_PLACE_PARAM="\'\'"
     ;;
   *)
     export EDIT_FILE_IN_PLACE_PARAM=
@@ -24,6 +24,8 @@ find "${GENERATED_SOURCE_DIR}" -type f -name "*.java" -exec sed \
   -e 's;@RequestPart("file") MultipartFile file;@PathVariable("file") MultipartFile file;g' \
   -e 's;ErrorModelNamenamespaceorgSpringframeworkHateoasNameEntityModelOfJobExecution;EntryResponseContentOfJobExecution;g' \
   -e 's@import org\.alfresco\..*\.ResponseEntity;@@g' \
+  -e 's;value = "FindAndManageDescriptors_";value = "FindAndManageDescriptors";g' \
+  -e 's;value = "alfrescoFindAndManageDescriptors_Api";value = "alfrescoFindAndManageDescriptorsApi";g' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
 find "${GENERATED_SOURCE_DIR}" -type f -name "*.md" -exec sed \
@@ -51,10 +53,17 @@ find ${GENERATED_SOURCE_DIR} -type f -iname 'ProjectsApi.java' -exec sed \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -iname 'ModelsApi.java' -exec sed \
-  -e 's/ResponseEntity<Void> getModelContent/byte[] getModelContent/' \
+  -e 's/ResponseEntity<Void> getModelDiagram/byte[] getModelDiagram/' \
   -e 's/ResponseEntity<Void> exportModel/byte[] exportModel/' \
   -e 's/ResponseEntity<String>/byte[]/' \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
+  -e 's/@RequestBody ModelIdContentBody/@PathVariable("file") MultipartFile/' \
+  -e 's/@RequestBody ModelIdValidateBody/@PathVariable("file") MultipartFile/' \
+  -e 's/@RequestBody ValidateExtensionsBody/@PathVariable("file") MultipartFile/' \
+  -i $EDIT_FILE_IN_PLACE_PARAM {} +
+
+find ${GENERATED_SOURCE_DIR} -type f -iname 'FindAndManageDescriptors_Api.java' -exec sed \
+  -e 's/ResponseEntity<Void> exportDescriptor/byte[] exportDescriptor/' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
 find ${GENERATED_SOURCE_DIR} -type f -iname 'DescriptorControllerApi.java' -exec sed \
@@ -65,6 +74,11 @@ find ${GENERATED_SOURCE_DIR} -type f -iname 'DescriptorControllerApi.java' -exec
 find ${GENERATED_SOURCE_DIR} -type f -iname 'FormsApi.java' -exec sed \
   -e '/model.ResponseEntityFormSummaryView/d' \
   -e 's/ResponseEntityFormSummaryView/ResponseEntity/' \
+  -e 's/ResponseEntity<String>/ResponseEntity<ResponseEntity>/' \
+  -i $EDIT_FILE_IN_PLACE_PARAM {} +
+
+find ${GENERATED_SOURCE_DIR} -type f -iname 'PreferenceApi.java' -exec sed \
+  -e 's/ResponseEntity<String>/ResponseEntity<ResponseEntity>/' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
 find "${GENERATED_SOURCE_DIR}" -type d \( \
