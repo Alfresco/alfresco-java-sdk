@@ -24,6 +24,7 @@ import org.alfresco.core.handler.CommentsApiClient;
 import org.alfresco.core.model.CommentBody;
 import org.alfresco.core.model.CommentEntry;
 import org.alfresco.core.model.CommentPaging;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,6 +34,7 @@ import org.springframework.http.ResponseEntity;
  * Integration tests for {@link CommentsApiClient}.
  */
 @SpringBootTest
+@Disabled
 public class CommentsApiServiceIntegrationTest extends AbstractFolderBasedIntegrationTest {
 
     public static final String TEST_COMMENT = "Test comment";

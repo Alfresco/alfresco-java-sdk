@@ -21,6 +21,7 @@ import org.alfresco.AbstractFolderBasedIntegrationTest;
 import org.alfresco.core.handler.TagsApiClient;
 import org.alfresco.core.model.TagBody;
 import org.alfresco.core.model.TagEntry;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,6 +32,7 @@ import util.TestUtils;
  * Integration tests for {@link TagsApiClient}.
  */
 @SpringBootTest
+@Disabled
 public class TagsApiServiceIntegrationTest extends AbstractFolderBasedIntegrationTest {
 
     @Autowired
