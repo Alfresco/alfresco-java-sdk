@@ -66,6 +66,12 @@ find ${GENERATED_SOURCE_DIR} -type f -iname 'FindAndManageDescriptors_Api.java' 
   -e 's/ResponseEntity<Void> exportDescriptor/byte[] exportDescriptor/' \
   -i $EDIT_FILE_IN_PLACE_PARAM {} +
 
+find ${GENERATED_SOURCE_DIR} -type f -iname 'FindAndManageApplicationsApi.java' -exec sed \
+  -e '/import org.alfresco.activiti.deployment.model.NamespaceHealth;/a\
+  import org.alfresco.activiti.deployment.model.ApplicationRepresentation;' \
+  -e 's/ResponseEntity<Void> createApplication(@ApiParam(value = "", required=true ) @Valid @RequestBody String body)/ResponseEntity<Void> createApplication(@ApiParam(value = "", required=true ) @Valid @RequestBody ApplicationRepresentation body)/' \
+  -i $EDIT_FILE_IN_PLACE_PARAM {} +
+
 find ${GENERATED_SOURCE_DIR} -type f -iname 'DescriptorControllerApi.java' -exec sed \
   -e 's/ResponseEntity<Void> export/byte[] export/' \
   -e 's/@RequestParam("file")/@PathVariable("file")/' \
