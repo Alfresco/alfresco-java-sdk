@@ -1,5 +1,8 @@
 import:
-  - source: Alfresco/alfresco-build-tools:.travis.java.yml@v1.1.5
+  - source: Alfresco/alfresco-build-tools:.travis.maven_config.yml@v1.30.0
+  - source: Alfresco/alfresco-build-tools:.travis.java_config.yml@v1.30.0
+  - source: Alfresco/alfresco-build-tools:.travis.common.yml@v1.30.0
+  - source: Alfresco/alfresco-build-tools:.travis.pre-commit.yml@v1.30.0
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
 before_install:
   - |-
@@ -12,3 +15,21 @@ before_install:
       -Dags.version=${AGS_VERSION:-14.9}
       -Dacs.version=${ACS_VERSION:-7.1.0.1}"
 install: mvn $MAVEN_CLI_OPTS install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+jobs:
+  include:
+    - stage: build
+      name: build application
+      script: travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS verify -Dlogging.root.level=off -Dspring.main.banner-mode=off
+    - stage: publish
+      name: publish artifacts
+      script:
+        - export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
+          -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
+          -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots \
+          -Denvironment.host=${ENVIRONMENT_HOST:-apadev.envalfresco.com} \
+          -Denvironment.apa.host=${ENVIRONMENT_APA_HOST:-apadev-apa.envalfresco.com} \
+          -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp} \
+          -Dags.version=${AGS_VERSION:-14.9} \
+          -Dacs.version=${ACS_VERSION:-7.1.0.1}"
+        - travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS deploy -DskipTests
