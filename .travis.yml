@@ -4,26 +4,20 @@ import:
   - source: Alfresco/alfresco-build-tools:.travis.common.yml@v1.30.0
   - source: Alfresco/alfresco-build-tools:.travis.pre-commit.yml@v1.30.0
   - source: Alfresco/alfresco-process-scripts:slack_apa_channel_notification.yml@master
-before_install:
-  - |-
-    export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none \
-      -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
-      -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
-      -Denvironment.host=${ENVIRONMENT_HOST:-apadev.envalfresco.com}
-      -Denvironment.apa.host=${ENVIRONMENT_APA_HOST:-apadev-apa.envalfresco.com}
-      -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp}
-      -Dags.version=${AGS_VERSION:-14.9}
-      -Dacs.version=${ACS_VERSION:-7.1.0.1}"
 
 jobs:
   include:
-#    - stage: generate clients
-#      script: mvn $MAVEN_CLI_OPTS install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
     - stage: build
       name: build application
       script:
-      - travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-      - travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS verify -Dlogging.root.level=off -Dspring.main.banner-mode=off
+        - export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots -Denvironment.host=${ENVIRONMENT_HOST:-apadev.envalfresco.com} -Denvironment.apa.host=${ENVIRONMENT_APA_HOST:-apadev-apa.envalfresco.com} -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp} -Dags.version=${AGS_VERSION:-14.9} -Dacs.version=${ACS_VERSION:-7.1.0.1}"
+        - mvn $MAVEN_CLI_OPTS install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+        - travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS verify -Dlogging.root.level=off -Dspring.main.banner-mode=off
+        - travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS deploy -DskipTests
     - stage: publish
       name: publish artifacts
-      script: travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS deploy -DskipTests
+      script:
+        - export MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Ddoclint=none -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots -Denvironment.host=${ENVIRONMENT_HOST:-apadev.envalfresco.com} -Denvironment.apa.host=${ENVIRONMENT_APA_HOST:-apadev-apa.envalfresco.com} -Denvironment.application.name=${ENVIRONMENT_APP:-simpleapp} -Dags.version=${AGS_VERSION:-14.9} -Dacs.version=${ACS_VERSION:-7.1.0.1}"
+        - mvn $MAVEN_CLI_OPTS install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+        - travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS verify -Dlogging.root.level=off -Dspring.main.banner-mode=off
+        - travis_wait $TRAVIS_WAIT_TIMEOUT mvn $MAVEN_CLI_OPTS deploy -DskipTests
