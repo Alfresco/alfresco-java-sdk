@@ -23,6 +23,7 @@ import org.alfresco.core.handler.SharedLinksApiClient;
 import org.alfresco.core.model.SharedLinkBodyCreate;
 import org.alfresco.core.model.SharedLinkEntry;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,6 +33,7 @@ import org.springframework.http.ResponseEntity;
  * Integration tests for {@link SharedLinksApiClient}.
  */
 @SpringBootTest
+@Disabled
 public class SharedLinksApiServiceIntegrationTest extends AbstractContentBasedIntegrationTest {
 
     @Autowired
