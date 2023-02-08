@@ -7,7 +7,7 @@
   <parent>
     <artifactId>alfresco-java-sdk</artifactId>
     <groupId>org.alfresco</groupId>
-    <version>5.2.1</version>
+    <version>5.2.2-SNAPSHOT</version>
   </parent>
 
   <artifactId>integration-tests</artifactId>
