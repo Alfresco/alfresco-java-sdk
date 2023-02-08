@@ -58,21 +58,21 @@ Then, add the dependency on the desired starter(s)
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
-    <version>5.2.1</version>
+    <version>5.2.2-SNAPSHOT</version>
   </dependency>
 
   <!-- APA Java REST APIs -->
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-apa-java-rest-api-spring-boot-starter</artifactId>
-    <version>5.2.1</version>
+    <version>5.2.2-SNAPSHOT</version>
   </dependency>
 
   <!-- Java Event API -->
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-    <version>5.2.1</version>
+    <version>5.2.2-SNAPSHOT</version>
   </dependency>
 </dependencies>
 ```
@@ -92,9 +92,9 @@ repositories {
 Then, add the dependency on the desired starter(s)
 
 ```groovy
-compile "org.alfresco:alfresco-acs-java-rest-api-spring-boot-starter:5.2.1"
-compile "org.alfresco:alfresco-apa-java-rest-api-spring-boot-starter:5.2.1"
-compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.2.1"
+compile "org.alfresco:alfresco-acs-java-rest-api-spring-boot-starter:5.2.2-SNAPSHOT"
+compile "org.alfresco:alfresco-apa-java-rest-api-spring-boot-starter:5.2.2-SNAPSHOT"
+compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.2.2-SNAPSHOT"
 ```
 
 #### 3. Configure Event API
