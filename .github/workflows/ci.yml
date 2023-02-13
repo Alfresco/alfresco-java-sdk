@@ -23,6 +23,9 @@ env:
   GIT_USERNAME: ${{ secrets.BOT_GITHUB_USERNAME }}
   GIT_EMAIL: ${{ secrets.BOT_GITHUB_EMAIL }}
   GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
+  ENVIRONMENT_APA_HOST: apadev-apa.envalfresco.com
+  ENVIRONMENT_APP: simpleapp
+  ENVIRONMENT_HOST: apadev.envalfresco.com
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
 
 jobs:
