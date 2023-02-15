@@ -16,6 +16,8 @@ on:
 env:
   MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
   MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+  CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD }}
+  CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME }}
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
   MAVEN_CLI_OPTS: "source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none \
   -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
