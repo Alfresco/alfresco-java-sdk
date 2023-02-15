@@ -140,6 +140,13 @@
             <groupId>${swagger-codegen-maven-plugin.groupId}</groupId>
             <artifactId>swagger-codegen-maven-plugin</artifactId>
             <version>${swagger-codegen-maven-plugin.version}</version>
+            <dependencies>
+              <dependency>
+                <groupId>com.github.jknack</groupId>
+                <artifactId>handlebars</artifactId>
+                <version>4.3.0</version>
+              </dependency>
+            </dependencies>
             <inherited>false</inherited>
             <configuration>
               <groupId>${project.groupId}</groupId>
