@@ -18,6 +18,7 @@ env:
   MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
   CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD }}
   CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME }}
+  CONTENT_SERVICE_URL: ${{ secrets.CONTENT_SERVICE_URL }}
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
   MAVEN_CLI_OPTS: "source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none \
   -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
@@ -44,10 +45,10 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
       - name: "Install"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn ${{ env.MAVEN_CLI_OPTS }} install -DskipTests=true -Dmaven.javadoc.skip=true
+        run: mvn install ${{ env.MAVEN_CLI_OPTS }} -DskipTests=true -Dmaven.javadoc.skip=true
       - name: "Verify"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn ${{ env.MAVEN_CLI_OPTS }} verify -Dlogging.root.level=off -Dspring.main.banner-mode=off
+        run: mvn verify ${{ env.MAVEN_CLI_OPTS }} -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
   publish:
     name: "Publish"
@@ -63,4 +64,4 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
       - name: "Deploy"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn ${{ env.MAVEN_CLI_OPTS }} deploy -DskipTests=true
+        run: mvn deploy ${{ env.MAVEN_CLI_OPTS }} -DskipTests=true
