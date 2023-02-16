@@ -32,7 +32,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.34.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.35.0
 
   build_and_verify:
     name: "Build and Verify"
@@ -41,12 +41,12 @@ jobs:
       - pre-commit
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.34.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
-      - name: "Install"
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install ${{ env.MAVEN_CLI_OPTS }} -DskipTests=true -Dmaven.javadoc.skip=true
-      - name: "Verify"
+      - name: "Run tests"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn verify ${{ env.MAVEN_CLI_OPTS }} -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
@@ -60,8 +60,8 @@ jobs:
       - build_and_verify
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.34.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
       - name: "Deploy"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn deploy ${{ env.MAVEN_CLI_OPTS }} -DskipTests=true
