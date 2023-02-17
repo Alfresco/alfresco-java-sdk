@@ -26,7 +26,7 @@ env:
   -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots \
   -Denvironment.host=apadev.envalfresco.com \
   -Denvironment.apa.host=apadev-apa.envalfresco.com \
-  -Denvironment.application.name=${{ ENVIRONMENT_APP }} \
+  -Denvironment.application.name=${{ env.ENVIRONMENT_APP }} \
   -Dags.version=14.9 -Dacs.version=7.1.0.1"
 
 jobs:
