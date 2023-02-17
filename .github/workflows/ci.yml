@@ -21,13 +21,7 @@ env:
   CONTENT_SERVICE_URL: ${{ secrets.CONTENT_SERVICE_URL }}
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
   ENVIRONMENT_APP: simpleapp
-  MAVEN_CLI_OPTS: "source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none \
-  -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
-  -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots \
-  -Denvironment.host=apadev.envalfresco.com \
-  -Denvironment.apa.host=apadev-apa.envalfresco.com \
-  -Denvironment.application.name=${{ env.ENVIRONMENT_APP }} \
-  -Dags.version=14.9 -Dacs.version=7.1.0.1"
+
 
 jobs:
   pre-commit:
@@ -40,6 +34,14 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - pre-commit
+    env:
+      MAVEN_CLI_OPTS: "source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none \
+      -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases \
+      -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots \
+      -Denvironment.host=apadev.envalfresco.com \
+      -Denvironment.apa.host=apadev-apa.envalfresco.com \
+      -Denvironment.application.name=${{ env.ENVIRONMENT_APP }} \
+      -Dags.version=14.9 -Dacs.version=7.1.0.1"
     steps:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
