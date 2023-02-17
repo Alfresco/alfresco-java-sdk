@@ -25,7 +25,7 @@
     <swagger-core.version>1.5.20</swagger-core.version>
     <swagger-core-v3-version>2.1.11</swagger-core-v3-version>
     <swagger-codegen-maven-plugin.groupId>io.swagger.codegen.v3</swagger-codegen-maven-plugin.groupId>
-    <swagger-codegen-maven-plugin.version>3.0.29</swagger-codegen-maven-plugin.version>
+    <swagger-codegen-maven-plugin.version>3.0.36</swagger-codegen-maven-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <!-- API definitions -->
     <!-- APS -->
@@ -140,13 +140,6 @@
             <groupId>${swagger-codegen-maven-plugin.groupId}</groupId>
             <artifactId>swagger-codegen-maven-plugin</artifactId>
             <version>${swagger-codegen-maven-plugin.version}</version>
-            <dependencies>
-              <dependency>
-                <groupId>com.github.jknack</groupId>
-                <artifactId>handlebars</artifactId>
-                <version>4.3.0</version>
-              </dependency>
-            </dependencies>
             <inherited>false</inherited>
             <configuration>
               <groupId>${project.groupId}</groupId>
