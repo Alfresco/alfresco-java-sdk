@@ -67,10 +67,20 @@ jobs:
       github.event_name != 'pull_request'
     needs:
       - build_and_verify
+    env:
+      MAVEN_CLI_OPTS: >
+        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
+        -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
+        -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
+        -Denvironment.host=${ENVIRONMENT_HOST}
+        -Denvironment.apa.host=${ENVIRONMENT_APA_HOST}
+        -Denvironment.application.name=${ENVIRONMENT_APP}
+        -Dags.version=${AGS_VERSION}
+        -Dacs.version=${ACS_VERSION}
     steps:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
       - name: "Deploy"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn deploy ${env.MAVEN_CLI_OPTS} -DskipTests=true
+        run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
