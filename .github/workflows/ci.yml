@@ -54,10 +54,10 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn install ${{ env.MAVEN_CLI_OPTS }} -DskipTests=true -Dmaven.javadoc.skip=true
+        run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
       - name: "Run tests"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn verify ${{ env.MAVEN_CLI_OPTS }} -Dlogging.root.level=off -Dspring.main.banner-mode=off
+        run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
   publish:
     name: "Publish"
@@ -73,4 +73,4 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
       - name: "Deploy"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn deploy ${{ env.MAVEN_CLI_OPTS }} -DskipTests=true
+        run: mvn deploy ${env.MAVEN_CLI_OPTS} -DskipTests=true
