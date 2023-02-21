@@ -59,13 +59,13 @@ jobs:
   publish:
     name: "Publish"
     runs-on: ubuntu-latest
-    if: >
-      github.event_name != 'pull_request'
     needs:
       - build_and_verify
     env:
       MAVEN_CLI_OPTS: >
         source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
+        -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
+        -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
         -Denvironment.host=${ENVIRONMENT_HOST}
         -Denvironment.apa.host=${ENVIRONMENT_APA_HOST}
         -Denvironment.application.name=${ENVIRONMENT_APP}
