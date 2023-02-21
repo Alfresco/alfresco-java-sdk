@@ -44,7 +44,7 @@ jobs:
         ${TEST_ENV_VAR} + local-value
     steps:
       - name: "Echo"
-        run: echo $COMPOSITE_ENV_VAR
+        run: echo "$COMPOSITE_ENV_VAR"
 
 
   build_and_verify:
