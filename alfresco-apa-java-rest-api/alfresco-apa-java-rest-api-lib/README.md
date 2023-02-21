@@ -1,7 +1,5 @@
 # Alfresco APA Java REST API
 
-[![Build Status](https://travis-ci.com/Alfresco/alfresco-java-rest-api.svg?token=aELT1YKccmqjzhwsQQzQ&branch=develop)](https://travis-ci.com/Alfresco/alfresco-java-rest-api)
-
 This API has been generated using [Swagger Codegen](https://swagger.io/tools/swagger-codegen) from the public definitions:
 
 ## Recommendation
@@ -120,12 +118,3 @@ mvn clean install
 You can check the documentation here:
 <https://github.com/OpenFeign/feign>
 
-## CI/CD
-
-Running on Travis, requires the following environment variables to be set:
-
-| Name | Description |
-|------|-------------|
-| MAVEN_USERNAME | Internal Maven repository username |
-| MAVEN_PASSWORD | Internal Maven repository password |
-| TRAVIS_API_TOKEN | token to launch other builds |
