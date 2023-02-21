@@ -36,6 +36,7 @@ jobs:
 
   check_variables:
     name: "check variables"
+    runs-on: ubuntu-latest
     needs:
       - pre-commit
     env:
