@@ -25,6 +25,9 @@ env:
   ENVIRONMENT_APP: simpleapp
   AGS_VERSION: 14.9
   ACS_VERSION: 7.1.0.1
+  ENVIRONMENT_APA_HOSTZZ: apadev-apa.envalfresco.comZZ
+  ENVIRONMENT_HOSTZZ: apadev.envalfresco.comZZ
+  ENVIRONMENT_APPZZ: simpleappZZ
 
 
 jobs:
@@ -41,12 +44,15 @@ jobs:
     env:
       MAVEN_CLI_OPTS: >
         source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
+        -Denvironment.host=${ENVIRONMENT_HOSTZZ}
+        -Denvironment.apa.host=${ENVIRONMENT_APA_HOSTZZ}
+        -Denvironment.application.name=${ENVIRONMENT_APPZZ}
+        -Dags.version=${AGS_VERSION}
+        -Dacs.version=${ACS_VERSION}
     steps:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
-      - name: "Echo"
-        run: echo $MAVEN_CLI_OPTS
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
