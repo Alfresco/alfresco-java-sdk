@@ -25,10 +25,6 @@ env:
   ENVIRONMENT_APP: simpleapp
   AGS_VERSION: 14.9
   ACS_VERSION: 7.1.0.1
-  ENVIRONMENT_APA_HOSTZZ: apadev-apa.envalfresco.comZZ
-  ENVIRONMENT_HOSTZZ: apadev.envalfresco.comZZ
-  ENVIRONMENT_APPZZ: simpleappZZ
-
 
 jobs:
   pre-commit:
@@ -44,9 +40,9 @@ jobs:
     env:
       MAVEN_CLI_OPTS: >
         source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
-        -Denvironment.host=${ENVIRONMENT_HOSTZZ}
-        -Denvironment.apa.host=${ENVIRONMENT_APA_HOSTZZ}
-        -Denvironment.application.name=${ENVIRONMENT_APPZZ}
+        -Denvironment.host=${ENVIRONMENT_HOST}
+        -Denvironment.apa.host=${ENVIRONMENT_APA_HOST}
+        -Denvironment.application.name=${ENVIRONMENT_APP}
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
     steps:
