@@ -15,7 +15,6 @@ This SDK provides functionality to connect to both on-premise and Cloud-based se
 Alfresco Java SDK consist of the following groups of libraries:
 
 * [alfresco-acs-java-rest-api](alfresco-acs-java-rest-api): Allows applications to consume ACS public REST APIs.
-* [alfresco-apa-java-rest-api](alfresco-apa-java-rest-api): Allows applications to consume APA public REST APIs.
 * [alfresco-java-event-api](alfresco-java-event-api): Allows applications to react to events produced by Alfresco Repository.
 
 The [samples](samples) folder includes examples, sample applications and code snippets of the different features supported by the SDK. Each sample application
@@ -61,13 +60,6 @@ Then, add the dependency on the desired starter(s)
     <version>5.2.2</version>
   </dependency>
 
-  <!-- APA Java REST APIs -->
-  <dependency>
-    <groupId>org.alfresco</groupId>
-    <artifactId>alfresco-apa-java-rest-api-spring-boot-starter</artifactId>
-    <version>5.2.2</version>
-  </dependency>
-
   <!-- Java Event API -->
   <dependency>
     <groupId>org.alfresco</groupId>
@@ -93,7 +85,6 @@ Then, add the dependency on the desired starter(s)
 
 ```groovy
 compile "org.alfresco:alfresco-acs-java-rest-api-spring-boot-starter:5.2.2"
-compile "org.alfresco:alfresco-apa-java-rest-api-spring-boot-starter:5.2.2"
 compile "org.alfresco:alfresco-java-event-api-spring-boot-starter:5.2.2"
 ```
 
@@ -321,17 +312,16 @@ More Information: [Configuring Alfresco Event Gateway](https://www.github.com/Al
 
 * Java version 11 or higher
 * Maven version 3.3 or higher
-* An APA environment with a deployed application from which to fetch the API definitions
 
 ### Build command
 
 Simply run the next command:
 
 ```console
-mvn clean install -Denvironment.host=your-installed-environment-host -Denvironment.apa.host=your-installed-apa-environment-host -Denvironment.application.name=your-deployed-APA-application-name
+mvn clean install
 ```
 
-The previous command will generate the source code for the (ACS and APA) REST API clients first and then it will compile all the modules and run the
+The previous command will generate the source code for the ACS REST API clients first and then it will compile all the modules and run the
 corresponding unit and integration tests.
 
 If you want to skip the generation of the REST API clients code, you can do it sending the maven property `skip.generation`:
