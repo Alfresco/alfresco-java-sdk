@@ -13,7 +13,7 @@
 
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk-samples</artifactId>
-  <version>5.2.2-SNAPSHOT</version>
+  <version>5.2.2</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Samples</name>
   <description>Sample application of the Java SDK</description>
