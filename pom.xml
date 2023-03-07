@@ -65,10 +65,6 @@
     <system>GitHub</system>
     <url>https://github.com/Alfresco/alfresco-java-sdk/issues</url>
   </issueManagement>
-  <ciManagement>
-    <system>travis-ci</system>
-    <url>https://travis-ci.com/${project.scm.organisation}/${project.scm.repository}</url>
-  </ciManagement>
 
   <dependencyManagement>
     <dependencies>
