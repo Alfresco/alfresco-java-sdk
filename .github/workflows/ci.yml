@@ -21,6 +21,7 @@ env:
   ENVIRONMENT_APP: simpleapp
   AGS_VERSION: 14.9
   ACS_VERSION: 7.1.0.1
+  JAVA_VERSION: 11
 
 jobs:
   pre-commit:
@@ -46,7 +47,7 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
         with:
-          - java-version: 11
+          java-version: ${{ env.JAVA_VERSION }}
       - name: "Generate ACS Rest API"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: bash alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generate.sh
@@ -81,6 +82,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
       - name: "Publish artifacts"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
