@@ -50,10 +50,14 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
       - name: "Generate ACS Rest API"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: bash alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generate.sh
+        run: |
+          cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib
+          bash generate.sh
       - name: "Generate APA Rest API"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: bash alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib/generate.sh
+        run: |
+          cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib
+          bash generate.sh
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
