@@ -22,7 +22,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.36.0
 
   build_and_verify:
     name: "Build and Verify"
@@ -34,8 +34,8 @@ jobs:
         source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.36.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.36.0
         with:
           java-version: ${{ env.JAVA_VERSION }}
       - name: "Build"
@@ -59,8 +59,8 @@ jobs:
         -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.36.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.36.0
         with:
           java-version: ${{ env.JAVA_VERSION }}
       - name: "Publish artifacts"
