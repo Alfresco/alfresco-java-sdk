@@ -22,6 +22,5 @@
     <module>extension-template</module>
     <module>event-api-handlers</module>
     <module>event-api-spring-integration</module>
-    <module>java-rest-api-clients</module>
   </modules>
 </project>

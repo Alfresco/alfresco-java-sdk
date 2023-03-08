@@ -43,15 +43,10 @@
       <name>Jose Luis Osorno</name>
       <email>joseluis.osorno@ixxus.com</email>
     </developer>
-    <developer>
-      <name>Miguel Angel Martin</name>
-      <email>miguelangel.martin@ixxus.com</email>
-    </developer>
   </developers>
   <modules>
     <module>alfresco-java-event-api</module>
     <module>alfresco-acs-java-rest-api</module>
-    <module>alfresco-apa-java-rest-api</module>
     <module>alfresco-java-rest-api-common</module>
     <module>samples</module>
     <module>integration-tests</module>
