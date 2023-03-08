@@ -27,7 +27,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.36.0
 
   build_and_verify:
     name: "Build and Verify"
@@ -44,8 +44,8 @@ jobs:
         -Dacs.version=${ACS_VERSION}
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.36.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.36.0
         with:
           java-version: ${{ env.JAVA_VERSION }}
       - name: "Generate ACS Rest API"
@@ -84,8 +84,18 @@ jobs:
         -Dacs.version=${ACS_VERSION}
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.36.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.36.0
+      - name: "Generate ACS Rest API"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: |
+          cd alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib
+          bash generate.sh
+      - name: "Generate APA Rest API"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: |
+          cd alfresco-apa-java-rest-api/alfresco-apa-java-rest-api-lib
+          bash generate.sh
         with:
           java-version: ${{ env.JAVA_VERSION }}
       - name: "Publish artifacts"
