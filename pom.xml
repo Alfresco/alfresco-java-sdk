@@ -63,6 +63,10 @@
     <system>GitHub</system>
     <url>https://github.com/Alfresco/alfresco-java-sdk/issues</url>
   </issueManagement>
+  <ciManagement>
+    <system>GitHub</system>
+    <url>https://github.com/${project.scm.organisation}/${project.scm.repository}/actions</url>
+  </ciManagement>
 
 
   <distributionManagement>
