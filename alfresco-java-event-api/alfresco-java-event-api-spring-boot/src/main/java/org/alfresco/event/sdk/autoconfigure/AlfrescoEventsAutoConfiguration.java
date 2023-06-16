@@ -27,23 +27,21 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration;
 import org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration;
 import org.springframework.boot.autoconfigure.jms.activemq.ActiveMQAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.channel.PublishSubscribeChannel;
+import org.springframework.integration.core.GenericTransformer;
 import org.springframework.integration.dsl.IntegrationFlow;
-import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.integration.jms.dsl.Jms;
-import org.springframework.integration.transformer.GenericTransformer;
 
-import javax.jms.Topic;
+import jakarta.jms.Topic;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,8 +57,7 @@ import java.util.List;
  * <p>
  * This way the integrator can configure the Alfresco Java Event API to consume the events using Spring Integration or plain Java event handlers.
  */
-@Configuration
-@AutoConfigureAfter({ IntegrationAutoConfiguration.class, ActiveMQAutoConfiguration.class, JmsAutoConfiguration.class })
+@AutoConfiguration(after = { IntegrationAutoConfiguration.class, ActiveMQAutoConfiguration.class, JmsAutoConfiguration.class })
 @ConditionalOnClass(RepoEvent.class)
 @EnableConfigurationProperties(AlfrescoEventsProperties.class)
 public class AlfrescoEventsAutoConfiguration {
@@ -73,7 +70,7 @@ public class AlfrescoEventsAutoConfiguration {
     // CORE INTEGRATION WITH BROKER CONFIGURATION
     @Bean
     public IntegrationFlow acsEventsListeningFlow(final ActiveMQConnectionFactory activeMQConnectionFactory) {
-        return IntegrationFlows.from(Jms.messageDrivenChannelAdapter(activeMQConnectionFactory)
+        return IntegrationFlow.from(Jms.messageDrivenChannelAdapter(activeMQConnectionFactory)
                 .destination(acsEventsTopic())
                 .errorChannel(acsEventErrorChannel()))
                 .transform(acsEventTransformer())
@@ -101,7 +98,7 @@ public class AlfrescoEventsAutoConfiguration {
     // SPRING INTEGRATION OPTION CONFIGURATION
     @Bean
     public IntegrationFlow acsEventsSpringIntegrationFlow() {
-        return IntegrationFlows.from(EventChannels.SPRING_INTEGRATION)
+        return IntegrationFlow.from(EventChannels.SPRING_INTEGRATION)
                 .log(LoggingHandler.Level.DEBUG)
                 .channel(acsEventChannel())
                 .get();
@@ -115,7 +112,7 @@ public class AlfrescoEventsAutoConfiguration {
     // PLAIN HANDLERS OPTION CONFIGURATION
     @Bean
     public IntegrationFlow acsEventsHandlersFlow() {
-        return IntegrationFlows.from(EventChannels.HANDLERS)
+        return IntegrationFlow.from(EventChannels.HANDLERS)
                 .log(LoggingHandler.Level.DEBUG)
                 .handle(s -> eventHandlingExecutor().executeEventHandlers((RepoEvent<DataAttributes<Resource>>) s.getPayload()))
                 .get();

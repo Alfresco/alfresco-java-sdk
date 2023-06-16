@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.Authorization;
 import java.util.List;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import org.alfresco.core.model.NodeEntry;
 import org.springframework.cloud.openfeign.CollectionFormat;
 import org.springframework.http.ResponseEntity;
