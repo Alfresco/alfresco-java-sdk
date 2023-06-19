@@ -71,3 +71,5 @@ alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-sea
 !/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-search-rest-api/pom.xml
 alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-search-sql-rest-api/*
 !/alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated/alfresco-search-sql-rest-api/pom.xml
+
+*.versionsBackup

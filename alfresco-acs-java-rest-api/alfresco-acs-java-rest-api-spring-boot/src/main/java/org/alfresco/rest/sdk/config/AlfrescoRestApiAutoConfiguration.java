@@ -15,12 +15,12 @@
  */
 package org.alfresco.rest.sdk.config;
 
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-@Configuration
+@AutoConfiguration
 @EnableFeignClients(basePackages = {
     "org.alfresco.authentication.handler",
     "org.alfresco.core.handler",

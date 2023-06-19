@@ -31,7 +31,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 /**
  * Sample event handler to demonstrate the creation of nodes with content reacting to the creation of a folder named <code>TARGET_FOLDER_NAME</code>. When the
