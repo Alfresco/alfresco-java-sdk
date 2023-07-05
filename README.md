@@ -58,14 +58,14 @@ Then, add the dependency on the desired starter(s)
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
-    <version>6.0.1-SNAPSHOT</version>
+    <version>6.0.2-SNAPSHOT</version>
   </dependency>
 
   <!-- Java Event API -->
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-    <version>6.0.1-SNAPSHOT</version>
+    <version>6.0.2-SNAPSHOT</version>
   </dependency>
 </dependencies>
 ```
@@ -311,7 +311,7 @@ More Information: [Configuring Alfresco Event Gateway](https://www.github.com/Al
 
 ### Pre-Requisites
 
-* Java version 11 or higher
+* Java version 17 or higher
 * Maven version 3.3 or higher
 
 ### Build command

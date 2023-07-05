@@ -43,7 +43,6 @@ import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.integration.jms.dsl.Jms;
 
 import jakarta.jms.Topic;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
