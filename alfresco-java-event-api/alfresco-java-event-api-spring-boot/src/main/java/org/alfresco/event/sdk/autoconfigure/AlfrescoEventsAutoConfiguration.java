@@ -27,6 +27,7 @@ import org.alfresco.event.sdk.model.v1.model.Resource;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration;
@@ -62,18 +63,21 @@ import java.util.List;
 @EnableConfigurationProperties(AlfrescoEventsProperties.class)
 public class AlfrescoEventsAutoConfiguration {
 
-    @Autowired(required = false)
-    private final List<EventHandler> eventHandlers = new ArrayList<>();
     @Autowired
     private AlfrescoEventsProperties alfrescoEventsProperties;
 
     // CORE INTEGRATION WITH BROKER CONFIGURATION
     @Bean
-    public IntegrationFlow acsEventsListeningFlow(final ActiveMQConnectionFactory activeMQConnectionFactory) {
+    public IntegrationFlow acsEventsListeningFlow(
+        final ActiveMQConnectionFactory activeMQConnectionFactory,
+        @Qualifier(EventChannels.ERROR) final DirectChannel acsEventErrorChannel,
+        final Topic acsEventsTopic,
+        final GenericTransformer<String, RepoEvent<DataAttributes<Resource>>> acsEventTransformer
+    ) {
         return IntegrationFlow.from(Jms.messageDrivenChannelAdapter(activeMQConnectionFactory)
-                .destination(acsEventsTopic())
-                .errorChannel(acsEventErrorChannel()))
-                .transform(acsEventTransformer())
+                .destination(acsEventsTopic)
+                .errorChannel(acsEventErrorChannel))
+                .transform(acsEventTransformer)
                 .routeToRecipients(route -> route
                         .recipient(EventChannels.SPRING_INTEGRATION, s -> alfrescoEventsProperties.isEnableSpringIntegration())
                         .recipient(EventChannels.HANDLERS, s -> alfrescoEventsProperties.isEnableHandlers()))
@@ -97,10 +101,10 @@ public class AlfrescoEventsAutoConfiguration {
 
     // SPRING INTEGRATION OPTION CONFIGURATION
     @Bean
-    public IntegrationFlow acsEventsSpringIntegrationFlow() {
+    public IntegrationFlow acsEventsSpringIntegrationFlow(@Qualifier(EventChannels.MAIN) PublishSubscribeChannel acsEventChannel) {
         return IntegrationFlow.from(EventChannels.SPRING_INTEGRATION)
                 .log(LoggingHandler.Level.DEBUG)
-                .channel(acsEventChannel())
+                .channel(acsEventChannel)
                 .get();
     }
 
@@ -111,20 +115,20 @@ public class AlfrescoEventsAutoConfiguration {
 
     // PLAIN HANDLERS OPTION CONFIGURATION
     @Bean
-    public IntegrationFlow acsEventsHandlersFlow() {
+    public IntegrationFlow acsEventsHandlersFlow(EventHandlingExecutor eventHandlingExecutor) {
         return IntegrationFlow.from(EventChannels.HANDLERS)
                 .log(LoggingHandler.Level.DEBUG)
-                .handle(s -> eventHandlingExecutor().executeEventHandlers((RepoEvent<DataAttributes<Resource>>) s.getPayload()))
+                .handle(s -> eventHandlingExecutor.executeEventHandlers((RepoEvent<DataAttributes<Resource>>) s.getPayload()))
                 .get();
     }
 
     @Bean
-    public EventHandlingExecutor eventHandlingExecutor() {
-        return new SimpleEventHandlingExecutor(eventHandlingRegistry());
+    public EventHandlingExecutor eventHandlingExecutor(EventHandlingRegistry eventHandlingRegistry) {
+        return new SimpleEventHandlingExecutor(eventHandlingRegistry);
     }
 
     @Bean
-    public EventHandlingRegistry eventHandlingRegistry() {
+    public EventHandlingRegistry eventHandlingRegistry(List<EventHandler> eventHandlers) {
         return new EventHandlingRegistry(eventHandlers);
     }
 }
