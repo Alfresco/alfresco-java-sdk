@@ -35,6 +35,7 @@
             </relocation>
           </relocations>
           <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
+          <createSourcesJar>true</createSourcesJar>
         </configuration>
         <executions>
           <execution>
