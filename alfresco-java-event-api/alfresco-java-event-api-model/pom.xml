@@ -13,58 +13,11 @@
   <artifactId>alfresco-java-event-api-model</artifactId>
   <name>Alfresco Java Event API :: Event Model</name>
 
-  <properties>
-    <jsonschema-generator.version>4.12.2</jsonschema-generator.version>
-    <commons-io.version>2.7</commons-io.version>
-  </properties>
-
   <dependencies>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- test dependencies -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.skyscreamer</groupId>
-      <artifactId>jsonassert</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>${commons-io.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- JSON schema dependencies -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-jsonSchema</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.github.victools</groupId>
-      <artifactId>jsonschema-generator</artifactId>
-      <version>${jsonschema-generator.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.github.victools</groupId>
-      <artifactId>jsonschema-module-jackson</artifactId>
-      <version>${jsonschema-generator.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <scope>test</scope>
+      <groupId>org.alfresco</groupId>
+      <artifactId>acs-enterprise-event-model</artifactId>
+      <version>0.0.63</version>
     </dependency>
   </dependencies>
 
@@ -72,12 +25,22 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.0.2</version>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <relocations>
+            <relocation>
+              <pattern>org.alfresco.repo.event</pattern>
+              <shadedPattern>org.alfresco.event.sdk.model</shadedPattern>
+            </relocation>
+          </relocations>
+          <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
+        </configuration>
         <executions>
           <execution>
+            <phase>package</phase>
             <goals>
-              <goal>test-jar</goal>
+              <goal>shade</goal>
             </goals>
           </execution>
         </executions>
