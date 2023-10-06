@@ -44,7 +44,7 @@ public class TagsApiServiceIntegrationTest extends AbstractFolderBasedIntegratio
         TagBody tagBody = new TagBody();
         tagBody.setTag(tagName);
         ResponseEntity<TagEntry> createTagForNodeResponse = tagsApiClient.createTagForNode(testNode.getId(), tagBody, null);
-        ResponseEntity<TagEntry> getTagResponse = tagsApiClient.getTag(createTagForNodeResponse.getBody().getEntry().getId(), null);
+        ResponseEntity<TagEntry> getTagResponse = tagsApiClient.getTag(createTagForNodeResponse.getBody().getEntry().getId(), null, null);
 
         assertThat(createTagForNodeResponse.getBody().getEntry().getTag()).isEqualTo(tagName);
         assertThat(getTagResponse.getBody().getEntry().getTag()).isEqualTo(tagName);
@@ -70,7 +70,7 @@ public class TagsApiServiceIntegrationTest extends AbstractFolderBasedIntegratio
 
         String updatedTagName = TestUtils.getRandomTagName();
         tagBody.setTag(updatedTagName);
-        ResponseEntity<TagEntry> updateTagResponse = tagsApiClient.updateTag(createTagForNodeResponse.getBody().getEntry().getId(), tagBody, null);
+        ResponseEntity<TagEntry> updateTagResponse = tagsApiClient.updateTag(createTagForNodeResponse.getBody().getEntry().getId(), tagBody, null, null);
 
         assertThat(createTagForNodeResponse.getBody().getEntry().getTag()).isEqualTo(tagName);
         assertThat(updateTagResponse.getBody().getEntry().getTag()).isEqualTo(updatedTagName);
