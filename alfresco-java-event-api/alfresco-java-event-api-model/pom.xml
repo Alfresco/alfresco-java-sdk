@@ -66,6 +66,11 @@
       <artifactId>slf4j-simple</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.alfresco</groupId>
+      <artifactId>acs-event-model</artifactId>
+      <version>0.0.24</version>
+    </dependency>
   </dependencies>
 
   <build>
