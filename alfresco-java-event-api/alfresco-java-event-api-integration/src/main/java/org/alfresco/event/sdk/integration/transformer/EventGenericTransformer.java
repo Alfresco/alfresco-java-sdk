@@ -19,10 +19,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.alfresco.event.sdk.handling.EventHandlingException;
-import org.alfresco.event.sdk.model.databind.ObjectMapperFactory;
-import org.alfresco.event.sdk.model.v1.model.DataAttributes;
-import org.alfresco.event.sdk.model.v1.model.RepoEvent;
-import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.alfresco.repo.event.databind.ObjectMapperFactory;
+import org.alfresco.repo.event.v1.model.DataAttributes;
+import org.alfresco.repo.event.v1.model.RepoEvent;
+import org.alfresco.repo.event.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

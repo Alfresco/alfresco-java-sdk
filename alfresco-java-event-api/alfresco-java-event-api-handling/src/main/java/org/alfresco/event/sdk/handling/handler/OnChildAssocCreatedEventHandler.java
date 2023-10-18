@@ -15,7 +15,7 @@
  */
 package org.alfresco.event.sdk.handling.handler;
 
-import org.alfresco.event.sdk.model.v1.model.EventType;
+import org.alfresco.repo.event.v1.model.EventType;
 
 import java.util.Set;
 

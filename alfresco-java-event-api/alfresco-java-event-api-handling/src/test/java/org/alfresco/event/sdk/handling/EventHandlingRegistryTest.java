@@ -20,10 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import org.alfresco.event.sdk.handling.handler.OnNodeCreatedEventHandler;
 import org.alfresco.event.sdk.handling.handler.OnPermissionUpdatedEventHandler;
-import org.alfresco.event.sdk.model.v1.model.EventData;
-import org.alfresco.event.sdk.model.v1.model.EventType;
-import org.alfresco.event.sdk.model.v1.model.NodeResource;
-import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.repo.event.v1.model.EventData;
+import org.alfresco.repo.event.v1.model.EventType;
+import org.alfresco.repo.event.v1.model.NodeResource;
+import org.alfresco.repo.event.v1.model.RepoEvent;
 import org.junit.Before;
 import org.junit.Test;
 

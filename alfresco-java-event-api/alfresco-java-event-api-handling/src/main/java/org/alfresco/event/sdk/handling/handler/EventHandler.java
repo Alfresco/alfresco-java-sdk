@@ -16,12 +16,11 @@
 package org.alfresco.event.sdk.handling.handler;
 
 import org.alfresco.event.sdk.handling.filter.EventFilter;
-import org.alfresco.event.sdk.model.v1.model.DataAttributes;
-import org.alfresco.event.sdk.model.v1.model.EventType;
-import org.alfresco.event.sdk.model.v1.model.RepoEvent;
-import org.alfresco.event.sdk.model.v1.model.Resource;
+import org.alfresco.repo.event.v1.model.DataAttributes;
+import org.alfresco.repo.event.v1.model.EventType;
+import org.alfresco.repo.event.v1.model.RepoEvent;
+import org.alfresco.repo.event.v1.model.Resource;
 
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -57,7 +56,7 @@ public interface EventHandler {
     /**
      * Handle a {@link RepoEvent} that must be treated by this handler.
      *
-     * @param event the corresponding {@link RepoEvent} to be handled
+     * @param event the corresponding {@link org.alfresco.repo.event.v1.model.RepoEvent} to be handled
      */
     void handleEvent(RepoEvent<DataAttributes<Resource>> event);
 }

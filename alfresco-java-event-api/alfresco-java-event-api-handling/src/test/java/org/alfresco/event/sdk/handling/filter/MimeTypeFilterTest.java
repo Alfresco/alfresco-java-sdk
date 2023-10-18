@@ -15,7 +15,7 @@
  */
 package org.alfresco.event.sdk.handling.filter;
 
-import org.alfresco.event.sdk.model.v1.model.*;
+import org.alfresco.repo.event.v1.model.*;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

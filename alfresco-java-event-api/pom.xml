@@ -18,11 +18,6 @@
     <dependencies>
       <dependency>
         <groupId>org.alfresco</groupId>
-        <artifactId>alfresco-java-event-api-model</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.alfresco</groupId>
         <artifactId>alfresco-java-event-api-handling</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -42,7 +37,6 @@
   <modules>
     <module>alfresco-java-event-api-handling</module>
     <module>alfresco-java-event-api-integration</module>
-    <module>alfresco-java-event-api-model</module>
     <module>alfresco-java-event-api-spring-boot</module>
     <module>alfresco-java-event-api-spring-boot-starter</module>
   </modules>
