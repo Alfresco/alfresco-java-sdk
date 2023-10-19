@@ -57,7 +57,8 @@
 
     <dependency>
       <groupId>org.alfresco</groupId>
-      <artifactId>alfresco-java-event-api-model</artifactId>
+      <artifactId>acs-event-model</artifactId>
+      <version>0.0.24</version>
     </dependency>
   </dependencies>
 </project>

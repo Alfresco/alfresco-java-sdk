@@ -15,10 +15,11 @@
  */
 package org.alfresco.event.sdk.handling.filter;
 
+import org.alfresco.repo.event.v1.model.DataAttributes;
+import org.alfresco.repo.event.v1.model.RepoEvent;
+import org.alfresco.repo.event.v1.model.Resource;
+
 import java.io.Serializable;
-import org.alfresco.event.sdk.model.v1.model.DataAttributes;
-import org.alfresco.event.sdk.model.v1.model.RepoEvent;
-import org.alfresco.event.sdk.model.v1.model.Resource;
 
 /**
  * Abstract {@link EventFilter} class that has the common functionality that checks if an event represents a node with a specific property with a specific

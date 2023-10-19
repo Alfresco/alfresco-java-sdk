@@ -21,8 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.alfresco.event.sdk.handling.handler.EventHandler;
-import org.alfresco.event.sdk.model.v1.model.EventType;
-import org.alfresco.event.sdk.model.v1.model.RepoEvent;
+import org.alfresco.repo.event.v1.model.RepoEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
