@@ -17,7 +17,6 @@
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>acs-event-model</artifactId>
-      <version>0.0.24</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
