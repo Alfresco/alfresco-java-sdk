@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.1.6</version>
+    <version>3.2.0-RC1</version>
     <relativePath/>
   </parent>
   <groupId>org.alfresco</groupId>
@@ -120,13 +120,21 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.release>${java.release}</maven.compiler.release>
     <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
-    <spring-cloud.version>2022.0.3</spring-cloud.version>
+    <spring-cloud.version>2023.0.0-M2</spring-cloud.version>
     <swagger-core.version>1.5.20</swagger-core.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
     <third-party-license-maven-plugin.version>2.0.1</third-party-license-maven-plugin.version>
     <acs-event-model.version>0.0.24</acs-event-model.version>
   </properties>
   <repositories>
+    <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/milestone</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
     <repository>
       <id>central</id>
       <name>Central Repository</name>
@@ -153,6 +161,14 @@
     </repository>
   </repositories>
   <pluginRepositories>
+    <pluginRepository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/milestone</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
     <pluginRepository>
       <id>central</id>
       <name>Central Repository</name>
