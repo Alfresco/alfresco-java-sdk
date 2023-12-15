@@ -22,7 +22,7 @@ contains a `docker-compose` file and scripts that allows you to build and run th
 
 ### Pre-Requisites
 
-* Java version 17 or higher
+* Java version 21 or higher
 * Spring boot 3.1 or higher
 * Maven version 3.3 or higher
 
