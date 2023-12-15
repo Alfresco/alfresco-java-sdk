@@ -12,13 +12,14 @@ that log information about the handled events.
 
 To properly build and run the project in a local environment it is required to have installed some tools.
 
-* Java 11:
+* Java 21:
 ```bash
 $ java -version
 
-openjdk version "11.0.1" 2018-10-16
-OpenJDK Runtime Environment 18.9 (build 11.0.1+13)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.1+13, mixed mode)
+openjdk version "21.0.1" 2023-10-17 LTS
+OpenJDK Runtime Environment Temurin-21.0.1+12 (build 21.0.1+12-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.1+12 (build 21.0.1+12-LTS, mixed mode, sharing)
+
 ```
 
 * [Maven](https://maven.apache.org/install.html) version 3.3 or higher:
