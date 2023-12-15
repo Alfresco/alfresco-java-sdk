@@ -1,4 +1,4 @@
-FROM alfresco/alfresco-base-java:11.0.10-openjdk-centos-8@sha256:343c8f63cf80c7af51785b93d6972b0c00087a1c0b995098cb8285c4d9db74b5
+FROM amazoncorretto:21-alpine3.18@sha256:e937a2668732ad0e138180f40e26586b4ba39282271889466ce6693410b77f2c
 
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
