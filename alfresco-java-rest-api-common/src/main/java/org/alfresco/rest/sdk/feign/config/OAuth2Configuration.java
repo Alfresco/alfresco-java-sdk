@@ -15,14 +15,13 @@
  */
 package org.alfresco.rest.sdk.feign.config;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.alfresco.rest.sdk.feign.oauth2.OAuth2FeignRequestInterceptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientProperties;
-import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientPropertiesRegistrationAdapter;
+import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientPropertiesMapper;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -61,7 +60,7 @@ public class OAuth2Configuration {
     @Bean
     @ConditionalOnMissingBean({ClientRegistrationRepository.class})
     public InMemoryClientRegistrationRepository clientRegistrationRepository(OAuth2ClientProperties properties) {
-        List<ClientRegistration> registrations = new ArrayList(OAuth2ClientPropertiesRegistrationAdapter.getClientRegistrations(properties).values());
+        List<ClientRegistration> registrations = new OAuth2ClientPropertiesMapper(properties).asClientRegistrations().values().stream().toList();
         return new InMemoryClientRegistrationRepository(registrations);
     }
 
@@ -82,7 +81,6 @@ public class OAuth2Configuration {
     }
 
     @Bean
-    @ConditionalOnMissingBean
     public OAuth2AuthorizedClientManager authorizedClientManager(final ClientRegistrationRepository clientRegistrationRepository,
         final OAuth2AuthorizedClientService authorizedClientService, OAuth2AuthorizedClientProvider oAuth2AuthorizedClientProvider) {
         AuthorizedClientServiceOAuth2AuthorizedClientManager authorizedClientServiceOAuth2AuthorizedClientManager =
@@ -103,8 +101,8 @@ public class OAuth2Configuration {
     }
 
     @Bean
-    public OAuth2FeignRequestInterceptor requestInterceptor(OAuth2AuthorizedClientManager oAuth2AuthorizedClientManager,
+    public OAuth2FeignRequestInterceptor requestInterceptor(OAuth2AuthorizedClientManager authorizedClientManager,
         OAuth2AuthorizeRequest oAuth2AuthorizeRequest) {
-        return new OAuth2FeignRequestInterceptor(oAuth2AuthorizedClientManager, oAuth2AuthorizeRequest);
+        return new OAuth2FeignRequestInterceptor(authorizedClientManager, oAuth2AuthorizeRequest);
     }
 }
