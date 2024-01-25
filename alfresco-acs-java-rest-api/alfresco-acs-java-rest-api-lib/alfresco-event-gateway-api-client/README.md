@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-event-gateway-api-client</artifactId>
-    <version>6.1.0-SNAPSHOT</version>
+    <version>6.1-M3</version>
 </dependency>
 ```
 
