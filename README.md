@@ -58,14 +58,14 @@ Then, add the dependency on the desired starter(s)
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
-    <version>6.1.0</version>
+    <version>6.2.0-SNAPSHOT</version>
   </dependency>
 
   <!-- Java Event API -->
   <dependency>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-    <version>6.1.0</version>
+    <version>6.2.0-SNAPSHOT</version>
   </dependency>
 </dependencies>
 ```
