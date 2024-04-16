@@ -11,13 +11,13 @@ to define sample Spring Integration flows that log information about specific ha
 
 To properly build and run the project in a local environment it is required to have installed some tools.
 
-* Java 21:
+* Java 17:
 ```bash
 $ java -version
 
-openjdk version "21.0.1" 2023-10-17 LTS
-OpenJDK Runtime Environment Temurin-21.0.1+12 (build 21.0.1+12-LTS)
-OpenJDK 64-Bit Server VM Temurin-21.0.1+12 (build 21.0.1+12-LTS, mixed mode, sharing)
+openjdk version "17.0.4" 2022-07-19 LTS
+OpenJDK Runtime Environment (build 17.0.4+8-LTS)
+OpenJDK 64-Bit Server VM (build 17.0.4+8-LTS, mixed mode, sharing)
 
 ```
 
