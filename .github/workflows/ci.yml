@@ -44,8 +44,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.34.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
-        with:
-          java-version: '21'
       - name: "Clean-up SNAPSHOT artifacts"
         run: find "${HOME}/.m2/repository/" -type d -name "*-SNAPSHOT*" | xargs -r -l rm -rf
       - uses: Alfresco/alfresco-build-tools/.github/actions/veracode@v1.34.0
@@ -67,8 +65,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
-        with:
-          java-version: '21'
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
@@ -94,8 +90,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
-        with:
-          java-version: '21'
       - name: "Publish artifacts"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true

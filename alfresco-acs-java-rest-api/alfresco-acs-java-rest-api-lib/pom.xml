@@ -31,10 +31,6 @@
     <acs.model.api>${project.build.directory}/definitions/alfresco-model.yaml</acs.model.api>
     <acs.search.api>${project.build.directory}/definitions/alfresco-search.yaml</acs.search.api>
     <acs.search-sql.api>${project.build.directory}/definitions/alfresco-search-sql.yaml</acs.search-sql.api>
-
-    <java.version>21</java.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
   <modules>
     <module>${project.build.generatedSourceDirectory}/alfresco-core-rest-api</module>
