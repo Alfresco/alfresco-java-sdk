@@ -30,7 +30,7 @@ mvn clean install
 
 You can set versions for API definitions using Maven properties, and exporting them, for example:
 ```console
-MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dacs.version=6.2.0"
+MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dacs.version=6.3.0-SNAPSHOT"
 MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dags.version=3.5.0-A4"
 ```
 
