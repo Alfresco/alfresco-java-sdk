@@ -72,24 +72,24 @@ jobs:
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
-  publish:
-    name: "Publish"
-    runs-on: ubuntu-latest
-    if: >
-      github.event_name == 'push'
-    needs:
-      - build_and_verify
-    env:
-      MAVEN_CLI_OPTS: >
-        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
-        -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
-        -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
-        -Dags.version=${AGS_VERSION}
-        -Dacs.version=${ACS_VERSION}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
-      - name: "Publish artifacts"
-        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
+#  publish:
+#    name: "Publish"
+#    runs-on: ubuntu-latest
+#    if: >
+#      github.event_name == 'push'
+#    needs:
+#      - build_and_verify
+#    env:
+#      MAVEN_CLI_OPTS: >
+#        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
+#        -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
+#        -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
+#        -Dags.version=${AGS_VERSION}
+#        -Dacs.version=${ACS_VERSION}
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
+#      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+#      - name: "Publish artifacts"
+#        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+#        run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true

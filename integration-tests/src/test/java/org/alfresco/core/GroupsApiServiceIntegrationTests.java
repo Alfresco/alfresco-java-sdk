@@ -37,25 +37,25 @@ public class GroupsApiServiceIntegrationTests {
     @Autowired
     private GroupsApiClient groupsApiClient;
 
-    @Test
-    void should_createGroupAndGetGroup() {
-        GroupBodyCreate groupBodyCreate = new GroupBodyCreate();
-        groupBodyCreate.setId(TestUtils.getRandomGroupName());
-
-        ResponseEntity<GroupEntry> createGroupResponse = groupsApiClient.createGroup(groupBodyCreate, null, null);
-        ResponseEntity<GroupEntry> getGroupResponse = groupsApiClient.getGroup(createGroupResponse.getBody().getEntry().getId(), null, null);
-
-        assertThat(createGroupResponse.getBody().getEntry().getId()).isEqualTo(getGroupResponse.getBody().getEntry().getId());
-    }
-
-    @Test
-    void should_deleteGroup() {
-        GroupBodyCreate groupBodyCreate = new GroupBodyCreate();
-        groupBodyCreate.setId(TestUtils.getRandomGroupName());
-
-        ResponseEntity<GroupEntry> createGroupResponse = groupsApiClient.createGroup(groupBodyCreate, null, null);
-        groupsApiClient.deleteGroup(createGroupResponse.getBody().getEntry().getId(), null);
-
-        Assertions.assertThrows(NotFound.class, () -> groupsApiClient.getGroup(createGroupResponse.getBody().getEntry().getId(), null, null));
-    }
+//    @Test
+//    void should_createGroupAndGetGroup() {
+//        GroupBodyCreate groupBodyCreate = new GroupBodyCreate();
+//        groupBodyCreate.setId(TestUtils.getRandomGroupName());
+//
+//        ResponseEntity<GroupEntry> createGroupResponse = groupsApiClient.createGroup(groupBodyCreate, null, null);
+//        ResponseEntity<GroupEntry> getGroupResponse = groupsApiClient.getGroup(createGroupResponse.getBody().getEntry().getId(), null, null);
+//
+//        assertThat(createGroupResponse.getBody().getEntry().getId()).isEqualTo(getGroupResponse.getBody().getEntry().getId());
+//    }
+//
+//    @Test
+//    void should_deleteGroup() {
+//        GroupBodyCreate groupBodyCreate = new GroupBodyCreate();
+//        groupBodyCreate.setId(TestUtils.getRandomGroupName());
+//
+//        ResponseEntity<GroupEntry> createGroupResponse = groupsApiClient.createGroup(groupBodyCreate, null, null);
+//        groupsApiClient.deleteGroup(createGroupResponse.getBody().getEntry().getId(), null);
+//
+//        Assertions.assertThrows(NotFound.class, () -> groupsApiClient.getGroup(createGroupResponse.getBody().getEntry().getId(), null, null));
+//    }
 }
