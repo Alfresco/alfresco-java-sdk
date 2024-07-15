@@ -70,7 +70,10 @@ jobs:
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
       - name: "Run tests"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
+        run: |
+          export CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD=admin
+          export CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME=admin
+          mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
 #  publish:
 #    name: "Publish"
