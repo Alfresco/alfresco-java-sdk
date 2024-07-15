@@ -32,7 +32,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v5.33.0
 
   veracode_sca:
     name: "Veracode - Source Clear Scan (SCA)"
@@ -63,8 +63,8 @@ jobs:
         -Dacs.version=${ACS_VERSION}
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v5.33.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v5.33.0
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
@@ -88,8 +88,8 @@ jobs:
 #        -Dacs.version=${ACS_VERSION}
 #    steps:
 #      - uses: actions/checkout@v3
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+#      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v5.33.0
+#      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v5.33.0
 #      - name: "Publish artifacts"
 #        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
 #        run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
