@@ -32,7 +32,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v5.33.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.35.0
 
   veracode_sca:
     name: "Veracode - Source Clear Scan (SCA)"
@@ -63,18 +63,19 @@ jobs:
         -Dacs.version=${ACS_VERSION}
     steps:
       - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v5.33.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v5.33.0
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          # provide access to SSH user that triggered the build
+          limit-access-to-actor: true
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
       - name: "Run tests"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: |
-          export CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD=admin
-          export CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME=admin
-          export CONTENT_SERVICE_URL=http://localhost:8080
-          mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
+        run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
 #  publish:
 #    name: "Publish"
