@@ -73,6 +73,7 @@ jobs:
         run: |
           export CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD=admin
           export CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME=admin
+          export CONTENT_SERVICE_URL=http://localhost:8080
           mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
 #  publish:
