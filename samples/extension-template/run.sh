@@ -7,11 +7,11 @@ else
 fi
 
 start() {
-    docker-compose up --build -d
+    docker compose up --build -d
 }
 
 down() {
-    docker-compose down
+    docker compose down
 }
 
 build() {
@@ -20,16 +20,16 @@ build() {
 }
 
 tail() {
-    docker-compose logs -f
+    docker compose logs -f
 }
 
 start_sample() {
-    docker-compose up --build -d extension-template
+    docker compose up --build -d extension-template
 }
 
 stop_sample() {
-    docker-compose kill eextension-template
-    yes | docker-compose rm -f extension-template
+    docker compose kill eextension-template
+    yes | docker compose rm -f extension-template
 }
 
 case "$1" in

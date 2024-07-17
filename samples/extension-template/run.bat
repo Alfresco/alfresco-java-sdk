@@ -46,22 +46,22 @@ echo "Usage: %0 {build_start|reload_sample|start|stop|tail}"
 EXIT /B %ERRORLEVEL%
 
 :down
-    docker-compose down
+    docker compose down
 EXIT /B 0
 :build
     docker rmi extension-template:development
     call %MVN_EXEC% clean package
 EXIT /B 0
 :start
-    docker-compose up --build -d
+    docker compose up --build -d
 EXIT /B 0
 :tail
-    docker-compose logs -f
+    docker compose logs -f
 EXIT /B 0
 :stop_sample
-    docker-compose kill extension-template
-    docker-compose rm -f extension-template
+    docker compose kill extension-template
+    docker compose rm -f extension-template
 EXIT /B 0
 :start_sample
-    docker-compose up --build -d extension-template
+    docker compose up --build -d extension-template
 EXIT /B 0

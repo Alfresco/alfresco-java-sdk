@@ -7,11 +7,11 @@ else
 fi
 
 start() {
-    docker-compose up --build -d
+    docker compose up --build -d
 }
 
 down() {
-    docker-compose down
+    docker compose down
 }
 
 build() {
@@ -20,16 +20,16 @@ build() {
 }
 
 tail() {
-    docker-compose logs -f
+    docker compose logs -f
 }
 
 start_sample() {
-    docker-compose up --build -d event-api-handlers-sample
+    docker compose up --build -d event-api-handlers-sample
 }
 
 stop_sample() {
-    docker-compose kill event-api-handlers-sample
-    yes | docker-compose rm -f event-api-handlers-sample
+    docker compose kill event-api-handlers-sample
+    yes | docker compose rm -f event-api-handlers-sample
 }
 
 case "$1" in

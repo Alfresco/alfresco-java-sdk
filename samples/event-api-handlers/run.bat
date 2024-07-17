@@ -46,22 +46,22 @@ echo "Usage: %0 {build_start|reload_sample|start|stop|tail}"
 EXIT /B %ERRORLEVEL%
 
 :down
-    docker-compose down
+    docker compose down
 EXIT /B 0
 :build
     docker rmi event-api-handlers-sample:development
     call %MVN_EXEC% clean package
 EXIT /B 0
 :start
-    docker-compose up --build -d
+    docker compose up --build -d
 EXIT /B 0
 :tail
-    docker-compose logs -f
+    docker compose logs -f
 EXIT /B 0
 :stop_sample
-    docker-compose kill event-api-handlers-sample
-    docker-compose rm -f event-api-handlers-sample
+    docker compose kill event-api-handlers-sample
+    docker compose rm -f event-api-handlers-sample
 EXIT /B 0
 :start_sample
-    docker-compose up --build -d event-api-handlers-sample
+    docker compose up --build -d event-api-handlers-sample
 EXIT /B 0
