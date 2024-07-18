@@ -37,9 +37,9 @@ Docker version 20.10.2, build 2291f61
 
 * [Docker compose](https://docs.docker.com/compose/install/):
 ```bash
-$ docker-compose -v
+$ docker compose version
 
-docker-compose version 1.27.4, build 40524192
+Docker Compose version v2.28.1-desktop.1
 ```
 
 ### Build and run
