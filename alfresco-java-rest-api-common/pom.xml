@@ -17,6 +17,7 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
+      <version>${spring-cloud-starter-openfeign.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
