@@ -8,6 +8,10 @@ on:
       - fix/**
 
 env:
+  QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+  QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
+  DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
   MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
@@ -20,3 +24,32 @@ jobs:
   run_ci:
     uses: ./.github/workflows/ci.yml
     secrets: inherit
+  release:
+    runs-on: ubuntu-latest
+    needs: [ run_ci ]
+    if: >
+      !(failure() || cancelled()) &&
+      !contains(github.event.head_commit.message, '[no release]') &&
+      github.event_name != 'pull_request' &&
+      contains(github.event.head_commit.message, '[release]')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v1.35.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.2
+      - name: "Init"
+        run: bash ./scripts/init.sh
+      - uses: Alfresco/alfresco-build-tools/.github/actions/configure-git-author@v1.35.2
+        with:
+          username: ${{ env.GIT_USERNAME }}
+          email: ${{ env.GIT_EMAIL }}
+          global: true
+      - name: "Release"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: |
+          bash ./scripts/verify_release_tag.sh
+          bash ./scripts/maven_release.sh
+      - name: "Clean Maven cache"
+        run: bash ./scripts/cleanup_cache.sh
