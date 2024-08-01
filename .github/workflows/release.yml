@@ -37,7 +37,7 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v1.35.2
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.2
       - name: "Init"
-        run: bash ./scripts/ci/init.sh
+        run: bash ./scripts/init.sh
       - uses: Alfresco/alfresco-build-tools/.github/actions/configure-git-author@v1.35.2
         with:
           username: ${{ env.GIT_USERNAME }}
@@ -46,7 +46,7 @@ jobs:
       - name: "Release"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
-          bash scripts/ci/verify_release_tag.sh
-          bash scripts/ci/maven_release.sh
+          bash scripts/verify_release_tag.sh
+          bash scripts/maven_release.sh
       - name: "Clean Maven cache"
-        run: bash ./scripts/ci/cleanup_cache.sh
+        run: bash ./scripts/cleanup_cache.sh
