@@ -10,7 +10,7 @@
   </parent>
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
-  <version>6.3.0-SNAPSHOT</version>
+  <version>6.3.0-A1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Parent</name>
   <description>Parent for Alfresco Java SDK</description>
@@ -201,6 +201,13 @@ limitations under the License.]]>
             <mapping>
               <java>SLASHSTAR_STYLE</java>
             </mapping>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+            <tagNameFormat>@{project.version}</tagNameFormat>
           </configuration>
         </plugin>
         <plugin>
