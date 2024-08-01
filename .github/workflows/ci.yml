@@ -16,6 +16,7 @@ on:
       - reopened
       - synchronize
       - labeled
+  workflow_call:
   workflow_dispatch:
 
 env:
