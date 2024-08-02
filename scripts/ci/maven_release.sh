@@ -11,7 +11,6 @@ JAVA_SDK_REPO="github.com/Alfresco/alfresco-java-sdk.git"
 cloneRepo "${JAVA_SDK_REPO}" "${BRANCH_NAME}"
 
 echo "${BRANCH_NAME}"
-echo "${ls -a}"
 
 # Use full history for release
 git checkout -B "${BRANCH_NAME}"
