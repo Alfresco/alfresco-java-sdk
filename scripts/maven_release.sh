@@ -2,7 +2,17 @@
 echo "=========================== Starting Release Script ==========================="
 PS4="\[\e[35m\]+ \[\e[m\]"
 set -vex
+echo dirname
 pushd "$(dirname "${BASH_SOURCE[0]}")/../../"
+
+source "$(dirname "${BASH_SOURCE[0]}")/build_functions.sh"
+
+JAVA_SDK_REPO="github.com/Alfresco/alfresco-java-sdk.git"
+
+cloneRepo "${JAVA_SDK_REPO}" "${BRANCH_NAME}"
+
+echo BRANCH_NAME
+echo ls -a
 
 # Use full history for release
 git checkout -B "${BRANCH_NAME}"
