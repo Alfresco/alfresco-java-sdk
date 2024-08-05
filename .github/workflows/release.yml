@@ -8,6 +8,9 @@ on:
       - fix/**
 
 env:
+  GIT_USERNAME: ${{ secrets.BOT_GITHUB_USERNAME }}
+  GIT_EMAIL: ${{ secrets.BOT_GITHUB_EMAIL }}
+  GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
   QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
   QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
   DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
