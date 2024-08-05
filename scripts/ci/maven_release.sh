@@ -17,12 +17,11 @@ git checkout -B "${BRANCH_NAME}"
 
 # Run the release plugin - with "[skip ci]" in the release commit message
 mvn -B \
-  "-Darguments=-Prelease, -DskipTests -Dbuild-number=${BUILD_NUMBER}" \
+  "-Darguments=-DskipTests -Dbuild-number=${BUILD_NUMBER}" \
   release:clean release:prepare release:perform \
   -DscmCommentPrefix="[maven-release-plugin][skip ci] " \
   -Dusername="${GIT_USERNAME}" \
-  -Dpassword="${GIT_PASSWORD}" \
-  -Prelease
+  -Dpassword="${GIT_PASSWORD}"
 
 popd
 set +vex
