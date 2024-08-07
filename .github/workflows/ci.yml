@@ -20,6 +20,10 @@ on:
   workflow_dispatch:
 
 env:
+  QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+  QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
+  DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
   GIT_EMAIL: ${{ secrets.BOT_GITHUB_EMAIL }}
   GIT_USERNAME: ${{ secrets.BOT_GITHUB_USERNAME }}
