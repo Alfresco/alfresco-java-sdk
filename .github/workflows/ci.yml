@@ -77,11 +77,6 @@ jobs:
 #        run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
   release:
     runs-on: ubuntu-latest
-    if: >
-      !(failure() || cancelled()) &&
-      !contains(github.event.head_commit.message, '[no release]') &&
-      github.event_name != 'pull_request' &&
-      contains(github.event.head_commit.message, '[release]')
     steps:
       - uses: actions/checkout@v4
         with:
