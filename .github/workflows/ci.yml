@@ -20,6 +20,9 @@ on:
   workflow_dispatch:
 
 env:
+  GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
+  GIT_EMAIL: ${{ secrets.BOT_GITHUB_EMAIL }}
+  GIT_USERNAME: ${{ secrets.BOT_GITHUB_USERNAME }}
   MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
   MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
@@ -72,7 +75,29 @@ jobs:
 #      - name: "Run tests"
 #        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
 #        run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
-
+  release:
+    runs-on: ubuntu-latest
+    if: >
+      !(failure() || cancelled()) &&
+      !contains(github.event.head_commit.message, '[no release]') &&
+      github.event_name != 'pull_request' &&
+      contains(github.event.head_commit.message, '[release]')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v1.35.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.2
+      - name: "Init"
+        run: bash ./scripts/ci/init.sh
+      - name: "Release"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: |
+          bash ./scripts/ci/verify_release_tag.sh
+          bash ./scripts/ci/maven_release.sh
+      - name: "Clean Maven cache"
+        run: bash ./scripts/ci/cleanup_cache.sh
 #  publish:
 #    name: "Publish"
 #    runs-on: ubuntu-latest
