@@ -4,19 +4,19 @@ PS4="\[\e[35m\]+ \[\e[m\]"
 set -vex
 pushd "$(dirname "${BASH_SOURCE[0]}")/../../"
 
-source "$(dirname "${BASH_SOURCE[0]}")/build_functions.sh"
+#source "$(dirname "${BASH_SOURCE[0]}")/build_functions.sh"
 
-JAVA_SDK_REPO="github.com/Alfresco/alfresco-java-sdk.git"
+#JAVA_SDK_REPO="github.com/Alfresco/alfresco-java-sdk.git"
 
-cloneRepo "${JAVA_SDK_REPO}" "${BRANCH_NAME}"
+#cloneRepo "${JAVA_SDK_REPO}" "${BRANCH_NAME}"
 
-echo "${BRANCH_NAME}"
+#echo "${BRANCH_NAME}"
 
 # Use full history for release
 git checkout -B "${BRANCH_NAME}"
 
-git config user.email "${GIT_EMAIL}"
-git config user.name "${GIT_USERNAME}"
+#git config user.email "${GIT_EMAIL}"
+#git config user.name "${GIT_USERNAME}"
 
 # Run the release plugin - with "[skip ci]" in the release commit message
 mvn -B \
