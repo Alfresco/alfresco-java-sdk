@@ -51,21 +51,12 @@
     <module>samples</module>
     <module>integration-tests</module>
   </modules>
-<scm>
-  <url>https://github.com/${project.scm.organisation}/${project.scm.repository}</url>
-  <connection>scm:git:https://github.com/${project.scm.organisation}/${project.scm.repository}.git</connection>
-  <developerConnection>scm:git:https://github.com/${project.scm.organisation}/${project.scm.repository}.git</developerConnection>
-  <tag>HEAD</tag>
-</scm>
-<issueManagement>
-  <system>GitHub</system>
-  <url>https://github.com/Alfresco/alfresco-java-sdk/issues</url>
-</issueManagement>
-<ciManagement>
-  <system>GitHub</system>
-  <url>https://github.com/${project.scm.organisation}/${project.scm.repository}/actions</url>
-</ciManagement>
-
+     <scm>
+        <connection>scm:git:https://github.com/Alfresco/alfresco-java-sdk.git</connection>
+        <developerConnection>scm:git:https://github.com/Alfresco/alfresco-java-sdk.git</developerConnection>
+        <url>https://github.com/Alfresco/alfresco-java-sdk</url>
+        <tag>HEAD</tag>
+    </scm>
   <dependencyManagement>
     <dependencies>
       <dependency>
