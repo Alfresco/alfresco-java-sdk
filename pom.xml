@@ -51,20 +51,20 @@
     <module>samples</module>
     <module>integration-tests</module>
   </modules>
-  <scm>
-    <url>http://github.com/${project.scm.organisation}/${project.scm.repository}</url>
-    <connection>scm:git:git://github.com/${project.scm.organisation}/${project.scm.repository}.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/${project.scm.organisation}/${project.scm.repository}.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/Alfresco/alfresco-java-sdk/issues</url>
-  </issueManagement>
-  <ciManagement>
-    <system>GitHub</system>
-    <url>https://github.com/${project.scm.organisation}/${project.scm.repository}/actions</url>
-  </ciManagement>
+<scm>
+  <url>https://github.com/${project.scm.organisation}/${project.scm.repository}</url>
+  <connection>scm:git:https://github.com/${project.scm.organisation}/${project.scm.repository}.git</connection>
+  <developerConnection>scm:git:https://github.com/${project.scm.organisation}/${project.scm.repository}.git</developerConnection>
+  <tag>HEAD</tag>
+</scm>
+<issueManagement>
+  <system>GitHub</system>
+  <url>https://github.com/Alfresco/alfresco-java-sdk/issues</url>
+</issueManagement>
+<ciManagement>
+  <system>GitHub</system>
+  <url>https://github.com/${project.scm.organisation}/${project.scm.repository}/actions</url>
+</ciManagement>
 
   <dependencyManagement>
     <dependencies>
