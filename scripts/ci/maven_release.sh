@@ -12,14 +12,13 @@ pushd "$(dirname "${BASH_SOURCE[0]}")/../../"
 
 #echo "${BRANCH_NAME}"
 git fetch origin
-git pull origin ${BRANCH_NAME}
 
 # Use full history for release
 git checkout -B "${BRANCH_NAME}"
 
 
-#git config user.email "${GIT_EMAIL}"
-#git config user.name "${GIT_USERNAME}"
+git config user.email "${GIT_EMAIL}"
+git config user.name "${GIT_USERNAME}"
 
 # Run the release plugin - with "[skip ci]" in the release commit message
 mvn -B \
