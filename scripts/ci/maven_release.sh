@@ -11,9 +11,12 @@ pushd "$(dirname "${BASH_SOURCE[0]}")/../../"
 #cloneRepo "${JAVA_SDK_REPO}" "${BRANCH_NAME}"
 
 #echo "${BRANCH_NAME}"
+git fetch origin
+git rebase origin/${BRANCH_NAME}
 
 # Use full history for release
 git checkout -B "${BRANCH_NAME}"
+
 
 #git config user.email "${GIT_EMAIL}"
 #git config user.name "${GIT_USERNAME}"
