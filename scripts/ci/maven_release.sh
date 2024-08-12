@@ -14,7 +14,7 @@ pushd "$(dirname "${BASH_SOURCE[0]}")/../../"
 
 # Use full history for release
 git checkout -B "${BRANCH_NAME}"
-git pull origin "${BRANCH_NAME}"
+git pull 
 
 #git config user.email "${GIT_EMAIL}"
 #git config user.name "${GIT_USERNAME}"
