@@ -18,6 +18,17 @@
   <name>Alfresco :: Java SDK :: Samples</name>
   <description>Sample application of the Java SDK</description>
 
+  <distributionManagement>
+    <repository>
+      <id>alfresco-enterprise-releases</id>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/enterprise-releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>alfresco-enterprise-snapshots</id>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/enterprise-snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <modules>
     <module>extension-template</module>
     <module>event-api-handlers</module>
