@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-sdk-samples</artifactId>
-    <version>6.3.0-A2-SNAPSHOT</version>
+    <version>6.3.0-A2</version>
   </parent>
 
   <artifactId>event-api-spring-integration</artifactId>
