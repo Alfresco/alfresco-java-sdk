@@ -44,43 +44,43 @@ jobs:
     steps:
       - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.35.0
 
-#  veracode_sca:
-#    name: "Veracode - Source Clear Scan (SCA)"
-#    runs-on: ubuntu-latest
-#    if: >
-#      github.ref_name == 'develop' ||
-#      github.event_name == 'pull_request'
-#    steps:
-#      - uses: actions/checkout@v3
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.34.0
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
-#      - name: "Clean-up SNAPSHOT artifacts"
-#        run: find "${HOME}/.m2/repository/" -type d -name "*-SNAPSHOT*" | xargs -r -l rm -rf
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/veracode@v1.34.0
-#        continue-on-error: true
-#        with:
-#          srcclr-api-token: ${{ secrets.SRCCLR_API_TOKEN }}
-#
-#  build_and_verify:
-#    name: "Build and Verify"
-#    runs-on: ubuntu-latest
-#    needs:
-#      - pre-commit
-#    env:
-#      MAVEN_CLI_OPTS: >
-#        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
-#        -Dags.version=${AGS_VERSION}
-#        -Dacs.version=${ACS_VERSION}
-#    steps:
-#      - uses: actions/checkout@v3
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
-#      - name: "Build"
-#        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-#        run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
-#      - name: "Run tests"
-#        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-#        run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
+  veracode_sca:
+    name: "Veracode - Source Clear Scan (SCA)"
+    runs-on: ubuntu-latest
+    if: >
+      github.ref_name == 'develop' ||
+      github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.34.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
+      - name: "Clean-up SNAPSHOT artifacts"
+        run: find "${HOME}/.m2/repository/" -type d -name "*-SNAPSHOT*" | xargs -r -l rm -rf
+      - uses: Alfresco/alfresco-build-tools/.github/actions/veracode@v1.34.0
+        continue-on-error: true
+        with:
+          srcclr-api-token: ${{ secrets.SRCCLR_API_TOKEN }}
+
+  build_and_verify:
+    name: "Build and Verify"
+    runs-on: ubuntu-latest
+    needs:
+      - pre-commit
+    env:
+      MAVEN_CLI_OPTS: >
+        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
+        -Dags.version=${AGS_VERSION}
+        -Dacs.version=${ACS_VERSION}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - name: "Build"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
+      - name: "Run tests"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: mvn verify $MAVEN_CLI_OPTS -Dlogging.root.level=off -Dspring.main.banner-mode=off
 
   release:
     runs-on: ubuntu-latest
@@ -97,24 +97,24 @@ jobs:
           bash ./scripts/ci/verify_release_tag.sh
           bash ./scripts/ci/maven_release.sh
 
-#  publish:
-#    name: "Publish"
-#    runs-on: ubuntu-latest
-#    if: >
-#      github.event_name == 'push'
-#    needs:
-#      - build_and_verify
-#    env:
-#      MAVEN_CLI_OPTS: >
-#        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
-#        -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
-#        -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
-#        -Dags.version=${AGS_VERSION}
-#        -Dacs.version=${ACS_VERSION}
-#    steps:
-#      - uses: actions/checkout@v3
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-#      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
-#      - name: "Publish artifacts"
-#        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-#        run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
+  publish:
+    name: "Publish"
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'push'
+    needs:
+      - build_and_verify
+    env:
+      MAVEN_CLI_OPTS: >
+        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
+        -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
+        -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
+        -Dags.version=${AGS_VERSION}
+        -Dacs.version=${ACS_VERSION}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - name: "Publish artifacts"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
