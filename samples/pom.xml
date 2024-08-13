@@ -11,7 +11,7 @@
 
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk-samples</artifactId>
-  <version>6.3.0-A2</version>
+  <version>6.3.0-A3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Samples</name>
   <description>Sample application of the Java SDK</description>
@@ -32,8 +32,4 @@
     <module>event-api-handlers</module>
     <module>event-api-spring-integration</module>
   </modules>
-
-  <scm>
-    <tag>6.3.0-A2</tag>
-  </scm>
 </project>
