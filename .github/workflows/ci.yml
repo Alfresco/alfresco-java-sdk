@@ -71,6 +71,11 @@ jobs:
         source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
+    if: >
+      !(failure() || cancelled()) &&
+      !contains(github.event.head_commit.message, '[no release]') &&
+      github.event_name != 'pull_request' &&
+      contains(github.event.head_commit.message, '[release]')
     steps:
       - uses: actions/checkout@v3
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
