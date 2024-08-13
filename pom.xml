@@ -9,7 +9,7 @@
   </parent>
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
-  <version>6.3.0-A4</version>
+  <version>6.3.0-A5-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Parent</name>
   <description>Parent for Alfresco Java SDK</description>
@@ -55,7 +55,7 @@
     <developerConnection>scm:git:https://github.com/Alfresco/alfresco-java-sdk.git
     </developerConnection>
     <url>https://github.com/Alfresco/alfresco-java-sdk</url>
-    <tag>6.3.0-A4</tag>
+    <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>GitHub</system>
