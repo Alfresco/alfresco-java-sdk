@@ -4,11 +4,11 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-acs-java-rest-api-lib</artifactId>
-    <version>6.3.0-A5</version>
+    <version>6.3.0-A6-SNAPSHOT</version>
   </parent>
   <artifactId>alfresco-event-gateway-api-client</artifactId>
   <name>alfresco-event-gateway-api</name>
-  <version>6.3.0-A5</version>
+  <version>6.3.0-A6-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
