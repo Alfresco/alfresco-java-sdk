@@ -4,12 +4,12 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-acs-java-rest-api-lib</artifactId>
-    <version>6.3.0-A4-SNAPSHOT</version>
+    <version>6.3.0-A5-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
   <artifactId>alfresco-search-rest-api</artifactId>
   <name>alfresco-search-rest-api</name>
-  <version>6.3.0-A4-SNAPSHOT</version>
+  <version>6.3.0-A5-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
