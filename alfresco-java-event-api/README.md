@@ -147,7 +147,7 @@ The steps to integrate with the Alfresco Java Event API using the Spring Boot st
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-      <version>6.4.0-SNAPSHOT</version>
+      <version>6.3.0</version>
     </dependency>
 ```
 
@@ -186,7 +186,7 @@ In order to use them, you only need to add the corresponding dependency to your 
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-integration</artifactId>
-      <version>6.4.0-SNAPSHOT</version>
+      <version>6.3.0</version>
     </dependency>
 ```
 
@@ -203,7 +203,7 @@ In order to use them, you only need to add the corresponding dependency to your 
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-handling</artifactId>
-      <version>6.4.0-SNAPSHOT</version>
+      <version>6.3.0</version>
     </dependency>
 ```
 
