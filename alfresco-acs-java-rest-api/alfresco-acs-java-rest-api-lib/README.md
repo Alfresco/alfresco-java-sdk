@@ -30,8 +30,8 @@ mvn clean install
 
 You can set versions for API definitions using Maven properties, and exporting them, for example:
 ```console
-MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dacs.version=6.3.0-SNAPSHOT"
-MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dags.version=3.5.0-A4"
+MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dacs.version=23.3.0"
+MAVEN_CLI_OPTS="${MAVEN_CLI_OPTS} -Dags.version=23.3.0.84"
 ```
 
 In the `generate-sources` phase the script `patch.sh` is executed. This script finds and replaces in the generated code configurations with the correct names and cleans unnecessary files.
