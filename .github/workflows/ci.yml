@@ -42,7 +42,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v1.35.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v7.0.0
 
   veracode_sca:
     name: "Veracode - Source Clear Scan (SCA)"
@@ -51,12 +51,12 @@ jobs:
       github.ref_name == 'develop' ||
       github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.34.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.34.0
+      - uses: actions/checkout@v4
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v7.0.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v7.0.0
       - name: "Clean-up SNAPSHOT artifacts"
         run: find "${HOME}/.m2/repository/" -type d -name "*-SNAPSHOT*" | xargs -r -l rm -rf
-      - uses: Alfresco/alfresco-build-tools/.github/actions/veracode@v1.34.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/veracode@v7.0.0
         continue-on-error: true
         with:
           srcclr-api-token: ${{ secrets.SRCCLR_API_TOKEN }}
@@ -72,9 +72,9 @@ jobs:
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
     steps:
-      - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - uses: actions/checkout@v4
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v7.0.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v7.0.0
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
@@ -93,9 +93,9 @@ jobs:
       contains(github.event.head_commit.message, '[release]')
     steps:
       - uses: actions/checkout@v4
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.2
-      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v1.35.2
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v7.0.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v7.0.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v7.0.0
       - name: "Init"
         run: bash ./scripts/ci/init.sh
       - name: "Release"
@@ -119,9 +119,9 @@ jobs:
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
     steps:
-      - uses: actions/checkout@v3
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v1.35.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.35.0
+      - uses: actions/checkout@v4
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v7.0.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v7.0.0
       - name: "Publish artifacts"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
