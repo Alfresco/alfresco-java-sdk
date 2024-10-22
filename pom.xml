@@ -150,6 +150,10 @@
       <id>alfresco-private-repository</id>
       <url>https://artifacts.alfresco.com/nexus/content/groups/private</url>
     </repository>
+    <repository>
+      <id>alfresco-enterprise</id>
+      <url>https://artifacts.alfresco.com/nexus/content/repositories/enterprise-releases</url>
+    </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
