@@ -18,9 +18,12 @@ package org.alfresco.event.sdk.integration.transformer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.alfresco.enterprise.repo.event.v1.model.EnterpriseEventData;
 import org.alfresco.event.sdk.handling.EventHandlingException;
 import org.alfresco.repo.event.databind.ObjectMapperFactory;
 import org.alfresco.repo.event.v1.model.DataAttributes;
+import org.alfresco.repo.event.v1.model.EventData;
 import org.alfresco.repo.event.v1.model.RepoEvent;
 import org.alfresco.repo.event.v1.model.Resource;
 import org.slf4j.Logger;
@@ -38,13 +41,34 @@ public class EventGenericTransformer implements GenericTransformer<String, RepoE
 
     private final ObjectMapper objectMapper = new ObjectMapperFactory().createObjectMapper();
 
+    /**
+     * A unique property that distinguishes an Alfresco Enterprise event from a standard event.
+     */
+    public static final String ONLY_ENTERPRISE_PROPERTY = "resourceReaderAuthorities";
+
     @Override
     public RepoEvent<DataAttributes<Resource>> transform(final String eventJSON) {
         LOGGER.debug("Transforming JSON event {}", eventJSON);
         try {
-            return objectMapper.readValue(eventJSON, new TypeReference<>() {
-            });
-        } catch (final JsonProcessingException excp) {
+            // Determine if the event is an Enterprise event by checking for a specific property
+            boolean enterpriseEvent = eventJSON.contains(ONLY_ENTERPRISE_PROPERTY);
+
+            // Deserialize JSON to the appropriate event type based on whether it's an Enterprise event
+            if (enterpriseEvent)
+            {
+                return (RepoEvent<DataAttributes<Resource>>) (RepoEvent<?>)
+                    objectMapper.readValue(eventJSON, new TypeReference<RepoEvent<EnterpriseEventData<Resource>>>() {
+                    });
+            }
+            else
+            {
+                return (RepoEvent<DataAttributes<Resource>>) (RepoEvent<?>)
+                    objectMapper.readValue(eventJSON, new TypeReference<RepoEvent<EventData<Resource>>>() {
+                    });
+            }
+        }
+        catch (final JsonProcessingException excp)
+        {
             LOGGER.error("An error occurred transforming the JSON event {}", eventJSON);
             throw new EventHandlingException("An error occurred transforming the JSON event", excp);
         }

@@ -32,6 +32,13 @@
       <artifactId>acs-event-model</artifactId>
     </dependency>
 
+    <!-- Alfresco Enterprise Events -->
+    <dependency>
+      <groupId>org.alfresco</groupId>
+      <artifactId>acs-enterprise-event-model</artifactId>
+      <version>0.0.64</version>
+    </dependency>
+
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-handling</artifactId>
