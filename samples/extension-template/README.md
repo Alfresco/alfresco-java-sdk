@@ -14,13 +14,13 @@ to define a sample [```EventHandler```](../../alfresco-java-event-api/alfresco-j
 
 To properly build and run the project in a local environment it is required to have installed some tools.
 
-* Java 21:
+* Java 17:
 ```bash
 $ java -version
 
-openjdk version "21.0.3" 2024-04-16 LTS
-OpenJDK Runtime Environment (build 21.0.3+7-LTS-152)
-OpenJDK 64-Bit Server VM (build 21.0.3+7-LTS-152, mixed mode, sharing)
+openjdk version "17.0.4" 2022-07-19 LTS
+OpenJDK Runtime Environment (build 17.0.4+8-LTS)
+OpenJDK 64-Bit Server VM (build 17.0.4+8-LTS, mixed mode, sharing)
 ```
 
 * [Maven](https://maven.apache.org/install.html) version 3.3 or higher:
