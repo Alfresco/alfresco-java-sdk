@@ -12,7 +12,7 @@ that log information about the handled events.
 
 To properly build and run the project in a local environment it is required to have installed some tools.
 
-* Java 17:
+* Java 21:
 ```bash
 $ java -version
 

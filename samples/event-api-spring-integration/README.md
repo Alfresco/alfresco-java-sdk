@@ -11,7 +11,7 @@ to define sample Spring Integration flows that log information about specific ha
 
 To properly build and run the project in a local environment it is required to have installed some tools.
 
-* Java 21:
+* Java 17:
 ```bash
 $ java -version
 

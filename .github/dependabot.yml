@@ -15,4 +15,4 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "amazoncorretto"
-        versions: [">21"]
+        versions: [">17"]
