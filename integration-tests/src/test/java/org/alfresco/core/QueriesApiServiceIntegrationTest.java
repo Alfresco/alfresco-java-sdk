@@ -29,6 +29,8 @@ import org.springframework.http.ResponseEntity;
 import util.Constants.PersonIds;
 import util.Constants.SiteIds;
 
+import java.util.Objects;
+
 /**
  * Integration tests for {@link QueriesApiClient}.
  */
@@ -53,7 +55,7 @@ public class QueriesApiServiceIntegrationTest extends AbstractSiteBasedIntegrati
     void should_findSites() {
         ResponseEntity<SitePaging> findSitesResponse = queriesApiClient.findSites(SiteIds.EXISTING_TEST_SITE, null, null, null, null);
 
-        assertThat(findSitesResponse.getBody().getList().getEntries()).isNotEmpty();
+        assertThat(Objects.requireNonNull(findSitesResponse.getBody()).getList().getEntries()).isNotEmpty();
         assertThat(findSitesResponse.getBody().getList().getEntries().get(0).getEntry().getId()).isEqualTo(SiteIds.EXISTING_TEST_SITE);
     }
 }
