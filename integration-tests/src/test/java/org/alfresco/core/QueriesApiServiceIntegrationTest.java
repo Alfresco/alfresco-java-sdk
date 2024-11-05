@@ -55,7 +55,7 @@ public class QueriesApiServiceIntegrationTest extends AbstractSiteBasedIntegrati
     void should_findSites() {
         ResponseEntity<SitePaging> findSitesResponse = queriesApiClient.findSites(SiteIds.EXISTING_TEST_SITE, null, null, null, null);
 
-        assertThat(Objects.requireNonNull(findSitesResponse.getBody()).getList().getEntries()).isNotEmpty();
+        assertThat(findSitesResponse.getBody().getList().getEntries()).isNotEmpty();
         assertThat(findSitesResponse.getBody().getList().getEntries().get(0).getEntry().getId()).isEqualTo(SiteIds.EXISTING_TEST_SITE);
     }
 }
