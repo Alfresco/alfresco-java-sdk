@@ -29,8 +29,6 @@ import org.springframework.http.ResponseEntity;
 import util.Constants.PersonIds;
 import util.Constants.SiteIds;
 
-import java.util.Objects;
-
 /**
  * Integration tests for {@link QueriesApiClient}.
  */
