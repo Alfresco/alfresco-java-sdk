@@ -22,8 +22,10 @@ import feign.RequestTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.core.OAuth2AccessToken;
+import org.springframework.security.oauth2.core.OAuth2AuthorizationException;
 
 /**
  * Feign {@link RequestInterceptor} that makes use of the OAuth2 support classes from Spring Security to obtain an access token and add the corresponding
@@ -55,7 +57,36 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
     }
 
     private String getAuthorizationToken() {
-        final OAuth2AccessToken accessToken = oAuth2AuthorizedClientManager.authorize(oAuth2AuthorizeRequest).getAccessToken();
+        OAuth2AccessToken accessToken = null;
+        try {
+            accessToken = authorizeAndGetToken();
+        } catch (OAuth2AuthorizationException e) {
+            if (isTokenExpired(e)) {
+                LOGGER.info("Reauthorization required: " + e.getMessage());
+                accessToken = reauthorize();
+            } else {
+                LOGGER.error("Authorization failed: " + e.getMessage());
+            }
+        }
         return String.format(AUTH_HEADER_FORMAT, accessToken.getTokenType().getValue(), accessToken.getTokenValue());
     }
+
+    // Reauthorize and get a new token
+    private OAuth2AccessToken reauthorize() {
+        return authorizeAndGetToken();
+    }
+
+    // Authorize and get token
+    private OAuth2AccessToken authorizeAndGetToken() {
+        OAuth2AuthorizedClient authorizedClient = oAuth2AuthorizedClientManager.authorize(oAuth2AuthorizeRequest);
+        if (authorizedClient == null || authorizedClient.getAccessToken() == null) {
+            LOGGER.error("Failed to authorize and get access token.");
+        }
+        return authorizedClient.getAccessToken();
+    }
+
+    private boolean isTokenExpired(OAuth2AuthorizationException e) {
+        return e.getMessage().contains("Token is not active");
+    }
+
 }
