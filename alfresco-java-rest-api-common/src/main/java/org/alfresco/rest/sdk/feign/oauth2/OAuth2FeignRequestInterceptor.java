@@ -61,7 +61,7 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
         try {
             accessToken = authorizeAndGetToken();
         } catch (OAuth2AuthorizationException e) {
-            if (isTokenExpired(e)) {
+            if (isAccessAndRefreshTokenExpired(e)) {
                 LOGGER.info("Reauthorization required: " + e.getMessage());
                 accessToken = reauthorize();
             } else {
@@ -76,7 +76,7 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
         return authorizeAndGetToken();
     }
 
-    // Authorize and get token
+    // Authorise and get token
     private OAuth2AccessToken authorizeAndGetToken() {
         OAuth2AuthorizedClient authorizedClient = oAuth2AuthorizedClientManager.authorize(oAuth2AuthorizeRequest);
         if (authorizedClient == null || authorizedClient.getAccessToken() == null) {
@@ -85,8 +85,8 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
         return authorizedClient.getAccessToken();
     }
 
-    private boolean isTokenExpired(OAuth2AuthorizationException e) {
-        return e.getMessage().contains("Token is not active");
+    private boolean isAccessAndRefreshTokenExpired(OAuth2AuthorizationException e) {
+        return e.getError().getErrorCode().equals("invalid_grant");
     }
 
 }
