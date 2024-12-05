@@ -132,7 +132,7 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
      */
     private boolean isAccessTokenExpired(OAuth2AccessToken accessToken) {
         // Token is considered expired if no expiry date is set
-        return accessToken.getExpiresAt() == null || Instant.now().compareTo(accessToken.getExpiresAt()) >= 0;
+        return accessToken.getExpiresAt() == null || accessToken.getExpiresAt().isBefore(Instant.now());
     }
 
     /**
