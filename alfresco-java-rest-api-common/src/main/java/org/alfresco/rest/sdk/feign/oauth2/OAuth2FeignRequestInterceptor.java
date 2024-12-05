@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2021 Alfresco Software, Ltd.
+ * Copyright 2021-2024 Alfresco Software, Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,8 +132,7 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
      */
     private boolean isAccessTokenExpired(OAuth2AccessToken accessToken) {
         // Token is considered expired if no expiry date is set
-        return accessToken == null || accessToken.getExpiresAt() == null ||
-                accessToken.getExpiresAt().isBefore(Instant.now());
+        return accessToken.getExpiresAt() == null || Instant.now().compareTo(accessToken.getExpiresAt()) >= 0;
     }
 
     /**
