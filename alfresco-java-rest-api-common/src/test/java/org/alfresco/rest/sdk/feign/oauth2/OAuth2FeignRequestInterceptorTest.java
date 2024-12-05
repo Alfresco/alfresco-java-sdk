@@ -30,6 +30,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.core.OAuth2AccessToken;
 import org.springframework.security.oauth2.core.OAuth2AccessToken.TokenType;
 
@@ -44,6 +45,8 @@ public class OAuth2FeignRequestInterceptorTest {
     private OAuth2AuthorizedClientManager mockOAuth2AuthorizedClientManager;
     @Mock
     private OAuth2AuthorizedClient mockOAuth2AuthorizedClient;
+    @Mock
+    private OAuth2AuthorizedClientService mockOAuth2AuthorizedClientService;
 
     private OAuth2AuthorizeRequest oAuth2AuthorizeRequest;
 
@@ -55,7 +58,8 @@ public class OAuth2FeignRequestInterceptorTest {
         oAuth2AuthorizeRequest = OAuth2AuthorizeRequest.withClientRegistrationId("test")
             .principal(new AnonymousAuthenticationToken("feignClient", "feignClient", AuthorityUtils
                 .createAuthorityList(new String[]{"ROLE_ANONYMOUS"}))).build();
-        oAuth2FeignRequestInterceptor = new OAuth2FeignRequestInterceptor(mockOAuth2AuthorizedClientManager, oAuth2AuthorizeRequest);
+        oAuth2FeignRequestInterceptor = new OAuth2FeignRequestInterceptor(mockOAuth2AuthorizedClientManager, oAuth2AuthorizeRequest,
+                mockOAuth2AuthorizedClientService);
     }
 
     @Test
