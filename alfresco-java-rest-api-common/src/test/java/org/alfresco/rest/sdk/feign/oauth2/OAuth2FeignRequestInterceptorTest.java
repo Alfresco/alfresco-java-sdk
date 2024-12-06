@@ -53,13 +53,17 @@ public class OAuth2FeignRequestInterceptorTest {
     private OAuth2FeignRequestInterceptor oAuth2FeignRequestInterceptor;
 
     @Before
-    public void setup() {
+    public void setup()
+    {
         MockitoAnnotations.openMocks(this);
         oAuth2AuthorizeRequest = OAuth2AuthorizeRequest.withClientRegistrationId("test")
-            .principal(new AnonymousAuthenticationToken("feignClient", "feignClient", AuthorityUtils
-                .createAuthorityList(new String[]{"ROLE_ANONYMOUS"}))).build();
-        oAuth2FeignRequestInterceptor = new OAuth2FeignRequestInterceptor(mockOAuth2AuthorizedClientManager, oAuth2AuthorizeRequest,
-                mockOAuth2AuthorizedClientService);
+                    .principal(new AnonymousAuthenticationToken("feignClient", "feignClient",
+                                                                AuthorityUtils.createAuthorityList(
+                                                                            new String[] { "ROLE_ANONYMOUS" })))
+                    .build();
+        oAuth2FeignRequestInterceptor =
+                    new OAuth2FeignRequestInterceptor(mockOAuth2AuthorizedClientManager, oAuth2AuthorizeRequest,
+                                                      mockOAuth2AuthorizedClientService);
     }
 
     @Test
