@@ -37,7 +37,6 @@ import feign.RequestTemplate;
  */
 public class OAuth2FeignRequestInterceptor implements RequestInterceptor
 {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(OAuth2FeignRequestInterceptor.class);
     private static final String AUTH_HEADER_FORMAT = "%s %s";
     private static final String REFRESH_TOKEN_ATTRIBUTE_NAME = "refresh_token";
