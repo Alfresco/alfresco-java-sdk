@@ -276,7 +276,7 @@ limitations under the License.]]>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-javadoc-plugin</artifactId>
 		<configuration>
-			<additionalOptions>-Xdoclint:none</additionalOptions>
+        	<doclint>none</doclint>
 			<detectOfflineLinks>false</detectOfflineLinks>
 		</configuration>
 		<executions>
