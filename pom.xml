@@ -272,6 +272,22 @@ limitations under the License.]]>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
        </plugin>
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-javadoc-plugin</artifactId>
+		<configuration>
+        	<doclint>none</doclint>
+			<detectOfflineLinks>false</detectOfflineLinks>
+		</configuration>
+		<executions>
+			<execution>
+				<id>attach-javadocs</id>
+				<goals>
+					<goal>jar</goal>
+				</goals>
+			</execution>
+		</executions>
+	  </plugin>
     </plugins>
   </build>
 </project>
