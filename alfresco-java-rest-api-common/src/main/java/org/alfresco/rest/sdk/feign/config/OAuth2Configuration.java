@@ -102,7 +102,10 @@ public class OAuth2Configuration {
 
     @Bean
     public OAuth2FeignRequestInterceptor requestInterceptor(OAuth2AuthorizedClientManager authorizedClientManager,
-        OAuth2AuthorizeRequest oAuth2AuthorizeRequest) {
-        return new OAuth2FeignRequestInterceptor(authorizedClientManager, oAuth2AuthorizeRequest);
+                                                            OAuth2AuthorizeRequest oAuth2AuthorizeRequest,
+                                                            InMemoryOAuth2AuthorizedClientService authorizedClientService)
+    {
+        return new OAuth2FeignRequestInterceptor(authorizedClientManager, oAuth2AuthorizeRequest,
+                                                 authorizedClientService);
     }
 }

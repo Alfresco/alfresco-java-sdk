@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -10,7 +9,7 @@
   </parent>
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
-  <version>6.3.0-SNAPSHOT</version>
+  <version>7.0.0</version>
   <packaging>pom</packaging>
   <name>Alfresco :: Java SDK :: Parent</name>
   <description>Parent for Alfresco Java SDK</description>
@@ -52,9 +51,9 @@
     <module>integration-tests</module>
   </modules>
   <scm>
-    <url>http://github.com/${project.scm.organisation}/${project.scm.repository}</url>
-    <connection>scm:git:git://github.com/${project.scm.organisation}/${project.scm.repository}.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/${project.scm.organisation}/${project.scm.repository}.git</developerConnection>
+    <connection>scm:git:https://github.com/Alfresco/alfresco-java-sdk.git</connection>
+    <developerConnection>scm:git:https://github.com/Alfresco/alfresco-java-sdk.git</developerConnection>
+    <url>https://github.com/Alfresco/alfresco-java-sdk</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
@@ -97,6 +96,25 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+      <version>4.1.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.17.0</version>
+    </dependency>
+  </dependencies>
 
   <distributionManagement>
     <repository>
@@ -124,7 +142,7 @@
     <swagger-core.version>1.5.20</swagger-core.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
     <third-party-license-maven-plugin.version>2.0.1</third-party-license-maven-plugin.version>
-    <acs-event-model.version>0.0.25</acs-event-model.version>
+    <acs-event-model.version>1.0.2</acs-event-model.version>
   </properties>
   <repositories>
     <repository>
@@ -204,6 +222,14 @@ limitations under the License.]]>
           </configuration>
         </plugin>
         <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+            <tagNameFormat>@{project.version}</tagNameFormat>
+            <useReleaseProfile>false</useReleaseProfile>
+          </configuration>
+        </plugin>
+        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
           <version>${third-party-license-maven-plugin.version}</version>
@@ -246,6 +272,22 @@ limitations under the License.]]>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
        </plugin>
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-javadoc-plugin</artifactId>
+		<configuration>
+        	<doclint>none</doclint>
+			<detectOfflineLinks>false</detectOfflineLinks>
+		</configuration>
+		<executions>
+			<execution>
+				<id>attach-javadocs</id>
+				<goals>
+					<goal>jar</goal>
+				</goals>
+			</execution>
+		</executions>
+	  </plugin>
     </plugins>
   </build>
 </project>
