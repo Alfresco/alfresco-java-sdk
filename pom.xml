@@ -94,6 +94,11 @@
         <artifactId>acs-event-model</artifactId>
         <version>${acs-event-model.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.hazelcast.jet</groupId>
+        <artifactId>hazelcast-jet</artifactId>
+        <version>4.5.1</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
