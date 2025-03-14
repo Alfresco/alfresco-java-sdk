@@ -16,3 +16,14 @@ updates:
     ignore:
       - dependency-name: "amazoncorretto"
         versions: [">17"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
