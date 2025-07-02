@@ -94,13 +94,16 @@
         <artifactId>acs-event-model</artifactId>
         <version>${acs-event-model.version}</version>
       </dependency>
-      <dependency>
-        <groupId>commons-fileupload</groupId>
-        <artifactId>commons-fileupload</artifactId>
-        <version>${common-fileupload.version}</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>${common-fileupload.version}</version>
+    </dependency>
+  </dependencies>
 
   <distributionManagement>
     <repository>
