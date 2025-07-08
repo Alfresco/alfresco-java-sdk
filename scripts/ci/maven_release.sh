@@ -15,7 +15,7 @@ mvn -B \
     "-Darguments=-DskipTests -DbuildNumber=$GITHUB_RUN_NUMBER" \
     release:clean release:prepare release:perform \
     -DscmCommentPrefix="[maven-release-plugin][skip ci] " \
-    -Dusername=alfresco-build \
+    -Dusername="${GIT_USERNAME}" \
     -Dpassword="${GIT_PASSWORD}"
 
 popd
