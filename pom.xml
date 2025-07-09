@@ -102,6 +102,13 @@
     </dependencies>
   </dependencyManagement>
 
+  <dependencies>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+    </dependency>
+  </dependencies>
+
   <distributionManagement>
     <repository>
       <id>alfresco-public</id>
