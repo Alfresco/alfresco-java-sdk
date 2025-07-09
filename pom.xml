@@ -102,6 +102,12 @@
     </dependencies>
   </dependencyManagement>
 
+  <!--
+  Explicitly adding the common-fileupload dependency, it was
+  not getting overridden with the latest version in the child module.
+  This ensures consistency and resolves the version conflict observed earlier
+  (see PRODSEC-10314).
+  -->
   <dependencies>
     <dependency>
       <groupId>commons-fileupload</groupId>
