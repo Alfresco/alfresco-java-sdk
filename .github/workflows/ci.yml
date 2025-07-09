@@ -111,6 +111,29 @@ jobs:
           bash ./scripts/ci/verify_release_tag.sh
           bash ./scripts/ci/maven_release.sh
 
+  dry_run_release_test:
+    name: "Dry Run Release Test"
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    needs:
+      - build_and_verify
+    steps:
+     - uses: actions/checkout@v4
+       with:
+         fetch-depth: 0
+     - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v8.16.0
+     - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v8.16.0
+     - uses: Alfresco/alfresco-build-tools/.github/actions/configure-git-author@v8.16.0
+       with:
+        username: ${{ env.GIT_USERNAME }}
+        email: ${{ env.GIT_EMAIL }}
+        global: true
+     - name: "Test Release Process"
+       env:
+         GITHUB_TOKEN: ${{ env.GIT_PASSWORD }}
+         PULL_REQUEST: "true"
+       run: bash ./scripts/ci/maven_release.sh
+
   publish:
     name: "Publish"
     runs-on: ubuntu-latest
