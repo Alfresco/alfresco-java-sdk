@@ -8,17 +8,17 @@ pushd "$(dirname "${BASH_SOURCE[0]}")/../../"
 # For PR builds only execute a Dry Run of the release
 [ "${PULL_REQUEST}" = "false" ] && DRY_RUN="" || DRY_RUN="-DdryRun"
 
-# Github Actions CI runner work on DETACHED HEAD, so we need to checkout the release branch
-git checkout -B "${BRANCH_NAME}"
-
-git pull
-
 # Configure git remote to use token authentication
 git remote set-url origin "https://${GIT_USERNAME}:${GITHUB_TOKEN}@github.com/Alfresco/alfresco-java-sdk.git"
+
+
+# Github Actions CI runner work on DETACHED HEAD, so we need to checkout the release branch
+git checkout -B "${BRANCH_NAME}"
 
 # Set up proper tracking and pull changes
 git branch --set-upstream-to=origin/develop ${BRANCH_NAME} || true
 git pull || echo "Pull failed, but continuing with local changes"
+
 # Run the release plugin - with "[skip ci]" in the release commit message
 mvn -B \
     "-Darguments=-DskipTests -DbuildNumber=$GITHUB_RUN_NUMBER" \
