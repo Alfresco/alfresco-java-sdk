@@ -13,6 +13,12 @@ git checkout -B "${BRANCH_NAME}"
 
 git pull
 
+# Configure git remote to use token authentication
+git remote set-url origin "https://${GIT_USERNAME}:${GITHUB_TOKEN}@github.com/Alfresco/alfresco-java-sdk.git"
+
+# Set up proper tracking and pull changes
+git branch --set-upstream-to=origin/${BRANCH_NAME} ${BRANCH_NAME} || true
+git pull || echo "Pull failed, but continuing with local changes"
 # Run the release plugin - with "[skip ci]" in the release commit message
 mvn -B \
     "-Darguments=-DskipTests -DbuildNumber=$GITHUB_RUN_NUMBER" \
