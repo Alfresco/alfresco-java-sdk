@@ -93,6 +93,8 @@ jobs:
       contains(github.event.head_commit.message, '[release]')
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v8.16.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v8.16.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v8.16.0
@@ -104,8 +106,6 @@ jobs:
       - name: "Init"
         run: bash ./scripts/ci/init.sh
       - name: "Release"
-        env:
-           GITHUB_TOKEN: ${{ env.GIT_PASSWORD }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
           bash ./scripts/ci/verify_release_tag.sh
