@@ -32,9 +32,6 @@ env:
   QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
   DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  GIT_USERNAME: ${{ secrets.BOT_GITHUB_USERNAME }}
-  GIT_EMAIL: ${{ secrets.BOT_GITHUB_EMAIL }}
-  GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
   GITHUB_EVENT: ${{ github.event_name }}
   BRANCH_NAME: ${{ github.ref_name }}
 
@@ -100,12 +97,14 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v8.16.0
       - uses: Alfresco/alfresco-build-tools/.github/actions/configure-git-author@v8.16.0
         with:
-          username: ${{ env.GIT_USERNAME }}
-          email: ${{ env.GIT_EMAIL }}
+          GIT_USERNAME: ${{ vars.BOT_GITHUB_USERNAME }}
+          GIT_EMAIL: ${{ vars.BOT_GITHUB_EMAIL }}
           global: true
       - name: "Init"
         run: bash ./scripts/ci/init.sh
       - name: "Release"
+        env:
+          GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
           bash ./scripts/ci/verify_release_tag.sh
