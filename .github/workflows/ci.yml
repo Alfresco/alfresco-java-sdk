@@ -104,6 +104,7 @@ jobs:
         run: bash ./scripts/ci/init.sh
       - name: "Release"
         env:
+          GIT_USERNAME: ${{ vars.BOT_GITHUB_USERNAME }}
           GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
