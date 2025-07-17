@@ -147,7 +147,7 @@ The steps to integrate with the Alfresco Java Event API using the Spring Boot st
     <dependency>
       <groupId>org.alfresco</groupId>
       <artifactId>alfresco-java-event-api-spring-boot-starter</artifactId>
-      <version>7.2.0</version>
+      <version>7.2.0-SNAPSHOT</version>
     </dependency>
 ```
 
