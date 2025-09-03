@@ -4,8 +4,8 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.4.7</version>
-    <relativePath />
+    <version>3.4.9</version>
+    <relativePath/>
   </parent>
   <groupId>org.alfresco</groupId>
   <artifactId>alfresco-java-sdk</artifactId>
