@@ -99,6 +99,22 @@
         <artifactId>commons-fileupload</artifactId>
         <version>${common-fileupload.version}</version>
       </dependency>
+
+      <!--
+        Explicitly adding this dependency to resolve https://hyland.atlassian.net/browse/PRODSEC-10532.
+        Reason:
+          - spring-security-oauth2-client (via spring-security-oauth2-jose:6.5.1) currently brings in
+            com.nimbusds:nimbus-jose-jwt:9.37.3, which is vulnerable (CVE-2025-53864).
+          - A fixed version is available starting from nimbus-jose-jwt:10.0.2 (we are using 10.5 here).
+        Future scope:
+          - Once spring-security-oauth2-client updates to depend on a safe version (>= 10.0.2),
+            this explicit dependency override can be removed.
+      -->
+      <dependency>
+        <groupId>com.nimbusds</groupId>
+        <artifactId>nimbus-jose-jwt</artifactId>
+        <version>${com.nimbusds.outh2.sdk.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -143,6 +159,7 @@
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
     <third-party-license-maven-plugin.version>2.0.1</third-party-license-maven-plugin.version>
     <acs-event-model.version>1.0.2</acs-event-model.version>
+    <com.nimbusds.outh2.sdk.version>10.5</com.nimbusds.outh2.sdk.version>
   </properties>
   <repositories>
     <repository>
@@ -271,23 +288,23 @@ limitations under the License.]]>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
-       </plugin>
-	  <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-javadoc-plugin</artifactId>
-		<configuration>
-        	<doclint>none</doclint>
-			<detectOfflineLinks>false</detectOfflineLinks>
-		</configuration>
-		<executions>
-			<execution>
-				<id>attach-javadocs</id>
-				<goals>
-					<goal>jar</goal>
-				</goals>
-			</execution>
-		</executions>
-	  </plugin>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <doclint>none</doclint>
+          <detectOfflineLinks>false</detectOfflineLinks>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
