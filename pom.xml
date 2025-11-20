@@ -115,6 +115,11 @@
         <artifactId>nimbus-jose-jwt</artifactId>
         <version>${com.nimbusds.outh2.sdk.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${org.apache.common-lang-3.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -160,6 +165,7 @@
     <third-party-license-maven-plugin.version>2.0.1</third-party-license-maven-plugin.version>
     <acs-event-model.version>1.0.2</acs-event-model.version>
     <com.nimbusds.outh2.sdk.version>10.5</com.nimbusds.outh2.sdk.version>
+    <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
   </properties>
   <repositories>
     <repository>
