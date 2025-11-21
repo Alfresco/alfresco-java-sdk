@@ -16,6 +16,10 @@
   <name>Alfresco :: Java SDK :: Samples</name>
   <description>Sample application of the Java SDK</description>
 
+  <properties>
+    <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
+  </properties>
+
   <distributionManagement>
     <repository>
       <id>alfresco-enterprise-releases</id>
@@ -26,6 +30,18 @@
       <url>https://artifacts.alfresco.com/nexus/content/repositories/enterprise-snapshots</url>
     </snapshotRepository>
   </distributionManagement>
+
+  <dependencies>
+    <!--
+      commons-lang3 is required here, as it does not get inherited from the parent pom, and it is directly using spring boot 3.5.7
+      which is fetching commons-lang 3.17.0, while the SDK and samples need at least 3.20.0 to avoid CVE-2025-48924
+    -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${org.apache.common-lang-3.version}</version>
+    </dependency>
+  </dependencies>
 
   <modules>
     <module>extension-template</module>
