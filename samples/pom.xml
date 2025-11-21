@@ -33,7 +33,7 @@
 
   <dependencies>
     <!--
-      commons-lang3 is required here, as it does not get inherited from the parent pom, and it directly using spring boot 3.5.7
+      commons-lang3 is required here, as it does not get inherited from the parent pom, and it is directly using spring boot 3.5.7
       which is fetching commons-lang 3.17.0, while the SDK and samples need at least 3.20.0 to avoid CVE-2025-48924
     -->
     <dependency>
