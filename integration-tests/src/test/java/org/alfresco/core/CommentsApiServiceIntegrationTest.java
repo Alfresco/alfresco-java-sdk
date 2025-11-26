@@ -54,7 +54,7 @@ public class CommentsApiServiceIntegrationTest extends AbstractFolderBasedIntegr
         assertThat(createCommentResponse.getBody()).isNotNull();
         assertThat(createCommentResponse.getBody().getEntry().getContent()).isEqualTo(commentBody.getContent());
         assertThat(listCommentsResponse.getBody().getList().getEntries()).isNotNull();
-        assertThat(listCommentsResponse.getBody().getList().getEntries().get(0).getEntry().getContent()).isEqualTo(commentBody.getContent());
+        assertThat(listCommentsResponse.getBody().getList().getEntries().getFirst().getEntry().getContent()).isEqualTo(commentBody.getContent());
     }
 
     @Test

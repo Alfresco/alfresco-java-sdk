@@ -46,7 +46,7 @@ public class NetworksApiServiceIntegrationTest {
     void should_getNetwork() {
         ResponseEntity<PersonNetworkPaging> listNetworksForPersonResponse = networksApiClient.listNetworksForPerson(PersonIds.CURRENT_USER, null, null, null);
         ResponseEntity<PersonNetworkEntry> getNetworkResponse = networksApiClient
-            .getNetwork(listNetworksForPersonResponse.getBody().getList().getEntries().get(0).getEntry().getId(), null);
+            .getNetwork(listNetworksForPersonResponse.getBody().getList().getEntries().getFirst().getEntry().getId(), null);
 
         assertThat(getNetworkResponse.getBody().getEntry().getId()).isNotNull();
     }
@@ -55,7 +55,7 @@ public class NetworksApiServiceIntegrationTest {
     void should_getNetworkForPerson() {
         ResponseEntity<PersonNetworkPaging> listNetworksForPersonResponse = networksApiClient.listNetworksForPerson(PersonIds.CURRENT_USER, null, null, null);
         ResponseEntity<PersonNetworkEntry> getNetworkForPersonResponse = networksApiClient
-            .getNetworkForPerson(PersonIds.CURRENT_USER, listNetworksForPersonResponse.getBody().getList().getEntries().get(0).getEntry().getId(), null);
+            .getNetworkForPerson(PersonIds.CURRENT_USER, listNetworksForPersonResponse.getBody().getList().getEntries().getFirst().getEntry().getId(), null);
 
         assertThat(getNetworkForPersonResponse.getBody().getEntry().getId()).isNotNull();
     }

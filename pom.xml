@@ -152,7 +152,7 @@
     <project.scm.repository>alfresco-java-sdk</project.scm.repository>
     <project.year>2021</project.year>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>17</java.version>
+    <java.version>25</java.version>
     <java.release>${java.version}</java.release>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -310,7 +310,7 @@ limitations under the License.]]>
 				</goals>
 			</execution>
 		</executions>
-	  </plugin>
+      </plugin>
     </plugins>
   </build>
 </project>

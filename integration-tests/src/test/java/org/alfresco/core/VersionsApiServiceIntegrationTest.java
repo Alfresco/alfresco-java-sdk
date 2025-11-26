@@ -39,7 +39,7 @@ public class VersionsApiServiceIntegrationTest extends AbstractContentBasedInteg
     void should_listVersionsAndGetVersion() {
         ResponseEntity<VersionPaging> listVersionsResponse = versionsApiClient.listVersionHistory(testNode.getId(), null, null, null, null);
         ResponseEntity<VersionEntry> getVersionResponse = versionsApiClient
-            .getVersion(testNode.getId(), listVersionsResponse.getBody().getList().getEntries().get(0).getEntry().getId());
+            .getVersion(testNode.getId(), listVersionsResponse.getBody().getList().getEntries().getFirst().getEntry().getId());
 
         assertThat(listVersionsResponse.getBody().getList().getEntries()).isNotEmpty();
         assertThat(getVersionResponse.getBody().getEntry().getId()).isNotNull();

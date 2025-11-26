@@ -46,7 +46,7 @@ public class QueriesApiServiceIntegrationTest extends AbstractSiteBasedIntegrati
         ResponseEntity<PersonPaging> findPeopleResponse = queriesApiClient.findPeople(PersonIds.EXISTING_TEST_USER, null, null, null, null);
 
         assertThat(findPeopleResponse.getBody().getList().getEntries()).isNotEmpty();
-        assertThat(findPeopleResponse.getBody().getList().getEntries().get(0).getEntry().getId()).isEqualTo(PersonIds.EXISTING_TEST_USER);
+        assertThat(findPeopleResponse.getBody().getList().getEntries().getFirst().getEntry().getId()).isEqualTo(PersonIds.EXISTING_TEST_USER);
     }
 
     @Test
@@ -54,6 +54,6 @@ public class QueriesApiServiceIntegrationTest extends AbstractSiteBasedIntegrati
         ResponseEntity<SitePaging> findSitesResponse = queriesApiClient.findSites(SiteIds.EXISTING_TEST_SITE, null, null, null, null);
 
         assertThat(findSitesResponse.getBody().getList().getEntries()).isNotEmpty();
-        assertThat(findSitesResponse.getBody().getList().getEntries().get(0).getEntry().getId()).isEqualTo(SiteIds.EXISTING_TEST_SITE);
+        assertThat(findSitesResponse.getBody().getList().getEntries().getFirst().getEntry().getId()).isEqualTo(SiteIds.EXISTING_TEST_SITE);
     }
 }
