@@ -17,7 +17,6 @@ package org.alfresco.rest.sdk.feign.config;
 
 import java.util.List;
 import org.alfresco.rest.sdk.feign.oauth2.OAuth2FeignRequestInterceptor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -50,11 +49,6 @@ import org.springframework.security.oauth2.client.registration.InMemoryClientReg
 public class OAuth2Configuration {
 
     private static final String OAUTH2_CLIENT_REGISTRATION_ID = "alfresco-rest-api";
-
-    @Value("${spring.security.oauth2.client.registration.alfresco-rest-api.username:#{null}}")
-    private String oAuth2Username;
-    @Value("${spring.security.oauth2.client.registration.alfresco-rest-api.password:#{null}}")
-    private String oAuth2Password;
 
     @Bean
     @ConditionalOnMissingBean({ClientRegistrationRepository.class})

@@ -129,18 +129,6 @@ spring.security.oauth2.client.registration.alfresco-rest-api.authorization-grant
 spring.security.oauth2.client.provider.alfresco-identity-service.token-uri=${keycloak.auth-server-url}/auth/realms/${keycloak.realm}/protocol/openid-connect/token
 ```
 
-Or OAuth2 password based authentication:
-
-```
-spring.security.oauth2.client.registration.alfresco-rest-api.provider=alfresco-identity-service
-spring.security.oauth2.client.registration.alfresco-rest-api.client-id=clientId
-spring.security.oauth2.client.registration.alfresco-rest-api.client-secret=clientSecret
-spring.security.oauth2.client.registration.alfresco-rest-api.username=username
-spring.security.oauth2.client.registration.alfresco-rest-api.password=pwd
-spring.security.oauth2.client.registration.alfresco-rest-api.authorization-grant-type=password
-spring.security.oauth2.client.provider.alfresco-identity-service.token-uri=${keycloak.auth-server-url}/auth/realms/${keycloak.realm}/protocol/openid-connect/token
-```
-
 Finally, if you want to provide a custom authentication mechanism, you can enable the delegated external authentication:
 
 ```
