@@ -47,5 +47,6 @@
     <module>extension-template</module>
     <module>event-api-handlers</module>
     <module>event-api-spring-integration</module>
+    <module>oauth2-feign-sample</module>
   </modules>
 </project>
