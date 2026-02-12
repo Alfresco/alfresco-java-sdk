@@ -95,6 +95,8 @@ In your ```application.properties``` file define the properties required to conn
 
 ```
 spring.activemq.brokerUrl=tcp://activemq-host:61616
+spring.activemq.user=
+spring.activemq.password=
 ```
 
 Alternatively, set `SPRING_ACTIVEMQ_BROKER_URL` environment variable.
