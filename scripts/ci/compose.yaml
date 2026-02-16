@@ -85,12 +85,3 @@ services:
         -XX:MaxRAMPercentage=80
     ports:
       - "8090:8090"
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8090/ready" ]
-      interval: 20s
-      timeout: 2s
-      retries: 3
-      start_period: 10s
-    depends_on:
-      activemq:
-        condition: service_healthy
