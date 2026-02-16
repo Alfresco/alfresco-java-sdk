@@ -95,6 +95,8 @@ In your ```application.properties``` file define the properties required to conn
 
 ```
 spring.activemq.brokerUrl=tcp://activemq-host:61616
+spring.activemq.user=
+spring.activemq.password=
 ```
 
 Alternatively, set `SPRING_ACTIVEMQ_BROKER_URL` environment variable.
@@ -126,18 +128,6 @@ spring.security.oauth2.client.registration.alfresco-rest-api.provider=alfresco-i
 spring.security.oauth2.client.registration.alfresco-rest-api.client-id=clientId
 spring.security.oauth2.client.registration.alfresco-rest-api.client-secret=clientSecret
 spring.security.oauth2.client.registration.alfresco-rest-api.authorization-grant-type=client_credentials
-spring.security.oauth2.client.provider.alfresco-identity-service.token-uri=${keycloak.auth-server-url}/auth/realms/${keycloak.realm}/protocol/openid-connect/token
-```
-
-Or OAuth2 password based authentication:
-
-```
-spring.security.oauth2.client.registration.alfresco-rest-api.provider=alfresco-identity-service
-spring.security.oauth2.client.registration.alfresco-rest-api.client-id=clientId
-spring.security.oauth2.client.registration.alfresco-rest-api.client-secret=clientSecret
-spring.security.oauth2.client.registration.alfresco-rest-api.username=username
-spring.security.oauth2.client.registration.alfresco-rest-api.password=pwd
-spring.security.oauth2.client.registration.alfresco-rest-api.authorization-grant-type=password
 spring.security.oauth2.client.provider.alfresco-identity-service.token-uri=${keycloak.auth-server-url}/auth/realms/${keycloak.realm}/protocol/openid-connect/token
 ```
 

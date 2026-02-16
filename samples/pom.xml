@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.7</version>
+    <version>4.0.2</version>
     <relativePath/>
   </parent>
 
@@ -47,5 +47,6 @@
     <module>extension-template</module>
     <module>event-api-handlers</module>
     <module>event-api-spring-integration</module>
+    <module>oauth2-feign-sample</module>
   </modules>
 </project>

@@ -17,19 +17,17 @@ package org.alfresco.rest.sdk.feign.config;
 
 import java.util.List;
 import org.alfresco.rest.sdk.feign.oauth2.OAuth2FeignRequestInterceptor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientProperties;
-import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientPropertiesMapper;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.security.oauth2.client.autoconfigure.OAuth2ClientProperties;
+import org.springframework.boot.security.oauth2.client.autoconfigure.OAuth2ClientPropertiesMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.oauth2.client.AuthorizedClientServiceOAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.client.InMemoryOAuth2AuthorizedClientService;
-import org.springframework.security.oauth2.client.OAuth2AuthorizationContext;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientProvider;
@@ -52,11 +50,6 @@ public class OAuth2Configuration {
 
     private static final String OAUTH2_CLIENT_REGISTRATION_ID = "alfresco-rest-api";
 
-    @Value("${spring.security.oauth2.client.registration.alfresco-rest-api.username:#{null}}")
-    private String oAuth2Username;
-    @Value("${spring.security.oauth2.client.registration.alfresco-rest-api.password:#{null}}")
-    private String oAuth2Password;
-
     @Bean
     @ConditionalOnMissingBean({ClientRegistrationRepository.class})
     public InMemoryClientRegistrationRepository clientRegistrationRepository(OAuth2ClientProperties properties) {
@@ -75,7 +68,6 @@ public class OAuth2Configuration {
     public OAuth2AuthorizedClientProvider oAuth2AuthorizedClientProvider() {
         return OAuth2AuthorizedClientProviderBuilder.builder()
             .clientCredentials()
-            .password()
             .refreshToken()
             .build();
     }
@@ -95,8 +87,6 @@ public class OAuth2Configuration {
         return OAuth2AuthorizeRequest.withClientRegistrationId(OAUTH2_CLIENT_REGISTRATION_ID)
             .principal(new AnonymousAuthenticationToken("feignClient", "feignClient",
                 AuthorityUtils.createAuthorityList("ROLE_ANONYMOUS")))
-            .attribute(OAuth2AuthorizationContext.USERNAME_ATTRIBUTE_NAME, oAuth2Username)
-            .attribute(OAuth2AuthorizationContext.PASSWORD_ATTRIBUTE_NAME, oAuth2Password)
             .build();
     }
 
