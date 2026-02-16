@@ -37,13 +37,13 @@ services:
         -Dshare.port=8080
         -Dalfresco.host=localhost
         -Dalfresco.port=8080
+        -DlocalTransform.core-aio.url=http://transform-core-aio:8090/
         -Dcsrf.filter.enabled=false
         -Daos.baseUrlOverwrite=http://localhost:8080/alfresco/aos
         -Dmessaging.broker.url="failover:(nio://activemq:61616)?timeout=3000&jms.useCompression=true"
         -Dmessaging.broker.username=admin
         -Dmessaging.broker.password=admin
         -Ddeployment.method=DOCKER_COMPOSE
-        -Dtransform.service.enabled=false
         -XX:MinRAMPercentage=50
         -XX:MaxRAMPercentage=80
     healthcheck:
@@ -75,3 +75,22 @@ services:
     ports:
       - 5432:5432
 
+
+  transform-core-aio:
+    image: alfresco/alfresco-transform-core-aio:5.3.0
+    mem_limit: 1536m
+    environment:
+      JAVA_OPTS: >-
+        -XX:MinRAMPercentage=50
+        -XX:MaxRAMPercentage=80
+    ports:
+      - "8090:8090"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8090/ready" ]
+      interval: 20s
+      timeout: 2s
+      retries: 3
+      start_period: 10s
+    depends_on:
+      activemq:
+        condition: service_healthy
