@@ -93,6 +93,7 @@ jobs:
       - build_and_verify
     if: >
       !(failure() || cancelled()) &&
+      (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
       !contains(github.event.head_commit.message, '[no release]') &&
       github.event_name != 'pull_request' &&
       contains(github.event.head_commit.message, '[release]')
@@ -123,6 +124,7 @@ jobs:
     name: "Publish"
     runs-on: ubuntu-latest
     if: >
+      (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
       contains(github.event.head_commit.message, '[publish]') &&
       github.event_name != 'pull_request'
     needs:
