@@ -99,7 +99,11 @@
         <artifactId>commons-fileupload</artifactId>
         <version>${common-fileupload.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${dependency.spring-security-web.version}</version>
+      </dependency>
       <!--
         Explicitly adding this dependency to resolve https://hyland.atlassian.net/browse/PRODSEC-10532.
         Reason:
