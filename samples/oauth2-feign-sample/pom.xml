@@ -16,6 +16,7 @@
     <spring-cloud.version>2025.1.1</spring-cloud.version>
     <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
     <dependency.spring-webmvc.version>7.0.6</dependency.spring-webmvc.version>
+    <dependency.tomcat-embed-core.version>11.0.21</dependency.tomcat-embed-core.version>
   </properties>
 
   <dependencyManagement>
@@ -34,10 +35,15 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <version>4.0.5</version>
       <exclusions>
         <exclusion>
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.tomcat.embed</groupId>
+          <artifactId>tomcat-embed-core</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -45,6 +51,11 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${dependency.spring-webmvc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-core</artifactId>
+      <version>${dependency.tomcat-embed-core.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
