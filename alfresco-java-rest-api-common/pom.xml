@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-sdk</artifactId>
-    <version>7.3.1-SNAPSHOT</version>
+    <version>7.3.1-A.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>alfresco-java-rest-api-common</artifactId>
