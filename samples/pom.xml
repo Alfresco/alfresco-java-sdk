@@ -18,7 +18,18 @@
 
   <properties>
     <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
+    <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${dependency.spring-security-web.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <distributionManagement>
     <repository>

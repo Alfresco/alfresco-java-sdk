@@ -14,6 +14,8 @@
 
   <properties>
     <spring-cloud.version>2025.1.1</spring-cloud.version>
+    <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
+    <dependency.spring-webmvc.version>7.0.6</dependency.spring-webmvc.version>
   </properties>
 
   <dependencyManagement>
@@ -32,6 +34,17 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${dependency.spring-webmvc.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
@@ -40,6 +53,17 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-oauth2-client</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-web</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>${dependency.spring-security-web.version}</version>
     </dependency>
     <dependency>
       <groupId>org.alfresco</groupId>

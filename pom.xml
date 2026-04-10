@@ -99,7 +99,11 @@
         <artifactId>commons-fileupload</artifactId>
         <version>${common-fileupload.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${dependency.spring-security-web.version}</version>
+      </dependency>
       <!--
         Explicitly adding this dependency to resolve https://hyland.atlassian.net/browse/PRODSEC-10532.
         Reason:
@@ -166,6 +170,7 @@
     <acs-event-model.version>1.0.2</acs-event-model.version>
     <com.nimbusds.outh2.sdk.version>10.5</com.nimbusds.outh2.sdk.version>
     <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
+    <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
   </properties>
   <repositories>
     <repository>
