@@ -15,18 +15,17 @@
  */
 package org.alfresco.event.sdk.integration.transformer;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.alfresco.event.sdk.handling.EventHandlingException;
-import org.alfresco.repo.event.databind.ObjectMapperFactory;
+import org.alfresco.repo.event.databind.JsonMapperFactory;
 import org.alfresco.repo.event.v1.model.DataAttributes;
 import org.alfresco.repo.event.v1.model.RepoEvent;
 import org.alfresco.repo.event.v1.model.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.integration.core.GenericTransformer;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.json.JsonMapper;
 
 /**
  * {@link GenericTransformer} implementation that transforms a repository event in JSON format (following the Repo Event JSON schema) into a {@link RepoEvent}
@@ -36,7 +35,7 @@ public class EventGenericTransformer implements GenericTransformer<String, RepoE
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EventGenericTransformer.class);
 
-    private final ObjectMapper objectMapper = new ObjectMapperFactory().createObjectMapper();
+    private final JsonMapper objectMapper = JsonMapperFactory.createInstance();
 
     @Override
     public RepoEvent<DataAttributes<Resource>> transform(final String eventJSON) {
@@ -44,7 +43,7 @@ public class EventGenericTransformer implements GenericTransformer<String, RepoE
         try {
             return objectMapper.readValue(eventJSON, new TypeReference<>() {
             });
-        } catch (final JsonProcessingException excp) {
+        } catch (final JacksonException excp) {
             LOGGER.error("An error occurred transforming the JSON event {}", eventJSON);
             throw new EventHandlingException("An error occurred transforming the JSON event", excp);
         }
