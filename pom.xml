@@ -167,7 +167,7 @@
     <common-fileupload.version>1.6.0</common-fileupload.version>
     <license-maven-plugin.version>3.0</license-maven-plugin.version>
     <third-party-license-maven-plugin.version>2.0.1</third-party-license-maven-plugin.version>
-    <acs-event-model.version>1.0.2</acs-event-model.version>
+    <acs-event-model.version>1.1.0-A.1</acs-event-model.version>
     <com.nimbusds.outh2.sdk.version>10.5</com.nimbusds.outh2.sdk.version>
     <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
     <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
