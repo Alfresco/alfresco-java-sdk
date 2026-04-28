@@ -124,6 +124,11 @@
         <artifactId>commons-lang3</artifactId>
         <version>${org.apache.common-lang-3.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>activemq-client</artifactId>
+        <version>${activemq-client.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -171,6 +176,7 @@
     <com.nimbusds.outh2.sdk.version>10.5</com.nimbusds.outh2.sdk.version>
     <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
     <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
+    <activemq-client.version>6.2.5</activemq-client.version>
   </properties>
   <repositories>
     <repository>
