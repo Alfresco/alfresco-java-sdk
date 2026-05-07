@@ -23,7 +23,7 @@ updates:
     allow:
       - dependency-type: "direct"
     ignore:
-      # Ignore the SDK's own internal modules — these are cross-module dependencies
+      # Ignore the SDK's own internal modules
       - dependency-name: "org.alfresco:alfresco-java-rest-api-common"
       - dependency-name: "org.alfresco:alfresco-java-event-api*"
       - dependency-name: "org.alfresco:alfresco-acs-java-rest-api*"
@@ -34,13 +34,6 @@ updates:
       alfresco:
         patterns:
           - "org.alfresco*"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    ignore:
-      - dependency-name: "amazoncorretto"
-        versions: [">17"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
