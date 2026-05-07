@@ -24,7 +24,6 @@ updates:
       - dependency-type: "direct"
     ignore:
       # Ignore the SDK's own internal modules — these are cross-module dependencies
-      - dependency-name: "org.alfresco:alfresco-java-sdk"
       - dependency-name: "org.alfresco:alfresco-java-rest-api-common"
       - dependency-name: "org.alfresco:alfresco-java-event-api*"
       - dependency-name: "org.alfresco:alfresco-acs-java-rest-api*"
