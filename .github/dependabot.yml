@@ -32,12 +32,6 @@ updates:
       spring:
         patterns:
           - "org.springframework*"
-      opensearch:
-        patterns:
-          - "org.opensearch*"
-      camel:
-        patterns:
-          - "org.apache.camel*"
       alfresco:
         patterns:
           - "org.alfresco*"
