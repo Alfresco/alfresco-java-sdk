@@ -22,6 +22,8 @@ on:
 env:
   MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
   MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+  MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
+  MAVEN_CENTRAL_PASSWORD: ${{ secrets.OSS_SONATYPE_PASSWORD }}
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
 #  CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD }}
 #  CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME }}
@@ -120,6 +122,31 @@ jobs:
           bash ./scripts/ci/verify_release_tag.sh
           bash ./scripts/ci/maven_release.sh
 
+  check_version:
+    name: "Check version"
+    runs-on: ubuntu-latest
+    needs:
+      - release
+    if: >
+      contains(github.event.head_commit.message, '[publish]')
+    outputs:
+      is_ga: ${{ steps.publish_version.outputs.is_ga }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
+      - name: "Check version"
+        id: publish_version
+        run: |
+          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          if [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "is_ga=true" >> $GITHUB_OUTPUT
+            echo "GA version detected: $VERSION"
+          else
+            echo "is_ga=false" >> $GITHUB_OUTPUT
+            echo "Non GA version detected: $VERSION"
+          fi
+
   publish:
     name: "Publish"
     runs-on: ubuntu-latest
@@ -143,3 +170,38 @@ jobs:
       - name: "Publish artifacts"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
+
+  publish_to_maven_central:
+    name: "Publish to Maven Central"
+    runs-on: ubuntu-latest
+    if: >
+      (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
+      contains(github.event.head_commit.message, '[publish]') &&
+      github.event_name != 'pull_request' &&
+      needs.check_version.outputs.is_ga == 'true'
+    needs:
+      - release
+      - check_version
+    env:
+      GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
+      - name: "Set up Maven Central credentials"
+        run: |
+          mkdir -p ~/.m2
+          cp .ci.settings.xml ~/.m2/settings.xml
+      - name: "Import GPG key"
+        env:
+          GPG_TTY: $(tty)
+        run: |
+          echo "${{ secrets.GPG_SIGNING_PRIVATE_KEY }}" | gpg --batch --import
+          echo "use-agent" >> ~/.gnupg/gpg.conf
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+          gpg --batch --yes --pinentry-mode loopback --passphrase $GPG_SIGNING_PASSPHRASE --list-keys
+      - name: "Publish to Maven Central"
+        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
+        run: |
+          mvn --batch-mode clean package gpg:sign central-publishing:publish -P sdk-release -DskipTests=true -Dgpg.passphrase=$GPG_SIGNING_PASSPHRASE
