@@ -129,6 +129,11 @@
         <artifactId>activemq-client</artifactId>
         <version>${activemq-client.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk18on</artifactId>
+		<version>${dependency.bouncycastle.version}</version> 
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -177,6 +182,7 @@
     <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
     <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
     <activemq-client.version>6.2.5</activemq-client.version>
+	<dependency.bouncycastle.version>1.84</dependency.bouncycastle.version>
   </properties>
   <repositories>
     <repository>
