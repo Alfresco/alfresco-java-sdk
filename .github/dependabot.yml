@@ -4,26 +4,41 @@
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
+registries:
+  maven-alfresco-internal:
+    type: maven-repository
+    url: https://artifacts.alfresco.com/nexus/content/groups/internal
+    username: ${{secrets.NEXUS_USERNAME}}
+    password: ${{secrets.NEXUS_PASSWORD}}
 updates:
-  - package-ecosystem: "maven" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker"
+  - package-ecosystem: "maven"
     directory: "/"
+    registries:
+      - maven-alfresco-internal
     schedule:
       interval: "daily"
+      time: "22:00"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "direct"
     ignore:
-      - dependency-name: "amazoncorretto"
-        versions: [">17"]
+      # Ignore the SDK's own internal modules
+      - dependency-name: "org.alfresco:alfresco-java-rest-api-common"
+      - dependency-name: "org.alfresco:alfresco-java-event-api*"
+      - dependency-name: "org.alfresco:alfresco-acs-java-rest-api*"
+    groups:
+      spring:
+        patterns:
+          - "org.springframework*"
+      alfresco:
+        patterns:
+          - "org.alfresco*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     groups:
       github-actions:
         patterns:
           - "*"
-        update-types:
-          - "minor"
-          - "patch"
