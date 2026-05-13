@@ -20,20 +20,12 @@ on:
   workflow_dispatch:
 
 env:
-  MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-  MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-  MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
-  MAVEN_CENTRAL_PASSWORD: ${{ secrets.OSS_SONATYPE_PASSWORD }}
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
 #  CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD }}
 #  CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME: ${{ secrets.CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME }}
 #  CONTENT_SERVICE_URL: ${{ secrets.CONTENT_SERVICE_URL }}
   AGS_VERSION: 26.2.0.28
   ACS_VERSION: 26.2.0-A.2
-  QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
-  QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-  DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   GITHUB_EVENT: ${{ github.event_name }}
   BRANCH_NAME: ${{ github.ref_name }}
 
@@ -66,6 +58,8 @@ jobs:
     needs:
       - pre-commit
     env:
+      MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
       MAVEN_CLI_OPTS: >
         source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
         -Dags.version=${AGS_VERSION}
@@ -93,6 +87,9 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build_and_verify
+    env:
+      MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
     if: >
       !(failure() || cancelled()) &&
       (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
@@ -157,6 +154,8 @@ jobs:
     needs:
       - release
     env:
+      MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
       MAVEN_CLI_OPTS: >
         source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
         -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
@@ -183,17 +182,22 @@ jobs:
       - release
       - check_version
     env:
-      GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
+      MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
       - name: "Set up Maven Central credentials"
+        env:
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.OSS_SONATYPE_PASSWORD }}
         run: |
           mkdir -p ~/.m2
-          cp .ci.settings.xml ~/.m2/settings.xml
+          envsubst < .ci.settings.xml > ~/.m2/settings.xml
       - name: "Import GPG key"
         env:
+          GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
           GPG_TTY: $(tty)
         run: |
           echo "${{ secrets.GPG_SIGNING_PRIVATE_KEY }}" | gpg --batch --import
@@ -202,6 +206,8 @@ jobs:
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
           gpg --batch --yes --pinentry-mode loopback --passphrase $GPG_SIGNING_PASSPHRASE --list-keys
       - name: "Publish to Maven Central"
+        env:
+          GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
           mvn --batch-mode clean package gpg:sign central-publishing:publish -P sdk-release -DskipTests=true -Dgpg.passphrase=$GPG_SIGNING_PASSPHRASE
