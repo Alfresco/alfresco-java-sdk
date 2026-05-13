@@ -14,8 +14,8 @@
 
   <properties>
     <spring-cloud.version>2025.1.1</spring-cloud.version>
-    <dependency.spring-security-web.version>7.0.4</dependency.spring-security-web.version>
-    <dependency.spring-webmvc.version>7.0.6</dependency.spring-webmvc.version>
+    <dependency.spring-security-web.version>7.0.5</dependency.spring-security-web.version>
+    <dependency.spring-webmvc.version>7.0.7</dependency.spring-webmvc.version>
   </properties>
 
   <dependencyManagement>
