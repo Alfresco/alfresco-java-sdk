@@ -42,7 +42,7 @@ jobs:
       github.ref_name == 'develop' ||
       github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
       - name: "Clean-up SNAPSHOT artifacts"
@@ -65,7 +65,7 @@ jobs:
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
       - name: "Build"
@@ -97,7 +97,7 @@ jobs:
       github.event_name != 'pull_request' &&
       contains(github.event.head_commit.message, '[release]')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
@@ -129,7 +129,7 @@ jobs:
     outputs:
       is_ga: ${{ steps.publish_version.outputs.is_ga }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
       - name: "Check version"
@@ -163,7 +163,7 @@ jobs:
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
       - name: "Publish artifacts"
@@ -185,13 +185,10 @@ jobs:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
       - name: "Set up Maven Central credentials"
-        env:
-          MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
-          MAVEN_CENTRAL_PASSWORD: ${{ secrets.OSS_SONATYPE_PASSWORD }}
         run: |
           mkdir -p ~/.m2
           envsubst < .ci.settings.xml > ~/.m2/settings.xml
@@ -207,6 +204,8 @@ jobs:
           gpg --batch --yes --pinentry-mode loopback --passphrase $GPG_SIGNING_PASSPHRASE --list-keys
       - name: "Publish to Maven Central"
         env:
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.OSS_SONATYPE_PASSWORD }}
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
