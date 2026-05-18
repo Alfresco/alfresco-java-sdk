@@ -188,10 +188,10 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
-      - name: "Set up Maven Central credentials"
+      - name: "Install Maven settings"
         run: |
           mkdir -p ~/.m2
-          envsubst < .ci.settings.xml > ~/.m2/settings.xml
+          cp .ci.settings.xml ~/.m2/settings.xml
       - name: "Import GPG key"
         env:
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
