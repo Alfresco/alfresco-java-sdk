@@ -92,8 +92,8 @@ jobs:
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
       QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
       QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }} # `DOCKER_*` secrets are the Docker Hub credentials expected by scripts/ci/init.sh
+      DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }} # `DOCKER_*` secrets are the Docker Hub credentials expected by scripts/ci/init.sh
     if: >
       !(failure() || cancelled()) &&
       (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
