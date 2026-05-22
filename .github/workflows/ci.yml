@@ -154,7 +154,6 @@ jobs:
       github.event_name != 'pull_request'
     needs:
       - release
-      - check_version
     env:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
