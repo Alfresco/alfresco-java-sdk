@@ -16,6 +16,8 @@
     <spring-cloud.version>2025.1.1</spring-cloud.version>
     <dependency.spring-security-web.version>7.0.5</dependency.spring-security-web.version>
     <dependency.spring-webmvc.version>7.0.7</dependency.spring-webmvc.version>
+    <!-- Fix CVE-2026-41293, CVE-2026-43512, CVE-2026-43515, CVE-2026-41284, CVE-2026-43513, CVE-2026-42498, CVE-2026-43514 -->
+    <tomcat.version>11.0.22</tomcat.version>
   </properties>
 
   <dependencyManagement>
@@ -39,50 +41,7 @@
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
         </exclusion>
-        <!-- Exclude transitive Tomcat embed artifacts so they can be pinned explicitly below (fixes CVE-2026-41293, CVE-2026-43512, CVE-2026-43515,
-             CVE-2026-41284, CVE-2026-43513, CVE-2026-42498, CVE-2026-43514) -->
-        <exclusion>
-          <groupId>org.apache.tomcat.embed</groupId>
-          <artifactId>tomcat-embed-core</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.apache.tomcat.embed</groupId>
-          <artifactId>tomcat-embed-el</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.apache.tomcat.embed</groupId>
-          <artifactId>tomcat-embed-websocket</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.apache.tomcat</groupId>
-          <artifactId>tomcat-annotations-api</artifactId>
-        </exclusion>
       </exclusions>
-    </dependency>
-    <!--
-      Tomcat 11.0.22: fixes CVE-2026-41293, CVE-2026-43512, CVE-2026-43515,
-      CVE-2026-41284, CVE-2026-43513, CVE-2026-42498, CVE-2026-43514.
-      tomcat-annotations-api upgraded for version consistency.
-    -->
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-core</artifactId>
-      <version>11.0.22</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-el</artifactId>
-      <version>11.0.22</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-websocket</artifactId>
-      <version>11.0.22</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>tomcat-annotations-api</artifactId>
-      <version>11.0.22</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
