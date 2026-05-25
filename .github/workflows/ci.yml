@@ -124,31 +124,6 @@ jobs:
           bash ./scripts/ci/verify_release_tag.sh
           bash ./scripts/ci/maven_release.sh
 
-  check_version:
-    name: "Check version"
-    runs-on: ubuntu-latest
-    needs:
-      - release
-    if: >
-      contains(github.event.head_commit.message, '[publish]')
-    outputs:
-      is_ga: ${{ steps.publish_version.outputs.is_ga }}
-    steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
-      - name: "Check version"
-        id: publish_version
-        run: |
-          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          if [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "is_ga=true" >> $GITHUB_OUTPUT
-            echo "GA version detected: $VERSION"
-          else
-            echo "is_ga=false" >> $GITHUB_OUTPUT
-            echo "Non GA version detected: $VERSION"
-          fi
-
   publish:
     name: "Publish"
     runs-on: ubuntu-latest
@@ -181,11 +156,9 @@ jobs:
     if: >
       (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
       contains(github.event.head_commit.message, '[publish]') &&
-      github.event_name != 'pull_request' &&
-      needs.check_version.outputs.is_ga == 'true'
+      github.event_name != 'pull_request'
     needs:
       - release
-      - check_version
     env:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
