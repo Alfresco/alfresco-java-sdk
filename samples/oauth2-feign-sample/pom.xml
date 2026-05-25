@@ -39,8 +39,8 @@
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
         </exclusion>
-        <!-- Exclude Tomcat 11.0.21 to fix CVE-2026-41293, CVE-2026-43512, CVE-2026-43515,
-             CVE-2026-41284, CVE-2026-43513, CVE-2026-42498, CVE-2026-43514 -->
+        <!-- Exclude transitive Tomcat embed artifacts so they can be pinned explicitly below (fixes CVE-2026-41293, CVE-2026-43512, CVE-2026-43515,
+             CVE-2026-41284, CVE-2026-43513, CVE-2026-42498, CVE-2026-43514) -->
         <exclusion>
           <groupId>org.apache.tomcat.embed</groupId>
           <artifactId>tomcat-embed-core</artifactId>
