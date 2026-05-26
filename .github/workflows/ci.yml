@@ -109,11 +109,6 @@ jobs:
           email: ${{ vars.BOT_GITHUB_EMAIL }}
           global: true
       - name: "Init"
-        env:
-          QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
-          QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
       - name: "Release"
         env:
@@ -170,16 +165,30 @@ jobs:
         run: |
           mkdir -p ~/.m2
           cp .ci.settings.xml ~/.m2/settings.xml
+      - name: "Validate Maven Central secrets"
+        env:
+          GPG_SIGNING_PRIVATE_KEY: ${{ secrets.GPG_SIGNING_PRIVATE_KEY }}
+          GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.OSS_SONATYPE_PASSWORD }}
+        run: |
+          test -n "$GPG_SIGNING_PRIVATE_KEY" || { echo "Missing secret: GPG_SIGNING_PRIVATE_KEY"; exit 1; }
+          test -n "$GPG_SIGNING_PASSPHRASE" || { echo "Missing secret: GPG_SIGNING_PASSPHRASE"; exit 1; }
+          test -n "$MAVEN_CENTRAL_USERNAME" || { echo "Missing secret: OSS_SONATYPE_USERNAME"; exit 1; }
+          test -n "$MAVEN_CENTRAL_PASSWORD" || { echo "Missing secret: OSS_SONATYPE_PASSWORD"; exit 1; }
       - name: "Import GPG key"
         env:
+          GPG_SIGNING_PRIVATE_KEY: ${{ secrets.GPG_SIGNING_PRIVATE_KEY }}
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
-          GPG_TTY: $(tty)
         run: |
-          echo "${{ secrets.GPG_SIGNING_PRIVATE_KEY }}" | gpg --batch --import
+          mkdir -p ~/.gnupg
+          chmod 700 ~/.gnupg
+          printf '%s' "$GPG_SIGNING_PRIVATE_KEY" | gpg --batch --import
           echo "use-agent" >> ~/.gnupg/gpg.conf
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
-          gpg --batch --yes --pinentry-mode loopback --passphrase $GPG_SIGNING_PASSPHRASE --list-keys
+          gpgconf --kill gpg-agent
+          gpg --batch --yes --pinentry-mode loopback --passphrase "$GPG_SIGNING_PASSPHRASE" --list-secret-keys
       - name: "Publish to Maven Central"
         env:
           MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
@@ -187,4 +196,4 @@ jobs:
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
-          mvn --batch-mode clean package gpg:sign central-publishing:publish -P sdk-release -DskipTests=true -Dgpg.passphrase=$GPG_SIGNING_PASSPHRASE
+          mvn --batch-mode clean package gpg:sign central-publishing:publish -P sdk-release -DskipTests=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
