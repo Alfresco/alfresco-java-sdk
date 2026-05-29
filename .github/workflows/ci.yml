@@ -113,7 +113,7 @@ jobs:
           QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
           QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}      
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
       - name: "Release"
         env:
