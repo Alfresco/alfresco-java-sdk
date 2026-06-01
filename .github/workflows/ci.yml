@@ -171,15 +171,10 @@ jobs:
           mkdir -p ~/.m2
           cp .ci.settings.xml ~/.m2/settings.xml
       - name: "Import GPG key"
-        env:
-          GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
-          GPG_TTY: $(tty)
-        run: |
-          echo "${{ secrets.GPG_SIGNING_PRIVATE_KEY }}" | gpg --batch --import
-          echo "use-agent" >> ~/.gnupg/gpg.conf
-          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
-          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
-          gpg --batch --yes --pinentry-mode loopback --passphrase $GPG_SIGNING_PASSPHRASE --list-keys
+        uses: Alfresco/alfresco-build-tools/.github/actions/import-gpg-key@v18.7.0
+        with:
+          gpg-signing-private-key: ${{ secrets.GPG_SIGNING_PRIVATE_KEY }}
+          gpg-signing-passphrase: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
       - name: "Publish to Maven Central"
         env:
           MAVEN_CENTRAL_USERNAME: ${{ secrets.OSS_SONATYPE_USERNAME }}
@@ -187,4 +182,4 @@ jobs:
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
-          mvn --batch-mode clean package gpg:sign central-publishing:publish -P sdk-release -DskipTests=true -Dgpg.passphrase=$GPG_SIGNING_PASSPHRASE
+          mvn --batch-mode -P sdk-release clean deploy -DskipTests=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
