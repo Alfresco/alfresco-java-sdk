@@ -194,4 +194,4 @@ jobs:
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
-          mvn --batch-mode -P sdk-release clean deploy -DskipTests=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
+          mvn --batch-mode -P sdk-release -pl '!samples' clean deploy -DskipTests=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
