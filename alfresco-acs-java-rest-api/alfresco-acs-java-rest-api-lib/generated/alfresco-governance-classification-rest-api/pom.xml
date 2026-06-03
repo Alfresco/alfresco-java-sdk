@@ -9,6 +9,7 @@
   </parent>
   <artifactId>alfresco-governance-classification-rest-api</artifactId>
   <name>alfresco-governance-classification-rest-api</name>
+  <description>Generated client for the Alfresco Governance Classification REST API.</description>
   <version>7.3.3-A.10-SNAPSHOT</version>
   <dependencies>
     <dependency>

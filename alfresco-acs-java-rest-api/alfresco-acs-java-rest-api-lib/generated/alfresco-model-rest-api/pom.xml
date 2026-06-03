@@ -9,6 +9,7 @@
   </parent>
   <artifactId>alfresco-model-rest-api</artifactId>
   <name>alfresco-model-rest-api</name>
+  <description>Generated client for the Alfresco Model REST API.</description>
   <version>7.3.3-A.10-SNAPSHOT</version>
   <dependencies>
     <dependency>

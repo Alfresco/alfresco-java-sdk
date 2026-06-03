@@ -10,6 +10,7 @@
 
   <artifactId>alfresco-acs-java-rest-api-lib</artifactId>
   <name>Alfresco Java Rest API :: Rest Clients</name>
+  <description>Aggregator module for the generated Alfresco ACS REST API client libraries.</description>
   <packaging>pom</packaging>
 
   <properties>

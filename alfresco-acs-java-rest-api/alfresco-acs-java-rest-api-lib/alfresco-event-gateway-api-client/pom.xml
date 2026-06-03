@@ -8,6 +8,7 @@
   </parent>
   <artifactId>alfresco-event-gateway-api-client</artifactId>
   <name>alfresco-event-gateway-api</name>
+  <description>Client library for the Alfresco Event Gateway API.</description>
   <version>7.3.3-A.10-SNAPSHOT</version>
   <dependencies>
     <dependency>

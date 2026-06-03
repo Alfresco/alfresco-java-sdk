@@ -10,6 +10,7 @@
 
   <artifactId>alfresco-acs-java-rest-api-spring-boot</artifactId>
   <name>Alfresco Java Rest API :: Spring Boot Autoconfigure</name>
+  <description>Spring Boot autoconfiguration for the Alfresco ACS Java REST API.</description>
 
   <dependencies>
     <dependency>

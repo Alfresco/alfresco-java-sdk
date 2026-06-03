@@ -11,6 +11,7 @@
   <artifactId>alfresco-acs-java-rest-api</artifactId>
   <packaging>pom</packaging>
   <name>Alfresco Java Rest API :: Parent</name>
+  <description>Parent module for the Alfresco ACS Java REST API libraries.</description>
 
   <modules>
     <module>alfresco-acs-java-rest-api-lib</module>

@@ -9,6 +9,7 @@
   </parent>
   <artifactId>alfresco-core-rest-api</artifactId>
   <name>alfresco-core-rest-api</name>
+  <description>Generated client for the Alfresco Core REST API.</description>
   <version>7.3.3-A.10-SNAPSHOT</version>
   <dependencies>
     <dependency>
