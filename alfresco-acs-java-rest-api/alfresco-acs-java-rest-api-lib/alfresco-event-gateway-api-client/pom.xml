@@ -4,12 +4,12 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-acs-java-rest-api-lib</artifactId>
-    <version>7.3.3-A.11-SNAPSHOT</version>
+    <version>7.3.2-A.12-SNAPSHOT</version>
   </parent>
   <artifactId>alfresco-event-gateway-api-client</artifactId>
   <name>alfresco-event-gateway-api</name>
   <description>Client library for the Alfresco Event Gateway API.</description>
-  <version>7.3.3-A.11-SNAPSHOT</version>
+  <version>7.3.2-A.12-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
