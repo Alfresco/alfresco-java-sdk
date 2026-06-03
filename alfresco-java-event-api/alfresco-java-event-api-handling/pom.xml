@@ -10,6 +10,7 @@
 
   <artifactId>alfresco-java-event-api-handling</artifactId>
   <name>Alfresco Java Event API :: Event Handling</name>
+  <description>Event handling support for the Alfresco Java Event API.</description>
 
   <dependencies>
     <dependency>

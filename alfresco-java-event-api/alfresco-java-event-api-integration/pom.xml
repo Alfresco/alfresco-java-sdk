@@ -10,6 +10,7 @@
 
   <artifactId>alfresco-java-event-api-integration</artifactId>
   <name>Alfresco Java Event API :: Spring Integration</name>
+  <description>Spring Integration support for the Alfresco Java Event API.</description>
 
   <dependencies>
     <dependency>

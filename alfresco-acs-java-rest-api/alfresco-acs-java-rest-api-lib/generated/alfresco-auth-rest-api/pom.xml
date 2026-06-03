@@ -9,6 +9,7 @@
   </parent>
   <artifactId>alfresco-auth-rest-api</artifactId>
   <name>alfresco-auth-rest-api</name>
+  <description>Generated client for the Alfresco Authentication REST API.</description>
   <version>7.3.3-A.10-SNAPSHOT</version>
   <dependencies>
     <dependency>

@@ -9,6 +9,7 @@
   </parent>
   <artifactId>alfresco-search-sql-rest-api</artifactId>
   <name>alfresco-search-sql-rest-api</name>
+  <description>Generated client for the Alfresco Search SQL REST API.</description>
   <version>7.3.3-A.10-SNAPSHOT</version>
   <dependencies>
     <dependency>

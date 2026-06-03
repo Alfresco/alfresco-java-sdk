@@ -10,6 +10,7 @@
 
   <artifactId>alfresco-java-event-api-spring-boot</artifactId>
   <name>Alfresco Java Event API :: Spring Boot AutoConfiguration</name>
+  <description>Spring Boot autoconfiguration for the Alfresco Java Event API.</description>
 
   <dependencies>
     <dependency>

@@ -10,6 +10,7 @@
 
   <artifactId>alfresco-acs-java-rest-api-spring-boot-starter</artifactId>
   <name>Alfresco Java Rest API :: Spring Boot Starter</name>
+  <description>Spring Boot starter for the Alfresco ACS Java REST API.</description>
 
   <dependencies>
     <dependency>

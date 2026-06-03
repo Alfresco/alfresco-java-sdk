@@ -10,6 +10,7 @@
 
   <artifactId>alfresco-java-rest-api-common</artifactId>
   <name>Alfresco Java REST API :: Common functionality</name>
+  <description>Common functionality shared by the Alfresco Java REST API clients.</description>
 
   <dependencies>
     <dependency>
