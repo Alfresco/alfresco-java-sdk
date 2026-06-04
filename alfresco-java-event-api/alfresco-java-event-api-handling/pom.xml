@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.alfresco</groupId>
     <artifactId>alfresco-java-event-api</artifactId>
-    <version>7.3.3-A.12-SNAPSHOT</version>
+    <version>7.3.2-SNAPSHOT</version>
   </parent>
 
   <artifactId>alfresco-java-event-api-handling</artifactId>
