@@ -180,7 +180,7 @@
     <acs-event-model.version>1.1.0-A.1</acs-event-model.version>
     <com.nimbusds.outh2.sdk.version>10.5</com.nimbusds.outh2.sdk.version>
     <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
-    <dependency.spring-security-web.version>7.0.5</dependency.spring-security-web.version>
+    <dependency.spring-security-web.version>7.1.0</dependency.spring-security-web.version>
     <activemq-client.version>6.2.5</activemq-client.version>
     <dependency.bouncycastle.version>1.84</dependency.bouncycastle.version>
   </properties>
