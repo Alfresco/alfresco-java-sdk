@@ -21,6 +21,9 @@
     <dependency.spring-security-web.version>7.0.5</dependency.spring-security-web.version>
     <activemq-client.version>6.2.5</activemq-client.version>
     <dependency.bouncycastle.version>1.84</dependency.bouncycastle.version>
+    <dependency.jackson-databind.version>2.22.0</dependency.jackson-databind.version>
+    <dependency.tools-jackson-databind.version>3.2.0</dependency.tools-jackson-databind.version>
+    <dependency.jackson-annotations.version>2.22</dependency.jackson-annotations.version>
   </properties>
 
   <dependencyManagement>
@@ -39,6 +42,21 @@
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcprov-jdk18on</artifactId>
         <version>${dependency.bouncycastle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${dependency.jackson-databind.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>tools.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${dependency.tools-jackson-databind.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${dependency.jackson-annotations.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
