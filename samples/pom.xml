@@ -23,6 +23,7 @@
     <dependency.bouncycastle.version>1.84</dependency.bouncycastle.version>
     <dependency.jackson-databind.version>2.22.0</dependency.jackson-databind.version>
     <dependency.tools-jackson-databind.version>3.2.0</dependency.tools-jackson-databind.version>
+    <dependency.jackson-annotations.version>2.22</dependency.jackson-annotations.version>
   </properties>
 
   <dependencyManagement>
@@ -51,6 +52,11 @@
         <groupId>tools.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
         <version>${dependency.tools-jackson-databind.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${dependency.jackson-annotations.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
