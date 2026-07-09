@@ -152,7 +152,7 @@
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>${dependency.logback-core.version}</version>
+        <version>${dependency.logback-classic.version}</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
@@ -212,6 +212,7 @@
     <dependency.tools-jackson-databind.version>3.2.0</dependency.tools-jackson-databind.version>
     <dependency.jackson-annotations.version>2.22</dependency.jackson-annotations.version>
     <dependency.logback-core.version>1.5.37</dependency.logback-core.version>
+    <dependency.logback-classic.version>1.5.37</dependency.logback-classic.version>
   </properties>
   <repositories>
     <repository>
