@@ -149,6 +149,11 @@
         <artifactId>jackson-annotations</artifactId>
         <version>${dependency.jackson-annotations.version}</version>
       </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>${dependency.logback-core.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -201,6 +206,7 @@
     <dependency.jackson-databind.version>2.22.1</dependency.jackson-databind.version>
     <dependency.tools-jackson-databind.version>3.2.0</dependency.tools-jackson-databind.version>
     <dependency.jackson-annotations.version>2.22</dependency.jackson-annotations.version>
+    <dependency.logback-core.version>1.5.37</dependency.logback-core.version>
   </properties>
   <repositories>
     <repository>
