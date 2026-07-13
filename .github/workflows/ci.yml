@@ -21,8 +21,8 @@ on:
 
 env:
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
-  AGS_VERSION: 26.2.0.43
-  ACS_VERSION: 26.2.0-A.2
+  AGS_VERSION: 26.2.0.80
+  ACS_VERSION: 26.2.0-A.6
   GITHUB_EVENT: ${{ github.event_name }}
   BRANCH_NAME: ${{ github.ref_name }}
 
