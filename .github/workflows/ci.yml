@@ -20,7 +20,7 @@ on:
   workflow_dispatch:
     inputs:
       publish_to_maven_central:
-        description: "Trigger only the Maven Central release step"
+        description: "Run the Maven Central publish job (requires release_tag when enabled)"
         type: boolean
         default: false
       release_tag:
