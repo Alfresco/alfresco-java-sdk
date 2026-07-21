@@ -207,4 +207,4 @@ jobs:
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
-          mvn --batch-mode -P sdk-release -pl '!samples,!samples/extension-template,!samples/event-api-handlers,!samples/event-api-spring-integration,!samples/oauth2-feign-sample,!integration-tests' clean package gpg:sign org.sonatype.central:central-publishing-maven-plugin:publish -DskipTests=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
+          mvn --batch-mode -P sdk-release -pl '!samples,!samples/extension-template,!samples/event-api-handlers,!samples/event-api-spring-integration,!samples/oauth2-feign-sample,!integration-tests' clean package gpg:sign org.sonatype.central:central-publishing-maven-plugin:publish -DskipTests=true -DignorePublishedComponents=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
