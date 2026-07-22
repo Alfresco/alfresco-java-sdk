@@ -20,11 +20,11 @@ on:
   workflow_dispatch:
     inputs:
       publish_to_maven_central:
-        description: "Run the Maven Central publish job (requires release_tag when enabled)"
+        description: "Re-run only the Maven Central publish step for a previously released tag (use to recover from a release workflow whose publish step failed). Requires release_tag."
         type: boolean
         default: false
       release_tag:
-        description: "Release tag to publish to Maven Central (required when publish_to_maven_central is true)"
+        description: "Existing release tag to (re-)publish to Maven Central. Required when publish_to_maven_central is enabled."
         type: string
         required: false
 
@@ -172,19 +172,6 @@ jobs:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
     steps:
-      - name: "Validate inputs"
-        if: inputs.publish_to_maven_central
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if [ -z "${{ inputs.release_tag }}" ]; then
-            echo "::error::release_tag input is required when publish_to_maven_central is true"
-            exit 1
-          fi
-          if ! gh api "repos/${{ github.repository }}/git/refs/tags/${{ inputs.release_tag }}" --silent 2>/dev/null; then
-            echo "::error::release_tag '${{ inputs.release_tag }}' does not exist as a tag in this repository (or the API call failed)"
-            exit 1
-          fi
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           ref: ${{ inputs.release_tag || needs.release.outputs.release_tag }}
@@ -207,4 +194,4 @@ jobs:
           GPG_SIGNING_PASSPHRASE: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: |
-          mvn --batch-mode -P sdk-release -pl '!samples,!samples/extension-template,!samples/event-api-handlers,!samples/event-api-spring-integration,!samples/oauth2-feign-sample,!integration-tests' clean package gpg:sign org.sonatype.central:central-publishing-maven-plugin:publish -DskipTests=true -DignorePublishedComponents=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
+          mvn --batch-mode -P sdk-release -pl '!samples,!samples/extension-template,!samples/event-api-handlers,!samples/event-api-spring-integration,!samples/oauth2-feign-sample,!integration-tests' clean package gpg:sign org.sonatype.central:central-publishing-maven-plugin:publish -DskipTests=true -Dgpg.passphrase="$GPG_SIGNING_PASSPHRASE"
