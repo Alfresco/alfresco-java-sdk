@@ -22,7 +22,7 @@
     <activemq-client.version>6.2.5</activemq-client.version>
     <dependency.bouncycastle.version>1.84</dependency.bouncycastle.version>
     <dependency.jackson-databind.version>2.22.1</dependency.jackson-databind.version>
-    <dependency.tools-jackson-databind.version>3.2.0</dependency.tools-jackson-databind.version>
+    <dependency.tools-jackson-databind.version>3.2.1</dependency.tools-jackson-databind.version>
     <dependency.jackson-annotations.version>2.22</dependency.jackson-annotations.version>
     <dependency.logback-core.version>1.5.37</dependency.logback-core.version>
     <dependency.logback-classic.version>${dependency.logback-core.version}</dependency.logback-classic.version>
