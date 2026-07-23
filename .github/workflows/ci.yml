@@ -18,6 +18,15 @@ on:
       - synchronize
       - labeled
   workflow_dispatch:
+    inputs:
+      publish_to_maven_central:
+        description: "Re-run only the Maven Central publish step for a previously released tag (use to recover from a release workflow whose publish step failed). Requires release_tag."
+        type: boolean
+        default: false
+      release_tag:
+        description: "Existing release tag to (re-)publish to Maven Central. Required when publish_to_maven_central is enabled."
+        type: string
+        required: false
 
 env:
   GITHUB_ACTIONS_DEPLOY_TIMEOUT: 60
@@ -148,9 +157,15 @@ jobs:
     name: "Publish to Maven Central"
     runs-on: ubuntu-latest
     if: >
-      (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
-      contains(github.event.head_commit.message, '[publish]') &&
-      github.event_name != 'pull_request'
+      !(failure() || cancelled()) &&
+      (
+        (
+          (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
+          contains(github.event.head_commit.message, '[publish]') &&
+          github.event_name != 'pull_request'
+        ) ||
+        inputs.publish_to_maven_central
+      )
     needs:
       - release
     env:
@@ -159,7 +174,7 @@ jobs:
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
-          ref: ${{ needs.release.outputs.release_tag }}
+          ref: ${{ inputs.release_tag || needs.release.outputs.release_tag }}
           fetch-depth: 0
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1

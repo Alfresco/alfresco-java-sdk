@@ -375,6 +375,8 @@ limitations under the License.]]>
               <publishingServerId>central</publishingServerId>
               <autoPublish>true</autoPublish>
               <waitUntil>published</waitUntil>
+			  <waitMaxTime>2700</waitMaxTime>
+              <ignorePublishedComponents>true</ignorePublishedComponents>
             </configuration>
           </plugin>
           <plugin>
