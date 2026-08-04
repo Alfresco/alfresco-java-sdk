@@ -14,8 +14,8 @@
 
   <properties>
     <spring-cloud.version>2025.1.1</spring-cloud.version>
-    <dependency.spring-security-web.version>7.0.5</dependency.spring-security-web.version>
-    <dependency.spring-webmvc.version>7.0.7</dependency.spring-webmvc.version>
+    <dependency.spring-security-web.version>7.1.0</dependency.spring-security-web.version>
+    <dependency.spring-webmvc.version>7.0.8</dependency.spring-webmvc.version>
     <!-- Override Tomcat to 11.0.22 to fix CVE-2026-41293, CVE-2026-43512, CVE-2026-43515,
          CVE-2026-41284, CVE-2026-43513, CVE-2026-42498, CVE-2026-43514.
          See: https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.22 -->

@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.7</version>
+    <version>4.1.0</version>
     <relativePath />
   </parent>
 
@@ -18,7 +18,7 @@
 
   <properties>
     <org.apache.common-lang-3.version>3.20.0</org.apache.common-lang-3.version>
-    <dependency.spring-security-web.version>7.0.5</dependency.spring-security-web.version>
+    <dependency.spring-security-web.version>7.1.0</dependency.spring-security-web.version>
     <activemq-client.version>6.2.5</activemq-client.version>
     <dependency.bouncycastle.version>1.84</dependency.bouncycastle.version>
     <dependency.jackson-databind.version>2.22.1</dependency.jackson-databind.version>
