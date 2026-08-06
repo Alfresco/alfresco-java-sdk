@@ -82,7 +82,7 @@ jobs:
     needs:
       - build_and_verify
     outputs:
-      release_tag: ${{ steps.release_tag.outputs.release_tag }}
+      release_tag: ${{ steps.versions.outputs.release-version }}
     env:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
@@ -93,18 +93,21 @@ jobs:
       github.event_name != 'pull_request' &&
       contains(github.event.head_commit.message, '[release]')
     steps:
+      - name: "Generate GitHub App token"
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.GH_APP_ENGINEERING_CONTRIB_CLIENT_ID }}
+          private-key: ${{ secrets.GH_APP_ENGINEERING_CONTRIB_PRIVATE_KEY }}
+          permission-contents: write
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
-          persist-credentials: false
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
           fetch-depth: 0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v15.7.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/configure-git-author@v15.7.1
-        with:
-          username: ${{ vars.BOT_GITHUB_USERNAME }}
-          email: ${{ vars.BOT_GITHUB_EMAIL }}
-          global: true
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.21.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.21.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.21.0
       - name: "Init"
         env:
           QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
@@ -112,46 +115,18 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
-      - name: "Release"
-        env:
-          GIT_USERNAME: ${{ vars.BOT_GITHUB_USERNAME }}
-          GIT_PASSWORD: ${{ secrets.BOT_GITHUB_TOKEN }}
-        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: |
-          bash ./scripts/ci/verify_release_tag.sh
-          bash ./scripts/ci/maven_release.sh
-      - name: "Capture release tag"
-        id: release_tag
-        run: echo "release_tag=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
-
-  publish:
-    name: "Publish"
-    runs-on: ubuntu-latest
-    if: >
-      (github.ref_name == 'develop' || startsWith(github.ref_name, 'release/')) &&
-      contains(github.event.head_commit.message, '[publish]') &&
-      github.event_name != 'pull_request'
-    needs:
-      - release
-    env:
-      MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-      MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      MAVEN_CLI_OPTS: >
-        source:jar -B -q -e -fae -V -DinstallAtEnd=true -U -Ddoclint=none
-        -DaltReleaseDeploymentRepository=alfresco-public::default::https://artifacts.alfresco.com/nexus/content/repositories/releases
-        -DaltSnapshotDeploymentRepository=alfresco-public-snapshots::default::https://artifacts.alfresco.com/nexus/content/repositories/snapshots
-        -Dags.version=${AGS_VERSION}
-        -Dacs.version=${ACS_VERSION}
-    steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-compute-release-versions@v18.21.0
+        id: versions
+      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.21.0
         with:
-          ref: ${{ needs.release.outputs.release_tag }}
-          fetch-depth: 0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
-      - name: "Publish artifacts"
-        timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
-        run: mvn deploy $MAVEN_CLI_OPTS -DskipTests=true
+          token: ${{ steps.app-token.outputs.token }}
+          release-version: ${{ steps.versions.outputs.release-version }}
+          development-version: ${{ steps.versions.outputs.next-development-version }}
+          maven-args: >
+            -DskipTests
+            -DbuildNumber=${{ github.run_number }}
+            -Dags.version=${{ env.AGS_VERSION }}
+            -Dacs.version=${{ env.ACS_VERSION }}
 
   publish_to_maven_central:
     name: "Publish to Maven Central"
