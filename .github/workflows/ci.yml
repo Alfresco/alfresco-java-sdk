@@ -82,7 +82,7 @@ jobs:
     needs:
       - build_and_verify
     outputs:
-      release_tag: ${{ steps.versions.outputs.release-version }}
+      release_tag: ${{ steps.versions.outputs['release-version'] }}
     env:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
@@ -120,8 +120,8 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.21.0
         with:
           token: ${{ steps.app-token.outputs.token }}
-          release-version: ${{ steps.versions.outputs.release-version }}
-          development-version: ${{ steps.versions.outputs.next-development-version }}
+          release-version: ${{ steps.versions.outputs['release-version'] }}
+          development-version: ${{ steps.versions.outputs['next-development-version'] }}
           maven-args: >
             -DskipTests
             -DbuildNumber=${{ github.run_number }}
