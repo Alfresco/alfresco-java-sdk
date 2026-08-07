@@ -34,6 +34,11 @@ env:
   ACS_VERSION: 26.2.0
   GITHUB_EVENT: ${{ github.event_name }}
   BRANCH_NAME: ${{ github.ref_name }}
+  # Both variables are required to be set before the release process starts.
+  # As the release is triggered by a commit message with "[release]" keyword,
+  # setting these variables to new values can be done in the same commit and will indicate the release and the dev versions in it.
+  RELEASE_VERSION: "7.3.4" # The version of the release (tag).
+  DEVELOPMENT_VERSION: "7.3.5-SNAPSHOT" # The version that will be set in pom files after the release (next dev version).
 
 permissions:
   contents: read
@@ -82,7 +87,7 @@ jobs:
     needs:
       - build_and_verify
     outputs:
-      release_tag: ${{ steps.versions.outputs['release-version'] }}
+      release_tag: ${{ env.RELEASE_VERSION }}
     env:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
@@ -115,13 +120,11 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
-      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-compute-release-versions@v18.21.0
-        id: versions
       - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.21.0
         with:
           token: ${{ steps.app-token.outputs.token }}
-          release-version: ${{ steps.versions.outputs['release-version'] }}
-          development-version: ${{ steps.versions.outputs['next-development-version'] }}
+          release-version: ${{ env.RELEASE_VERSION }}
+          development-version: ${{ env.DEVELOPMENT_VERSION }}
           maven-args: >
             -DskipTests
             -DbuildNumber=${{ github.run_number }}
