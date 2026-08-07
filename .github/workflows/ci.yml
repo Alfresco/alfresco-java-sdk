@@ -105,14 +105,13 @@ jobs:
           client-id: ${{ vars.GH_APP_ENGINEERING_CONTRIB_CLIENT_ID }}
           private-key: ${{ secrets.GH_APP_ENGINEERING_CONTRIB_PRIVATE_KEY }}
           permission-contents: write
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: true
           fetch-depth: 0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.21.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.21.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.21.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.21.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.21.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.21.2
       - name: "Init"
         env:
           QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
@@ -120,7 +119,7 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
-      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.21.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.21.2
         with:
           token: ${{ steps.app-token.outputs.token }}
           release-version: ${{ env.RELEASE_VERSION }}
