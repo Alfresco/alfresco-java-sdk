@@ -1,5 +1,5 @@
 env:
   global:
     # Both variables are required to be set before the release process starts and is triggered by a commit message with "[release]" keyword.
-    - RELEASE_VERSION=7.3.4
-    - DEVELOPMENT_VERSION=7.3.5-SNAPSHOT
+    - RELEASE_VERSION=7.3.4-A.1
+    - DEVELOPMENT_VERSION=7.3.4-A.2-SNAPSHOT
