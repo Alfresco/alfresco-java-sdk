@@ -334,3 +334,7 @@ The default values for the ACS environment used for integration tests are:
 - `CONTENT_SERVICE_URL` - `http://localhost:8080`
 - `CONTENT_SERVICE_SECURITY_BASICAUTH_USERNAME` - `admin`
 - `CONTENT_SERVICE_SECURITY_BASICAUTH_PASSWORD` - `admin`
+
+## Releasing the Java SDK
+
+See [docs/release-process.md](docs/release-process.md) for the automated release process (Nexus, verified commits, tags, and Maven Central publishing).
