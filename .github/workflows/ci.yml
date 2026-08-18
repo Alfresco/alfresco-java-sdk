@@ -119,16 +119,48 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
-      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.21.2
+      - name: "Set release version to ${{ env.RELEASE_VERSION }}"
+        run: mvn -B -ntp versions:set -DnewVersion="${{ env.RELEASE_VERSION }}" -DgenerateBackupPoms=false
+      - name: "Sync generated REST API client POM versions for release"
+        run: |
+          find alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated -name pom.xml -print0 |
+            xargs -0 sed -i "s/${{ env.RELEASE_VERSION }}-SNAPSHOT/${{ env.RELEASE_VERSION }}/g"
+      - name: "Deploy release version ${{ env.RELEASE_VERSION }}"
+        run: >
+          mvn -B -ntp clean deploy -P release
+          -Dproject.revision.key=${{ github.sha }}
+          -DskipTests
+          -DbuildNumber=${{ github.run_number }}
+          -Dags.version=${{ env.AGS_VERSION }}
+          -Dacs.version=${{ env.ACS_VERSION }}
+      - name: "Commit release version ${{ env.RELEASE_VERSION }}"
+        uses: iarekylew00t/verified-bot-commit@33985d44b7719dcaf0b854a0f4b0caad9bdc5b86 # v2.3.3
         with:
           token: ${{ steps.app-token.outputs.token }}
-          release-version: ${{ env.RELEASE_VERSION }}
-          development-version: ${{ env.DEVELOPMENT_VERSION }}
-          maven-args: >
-            -DskipTests
-            -DbuildNumber=${{ github.run_number }}
-            -Dags.version=${{ env.AGS_VERSION }}
-            -Dacs.version=${{ env.ACS_VERSION }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          files: |
+            pom.xml
+            **/pom.xml
+          message: "[skip ci] Release version ${{ env.RELEASE_VERSION }}"
+      - name: "Tag release version ${{ env.RELEASE_VERSION }}"
+        run: |
+          git tag "${{ env.RELEASE_VERSION }}"
+          git push origin "${{ env.RELEASE_VERSION }}"
+      - name: "Set next development version to ${{ env.DEVELOPMENT_VERSION }}"
+        run: mvn -B -ntp versions:set -DnewVersion="${{ env.DEVELOPMENT_VERSION }}" -DgenerateBackupPoms=false
+      - name: "Sync generated REST API client POM versions for next development"
+        run: |
+          find alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated -name pom.xml -print0 |
+            xargs -0 sed -i "s/${{ env.RELEASE_VERSION }}/${{ env.DEVELOPMENT_VERSION }}/g"
+      - name: "Commit next development version ${{ env.DEVELOPMENT_VERSION }}"
+        uses: iarekylew00t/verified-bot-commit@33985d44b7719dcaf0b854a0f4b0caad9bdc5b86 # v2.3.3
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          files: |
+            pom.xml
+            **/pom.xml
+          message: "[skip ci] Prepare next development version ${{ env.DEVELOPMENT_VERSION }}"
 
   publish_to_maven_central:
     name: "Publish to Maven Central"
