@@ -2,7 +2,7 @@
 
 This document describes how to release the Alfresco Java SDK using the automated CI pipeline introduced in [ACS-12085](https://hyland.atlassian.net/browse/ACS-12085).
 
-Releases are performed on **`develop`** or **`release/**`** via GitHub Actions. The release job follows the same flow as [`maven-release-slim`](https://github.com/Alfresco/alfresco-build-tools), with additional inline steps to sync generated REST API client POM versions. Verified commits and tags are created using a GitHub App installation token.
+Releases are performed on **`develop`** or **`release/**`** via GitHub Actions. The pipeline uses [`maven-release-slim`](https://github.com/Alfresco/alfresco-build-tools) from Alfresco build-tools and a GitHub App installation token to create **verified** commits and tags.
 
 ## Version conventions
 
@@ -169,12 +169,11 @@ If the publish step failed after a successful release, use **workflow_dispatch**
 | App token step fails | GitHub App credentials not configured on the repository |
 | Verified commit rejected | Branch protection or App permissions |
 | Tag already exists | `RELEASE_VERSION` was released before |
-| Deploy fails on generated REST API client POMs | `mvn versions:set` does not update POMs under `alfresco-acs-java-rest-api-lib/generated/`; the release job syncs them inline in `ci.yml` using literal Python string replacement after each version bump |
 | Maven Central publish failed | Missing `[publish]` on same commit as `[release]`, or use `workflow_dispatch` with `release_tag` |
 
 ## Related files
 
-- [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) — CI pipeline, release version configuration, and generated POM sync steps
+- [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) — CI pipeline and release version configuration
 - [Alfresco build-tools `maven-release-slim`](https://github.com/Alfresco/alfresco-build-tools)
 
 ## Related JIRA

@@ -109,9 +109,9 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.21.2
-      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.21.2
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.21.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.24.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.24.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.24.0
       - name: "Init"
         env:
           QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
@@ -119,74 +119,17 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
-      - name: "Set release version to ${{ env.RELEASE_VERSION }}"
-        run: mvn -B -ntp versions:set -DnewVersion="${{ env.RELEASE_VERSION }}" -DgenerateBackupPoms=false
-      - name: "Sync generated REST API client POM versions for release"
-        env:
-          FROM_VERSION: "${{ env.RELEASE_VERSION }}-SNAPSHOT"
-          TO_VERSION: "${{ env.RELEASE_VERSION }}"
-        run: |
-          python3 <<'EOF'
-          import os
-          from pathlib import Path
-
-          from_version = os.environ["FROM_VERSION"]
-          to_version = os.environ["TO_VERSION"]
-          root = Path("alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated")
-
-          for pom in root.rglob("pom.xml"):
-              text = pom.read_text(encoding="utf-8")
-              pom.write_text(text.replace(from_version, to_version), encoding="utf-8")
-          EOF
-      - name: "Deploy release version ${{ env.RELEASE_VERSION }}"
-        run: >
-          mvn -B -ntp clean deploy -P release
-          -Dproject.revision.key=${{ github.sha }}
-          -DskipTests
-          -DbuildNumber=${{ github.run_number }}
-          -Dags.version=${{ env.AGS_VERSION }}
-          -Dacs.version=${{ env.ACS_VERSION }}
-      - name: "Commit release version ${{ env.RELEASE_VERSION }}"
-        uses: iarekylew00t/verified-bot-commit@33985d44b7719dcaf0b854a0f4b0caad9bdc5b86 # v2.3.3
+      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.24.0
         with:
           token: ${{ steps.app-token.outputs.token }}
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
-          files: |
-            pom.xml
-            **/pom.xml
-          message: "[skip ci] Release version ${{ env.RELEASE_VERSION }}"
-      - name: "Tag release version ${{ env.RELEASE_VERSION }}"
-        run: |
-          git tag "${{ env.RELEASE_VERSION }}"
-          git push origin "${{ env.RELEASE_VERSION }}"
-      - name: "Set next development version to ${{ env.DEVELOPMENT_VERSION }}"
-        run: mvn -B -ntp versions:set -DnewVersion="${{ env.DEVELOPMENT_VERSION }}" -DgenerateBackupPoms=false
-      - name: "Sync generated REST API client POM versions for next development"
-        env:
-          FROM_VERSION: "${{ env.RELEASE_VERSION }}"
-          TO_VERSION: "${{ env.DEVELOPMENT_VERSION }}"
-        run: |
-          python3 <<'EOF'
-          import os
-          from pathlib import Path
-
-          from_version = os.environ["FROM_VERSION"]
-          to_version = os.environ["TO_VERSION"]
-          root = Path("alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated")
-
-          for pom in root.rglob("pom.xml"):
-              text = pom.read_text(encoding="utf-8")
-              pom.write_text(text.replace(from_version, to_version), encoding="utf-8")
-          EOF
-      - name: "Commit next development version ${{ env.DEVELOPMENT_VERSION }}"
-        uses: iarekylew00t/verified-bot-commit@33985d44b7719dcaf0b854a0f4b0caad9bdc5b86 # v2.3.3
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
-          files: |
-            pom.xml
-            **/pom.xml
-          message: "[skip ci] Prepare next development version ${{ env.DEVELOPMENT_VERSION }}"
+          release-version: ${{ env.RELEASE_VERSION }}
+          development-version: ${{ env.DEVELOPMENT_VERSION }}
+          post-version-command: mvn -B -ntp generate-sources -pl alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib -am
+          maven-args: >
+            -DskipTests
+            -DbuildNumber=${{ github.run_number }}
+            -Dags.version=${{ env.AGS_VERSION }}
+            -Dacs.version=${{ env.ACS_VERSION }}
 
   publish_to_maven_central:
     name: "Publish to Maven Central"
