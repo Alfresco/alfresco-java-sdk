@@ -109,9 +109,9 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.21.2
-      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.21.2
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.21.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.24.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.24.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.24.0
       - name: "Init"
         env:
           QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
@@ -119,11 +119,12 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
-      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.21.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.24.0
         with:
           token: ${{ steps.app-token.outputs.token }}
           release-version: ${{ env.RELEASE_VERSION }}
           development-version: ${{ env.DEVELOPMENT_VERSION }}
+          post-version-command: mvn -B -ntp generate-sources -pl alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib -am
           maven-args: >
             -DskipTests
             -DbuildNumber=${{ github.run_number }}
