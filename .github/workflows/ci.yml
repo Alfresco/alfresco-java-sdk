@@ -122,9 +122,22 @@ jobs:
       - name: "Set release version to ${{ env.RELEASE_VERSION }}"
         run: mvn -B -ntp versions:set -DnewVersion="${{ env.RELEASE_VERSION }}" -DgenerateBackupPoms=false
       - name: "Sync generated REST API client POM versions for release"
+        env:
+          FROM_VERSION: "${{ env.RELEASE_VERSION }}-SNAPSHOT"
+          TO_VERSION: "${{ env.RELEASE_VERSION }}"
         run: |
-          find alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated -name pom.xml -print0 |
-            xargs -0 sed -i "s/${{ env.RELEASE_VERSION }}-SNAPSHOT/${{ env.RELEASE_VERSION }}/g"
+          python3 <<'EOF'
+          import os
+          from pathlib import Path
+
+          from_version = os.environ["FROM_VERSION"]
+          to_version = os.environ["TO_VERSION"]
+          root = Path("alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated")
+
+          for pom in root.rglob("pom.xml"):
+              text = pom.read_text(encoding="utf-8")
+              pom.write_text(text.replace(from_version, to_version), encoding="utf-8")
+          EOF
       - name: "Deploy release version ${{ env.RELEASE_VERSION }}"
         run: >
           mvn -B -ntp clean deploy -P release
@@ -149,9 +162,22 @@ jobs:
       - name: "Set next development version to ${{ env.DEVELOPMENT_VERSION }}"
         run: mvn -B -ntp versions:set -DnewVersion="${{ env.DEVELOPMENT_VERSION }}" -DgenerateBackupPoms=false
       - name: "Sync generated REST API client POM versions for next development"
+        env:
+          FROM_VERSION: "${{ env.RELEASE_VERSION }}"
+          TO_VERSION: "${{ env.DEVELOPMENT_VERSION }}"
         run: |
-          find alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated -name pom.xml -print0 |
-            xargs -0 sed -i "s/${{ env.RELEASE_VERSION }}/${{ env.DEVELOPMENT_VERSION }}/g"
+          python3 <<'EOF'
+          import os
+          from pathlib import Path
+
+          from_version = os.environ["FROM_VERSION"]
+          to_version = os.environ["TO_VERSION"]
+          root = Path("alfresco-acs-java-rest-api/alfresco-acs-java-rest-api-lib/generated")
+
+          for pom in root.rglob("pom.xml"):
+              text = pom.read_text(encoding="utf-8")
+              pom.write_text(text.replace(from_version, to_version), encoding="utf-8")
+          EOF
       - name: "Commit next development version ${{ env.DEVELOPMENT_VERSION }}"
         uses: iarekylew00t/verified-bot-commit@33985d44b7719dcaf0b854a0f4b0caad9bdc5b86 # v2.3.3
         with:
