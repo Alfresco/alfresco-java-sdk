@@ -175,6 +175,7 @@ If the publish step failed after a successful release, use **workflow_dispatch**
 ## Related files
 
 - [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) — CI pipeline, release version configuration, and generated POM sync steps
+- [Alfresco build-tools `maven-release-slim`](https://github.com/Alfresco/alfresco-build-tools)
 
 ## Related JIRA
 - [ACS-12085](https://hyland.atlassian.net/browse/ACS-12085)
