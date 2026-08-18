@@ -37,8 +37,8 @@ env:
   # Both variables are required to be set before the release process starts.
   # As the release is triggered by a commit message with "[release]" keyword,
   # setting these variables to new values can be done in the same commit and will indicate the release and the dev versions in it.
-  RELEASE_VERSION: "7.3.4-A.1" # The version of the release (tag).
-  DEVELOPMENT_VERSION: "7.3.4-A.2-SNAPSHOT" # The version that will be set in pom files after the release (next dev version).
+  RELEASE_VERSION: "7.3.4-A.2" # The version of the release (tag).
+  DEVELOPMENT_VERSION: "7.3.4-A.3-SNAPSHOT" # The version that will be set in pom files after the release (next dev version).
 
 permissions:
   contents: read
