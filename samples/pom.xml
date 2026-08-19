@@ -25,7 +25,7 @@
     <dependency.tools-jackson-databind.version>3.2.0</dependency.tools-jackson-databind.version>
     <dependency.jackson-annotations.version>2.22</dependency.jackson-annotations.version>
     <dependency.logback-core.version>1.5.37</dependency.logback-core.version>
-    <dependency.logback-classic.version>${dependency.logback-core.version}</dependency.logback-classic.version>
+    <dependency.logback-classic.version>1.6.3</dependency.logback-classic.version>
   </properties>
 
   <dependencyManagement>
