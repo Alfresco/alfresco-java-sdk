@@ -30,8 +30,9 @@
     <acs.search.api>${project.build.directory}/definitions/alfresco-search.yaml</acs.search.api>
     <acs.search-sql.api>${project.build.directory}/definitions/alfresco-search-sql.yaml</acs.search-sql.api>
   </properties>
-  <!-- Keep "generated" a literal path below and in the swagger-codegen-maven-plugin output configs: a
-       project.build.*-named property here broke the release workflow's `mvn versions:set`/codegen tooling. -->
+  <!-- Keep "generated" a literal path below: a project.build.*-named property here broke the release
+       workflow's `mvn versions:set`. The swagger-codegen-maven-plugin output configs below also hardcode
+       it, just to stay uniform with these module paths. -->
   <modules>
     <module>generated/alfresco-core-rest-api</module>
     <module>generated/alfresco-auth-rest-api</module>
