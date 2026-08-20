@@ -124,7 +124,6 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
           release-version: ${{ env.RELEASE_VERSION }}
           development-version: ${{ env.DEVELOPMENT_VERSION }}
-          release-profile: sdk-release
           maven-args: >
             -DskipTests
             -DbuildNumber=${{ github.run_number }}
