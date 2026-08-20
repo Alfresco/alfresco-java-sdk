@@ -124,11 +124,13 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
           release-version: ${{ env.RELEASE_VERSION }}
           development-version: ${{ env.DEVELOPMENT_VERSION }}
+          release-profile: sdk-release
           maven-args: >
             -DskipTests
             -DbuildNumber=${{ github.run_number }}
             -Dags.version=${{ env.AGS_VERSION }}
             -Dacs.version=${{ env.ACS_VERSION }}
+            -pl '!samples,!samples/extension-template,!samples/event-api-handlers,!samples/event-api-spring-integration,!samples/oauth2-feign-sample,!integration-tests'
 
   publish_to_maven_central:
     name: "Publish to Maven Central"
