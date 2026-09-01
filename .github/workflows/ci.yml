@@ -47,7 +47,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v15.7.1
+      - uses: Alfresco/alfresco-build-tools/.github/actions/pre-commit@v18.26.0
 
   build_and_verify:
     name: "Build and Verify"
@@ -62,14 +62,14 @@ jobs:
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.26.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.26.0
       - name: "Build"
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
       - name: "Login to quay.io"
-        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
         with:
           registry: quay.io
           username: ${{ secrets.QUAY_USERNAME }}
@@ -109,9 +109,9 @@ jobs:
         with:
           token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.24.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.24.0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.24.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.26.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/free-hosted-runner-disk-space@v18.26.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.26.0
       - name: "Init"
         env:
           QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
@@ -119,7 +119,7 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: bash ./scripts/ci/init.sh
-      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.24.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/maven-release-slim@v18.26.0
         with:
           token: ${{ steps.app-token.outputs.token }}
           release-version: ${{ env.RELEASE_VERSION }}
@@ -150,18 +150,18 @@ jobs:
       MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.release_tag || needs.release.outputs.release_tag }}
           fetch-depth: 0
-      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v15.7.1
-      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v15.7.1
+      - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@v18.26.0
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v18.26.0
       - name: "Install Maven settings"
         run: |
           mkdir -p ~/.m2
           cp .ci.settings.xml ~/.m2/settings.xml
       - name: "Import GPG key"
-        uses: Alfresco/alfresco-build-tools/.github/actions/import-gpg-key@v18.7.0
+        uses: Alfresco/alfresco-build-tools/.github/actions/import-gpg-key@v18.26.0
         with:
           gpg-signing-private-key: ${{ secrets.GPG_SIGNING_PRIVATE_KEY }}
           gpg-signing-passphrase: ${{ secrets.GPG_SIGNING_PASSPHRASE }}
