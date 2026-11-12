@@ -47,11 +47,11 @@
   <repositories>
     <repository>
       <id>alfresco-public</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+      <url>https://artifacts.hyland.dev/public/alfresco-public/maven/</url>
     </repository>
     <repository>
       <id>alfresco-private</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/private</url>
+      <url>https://artifacts.hyland.dev/basic/alfresco-enterprise-releases/maven/</url>
     </repository>
   </repositories>
   <profiles>
