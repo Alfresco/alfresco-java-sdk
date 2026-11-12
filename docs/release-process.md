@@ -43,11 +43,11 @@ This applies to both alpha and GA release cycles.
 
 | Step | Trigger | CI job | Result |
 |------|---------|--------|--------|
-| Alpha / Nexus release | `[release]` in commit message | `release` | Deploy to Alfresco Nexus, Git tag, verified bot commits |
+| Alpha release | `[release]` in commit message | `release` | Deploy to the Alfresco Maven repository, Git tag, verified bot commits |
 | GA Maven Central publish | `[publish]` in commit message | `publish_to_maven_central` | Publish to Maven Central (GA versions only) |
 | Re-publish to Maven Central | `workflow_dispatch` with `publish_to_maven_central` | `publish_to_maven_central` | Re-run publish for an existing tag |
 
-Alpha releases (for example `7.3.4-A.1`) are deployed to **Nexus only**. GA releases (for example `7.3.4`) can additionally be published to **Maven Central** using `[publish]`.
+Alpha releases (for example `7.3.4-A.1`) are deployed to the **Alfresco Maven repository only**. GA releases (for example `7.3.4`) can additionally be published to **Maven Central** using `[publish]`.
 
 ## Prerequisites
 
@@ -72,7 +72,7 @@ DEVELOPMENT_VERSION: "7.3.4-A.2-SNAPSHOT" # The version that will be set in pom 
 
 Update both values in the **same commit** that triggers the release. The GitHub App bot does **not** modify `ci.yml`; you must update it again before the next release.
 
-## Alpha release (Nexus)
+## Alpha release
 
 Example: release `7.3.4-A.1` when preparing the next alpha cycle.
 
@@ -102,7 +102,7 @@ Example: release `7.3.4-A.1` when preparing the next alpha cycle.
 When the `release` job succeeds, CI will:
 
 1. Set all POM versions to `RELEASE_VERSION`
-2. Deploy artifacts to Alfresco Nexus
+2. Deploy artifacts to the Alfresco Maven repository
 3. Create a **verified** bot commit for the release version
 4. Create a Git tag named exactly `RELEASE_VERSION` (for example `7.3.4-A.1`)
 5. Set all POM versions to `DEVELOPMENT_VERSION`
@@ -117,7 +117,7 @@ On `develop` you should see:
 - Git tag: `7.3.4-A.1` (plain version string from `RELEASE_VERSION`)
 - Two new **Verified** commits from the engineering-contrib bot
 - Root POM version: `7.3.4-A.2-SNAPSHOT`
-- Artifacts on Alfresco Nexus for `7.3.4-A.1`
+- Artifacts in the Alfresco Maven repository for `7.3.4-A.1`
 
 Before the next alpha, update `ci.yml` again (for example `7.3.4-A.2` / `7.3.4-A.3-SNAPSHOT`).
 
@@ -157,7 +157,7 @@ If the publish step failed after a successful release, use **workflow_dispatch**
 
 | Keyword | Effect |
 |---------|--------|
-| `[release]` | Run the automated Nexus release |
+| `[release]` | Run the automated release |
 | `[publish]` | Run Maven Central publish (checkout uses release tag from the same workflow run) |
 | `[no release]` | Skip the release job even if `[release]` would otherwise match |
 
