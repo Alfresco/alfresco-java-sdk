@@ -42,7 +42,7 @@ First, add to the repositories the Alfresco public repository containing the art
 
   <repository>
     <id>alfresco-public</id>
-    <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+    <url>https://artifacts.hyland.dev/public/alfresco-public/maven/</url>
   </repository>
 
 </repositories>
@@ -77,7 +77,7 @@ First, add to the repositories the Alfresco public repository containing the art
 ```groovy
 repositories {
   maven {
-    url "https://artifacts.alfresco.com/nexus/content/groups/public"
+    url "https://artifacts.hyland.dev/public/alfresco-public/maven/"
   }
 }
 ```
@@ -337,4 +337,4 @@ The default values for the ACS environment used for integration tests are:
 
 ## Releasing the Java SDK
 
-See [docs/release-process.md](docs/release-process.md) for the automated release process (Nexus, verified commits, tags, and Maven Central publishing).
+See [docs/release-process.md](docs/release-process.md) for the automated release process (verified commits, tags, and Maven Central publishing).
