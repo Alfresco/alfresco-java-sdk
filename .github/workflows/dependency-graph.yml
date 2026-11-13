@@ -20,9 +20,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@74d5f71b8cac71b5c056c8e53d51ba660b0f59fd # v19.14.1
+        with:
+          java-version: '21'
       - uses: Alfresco/alfresco-build-tools/.github/actions/cloudsmith-auth@74d5f71b8cac71b5c056c8e53d51ba660b0f59fd # v19.14.1
         with:
           oidc-namespace: ${{ vars.CLOUDSMITH_NAMESPACE }}
+      # The SDK modules depend on each other at ${project.version} (-SNAPSHOT) and no repository serves snapshots,
+      # so install them locally first; otherwise the scan retries remote lookups until the job times out.
+      - name: Install modules so SNAPSHOT siblings resolve locally
+        run: mvn -B -ntp install -DskipTests -Dmaven.javadoc.skip=true -Ddoclint=none
       - uses: Alfresco/alfresco-build-tools/.github/actions/maven-dependency-scan@74d5f71b8cac71b5c056c8e53d51ba660b0f59fd # v19.14.1
         with:
           java-version: '21'
