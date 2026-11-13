@@ -63,7 +63,7 @@ jobs:
         -Dags.version=${AGS_VERSION}
         -Dacs.version=${ACS_VERSION}
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/get-build-info@74d5f71b8cac71b5c056c8e53d51ba660b0f59fd # v19.14.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@74d5f71b8cac71b5c056c8e53d51ba660b0f59fd # v19.14.1
       - uses: Alfresco/alfresco-build-tools/.github/actions/cloudsmith-auth@74d5f71b8cac71b5c056c8e53d51ba660b0f59fd # v19.14.1
@@ -73,7 +73,7 @@ jobs:
         timeout-minutes: ${{ fromJSON(env.GITHUB_ACTIONS_DEPLOY_TIMEOUT) }}
         run: mvn install $MAVEN_CLI_OPTS -DskipTests=true -Dmaven.javadoc.skip=true
       - name: "Login to quay.io"
-        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
+        uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550 # v4.8.0
         with:
           registry: quay.io
           username: ${{ secrets.QUAY_USERNAME }}
@@ -102,7 +102,7 @@ jobs:
     steps:
       - name: "Generate GitHub App token"
         id: app-token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
         with:
           client-id: ${{ vars.GH_APP_ENGINEERING_CONTRIB_CLIENT_ID }}
           private-key: ${{ secrets.GH_APP_ENGINEERING_CONTRIB_PRIVATE_KEY }}
@@ -155,7 +155,7 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.release_tag || needs.release.outputs.release_tag }}
           fetch-depth: 0
